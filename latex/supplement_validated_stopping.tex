@@ -1,0 +1,63 @@
+\section{Outward evaluation of the nominal stopping bound}
+\label{sec:svalidated}
+Section S20 gives bounds in real arithmetic. Here we evaluate its pointwise expression with outward intervals for the nominal ideal four-analyzer quadratic. This adds numerical enclosure of the intensity, coordinate geometry, and derivative tests. The model remains $f(s)=\tfrac12\|As-y\|^2$, with the ideal $A$ in Section S1 and $\mu=L=1/2$. Each stored binary64 coordinate and observation denotes its exact real value. The quantity certified is the optimization gap for that model and those inputs.
+
+\subsection{Arithmetic and input semantics}
+The interval layer follows the standard inclusion principle \cite[Secs.~5.3--5.5]{rump}. For $p$ fractional bits, endpoints are integers divided by $Q_p=2^p$. Additions and subtractions use exact integer arithmetic. Multiplication and division round the lower endpoint downward and the upper endpoint upward using integer floor and ceiling division. Division by an interval containing zero returns an inconclusive result. Square roots use integer square roots of the scaled endpoints, increasing the upper root by one exactly when it is not a perfect square.
+
+The exponential uses a separate enclosure rather than a library approximation. For an endpoint $x\in[-64,64]$, range reduction gives $t=|x|/2^k\le1/8$. With $N=48$, positivity and a geometric bound on the remaining term ratios give
+\begin{equation}
+ \begin{aligned}
+ S_N(t)&=\sum_{j=0}^{N}\frac{t^j}{j!},\\
+ S_N(t)&\le e^t\le S_N(t)+
+ \frac{t^{N+1}}{(N+1)!}\frac{1}{1-t/(N+2)}.
+ \end{aligned}
+ \label{eq:intervalexp}
+\end{equation}
+The sum and remainder are enclosed by integer interval operations. Repeated squaring reverses the range reduction; reciprocation handles negative endpoints. Monotonicity supplies the enclosure for an interval argument, including one that crosses zero. Arguments outside the supported range return inconclusive. All operations determining acceptance use integers; conversion to a decimal or binary64 display occurs afterward.
+
+For an outer input, the implementation uses the exact inner preimage $C(w)=w/\|w\|^2$ algebraically. It evaluates the physical state from the original coordinates, and the derivative tests at this inner preimage. The identity $F(C(w))=F(w)$ preserves the exact physical output. The original squared radius is compared with one using exact rational arithmetic. Thus the inner radius is known to lie in $[0,1]$, and intersecting its computed enclosure with this interval is justified by the map identity. The same reasoning permits the nonnegative support-slack ratio in Section S20. No rounded optimizer restart is introduced.
+
+\subsection{Correctness of an accepted bound}
+\begin{proposition}[Validated nominal stopping]
+\label{prop:validatedstop}
+For finite binary inputs $(a,w,y)$, suppose the supplied interval monitor with target tolerance $10^{-6}$ reports a certified result. Then the mathematical mapped state $s=T_F(a,w)$ satisfies
+\begin{equation}
+ f(s)-\min_{u\in\mathcal C}f(u)\le10^{-6}.
+ \label{eq:validatedstop}
+\end{equation}
+\end{proposition}
+\begin{proof}
+The input conversion encloses the exact binary values. Each elementary operation preserves containment by outward integer rounding. Equation~\eqref{eq:intervalexp} encloses $I=e^a$; a successful evaluation also verifies $0<I\le8$. Exact inner-preimage selection gives the domain of the Section S20 pointwise bound. For the ideal quadratic, $e^{\mathsf T}H_{pp}e=\mu=1/2$ exactly.
+
+The implementation encloses $b$, $\|j\|/I$, and $c_r/I$, and hence the sufficient $\varepsilon$ and $\nu$. It evaluates the first-order and one-sided-curvature expressions in \eqref{eq:sstopfirst} and \eqref{eq:sstoplocal} with intervals, including all geometry operations. Minima and maxima preserve containment of the corresponding real values. At the origin, $DF=2\operatorname{Id}_2$ supplies the first-order expression directly. Every accepted bound therefore encloses a valid upper bound on the real gap. If its upper endpoint is $U/Q_p$, the final comparison is the exact integer test $10^6U\le Q_p$, proving \eqref{eq:validatedstop}. An unresolved denominator or domain check returns inconclusive rather than accepting.
+\end{proof}
+
+The implementation evaluates a single scalar radial curvature when $r\ge1/2$. It obtains the derivative enclosures analytically from the nominal model and forms no full head Hessian. This model-specific route also has access to physical gradients; the direct physical controls remain applicable.
+
+\subsection{Retrospective verification and precision}
+The protocol fixes fractional precisions $32,64,128,256$ and all 9\,284 stored warm endpoints before this arithmetic comparison. States, observations, histories, and optimizer results are unchanged. A separate outward implementation of the direct cone reduction at 256 bits classifies 8\,989 endpoints below the gap threshold and 295 above it, with no threshold-overlap interval. Each accepted stopping result is checked against this independent cone expression.
+
+\begin{table}[!t]
+\caption{Outward pointwise stopping with the indicated number of fractional bits on the same 9\,284 endpoints. ``Accurate rejected'' includes inconclusive results. All four precisions accept zero inaccurate endpoints. Times describe one CPU pass; the separate cone-reference calculation takes 7.69 s.}
+\label{tab:validatedstop}
+\centering\small
+\begin{tabular}{@{}rrrrr@{}}\toprule
+Bits & Certified & Inconcl. & Accurate rej. & Time (s)\\\midrule
+32  & 8\,858 & 3 & 131 & 6.21\\
+64  & 8\,861 & 0 & 128 & 6.38\\
+128 & 8\,861 & 0 & 128 & 7.32\\
+256 & 8\,861 & 0 & 128 & 8.73\\\bottomrule
+\end{tabular}
+\end{table}
+
+Table~\ref{tab:validatedstop} shows identical decisions at 64--256 fractional bits and agreement with the earlier float64 pointwise decisions. All 295 inaccurate endpoints are rejected; 128 accurate endpoints also remain rejected. At 32 bits, three additional accurate endpoints are inconclusive because their radius enclosures include zero in a required denominator. Their true inner radii are approximately $9.84\times10^{-6}$, $2.05\times10^{-6}$, and $6.67\times10^{-6}$. They are retained in the denominator and the reported rejection count.
+
+At every precision, the monitor makes 52 scalar curvature evaluations and forms zero full head Hessians. The previous coverage implementation acquired 9\,284 full head Hessians. The new accounting concerns this analytic nominal-model implementation; Table~\ref{tab:validatedstop} reports its interval cost separately.
+
+Independent exact-rational checks verify the arithmetic, using a direct Taylor-series exponential oracle at the original argument rather than the implementation's range reduction. Additional Cartesian Jacobian/Hessian checks at exact $I=1$ verify 196 radial-tolerance enclosures on 49 inputs. The frozen stress suite has 43 inputs and 172 precision-specific checks, including exact folds, nearby inner and outer states, low intensity, and unsupported inputs. Unsupported inputs remain inconclusive. The mathematical enclosure argument above supplies the acceptance implication; these checks test its implementation.
+
+\subsection{Reproduction}
+The implementation requires only the Python standard library. From the source-package root, run \nolinkurl{theory/validated_stopping/replay.py} with \nolinkurl{--output} naming a new directory. The script reproduces the records and compares their integer endpoints exactly. A minimal folded optimum for \nolinkurl{cli.py} uses raw coordinates $(0,1,0)$ and observations $(1,1/2,0,1/2)$. The README gives complete one-line commands.
+
+The source protocol, integer bound endpoints, independent checks, all four precision runs, and replay comparisons are retained in \nolinkurl{theory/validated_stopping/}. Applying the method to uncertain instrument parameters requires enclosures for that expanded physical model.

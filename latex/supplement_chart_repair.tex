@@ -1,0 +1,63 @@
+\section{Frozen coordinate-repair follow-up}
+\label{sec:schartrepair}
+This follow-up was designed after the released-data results in Section S18 were inspected. The code and protocol were hashed before the new algorithm outcomes were evaluated. All 4\,642 released observations, 273 streams, sampling strata, nominal measurement units, and ordering are reused unchanged. All 24 Fresnel sequences and 984 frames are also reused; they are a previously inspected mechanism control, not a held-out test set. No additional seeds, thresholds, data, or parameter grids are introduced. The experiment uses float64 NumPy 2.5.4 and SciPy 1.18.1 on one local CPU process.
+
+\subsection{Sheet symmetry and its scope}
+Let $C(w)=w/\|w\|^2$ for $w\ne0$, $r=\|w\|$, $e=w/r$, and $H_e=\operatorname{Id}_2-2ee^{\mathsf T}$. Direct substitution and differentiation give
+\begin{equation}
+ F(C(w))=F(w),\qquad DC(w)=r^{-2}H_e.
+ \label{eq:chartidentity}
+\end{equation}
+For $h(a,w)=f(T_F(a,w))$, at the same intensity and observations,
+\begin{equation}
+ \nabla_w h(a,C(w))=r^2H_e\nabla_w h(a,w).
+ \label{eq:chartgradient}
+\end{equation}
+Indeed $h(a,w)=h(a,C(w))$, so the chain rule gives $\nabla_w h(a,w)=r^{-2}H_e\nabla_w h(a,C(w))$, and $H_e^2=\operatorname{Id}_2$. The normalized-output condition number is unchanged, while the polarization-gradient norm increases by $r^2$ when an outer state is moved inward. The intensity derivative is unchanged. These identities follow from the two-sheet map and the matched spectra in Section S6. They improve derivative scale at outer coordinates while retaining the fold and intensity dependence.
+
+\subsection{Fixed algorithm and controls}
+All head solvers use gradient tolerance $10^{-6}$ and at most 500 iterations. L-BFGS-B additionally uses zero objective tolerance, at most 5\,000 function evaluations, and 40 line-search steps. Every new solve resets its approximate inverse Hessian and line-search history. At the first released observation of each stream, and at every released cold start, the initialization is $[\log(\max\{S_{0,\mathrm{LS}},10^{-6}\}),0.2,-0.1]$. The corresponding Fresnel initialization is $[0,0.2,-0.1]$. Every continuation arm retains its own preceding result, including a rejected result.
+
+The switch-before-solve arm replaces an outer preceding state by $(a,C(w))$ before the next solve; it otherwise uses native acceptance. The audited coordinate arm first solves from the preceding state and evaluates Corollary~5's physical bound with the exposed physical gradient. On rejection, it uses the following fixed choices. If $|r-1|\le10^{-3}$, one full analytic head Hessian supplies $c_r$. If $c_r/I^2<-10^{-7}$, the candidates are the current point and radial offsets $-0.01,+0.01$; the lowest-loss candidate is moved to the inner sheet if necessary and starts one fresh solve. If the negative-curvature condition does not hold and $r>1$, the endpoint is moved to the inner sheet and starts one fresh solve. Otherwise no head correction is made. A final physical audit retains any rejection. There is at most one head restart per observation. The audited cold control instead uses one fresh cold solve on the same type of rejection.
+
+The guarded coordinate arm applies standard projected gradient only if that coordinate repair remains rejected. For the ideal quadratic, write $g(s)=W(s-z)$ with $W=\operatorname{diag}(1,1/2,1/2)$. Its update is
+\begin{equation}
+ s^{k+1}=\Pi_{\mathcal C}\bigl(s^k-g(s^k)\bigr).
+ \label{eq:physicalpg}
+\end{equation}
+Here $\Pi_{\mathcal C}(v)=\arg\min_{u\in\mathcal C}\|u-v\|_2^2$ is the Euclidean projection in \eqref{eq:euclideancone}. The $W$-projection $P_W$ in Section S2 instead supplies the direct least-squares reference. For example, $\Pi_{\mathcal C}(0,1,0)=(1/2,1/2,0)$, whereas $P_W(0,1,0)=(1/3,1/3,0)$. The projected-gradient step size is one because $\lambda_{\max}(W)=1$. Constrained optimality gives $s^*=\Pi_{\mathcal C}(s^*-g(s^*))$. Euclidean nonexpansiveness therefore yields
+\begin{equation}
+ \|s^{k+1}-s^*\|_2\le\|\operatorname{Id}_3-W\|_2\|s^k-s^*\|_2
+ =\tfrac12\|s^k-s^*\|_2.
+ \label{eq:pgcontraction}
+\end{equation}
+This standard contraction follows from nonexpansiveness of projection and the fixed quadratic metric. The implementation audits before and after updates, reuses the acquired physical gradient, stops only at bound at most $10^{-6}$, and permits at most 64 updates. An unresolved bound is reported as a rejection, never as a repaired accepted solution. The finite budget alone is not an unconditional accuracy guarantee. In exact arithmetic, Corollary~5 implies gap at most $10^{-6}$ whenever this bound accepts; the recorded float64 calculation is not outward-rounded certification.
+
+A positive-intensity physical correction is lifted by the inner inverse $w=q/(1+\sqrt{1-\|q\|^2})$, $q=p/I$, $a=\log I$. Only the square-root argument is clamped to remove feasibility roundoff. The observed lift discrepancy in the independent audit is at most $1.12\times10^{-16}$. An exact apex has no finite exponential lift: the specified implementation would retain its physical output and cold-start the next head solve. No experimental output requires this case. The standalone projected-gradient control starts from the same first physical state and subsequently carries its own physical result; it uses the same updates, bound, and budget without any head solve. The direct cone reduction is timed separately and supplies the reference gap; its answer is never used to initialize an iterative arm.
+
+\subsection{Full accounting and paired audit}
+The follow-up stores 78\,764 sequential output records: 67\,512 head-arm outputs across six strategies and two solvers, and 11\,252 outputs from the two physical controls. These counts exclude extra internal restarts. All native head invocations return success, with no recorded warnings or nonfinite queries. Monitored acceptance and native head status are separate fields; a physical fallback does not inherit a native head success flag.
+
+Table~\ref{tab:chartstrata} retains the released sampling strata. The standalone physical controls and the guarded coordinate arm have no inaccurate outputs in any stratum. In the released grid the guarded arm makes 16/25 outer restarts and two/15 physical fallbacks; its total projected updates are three/22. The audited cold control makes 18/35 cold restarts. The audited coordinate arm makes 18/33 outer restarts and leaves 7/22 inaccurate outputs, all rejected. The switch-before-solve arm performs 26/41 sheet changes and leaves 9/16 inaccurate native successes. No real-data correction requires a Hessian query. In the Fresnel grid each guarded arm makes seven fold restarts, acquires seven full Hessians and 21 trial FG pairs, and uses no projected fallback. Those full-Hessian queries are not reported as cheaper directional-HVP implementations.
+
+\begin{table*}[!t]
+\caption{Inaccurate released outputs by original stratum. Pairs are BFGS/L-BFGS-B. ``Switch'' applies before every warm solve; ``chart'' means audited coordinate repair without physical fallback. Guarded coordinate repair, standalone physical projected gradient, and the direct cone control are zero in every row.}
+\label{tab:chartstrata}
+\centering\small\renewcommand{\arraystretch}{1.12}
+\begin{tabularx}{\textwidth}{@{}Xrrrrr@{}}\toprule
+Subset and stratum & Entries & Warm & Switch & Audited cold & Audited chart\\\midrule
+% Rows are populated mechanically from the frozen summary.
+DeepSfP, uniform & 384 & 0/0 & 0/0 & 0/0 & 0/0\\
+DeepSfP, high DoLP & 192 & 0/0 & 0/0 & 0/0 & 0/0\\
+PolarNS means, uniform & 256 & 43/0 & 3/0 & 0/0 & 2/0\\
+PolarNS means, high DoLP & 128 & 68/64 & 1/2 & 0/0 & 0/9\\
+Burst, uniform & 2\,338 & 0/9 & 0/2 & 0/0 & 0/1\\
+Burst, high DoLP & 1\,344 & 16/95 & 5/12 & 0/2 & 5/12\\
+\bottomrule\end{tabularx}
+\end{table*}
+
+The paired audit keeps all 9\,284 historical raw warm endpoints as a common starting population. Its repair selection is the physical bound rejection, not the reference objective gap. All 295 rejections in this population are the previously inaccurate native successes. Audited coordinate repair leaves 7/39, using 124/157 outer restarts and 1\,919/1\,259 additional native FG pairs. Guarding this procedure adds seven/39 physical fallbacks and nine/56 projected updates, leaving zero inaccurate outputs. Audited cold restarting leaves 0/5, using 127/168 restarts and 3\,421/1\,407 FG pairs. These conditional endpoint counts differ from the sequential experiment because an intervention changes later initialization.
+
+Independent PyTorch 2.9.1 float64 differentiation checks all 295 historical false-success endpoints and 32 evenly spaced warm controls. Their maximum output-preservation discrepancy is $1.74\times10^{-18}$ and gradient-transformation discrepancy $7.78\times10^{-16}$. A separate physical-step implementation checks those same 327 states: all reach the bound threshold within nine updates, no objective increase is observed, and the maximum excess over the half-distance contraction is $5.56\times10^{-17}$. The separate implementations check the derivatives and physical updates numerically.
+
+Native FG pairs, physical-gradient queries, projected updates, full Hessians, trial evaluations, coordinate changes, internal solver calls, and observed wall times are retained separately. Post-hoc reference-gap calculations are excluded from algorithm timings and query counts. Timings are one sequential CPU pass with fixed arm order; the protocol does not support statistical timing claims. The results quantify partial coordinate repair and the effectiveness of standard physical controls on these previously inspected quadratics. Evaluation on unseen scenes and aligned imaging-quality metrics would address different questions. Exact frozen-summary replay and source hashes are included in \nolinkurl{application/chart_repair/}.

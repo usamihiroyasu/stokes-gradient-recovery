@@ -1,0 +1,112 @@
+\section{Finite-tolerance stopping guarantees}
+\label{sec:stoppingguarantees}
+The recovery formulas identify the physical gradient from head derivatives. For stopping, we also need a tolerance that controls the objective gap. For strongly convex physical objectives, a lower test on one radial curvature near the fold provides such a bound.
+
+\subsection{Relation to approximate-lift results}
+Approximate second-order transfer is established for squared-variable formulations \cite[Thm.~3.6 and Cor.~3.7]{dingwright}. Local gap control through the Kurdyka--\L{}ojasiewicz (KL) exponent is also established for Hadamard difference parametrizations \cite[Thm.~3.11 and Rem.~3.12]{ouyang}. In particular, a KL exponent $3/4$ leads to a gradient-to-gap power $4/3$. Table~\ref{tab:stoppingprior} places the Stokes result in this framework. It gives explicit constants over the whole inner sheet with bounded intensity, uses one radial lower-curvature test, and accommodates supplied derivative-error budgets. Its domain is specified by evaluated coordinates and model bounds, independently of the distance to an optimum or nondegeneracy at that optimum.
+
+\begin{table*}[!t]
+\caption{Comparison for finite-tolerance stopping. PDF theorem locators for the three external preprints use arXiv:2310.01784v2, 2402.00377v2, and 2112.05273v2, respectively. The columns identify the feasible sets, assumptions, and conclusions relevant to the Stokes specialization.}
+\label{tab:stoppingprior}
+\centering\small\renewcommand{\arraystretch}{1.12}
+\begin{tabularx}{\textwidth}{@{}p{.24\textwidth}p{.37\textwidth}X@{}}\toprule
+Prior result & Established guarantee & Present specialization\\\midrule
+Ding--Wright, Thm.~3.6, Cor.~3.7 \cite{dingwright} & Approximate squared-slack second-order conditions transfer to approximate weak second-order conditions, with active-Jacobian rank and conditioning dependencies. & Direct gap bound for strongly convex Stokes objectives, with one radial curvature and explicit constants.\\
+Ouyang \emph{et al.}, Thm.~3.11, Rem.~3.12 \cite{ouyang} & Local KL exponents for Hadamard difference models; exponent $3/4$ occurs without strict complementarity under error-bound assumptions. & Uniform derivative-tolerance bound on a stated chart domain; $4/3$ is consistent with this known exponent.\\
+Li \emph{et al.}, Thm.~5, Lem.~6.1 \cite{hadamard} & Algorithmic gap guarantee under strict-saddle and nondegeneracy assumptions; compactness gives qualitative approximate-to-exact proximity. & Deterministic stopping implication without those assumptions, for the narrower strongly convex physical class.\\\bottomrule
+\end{tabularx}
+\end{table*}
+
+\subsection{One radial test and a uniform gap bound}
+Write $\Delta(s)=f(s)-\min_{u\in\mathcal C}f(u)$ for the objective gap and $x_+=\max\{x,0\}$ for the positive part. At the evaluated point, retain $b=\partial_a\widetilde f/I'$ and $j=\nabla_w\widetilde f$. For $r>0$, set $c_r=e^{\mathsf T}\nabla^2_{ww}\widetilde f\,e$. The following gradient tolerance is normalized in physical units; Supplementary Section S20 gives the conversion from a native solver tolerance.
+
+\begin{theorem}[Uniform stopping on the inner Stokes sheet]
+\label{thm:uniformstopping}
+Let $f:\mathbb R^3\to\mathbb R$ be $C^2$ and $\mu$-strongly convex, $\mu>0$, and fix $L\ge\mu$. At $s=T_F(a,w)$, suppose $0<I\le\overline I$, $0\le r\le1$, and
+\begin{equation}
+ |b|\le\varepsilon,\qquad \|j\|_2/I\le\varepsilon.
+ \label{eq:normalizedstop}
+\end{equation}
+When $r\ge1/2$, additionally suppose
+\begin{equation}
+ e^{\mathsf T}H_{pp}(s)e\le L,\qquad c_r\ge-I\nu,
+ \quad L\ge\mu,\quad \nu\ge0.
+ \label{eq:radialstop}
+\end{equation}
+No curvature observation is required at $r<1/2$. Put $K_0=\overline I L$ and assume $\varepsilon\le K_0/8$. Then
+\begin{equation}
+ \boxed{\ f(s)-\min_{u\in\mathcal C}f(u)
+ \le \frac{52K_0^{2/3}}{\mu}\varepsilon^{4/3}
+       +\frac{3}{\mu}\nu^2.\ }
+ \label{eq:uniformstopgap}
+\end{equation}
+The coefficient 52 is conservative; the two tolerance orders are sharp.
+\end{theorem}
+\begin{proof}
+Write $g_p=me+u$, $u\perp e$, and $\delta=1-r$. Then $g_I=b-\phi m$, $|a_rm|\le\varepsilon$, and $\|u\|\le\varepsilon/t_r$. Strong convexity and the supporting inequality give, for every $\lambda\ge0$,
+\begin{equation}
+ \Delta(s)\le\frac{\|g+\lambda n\|_2^2}{2\mu}
+                  +\lambda I(1-\phi),\quad n=(-1,e).
+ \label{eq:strongstopdual}
+\end{equation}
+For any $0<h\le1/2$, $\delta\ge h$ implies $a_r\ge\delta$ and hence $\Delta(s)\le3\varepsilon^2/(\mu h^2)$. If $\delta<h$, then $1\le|\kappa_r|$, $a_r\le2\delta$, and $1-\phi\le\delta^2$. The radial identity $c_r/I=Ia_r^2 e^{\mathsf T}H_{pp}e+\kappa_r m$ yields
+\begin{equation}
+ m_+\le\nu+4K_0\delta^2.
+ \label{eq:positivegradientbound}
+\end{equation}
+Choose $\lambda=(-m)_+$. For $m<0$, use $|m|(1-\phi)\le\varepsilon\delta$; for $m\ge0$, use \eqref{eq:positivegradientbound}. The two cases give
+\begin{equation}
+ \Delta(s)\le\frac{5\varepsilon^2+6\nu^2+96K_0^2h^4}{2\mu}
+                  +\overline I\varepsilon h.
+ \label{eq:bandstopgap}
+\end{equation}
+Set $h=(\varepsilon/K_0)^{1/3}$ and use $L\ge\mu$ to obtain \eqref{eq:uniformstopgap}. The zero-tolerance case follows separately or by taking a limit. At $r=0$, $DF=2\operatorname{Id}_2$ gives the first-order bound directly. Supplementary Section S20 gives all inequalities and a tighter pointwise certificate.
+\end{proof}
+
+\subsection{Input errors and a target stopping rule}
+Suppose supplied $\widehat b,\widehat j,\widehat c_r$ have valid error budgets $E_b,E_j,E_c$:
+\begin{equation}
+ |\widehat b-b|\le E_b,\quad\|\widehat j-j\|\le E_j,
+ \quad|\widehat c_r-c_r|\le E_c.
+ \label{eq:stopinputerrors}
+\end{equation}
+With exact evaluated geometry, sufficient tolerance values are
+\begin{equation}
+ \begin{aligned}
+ \varepsilon&=\max\{ |\widehat b|+E_b,
+                         (\|\widehat j\|+E_j)/I\},\\
+ \nu&=\max\{0,(-\widehat c_r+E_c)/I\}.
+ \end{aligned}
+ \label{eq:stopinflation}
+\end{equation}
+The triangle inequality gives this inflation. Applying it requires valid budgets and justified bounds $\mu,L,\overline I$ for the objective being optimized. Numerical certification would additionally require validated rounding-error bounds; the measured float32/float64 discrepancies alone are insufficient. Equation~\eqref{eq:stopinputerrors} assumes exact evaluated geometry and a fixed instrument model.
+
+For a desired objective gap $\tau>0$, one explicit sufficient rule is
+\begin{equation}
+ \begin{aligned}
+ \varepsilon&\le\min\!\left\{K_0/8,
+            \left(\frac{\mu\tau}{104K_0^{2/3}}\right)^{3/4}\right\},\\
+ \nu&\le\sqrt{\mu\tau/6}.
+ \end{aligned}
+ \label{eq:targetstop}
+\end{equation}
+Theorem~\ref{thm:uniformstopping} then gives $\Delta(s)\le\tau$. A raw gradient tolerance requires conversion through $I$ and $I'$; without positive lower bounds on $I$ and $|I'|$ it cannot uniformly imply \eqref{eq:normalizedstop}. The rule certifies the gap at any point satisfying these conditions. The number of iterations needed to reach them depends on the optimizer.
+
+\subsection{Sharp orders and necessary restrictions}
+The $4/3$ order cannot be replaced uniformly by a larger power. For the fixed objective $f(s)=\tfrac12\|s-(1,e)\|^2$, take $r\uparrow1$ and $I=(1+\phi)/(1+\phi^2)$. Then $b=0$, $c_r\ge0$, and, with $\delta=1-r$,
+\begin{equation}
+ \varepsilon\sim\delta^3/4,\qquad
+ \Delta(s)\sim\delta^4/16,\qquad
+ \Delta/\varepsilon^{4/3}\to2^{-4/3}.
+ \label{eq:stopsharpfirst}
+\end{equation}
+For the curvature order, the fold family in Fig.~\ref{fig:principle}, with Euclidean metric and $g=\alpha(-1,e)$, $\alpha>0$, has $\varepsilon=0$, $\nu=\alpha$ and exact gap $\alpha^2$. Thus a larger power than $\nu^2$ also fails. Both orders are therefore sharp within the stated objective class.
+
+Curvature cannot be omitted at the fold: the same family has zero first derivatives and positive gap. The inner-sheet restriction is also necessary for this uniform implication. On an unbounded outer sheet, the quadratic centered at $(1,1/2,0)$ admits states with both normalized first derivatives and negative radial curvature tending to zero while the gap tends to $1/8$. With exponential intensity, raw first- and second-order tests also tend to zero as $I\downarrow0$ for the quadratic centered at $(1,0,0)$, while its gap tends to $1/2$. Section S20 supplies the constructions. Moving inward preserves the physical output but requires recomputing derivative tests there.
+
+\subsection{Numerical verification}
+A fixed check set contains 576 quadratic and 24 strongly convex quartic objectives with three supplied derivative-error budgets, giving 1\,800 checks. The uniform small-tolerance condition applies in 1\,431. The largest computed gap above a bound is $1.24\times10^{-14}$; the independent SLSQP references have feasibility residual as low as $-9.64\times10^{-14}$. All 600 reference solves return success. Independent PyTorch differentiation gives maximum $b$, $j$, and $c_r$ discrepancies $1.78\times10^{-15}$, $5.33\times10^{-15}$, and $1.43\times10^{-14}$. Ninety-digit decimal examples check the sharp-order limits and the counterexamples.
+
+On the existing 9\,284 real-data warm endpoints, we switch outer coordinates inward and recompute derivatives, without running another solver. The pointwise certificate in Section S20 accepts 8\,861 endpoints at nominal gap $10^{-6}$, rejects all 295 historical false successes, and additionally rejects 128 accurate endpoints. The coarse uniform bound alone accepts 980. This retrospective calculation checks the formula's coverage using zero supplied error budgets in float64 and a full analytic head Hessian at every endpoint. Its cost includes these Hessians. Direct physical auditing and the direct solvers in Section~\ref{sec:chartrepair} provide the practical cost comparison.
+
+Section S21 adds outward evaluation of the nominal quadratic bound, including exponential intensity, geometry, and derivative arithmetic. At 128 fractional bits, it certifies gap at most $10^{-6}$ for the same 8\,861 endpoints and rejects all 295 inaccurate endpoints; 128 accurate endpoints remain rejected. It uses 52 scalar curvature evaluations and forms no full head Hessian. The complete pass takes 7.32 s. Decisions agree at 64--256 bits; 32 bits leave three additional accurate endpoints inconclusive. The accompanying standard-library implementation returns an integer-enclosed bound or an explicit inconclusive result.

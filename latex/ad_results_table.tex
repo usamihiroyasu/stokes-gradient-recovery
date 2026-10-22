@@ -1,0 +1,13 @@
+\begin{table}[!t]
+\caption{Common-graph AD: median microseconds at $I=1.2$, $r=0.999$, float64; maximum Euclidean gradient error over the intensity/radius grid for each precision. Four exact-fold first-inverse cases are singular and omitted from error maxima.}
+\label{tab:adcost}
+\centering\small
+\begin{tabular}{@{}lrrr@{}}\toprule
+Route & $\mu$s & Error32 & Error64\\\midrule
+Direct physical & 62.9 & $1.69\!\times\!10^{-7}$ & $5.00\!\times\!10^{-16}$\\
+First inverse & 114.4 & $1.27\!\times\!10^{0}$ & $1.67\!\times\!10^{-9}$\\
+Vector HVP & 274.5 & $7.07\!\times\!10^{-7}$ & $9.69\!\times\!10^{-16}$\\
+Mixed scalar & 277.6 & $6.75\!\times\!10^{-7}$ & $9.99\!\times\!10^{-16}$\\
+\bottomrule
+\end{tabular}
+\end{table}

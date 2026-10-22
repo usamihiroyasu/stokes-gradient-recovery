@@ -1,0 +1,176 @@
+[
+  {
+    "stream": "DeepSfP:box_f:uniform",
+    "index": 0,
+    "loss_difference": 0.0,
+    "success": true
+  },
+  {
+    "stream": "DeepSfP:box_f:uniform",
+    "index": 64,
+    "loss_difference": 0.0,
+    "success": true
+  },
+  {
+    "stream": "DeepSfP:box_f:high_observed_DoLP",
+    "index": 0,
+    "loss_difference": 0.0,
+    "success": true
+  },
+  {
+    "stream": "DeepSfP:box_f:high_observed_DoLP",
+    "index": 32,
+    "loss_difference": 0.0,
+    "success": true
+  },
+  {
+    "stream": "DeepSfP:father_christmas_f:uniform",
+    "index": 0,
+    "loss_difference": 0.0,
+    "success": true
+  },
+  {
+    "stream": "DeepSfP:father_christmas_f:uniform",
+    "index": 64,
+    "loss_difference": 2.710505431213761e-20,
+    "success": true
+  },
+  {
+    "stream": "DeepSfP:father_christmas_f:high_observed_DoLP",
+    "index": 0,
+    "loss_difference": 0.0,
+    "success": true
+  },
+  {
+    "stream": "DeepSfP:father_christmas_f:high_observed_DoLP",
+    "index": 32,
+    "loss_difference": 8.470329472543003e-20,
+    "success": true
+  },
+  {
+    "stream": "DeepSfP:horse_l:uniform",
+    "index": 0,
+    "loss_difference": 1.3010426069826053e-18,
+    "success": true
+  },
+  {
+    "stream": "DeepSfP:horse_l:uniform",
+    "index": 64,
+    "loss_difference": 0.0,
+    "success": true
+  },
+  {
+    "stream": "DeepSfP:horse_l:high_observed_DoLP",
+    "index": 0,
+    "loss_difference": 7.284483346386983e-20,
+    "success": true
+  },
+  {
+    "stream": "DeepSfP:horse_l:high_observed_DoLP",
+    "index": 32,
+    "loss_difference": 0.0,
+    "success": true
+  },
+  {
+    "stream": "PolarNS_means:object_241015104249:uniform",
+    "index": 0,
+    "loss_difference": 1.6543612251060553e-24,
+    "success": true
+  },
+  {
+    "stream": "PolarNS_means:object_241015104249:uniform",
+    "index": 64,
+    "loss_difference": 0.0,
+    "success": true
+  },
+  {
+    "stream": "PolarNS_means:object_241015104249:high_observed_DoLP",
+    "index": 0,
+    "loss_difference": 0.0,
+    "success": true
+  },
+  {
+    "stream": "PolarNS_means:object_241015104249:high_observed_DoLP",
+    "index": 32,
+    "loss_difference": 2.514629062161204e-22,
+    "success": true
+  },
+  {
+    "stream": "PolarNS_means:scene_241021103114:uniform",
+    "index": 0,
+    "loss_difference": 0.0,
+    "success": true
+  },
+  {
+    "stream": "PolarNS_means:scene_241021103114:uniform",
+    "index": 64,
+    "loss_difference": 0.0,
+    "success": true
+  },
+  {
+    "stream": "PolarNS_means:scene_241021103114:high_observed_DoLP",
+    "index": 0,
+    "loss_difference": 7.237830359838992e-24,
+    "success": true
+  },
+  {
+    "stream": "PolarNS_means:scene_241021103114:high_observed_DoLP",
+    "index": 32,
+    "loss_difference": 6.452008777913616e-23,
+    "success": true
+  },
+  {
+    "stream": "PolarBurstSR:0:R:uniform:0",
+    "index": 0,
+    "loss_difference": 0.0,
+    "success": true
+  },
+  {
+    "stream": "PolarBurstSR:0:R:uniform:0",
+    "index": 7,
+    "loss_difference": 0.0,
+    "success": true
+  },
+  {
+    "stream": "PolarBurstSR:0:R:uniform:0",
+    "index": 13,
+    "loss_difference": 0.0,
+    "success": true
+  },
+  {
+    "stream": "PolarBurstSR:1:R:uniform:0",
+    "index": 0,
+    "loss_difference": 0.0,
+    "success": true
+  },
+  {
+    "stream": "PolarBurstSR:1:R:uniform:0",
+    "index": 7,
+    "loss_difference": 0.0,
+    "success": true
+  },
+  {
+    "stream": "PolarBurstSR:1:R:uniform:0",
+    "index": 13,
+    "loss_difference": 0.0,
+    "success": true
+  },
+  {
+    "stream": "PolarBurstSR:2:R:uniform:0",
+    "index": 0,
+    "loss_difference": 0.0,
+    "success": true
+  },
+  {
+    "stream": "PolarBurstSR:2:R:uniform:0",
+    "index": 7,
+    "loss_difference": 8.470329472543003e-22,
+    "success": true
+  },
+  {
+    "stream": "PolarBurstSR:2:R:uniform:0",
+    "index": 13,
+    "loss_difference": 0.0,
+    "success": true
+  }
+]

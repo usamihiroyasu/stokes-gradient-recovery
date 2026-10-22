@@ -1,0 +1,39 @@
+{
+  "registered_at": "2026-10-21T22:58:18.366880+00:00",
+  "objective": "Test fold-related head-coordinate acceptance on a bounded released real-data subset; compare diagnosis and restart with physical-gradient auditing and cold starts. No claim of scene prevalence, denoising/SR superiority or hidden physical gradients.",
+  "sources": {
+    "DeepSfP": "a97d19c38dc075bc73030caec77c161c43ca975eadd2cb5b6ac61be68fcd1a95",
+    "PolarNS": "abd6391cf7add388d63aca129fa1580890e48380d6ece6c478f7aeb49901883a",
+    "PolarBurstSR": "b1fd34f345e079d85cff00380b36adfcc482a66d4fb70e31c353feea1c55a6e9"
+  },
+  "selection": "Fixed acquisition list, no solver outcomes inspected. DeepSfP and PolarNS: 128 seeded uniform eligible pixels plus 64 evenly spaced ranks among the top 1 percent observed DoLP, independently per image. Uniform and enriched strata reported separately. PolarBurstSR: each of 4 nominal color planes, fixed 4x4 sensor grid plus 8 enriched positions selected from the first frame only, all 14 frames. Overlap retained and disclosed.",
+  "eligibility": "Finite nonnegative observations; all channels below 0.995; nominal S0 at least 5 percent of the sample/plane 99th percentile. DeepSfP additionally requires foreground mask.",
+  "units": "DeepSfP stored normalized doubles; PolarNS img_mean/4096; PolarBurstSR PNG/65535. No per-pixel renormalization, clipping, synthetic noise or outcome-based selection.",
+  "reference": "Exact ideal four-analyzer weighted cone minimum under W=diag(1,0.5,0.5); nominal linear instrument, not asserted full real-camera calibration or Poisson MLE.",
+  "arms": [
+    "cold_start",
+    "warm_start",
+    "curvature_gate",
+    "physical_audit"
+  ],
+  "methods": [
+    "BFGS",
+    "L-BFGS-B"
+  ],
+  "tolerance": 1e-06,
+  "objective_gap_threshold": 1e-06,
+  "maxiter": 500,
+  "initialization": "First observation of each stream: [log(max(S0_LS,1e-6)),0.2,-0.1]; cold start recomputes this at every observation. Other arms carry their own preceding endpoint, including failures.",
+  "static_order": "DeepSfP and PolarNS selected pixels are sorted in raster order, with separate streams per image/stratum. This is a prescribed spatial scan, not time or physical video motion.",
+  "temporal_order": "PolarBurstSR follows recorded frame_00..13 at fixed sensor positions; no scene registration or fixed-material-point claim.",
+  "curvature_gate": "Existing thresholds abs(r-1)<=1e-3 and c_r/I^2<-1e-7; one restart from best of existing point and radial offsets +/-0.01; same solver/options.",
+  "physical_gate": "Reject physical supporting-half-space bound >1e-6; same restart. Physical auditing requires no Hessian.",
+  "scope": "Bounded local CPU audit; no training, no new data acquisition, no adaptive grid expansion. Retain zeros and failures; incorporate findings with their scope into paper.",
+  "code_sha256": "8395127b11696f241674878ec598bc050cbacc86737c2a9ead8d0808c1385e0e",
+  "core_sha256": "6fd8492d1d585b09c83f99625d2a9b0c7b65a9a338c5424197ce2603b49a1bae",
+  "environment": {
+    "python": "3.12.3",
+    "numpy": "2.5.4",
+    "scipy": "1.18.1"
+  }
+}

@@ -1,0 +1,24 @@
+{
+  "d": 0.8,
+  "max_independent_fd_J_error": 6.121247952961539e-11,
+  "F_roots_at_d": [
+    0.5,
+    2.0
+  ],
+  "G_root_at_d": 1.3333333333333337,
+  "P_root_at_d": 0.8,
+  "inner_eigs_radial_tangential": [
+    0.9600000000000001,
+    1.6
+  ],
+  "outer_eigs_radial_tangential": [
+    -0.24,
+    0.4
+  ],
+  "condition_number_inner": 1.6666666666666665,
+  "condition_number_outer": 1.6666666666666667,
+  "outer_over_inner_radial": 0.24999999999999997,
+  "outer_over_inner_tangential": 0.25,
+  "abs_err_vs_.25_radial": 2.7755575615628914e-17,
+  "abs_err_vs_.25_tangential": 0.0
+}

@@ -1,0 +1,67 @@
+{
+  "schema": "stokes-query-accounting-v1",
+  "semantics": "Function and gradient columns count jointly acquired calls, not two interchangeable work units. Hessian queries are full analytic or AD 3x3 matrices. Final checks and shadow coverage analysis are separated from optimizer calls.",
+  "scipy": {
+    "previous_unique_runs": 270,
+    "previous_optimizer_queries": {
+      "function": 4292,
+      "gradient": 4292,
+      "hessian": 1116,
+      "nonfinite_calls": 0
+    },
+    "baseline_optimizer_queries": {
+      "function": 26897,
+      "gradient": 26897,
+      "hessian": 4793,
+      "nonfinite_calls": 686
+    },
+    "unconditional_restart_optimizer_queries": {
+      "function": 3036,
+      "gradient": 3036,
+      "hessian": 541,
+      "nonfinite_calls": 6
+    },
+    "analysis_head_function_gradient_pairs": {
+      "radial_trials": 4860,
+      "endpoint_diagnostic_state": 1620,
+      "reference_gap_rechecks": 3240
+    },
+    "analysis_hessian_queries": 1620,
+    "analytic_cone_solves": 1620,
+    "gate_hessians_required_after_radius_guard": 149
+  },
+  "pytorch": {
+    "previous_unique_runs": 60,
+    "previous_optimizer_queries": {
+      "function": 1152,
+      "gradient": 1152,
+      "native_terminal_function_gradient_checks": 60,
+      "nonfinite_calls": 0
+    },
+    "baseline_optimizer_queries": {
+      "function": 6880,
+      "gradient": 6880,
+      "native_terminal_function_gradient_checks": 360,
+      "nonfinite_calls": 0
+    },
+    "unconditional_restart_optimizer_queries": {
+      "function": 2146,
+      "gradient": 2146,
+      "native_terminal_function_gradient_checks": 360,
+      "nonfinite_calls": 0
+    },
+    "float64_analysis_function_gradient_pairs": {
+      "preliminary_gap_recheck": 360,
+      "radial_trials": 1080,
+      "final_gap_rechecks": 720
+    },
+    "float64_analysis_hessian_queries": 360,
+    "analytic_cone_solves": 360
+  },
+  "separate_procedures": {
+    "preflight_frozen_endpoint_AD": 60,
+    "physical_SLSQP_audits": 180,
+    "scipy_mixed_dtype_probe": 1
+  },
+  "deployment_note": "Gated restart and unconditional restart reuse the same deterministic restart result when triggered. Required gate Hessian counts apply a radius guard before querying; actual coverage logging computes all endpoint Hessians. No end-to-end runtime comparison is inferred."
+}

@@ -1,0 +1,264 @@
+[
+  {
+    "sample": "box_f",
+    "source": "data/DeepSfP/deepSfP_data/indoor/box_f.mat",
+    "source_sha256": "c74452c84f06af7eb4b8985c96c6c5f97fdc23f1be5b462074c8299a787bc798",
+    "shape": [
+      1024,
+      1224,
+      4
+    ],
+    "units": "stored double values, already normalized; no rescaling",
+    "ground_truth": "surface normals are not Stokes ground truth; not used"
+  },
+  {
+    "sample": "father_christmas_f",
+    "source": "data/DeepSfP/deepSfP_data/indoor/father_christmas_f.mat",
+    "source_sha256": "bf6e12a19493e7b91d1dd0530dbe601abcaa1a20f2090d62d6551723e866547d",
+    "shape": [
+      1024,
+      1224,
+      4
+    ],
+    "units": "stored double values, already normalized; no rescaling",
+    "ground_truth": "surface normals are not Stokes ground truth; not used"
+  },
+  {
+    "sample": "horse_l",
+    "source": "data/DeepSfP/deepSfP_data/indoor/horse_l.mat",
+    "source_sha256": "d71e6a323c2f3c9e049e0bc85663f71d1b0057f994028cba1b8f69a0d61a6ecc",
+    "shape": [
+      1024,
+      1224,
+      4
+    ],
+    "units": "stored double values, already normalized; no rescaling",
+    "ground_truth": "surface normals are not Stokes ground truth; not used"
+  },
+  {
+    "sample": "object_241015104249",
+    "source": "data/PolarNS/object/241015104249/img_stat.mat",
+    "source_sha256": "242d43ea4fa067953ddf7d7c58ce379cbeede09cac849fae99e2183e0b7305ff",
+    "shape": [
+      1024,
+      1224,
+      4
+    ],
+    "image_count": 10000,
+    "units": "img_mean / 4096, matching authors MATLAB code",
+    "ground_truth": "averaged observations, not separate noisy frames; no synthetic noise added",
+    "raw_variance_median": 5.12013576357635
+  },
+  {
+    "sample": "scene_241021103114",
+    "source": "data/PolarNS/scene/241021103114/img_stat.mat",
+    "source_sha256": "0d67041768f9d27c1945d0553bcf172b63f1043dcb7e4144c8ab3b55f0cd8376",
+    "shape": [
+      1024,
+      1224,
+      4
+    ],
+    "image_count": 1017,
+    "units": "img_mean / 4096, matching authors MATLAB code",
+    "ground_truth": "averaged observations, not separate noisy frames; no synthetic noise added",
+    "raw_variance_median": 11.767242313737341
+  },
+  {
+    "sample": "0000000",
+    "dataset": "PolarBurstSR",
+    "frames": [
+      {
+        "source": "data/PolarBurstSR/test/0000000/frame_00.png",
+        "sha256": "3f57bb38d5898e71d67645bba9040395e9597af47a826eaf6abc0d9159a7b218"
+      },
+      {
+        "source": "data/PolarBurstSR/test/0000000/frame_01.png",
+        "sha256": "2e17e09f39b8056c8a5169e33d1c1027bcf39a9af6fb956f01c192becef83db2"
+      },
+      {
+        "source": "data/PolarBurstSR/test/0000000/frame_02.png",
+        "sha256": "4838cd5afaf0fb51b7fa04da44fa26c0590491ff210a83ba6a00815187b515c6"
+      },
+      {
+        "source": "data/PolarBurstSR/test/0000000/frame_03.png",
+        "sha256": "6ac2ed35bedf4d8d3507ed717b02d28acef808e5c479c5ec8975efb936c9a646"
+      },
+      {
+        "source": "data/PolarBurstSR/test/0000000/frame_04.png",
+        "sha256": "4b088cde55fd146d23be54203817336618bc156eda3222fefa79198705592cdb"
+      },
+      {
+        "source": "data/PolarBurstSR/test/0000000/frame_05.png",
+        "sha256": "d130459100efdfcfae567fb9e08ca843cf3ad5846521e7150418898682382889"
+      },
+      {
+        "source": "data/PolarBurstSR/test/0000000/frame_06.png",
+        "sha256": "66f989782ff22cea4d3bcddd4a46a024ea40fa6bf6e03a8c855a43299fcfa2c2"
+      },
+      {
+        "source": "data/PolarBurstSR/test/0000000/frame_07.png",
+        "sha256": "21f4377040fd6dd37e9cda909c72ba0a5fb33c98a4dec36fb1e948e26937a7f0"
+      },
+      {
+        "source": "data/PolarBurstSR/test/0000000/frame_08.png",
+        "sha256": "1fdb6246e2c4daf957c97f51ca5cd5e11b4f752ff735ba61b4d926abfd8da1b5"
+      },
+      {
+        "source": "data/PolarBurstSR/test/0000000/frame_09.png",
+        "sha256": "0d5cd95287087774c6b02af9971fa668abc9c469952cf4e85b20a902ae8fed3a"
+      },
+      {
+        "source": "data/PolarBurstSR/test/0000000/frame_10.png",
+        "sha256": "e743b49eea4762f531163cc513c614dc9bcca6172dbfbcb783d7a3fd9de8e2e4"
+      },
+      {
+        "source": "data/PolarBurstSR/test/0000000/frame_11.png",
+        "sha256": "bff5d162bb332aa691b94d2c1243508a0844ef34083f6d19bf32062a77c37ce8"
+      },
+      {
+        "source": "data/PolarBurstSR/test/0000000/frame_12.png",
+        "sha256": "afdcc8256aa4533a422aeda738b60d8ec41e55eea0fd20411a40398b2d16cdd2"
+      },
+      {
+        "source": "data/PolarBurstSR/test/0000000/frame_13.png",
+        "sha256": "3f12c9171bc3bb2293c34ac04eb6dfeb72d36c37ee1dad1e3e0d1b11d9ac8e13"
+      }
+    ],
+    "raw_shape": [
+      192,
+      192
+    ]
+  },
+  {
+    "sample": "0000001",
+    "dataset": "PolarBurstSR",
+    "frames": [
+      {
+        "source": "data/PolarBurstSR/test/0000001/frame_00.png",
+        "sha256": "d107777b9379bd295672a6856a1dc04a49bac8908abf34daba88100684b446f9"
+      },
+      {
+        "source": "data/PolarBurstSR/test/0000001/frame_01.png",
+        "sha256": "dad18c73b43f2692b65bd39a6f96e1599316e1f7763c01dcf68bc3accfcd8e45"
+      },
+      {
+        "source": "data/PolarBurstSR/test/0000001/frame_02.png",
+        "sha256": "8b501175d7ba43be4d3ac19c6e81e80dedde71e5bde1cd439d8e5a1bfd5f6f3d"
+      },
+      {
+        "source": "data/PolarBurstSR/test/0000001/frame_03.png",
+        "sha256": "38f0595a43ac2eb5b1ed41306bda122233859a8b6bbe044b05643b4f7d44b229"
+      },
+      {
+        "source": "data/PolarBurstSR/test/0000001/frame_04.png",
+        "sha256": "a5cedf114649fd04c8b0b2090ffb37b2df48fdac9b304e403e5f871d13947918"
+      },
+      {
+        "source": "data/PolarBurstSR/test/0000001/frame_05.png",
+        "sha256": "d31e84bb5f613bf3dcdd3ad8a5f65ae4eedffff2e184ab647e569f5c3a63bc8d"
+      },
+      {
+        "source": "data/PolarBurstSR/test/0000001/frame_06.png",
+        "sha256": "e23e461ee7c339d781a58dead74610232f6af20d077dc6de4ec3c0aec2c63b99"
+      },
+      {
+        "source": "data/PolarBurstSR/test/0000001/frame_07.png",
+        "sha256": "01fb317706db1643737eec9e39c9368571b2da0e803ee43cdc52d7558d6474f6"
+      },
+      {
+        "source": "data/PolarBurstSR/test/0000001/frame_08.png",
+        "sha256": "d0ad5f59960831399fa82b8314ba38f32cb30ee9f5c893d3bb9e9cd7685c1893"
+      },
+      {
+        "source": "data/PolarBurstSR/test/0000001/frame_09.png",
+        "sha256": "23eb44364343ced220199fd2f0022cf38aca4ea09a537546a4c8c9d491013852"
+      },
+      {
+        "source": "data/PolarBurstSR/test/0000001/frame_10.png",
+        "sha256": "eac263da6071f0edf80ae9f710ddc48af30e93f397d87252ae750f2fa4394788"
+      },
+      {
+        "source": "data/PolarBurstSR/test/0000001/frame_11.png",
+        "sha256": "76aa0eaa3712cb69d00e3da223e4ac6e35f5be49bd711c376e421363db38f38f"
+      },
+      {
+        "source": "data/PolarBurstSR/test/0000001/frame_12.png",
+        "sha256": "6847360cebf0153f1052c1402275f05c1fabaa07f17a12dd2476305a75f19205"
+      },
+      {
+        "source": "data/PolarBurstSR/test/0000001/frame_13.png",
+        "sha256": "410f4f7c6f1d47cb557a6453d5b9de78d55c11da15ad1078980597d021edb6b1"
+      }
+    ],
+    "raw_shape": [
+      192,
+      192
+    ]
+  },
+  {
+    "sample": "0000002",
+    "dataset": "PolarBurstSR",
+    "frames": [
+      {
+        "source": "data/PolarBurstSR/test/0000002/frame_00.png",
+        "sha256": "885cd96b6fea9f5297214d9a743a958f5f5d1db61fee44689365f040093ca1f0"
+      },
+      {
+        "source": "data/PolarBurstSR/test/0000002/frame_01.png",
+        "sha256": "6efc47655f26f1a639711ae1088ef552460de359d9794dc8804a8bd0e8b96a1f"
+      },
+      {
+        "source": "data/PolarBurstSR/test/0000002/frame_02.png",
+        "sha256": "6b3a1887891bd3524d9444538e52a2151609936b32f390dfbf421bff2e9f84af"
+      },
+      {
+        "source": "data/PolarBurstSR/test/0000002/frame_03.png",
+        "sha256": "9ce82950b871c51cce2e6b4d6604bd0f760a72ea3ed9ecb5fe680c3027d046e2"
+      },
+      {
+        "source": "data/PolarBurstSR/test/0000002/frame_04.png",
+        "sha256": "e230b357807bc35605f5eac1f2c2e22a05ead94a2e474b5c1d4b11a95c72db00"
+      },
+      {
+        "source": "data/PolarBurstSR/test/0000002/frame_05.png",
+        "sha256": "62e4cfe3add42d80099cc272c65b7beaf0434091f75302fa9b78bfc24f0c7aea"
+      },
+      {
+        "source": "data/PolarBurstSR/test/0000002/frame_06.png",
+        "sha256": "c86d8c353aaeb103dfe79c5e1454861b6407a9328871586defc22f13d6eaea27"
+      },
+      {
+        "source": "data/PolarBurstSR/test/0000002/frame_07.png",
+        "sha256": "4b9879ecd6fe39b49550e2ccc4b85578fe8d41d9f04d75ee2daada9bd2b0308f"
+      },
+      {
+        "source": "data/PolarBurstSR/test/0000002/frame_08.png",
+        "sha256": "d312569b1b24c531272db9fe38af5abb3f2c2438e65618b9e331d35b6f5bd967"
+      },
+      {
+        "source": "data/PolarBurstSR/test/0000002/frame_09.png",
+        "sha256": "de1f3d149aafe957bcc45dd0adfa977c121db77fc2bdb2c23c266a34ef68ec5c"
+      },
+      {
+        "source": "data/PolarBurstSR/test/0000002/frame_10.png",
+        "sha256": "2709313ab817b1d48756366f84c51af508311e388b8f3040a342778ec0e3b5dd"
+      },
+      {
+        "source": "data/PolarBurstSR/test/0000002/frame_11.png",
+        "sha256": "25ff17f040b6614df1b2b9c4b0d1aef6a57d1f1580d5be048567b87116a3cf10"
+      },
+      {
+        "source": "data/PolarBurstSR/test/0000002/frame_12.png",
+        "sha256": "4456c3bb27a3db65fdd56450e48c3096ab4efc9926bb9c00be4fcc50c4ce0fe0"
+      },
+      {
+        "source": "data/PolarBurstSR/test/0000002/frame_13.png",
+        "sha256": "908a52482c6a0033a918a5b47392d054b84627ac4a72ef5634246ea65d3d1a77"
+      }
+    ],
+    "raw_shape": [
+      192,
+      192
+    ]
+  }
+]

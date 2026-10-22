@@ -1,0 +1,1964 @@
+[
+  {
+    "stream": "PolarNS_means:object_241015104249:uniform",
+    "index": 56,
+    "method": "BFGS",
+    "original_false_success": true
+  },
+  {
+    "stream": "PolarNS_means:object_241015104249:uniform",
+    "index": 57,
+    "method": "BFGS",
+    "original_false_success": true
+  },
+  {
+    "stream": "PolarNS_means:object_241015104249:uniform",
+    "index": 58,
+    "method": "BFGS",
+    "original_false_success": true
+  },
+  {
+    "stream": "PolarNS_means:object_241015104249:uniform",
+    "index": 59,
+    "method": "BFGS",
+    "original_false_success": true
+  },
+  {
+    "stream": "PolarNS_means:object_241015104249:uniform",
+    "index": 62,
+    "method": "BFGS",
+    "original_false_success": true
+  },
+  {
+    "stream": "PolarNS_means:object_241015104249:uniform",
+    "index": 64,
+    "method": "BFGS",
+    "original_false_success": true
+  },
+  {
+    "stream": "PolarNS_means:object_241015104249:uniform",
+    "index": 65,
+    "method": "BFGS",
+    "original_false_success": true
+  },
+  {
+    "stream": "PolarNS_means:object_241015104249:uniform",
+    "index": 68,
+    "method": "BFGS",
+    "original_false_success": true
+  },
+  {
+    "stream": "PolarNS_means:object_241015104249:uniform",
+    "index": 69,
+    "method": "BFGS",
+    "original_false_success": true
+  },
+  {
+    "stream": "PolarNS_means:object_241015104249:uniform",
+    "index": 70,
+    "method": "BFGS",
+    "original_false_success": true
+  },
+  {
+    "stream": "PolarNS_means:object_241015104249:uniform",
+    "index": 73,
+    "method": "BFGS",
+    "original_false_success": true
+  },
+  {
+    "stream": "PolarNS_means:object_241015104249:uniform",
+    "index": 74,
+    "method": "BFGS",
+    "original_false_success": true
+  },
+  {
+    "stream": "PolarNS_means:object_241015104249:uniform",
+    "index": 76,
+    "method": "BFGS",
+    "original_false_success": true
+  },
+  {
+    "stream": "PolarNS_means:object_241015104249:uniform",
+    "index": 77,
+    "method": "BFGS",
+    "original_false_success": true
+  },
+  {
+    "stream": "PolarNS_means:object_241015104249:uniform",
+    "index": 79,
+    "method": "BFGS",
+    "original_false_success": true
+  },
+  {
+    "stream": "PolarNS_means:object_241015104249:uniform",
+    "index": 81,
+    "method": "BFGS",
+    "original_false_success": true
+  },
+  {
+    "stream": "PolarNS_means:object_241015104249:uniform",
+    "index": 83,
+    "method": "BFGS",
+    "original_false_success": true
+  },
+  {
+    "stream": "PolarNS_means:object_241015104249:uniform",
+    "index": 84,
+    "method": "BFGS",
+    "original_false_success": true
+  },
+  {
+    "stream": "PolarNS_means:object_241015104249:uniform",
+    "index": 85,
+    "method": "BFGS",
+    "original_false_success": true
+  },
+  {
+    "stream": "PolarNS_means:object_241015104249:uniform",
+    "index": 90,
+    "method": "BFGS",
+    "original_false_success": true
+  },
+  {
+    "stream": "PolarNS_means:object_241015104249:uniform",
+    "index": 91,
+    "method": "BFGS",
+    "original_false_success": true
+  },
+  {
+    "stream": "PolarNS_means:object_241015104249:uniform",
+    "index": 92,
+    "method": "BFGS",
+    "original_false_success": true
+  },
+  {
+    "stream": "PolarNS_means:object_241015104249:uniform",
+    "index": 93,
+    "method": "BFGS",
+    "original_false_success": true
+  },
+  {
+    "stream": "PolarNS_means:object_241015104249:uniform",
+    "index": 95,
+    "method": "BFGS",
+    "original_false_success": true
+  },
+  {
+    "stream": "PolarNS_means:object_241015104249:uniform",
+    "index": 98,
+    "method": "BFGS",
+    "original_false_success": true
+  },
+  {
+    "stream": "PolarNS_means:object_241015104249:uniform",
+    "index": 99,
+    "method": "BFGS",
+    "original_false_success": true
+  },
+  {
+    "stream": "PolarNS_means:object_241015104249:uniform",
+    "index": 100,
+    "method": "BFGS",
+    "original_false_success": true
+  },
+  {
+    "stream": "PolarNS_means:object_241015104249:uniform",
+    "index": 105,
+    "method": "BFGS",
+    "original_false_success": true
+  },
+  {
+    "stream": "PolarNS_means:object_241015104249:uniform",
+    "index": 107,
+    "method": "BFGS",
+    "original_false_success": true
+  },
+  {
+    "stream": "PolarNS_means:object_241015104249:uniform",
+    "index": 109,
+    "method": "BFGS",
+    "original_false_success": true
+  },
+  {
+    "stream": "PolarNS_means:object_241015104249:uniform",
+    "index": 111,
+    "method": "BFGS",
+    "original_false_success": true
+  },
+  {
+    "stream": "PolarNS_means:object_241015104249:uniform",
+    "index": 112,
+    "method": "BFGS",
+    "original_false_success": true
+  },
+  {
+    "stream": "PolarNS_means:object_241015104249:uniform",
+    "index": 113,
+    "method": "BFGS",
+    "original_false_success": true
+  },
+  {
+    "stream": "PolarNS_means:object_241015104249:uniform",
+    "index": 114,
+    "method": "BFGS",
+    "original_false_success": true
+  },
+  {
+    "stream": "PolarNS_means:object_241015104249:uniform",
+    "index": 116,
+    "method": "BFGS",
+    "original_false_success": true
+  },
+  {
+    "stream": "PolarNS_means:object_241015104249:uniform",
+    "index": 117,
+    "method": "BFGS",
+    "original_false_success": true
+  },
+  {
+    "stream": "PolarNS_means:object_241015104249:uniform",
+    "index": 118,
+    "method": "BFGS",
+    "original_false_success": true
+  },
+  {
+    "stream": "PolarNS_means:object_241015104249:uniform",
+    "index": 119,
+    "method": "BFGS",
+    "original_false_success": true
+  },
+  {
+    "stream": "PolarNS_means:object_241015104249:uniform",
+    "index": 121,
+    "method": "BFGS",
+    "original_false_success": true
+  },
+  {
+    "stream": "PolarNS_means:object_241015104249:uniform",
+    "index": 124,
+    "method": "BFGS",
+    "original_false_success": true
+  },
+  {
+    "stream": "PolarNS_means:object_241015104249:uniform",
+    "index": 125,
+    "method": "BFGS",
+    "original_false_success": true
+  },
+  {
+    "stream": "PolarNS_means:object_241015104249:uniform",
+    "index": 126,
+    "method": "BFGS",
+    "original_false_success": true
+  },
+  {
+    "stream": "PolarNS_means:object_241015104249:uniform",
+    "index": 127,
+    "method": "BFGS",
+    "original_false_success": true
+  },
+  {
+    "stream": "PolarNS_means:object_241015104249:high_observed_DoLP",
+    "index": 2,
+    "method": "BFGS",
+    "original_false_success": true
+  },
+  {
+    "stream": "PolarNS_means:object_241015104249:high_observed_DoLP",
+    "index": 2,
+    "method": "L-BFGS-B",
+    "original_false_success": true
+  },
+  {
+    "stream": "PolarNS_means:object_241015104249:high_observed_DoLP",
+    "index": 3,
+    "method": "BFGS",
+    "original_false_success": true
+  },
+  {
+    "stream": "PolarNS_means:object_241015104249:high_observed_DoLP",
+    "index": 4,
+    "method": "BFGS",
+    "original_false_success": true
+  },
+  {
+    "stream": "PolarNS_means:object_241015104249:high_observed_DoLP",
+    "index": 5,
+    "method": "BFGS",
+    "original_false_success": true
+  },
+  {
+    "stream": "PolarNS_means:object_241015104249:high_observed_DoLP",
+    "index": 6,
+    "method": "BFGS",
+    "original_false_success": true
+  },
+  {
+    "stream": "PolarNS_means:object_241015104249:high_observed_DoLP",
+    "index": 6,
+    "method": "L-BFGS-B",
+    "original_false_success": true
+  },
+  {
+    "stream": "PolarNS_means:object_241015104249:high_observed_DoLP",
+    "index": 7,
+    "method": "BFGS",
+    "original_false_success": true
+  },
+  {
+    "stream": "PolarNS_means:object_241015104249:high_observed_DoLP",
+    "index": 7,
+    "method": "L-BFGS-B",
+    "original_false_success": true
+  },
+  {
+    "stream": "PolarNS_means:object_241015104249:high_observed_DoLP",
+    "index": 8,
+    "method": "BFGS",
+    "original_false_success": true
+  },
+  {
+    "stream": "PolarNS_means:object_241015104249:high_observed_DoLP",
+    "index": 8,
+    "method": "L-BFGS-B",
+    "original_false_success": true
+  },
+  {
+    "stream": "PolarNS_means:object_241015104249:high_observed_DoLP",
+    "index": 9,
+    "method": "BFGS",
+    "original_false_success": true
+  },
+  {
+    "stream": "PolarNS_means:object_241015104249:high_observed_DoLP",
+    "index": 9,
+    "method": "L-BFGS-B",
+    "original_false_success": true
+  },
+  {
+    "stream": "PolarNS_means:object_241015104249:high_observed_DoLP",
+    "index": 10,
+    "method": "BFGS",
+    "original_false_success": true
+  },
+  {
+    "stream": "PolarNS_means:object_241015104249:high_observed_DoLP",
+    "index": 10,
+    "method": "L-BFGS-B",
+    "original_false_success": true
+  },
+  {
+    "stream": "PolarNS_means:object_241015104249:high_observed_DoLP",
+    "index": 11,
+    "method": "BFGS",
+    "original_false_success": true
+  },
+  {
+    "stream": "PolarNS_means:object_241015104249:high_observed_DoLP",
+    "index": 11,
+    "method": "L-BFGS-B",
+    "original_false_success": true
+  },
+  {
+    "stream": "PolarNS_means:object_241015104249:high_observed_DoLP",
+    "index": 12,
+    "method": "BFGS",
+    "original_false_success": true
+  },
+  {
+    "stream": "PolarNS_means:object_241015104249:high_observed_DoLP",
+    "index": 12,
+    "method": "L-BFGS-B",
+    "original_false_success": true
+  },
+  {
+    "stream": "PolarNS_means:object_241015104249:high_observed_DoLP",
+    "index": 13,
+    "method": "BFGS",
+    "original_false_success": true
+  },
+  {
+    "stream": "PolarNS_means:object_241015104249:high_observed_DoLP",
+    "index": 13,
+    "method": "L-BFGS-B",
+    "original_false_success": true
+  },
+  {
+    "stream": "PolarNS_means:object_241015104249:high_observed_DoLP",
+    "index": 14,
+    "method": "BFGS",
+    "original_false_success": true
+  },
+  {
+    "stream": "PolarNS_means:object_241015104249:high_observed_DoLP",
+    "index": 14,
+    "method": "L-BFGS-B",
+    "original_false_success": true
+  },
+  {
+    "stream": "PolarNS_means:object_241015104249:high_observed_DoLP",
+    "index": 15,
+    "method": "BFGS",
+    "original_false_success": true
+  },
+  {
+    "stream": "PolarNS_means:object_241015104249:high_observed_DoLP",
+    "index": 15,
+    "method": "L-BFGS-B",
+    "original_false_success": true
+  },
+  {
+    "stream": "PolarNS_means:object_241015104249:high_observed_DoLP",
+    "index": 16,
+    "method": "BFGS",
+    "original_false_success": true
+  },
+  {
+    "stream": "PolarNS_means:object_241015104249:high_observed_DoLP",
+    "index": 16,
+    "method": "L-BFGS-B",
+    "original_false_success": true
+  },
+  {
+    "stream": "PolarNS_means:object_241015104249:high_observed_DoLP",
+    "index": 17,
+    "method": "BFGS",
+    "original_false_success": true
+  },
+  {
+    "stream": "PolarNS_means:object_241015104249:high_observed_DoLP",
+    "index": 17,
+    "method": "L-BFGS-B",
+    "original_false_success": true
+  },
+  {
+    "stream": "PolarNS_means:object_241015104249:high_observed_DoLP",
+    "index": 18,
+    "method": "BFGS",
+    "original_false_success": true
+  },
+  {
+    "stream": "PolarNS_means:object_241015104249:high_observed_DoLP",
+    "index": 18,
+    "method": "L-BFGS-B",
+    "original_false_success": true
+  },
+  {
+    "stream": "PolarNS_means:object_241015104249:high_observed_DoLP",
+    "index": 19,
+    "method": "BFGS",
+    "original_false_success": true
+  },
+  {
+    "stream": "PolarNS_means:object_241015104249:high_observed_DoLP",
+    "index": 19,
+    "method": "L-BFGS-B",
+    "original_false_success": true
+  },
+  {
+    "stream": "PolarNS_means:object_241015104249:high_observed_DoLP",
+    "index": 20,
+    "method": "BFGS",
+    "original_false_success": true
+  },
+  {
+    "stream": "PolarNS_means:object_241015104249:high_observed_DoLP",
+    "index": 20,
+    "method": "L-BFGS-B",
+    "original_false_success": true
+  },
+  {
+    "stream": "PolarNS_means:object_241015104249:high_observed_DoLP",
+    "index": 21,
+    "method": "BFGS",
+    "original_false_success": true
+  },
+  {
+    "stream": "PolarNS_means:object_241015104249:high_observed_DoLP",
+    "index": 21,
+    "method": "L-BFGS-B",
+    "original_false_success": true
+  },
+  {
+    "stream": "PolarNS_means:object_241015104249:high_observed_DoLP",
+    "index": 22,
+    "method": "BFGS",
+    "original_false_success": true
+  },
+  {
+    "stream": "PolarNS_means:object_241015104249:high_observed_DoLP",
+    "index": 22,
+    "method": "L-BFGS-B",
+    "original_false_success": true
+  },
+  {
+    "stream": "PolarNS_means:object_241015104249:high_observed_DoLP",
+    "index": 23,
+    "method": "BFGS",
+    "original_false_success": true
+  },
+  {
+    "stream": "PolarNS_means:object_241015104249:high_observed_DoLP",
+    "index": 23,
+    "method": "L-BFGS-B",
+    "original_false_success": true
+  },
+  {
+    "stream": "PolarNS_means:object_241015104249:high_observed_DoLP",
+    "index": 24,
+    "method": "BFGS",
+    "original_false_success": true
+  },
+  {
+    "stream": "PolarNS_means:object_241015104249:high_observed_DoLP",
+    "index": 24,
+    "method": "L-BFGS-B",
+    "original_false_success": true
+  },
+  {
+    "stream": "PolarNS_means:object_241015104249:high_observed_DoLP",
+    "index": 25,
+    "method": "BFGS",
+    "original_false_success": true
+  },
+  {
+    "stream": "PolarNS_means:object_241015104249:high_observed_DoLP",
+    "index": 25,
+    "method": "L-BFGS-B",
+    "original_false_success": true
+  },
+  {
+    "stream": "PolarNS_means:object_241015104249:high_observed_DoLP",
+    "index": 26,
+    "method": "BFGS",
+    "original_false_success": true
+  },
+  {
+    "stream": "PolarNS_means:object_241015104249:high_observed_DoLP",
+    "index": 26,
+    "method": "L-BFGS-B",
+    "original_false_success": true
+  },
+  {
+    "stream": "PolarNS_means:object_241015104249:high_observed_DoLP",
+    "index": 27,
+    "method": "BFGS",
+    "original_false_success": true
+  },
+  {
+    "stream": "PolarNS_means:object_241015104249:high_observed_DoLP",
+    "index": 27,
+    "method": "L-BFGS-B",
+    "original_false_success": true
+  },
+  {
+    "stream": "PolarNS_means:object_241015104249:high_observed_DoLP",
+    "index": 28,
+    "method": "BFGS",
+    "original_false_success": true
+  },
+  {
+    "stream": "PolarNS_means:object_241015104249:high_observed_DoLP",
+    "index": 28,
+    "method": "L-BFGS-B",
+    "original_false_success": true
+  },
+  {
+    "stream": "PolarNS_means:object_241015104249:high_observed_DoLP",
+    "index": 29,
+    "method": "BFGS",
+    "original_false_success": true
+  },
+  {
+    "stream": "PolarNS_means:object_241015104249:high_observed_DoLP",
+    "index": 29,
+    "method": "L-BFGS-B",
+    "original_false_success": true
+  },
+  {
+    "stream": "PolarNS_means:object_241015104249:high_observed_DoLP",
+    "index": 30,
+    "method": "BFGS",
+    "original_false_success": true
+  },
+  {
+    "stream": "PolarNS_means:object_241015104249:high_observed_DoLP",
+    "index": 30,
+    "method": "L-BFGS-B",
+    "original_false_success": true
+  },
+  {
+    "stream": "PolarNS_means:object_241015104249:high_observed_DoLP",
+    "index": 31,
+    "method": "BFGS",
+    "original_false_success": true
+  },
+  {
+    "stream": "PolarNS_means:object_241015104249:high_observed_DoLP",
+    "index": 31,
+    "method": "L-BFGS-B",
+    "original_false_success": true
+  },
+  {
+    "stream": "PolarNS_means:object_241015104249:high_observed_DoLP",
+    "index": 32,
+    "method": "BFGS",
+    "original_false_success": true
+  },
+  {
+    "stream": "PolarNS_means:object_241015104249:high_observed_DoLP",
+    "index": 32,
+    "method": "L-BFGS-B",
+    "original_false_success": true
+  },
+  {
+    "stream": "PolarNS_means:object_241015104249:high_observed_DoLP",
+    "index": 33,
+    "method": "BFGS",
+    "original_false_success": true
+  },
+  {
+    "stream": "PolarNS_means:object_241015104249:high_observed_DoLP",
+    "index": 33,
+    "method": "L-BFGS-B",
+    "original_false_success": true
+  },
+  {
+    "stream": "PolarNS_means:object_241015104249:high_observed_DoLP",
+    "index": 34,
+    "method": "BFGS",
+    "original_false_success": true
+  },
+  {
+    "stream": "PolarNS_means:object_241015104249:high_observed_DoLP",
+    "index": 34,
+    "method": "L-BFGS-B",
+    "original_false_success": true
+  },
+  {
+    "stream": "PolarNS_means:object_241015104249:high_observed_DoLP",
+    "index": 35,
+    "method": "BFGS",
+    "original_false_success": true
+  },
+  {
+    "stream": "PolarNS_means:object_241015104249:high_observed_DoLP",
+    "index": 35,
+    "method": "L-BFGS-B",
+    "original_false_success": true
+  },
+  {
+    "stream": "PolarNS_means:object_241015104249:high_observed_DoLP",
+    "index": 36,
+    "method": "BFGS",
+    "original_false_success": true
+  },
+  {
+    "stream": "PolarNS_means:object_241015104249:high_observed_DoLP",
+    "index": 36,
+    "method": "L-BFGS-B",
+    "original_false_success": true
+  },
+  {
+    "stream": "PolarNS_means:object_241015104249:high_observed_DoLP",
+    "index": 37,
+    "method": "BFGS",
+    "original_false_success": true
+  },
+  {
+    "stream": "PolarNS_means:object_241015104249:high_observed_DoLP",
+    "index": 37,
+    "method": "L-BFGS-B",
+    "original_false_success": true
+  },
+  {
+    "stream": "PolarNS_means:object_241015104249:high_observed_DoLP",
+    "index": 38,
+    "method": "BFGS",
+    "original_false_success": true
+  },
+  {
+    "stream": "PolarNS_means:object_241015104249:high_observed_DoLP",
+    "index": 38,
+    "method": "L-BFGS-B",
+    "original_false_success": true
+  },
+  {
+    "stream": "PolarNS_means:object_241015104249:high_observed_DoLP",
+    "index": 39,
+    "method": "BFGS",
+    "original_false_success": true
+  },
+  {
+    "stream": "PolarNS_means:object_241015104249:high_observed_DoLP",
+    "index": 39,
+    "method": "L-BFGS-B",
+    "original_false_success": true
+  },
+  {
+    "stream": "PolarNS_means:object_241015104249:high_observed_DoLP",
+    "index": 40,
+    "method": "BFGS",
+    "original_false_success": true
+  },
+  {
+    "stream": "PolarNS_means:object_241015104249:high_observed_DoLP",
+    "index": 40,
+    "method": "L-BFGS-B",
+    "original_false_success": true
+  },
+  {
+    "stream": "PolarNS_means:object_241015104249:high_observed_DoLP",
+    "index": 41,
+    "method": "BFGS",
+    "original_false_success": true
+  },
+  {
+    "stream": "PolarNS_means:object_241015104249:high_observed_DoLP",
+    "index": 41,
+    "method": "L-BFGS-B",
+    "original_false_success": true
+  },
+  {
+    "stream": "PolarNS_means:object_241015104249:high_observed_DoLP",
+    "index": 42,
+    "method": "BFGS",
+    "original_false_success": true
+  },
+  {
+    "stream": "PolarNS_means:object_241015104249:high_observed_DoLP",
+    "index": 42,
+    "method": "L-BFGS-B",
+    "original_false_success": true
+  },
+  {
+    "stream": "PolarNS_means:object_241015104249:high_observed_DoLP",
+    "index": 43,
+    "method": "BFGS",
+    "original_false_success": true
+  },
+  {
+    "stream": "PolarNS_means:object_241015104249:high_observed_DoLP",
+    "index": 43,
+    "method": "L-BFGS-B",
+    "original_false_success": true
+  },
+  {
+    "stream": "PolarNS_means:object_241015104249:high_observed_DoLP",
+    "index": 44,
+    "method": "BFGS",
+    "original_false_success": true
+  },
+  {
+    "stream": "PolarNS_means:object_241015104249:high_observed_DoLP",
+    "index": 44,
+    "method": "L-BFGS-B",
+    "original_false_success": true
+  },
+  {
+    "stream": "PolarNS_means:object_241015104249:high_observed_DoLP",
+    "index": 45,
+    "method": "BFGS",
+    "original_false_success": true
+  },
+  {
+    "stream": "PolarNS_means:object_241015104249:high_observed_DoLP",
+    "index": 45,
+    "method": "L-BFGS-B",
+    "original_false_success": true
+  },
+  {
+    "stream": "PolarNS_means:object_241015104249:high_observed_DoLP",
+    "index": 46,
+    "method": "BFGS",
+    "original_false_success": true
+  },
+  {
+    "stream": "PolarNS_means:object_241015104249:high_observed_DoLP",
+    "index": 46,
+    "method": "L-BFGS-B",
+    "original_false_success": true
+  },
+  {
+    "stream": "PolarNS_means:object_241015104249:high_observed_DoLP",
+    "index": 47,
+    "method": "BFGS",
+    "original_false_success": true
+  },
+  {
+    "stream": "PolarNS_means:object_241015104249:high_observed_DoLP",
+    "index": 47,
+    "method": "L-BFGS-B",
+    "original_false_success": true
+  },
+  {
+    "stream": "PolarNS_means:object_241015104249:high_observed_DoLP",
+    "index": 48,
+    "method": "BFGS",
+    "original_false_success": true
+  },
+  {
+    "stream": "PolarNS_means:object_241015104249:high_observed_DoLP",
+    "index": 48,
+    "method": "L-BFGS-B",
+    "original_false_success": true
+  },
+  {
+    "stream": "PolarNS_means:object_241015104249:high_observed_DoLP",
+    "index": 49,
+    "method": "BFGS",
+    "original_false_success": true
+  },
+  {
+    "stream": "PolarNS_means:object_241015104249:high_observed_DoLP",
+    "index": 49,
+    "method": "L-BFGS-B",
+    "original_false_success": true
+  },
+  {
+    "stream": "PolarNS_means:object_241015104249:high_observed_DoLP",
+    "index": 50,
+    "method": "BFGS",
+    "original_false_success": true
+  },
+  {
+    "stream": "PolarNS_means:object_241015104249:high_observed_DoLP",
+    "index": 50,
+    "method": "L-BFGS-B",
+    "original_false_success": true
+  },
+  {
+    "stream": "PolarNS_means:object_241015104249:high_observed_DoLP",
+    "index": 51,
+    "method": "BFGS",
+    "original_false_success": true
+  },
+  {
+    "stream": "PolarNS_means:object_241015104249:high_observed_DoLP",
+    "index": 51,
+    "method": "L-BFGS-B",
+    "original_false_success": true
+  },
+  {
+    "stream": "PolarNS_means:object_241015104249:high_observed_DoLP",
+    "index": 52,
+    "method": "BFGS",
+    "original_false_success": true
+  },
+  {
+    "stream": "PolarNS_means:object_241015104249:high_observed_DoLP",
+    "index": 52,
+    "method": "L-BFGS-B",
+    "original_false_success": true
+  },
+  {
+    "stream": "PolarNS_means:object_241015104249:high_observed_DoLP",
+    "index": 53,
+    "method": "BFGS",
+    "original_false_success": true
+  },
+  {
+    "stream": "PolarNS_means:object_241015104249:high_observed_DoLP",
+    "index": 53,
+    "method": "L-BFGS-B",
+    "original_false_success": true
+  },
+  {
+    "stream": "PolarNS_means:object_241015104249:high_observed_DoLP",
+    "index": 54,
+    "method": "BFGS",
+    "original_false_success": true
+  },
+  {
+    "stream": "PolarNS_means:object_241015104249:high_observed_DoLP",
+    "index": 54,
+    "method": "L-BFGS-B",
+    "original_false_success": true
+  },
+  {
+    "stream": "PolarNS_means:object_241015104249:high_observed_DoLP",
+    "index": 55,
+    "method": "BFGS",
+    "original_false_success": true
+  },
+  {
+    "stream": "PolarNS_means:object_241015104249:high_observed_DoLP",
+    "index": 55,
+    "method": "L-BFGS-B",
+    "original_false_success": true
+  },
+  {
+    "stream": "PolarNS_means:object_241015104249:high_observed_DoLP",
+    "index": 56,
+    "method": "BFGS",
+    "original_false_success": true
+  },
+  {
+    "stream": "PolarNS_means:object_241015104249:high_observed_DoLP",
+    "index": 56,
+    "method": "L-BFGS-B",
+    "original_false_success": true
+  },
+  {
+    "stream": "PolarNS_means:object_241015104249:high_observed_DoLP",
+    "index": 57,
+    "method": "BFGS",
+    "original_false_success": true
+  },
+  {
+    "stream": "PolarNS_means:object_241015104249:high_observed_DoLP",
+    "index": 57,
+    "method": "L-BFGS-B",
+    "original_false_success": true
+  },
+  {
+    "stream": "PolarNS_means:object_241015104249:high_observed_DoLP",
+    "index": 58,
+    "method": "BFGS",
+    "original_false_success": true
+  },
+  {
+    "stream": "PolarNS_means:object_241015104249:high_observed_DoLP",
+    "index": 58,
+    "method": "L-BFGS-B",
+    "original_false_success": true
+  },
+  {
+    "stream": "PolarNS_means:object_241015104249:high_observed_DoLP",
+    "index": 59,
+    "method": "BFGS",
+    "original_false_success": true
+  },
+  {
+    "stream": "PolarNS_means:object_241015104249:high_observed_DoLP",
+    "index": 59,
+    "method": "L-BFGS-B",
+    "original_false_success": true
+  },
+  {
+    "stream": "PolarNS_means:object_241015104249:high_observed_DoLP",
+    "index": 60,
+    "method": "BFGS",
+    "original_false_success": true
+  },
+  {
+    "stream": "PolarNS_means:object_241015104249:high_observed_DoLP",
+    "index": 60,
+    "method": "L-BFGS-B",
+    "original_false_success": true
+  },
+  {
+    "stream": "PolarNS_means:object_241015104249:high_observed_DoLP",
+    "index": 61,
+    "method": "BFGS",
+    "original_false_success": true
+  },
+  {
+    "stream": "PolarNS_means:object_241015104249:high_observed_DoLP",
+    "index": 61,
+    "method": "L-BFGS-B",
+    "original_false_success": true
+  },
+  {
+    "stream": "PolarNS_means:object_241015104249:high_observed_DoLP",
+    "index": 62,
+    "method": "BFGS",
+    "original_false_success": true
+  },
+  {
+    "stream": "PolarNS_means:object_241015104249:high_observed_DoLP",
+    "index": 62,
+    "method": "L-BFGS-B",
+    "original_false_success": true
+  },
+  {
+    "stream": "PolarNS_means:object_241015104249:high_observed_DoLP",
+    "index": 63,
+    "method": "BFGS",
+    "original_false_success": true
+  },
+  {
+    "stream": "PolarNS_means:object_241015104249:high_observed_DoLP",
+    "index": 63,
+    "method": "L-BFGS-B",
+    "original_false_success": true
+  },
+  {
+    "stream": "PolarNS_means:scene_241021103114:high_observed_DoLP",
+    "index": 56,
+    "method": "BFGS",
+    "original_false_success": true
+  },
+  {
+    "stream": "PolarNS_means:scene_241021103114:high_observed_DoLP",
+    "index": 57,
+    "method": "BFGS",
+    "original_false_success": true
+  },
+  {
+    "stream": "PolarNS_means:scene_241021103114:high_observed_DoLP",
+    "index": 57,
+    "method": "L-BFGS-B",
+    "original_false_success": true
+  },
+  {
+    "stream": "PolarNS_means:scene_241021103114:high_observed_DoLP",
+    "index": 58,
+    "method": "BFGS",
+    "original_false_success": true
+  },
+  {
+    "stream": "PolarNS_means:scene_241021103114:high_observed_DoLP",
+    "index": 58,
+    "method": "L-BFGS-B",
+    "original_false_success": true
+  },
+  {
+    "stream": "PolarNS_means:scene_241021103114:high_observed_DoLP",
+    "index": 59,
+    "method": "BFGS",
+    "original_false_success": true
+  },
+  {
+    "stream": "PolarNS_means:scene_241021103114:high_observed_DoLP",
+    "index": 59,
+    "method": "L-BFGS-B",
+    "original_false_success": true
+  },
+  {
+    "stream": "PolarNS_means:scene_241021103114:high_observed_DoLP",
+    "index": 60,
+    "method": "BFGS",
+    "original_false_success": true
+  },
+  {
+    "stream": "PolarNS_means:scene_241021103114:high_observed_DoLP",
+    "index": 60,
+    "method": "L-BFGS-B",
+    "original_false_success": true
+  },
+  {
+    "stream": "PolarNS_means:scene_241021103114:high_observed_DoLP",
+    "index": 63,
+    "method": "BFGS",
+    "original_false_success": true
+  },
+  {
+    "stream": "PolarNS_means:scene_241021103114:high_observed_DoLP",
+    "index": 63,
+    "method": "L-BFGS-B",
+    "original_false_success": true
+  },
+  {
+    "stream": "PolarBurstSR:0:G1:uniform:8",
+    "index": 1,
+    "method": "L-BFGS-B",
+    "original_false_success": true
+  },
+  {
+    "stream": "PolarBurstSR:0:G1:uniform:8",
+    "index": 2,
+    "method": "L-BFGS-B",
+    "original_false_success": true
+  },
+  {
+    "stream": "PolarBurstSR:0:G1:uniform:8",
+    "index": 3,
+    "method": "L-BFGS-B",
+    "original_false_success": true
+  },
+  {
+    "stream": "PolarBurstSR:0:G1:uniform:8",
+    "index": 5,
+    "method": "L-BFGS-B",
+    "original_false_success": true
+  },
+  {
+    "stream": "PolarBurstSR:0:G1:uniform:8",
+    "index": 6,
+    "method": "L-BFGS-B",
+    "original_false_success": true
+  },
+  {
+    "stream": "PolarBurstSR:0:G1:uniform:8",
+    "index": 7,
+    "method": "L-BFGS-B",
+    "original_false_success": true
+  },
+  {
+    "stream": "PolarBurstSR:0:G1:uniform:8",
+    "index": 13,
+    "method": "L-BFGS-B",
+    "original_false_success": true
+  },
+  {
+    "stream": "PolarBurstSR:0:G1:high_observed_DoLP:0",
+    "index": 1,
+    "method": "L-BFGS-B",
+    "original_false_success": true
+  },
+  {
+    "stream": "PolarBurstSR:0:G1:high_observed_DoLP:0",
+    "index": 2,
+    "method": "L-BFGS-B",
+    "original_false_success": true
+  },
+  {
+    "stream": "PolarBurstSR:0:G1:high_observed_DoLP:0",
+    "index": 3,
+    "method": "L-BFGS-B",
+    "original_false_success": true
+  },
+  {
+    "stream": "PolarBurstSR:0:G1:high_observed_DoLP:0",
+    "index": 5,
+    "method": "L-BFGS-B",
+    "original_false_success": true
+  },
+  {
+    "stream": "PolarBurstSR:0:G1:high_observed_DoLP:0",
+    "index": 6,
+    "method": "L-BFGS-B",
+    "original_false_success": true
+  },
+  {
+    "stream": "PolarBurstSR:0:G1:high_observed_DoLP:0",
+    "index": 7,
+    "method": "L-BFGS-B",
+    "original_false_success": true
+  },
+  {
+    "stream": "PolarBurstSR:0:G1:high_observed_DoLP:0",
+    "index": 13,
+    "method": "L-BFGS-B",
+    "original_false_success": true
+  },
+  {
+    "stream": "PolarBurstSR:0:G1:high_observed_DoLP:1",
+    "index": 2,
+    "method": "L-BFGS-B",
+    "original_false_success": true
+  },
+  {
+    "stream": "PolarBurstSR:0:G1:high_observed_DoLP:1",
+    "index": 3,
+    "method": "L-BFGS-B",
+    "original_false_success": true
+  },
+  {
+    "stream": "PolarBurstSR:0:G1:high_observed_DoLP:1",
+    "index": 4,
+    "method": "L-BFGS-B",
+    "original_false_success": true
+  },
+  {
+    "stream": "PolarBurstSR:0:G1:high_observed_DoLP:1",
+    "index": 5,
+    "method": "L-BFGS-B",
+    "original_false_success": true
+  },
+  {
+    "stream": "PolarBurstSR:0:G1:high_observed_DoLP:1",
+    "index": 6,
+    "method": "L-BFGS-B",
+    "original_false_success": true
+  },
+  {
+    "stream": "PolarBurstSR:0:G1:high_observed_DoLP:1",
+    "index": 7,
+    "method": "L-BFGS-B",
+    "original_false_success": true
+  },
+  {
+    "stream": "PolarBurstSR:0:G1:high_observed_DoLP:1",
+    "index": 8,
+    "method": "L-BFGS-B",
+    "original_false_success": true
+  },
+  {
+    "stream": "PolarBurstSR:0:G1:high_observed_DoLP:1",
+    "index": 9,
+    "method": "L-BFGS-B",
+    "original_false_success": true
+  },
+  {
+    "stream": "PolarBurstSR:0:G1:high_observed_DoLP:1",
+    "index": 12,
+    "method": "L-BFGS-B",
+    "original_false_success": true
+  },
+  {
+    "stream": "PolarBurstSR:0:G1:high_observed_DoLP:1",
+    "index": 13,
+    "method": "L-BFGS-B",
+    "original_false_success": true
+  },
+  {
+    "stream": "PolarBurstSR:0:G2:high_observed_DoLP:0",
+    "index": 1,
+    "method": "L-BFGS-B",
+    "original_false_success": true
+  },
+  {
+    "stream": "PolarBurstSR:0:G2:high_observed_DoLP:0",
+    "index": 3,
+    "method": "L-BFGS-B",
+    "original_false_success": true
+  },
+  {
+    "stream": "PolarBurstSR:0:G2:high_observed_DoLP:0",
+    "index": 6,
+    "method": "L-BFGS-B",
+    "original_false_success": true
+  },
+  {
+    "stream": "PolarBurstSR:0:G2:high_observed_DoLP:0",
+    "index": 7,
+    "method": "L-BFGS-B",
+    "original_false_success": true
+  },
+  {
+    "stream": "PolarBurstSR:0:G2:high_observed_DoLP:0",
+    "index": 8,
+    "method": "L-BFGS-B",
+    "original_false_success": true
+  },
+  {
+    "stream": "PolarBurstSR:0:G2:high_observed_DoLP:0",
+    "index": 12,
+    "method": "L-BFGS-B",
+    "original_false_success": true
+  },
+  {
+    "stream": "PolarBurstSR:0:G2:high_observed_DoLP:0",
+    "index": 13,
+    "method": "L-BFGS-B",
+    "original_false_success": true
+  },
+  {
+    "stream": "PolarBurstSR:0:G2:high_observed_DoLP:2",
+    "index": 1,
+    "method": "L-BFGS-B",
+    "original_false_success": true
+  },
+  {
+    "stream": "PolarBurstSR:0:G2:high_observed_DoLP:2",
+    "index": 2,
+    "method": "L-BFGS-B",
+    "original_false_success": true
+  },
+  {
+    "stream": "PolarBurstSR:0:G2:high_observed_DoLP:2",
+    "index": 3,
+    "method": "L-BFGS-B",
+    "original_false_success": true
+  },
+  {
+    "stream": "PolarBurstSR:0:G2:high_observed_DoLP:2",
+    "index": 5,
+    "method": "L-BFGS-B",
+    "original_false_success": true
+  },
+  {
+    "stream": "PolarBurstSR:0:G2:high_observed_DoLP:2",
+    "index": 6,
+    "method": "L-BFGS-B",
+    "original_false_success": true
+  },
+  {
+    "stream": "PolarBurstSR:0:G2:high_observed_DoLP:2",
+    "index": 7,
+    "method": "L-BFGS-B",
+    "original_false_success": true
+  },
+  {
+    "stream": "PolarBurstSR:0:G2:high_observed_DoLP:2",
+    "index": 8,
+    "method": "L-BFGS-B",
+    "original_false_success": true
+  },
+  {
+    "stream": "PolarBurstSR:0:G2:high_observed_DoLP:2",
+    "index": 12,
+    "method": "L-BFGS-B",
+    "original_false_success": true
+  },
+  {
+    "stream": "PolarBurstSR:0:G2:high_observed_DoLP:2",
+    "index": 13,
+    "method": "L-BFGS-B",
+    "original_false_success": true
+  },
+  {
+    "stream": "PolarBurstSR:0:G2:high_observed_DoLP:5",
+    "index": 7,
+    "method": "BFGS",
+    "original_false_success": true
+  },
+  {
+    "stream": "PolarBurstSR:0:G2:high_observed_DoLP:5",
+    "index": 8,
+    "method": "BFGS",
+    "original_false_success": true
+  },
+  {
+    "stream": "PolarBurstSR:0:G2:high_observed_DoLP:5",
+    "index": 9,
+    "method": "BFGS",
+    "original_false_success": true
+  },
+  {
+    "stream": "PolarBurstSR:0:G2:high_observed_DoLP:5",
+    "index": 10,
+    "method": "BFGS",
+    "original_false_success": true
+  },
+  {
+    "stream": "PolarBurstSR:0:G2:high_observed_DoLP:5",
+    "index": 11,
+    "method": "BFGS",
+    "original_false_success": true
+  },
+  {
+    "stream": "PolarBurstSR:0:G2:high_observed_DoLP:5",
+    "index": 13,
+    "method": "BFGS",
+    "original_false_success": true
+  },
+  {
+    "stream": "PolarBurstSR:0:G2:high_observed_DoLP:6",
+    "index": 8,
+    "method": "L-BFGS-B",
+    "original_false_success": true
+  },
+  {
+    "stream": "PolarBurstSR:0:G2:high_observed_DoLP:6",
+    "index": 10,
+    "method": "L-BFGS-B",
+    "original_false_success": true
+  },
+  {
+    "stream": "PolarBurstSR:0:G2:high_observed_DoLP:6",
+    "index": 11,
+    "method": "L-BFGS-B",
+    "original_false_success": true
+  },
+  {
+    "stream": "PolarBurstSR:0:G2:high_observed_DoLP:6",
+    "index": 13,
+    "method": "L-BFGS-B",
+    "original_false_success": true
+  },
+  {
+    "stream": "PolarBurstSR:0:B:high_observed_DoLP:0",
+    "index": 2,
+    "method": "L-BFGS-B",
+    "original_false_success": true
+  },
+  {
+    "stream": "PolarBurstSR:0:B:high_observed_DoLP:0",
+    "index": 3,
+    "method": "L-BFGS-B",
+    "original_false_success": true
+  },
+  {
+    "stream": "PolarBurstSR:0:B:high_observed_DoLP:0",
+    "index": 4,
+    "method": "L-BFGS-B",
+    "original_false_success": true
+  },
+  {
+    "stream": "PolarBurstSR:0:B:high_observed_DoLP:0",
+    "index": 5,
+    "method": "L-BFGS-B",
+    "original_false_success": true
+  },
+  {
+    "stream": "PolarBurstSR:0:B:high_observed_DoLP:0",
+    "index": 6,
+    "method": "L-BFGS-B",
+    "original_false_success": true
+  },
+  {
+    "stream": "PolarBurstSR:0:B:high_observed_DoLP:0",
+    "index": 8,
+    "method": "L-BFGS-B",
+    "original_false_success": true
+  },
+  {
+    "stream": "PolarBurstSR:0:B:high_observed_DoLP:0",
+    "index": 9,
+    "method": "L-BFGS-B",
+    "original_false_success": true
+  },
+  {
+    "stream": "PolarBurstSR:0:B:high_observed_DoLP:0",
+    "index": 12,
+    "method": "L-BFGS-B",
+    "original_false_success": true
+  },
+  {
+    "stream": "PolarBurstSR:0:B:high_observed_DoLP:1",
+    "index": 2,
+    "method": "L-BFGS-B",
+    "original_false_success": true
+  },
+  {
+    "stream": "PolarBurstSR:0:B:high_observed_DoLP:1",
+    "index": 3,
+    "method": "L-BFGS-B",
+    "original_false_success": true
+  },
+  {
+    "stream": "PolarBurstSR:0:B:high_observed_DoLP:1",
+    "index": 4,
+    "method": "L-BFGS-B",
+    "original_false_success": true
+  },
+  {
+    "stream": "PolarBurstSR:0:B:high_observed_DoLP:1",
+    "index": 5,
+    "method": "L-BFGS-B",
+    "original_false_success": true
+  },
+  {
+    "stream": "PolarBurstSR:0:B:high_observed_DoLP:1",
+    "index": 6,
+    "method": "L-BFGS-B",
+    "original_false_success": true
+  },
+  {
+    "stream": "PolarBurstSR:0:B:high_observed_DoLP:1",
+    "index": 7,
+    "method": "L-BFGS-B",
+    "original_false_success": true
+  },
+  {
+    "stream": "PolarBurstSR:0:B:high_observed_DoLP:1",
+    "index": 9,
+    "method": "L-BFGS-B",
+    "original_false_success": true
+  },
+  {
+    "stream": "PolarBurstSR:0:B:high_observed_DoLP:1",
+    "index": 12,
+    "method": "L-BFGS-B",
+    "original_false_success": true
+  },
+  {
+    "stream": "PolarBurstSR:0:B:high_observed_DoLP:1",
+    "index": 13,
+    "method": "L-BFGS-B",
+    "original_false_success": true
+  },
+  {
+    "stream": "PolarBurstSR:0:B:high_observed_DoLP:3",
+    "index": 11,
+    "method": "L-BFGS-B",
+    "original_false_success": true
+  },
+  {
+    "stream": "PolarBurstSR:0:B:high_observed_DoLP:4",
+    "index": 9,
+    "method": "L-BFGS-B",
+    "original_false_success": true
+  },
+  {
+    "stream": "PolarBurstSR:0:B:high_observed_DoLP:4",
+    "index": 10,
+    "method": "L-BFGS-B",
+    "original_false_success": true
+  },
+  {
+    "stream": "PolarBurstSR:0:B:high_observed_DoLP:4",
+    "index": 11,
+    "method": "L-BFGS-B",
+    "original_false_success": true
+  },
+  {
+    "stream": "PolarBurstSR:0:B:high_observed_DoLP:4",
+    "index": 12,
+    "method": "L-BFGS-B",
+    "original_false_success": true
+  },
+  {
+    "stream": "PolarBurstSR:0:B:high_observed_DoLP:5",
+    "index": 8,
+    "method": "BFGS",
+    "original_false_success": true
+  },
+  {
+    "stream": "PolarBurstSR:0:B:high_observed_DoLP:5",
+    "index": 10,
+    "method": "BFGS",
+    "original_false_success": true
+  },
+  {
+    "stream": "PolarBurstSR:1:G1:high_observed_DoLP:0",
+    "index": 9,
+    "method": "BFGS",
+    "original_false_success": true
+  },
+  {
+    "stream": "PolarBurstSR:1:G1:high_observed_DoLP:0",
+    "index": 9,
+    "method": "L-BFGS-B",
+    "original_false_success": true
+  },
+  {
+    "stream": "PolarBurstSR:1:G1:high_observed_DoLP:0",
+    "index": 10,
+    "method": "BFGS",
+    "original_false_success": true
+  },
+  {
+    "stream": "PolarBurstSR:1:G1:high_observed_DoLP:0",
+    "index": 10,
+    "method": "L-BFGS-B",
+    "original_false_success": true
+  },
+  {
+    "stream": "PolarBurstSR:1:G1:high_observed_DoLP:2",
+    "index": 9,
+    "method": "BFGS",
+    "original_false_success": true
+  },
+  {
+    "stream": "PolarBurstSR:1:G1:high_observed_DoLP:2",
+    "index": 9,
+    "method": "L-BFGS-B",
+    "original_false_success": true
+  },
+  {
+    "stream": "PolarBurstSR:1:G2:high_observed_DoLP:0",
+    "index": 4,
+    "method": "L-BFGS-B",
+    "original_false_success": true
+  },
+  {
+    "stream": "PolarBurstSR:1:G2:high_observed_DoLP:0",
+    "index": 9,
+    "method": "L-BFGS-B",
+    "original_false_success": true
+  },
+  {
+    "stream": "PolarBurstSR:1:G2:high_observed_DoLP:4",
+    "index": 7,
+    "method": "L-BFGS-B",
+    "original_false_success": true
+  },
+  {
+    "stream": "PolarBurstSR:1:G2:high_observed_DoLP:4",
+    "index": 12,
+    "method": "L-BFGS-B",
+    "original_false_success": true
+  },
+  {
+    "stream": "PolarBurstSR:1:G2:high_observed_DoLP:4",
+    "index": 13,
+    "method": "L-BFGS-B",
+    "original_false_success": true
+  },
+  {
+    "stream": "PolarBurstSR:1:G2:high_observed_DoLP:7",
+    "index": 4,
+    "method": "L-BFGS-B",
+    "original_false_success": true
+  },
+  {
+    "stream": "PolarBurstSR:1:G2:high_observed_DoLP:7",
+    "index": 6,
+    "method": "L-BFGS-B",
+    "original_false_success": true
+  },
+  {
+    "stream": "PolarBurstSR:1:G2:high_observed_DoLP:7",
+    "index": 8,
+    "method": "L-BFGS-B",
+    "original_false_success": true
+  },
+  {
+    "stream": "PolarBurstSR:1:G2:high_observed_DoLP:7",
+    "index": 10,
+    "method": "L-BFGS-B",
+    "original_false_success": true
+  },
+  {
+    "stream": "PolarBurstSR:1:G2:high_observed_DoLP:7",
+    "index": 11,
+    "method": "L-BFGS-B",
+    "original_false_success": true
+  },
+  {
+    "stream": "PolarBurstSR:1:G2:high_observed_DoLP:7",
+    "index": 12,
+    "method": "L-BFGS-B",
+    "original_false_success": true
+  },
+  {
+    "stream": "PolarBurstSR:1:G2:high_observed_DoLP:7",
+    "index": 13,
+    "method": "L-BFGS-B",
+    "original_false_success": true
+  },
+  {
+    "stream": "PolarBurstSR:1:B:uniform:8",
+    "index": 11,
+    "method": "L-BFGS-B",
+    "original_false_success": true
+  },
+  {
+    "stream": "PolarBurstSR:1:B:uniform:8",
+    "index": 12,
+    "method": "L-BFGS-B",
+    "original_false_success": true
+  },
+  {
+    "stream": "PolarBurstSR:1:B:high_observed_DoLP:0",
+    "index": 8,
+    "method": "BFGS",
+    "original_false_success": true
+  },
+  {
+    "stream": "PolarBurstSR:1:B:high_observed_DoLP:0",
+    "index": 10,
+    "method": "BFGS",
+    "original_false_success": true
+  },
+  {
+    "stream": "PolarBurstSR:1:B:high_observed_DoLP:0",
+    "index": 11,
+    "method": "BFGS",
+    "original_false_success": true
+  },
+  {
+    "stream": "PolarBurstSR:1:B:high_observed_DoLP:0",
+    "index": 12,
+    "method": "BFGS",
+    "original_false_success": true
+  },
+  {
+    "stream": "PolarBurstSR:1:B:high_observed_DoLP:0",
+    "index": 13,
+    "method": "BFGS",
+    "original_false_success": true
+  },
+  {
+    "stream": "PolarBurstSR:1:B:high_observed_DoLP:2",
+    "index": 9,
+    "method": "L-BFGS-B",
+    "original_false_success": true
+  },
+  {
+    "stream": "PolarBurstSR:1:B:high_observed_DoLP:2",
+    "index": 10,
+    "method": "L-BFGS-B",
+    "original_false_success": true
+  },
+  {
+    "stream": "PolarBurstSR:1:B:high_observed_DoLP:2",
+    "index": 11,
+    "method": "L-BFGS-B",
+    "original_false_success": true
+  },
+  {
+    "stream": "PolarBurstSR:1:B:high_observed_DoLP:2",
+    "index": 12,
+    "method": "L-BFGS-B",
+    "original_false_success": true
+  },
+  {
+    "stream": "PolarBurstSR:1:B:high_observed_DoLP:7",
+    "index": 0,
+    "method": "L-BFGS-B",
+    "original_false_success": true
+  },
+  {
+    "stream": "PolarBurstSR:2:R:high_observed_DoLP:0",
+    "index": 2,
+    "method": "L-BFGS-B",
+    "original_false_success": true
+  },
+  {
+    "stream": "PolarBurstSR:2:R:high_observed_DoLP:0",
+    "index": 3,
+    "method": "L-BFGS-B",
+    "original_false_success": true
+  },
+  {
+    "stream": "PolarBurstSR:2:R:high_observed_DoLP:0",
+    "index": 5,
+    "method": "L-BFGS-B",
+    "original_false_success": true
+  },
+  {
+    "stream": "PolarBurstSR:2:R:high_observed_DoLP:0",
+    "index": 7,
+    "method": "L-BFGS-B",
+    "original_false_success": true
+  },
+  {
+    "stream": "PolarBurstSR:2:R:high_observed_DoLP:0",
+    "index": 9,
+    "method": "L-BFGS-B",
+    "original_false_success": true
+  },
+  {
+    "stream": "PolarBurstSR:2:R:high_observed_DoLP:0",
+    "index": 11,
+    "method": "L-BFGS-B",
+    "original_false_success": true
+  },
+  {
+    "stream": "PolarBurstSR:2:R:high_observed_DoLP:0",
+    "index": 12,
+    "method": "L-BFGS-B",
+    "original_false_success": true
+  },
+  {
+    "stream": "PolarBurstSR:2:R:high_observed_DoLP:0",
+    "index": 13,
+    "method": "L-BFGS-B",
+    "original_false_success": true
+  },
+  {
+    "stream": "PolarBurstSR:2:B:high_observed_DoLP:0",
+    "index": 7,
+    "method": "L-BFGS-B",
+    "original_false_success": true
+  },
+  {
+    "stream": "PolarBurstSR:2:B:high_observed_DoLP:0",
+    "index": 11,
+    "method": "L-BFGS-B",
+    "original_false_success": true
+  },
+  {
+    "stream": "PolarBurstSR:2:B:high_observed_DoLP:5",
+    "index": 0,
+    "method": "L-BFGS-B",
+    "original_false_success": true
+  },
+  {
+    "stream": "PolarBurstSR:2:B:high_observed_DoLP:5",
+    "index": 1,
+    "method": "L-BFGS-B",
+    "original_false_success": true
+  },
+  {
+    "stream": "PolarBurstSR:2:B:high_observed_DoLP:5",
+    "index": 2,
+    "method": "L-BFGS-B",
+    "original_false_success": true
+  },
+  {
+    "stream": "PolarBurstSR:2:B:high_observed_DoLP:5",
+    "index": 10,
+    "method": "L-BFGS-B",
+    "original_false_success": true
+  },
+  {
+    "stream": "PolarBurstSR:2:B:high_observed_DoLP:5",
+    "index": 11,
+    "method": "L-BFGS-B",
+    "original_false_success": true
+  },
+  {
+    "stream": "PolarBurstSR:2:B:high_observed_DoLP:7",
+    "index": 4,
+    "method": "L-BFGS-B",
+    "original_false_success": true
+  },
+  {
+    "stream": "DeepSfP:box_f:uniform",
+    "index": 0,
+    "method": "BFGS",
+    "original_false_success": false
+  },
+  {
+    "stream": "DeepSfP:box_f:high_observed_DoLP",
+    "index": 21,
+    "method": "L-BFGS-B",
+    "original_false_success": false
+  },
+  {
+    "stream": "DeepSfP:father_christmas_f:uniform",
+    "index": 107,
+    "method": "BFGS",
+    "original_false_success": false
+  },
+  {
+    "stream": "DeepSfP:horse_l:uniform",
+    "index": 65,
+    "method": "BFGS",
+    "original_false_success": false
+  },
+  {
+    "stream": "PolarNS_means:object_241015104249:uniform",
+    "index": 22,
+    "method": "L-BFGS-B",
+    "original_false_success": false
+  },
+  {
+    "stream": "PolarNS_means:object_241015104249:high_observed_DoLP",
+    "index": 44,
+    "method": "L-BFGS-B",
+    "original_false_success": true
+  },
+  {
+    "stream": "PolarNS_means:scene_241021103114:high_observed_DoLP",
+    "index": 2,
+    "method": "BFGS",
+    "original_false_success": false
+  },
+  {
+    "stream": "PolarBurstSR:0:R:uniform:6",
+    "index": 4,
+    "method": "BFGS",
+    "original_false_success": false
+  },
+  {
+    "stream": "PolarBurstSR:0:R:high_observed_DoLP:6",
+    "index": 13,
+    "method": "L-BFGS-B",
+    "original_false_success": false
+  },
+  {
+    "stream": "PolarBurstSR:0:G1:uniform:9",
+    "index": 9,
+    "method": "L-BFGS-B",
+    "original_false_success": false
+  },
+  {
+    "stream": "PolarBurstSR:0:G2:uniform:2",
+    "index": 5,
+    "method": "BFGS",
+    "original_false_success": false
+  },
+  {
+    "stream": "PolarBurstSR:0:G2:high_observed_DoLP:2",
+    "index": 0,
+    "method": "L-BFGS-B",
+    "original_false_success": false
+  },
+  {
+    "stream": "PolarBurstSR:0:B:uniform:4",
+    "index": 10,
+    "method": "L-BFGS-B",
+    "original_false_success": false
+  },
+  {
+    "stream": "PolarBurstSR:0:B:high_observed_DoLP:2",
+    "index": 6,
+    "method": "BFGS",
+    "original_false_success": false
+  },
+  {
+    "stream": "PolarBurstSR:1:R:uniform:5",
+    "index": 2,
+    "method": "BFGS",
+    "original_false_success": false
+  },
+  {
+    "stream": "PolarBurstSR:1:R:high_observed_DoLP:0",
+    "index": 11,
+    "method": "L-BFGS-B",
+    "original_false_success": false
+  },
+  {
+    "stream": "PolarBurstSR:1:G1:uniform:3",
+    "index": 7,
+    "method": "L-BFGS-B",
+    "original_false_success": false
+  },
+  {
+    "stream": "PolarBurstSR:1:G1:uniform:14",
+    "index": 3,
+    "method": "BFGS",
+    "original_false_success": false
+  },
+  {
+    "stream": "PolarBurstSR:1:G2:uniform:1",
+    "index": 13,
+    "method": "BFGS",
+    "original_false_success": false
+  },
+  {
+    "stream": "PolarBurstSR:1:G2:uniform:12",
+    "index": 8,
+    "method": "L-BFGS-B",
+    "original_false_success": false
+  },
+  {
+    "stream": "PolarBurstSR:1:B:uniform:1",
+    "index": 4,
+    "method": "L-BFGS-B",
+    "original_false_success": false
+  },
+  {
+    "stream": "PolarBurstSR:1:B:uniform:12",
+    "index": 0,
+    "method": "BFGS",
+    "original_false_success": false
+  },
+  {
+    "stream": "PolarBurstSR:1:B:high_observed_DoLP:7",
+    "index": 9,
+    "method": "L-BFGS-B",
+    "original_false_success": false
+  },
+  {
+    "stream": "PolarBurstSR:2:R:uniform:10",
+    "index": 5,
+    "method": "L-BFGS-B",
+    "original_false_success": false
+  },
+  {
+    "stream": "PolarBurstSR:2:R:high_observed_DoLP:5",
+    "index": 1,
+    "method": "BFGS",
+    "original_false_success": false
+  },
+  {
+    "stream": "PolarBurstSR:2:G1:uniform:7",
+    "index": 11,
+    "method": "BFGS",
+    "original_false_success": false
+  },
+  {
+    "stream": "PolarBurstSR:2:G1:high_observed_DoLP:2",
+    "index": 6,
+    "method": "L-BFGS-B",
+    "original_false_success": false
+  },
+  {
+    "stream": "PolarBurstSR:2:G2:uniform:5",
+    "index": 2,
+    "method": "L-BFGS-B",
+    "original_false_success": false
+  },
+  {
+    "stream": "PolarBurstSR:2:G2:uniform:15",
+    "index": 12,
+    "method": "BFGS",
+    "original_false_success": false
+  },
+  {
+    "stream": "PolarBurstSR:2:B:uniform:2",
+    "index": 8,
+    "method": "BFGS",
+    "original_false_success": false
+  },
+  {
+    "stream": "PolarBurstSR:2:B:uniform:13",
+    "index": 3,
+    "method": "L-BFGS-B",
+    "original_false_success": false
+  },
+  {
+    "stream": "PolarBurstSR:2:B:high_observed_DoLP:7",
+    "index": 13,
+    "method": "L-BFGS-B",
+    "original_false_success": false
+  }
+]

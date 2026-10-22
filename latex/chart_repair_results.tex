@@ -1,0 +1,30 @@
+\subsection{Coordinate repair with physical stopping controls}
+\label{sec:chartrepair}
+The real-data failures motivate a follow-up on the same observations. We develop the repair rule after inspecting the previous audit, then freeze it before evaluation. The inputs, ordering, and thresholds are retained. Every arm carries its own preceding endpoint. Repeating the raw warm and cold branches reproduces all 18\,568 stored real-data endpoints exactly in raw coordinates.
+
+For $r>1$, replacing $w$ by $C(w)=w/\|w\|^2$ preserves $F(w)$ and moves to the inner sheet. At fixed intensity and data, $\|\nabla_w\widetilde f(C(w))\|_2=r^2\|\nabla_w\widetilde f(w)\|_2$; the Jacobian condition number is unchanged. This relation follows from the paired preimages in Supplementary Section S6. A fresh solver invocation resets quasi-Newton memory. The fold and the dependence on intensity remain.
+
+We compare applying this switch before every warm-start solve with a physically audited repair. On a bound rejection, the latter uses the existing radial trial rule if the local negative-curvature gate holds; otherwise it switches an outer endpoint and restarts once. Inner nonfold failures remain rejected. A control restarts once from the cold initialization instead. A guarded variant follows the coordinate repair with standard projected-gradient steps in physical coordinates when the bound still rejects. This fallback uses step one, at most 64 updates, and the same $10^{-6}$ bound threshold. No reference optimum initializes any iterative arm. A standalone physical projected-gradient solver and the direct cone solution are additional controls. Supplementary Section S19 specifies the algorithm and accounting.
+
+\begin{table*}[!t]
+\caption{Frozen coordinate-repair follow-up. Inaccurate means nominal gap above $10^{-6}$, irrespective of native or monitored acceptance. Count pairs are BFGS/L-BFGS-B, each with 4\,642 released-data entries and 984 Fresnel frames. Audited arms reject any remaining inaccurate outputs. Physical controls are single algorithms, without a head-solver pair. FG counts exclude separately recorded physical audits and Hessians.}
+\label{tab:chartrepair}
+\centering\small\renewcommand{\arraystretch}{1.12}
+\begin{tabularx}{\textwidth}{@{}Xrrr@{}}\toprule
+Strategy & Released inaccurate & Fresnel inaccurate & Released native FG pairs\\\midrule
+Raw warm start & 127/168 & 9/7 & 92\,025/32\,235\\
+Cold start & 0/14 & 0/0 & 97\,801/29\,468\\
+Switch before each warm solve & 9/16 & 12/10 & 94\,974/32\,527\\
+Audited cold restart & 0/2 & 0/0 & 95\,791/33\,232\\
+Audited coordinate repair & 7/22 & 0/0 & 95\,640/33\,440\\
+Coordinate repair with physical fallback & 0/0 & 0/0 & 95\,635/33\,245\\
+Physical projected gradient & 0 & 0 & ---\\
+Direct cone solution & 0 & 0 & ---\\\bottomrule
+\end{tabularx}
+\end{table*}
+
+Table~\ref{tab:chartrepair} separates partial coordinate improvement from completed correction. Switching before each solve reduces released-data inaccurate endpoints from 295 to 25, but increases the Fresnel count from 16 to 22. The audited coordinate arm leaves 29 inaccurate released-data endpoints, all rejected. Adding physical fallback leaves none: BFGS and L-BFGS-B require respectively two and 15 fallback calls, with three and 22 projected updates in total. There are 4\,663/4\,704 physical-gradient queries in those guarded branches, including stopping audits. No real-data repair invokes the local curvature gate. In the Fresnel grid, each guarded solver uses seven full head-Hessian queries and 21 trial FG evaluations; neither requires physical fallback.
+
+A separate paired-endpoint audit applies the repair to the same 9\,284 historical warm endpoints, rather than changed continuation histories. Coordinate repair leaves 7/39 of the original 127/168 inaccurate endpoints; physical fallback removes those remaining 46. Audited cold restarting leaves 0/5. Thus the coordinate-only step corrects 249 of the 295 original failures, while full correction depends on the physical fallback. Independent PyTorch checks cover all 295 historical false successes and 32 controls; the largest output-preservation and gradient-transformation discrepancies are $1.74\times10^{-18}$ and $7.78\times10^{-16}$.
+
+The physical controls are substantially cheaper in this implementation. Across 4\,642 released entries, standalone projected gradient uses 9\,575 updates and 14\,217 physical-gradient queries, with no inaccurate or rejected outputs. Its observed time is 0.203 s, versus 4.64/1.35 s for the guarded head solvers and 0.0219 s for the direct cone solution. These timings describe one CPU pass in the stated implementation. Coordinate repair provides a partial remedy for existing head-based fits; the direct physical methods are more economical for this quadratic. All released-data repairs in this follow-up use first derivatives.

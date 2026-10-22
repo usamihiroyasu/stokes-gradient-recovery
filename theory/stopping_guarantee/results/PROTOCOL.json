@@ -1,0 +1,17 @@
+{
+  "at": "2026-10-21T23:37:47.679530+00:00",
+  "source_sha256": {
+    "theory/stopping_guarantee/certificate.py": "c571cd3bb6a90403a2f9f14a2fefe92b11f24ba8367cc91c5a6c3bce6306506c",
+    "theory/stopping_guarantee/checks.py": "a8d0f43b6762be48dffedd3815f15efd37b7c9cf78c9b3840c870ad514742bb9",
+    "verification/verify_warm_start.py": "6fd8492d1d585b09c83f99625d2a9b0c7b65a9a338c5424197ce2603b49a1bae",
+    "application/real_data/INPUTS.json": "a6fcf1f55c756b77fd8d60104ce1c043cf6c0a10c67941d28b235fcdebce42ef",
+    "application/real_data/RESULTS.json": "bacde3b06144515c0b8b09bb271ff99ec4e8046c130be4f4a93346e2281f2404"
+  },
+  "scope": "Theory validation, not a new optimizer comparison. Fixed 576 quadratics, 24 convex quartics, three derivative-error budgets, Decimal sharpness/counterexample families, and all 9284 existing warm endpoints. No adaptive grid expansion.",
+  "real_domain_Ibar": 8.0,
+  "environment": {
+    "python": "3.12.3",
+    "numpy": "2.5.4",
+    "scipy": "1.18.1"
+  }
+}

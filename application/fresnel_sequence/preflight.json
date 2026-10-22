@@ -1,0 +1,125 @@
+{
+  "monotone_gradient_finite_difference_max_error": 1.0283729423576915e-10,
+  "cone_SLSQP_checks": [
+    {
+      "sequence": 0,
+      "frame": 0,
+      "success": true,
+      "loss_difference": 1.9488208789775197e-14
+    },
+    {
+      "sequence": 0,
+      "frame": 10,
+      "success": true,
+      "loss_difference": 9.486769009248164e-19
+    },
+    {
+      "sequence": 0,
+      "frame": 20,
+      "success": true,
+      "loss_difference": 2.8139450947324562e-15
+    },
+    {
+      "sequence": 0,
+      "frame": 30,
+      "success": true,
+      "loss_difference": 1.0672615135404184e-19
+    },
+    {
+      "sequence": 0,
+      "frame": 40,
+      "success": true,
+      "loss_difference": 1.1511408146147595e-14
+    },
+    {
+      "sequence": 4,
+      "frame": 0,
+      "success": true,
+      "loss_difference": 1.747911482504025e-14
+    },
+    {
+      "sequence": 4,
+      "frame": 10,
+      "success": true,
+      "loss_difference": 3.6917083973131426e-17
+    },
+    {
+      "sequence": 4,
+      "frame": 20,
+      "success": true,
+      "loss_difference": 9.761478734701678e-16
+    },
+    {
+      "sequence": 4,
+      "frame": 30,
+      "success": true,
+      "loss_difference": 1.6771252355635147e-19
+    },
+    {
+      "sequence": 4,
+      "frame": 40,
+      "success": true,
+      "loss_difference": 1.4948112192492147e-14
+    },
+    {
+      "sequence": 12,
+      "frame": 0,
+      "success": true,
+      "loss_difference": 1.826909752691371e-14
+    },
+    {
+      "sequence": 12,
+      "frame": 10,
+      "success": true,
+      "loss_difference": 2.6020852139652106e-18
+    },
+    {
+      "sequence": 12,
+      "frame": 20,
+      "success": true,
+      "loss_difference": 2.0019047725951256e-15
+    },
+    {
+      "sequence": 12,
+      "frame": 30,
+      "success": true,
+      "loss_difference": 4.483718084313804e-16
+    },
+    {
+      "sequence": 12,
+      "frame": 40,
+      "success": true,
+      "loss_difference": 1.755294856947004e-14
+    },
+    {
+      "sequence": 16,
+      "frame": 0,
+      "success": true,
+      "loss_difference": 1.8303199532171063e-14
+    },
+    {
+      "sequence": 16,
+      "frame": 10,
+      "success": true,
+      "loss_difference": 4.336808689942018e-19
+    },
+    {
+      "sequence": 16,
+      "frame": 20,
+      "success": true,
+      "loss_difference": 4.794579175956132e-15
+    },
+    {
+      "sequence": 16,
+      "frame": 30,
+      "success": true,
+      "loss_difference": 6.5307606073934e-15
+    },
+    {
+      "sequence": 16,
+      "frame": 40,
+      "success": true,
+      "loss_difference": 1.8015103298019142e-14
+    }
+  ]
+}

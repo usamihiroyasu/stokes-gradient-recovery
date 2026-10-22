@@ -1,0 +1,32 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="350" viewBox="0 0 1200 350" role="img" aria-labelledby="title desc">
+<title id="title">From head derivatives to physical stopping</title>
+<desc id="desc">At radius one, a first-order loss of information is resolved by one signed radial curvature. With the stated assumptions, derivative information supports objective-gap stopping bounds.</desc>
+<defs><marker id="arrow" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto"><path d="M0 0L8 4L0 8" fill="none" stroke="#708399" stroke-width="1.5"/></marker></defs>
+<rect width="1200" height="350" rx="18" fill="#f5f8fb"/>
+<text x="42" y="43" font-family="Arial, Helvetica, sans-serif" font-size="15" font-weight="700" letter-spacing="2" fill="#405770">FROM HEAD DERIVATIVES TO PHYSICAL STOPPING</text>
+<g font-family="Arial, Helvetica, sans-serif">
+<rect x="32" y="70" width="340" height="214" rx="12" fill="white" stroke="#d5dfe9"/>
+<rect x="430" y="70" width="340" height="214" rx="12" fill="white" stroke="#d5dfe9"/>
+<rect x="828" y="70" width="340" height="214" rx="12" fill="white" stroke="#d5dfe9"/>
+<path d="M384 177H415M782 177H813" stroke="#708399" stroke-width="2" marker-end="url(#arrow)"/>
+<text x="56" y="105" font-size="13" font-weight="700" letter-spacing="1" fill="#0072b2">01 / THE FOLD</text>
+<path d="M62 192 Q133 185 180 139 Q224 95 268 139 Q310 182 344 189" stroke="#0072b2" stroke-width="4" fill="none"/>
+<path d="M224 119V204" stroke="#0072b2" stroke-width="1.5" stroke-dasharray="4 4"/>
+<circle cx="224" cy="119" r="6" fill="#0072b2"/>
+<text x="243" y="130" font-size="15" fill="#405770">r = 1</text>
+<text x="56" y="236" font-size="20" font-weight="700" fill="#142c45">One component hidden</text>
+<text x="56" y="263" font-size="15" fill="#405770">First derivatives lose a direction.</text>
+<text x="454" y="105" font-size="13" font-weight="700" letter-spacing="1" fill="#008560">02 / RECOVERY</text>
+<text x="454" y="156" font-size="27" font-weight="700" fill="#142c45">+ radial curvature</text>
+<path d="M455 180H741" stroke="#d8eee7" stroke-width="3"/>
+<text x="454" y="211" font-size="17" fill="#008560">A signed second derivative</text>
+<text x="454" y="236" font-size="20" font-weight="700" fill="#142c45">Physical gradient restored</text>
+<text x="454" y="263" font-size="15" fill="#405770">Exact fold identity for C² objectives.</text>
+<text x="852" y="105" font-size="13" font-weight="700" letter-spacing="1" fill="#9a6900">03 / STOPPING</text>
+<text x="852" y="156" font-size="26" font-weight="700" fill="#142c45">Objective-gap bound</text>
+<path d="M853 180H1139" stroke="#f4e6c5" stroke-width="3"/>
+<text x="852" y="211" font-size="17" fill="#9a6900">Check assumptions and errors.</text>
+<text x="852" y="236" font-size="20" font-weight="700" fill="#142c45">Accept when certified</text>
+<text x="852" y="263" font-size="15" fill="#405770">Outward arithmetic for the nominal model.</text>
+<text x="42" y="323" font-size="15" fill="#405770">Schematic · recovery identities · finite-tolerance guarantees · reproducible polarization audits</text>
+</g></svg>

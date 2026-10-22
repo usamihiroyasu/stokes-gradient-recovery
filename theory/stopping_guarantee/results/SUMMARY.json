@@ -1,0 +1,43 @@
+{
+  "cases": {
+    "objectives": 600,
+    "input_error_checks": 1800,
+    "uniform_applicable_checks": 1431,
+    "max_gap_above_pointwise_bound": 1.2385925618474403e-14,
+    "max_gap_above_uniform_bound": 1.2385811832996523e-14,
+    "reference_nonacceptances": 0,
+    "min_reference_feasibility": -9.636735853746359e-14
+  },
+  "asymptotics": {
+    "first_tolerance_limit": 0.3968502629920499,
+    "last_first_tolerance_ratio": 0.3968502629915207,
+    "first_tolerance_cases": 12,
+    "curvature_tolerance_cases": 12,
+    "outer_sheet_cases": 8,
+    "vanishing_intensity_cases": 16
+  },
+  "frozen_endpoint_audit": {
+    "endpoints": 9284,
+    "sheet_changes": 463,
+    "original_false_successes": 295,
+    "accepted": 8861,
+    "false_accepts": 0,
+    "accurate_rejected": 128,
+    "uniform_accepted": 980,
+    "new_solver_calls": 0,
+    "full_head_hessian_queries": 9284,
+    "observations_changed": false,
+    "scope": "Retrospective check of a theorem on already inspected endpoints; conditional float64 arithmetic, not validated rounding-error budgets or independent generalization."
+  },
+  "target_example": {
+    "eps": 2.886838596581176e-07,
+    "nu": 0.00028867513459481284
+  },
+  "source_sha256": {
+    "theory/stopping_guarantee/certificate.py": "c571cd3bb6a90403a2f9f14a2fefe92b11f24ba8367cc91c5a6c3bce6306506c",
+    "theory/stopping_guarantee/checks.py": "a8d0f43b6762be48dffedd3815f15efd37b7c9cf78c9b3840c870ad514742bb9",
+    "verification/verify_warm_start.py": "6fd8492d1d585b09c83f99625d2a9b0c7b65a9a338c5424197ce2603b49a1bae",
+    "application/real_data/INPUTS.json": "a6fcf1f55c756b77fd8d60104ce1c043cf6c0a10c67941d28b235fcdebce42ef",
+    "application/real_data/RESULTS.json": "bacde3b06144515c0b8b09bb271ff99ec4e8046c130be4f4a93346e2281f2404"
+  }
+}

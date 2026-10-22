@@ -1,0 +1,2236 @@
+{
+  "scope": "Same-solver two-frame warm start; fixed initial coordinates independent of truth.",
+  "summary": {
+    "cases": 60,
+    "previous_failures": 0,
+    "baseline_false_accepts": 12,
+    "baseline_failures": 1,
+    "audit_triggers": 12,
+    "audited_false_accepts": 0,
+    "audited_failures": 1,
+    "max_baseline_gap": 0.006765943274414956,
+    "max_audited_gap": 0.002112427225221697
+  },
+  "records": [
+    {
+      "seed": 0,
+      "angle": 0.0,
+      "noise": 0.001,
+      "next_DoLP": 0.8,
+      "previous_success": true,
+      "previous_coordinates": [
+        0.0007288232376556507,
+        0.9999805491405223,
+        -0.0002503340181963971
+      ],
+      "initial_radius": 0.9999805804746916,
+      "observations": [
+        0.8991882063017427,
+        0.49962808907574285,
+        0.09994506896262072,
+        0.5000230172058272
+      ],
+      "baseline_success": true,
+      "baseline_coordinates": [
+        -0.0006080428972081065,
+        0.4997181585612278,
+        -0.0002469413560743776
+      ],
+      "baseline_gap": 1.4958799246892324e-15,
+      "baseline_gradient_inf": 3.998204952782987e-08,
+      "baseline_radius": 0.4997182195756502,
+      "normalized_radial_curvature": 0.46156211953166776,
+      "audit_trigger": false,
+      "audited_success": true,
+      "audited_coordinates": [
+        -0.0006080428972081065,
+        0.4997181585612278,
+        -0.0002469413560743776
+      ],
+      "audited_gap": 1.4958799246892324e-15
+    },
+    {
+      "seed": 0,
+      "angle": 0.0,
+      "noise": 0.001,
+      "next_DoLP": 0.99,
+      "previous_success": true,
+      "previous_coordinates": [
+        0.0007288232376556507,
+        0.9999805491405223,
+        -0.0002503340181963971
+      ],
+      "initial_radius": 0.9999805804746916,
+      "observations": [
+        0.9941882063017426,
+        0.49962808907574285,
+        0.0049450689626207404,
+        0.5000230172058272
+      ],
+      "baseline_success": true,
+      "baseline_coordinates": [
+        -0.003998347145733933,
+        0.9999801114028323,
+        -0.0003990878848974256
+      ],
+      "baseline_gap": 1.7166947063442136e-05,
+      "baseline_gradient_inf": 6.518336894700376e-07,
+      "baseline_radius": 0.9999801910399828,
+      "normalized_radial_curvature": -0.003396965610171185,
+      "audit_trigger": true,
+      "audited_success": true,
+      "audited_coordinates": [
+        -0.0006073988065313917,
+        0.8666268020436281,
+        -0.0003446277185734175
+      ],
+      "audited_gap": 3.0314149395470922e-12
+    },
+    {
+      "seed": 0,
+      "angle": 0.0,
+      "noise": 0.01,
+      "next_DoLP": 0.8,
+      "previous_success": true,
+      "previous_coordinates": [
+        0.007265823060429954,
+        0.9999991055845221,
+        -0.0024542992120892737
+      ],
+      "initial_radius": 1.0000021173749918,
+      "observations": [
+        0.8918820630174262,
+        0.4962808907574288,
+        0.09945068962620733,
+        0.5002301720582719
+      ],
+      "baseline_success": true,
+      "baseline_coordinates": [
+        -0.07605888209123411,
+        0.9999926318033286,
+        -0.004983912082800316
+      ],
+      "baseline_gap": 0.00676574496002057,
+      "baseline_gradient_inf": 3.147676394627508e-07,
+      "baseline_radius": 1.0000050515075396,
+      "normalized_radial_curvature": -0.07246652220964409,
+      "audit_trigger": true,
+      "audited_success": true,
+      "audited_coordinates": [
+        -0.0060967408574031,
+        0.4971797696797064,
+        -0.002477818756857815
+      ],
+      "audited_gap": 6.2541575515445355e-15
+    },
+    {
+      "seed": 0,
+      "angle": 0.0,
+      "noise": 0.01,
+      "next_DoLP": 0.99,
+      "previous_success": true,
+      "previous_coordinates": [
+        0.007265823060429954,
+        0.9999991055845221,
+        -0.0024542992120892737
+      ],
+      "initial_radius": 1.0000021173749918,
+      "observations": [
+        0.9868820630174262,
+        0.4962808907574288,
+        0.004450689626207364,
+        0.5002301720582719
+      ],
+      "baseline_success": true,
+      "baseline_coordinates": [
+        -0.009954582470579355,
+        0.999994516266665,
+        -0.004020271418301755
+      ],
+      "baseline_gap": 2.1975003895847514e-05,
+      "baseline_gradient_inf": 6.309243573194712e-07,
+      "baseline_radius": 1.0000025975694653,
+      "normalized_radial_curvature": -0.0038660083306990317,
+      "audit_trigger": true,
+      "audited_success": true,
+      "audited_coordinates": [
+        -0.006096530387686919,
+        0.8583412550834668,
+        -0.003450734258106636
+      ],
+      "audited_gap": 5.79838640209912e-14
+    },
+    {
+      "seed": 0,
+      "angle": 0.7,
+      "noise": 0.001,
+      "next_DoLP": 0.8,
+      "previous_success": true,
+      "previous_coordinates": [
+        0.00035543449975787317,
+        0.1669689723387779,
+        0.9594903528264234
+      ],
+      "initial_radius": 0.9739098392001397,
+      "observations": [
+        0.5671750634618391,
+        0.8938079810711269,
+        0.4319582118025243,
+        0.10584312521044315
+      ],
+      "baseline_success": true,
+      "baseline_coordinates": [
+        -0.0006079846589912308,
+        0.08455969172156114,
+        0.49276497346552295
+      ],
+      "baseline_gap": 2.1719765165053852e-14,
+      "baseline_gradient_inf": 1.4287405198145087e-07,
+      "baseline_radius": 0.49996765949261457,
+      "normalized_radial_curvature": 0.46088705833818655,
+      "audit_trigger": false,
+      "audited_success": true,
+      "audited_coordinates": [
+        -0.0006079846589912308,
+        0.08455969172156114,
+        0.49276497346552295
+      ],
+      "audited_gap": 2.1719765165053852e-14
+    },
+    {
+      "seed": 0,
+      "angle": 0.7,
+      "noise": 0.001,
+      "next_DoLP": 0.99,
+      "previous_success": true,
+      "previous_coordinates": [
+        0.00035543449975787317,
+        0.1669689723387779,
+        0.9594903528264234
+      ],
+      "initial_radius": 0.9739098392001397,
+      "observations": [
+        0.583321942037362,
+        0.9874257054200306,
+        0.4158113332270014,
+        0.012225400861539441
+      ],
+      "baseline_success": true,
+      "baseline_coordinates": [
+        -0.0006080042648702285,
+        0.1469669159890224,
+        0.8556010016567029
+      ],
+      "baseline_gap": 1.6473342980091488e-14,
+      "baseline_gradient_inf": 1.3176476082538786e-07,
+      "baseline_radius": 0.8681315271497043,
+      "normalized_radial_curvature": 0.012833906157691954,
+      "audit_trigger": false,
+      "audited_success": true,
+      "audited_coordinates": [
+        -0.0006080042648702285,
+        0.1469669159890224,
+        0.8556010016567029
+      ],
+      "audited_gap": 1.6473342980091488e-14
+    },
+    {
+      "seed": 0,
+      "angle": 0.7,
+      "noise": 0.01,
+      "next_DoLP": 0.8,
+      "previous_success": true,
+      "previous_coordinates": [
+        0.003554561917598015,
+        0.17008194184170997,
+        0.9050678457947601
+      ],
+      "initial_radius": 0.9209102412462435,
+      "observations": [
+        0.5598689201775227,
+        0.8904607827528128,
+        0.4314638324661109,
+        0.10605028006288791
+      ],
+      "baseline_success": true,
+      "baseline_coordinates": [
+        -0.006097187851130463,
+        0.08072456231386756,
+        0.4931370428344045
+      ],
+      "baseline_gap": 2.1328242686238005e-13,
+      "baseline_gradient_inf": 3.604517371565069e-07,
+      "baseline_radius": 0.499700508280937,
+      "normalized_radial_curvature": 0.4616094343916789,
+      "audit_trigger": false,
+      "audited_success": true,
+      "audited_coordinates": [
+        -0.006097187851130463,
+        0.08072456231386756,
+        0.4931370428344045
+      ],
+      "audited_gap": 2.1328242686238005e-13
+    },
+    {
+      "seed": 0,
+      "angle": 0.7,
+      "noise": 0.01,
+      "next_DoLP": 0.99,
+      "previous_success": true,
+      "previous_coordinates": [
+        0.003554561917598015,
+        0.17008194184170997,
+        0.9050678457947601
+      ],
+      "initial_radius": 0.9209102412462435,
+      "observations": [
+        0.5760157987530455,
+        0.9840785071017165,
+        0.41531695389058804,
+        0.012432555713984212
+      ],
+      "baseline_success": true,
+      "baseline_coordinates": [
+        -0.006094080989715611,
+        0.14246266328561985,
+        0.8613875316988859
+      ],
+      "baseline_gap": 8.929013125719311e-12,
+      "baseline_gradient_inf": 5.11727218381515e-07,
+      "baseline_radius": 0.8730888214819448,
+      "normalized_radial_curvature": 0.01172109040336151,
+      "audit_trigger": false,
+      "audited_success": true,
+      "audited_coordinates": [
+        -0.006094080989715611,
+        0.14246266328561985,
+        0.8613875316988859
+      ],
+      "audited_gap": 8.929013125719311e-12
+    },
+    {
+      "seed": 0,
+      "angle": 1.3,
+      "noise": 0.001,
+      "next_DoLP": 0.8,
+      "previous_success": true,
+      "previous_coordinates": [
+        0.0003557338296061749,
+        -0.8074141030857728,
+        0.4863402023742853
+      ],
+      "initial_radius": 0.9425732471841453,
+      "observations": [
+        0.1564327049541637,
+        0.7058286378043285,
+        0.8427005703101996,
+        0.2938224684772415
+      ],
+      "baseline_success": true,
+      "baseline_coordinates": [
+        -0.0006084808738989953,
+        -0.42951196526684066,
+        0.2578611339834871
+      ],
+      "baseline_gap": 3.1407889428404866e-13,
+      "baseline_gradient_inf": 7.887325531533765e-07,
+      "baseline_radius": 0.5009719480436341,
+      "normalized_radial_curvature": 0.458178259351595,
+      "audit_trigger": false,
+      "audited_success": true,
+      "audited_coordinates": [
+        -0.0006084808738989953,
+        -0.42951196526684066,
+        0.2578611339834871
+      ],
+      "audited_gap": 3.1407889428404866e-13
+    },
+    {
+      "seed": 0,
+      "angle": 1.3,
+      "noise": 0.001,
+      "next_DoLP": 0.99,
+      "previous_success": true,
+      "previous_coordinates": [
+        0.0003557338296061749,
+        -0.8074141030857728,
+        0.4863402023742853
+      ],
+      "initial_radius": 0.9425732471841453,
+      "observations": [
+        0.07502827338411369,
+        0.7548012681273676,
+        0.9241050018802496,
+        0.24484983815420247
+      ],
+      "baseline_success": true,
+      "baseline_coordinates": [
+        -0.0006080080101596834,
+        -0.7495253958947745,
+        0.4501613356197425
+      ],
+      "baseline_gap": 2.4648185220743066e-15,
+      "baseline_gradient_inf": 3.036887475651063e-08,
+      "baseline_radius": 0.8743189047356628,
+      "normalized_radial_curvature": 0.01145073163091945,
+      "audit_trigger": false,
+      "audited_success": true,
+      "audited_coordinates": [
+        -0.0006080080101596834,
+        -0.7495253958947745,
+        0.4501613356197425
+      ],
+      "audited_gap": 2.4648185220743066e-15
+    },
+    {
+      "seed": 0,
+      "angle": 1.3,
+      "noise": 0.01,
+      "next_DoLP": 0.8,
+      "previous_success": true,
+      "previous_coordinates": [
+        0.003555180285185825,
+        -0.7076716371758353,
+        0.4310972672461044
+      ],
+      "initial_radius": 0.8286398493254993,
+      "observations": [
+        0.1491265616698473,
+        0.7024814394860144,
+        0.8422061909737862,
+        0.2940296233296863
+      ],
+      "baseline_success": true,
+      "baseline_coordinates": [
+        -0.006096755611008289,
+        -0.4393230831501707,
+        0.25890591370066224
+      ],
+      "baseline_gap": 3.676258643410166e-14,
+      "baseline_gradient_inf": 2.282051879582953e-07,
+      "baseline_radius": 0.5099382742428211,
+      "normalized_radial_curvature": 0.4344272872082074,
+      "audit_trigger": false,
+      "audited_success": true,
+      "audited_coordinates": [
+        -0.006096755611008289,
+        -0.4393230831501707,
+        0.25890591370066224
+      ],
+      "audited_gap": 3.676258643410166e-14
+    },
+    {
+      "seed": 0,
+      "angle": 1.3,
+      "noise": 0.01,
+      "next_DoLP": 0.99,
+      "previous_success": true,
+      "previous_coordinates": [
+        0.003555180285185825,
+        -0.7076716371758353,
+        0.4310972672461044
+      ],
+      "initial_radius": 0.8286398493254993,
+      "observations": [
+        0.06772213009979729,
+        0.7514540698090535,
+        0.9236106225438362,
+        0.24505699300664724
+      ],
+      "baseline_success": true,
+      "baseline_coordinates": [
+        -0.005910967371978652,
+        -0.8606293615842006,
+        0.5092035876530434
+      ],
+      "baseline_gap": 4.823207991718403e-13,
+      "baseline_gradient_inf": 5.539608887747638e-07,
+      "baseline_radius": 0.9999855957460384,
+      "normalized_radial_curvature": 0.00018602035644740936,
+      "audit_trigger": false,
+      "audited_success": true,
+      "audited_coordinates": [
+        -0.005910967371978652,
+        -0.8606293615842006,
+        0.5092035876530434
+      ],
+      "audited_gap": 4.823207991718403e-13
+    },
+    {
+      "seed": 1,
+      "angle": 0.0,
+      "noise": 0.001,
+      "next_DoLP": 0.8,
+      "previous_success": true,
+      "previous_coordinates": [
+        0.0006051744056852568,
+        0.9284985772992088,
+        -0.0008952599535298703
+      ],
+      "initial_radius": 0.9284990089047156,
+      "observations": [
+        0.8992409725990429,
+        0.500214103691599,
+        0.09972597252659353,
+        0.4994236507678565
+      ],
+      "baseline_success": true,
+      "baseline_coordinates": [
+        -0.0006976693420358806,
+        0.5000758241272706,
+        0.0004946105424030414
+      ],
+      "baseline_gap": 8.467054053045997e-14,
+      "baseline_gradient_inf": 2.59031634861947e-07,
+      "baseline_radius": 0.5000760687297059,
+      "normalized_radial_curvature": 0.46059490162595307,
+      "audit_trigger": false,
+      "audited_success": true,
+      "audited_coordinates": [
+        -0.0006976693420358806,
+        0.5000758241272706,
+        0.0004946105424030414
+      ],
+      "audited_gap": 8.467054053045997e-14
+    },
+    {
+      "seed": 1,
+      "angle": 0.0,
+      "noise": 0.001,
+      "next_DoLP": 0.99,
+      "previous_success": true,
+      "previous_coordinates": [
+        0.0006051744056852568,
+        0.9284985772992088,
+        -0.0008952599535298703
+      ],
+      "initial_radius": 0.9284990089047156,
+      "observations": [
+        0.9942409725990429,
+        0.500214103691599,
+        0.0047259725265935614,
+        0.4994236507678565
+      ],
+      "baseline_success": true,
+      "baseline_coordinates": [
+        -0.000699836873713376,
+        0.8689280257928305,
+        0.0006943240969636635
+      ],
+      "baseline_gap": 4.284385183503713e-12,
+      "baseline_gradient_inf": 4.1196455864879437e-07,
+      "baseline_radius": 0.8689283031954808,
+      "normalized_radial_curvature": 0.012647713028175536,
+      "audit_trigger": false,
+      "audited_success": true,
+      "audited_coordinates": [
+        -0.000699836873713376,
+        0.8689280257928305,
+        0.0006943240969636635
+      ],
+      "audited_gap": 4.284385183503713e-12
+    },
+    {
+      "seed": 1,
+      "angle": 0.0,
+      "noise": 0.01,
+      "next_DoLP": 0.8,
+      "previous_success": true,
+      "previous_coordinates": [
+        0.0060351239847329504,
+        0.7895773233945346,
+        -0.007752597749057223
+      ],
+      "initial_radius": 0.7896153825697269,
+      "observations": [
+        0.8924097259904284,
+        0.5021410369159908,
+        0.09725972526593556,
+        0.4942365076785647
+      ],
+      "baseline_success": true,
+      "baseline_coordinates": [
+        -0.007000737759616013,
+        0.5007846049898022,
+        0.004978456497565767
+      ],
+      "baseline_gap": 7.14951169556062e-14,
+      "baseline_gradient_inf": 3.3805462786772055e-07,
+      "baseline_radius": 0.5008093505755362,
+      "normalized_radial_curvature": 0.4586148543540836,
+      "audit_trigger": false,
+      "audited_success": true,
+      "audited_coordinates": [
+        -0.007000737759616013,
+        0.5007846049898022,
+        0.004978456497565767
+      ],
+      "audited_gap": 7.14951169556062e-14
+    },
+    {
+      "seed": 1,
+      "angle": 0.0,
+      "noise": 0.01,
+      "next_DoLP": 0.99,
+      "previous_success": true,
+      "previous_coordinates": [
+        0.0060351239847329504,
+        0.7895773233945346,
+        -0.007752597749057223
+      ],
+      "initial_radius": 0.7896153825697269,
+      "observations": [
+        0.9874097259904284,
+        0.5021410369159908,
+        0.0022597252659355767,
+        0.4942365076785647
+      ],
+      "baseline_success": true,
+      "baseline_coordinates": [
+        -0.00700135345819739,
+        0.8815177897742729,
+        0.0070728414714077235
+      ],
+      "baseline_gap": 3.1748681120761417e-13,
+      "baseline_gradient_inf": 1.0934726920566554e-07,
+      "baseline_radius": 0.8815461637231478,
+      "normalized_radial_curvature": 0.00995997258565019,
+      "audit_trigger": false,
+      "audited_success": true,
+      "audited_coordinates": [
+        -0.00700135345819739,
+        0.8815177897742729,
+        0.0070728414714077235
+      ],
+      "audited_gap": 3.1748681120761417e-13
+    },
+    {
+      "seed": 1,
+      "angle": 0.7,
+      "noise": 0.001,
+      "next_DoLP": 0.8,
+      "previous_success": true,
+      "previous_coordinates": [
+        0.000604320583801809,
+        0.15795924866571706,
+        0.9266144994987952
+      ],
+      "initial_radius": 0.9399816779706083,
+      "observations": [
+        0.5672278297591393,
+        0.8943939956869831,
+        0.4317391153664971,
+        0.10524375877247241
+      ],
+      "baseline_success": true,
+      "baseline_coordinates": [
+        -0.0006981079327035794,
+        0.08482849429841853,
+        0.4940814062236688
+      ],
+      "baseline_gap": 3.0850969694641036e-14,
+      "baseline_gradient_inf": 2.816205443112597e-07,
+      "baseline_radius": 0.501310591770107,
+      "normalized_radial_curvature": 0.4572658202436038,
+      "audit_trigger": false,
+      "audited_success": true,
+      "audited_coordinates": [
+        -0.0006981079327035794,
+        0.08482849429841853,
+        0.4940814062236688
+      ],
+      "audited_gap": 3.0850969694641036e-14
+    },
+    {
+      "seed": 1,
+      "angle": 0.7,
+      "noise": 0.001,
+      "next_DoLP": 0.99,
+      "previous_success": true,
+      "previous_coordinates": [
+        0.000604320583801809,
+        0.15795924866571706,
+        0.9266144994987952
+      ],
+      "initial_radius": 0.9399816779706083,
+      "observations": [
+        0.5833747083346622,
+        0.9880117200358868,
+        0.41559223679097423,
+        0.011626034423568715
+      ],
+      "baseline_success": true,
+      "baseline_coordinates": [
+        -0.0006972522604742101,
+        0.1484566737452815,
+        0.863926486836492
+      ],
+      "baseline_gap": 3.92411577000832e-13,
+      "baseline_gradient_inf": 5.780685151378551e-07,
+      "baseline_radius": 0.8765890477510864,
+      "normalized_radial_curvature": 0.010968545858953077,
+      "audit_trigger": false,
+      "audited_success": true,
+      "audited_coordinates": [
+        -0.0006972522604742101,
+        0.1484566737452815,
+        0.863926486836492
+      ],
+      "audited_gap": 3.92411577000832e-13
+    },
+    {
+      "seed": 1,
+      "angle": 0.7,
+      "noise": 0.01,
+      "next_DoLP": 0.8,
+      "previous_success": true,
+      "previous_coordinates": [
+        0.006034970078139284,
+        0.1237352572128874,
+        0.8128617362424165
+      ],
+      "initial_radius": 0.8222254046942209,
+      "observations": [
+        0.5603965831505249,
+        0.8963209289113748,
+        0.42927286810583914,
+        0.10005661568318064
+      ],
+      "baseline_success": true,
+      "baseline_coordinates": [
+        -0.007000966368537329,
+        0.08342800596433894,
+        0.5066264033123379
+      ],
+      "baseline_gap": 1.0267182815200913e-15,
+      "baseline_gradient_inf": 3.822655090720183e-08,
+      "baseline_radius": 0.5134496515846334,
+      "normalized_radial_curvature": 0.42534482196879814,
+      "audit_trigger": false,
+      "audited_success": true,
+      "audited_coordinates": [
+        -0.007000966368537329,
+        0.08342800596433894,
+        0.5066264033123379
+      ],
+      "audited_gap": 1.0267182815200913e-15
+    },
+    {
+      "seed": 1,
+      "angle": 0.7,
+      "noise": 0.01,
+      "next_DoLP": 0.99,
+      "previous_success": true,
+      "previous_coordinates": [
+        0.006034970078139284,
+        0.1237352572128874,
+        0.8128617362424165
+      ],
+      "initial_radius": 0.8222254046942209,
+      "observations": [
+        0.5765434617260478,
+        0.9899386532602785,
+        0.41312598953031626,
+        0.006438891334276946
+      ],
+      "baseline_success": true,
+      "baseline_coordinates": [
+        -0.005671935387764478,
+        0.1639172356302281,
+        0.9865016047595957
+      ],
+      "baseline_gap": 8.747454614089567e-13,
+      "baseline_gradient_inf": 6.885946180088272e-07,
+      "baseline_radius": 1.0000271377967267,
+      "normalized_radial_curvature": 0.0013273293577744114,
+      "audit_trigger": false,
+      "audited_success": true,
+      "audited_coordinates": [
+        -0.005671935387764478,
+        0.1639172356302281,
+        0.9865016047595957
+      ],
+      "audited_gap": 8.747454614089567e-13
+    },
+    {
+      "seed": 1,
+      "angle": 1.3,
+      "noise": 0.001,
+      "next_DoLP": 0.8,
+      "previous_success": true,
+      "previous_coordinates": [
+        0.0008507708634754614,
+        -0.85790068816652,
+        0.5138636850212918
+      ],
+      "initial_radius": 1.0000247384641292,
+      "observations": [
+        0.15648547125146392,
+        0.7064146524201846,
+        0.8424814738741725,
+        0.2932231020392708
+      ],
+      "baseline_success": true,
+      "baseline_coordinates": [
+        -0.0006974907822065861,
+        -1.7082954653604225,
+        1.0289527716819615
+      ],
+      "baseline_gap": 1.210235125396188e-12,
+      "baseline_gradient_inf": 4.276552931628168e-07,
+      "baseline_radius": 1.9942460237701298,
+      "normalized_radial_curvature": 0.02888791161988189,
+      "audit_trigger": false,
+      "audited_success": true,
+      "audited_coordinates": [
+        -0.0006974907822065861,
+        -1.7082954653604225,
+        1.0289527716819615
+      ],
+      "audited_gap": 1.210235125396188e-12
+    },
+    {
+      "seed": 1,
+      "angle": 1.3,
+      "noise": 0.001,
+      "next_DoLP": 0.99,
+      "previous_success": true,
+      "previous_coordinates": [
+        0.0008507708634754614,
+        -0.85790068816652,
+        0.5138636850212918
+      ],
+      "initial_radius": 1.0000247384641292,
+      "observations": [
+        0.07508103968141391,
+        0.7553872827432238,
+        0.9238859054442224,
+        0.24425047171623174
+      ],
+      "baseline_success": true,
+      "baseline_coordinates": [
+        -0.003529770501035292,
+        -0.8566887382795237,
+        0.5158844332133717
+      ],
+      "baseline_gap": 1.1982768199823091e-05,
+      "baseline_gradient_inf": 7.437826018810865e-07,
+      "baseline_radius": 1.000026171020961,
+      "normalized_radial_curvature": -0.002836416376391323,
+      "audit_trigger": true,
+      "audited_success": true,
+      "audited_coordinates": [
+        -0.0006978959755723867,
+        -0.7516836411066236,
+        0.4526523586869162
+      ],
+      "audited_gap": 3.878151305507336e-14
+    },
+    {
+      "seed": 1,
+      "angle": 1.3,
+      "noise": 0.01,
+      "next_DoLP": 0.8,
+      "previous_success": true,
+      "previous_coordinates": [
+        0.008528078381598459,
+        -0.8665591065852597,
+        0.4991233972362925
+      ],
+      "initial_radius": 1.000024425138977,
+      "observations": [
+        0.14965422464284953,
+        0.7083415856445764,
+        0.8400152266135145,
+        0.288035958949979
+      ],
+      "baseline_success": true,
+      "baseline_coordinates": [
+        -0.007000972520293328,
+        -1.6591221562245069,
+        1.0101072997703555
+      ],
+      "baseline_gap": 7.859379854281527e-15,
+      "baseline_gradient_inf": 4.949900046219337e-08,
+      "baseline_radius": 1.9424219640244023,
+      "normalized_radial_curvature": 0.029632194226306693,
+      "audit_trigger": false,
+      "audited_success": true,
+      "audited_coordinates": [
+        -0.007000972520293328,
+        -1.6591221562245069,
+        1.0101072997703555
+      ],
+      "audited_gap": 7.859379854281527e-15
+    },
+    {
+      "seed": 1,
+      "angle": 1.3,
+      "noise": 0.01,
+      "next_DoLP": 0.99,
+      "previous_success": true,
+      "previous_coordinates": [
+        0.008528078381598459,
+        -0.8665591065852597,
+        0.4991233972362925
+      ],
+      "initial_radius": 1.000024425138977,
+      "observations": [
+        0.06824979307279953,
+        0.7573142159676155,
+        0.9214196581835644,
+        0.23906332862693996
+      ],
+      "baseline_success": true,
+      "baseline_coordinates": [
+        -0.005251465860702488,
+        -0.8548083142037652,
+        0.5192461981651185
+      ],
+      "baseline_gap": 2.1293421832626475e-11,
+      "baseline_gradient_inf": 2.21210041848345e-07,
+      "baseline_radius": 1.0001569218581716,
+      "normalized_radial_curvature": 0.0017471270834547683,
+      "audit_trigger": false,
+      "audited_success": true,
+      "audited_coordinates": [
+        -0.005251465860702488,
+        -0.8548083142037652,
+        0.5192461981651185
+      ],
+      "audited_gap": 2.1293421832626475e-11
+    },
+    {
+      "seed": 2,
+      "angle": 0.0,
+      "noise": 0.001,
+      "next_DoLP": 0.8,
+      "previous_success": true,
+      "previous_coordinates": [
+        0.00010732369686164447,
+        0.9999463173359281,
+        -6.960807900392051e-05
+      ],
+      "initial_radius": 0.9999463197587005,
+      "observations": [
+        0.8998230232534803,
+        0.5001899026916581,
+        0.09867740283861585,
+        0.4999930699623805
+      ],
+      "baseline_success": true,
+      "baseline_coordinates": [
+        -0.0006586300568922584,
+        0.501747094373606,
+        0.0001228053760302755
+      ],
+      "baseline_gap": 2.2110723406106776e-13,
+      "baseline_gradient_inf": 5.971606009348227e-07,
+      "baseline_radius": 0.5017471094022532,
+      "normalized_radial_curvature": 0.45609295871013905,
+      "audit_trigger": false,
+      "audited_success": true,
+      "audited_coordinates": [
+        -0.0006586300568922584,
+        0.501747094373606,
+        0.0001228053760302755
+      ],
+      "audited_gap": 2.2110723406106776e-13
+    },
+    {
+      "seed": 2,
+      "angle": 0.0,
+      "noise": 0.001,
+      "next_DoLP": 0.99,
+      "previous_success": true,
+      "previous_coordinates": [
+        0.00010732369686164447,
+        0.9999463173359281,
+        -6.960807900392051e-05
+      ],
+      "initial_radius": 0.9999463197587005,
+      "observations": [
+        0.9948230232534803,
+        0.5001899026916581,
+        0.0036774028386158827,
+        0.4999930699623805
+      ],
+      "baseline_success": true,
+      "baseline_coordinates": [
+        -0.0033960368026138372,
+        0.9999454209693893,
+        0.0001985814044236841
+      ],
+      "baseline_gap": 1.1195894267239883e-05,
+      "baseline_gradient_inf": 1.485649685601398e-07,
+      "baseline_radius": 0.9999454406877524,
+      "normalized_radial_curvature": -0.0027417819981555994,
+      "audit_trigger": true,
+      "audited_success": true,
+      "audited_coordinates": [
+        -0.0006585131335155889,
+        0.8794134634713552,
+        0.0001746746178897879
+      ],
+      "audited_gap": 7.649444312197644e-13
+    },
+    {
+      "seed": 2,
+      "angle": 0.0,
+      "noise": 0.01,
+      "next_DoLP": 0.8,
+      "previous_success": true,
+      "previous_coordinates": [
+        0.0010757596649823772,
+        1.0000245471617213,
+        -0.000678951336877294
+      ],
+      "initial_radius": 1.0000247776434958,
+      "observations": [
+        0.8982302325348028,
+        0.501899026916581,
+        0.08677402838615876,
+        0.499930699623805
+      ],
+      "baseline_success": true,
+      "baseline_coordinates": [
+        -0.0066047068667692685,
+        1.9304557386858707,
+        0.004682093078179771
+      ],
+      "baseline_gap": 1.8238476050605468e-14,
+      "baseline_gradient_inf": 1.0171217050242457e-07,
+      "baseline_radius": 1.930461416610237,
+      "normalized_radial_curvature": 0.02979020634243469,
+      "audit_trigger": false,
+      "audited_success": true,
+      "audited_coordinates": [
+        -0.0066047068667692685,
+        1.9304557386858707,
+        0.004682093078179771
+      ],
+      "audited_gap": 1.8238476050605468e-14
+    },
+    {
+      "seed": 2,
+      "angle": 0.0,
+      "noise": 0.01,
+      "next_DoLP": 0.99,
+      "previous_success": true,
+      "previous_coordinates": [
+        0.0010757596649823772,
+        1.0000245471617213,
+        -0.000678951336877294
+      ],
+      "initial_radius": 1.0000247776434958,
+      "observations": [
+        0.9932302325348028,
+        0.501899026916581,
+        -0.008225971613841214,
+        0.499930699623805
+      ],
+      "baseline_success": true,
+      "baseline_coordinates": [
+        -0.003909705658798313,
+        1.0000237634635452,
+        0.001965585558283655
+      ],
+      "baseline_gap": 1.1111443864075983e-12,
+      "baseline_gradient_inf": 8.245670065256882e-07,
+      "baseline_radius": 1.0000256951790687,
+      "normalized_radial_curvature": 0.0026903976265658302,
+      "audit_trigger": false,
+      "audited_success": true,
+      "audited_coordinates": [
+        -0.003909705658798313,
+        1.0000237634635452,
+        0.001965585558283655
+      ],
+      "audited_gap": 1.1111443864075983e-12
+    },
+    {
+      "seed": 2,
+      "angle": 0.7,
+      "noise": 0.001,
+      "next_DoLP": 0.8,
+      "previous_success": true,
+      "previous_coordinates": [
+        -0.00012836994899696454,
+        0.17069728236429513,
+        0.9851392852983052
+      ],
+      "initial_radius": 0.9998184703457981,
+      "observations": [
+        0.5678098804135767,
+        0.8943697946870421,
+        0.43069054567851944,
+        0.10581317796699644
+      ],
+      "baseline_success": true,
+      "baseline_coordinates": [
+        -0.0006586819397646005,
+        0.08582163049212042,
+        0.49355153011182196
+      ],
+      "baseline_gap": 3.9881200375527633e-13,
+      "baseline_gradient_inf": 6.04939099942509e-07,
+      "baseline_radius": 0.5009575482374198,
+      "normalized_radial_curvature": 0.4582143754013411,
+      "audit_trigger": false,
+      "audited_success": true,
+      "audited_coordinates": [
+        -0.0006586819397646005,
+        0.08582163049212042,
+        0.49355153011182196
+      ],
+      "audited_gap": 3.9881200375527633e-13
+    },
+    {
+      "seed": 2,
+      "angle": 0.7,
+      "noise": 0.001,
+      "next_DoLP": 0.99,
+      "previous_success": true,
+      "previous_coordinates": [
+        -0.00012836994899696454,
+        0.17069728236429513,
+        0.9851392852983052
+      ],
+      "initial_radius": 0.9998184703457981,
+      "observations": [
+        0.5839567589890996,
+        0.9879875190359458,
+        0.41454366710299656,
+        0.012195453618092742
+      ],
+      "baseline_success": true,
+      "baseline_coordinates": [
+        -0.0036484791669278717,
+        0.1710252148829543,
+        0.9850796553168236
+      ],
+      "baseline_gap": 1.3357548058821141e-05,
+      "baseline_gradient_inf": 8.952824145499178e-07,
+      "baseline_radius": 0.9998157587500173,
+      "normalized_radial_curvature": -0.0029969769666843933,
+      "audit_trigger": true,
+      "audited_success": true,
+      "audited_coordinates": [
+        -0.0006599928022641014,
+        0.14955666596065256,
+        0.8614185023328724
+      ],
+      "audited_gap": 2.6822621835785306e-12
+    },
+    {
+      "seed": 2,
+      "angle": 0.7,
+      "noise": 0.01,
+      "next_DoLP": 0.8,
+      "previous_success": true,
+      "previous_coordinates": [
+        -0.0012769791578155863,
+        0.17757534564895766,
+        0.9841258162263921
+      ],
+      "initial_radius": 1.000018312605129,
+      "observations": [
+        0.5662170896948993,
+        0.896078918911965,
+        0.41878717122606235,
+        0.1057508076284209
+      ],
+      "baseline_success": true,
+      "baseline_coordinates": [
+        -0.006604863129467977,
+        0.3596961686337848,
+        1.9282253877858946
+      ],
+      "baseline_gap": 7.072243994859367e-15,
+      "baseline_gradient_inf": 1.2684597603387977e-07,
+      "baseline_radius": 1.96148782301392,
+      "normalized_radial_curvature": 0.029369032964195917,
+      "audit_trigger": false,
+      "audited_success": true,
+      "audited_coordinates": [
+        -0.006604863129467977,
+        0.3596961686337848,
+        1.9282253877858946
+      ],
+      "audited_gap": 7.072243994859367e-15
+    },
+    {
+      "seed": 2,
+      "angle": 0.7,
+      "noise": 0.01,
+      "next_DoLP": 0.99,
+      "previous_success": true,
+      "previous_coordinates": [
+        -0.0012769791578155863,
+        0.17757534564895766,
+        0.9841258162263921
+      ],
+      "initial_radius": 1.000018312605129,
+      "observations": [
+        0.5823639682704221,
+        0.9896966432608687,
+        0.40264029265053947,
+        0.012133083279517207
+      ],
+      "baseline_success": true,
+      "baseline_coordinates": [
+        -0.006426861962400385,
+        0.18082181471543152,
+        0.9835365328700272
+      ],
+      "baseline_gap": 3.6331960389431733e-14,
+      "baseline_gradient_inf": 8.522077402208026e-09,
+      "baseline_radius": 1.0000203198770392,
+      "normalized_radial_curvature": 0.00017787534237405047,
+      "audit_trigger": false,
+      "audited_success": true,
+      "audited_coordinates": [
+        -0.006426861962400385,
+        0.18082181471543152,
+        0.9835365328700272
+      ],
+      "audited_gap": 3.6331960389431733e-14
+    },
+    {
+      "seed": 2,
+      "angle": 1.3,
+      "noise": 0.001,
+      "next_DoLP": 0.8,
+      "previous_success": true,
+      "previous_coordinates": [
+        -0.00022509798866285214,
+        -0.8307946038032702,
+        0.5001886944681462
+      ],
+      "initial_radius": 0.9697465667804044,
+      "observations": [
+        0.15706752190590134,
+        0.7063904514202437,
+        0.8414329041861948,
+        0.29379252123379485
+      ],
+      "baseline_success": true,
+      "baseline_coordinates": [
+        -0.0006586623290958312,
+        -0.427884128959517,
+        0.25796767795940895
+      ],
+      "baseline_gap": 1.710670133142861e-14,
+      "baseline_gradient_inf": 2.0012016680612977e-07,
+      "baseline_radius": 0.49963201527445567,
+      "normalized_radial_curvature": 0.46179566720037024,
+      "audit_trigger": false,
+      "audited_success": true,
+      "audited_coordinates": [
+        -0.0006586623290958312,
+        -0.427884128959517,
+        0.25796767795940895
+      ],
+      "audited_gap": 1.710670133142861e-14
+    },
+    {
+      "seed": 2,
+      "angle": 1.3,
+      "noise": 0.001,
+      "next_DoLP": 0.99,
+      "previous_success": true,
+      "previous_coordinates": [
+        -0.00022509798866285214,
+        -0.8307946038032702,
+        0.5001886944681462
+      ],
+      "initial_radius": 0.9697465667804044,
+      "observations": [
+        0.07566309033585135,
+        0.7553630817432828,
+        0.9228373357562447,
+        0.24481989091075576
+      ],
+      "baseline_success": true,
+      "baseline_coordinates": [
+        -0.0006579447112723849,
+        -0.7418937524464465,
+        0.44709691887135206
+      ],
+      "baseline_gap": 2.8800490086562026e-13,
+      "baseline_gradient_inf": 9.030301084767472e-07,
+      "baseline_radius": 0.8661997430058067,
+      "normalized_radial_curvature": 0.013285939622193784,
+      "audit_trigger": false,
+      "audited_success": true,
+      "audited_coordinates": [
+        -0.0006579447112723849,
+        -0.7418937524464465,
+        0.44709691887135206
+      ],
+      "audited_gap": 2.8800490086562026e-13
+    },
+    {
+      "seed": 2,
+      "angle": 1.3,
+      "noise": 0.01,
+      "next_DoLP": 0.8,
+      "previous_success": true,
+      "previous_coordinates": [
+        -0.0022512119722251913,
+        -0.7757358856669233,
+        0.4703009929385608
+      ],
+      "initial_radius": 0.907165469068594,
+      "observations": [
+        0.1554747311872239,
+        0.7080995756451666,
+        0.8295295297337377,
+        0.2937301508952193
+      ],
+      "baseline_success": true,
+      "baseline_coordinates": [
+        -0.0066048101884819315,
+        -0.42284244243217695,
+        0.25993863791134364
+      ],
+      "baseline_gap": 1.0489073260129544e-14,
+      "baseline_gradient_inf": 1.1326203290395984e-07,
+      "baseline_radius": 0.49635050780795364,
+      "normalized_radial_curvature": 0.47073235301466027,
+      "audit_trigger": false,
+      "audited_success": true,
+      "audited_coordinates": [
+        -0.0066048101884819315,
+        -0.42284244243217695,
+        0.25993863791134364
+      ],
+      "audited_gap": 1.0489073260129544e-14
+    },
+    {
+      "seed": 2,
+      "angle": 1.3,
+      "noise": 0.01,
+      "next_DoLP": 0.99,
+      "previous_success": true,
+      "previous_coordinates": [
+        -0.0022512119722251913,
+        -0.7757358856669233,
+        0.4703009929385608
+      ],
+      "initial_radius": 0.907165469068594,
+      "observations": [
+        0.07407029961717389,
+        0.7570722059682057,
+        0.9109339613037877,
+        0.24475752057218023
+      ],
+      "baseline_success": true,
+      "baseline_coordinates": [
+        -0.006605195296086477,
+        -0.7286163712602902,
+        0.44604741964512834
+      ],
+      "baseline_gap": 2.4651757550434375e-13,
+      "baseline_gradient_inf": 8.08879269850796e-07,
+      "baseline_radius": 0.8543068049831923,
+      "normalized_radial_curvature": 0.016302859586266514,
+      "audit_trigger": false,
+      "audited_success": true,
+      "audited_coordinates": [
+        -0.006605195296086477,
+        -0.7286163712602902,
+        0.44604741964512834
+      ],
+      "audited_gap": 2.4651757550434375e-13
+    },
+    {
+      "seed": 3,
+      "angle": 0.0,
+      "noise": 0.001,
+      "next_DoLP": 0.8,
+      "previous_success": true,
+      "previous_coordinates": [
+        0.0009745635311144513,
+        0.9491695001267764,
+        0.0018719584552933798
+      ],
+      "initial_radius": 0.9491713460694928,
+      "observations": [
+        0.9007562681175205,
+        0.5007664686255541,
+        0.0993228452440526,
+        0.5013876251381917
+      ],
+      "baseline_success": true,
+      "baseline_coordinates": [
+        0.0011158823850166736,
+        0.500562588314506,
+        -0.0003880894441515602
+      ],
+      "baseline_gap": 1.618696638164117e-14,
+      "baseline_gradient_inf": 1.6012292241912566e-07,
+      "baseline_radius": 0.5005627387586238,
+      "normalized_radial_curvature": 0.4592804001678911,
+      "audit_trigger": false,
+      "audited_success": true,
+      "audited_coordinates": [
+        0.0011158823850166736,
+        0.500562588314506,
+        -0.0003880894441515602
+      ],
+      "audited_gap": 1.618696638164117e-14
+    },
+    {
+      "seed": 3,
+      "angle": 0.0,
+      "noise": 0.001,
+      "next_DoLP": 0.99,
+      "previous_success": true,
+      "previous_coordinates": [
+        0.0009745635311144513,
+        0.9491695001267764,
+        0.0018719584552933798
+      ],
+      "initial_radius": 0.9491713460694928,
+      "observations": [
+        0.9957562681175205,
+        0.5007664686255541,
+        0.004322845244052637,
+        0.5013876251381917
+      ],
+      "baseline_success": true,
+      "baseline_coordinates": [
+        0.0011158849109656566,
+        0.8696644637561631,
+        -0.0005448331384759491
+      ],
+      "baseline_gap": 5.15842927235015e-15,
+      "baseline_gradient_inf": 1.1096218490206075e-07,
+      "baseline_radius": 0.8696646344214783,
+      "normalized_radial_curvature": 0.012481636460618098,
+      "audit_trigger": false,
+      "audited_success": true,
+      "audited_coordinates": [
+        0.0011158849109656566,
+        0.8696644637561631,
+        -0.0005448331384759491
+      ],
+      "audited_gap": 5.15842927235015e-15
+    },
+    {
+      "seed": 3,
+      "angle": 0.0,
+      "noise": 0.01,
+      "next_DoLP": 0.8,
+      "previous_success": true,
+      "previous_coordinates": [
+        0.009702895139466886,
+        0.8485723479533421,
+        0.016805948287529713
+      ],
+      "initial_radius": 0.8487387522723887,
+      "observations": [
+        0.907562681175205,
+        0.5076646862555412,
+        0.0932284524405263,
+        0.5138762513819166
+      ],
+      "baseline_success": true,
+      "baseline_coordinates": [
+        0.011104156862041983,
+        0.5056205299911306,
+        -0.003856763521879144
+      ],
+      "baseline_gap": 1.2807138162485021e-18,
+      "baseline_gradient_inf": 1.5554570249808063e-09,
+      "baseline_radius": 0.5056352390541778,
+      "normalized_radial_curvature": 0.44572462886523073,
+      "audit_trigger": false,
+      "audited_success": true,
+      "audited_coordinates": [
+        0.011104156862041983,
+        0.5056205299911306,
+        -0.003856763521879144
+      ],
+      "audited_gap": 1.2807138162485021e-18
+    },
+    {
+      "seed": 3,
+      "angle": 0.0,
+      "noise": 0.01,
+      "next_DoLP": 0.99,
+      "previous_success": true,
+      "previous_coordinates": [
+        0.009702895139466886,
+        0.8485723479533421,
+        0.016805948287529713
+      ],
+      "initial_radius": 0.8487387522723887,
+      "observations": [
+        1.002562681175205,
+        0.5076646862555412,
+        -0.0017715475594736688,
+        0.5138762513819166
+      ],
+      "baseline_success": true,
+      "baseline_coordinates": [
+        0.01110381110179764,
+        0.8901055192024685,
+        -0.005504179245908911
+      ],
+      "baseline_gap": 5.924353957170898e-13,
+      "baseline_gradient_inf": 5.780992313030237e-07,
+      "baseline_radius": 0.8901225372407258,
+      "normalized_radial_curvature": 0.008358539446160777,
+      "audit_trigger": false,
+      "audited_success": true,
+      "audited_coordinates": [
+        0.01110381110179764,
+        0.8901055192024685,
+        -0.005504179245908911
+      ],
+      "audited_gap": 5.924353957170898e-13
+    },
+    {
+      "seed": 3,
+      "angle": 0.7,
+      "noise": 0.001,
+      "next_DoLP": 0.8,
+      "previous_success": true,
+      "previous_coordinates": [
+        0.0012755028464179784,
+        0.16926049109526148,
+        0.9855641102367035
+      ],
+      "initial_radius": 0.9999928645907801,
+      "observations": [
+        0.568743125277617,
+        0.8949463606209381,
+        0.4313359880839562,
+        0.1072077331428076
+      ],
+      "baseline_success": true,
+      "baseline_coordinates": [
+        -0.06832689313571846,
+        0.1718363366060063,
+        0.9851145693343344
+      ],
+      "baseline_gap": 0.006765943274414956,
+      "baseline_gradient_inf": 6.382375362715392e-07,
+      "baseline_radius": 0.999989220588374,
+      "normalized_radial_curvature": -0.07191272014706865,
+      "audit_trigger": true,
+      "audited_success": true,
+      "audited_coordinates": [
+        0.001115915605148794,
+        0.0856939824218094,
+        0.49127332899829573
+      ],
+      "audited_gap": 2.4387103461317484e-15
+    },
+    {
+      "seed": 3,
+      "angle": 0.7,
+      "noise": 0.001,
+      "next_DoLP": 0.99,
+      "previous_success": true,
+      "previous_coordinates": [
+        0.0012755028464179784,
+        0.16926049109526148,
+        0.9855641102367035
+      ],
+      "initial_radius": 0.9999928645907801,
+      "observations": [
+        0.5848900038531398,
+        0.9885640849698418,
+        0.4151891095084333,
+        0.013590008793903903
+      ],
+      "baseline_success": true,
+      "baseline_coordinates": [
+        -0.002714548377645045,
+        0.1714776461221715,
+        0.9851815377499316
+      ],
+      "baseline_gap": 2.1980080741965942e-05,
+      "baseline_gradient_inf": 7.530341864178995e-07,
+      "baseline_radius": 0.9999936227011252,
+      "normalized_radial_curvature": -0.0038387054090655236,
+      "audit_trigger": true,
+      "audited_success": true,
+      "audited_coordinates": [
+        0.0011159752157264844,
+        0.14726981725858954,
+        0.8460987696673709
+      ],
+      "audited_gap": 9.754285201518003e-14
+    },
+    {
+      "seed": 3,
+      "angle": 0.7,
+      "noise": 0.01,
+      "next_DoLP": 0.8,
+      "previous_success": true,
+      "previous_coordinates": [
+        0.012688971855613863,
+        0.1630269592507825,
+        0.9866305876974958
+      ],
+      "initial_radius": 1.0000088529722435,
+      "observations": [
+        0.5755495383353014,
+        0.9018445782509252,
+        0.4252415952804299,
+        0.11969635938653253
+      ],
+      "baseline_success": true,
+      "baseline_coordinates": [
+        0.011104165417912584,
+        0.3872095989914392,
+        2.0148977115309323
+      ],
+      "baseline_gap": 2.8492426517104374e-15,
+      "baseline_gradient_inf": 3.675348594813765e-08,
+      "baseline_radius": 2.0517660835201705,
+      "normalized_radial_curvature": 0.027970825690394985,
+      "audit_trigger": false,
+      "audited_success": true,
+      "audited_coordinates": [
+        0.011104165417912584,
+        0.3872095989914392,
+        2.0148977115309323
+      ],
+      "audited_gap": 2.8492426517104374e-15
+    },
+    {
+      "seed": 3,
+      "angle": 0.7,
+      "noise": 0.01,
+      "next_DoLP": 0.99,
+      "previous_success": true,
+      "previous_coordinates": [
+        0.012688971855613863,
+        0.1630269592507825,
+        0.9866305876974958
+      ],
+      "initial_radius": 1.0000088529722435,
+      "observations": [
+        0.5916964169108243,
+        0.9954623025998289,
+        0.409094716704907,
+        0.026078635037628826
+      ],
+      "baseline_success": true,
+      "baseline_coordinates": [
+        0.011104112751286265,
+        0.2314677606398563,
+        1.2288005638455115
+      ],
+      "baseline_gap": 6.075943513508125e-15,
+      "baseline_gradient_inf": 2.6778824123921785e-08,
+      "baseline_radius": 1.2504111923374155,
+      "normalized_radial_curvature": 0.014706454072992217,
+      "audit_trigger": false,
+      "audited_success": true,
+      "audited_coordinates": [
+        0.011104112751286265,
+        0.2314677606398563,
+        1.2288005638455115
+      ],
+      "audited_gap": 6.075943513508125e-15
+    },
+    {
+      "seed": 3,
+      "angle": 1.3,
+      "noise": 0.001,
+      "next_DoLP": 0.8,
+      "previous_success": true,
+      "previous_coordinates": [
+        0.0010996648730209663,
+        -0.8561643165316791,
+        0.5168036520040001
+      ],
+      "initial_radius": 1.0000516744782886,
+      "observations": [
+        0.15800076676994157,
+        0.7069670173541397,
+        0.8420783465916316,
+        0.295187076409606
+      ],
+      "baseline_success": true,
+      "baseline_coordinates": [
+        0.0011159821878514928,
+        -1.722229446887519,
+        1.0366945411915316
+      ],
+      "baseline_gap": 1.9065557560303667e-16,
+      "baseline_gradient_inf": 4.173611301627239e-09,
+      "baseline_radius": 2.0101765692254028,
+      "normalized_radial_curvature": 0.028642258170796377,
+      "audit_trigger": false,
+      "audited_success": true,
+      "audited_coordinates": [
+        0.0011159821878514928,
+        -1.722229446887519,
+        1.0366945411915316
+      ],
+      "audited_gap": 1.9065557560303667e-16
+    },
+    {
+      "seed": 3,
+      "angle": 1.3,
+      "noise": 0.001,
+      "next_DoLP": 0.99,
+      "previous_success": true,
+      "previous_coordinates": [
+        0.0010996648730209663,
+        -0.8561643165316791,
+        0.5168036520040001
+      ],
+      "initial_radius": 1.0000516744782886,
+      "observations": [
+        0.07659633519989156,
+        0.7559396476771788,
+        0.9234827781616816,
+        0.24621444608656692
+      ],
+      "baseline_success": true,
+      "baseline_coordinates": [
+        -0.0031098330312762357,
+        -0.8568265982842163,
+        0.5157079874987242
+      ],
+      "baseline_gap": 2.6734006089584398e-05,
+      "baseline_gradient_inf": 1.9017682522347312e-07,
+      "baseline_radius": 1.0000532725296618,
+      "normalized_radial_curvature": -0.004234203850095103,
+      "audit_trigger": true,
+      "audited_success": true,
+      "audited_coordinates": [
+        0.0011159239692366868,
+        -1.0053532427906477,
+        0.6051035565081361
+      ],
+      "audited_gap": 1.4461155915730965e-14
+    },
+    {
+      "seed": 3,
+      "angle": 1.3,
+      "noise": 0.01,
+      "next_DoLP": 0.8,
+      "previous_success": true,
+      "previous_coordinates": [
+        0.01097305890937671,
+        -0.8492230061610563,
+        0.5280543455895738
+      ],
+      "initial_radius": 1.0000105529889445,
+      "observations": [
+        0.16480717982762608,
+        0.7138652349841268,
+        0.8359839537881053,
+        0.3076757026533309
+      ],
+      "baseline_success": true,
+      "baseline_coordinates": [
+        0.011104140928490288,
+        -1.7983911621582627,
+        1.0883694800610588
+      ],
+      "baseline_gap": 2.447790369919725e-14,
+      "baseline_gradient_inf": 5.178307932820186e-08,
+      "baseline_radius": 2.1020844172528674,
+      "normalized_radial_curvature": 0.027112377911056033,
+      "audit_trigger": false,
+      "audited_success": true,
+      "audited_coordinates": [
+        0.011104140928490288,
+        -1.7983911621582627,
+        1.0883694800610588
+      ],
+      "audited_gap": 2.447790369919725e-14
+    },
+    {
+      "seed": 3,
+      "angle": 1.3,
+      "noise": 0.01,
+      "next_DoLP": 0.99,
+      "previous_success": true,
+      "previous_coordinates": [
+        0.01097305890937671,
+        -0.8492230061610563,
+        0.5280543455895738
+      ],
+      "initial_radius": 1.0000105529889445,
+      "observations": [
+        0.08340274825757607,
+        0.7628378653071659,
+        0.9173883853581553,
+        0.25870307233029183
+      ],
+      "baseline_success": true,
+      "baseline_coordinates": [
+        -0.0010506698566764407,
+        -0.8558328542318832,
+        0.5173408289656257
+      ],
+      "baseline_gap": 0.00022385518104704087,
+      "baseline_gradient_inf": 4.158504868755075e-07,
+      "baseline_radius": 1.000045702804393,
+      "normalized_radial_curvature": -0.012227463925039822,
+      "audit_trigger": true,
+      "audited_success": true,
+      "audited_coordinates": [
+        0.011104377233917329,
+        -0.6510767023570404,
+        0.39356786961083273
+      ],
+      "audited_gap": 1.6165397471144816e-13
+    },
+    {
+      "seed": 4,
+      "angle": 0.0,
+      "noise": 0.001,
+      "next_DoLP": 0.8,
+      "previous_success": true,
+      "previous_coordinates": [
+        0.00042842760333642633,
+        0.9762498095884361,
+        0.0007665174311117998
+      ],
+      "initial_radius": 0.976250110509817,
+      "observations": [
+        0.9008216472133134,
+        0.5009709713506989,
+        0.1014417168434258,
+        0.4993106665979043
+      ],
+      "baseline_success": true,
+      "baseline_coordinates": [
+        0.0012713574327418468,
+        0.49830085819829467,
+        0.0010353434386559059
+      ],
+      "baseline_gap": 1.582499878420869e-13,
+      "baseline_gradient_inf": 4.850822304561992e-07,
+      "baseline_radius": 0.49830193378833376,
+      "normalized_radial_curvature": 0.46540518207073295,
+      "audit_trigger": false,
+      "audited_success": true,
+      "audited_coordinates": [
+        0.0012713574327418468,
+        0.49830085819829467,
+        0.0010353434386559059
+      ],
+      "audited_gap": 1.582499878420869e-13
+    },
+    {
+      "seed": 4,
+      "angle": 0.0,
+      "noise": 0.001,
+      "next_DoLP": 0.99,
+      "previous_success": true,
+      "previous_coordinates": [
+        0.00042842760333642633,
+        0.9762498095884361,
+        0.0007665174311117998
+      ],
+      "initial_radius": 0.976250110509817,
+      "observations": [
+        0.9958216472133133,
+        0.5009709713506989,
+        0.006441716843425823,
+        0.4993106665979043
+      ],
+      "baseline_success": true,
+      "baseline_coordinates": [
+        0.0012712639525960228,
+        0.856516333817775,
+        0.0014375623261681364
+      ],
+      "baseline_gap": 1.4447354593822464e-13,
+      "baseline_gradient_inf": 2.400980258298167e-07,
+      "baseline_radius": 0.8565175402069031,
+      "normalized_radial_curvature": 0.015710859204265994,
+      "audit_trigger": false,
+      "audited_success": true,
+      "audited_coordinates": [
+        0.0012712639525960228,
+        0.856516333817775,
+        0.0014375623261681364
+      ],
+      "audited_gap": 1.4447354593822464e-13
+    },
+    {
+      "seed": 4,
+      "angle": 0.0,
+      "noise": 0.01,
+      "next_DoLP": 0.8,
+      "previous_success": true,
+      "previous_coordinates": [
+        0.004274001496509133,
+        0.9272993091923692,
+        0.007260785532784451
+      ],
+      "initial_radius": 0.9273277348570992,
+      "observations": [
+        0.908216472133134,
+        0.5097097135069892,
+        0.11441716843425817,
+        0.4931066659790431
+      ],
+      "baseline_success": true,
+      "baseline_coordinates": [
+        0.012644762916116577,
+        0.4836144507824155,
+        0.010115266151069668
+      ],
+      "baseline_gap": 1.5563972907781803e-14,
+      "baseline_gradient_inf": 1.3229615074641017e-07,
+      "baseline_radius": 0.4837202245253803,
+      "normalized_radial_curvature": 0.5061323309499857,
+      "audit_trigger": false,
+      "audited_success": true,
+      "audited_coordinates": [
+        0.012644762916116577,
+        0.4836144507824155,
+        0.010115266151069668
+      ],
+      "audited_gap": 1.5563972907781803e-14
+    },
+    {
+      "seed": 4,
+      "angle": 0.0,
+      "noise": 0.01,
+      "next_DoLP": 0.99,
+      "previous_success": true,
+      "previous_coordinates": [
+        0.004274001496509133,
+        0.9272993091923692,
+        0.007260785532784451
+      ],
+      "initial_radius": 0.9273277348570992,
+      "observations": [
+        1.003216472133134,
+        0.5097097135069892,
+        0.01941716843425819,
+        0.4931066659790431
+      ],
+      "baseline_success": true,
+      "baseline_coordinates": [
+        0.012644938784174971,
+        0.785489279137258,
+        0.01325626773217556
+      ],
+      "baseline_gap": 2.930878331914091e-14,
+      "baseline_gradient_inf": 1.3823246859697627e-07,
+      "baseline_radius": 0.7856011305196526,
+      "normalized_radial_curvature": 0.04285717290485841,
+      "audit_trigger": false,
+      "audited_success": true,
+      "audited_coordinates": [
+        0.012644938784174971,
+        0.785489279137258,
+        0.01325626773217556
+      ],
+      "audited_gap": 2.930878331914091e-14
+    },
+    {
+      "seed": 4,
+      "angle": 0.7,
+      "noise": 0.001,
+      "next_DoLP": 0.8,
+      "previous_success": true,
+      "previous_coordinates": [
+        0.0005509677311047261,
+        0.16996465185591697,
+        0.9854070737671343
+      ],
+      "initial_radius": 0.9999575410540238,
+      "observations": [
+        0.5688085043734098,
+        0.895150863346083,
+        0.43345485968332936,
+        0.10513077460252025
+      ],
+      "baseline_success": false,
+      "baseline_coordinates": [
+        0.030896255764044936,
+        0.04300019819333967,
+        0.51525459840046
+      ],
+      "baseline_gap": 0.002112427225221697,
+      "baseline_gradient_inf": 0.05442359094330961,
+      "baseline_radius": 0.5170457602741616,
+      "normalized_radial_curvature": 0.35826498380215915,
+      "audit_trigger": false,
+      "audited_success": false,
+      "audited_coordinates": [
+        0.030896255764044936,
+        0.04300019819333967,
+        0.51525459840046
+      ],
+      "audited_gap": 0.002112427225221697
+    },
+    {
+      "seed": 4,
+      "angle": 0.7,
+      "noise": 0.001,
+      "next_DoLP": 0.99,
+      "previous_success": true,
+      "previous_coordinates": [
+        0.0005509677311047261,
+        0.16996465185591697,
+        0.9854070737671343
+      ],
+      "initial_radius": 0.9999575410540238,
+      "observations": [
+        0.5849553829489327,
+        0.9887685876949867,
+        0.4173079811078065,
+        0.011513050253616557
+      ],
+      "baseline_success": true,
+      "baseline_coordinates": [
+        -0.0019765145911813504,
+        0.1690720091548824,
+        0.9855599359623989
+      ],
+      "baseline_gap": 1.581562502365797e-05,
+      "baseline_gradient_inf": 1.3824527669891243e-07,
+      "baseline_radius": 0.9999568648966196,
+      "normalized_radial_curvature": -0.003253983852076087,
+      "audit_trigger": true,
+      "audited_success": true,
+      "audited_coordinates": [
+        0.0012716037398386865,
+        0.14698148456776874,
+        0.8567894107060025
+      ],
+      "audited_gap": 8.181852814718646e-15
+    },
+    {
+      "seed": 4,
+      "angle": 0.7,
+      "noise": 0.01,
+      "next_DoLP": 0.8,
+      "previous_success": true,
+      "previous_coordinates": [
+        0.005495290917779048,
+        0.17001596002768965,
+        0.9854472458499596
+      ],
+      "initial_radius": 1.0000058504915896,
+      "observations": [
+        0.5762033292932304,
+        0.9038896055023733,
+        0.4464303112741617,
+        0.09892677398365905
+      ],
+      "baseline_success": true,
+      "baseline_coordinates": [
+        0.012644725452340681,
+        0.3149415410048081,
+        1.9535383248839815
+      ],
+      "baseline_gap": 1.4196570351579507e-14,
+      "baseline_gradient_inf": 7.149160809678648e-08,
+      "baseline_radius": 1.978762280073328,
+      "normalized_radial_curvature": 0.029119586250098306,
+      "audit_trigger": false,
+      "audited_success": true,
+      "audited_coordinates": [
+        0.012644725452340681,
+        0.3149415410048081,
+        1.9535383248839815
+      ],
+      "audited_gap": 1.4196570351579507e-14
+    },
+    {
+      "seed": 4,
+      "angle": 0.7,
+      "noise": 0.01,
+      "next_DoLP": 0.99,
+      "previous_success": true,
+      "previous_coordinates": [
+        0.005495290917779048,
+        0.17001596002768965,
+        0.9854472458499596
+      ],
+      "initial_radius": 1.0000058504915896,
+      "observations": [
+        0.5923502078687533,
+        0.997507329851277,
+        0.43028343269863883,
+        0.005309049634755358
+      ],
+      "baseline_success": true,
+      "baseline_coordinates": [
+        0.010213316242670882,
+        0.16120901398380286,
+        0.986947566491547
+      ],
+      "baseline_gap": 9.071921661763885e-06,
+      "baseline_gradient_inf": 1.550102518799342e-07,
+      "baseline_radius": 1.0000269222342049,
+      "normalized_radial_curvature": -0.0024340206324723144,
+      "audit_trigger": true,
+      "audited_success": true,
+      "audited_coordinates": [
+        0.012644396420906508,
+        0.14282264659183044,
+        0.8743828175110975
+      ],
+      "audited_gap": 5.733147246875236e-14
+    },
+    {
+      "seed": 4,
+      "angle": 1.3,
+      "noise": 0.001,
+      "next_DoLP": 0.8,
+      "previous_success": true,
+      "previous_coordinates": [
+        0.00042800926943318266,
+        -0.8421178233924035,
+        0.5074696571743821
+      ],
+      "initial_radius": 0.9832028689074519,
+      "observations": [
+        0.15806614586573448,
+        0.7071715200792845,
+        0.8441972181910048,
+        0.2931101178693186
+      ],
+      "baseline_success": true,
+      "baseline_coordinates": [
+        0.0012715936930856172,
+        -0.4284186982522095,
+        0.2585390294022719
+      ],
+      "baseline_gap": 3.191930688708491e-14,
+      "baseline_gradient_inf": 2.2995057063845486e-07,
+      "baseline_radius": 0.5003848626171525,
+      "normalized_radial_curvature": 0.45976077874782445,
+      "audit_trigger": false,
+      "audited_success": true,
+      "audited_coordinates": [
+        0.0012715936930856172,
+        -0.4284186982522095,
+        0.2585390294022719
+      ],
+      "audited_gap": 3.191930688708491e-14
+    },
+    {
+      "seed": 4,
+      "angle": 1.3,
+      "noise": 0.001,
+      "next_DoLP": 0.99,
+      "previous_success": true,
+      "previous_coordinates": [
+        0.00042800926943318266,
+        -0.8421178233924035,
+        0.5074696571743821
+      ],
+      "initial_radius": 0.9832028689074519,
+      "observations": [
+        0.07666171429568445,
+        0.7561441504023236,
+        0.9256016497610547,
+        0.2441374875462796
+      ],
+      "baseline_success": true,
+      "baseline_coordinates": [
+        0.0012716941226841823,
+        -0.7436289365711574,
+        0.4484922453258401
+      ],
+      "baseline_gap": 4.7900348441941125e-17,
+      "baseline_gradient_inf": 7.18454753901965e-09,
+      "baseline_radius": 0.8684061776745741,
+      "normalized_radial_curvature": 0.012770177510969486,
+      "audit_trigger": false,
+      "audited_success": true,
+      "audited_coordinates": [
+        0.0012716941226841823,
+        -0.7436289365711574,
+        0.4484922453258401
+      ],
+      "audited_gap": 4.7900348441941125e-17
+    },
+    {
+      "seed": 4,
+      "angle": 1.3,
+      "noise": 0.01,
+      "next_DoLP": 0.8,
+      "previous_success": true,
+      "previous_coordinates": [
+        0.00427318518534775,
+        -0.8089315712724184,
+        0.49486355286203165
+      ],
+      "initial_radius": 0.9482933211578032,
+      "observations": [
+        0.16546097078555502,
+        0.7159102622355749,
+        0.8571726697818371,
+        0.28690611725045745
+      ],
+      "baseline_success": true,
+      "baseline_coordinates": [
+        0.012644229148292,
+        -0.42822395889446935,
+        0.26558749854986724
+      ],
+      "baseline_gap": 1.4326705783090227e-13,
+      "baseline_gradient_inf": 4.999452656047073e-07,
+      "baseline_radius": 0.5038972894918446,
+      "normalized_radial_curvature": 0.45034009479480425,
+      "audit_trigger": false,
+      "audited_success": true,
+      "audited_coordinates": [
+        0.012644229148292,
+        -0.42822395889446935,
+        0.26558749854986724
+      ],
+      "audited_gap": 1.4326705783090227e-13
+    },
+    {
+      "seed": 4,
+      "angle": 1.3,
+      "noise": 0.01,
+      "next_DoLP": 0.99,
+      "previous_success": true,
+      "previous_coordinates": [
+        0.00427318518534775,
+        -0.8089315712724184,
+        0.49486355286203165
+      ],
+      "initial_radius": 0.9482933211578032,
+      "observations": [
+        0.08405653921550503,
+        0.764882892558614,
+        0.9385771013518871,
+        0.2379334869274184
+      ],
+      "baseline_success": true,
+      "baseline_coordinates": [
+        0.01264522717747065,
+        -0.7457277146878083,
+        0.4598612123749253
+      ],
+      "baseline_gap": 1.3682224840952384e-13,
+      "baseline_gradient_inf": 4.3247689081458636e-07,
+      "baseline_radius": 0.8761176628172939,
+      "normalized_radial_curvature": 0.011067635826074241,
+      "audit_trigger": false,
+      "audited_success": true,
+      "audited_coordinates": [
+        0.01264522717747065,
+        -0.7457277146878083,
+        0.4598612123749253
+      ],
+      "audited_gap": 1.3682224840952384e-13
+    }
+  ]
+}

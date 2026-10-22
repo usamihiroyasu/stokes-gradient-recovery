@@ -1,0 +1,19 @@
+{
+  "sympy": "1.14.0",
+  "exact_rational_identities_verified": true,
+  "shifted_polynomial_coefficients_nonnegative": true,
+  "gradient_limit": "1/4",
+  "gap_limit": "1/16",
+  "sharp_ratio": "2^(-4/3)",
+  "outer_epsilon_limit": "1",
+  "outer_nu_limit": "2",
+  "outer_gap_limit": "1/8",
+  "conservative_uniform_coefficient": "52 > 103/2",
+  "factorizations": {
+    "first_inverse_lower": "(r - 1)**2*(r**3 + r**2 + 3*r + 1)/(r**2 + 1)**2",
+    "near_first_inverse_upper": "-2*r*(r - 1)*(r**3 + 2*r - 1)/(r**2 + 1)**2",
+    "radial_curvature_lower": "-(r - 1)*(r**5 + r**4 + 4*r**3 + 8*r**2 + 11*r - 1)/(r**2 + 1)**3",
+    "slack_ratio": "-(r - 1)*(r**2 + 1)/(2*(r + 1))"
+  },
+  "scope": "Exact identity/limit verification supplements the written proof; not formal theorem-prover certification or novelty verification."
+}

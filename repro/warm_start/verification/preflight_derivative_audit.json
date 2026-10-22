@@ -1,0 +1,7 @@
+{
+  "cases": 60,
+  "max_loss_error": 0.0,
+  "max_gradient_error": 9.48904541029391e-18,
+  "max_hessian_error": 4.440892098500626e-16,
+  "pass": true
+}

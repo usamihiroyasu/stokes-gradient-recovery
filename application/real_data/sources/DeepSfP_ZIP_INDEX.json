@@ -1,0 +1,53 @@
+{
+  "dataset": "DeepSfP",
+  "size": 4956684332,
+  "scope": "Selected-member index only; acquisition script checks complete live ZIP directory and verifies pinned payload hashes.",
+  "complete_index_sha256": "52b5e03aa92041d948c2182cb91efdb4d810374eaccf77c108b4677b1ae19362",
+  "files": [
+    {
+      "name": "deepSfP_data/test_list.csv",
+      "uncompressed": 548,
+      "compressed": 139,
+      "crc32": "7e730a0b",
+      "offset": 4294969075,
+      "method": 8,
+      "flags": 8
+    },
+    {
+      "name": "deepSfP_data/README.txt",
+      "uncompressed": 2931,
+      "compressed": 1395,
+      "crc32": "28ea47c6",
+      "offset": 6014061692,
+      "method": 8,
+      "flags": 8
+    },
+    {
+      "name": "deepSfP_data/indoor/box_f.mat",
+      "uncompressed": 12964363,
+      "compressed": 12635627,
+      "crc32": "7b727c81",
+      "offset": 7848340412,
+      "method": 8,
+      "flags": 8
+    },
+    {
+      "name": "deepSfP_data/indoor/father_christmas_f.mat",
+      "uncompressed": 13775287,
+      "compressed": 13479694,
+      "crc32": "256d6db7",
+      "offset": 8045213195,
+      "method": 8,
+      "flags": 8
+    },
+    {
+      "name": "deepSfP_data/indoor/horse_l.mat",
+      "uncompressed": 16814450,
+      "compressed": 16553064,
+      "crc32": "3db69cd4",
+      "offset": 8422341961,
+      "method": 8,
+      "flags": 8
+    }
+  ]
+}

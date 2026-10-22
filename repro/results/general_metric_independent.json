@@ -1,0 +1,4811 @@
+{
+  "status": "PASS",
+  "scope": "84 deterministic finite-case checks, not a proof or learned-head experiment",
+  "formula": "z=s-alpha*W^-1*(-1,e); rho=-I*alpha; gap<=n^T W^-1 n/(2 I^2)*max(-rho,0)^2",
+  "raw_intensity_map": "I=exp(a), strictly positive and regular at I=1.2",
+  "comparison": "independent convex Stokes-coordinate QP via SciPy SLSQP",
+  "software": {
+    "numpy": "2.3.5",
+    "scipy": "1.18.1"
+  },
+  "source_sha256": "aa0634080c7750f1442145a2e6fa07dc48d584b050e44dc8e2184a43a9ae3825",
+  "finite_difference": {
+    "gradient_step": 1e-06,
+    "curvature_step": 0.0001
+  },
+  "solver": {
+    "method": "SLSQP",
+    "ftol": 1e-13,
+    "maxiter": 1000,
+    "initial_Stokes": [
+      1.5,
+      0,
+      0
+    ]
+  },
+  "matrices": [
+    {
+      "name": "ideal_uncorrelated",
+      "angles_deg": [
+        0,
+        45,
+        90,
+        135
+      ],
+      "gain": [
+        1,
+        1,
+        1,
+        1
+      ],
+      "efficiency": [
+        1,
+        1,
+        1,
+        1
+      ],
+      "effective_observation_variance": [
+        1.0,
+        1.0,
+        1.0,
+        1.0
+      ],
+      "A": [
+        [
+          0.5,
+          0.5,
+          0.0
+        ],
+        [
+          0.5,
+          3.061616997868383e-17,
+          0.5
+        ],
+        [
+          0.5,
+          -0.5,
+          6.123233995736766e-17
+        ],
+        [
+          0.5,
+          -9.184850993605148e-17,
+          -0.5
+        ]
+      ],
+      "W": [
+        [
+          1.0,
+          -4.592425496802574e-17,
+          5.551115123125783e-17
+        ],
+        [
+          -4.592425496802574e-17,
+          0.5,
+          3.0616169978683824e-17
+        ],
+        [
+          5.551115123125783e-17,
+          3.0616169978683824e-17,
+          0.5
+        ]
+      ],
+      "eigenvalues": [
+        0.5,
+        0.5,
+        1.0
+      ],
+      "condition_number": 2.0,
+      "max_off_diagonal_abs": 5.551115123125783e-17
+    },
+    {
+      "name": "nonideal_angles",
+      "angles_deg": [
+        0,
+        37,
+        91,
+        143
+      ],
+      "gain": [
+        1.03,
+        0.97,
+        1.01,
+        0.99
+      ],
+      "efficiency": [
+        0.94,
+        0.94,
+        0.94,
+        0.94
+      ],
+      "effective_observation_variance": [
+        0.9225664928933565,
+        0.7380531943146853,
+        1.0148231421826923,
+        1.1993364407613636
+      ],
+      "A": [
+        [
+          0.515,
+          0.4841,
+          0.0
+        ],
+        [
+          0.485,
+          0.1256630705169699,
+          0.4382392071782795
+        ],
+        [
+          0.505,
+          -0.47441082558596476,
+          -0.016566791084677176
+        ],
+        [
+          0.495,
+          0.1282540616616498,
+          -0.4472750671200997
+        ]
+      ],
+      "W": [
+        [
+          1.0617965597791463,
+          0.16967041498667765,
+          0.09513490203531318
+        ],
+        [
+          0.16967041498667765,
+          0.5109117872904065,
+          0.034530053765413175
+        ],
+        [
+          0.0951349020353132,
+          0.03453005376541318,
+          0.42729165293044713
+        ]
+      ],
+      "eigenvalues": [
+        0.41165823712092453,
+        0.463863667460752,
+        1.1244780954183236
+      ],
+      "condition_number": 2.731581671443655,
+      "max_off_diagonal_abs": 0.16967041498667765
+    },
+    {
+      "name": "gain_and_efficiency",
+      "angles_deg": [
+        3,
+        44,
+        86,
+        132
+      ],
+      "gain": [
+        1.15,
+        0.88,
+        1.04,
+        0.94
+      ],
+      "efficiency": [
+        0.91,
+        0.95,
+        0.89,
+        0.97
+      ],
+      "effective_observation_variance": [
+        1.1114227288690475,
+        0.648329925173611,
+        1.296659850347222,
+        0.8335670466517857
+      ],
+      "A": [
+        [
+          0.575,
+          0.5203835817514489,
+          0.05469451840479968
+        ],
+        [
+          0.44,
+          0.014587989621645451,
+          0.41774536569398196
+        ],
+        [
+          0.52,
+          -0.4582960622135988,
+          0.06440931112431823
+        ],
+        [
+          0.47,
+          -0.04765452640372316,
+          -0.45340253209839576
+        ]
+      ],
+      "W": [
+        [
+          1.0696339433333177,
+          0.06846311891431552,
+          0.08198915131087381
+        ],
+        [
+          0.06846311891431553,
+          0.40868524244439675,
+          0.03816406419055746
+        ],
+        [
+          0.08198915131087388,
+          0.03816406419055746,
+          0.5216808142222855
+        ]
+      ],
+      "eigenvalues": [
+        0.3941650153572178,
+        0.5162957515839379,
+        1.089539233058844
+      ],
+      "condition_number": 2.7641703109329305,
+      "max_off_diagonal_abs": 0.08198915131087388
+    },
+    {
+      "name": "heteroscedastic",
+      "angles_deg": [
+        -5,
+        40,
+        95,
+        139
+      ],
+      "gain": [
+        0.93,
+        1.08,
+        0.96,
+        1.02
+      ],
+      "efficiency": [
+        0.9,
+        0.96,
+        0.93,
+        0.88
+      ],
+      "effective_observation_variance": [
+        0.5615965402941177,
+        1.5911901975,
+        0.79559509875,
+        1.1231930805882353
+      ],
+      "A": [
+        [
+          0.465,
+          0.4121420446356091,
+          -0.07267176235361035
+        ],
+        [
+          0.54,
+          0.09001921530253673,
+          0.5105243391615286
+        ],
+        [
+          0.48,
+          -0.43961818094464966,
+          -0.07751654651051776
+        ],
+        [
+          0.51,
+          0.06246088771087738,
+          -0.4444323092512168
+        ]
+      ],
+      "W": [
+        [
+          1.0894439286539157,
+          0.13493173730730584,
+          -0.13548357209368578
+        ],
+        [
+          0.13493173730730584,
+          0.5539449011931741,
+          -0.0063318659955870415
+        ],
+        [
+          -0.13548357209368578,
+          -0.006331865995587042,
+          0.35661117015291016
+        ]
+      ],
+      "eigenvalues": [
+        0.33082951640830593,
+        0.525064432740268,
+        1.1441060508514262
+      ],
+      "condition_number": 3.4582949649492094,
+      "max_off_diagonal_abs": 0.13548357209368578
+    }
+  ],
+  "tests": {
+    "all_spd": true,
+    "three_non_diagonal_metrics": true,
+    "ideal_metric_exact": true,
+    "all_solver_success": true,
+    "all_solver_cone_feasible": true,
+    "all_solver_kkt_stationarity": true,
+    "all_solver_complementarity": true,
+    "full_raw_stationarity": true,
+    "raw_gradient_fd": true,
+    "radial_curvature_gradient_fd": true,
+    "radial_curvature_energy_fd": true,
+    "global_minimum_for_nonpositive_alpha": true,
+    "negative_radial_curvature_for_positive_alpha": true,
+    "certificate_gap_upper_bound": true,
+    "equality_when_z_feasible_positive_alpha": true
+  },
+  "summary": {
+    "cases": 84,
+    "nonpositive_alpha_global_cases": 24,
+    "positive_alpha_strict_saddle_cases": 60,
+    "positive_alpha_feasible_z_equality_cases": 56,
+    "positive_alpha_infeasible_z_strict_bound_cases": 4,
+    "max_full_raw_gradient_inf": 9.769962616701378e-16,
+    "max_raw_gradient_fd_error_inf": 1.332267481153983e-09,
+    "max_rho_gradient_fd_error": 2.1256521876011902e-08,
+    "max_rho_energy_fd_error": 2.455123193634279e-07,
+    "max_solver_cone_violation": 7.882583474838611e-14,
+    "max_solver_stationarity_inf": 2.1824883256194028e-07,
+    "max_solver_complementarity_abs": 4.729550081674351e-14,
+    "max_certificate_violation": 4.729550084903167e-14,
+    "max_equality_abs_error": 4.796163466380676e-14,
+    "max_nonpositive_alpha_gap_abs": 4.729550084903167e-14,
+    "solver_status_counts": {
+      "0": 84
+    }
+  },
+  "records": [
+    {
+      "matrix": "ideal_uncorrelated",
+      "direction_radians": 0.0,
+      "alpha": -0.6,
+      "I": 1.2,
+      "e": [
+        1.0,
+        0.0
+      ],
+      "s_fold": [
+        1.2,
+        1.2,
+        0.0
+      ],
+      "z": [
+        0.6000000000000001,
+        2.4,
+        -6.8654264713317846e-18
+      ],
+      "z_cone_slack": -1.7999999999999998,
+      "z_feasible": false,
+      "full_raw_gradient_inf": 8.43769498715119e-17,
+      "raw_gradient_fd_error_inf": 8.43769498715119e-17,
+      "rho_exact": 0.72,
+      "rho_gradient_fd": 0.7200000107993617,
+      "rho_energy_fd": 0.7200000040619159,
+      "rho_gradient_fd_error": 1.079936173820073e-08,
+      "rho_energy_fd_error": 4.0619159147325945e-09,
+      "fold_objective": 0.5399999999999999,
+      "qp": {
+        "success": true,
+        "status": 0,
+        "message": "Optimization terminated successfully",
+        "iterations": 5,
+        "solution": [
+          1.2000000000000004,
+          1.1999999999999995,
+          7.549107361011085e-20
+        ],
+        "objective": 0.5400000000000005,
+        "cone_slack": 8.881784197001252e-16,
+        "cone_violation": 0.0,
+        "stationarity_inf": 1.1102230246251565e-16,
+        "complementarity_abs": 5.329070518200754e-16,
+        "dual_multiplier": 0.6000000000000003
+      },
+      "actual_gap": -5.551115123125783e-16,
+      "certificate_bound": 0.0,
+      "bound_minus_gap": 5.551115123125783e-16,
+      "expected_equality": false,
+      "equality_abs_error": null,
+      "global_fold_solution_error": 4.440892098500626e-16
+    },
+    {
+      "matrix": "ideal_uncorrelated",
+      "direction_radians": 0.0,
+      "alpha": -0.1,
+      "I": 1.2,
+      "e": [
+        1.0,
+        0.0
+      ],
+      "s_fold": [
+        1.2,
+        1.2,
+        0.0
+      ],
+      "z": [
+        1.0999999999999999,
+        1.4,
+        -1.1442377452219644e-18
+      ],
+      "z_cone_slack": -0.30000000000000004,
+      "z_feasible": false,
+      "full_raw_gradient_inf": 1.5154544286133387e-16,
+      "raw_gradient_fd_error_inf": 8.672101925455422e-13,
+      "rho_exact": 0.12,
+      "rho_gradient_fd": 0.1200000047998937,
+      "rho_energy_fd": 0.12000000298995062,
+      "rho_gradient_fd_error": 4.799893704721114e-09,
+      "rho_energy_fd_error": 2.9899506204245085e-09,
+      "fold_objective": 0.015000000000000005,
+      "qp": {
+        "success": true,
+        "status": 0,
+        "message": "Optimization terminated successfully",
+        "iterations": 5,
+        "solution": [
+          1.1999999999999997,
+          1.2,
+          6.675738248525874e-18
+        ],
+        "objective": 0.014999999999999982,
+        "cone_slack": -2.220446049250313e-16,
+        "cone_violation": 2.220446049250313e-16,
+        "stationarity_inf": 5.551115123125783e-17,
+        "complementarity_abs": 2.2204460492503114e-17,
+        "dual_multiplier": 0.09999999999999992
+      },
+      "actual_gap": 2.2551405187698492e-17,
+      "certificate_bound": 0.0,
+      "bound_minus_gap": -2.2551405187698492e-17,
+      "expected_equality": false,
+      "equality_abs_error": null,
+      "global_fold_solution_error": 2.220446049250313e-16
+    },
+    {
+      "matrix": "ideal_uncorrelated",
+      "direction_radians": 0.0,
+      "alpha": 0.01,
+      "I": 1.2,
+      "e": [
+        1.0,
+        0.0
+      ],
+      "s_fold": [
+        1.2,
+        1.2,
+        0.0
+      ],
+      "z": [
+        1.21,
+        1.18,
+        1.144237745221964e-19
+      ],
+      "z_cone_slack": 0.030000000000000027,
+      "z_feasible": true,
+      "full_raw_gradient_inf": 2.17881268582687e-18,
+      "raw_gradient_fd_error_inf": 1.0842043512981904e-12,
+      "rho_exact": -0.012,
+      "rho_gradient_fd": -0.01199999651998925,
+      "rho_energy_fd": -0.01199999830677357,
+      "rho_gradient_fd_error": 3.4800107500537747e-09,
+      "rho_energy_fd_error": 1.693226430593553e-09,
+      "fold_objective": 0.00015000000000000029,
+      "qp": {
+        "success": true,
+        "status": 0,
+        "message": "Optimization terminated successfully",
+        "iterations": 7,
+        "solution": [
+          1.2100000062929597,
+          1.1800000071637873,
+          2.3905390246566726e-18
+        ],
+        "objective": 3.263063321601045e-17,
+        "cone_slack": 0.029999999129172394,
+        "cone_violation": 0.0,
+        "stationarity_inf": 6.2929597088867695e-09,
+        "complementarity_abs": 0.0,
+        "dual_multiplier": 0.0
+      },
+      "actual_gap": 0.00014999999999996765,
+      "certificate_bound": 0.00015000000000000001,
+      "bound_minus_gap": 3.236343484869231e-17,
+      "expected_equality": true,
+      "equality_abs_error": 3.236343484869231e-17,
+      "global_fold_solution_error": null
+    },
+    {
+      "matrix": "ideal_uncorrelated",
+      "direction_radians": 0.0,
+      "alpha": 0.1,
+      "I": 1.2,
+      "e": [
+        1.0,
+        0.0
+      ],
+      "s_fold": [
+        1.2,
+        1.2,
+        0.0
+      ],
+      "z": [
+        1.3,
+        1.0,
+        1.1442377452219644e-18
+      ],
+      "z_cone_slack": 0.30000000000000004,
+      "z_feasible": true,
+      "full_raw_gradient_inf": 1.5154544286133387e-16,
+      "raw_gradient_fd_error_inf": 8.675132834312649e-13,
+      "rho_exact": -0.12,
+      "rho_gradient_fd": -0.11999999759989347,
+      "rho_energy_fd": -0.11999999900008662,
+      "rho_gradient_fd_error": 2.400106530187074e-09,
+      "rho_energy_fd_error": 9.999133743221478e-10,
+      "fold_objective": 0.015000000000000005,
+      "qp": {
+        "success": true,
+        "status": 0,
+        "message": "Optimization terminated successfully",
+        "iterations": 6,
+        "solution": [
+          1.299999980507031,
+          1.0000004364976651,
+          5.040729081557617e-18
+        ],
+        "objective": 4.782254083519305e-14,
+        "cone_slack": 0.2999995440093659,
+        "cone_violation": 0.0,
+        "stationarity_inf": 2.1824883256194028e-07,
+        "complementarity_abs": 0.0,
+        "dual_multiplier": 0.0
+      },
+      "actual_gap": 0.014999999999952182,
+      "certificate_bound": 0.015000000000000001,
+      "bound_minus_gap": 4.7819387338776664e-14,
+      "expected_equality": true,
+      "equality_abs_error": 4.7819387338776664e-14,
+      "global_fold_solution_error": null
+    },
+    {
+      "matrix": "ideal_uncorrelated",
+      "direction_radians": 0.0,
+      "alpha": 0.4,
+      "I": 1.2,
+      "e": [
+        1.0,
+        0.0
+      ],
+      "s_fold": [
+        1.2,
+        1.2,
+        0.0
+      ],
+      "z": [
+        1.5999999999999999,
+        0.3999999999999999,
+        4.5769509808878574e-18
+      ],
+      "z_cone_slack": 1.2,
+      "z_feasible": true,
+      "full_raw_gradient_inf": 8.215650382226158e-17,
+      "raw_gradient_fd_error_inf": 8.215650382226158e-17,
+      "rho_exact": -0.48,
+      "rho_gradient_fd": -0.48000000119957437,
+      "rho_energy_fd": -0.4800000008575722,
+      "rho_gradient_fd_error": 1.1995743842696527e-09,
+      "rho_energy_fd_error": 8.575722354464688e-10,
+      "fold_objective": 0.24,
+      "qp": {
+        "success": true,
+        "status": 0,
+        "message": "Optimization terminated successfully",
+        "iterations": 7,
+        "solution": [
+          1.5999999974680688,
+          0.40000000294095917,
+          5.348829605818625e-18
+        ],
+        "objective": 5.367647904194745e-18,
+        "cone_slack": 1.1999999945271096,
+        "cone_violation": 0.0,
+        "stationarity_inf": 2.5319311092175667e-09,
+        "complementarity_abs": 0.0,
+        "dual_multiplier": 0.0
+      },
+      "actual_gap": 0.24,
+      "certificate_bound": 0.24000000000000002,
+      "bound_minus_gap": 2.7755575615628914e-17,
+      "expected_equality": true,
+      "equality_abs_error": 2.7755575615628914e-17,
+      "global_fold_solution_error": null
+    },
+    {
+      "matrix": "ideal_uncorrelated",
+      "direction_radians": 0.0,
+      "alpha": 1.0,
+      "I": 1.2,
+      "e": [
+        1.0,
+        0.0
+      ],
+      "s_fold": [
+        1.2,
+        1.2,
+        0.0
+      ],
+      "z": [
+        2.1999999999999997,
+        -0.8,
+        1.1442377452219642e-17
+      ],
+      "z_cone_slack": 1.3999999999999997,
+      "z_feasible": true,
+      "full_raw_gradient_inf": 2.220446049250313e-16,
+      "raw_gradient_fd_error_inf": 1.1102208041791073e-10,
+      "rho_exact": -1.2,
+      "rho_gradient_fd": -1.200000008398936,
+      "rho_energy_fd": -1.2000000104706032,
+      "rho_gradient_fd_error": 8.398935991138501e-09,
+      "rho_energy_fd_error": 1.0470603273304846e-08,
+      "fold_objective": 1.4999999999999998,
+      "qp": {
+        "success": true,
+        "status": 0,
+        "message": "Optimization terminated successfully",
+        "iterations": 7,
+        "solution": [
+          2.199999911523504,
+          -0.8000004082655113,
+          9.874503270237088e-18
+        ],
+        "objective": 4.558422709062631e-14,
+        "cone_slack": 1.3999995032579924,
+        "cone_violation": 0.0,
+        "stationarity_inf": 2.0413275564346023e-07,
+        "complementarity_abs": 0.0,
+        "dual_multiplier": 0.0
+      },
+      "actual_gap": 1.4999999999999543,
+      "certificate_bound": 1.5,
+      "bound_minus_gap": 4.574118861455645e-14,
+      "expected_equality": true,
+      "equality_abs_error": 4.574118861455645e-14,
+      "global_fold_solution_error": null
+    },
+    {
+      "matrix": "ideal_uncorrelated",
+      "direction_radians": 0.0,
+      "alpha": 2.0,
+      "I": 1.2,
+      "e": [
+        1.0,
+        0.0
+      ],
+      "s_fold": [
+        1.2,
+        1.2,
+        0.0
+      ],
+      "z": [
+        3.1999999999999997,
+        -2.8,
+        2.2884754904439284e-17
+      ],
+      "z_cone_slack": 0.3999999999999999,
+      "z_feasible": true,
+      "full_raw_gradient_inf": 1.479114197289397e-32,
+      "raw_gradient_fd_error_inf": 4.440892098500626e-10,
+      "rho_exact": -2.4,
+      "rho_gradient_fd": -2.400000020397872,
+      "rho_energy_fd": -2.4000000209412065,
+      "rho_gradient_fd_error": 2.0397872280142337e-08,
+      "rho_energy_fd_error": 2.0941206546609692e-08,
+      "fold_objective": 6.0,
+      "qp": {
+        "success": true,
+        "status": 0,
+        "message": "Optimization terminated successfully",
+        "iterations": 8,
+        "solution": [
+          3.199999984996635,
+          -2.800000006369159,
+          2.0174217420851763e-17
+        ],
+        "objective": 1.2269202377433311e-16,
+        "cone_slack": 0.39999997862747616,
+        "cone_violation": 0.0,
+        "stationarity_inf": 1.500336477278097e-08,
+        "complementarity_abs": 0.0,
+        "dual_multiplier": 0.0
+      },
+      "actual_gap": 6.0,
+      "certificate_bound": 6.0,
+      "bound_minus_gap": 0.0,
+      "expected_equality": true,
+      "equality_abs_error": 0.0,
+      "global_fold_solution_error": null
+    },
+    {
+      "matrix": "ideal_uncorrelated",
+      "direction_radians": 0.7,
+      "alpha": -0.6,
+      "I": 1.2,
+      "e": [
+        0.7648421872844885,
+        0.644217687237691
+      ],
+      "s_fold": [
+        1.2,
+        0.9178106247413862,
+        0.7730612246852292
+      ],
+      "z": [
+        0.6,
+        1.8356212494827724,
+        1.5461224493704584
+      ],
+      "z_cone_slack": -1.7999999999999998,
+      "z_feasible": false,
+      "full_raw_gradient_inf": 6.036129525665735e-17,
+      "raw_gradient_fd_error_inf": 6.036129525665735e-17,
+      "rho_exact": 0.72,
+      "rho_gradient_fd": 0.7200000107995232,
+      "rho_energy_fd": 0.7200000151641461,
+      "rho_gradient_fd_error": 1.0799523275650813e-08,
+      "rho_energy_fd_error": 1.516414616098416e-08,
+      "fold_objective": 0.54,
+      "qp": {
+        "success": true,
+        "status": 0,
+        "message": "Optimization terminated successfully",
+        "iterations": 5,
+        "solution": [
+          1.2000000000000004,
+          0.9178106247413855,
+          0.7730612246852286
+        ],
+        "objective": 0.5400000000000008,
+        "cone_slack": 1.3322676295501878e-15,
+        "cone_violation": 0.0,
+        "stationarity_inf": 0.0,
+        "complementarity_abs": 7.993605777301132e-16,
+        "dual_multiplier": 0.6000000000000004
+      },
+      "actual_gap": -7.771561172376096e-16,
+      "certificate_bound": 0.0,
+      "bound_minus_gap": 7.771561172376096e-16,
+      "expected_equality": false,
+      "equality_abs_error": null,
+      "global_fold_solution_error": 6.661338147750939e-16
+    },
+    {
+      "matrix": "ideal_uncorrelated",
+      "direction_radians": 0.7,
+      "alpha": -0.1,
+      "I": 1.2,
+      "e": [
+        0.7648421872844885,
+        0.644217687237691
+      ],
+      "s_fold": [
+        1.2,
+        0.9178106247413862,
+        0.7730612246852292
+      ],
+      "z": [
+        1.0999999999999999,
+        1.0707790621982838,
+        0.9019047621327674
+      ],
+      "z_cone_slack": -0.30000000000000004,
+      "z_feasible": false,
+      "full_raw_gradient_inf": 1.6362549091008445e-16,
+      "raw_gradient_fd_error_inf": 5.204141008302967e-12,
+      "rho_exact": 0.12,
+      "rho_gradient_fd": 0.12000000479991507,
+      "rho_energy_fd": 0.1200000043777294,
+      "rho_gradient_fd_error": 4.799915076514338e-09,
+      "rho_energy_fd_error": 4.377729401205954e-09,
+      "fold_objective": 0.015,
+      "qp": {
+        "success": true,
+        "status": 0,
+        "message": "Optimization terminated successfully",
+        "iterations": 5,
+        "solution": [
+          1.2,
+          0.9178106247413861,
+          0.7730612246852292
+        ],
+        "objective": 0.015000000000000006,
+        "cone_slack": 0.0,
+        "cone_violation": 0.0,
+        "stationarity_inf": 5.551115123125783e-17,
+        "complementarity_abs": 0.0,
+        "dual_multiplier": 0.10000000000000006
+      },
+      "actual_gap": -6.938893903907228e-18,
+      "certificate_bound": 0.0,
+      "bound_minus_gap": 6.938893903907228e-18,
+      "expected_equality": false,
+      "equality_abs_error": null,
+      "global_fold_solution_error": 1.1102230246251565e-16
+    },
+    {
+      "matrix": "ideal_uncorrelated",
+      "direction_radians": 0.7,
+      "alpha": 0.01,
+      "I": 1.2,
+      "e": [
+        0.7648421872844885,
+        0.644217687237691
+      ],
+      "s_fold": [
+        1.2,
+        0.9178106247413862,
+        0.7730612246852292
+      ],
+      "z": [
+        1.21,
+        0.9025137809956965,
+        0.7601768709404754
+      ],
+      "z_cone_slack": 0.030000000000000027,
+      "z_feasible": true,
+      "full_raw_gradient_inf": 2.1265231658233208e-17,
+      "raw_gradient_fd_error_inf": 1.1248810191853692e-12,
+      "rho_exact": -0.012,
+      "rho_gradient_fd": -0.011999996519992274,
+      "rho_energy_fd": -0.011999998469403896,
+      "rho_gradient_fd_error": 3.480007726430756e-09,
+      "rho_energy_fd_error": 1.5305961047207273e-09,
+      "fold_objective": 0.0001499999999999999,
+      "qp": {
+        "success": true,
+        "status": 0,
+        "message": "Optimization terminated successfully",
+        "iterations": 7,
+        "solution": [
+          1.2100000062929597,
+          0.9025137864748631,
+          0.7601768755555138
+        ],
+        "objective": 3.2630632817060556e-17,
+        "cone_slack": 0.029999999129172394,
+        "cone_violation": 0.0,
+        "stationarity_inf": 6.2929597088867695e-09,
+        "complementarity_abs": 0.0,
+        "dual_multiplier": 0.0
+      },
+      "actual_gap": 0.00014999999999996727,
+      "certificate_bound": 0.00015000000000000001,
+      "bound_minus_gap": 3.2742905609062234e-17,
+      "expected_equality": true,
+      "equality_abs_error": 3.2742905609062234e-17,
+      "global_fold_solution_error": null
+    },
+    {
+      "matrix": "ideal_uncorrelated",
+      "direction_radians": 0.7,
+      "alpha": 0.1,
+      "I": 1.2,
+      "e": [
+        0.7648421872844885,
+        0.644217687237691
+      ],
+      "s_fold": [
+        1.2,
+        0.9178106247413862,
+        0.7730612246852292
+      ],
+      "z": [
+        1.3,
+        0.7648421872844885,
+        0.644217687237691
+      ],
+      "z_cone_slack": 0.30000000000000004,
+      "z_feasible": true,
+      "full_raw_gradient_inf": 1.0811433967882663e-16,
+      "raw_gradient_fd_error_inf": 3.4694522267956786e-12,
+      "rho_exact": -0.12,
+      "rho_gradient_fd": -0.11999999759993214,
+      "rho_energy_fd": -0.1200000007348101,
+      "rho_gradient_fd_error": 2.4000678527924535e-09,
+      "rho_energy_fd_error": 7.348101016546593e-10,
+      "fold_objective": 0.015000000000000006,
+      "qp": {
+        "success": true,
+        "status": 0,
+        "message": "Optimization terminated successfully",
+        "iterations": 6,
+        "solution": [
+          1.299999980507031,
+          0.7648425211363173,
+          0.6442179684372072
+        ],
+        "objective": 4.78225408086283e-14,
+        "cone_slack": 0.2999995440093661,
+        "cone_violation": 0.0,
+        "stationarity_inf": 1.66925914424354e-07,
+        "complementarity_abs": 0.0,
+        "dual_multiplier": 0.0
+      },
+      "actual_gap": 0.014999999999952184,
+      "certificate_bound": 0.015000000000000001,
+      "bound_minus_gap": 4.781765261530069e-14,
+      "expected_equality": true,
+      "equality_abs_error": 4.781765261530069e-14,
+      "global_fold_solution_error": null
+    },
+    {
+      "matrix": "ideal_uncorrelated",
+      "direction_radians": 0.7,
+      "alpha": 0.4,
+      "I": 1.2,
+      "e": [
+        0.7648421872844885,
+        0.644217687237691
+      ],
+      "s_fold": [
+        1.2,
+        0.9178106247413862,
+        0.7730612246852292
+      ],
+      "z": [
+        1.6,
+        0.3059368749137954,
+        0.25768707489507636
+      ],
+      "z_cone_slack": 1.2000000000000002,
+      "z_feasible": true,
+      "full_raw_gradient_inf": 1.119880840044942e-16,
+      "raw_gradient_fd_error_inf": 1.3877899795898461e-11,
+      "rho_exact": -0.48,
+      "rho_gradient_fd": -0.48000000119963177,
+      "rho_energy_fd": -0.4800000175109176,
+      "rho_gradient_fd_error": 1.1996317828000258e-09,
+      "rho_energy_fd_error": 1.7510917604823817e-08,
+      "fold_objective": 0.2400000000000001,
+      "qp": {
+        "success": true,
+        "status": 0,
+        "message": "Optimization terminated successfully",
+        "iterations": 7,
+        "solution": [
+          1.599999997468069,
+          0.3059368771631651,
+          0.2576870767896943
+        ],
+        "objective": 5.367647878031086e-18,
+        "cone_slack": 1.1999999945271098,
+        "cone_violation": 0.0,
+        "stationarity_inf": 2.5319311092175667e-09,
+        "complementarity_abs": 0.0,
+        "dual_multiplier": 0.0
+      },
+      "actual_gap": 0.2400000000000001,
+      "certificate_bound": 0.24000000000000002,
+      "bound_minus_gap": -8.326672684688674e-17,
+      "expected_equality": true,
+      "equality_abs_error": 8.326672684688674e-17,
+      "global_fold_solution_error": null
+    },
+    {
+      "matrix": "ideal_uncorrelated",
+      "direction_radians": 0.7,
+      "alpha": 1.0,
+      "I": 1.2,
+      "e": [
+        0.7648421872844885,
+        0.644217687237691
+      ],
+      "s_fold": [
+        1.2,
+        0.9178106247413862,
+        0.7730612246852292
+      ],
+      "z": [
+        2.2,
+        -0.6118737498275908,
+        -0.5153741497901528
+      ],
+      "z_cone_slack": 1.4000000000000001,
+      "z_feasible": true,
+      "full_raw_gradient_inf": 1.0713793997909467e-16,
+      "raw_gradient_fd_error_inf": 1.1102226339768089e-10,
+      "rho_exact": -1.2,
+      "rho_gradient_fd": -1.2000000083991818,
+      "rho_energy_fd": -1.2000000326750637,
+      "rho_gradient_fd_error": 8.399181794516153e-09,
+      "rho_energy_fd_error": 3.267506376580798e-08,
+      "fold_objective": 1.5000000000000002,
+      "qp": {
+        "success": true,
+        "status": 0,
+        "message": "Optimization terminated successfully",
+        "iterations": 7,
+        "solution": [
+          2.1999999115235043,
+          -0.6118740620862775,
+          -0.5153744128020163
+        ],
+        "objective": 4.558422710349052e-14,
+        "cone_slack": 1.3999995032579928,
+        "cone_violation": 0.0,
+        "stationarity_inf": 1.5612934334274797e-07,
+        "complementarity_abs": 0.0,
+        "dual_multiplier": 0.0
+      },
+      "actual_gap": 1.4999999999999547,
+      "certificate_bound": 1.5,
+      "bound_minus_gap": 4.529709940470639e-14,
+      "expected_equality": true,
+      "equality_abs_error": 4.529709940470639e-14,
+      "global_fold_solution_error": null
+    },
+    {
+      "matrix": "ideal_uncorrelated",
+      "direction_radians": 0.7,
+      "alpha": 2.0,
+      "I": 1.2,
+      "e": [
+        0.7648421872844885,
+        0.644217687237691
+      ],
+      "s_fold": [
+        1.2,
+        0.9178106247413862,
+        0.7730612246852292
+      ],
+      "z": [
+        3.2,
+        -2.1415581243965676,
+        -1.8038095242655348
+      ],
+      "z_cone_slack": 0.40000000000000036,
+      "z_feasible": true,
+      "full_raw_gradient_inf": 4.518579348169046e-16,
+      "raw_gradient_fd_error_inf": 4.440890206980906e-10,
+      "rho_exact": -2.4,
+      "rho_gradient_fd": -2.4000000203980014,
+      "rho_energy_fd": -2.4000000209412065,
+      "rho_gradient_fd_error": 2.0398001510102404e-08,
+      "rho_energy_fd_error": 2.0941206546609692e-08,
+      "fold_objective": 5.999999999999999,
+      "qp": {
+        "success": true,
+        "status": 0,
+        "message": "Optimization terminated successfully",
+        "iterations": 8,
+        "solution": [
+          3.1999999849966354,
+          -2.141558129267969,
+          -1.8038095283686597
+        ],
+        "objective": 1.2269202399754407e-16,
+        "cone_slack": 0.3999999786274766,
+        "cone_violation": 0.0,
+        "stationarity_inf": 1.500336477278097e-08,
+        "complementarity_abs": 0.0,
+        "dual_multiplier": 0.0
+      },
+      "actual_gap": 5.999999999999999,
+      "certificate_bound": 6.0,
+      "bound_minus_gap": 8.881784197001252e-16,
+      "expected_equality": true,
+      "equality_abs_error": 8.881784197001252e-16,
+      "global_fold_solution_error": null
+    },
+    {
+      "matrix": "ideal_uncorrelated",
+      "direction_radians": 1.9,
+      "alpha": -0.6,
+      "I": 1.2,
+      "e": [
+        -0.32328956686350335,
+        0.9463000876874145
+      ],
+      "s_fold": [
+        1.2,
+        -0.387947480236204,
+        1.1355601052248974
+      ],
+      "z": [
+        0.5999999999999999,
+        -0.7758949604724081,
+        2.2711202104497947
+      ],
+      "z_cone_slack": -1.8,
+      "z_feasible": false,
+      "full_raw_gradient_inf": 3.477832316502195e-17,
+      "raw_gradient_fd_error_inf": 5.5511180708906206e-11,
+      "rho_exact": 0.72,
+      "rho_gradient_fd": 0.7200000108001154,
+      "rho_energy_fd": 0.7200000040619159,
+      "rho_gradient_fd_error": 1.0800115468612148e-08,
+      "rho_energy_fd_error": 4.0619159147325945e-09,
+      "fold_objective": 0.54,
+      "qp": {
+        "success": true,
+        "status": 0,
+        "message": "Optimization terminated successfully",
+        "iterations": 5,
+        "solution": [
+          1.1999999999999997,
+          -0.3879474802362041,
+          1.1355601052248974
+        ],
+        "objective": 0.5399999999999998,
+        "cone_slack": -2.220446049250313e-16,
+        "cone_violation": 2.220446049250313e-16,
+        "stationarity_inf": 1.1102230246251565e-16,
+        "complementarity_abs": 1.3322676295501876e-16,
+        "dual_multiplier": 0.5999999999999999
+      },
+      "actual_gap": 2.220446049250313e-16,
+      "certificate_bound": 0.0,
+      "bound_minus_gap": -2.220446049250313e-16,
+      "expected_equality": false,
+      "equality_abs_error": null,
+      "global_fold_solution_error": 2.220446049250313e-16
+    },
+    {
+      "matrix": "ideal_uncorrelated",
+      "direction_radians": 1.9,
+      "alpha": -0.1,
+      "I": 1.2,
+      "e": [
+        -0.32328956686350335,
+        0.9463000876874145
+      ],
+      "s_fold": [
+        1.2,
+        -0.387947480236204,
+        1.1355601052248974
+      ],
+      "z": [
+        1.0999999999999999,
+        -0.4526053936089047,
+        1.3248201227623804
+      ],
+      "z_cone_slack": -0.30000000000000027,
+      "z_feasible": false,
+      "full_raw_gradient_inf": 3.165062315489671e-17,
+      "raw_gradient_fd_error_inf": 6.071532967079727e-12,
+      "rho_exact": 0.12,
+      "rho_gradient_fd": 0.12000000480002534,
+      "rho_energy_fd": 0.12000000246953357,
+      "rho_gradient_fd_error": 4.800025349416259e-09,
+      "rho_energy_fd_error": 2.4695335776314664e-09,
+      "fold_objective": 0.015000000000000019,
+      "qp": {
+        "success": true,
+        "status": 0,
+        "message": "Optimization terminated successfully",
+        "iterations": 5,
+        "solution": [
+          1.2,
+          -0.387947480236204,
+          1.1355601052248974
+        ],
+        "objective": 0.015000000000000019,
+        "cone_slack": 0.0,
+        "cone_violation": 0.0,
+        "stationarity_inf": 1.3877787807814457e-17,
+        "complementarity_abs": 0.0,
+        "dual_multiplier": 0.10000000000000006
+      },
+      "actual_gap": 0.0,
+      "certificate_bound": 0.0,
+      "bound_minus_gap": 0.0,
+      "expected_equality": false,
+      "equality_abs_error": null,
+      "global_fold_solution_error": 0.0
+    },
+    {
+      "matrix": "ideal_uncorrelated",
+      "direction_radians": 1.9,
+      "alpha": 0.01,
+      "I": 1.2,
+      "e": [
+        -0.32328956686350335,
+        0.9463000876874145
+      ],
+      "s_fold": [
+        1.2,
+        -0.387947480236204,
+        1.1355601052248974
+      ],
+      "z": [
+        1.21,
+        -0.38148168889893397,
+        1.116634103471149
+      ],
+      "z_cone_slack": 0.030000000000000027,
+      "z_feasible": true,
+      "full_raw_gradient_inf": 3.304866010400205e-17,
+      "raw_gradient_fd_error_inf": 1.3146281827987781e-12,
+      "rho_exact": -0.012,
+      "rho_gradient_fd": -0.011999996520002663,
+      "rho_energy_fd": -0.011999998287800032,
+      "rho_gradient_fd_error": 3.4799973371718584e-09,
+      "rho_energy_fd_error": 1.7121999686120493e-09,
+      "fold_objective": 0.0001499999999999997,
+      "qp": {
+        "success": true,
+        "status": 0,
+        "message": "Optimization terminated successfully",
+        "iterations": 7,
+        "solution": [
+          1.2100000062929597,
+          -0.38148169121491166,
+          1.1166341102502415
+        ],
+        "objective": 3.2630632547981315e-17,
+        "cone_slack": 0.029999999129172616,
+        "cone_violation": 0.0,
+        "stationarity_inf": 6.2929597088867695e-09,
+        "complementarity_abs": 0.0,
+        "dual_multiplier": 0.0
+      },
+      "actual_gap": 0.00014999999999996705,
+      "certificate_bound": 0.00015000000000000004,
+      "bound_minus_gap": 3.298685109787147e-17,
+      "expected_equality": true,
+      "equality_abs_error": 3.298685109787147e-17,
+      "global_fold_solution_error": null
+    },
+    {
+      "matrix": "ideal_uncorrelated",
+      "direction_radians": 1.9,
+      "alpha": 0.1,
+      "I": 1.2,
+      "e": [
+        -0.32328956686350335,
+        0.9463000876874145
+      ],
+      "s_fold": [
+        1.2,
+        -0.387947480236204,
+        1.1355601052248974
+      ],
+      "z": [
+        1.3,
+        -0.3232895668635033,
+        0.9463000876874145
+      ],
+      "z_cone_slack": 0.30000000000000016,
+      "z_feasible": true,
+      "full_raw_gradient_inf": 9.468687188821904e-17,
+      "raw_gradient_fd_error_inf": 6.071512588118178e-12,
+      "rho_exact": -0.12,
+      "rho_gradient_fd": -0.11999999760002882,
+      "rho_energy_fd": -0.11999999882661427,
+      "rho_gradient_fd_error": 2.3999711801225843e-09,
+      "rho_energy_fd_error": 1.1733857219198285e-09,
+      "fold_objective": 0.015000000000000006,
+      "qp": {
+        "success": true,
+        "status": 0,
+        "message": "Optimization terminated successfully",
+        "iterations": 6,
+        "solution": [
+          1.299999980507031,
+          -0.32328970797864437,
+          0.9463005007451932
+        ],
+        "objective": 4.7822540828774284e-14,
+        "cone_slack": 0.2999995440093659,
+        "cone_violation": 0.0,
+        "stationarity_inf": 2.0652888937933156e-07,
+        "complementarity_abs": 0.0,
+        "dual_multiplier": 0.0
+      },
+      "actual_gap": 0.014999999999952184,
+      "certificate_bound": 0.015000000000000005,
+      "bound_minus_gap": 4.782112206225264e-14,
+      "expected_equality": true,
+      "equality_abs_error": 4.782112206225264e-14,
+      "global_fold_solution_error": null
+    },
+    {
+      "matrix": "ideal_uncorrelated",
+      "direction_radians": 1.9,
+      "alpha": 0.4,
+      "I": 1.2,
+      "e": [
+        -0.32328956686350335,
+        0.9463000876874145
+      ],
+      "s_fold": [
+        1.2,
+        -0.387947480236204,
+        1.1355601052248974
+      ],
+      "z": [
+        1.6,
+        -0.1293158267454012,
+        0.3785200350749657
+      ],
+      "z_cone_slack": 1.2000000000000002,
+      "z_feasible": true,
+      "full_raw_gradient_inf": 1.4917778512578037e-16,
+      "raw_gradient_fd_error_inf": 2.775554543896349e-11,
+      "rho_exact": -0.48,
+      "rho_gradient_fd": -0.48000000120008723,
+      "rho_energy_fd": -0.47999999808201466,
+      "rho_gradient_fd_error": 1.2000872517958783e-09,
+      "rho_energy_fd_error": 1.9179853261164226e-09,
+      "fold_objective": 0.24000000000000005,
+      "qp": {
+        "success": true,
+        "status": 0,
+        "message": "Optimization terminated successfully",
+        "iterations": 7,
+        "solution": [
+          1.599999997468069,
+          -0.12931582769618266,
+          0.3785200378579957
+        ],
+        "objective": 5.3676479491193994e-18,
+        "cone_slack": 1.1999999945271098,
+        "cone_violation": 0.0,
+        "stationarity_inf": 2.5319311092175667e-09,
+        "complementarity_abs": 0.0,
+        "dual_multiplier": 0.0
+      },
+      "actual_gap": 0.24000000000000005,
+      "certificate_bound": 0.24000000000000007,
+      "bound_minus_gap": 2.7755575615628914e-17,
+      "expected_equality": true,
+      "equality_abs_error": 2.7755575615628914e-17,
+      "global_fold_solution_error": null
+    },
+    {
+      "matrix": "ideal_uncorrelated",
+      "direction_radians": 1.9,
+      "alpha": 1.0,
+      "I": 1.2,
+      "e": [
+        -0.32328956686350335,
+        0.9463000876874145
+      ],
+      "s_fold": [
+        1.2,
+        -0.387947480236204,
+        1.1355601052248974
+      ],
+      "z": [
+        2.2,
+        0.2586316534908029,
+        -0.7570400701499318
+      ],
+      "z_cone_slack": 1.4,
+      "z_feasible": true,
+      "full_raw_gradient_inf": 2.341665847363063e-16,
+      "raw_gradient_fd_error_inf": 2.22044584994519e-10,
+      "rho_exact": -1.2,
+      "rho_gradient_fd": -1.2000000084003386,
+      "rho_energy_fd": -1.2000000326750637,
+      "rho_gradient_fd_error": 8.400338646907812e-09,
+      "rho_energy_fd_error": 3.267506376580798e-08,
+      "fold_objective": 1.5000000000000004,
+      "qp": {
+        "success": true,
+        "status": 0,
+        "message": "Optimization terminated successfully",
+        "iterations": 7,
+        "solution": [
+          2.1999999115235043,
+          0.25863178547878324,
+          -0.757040456491621
+        ],
+        "objective": 4.558422710413977e-14,
+        "cone_slack": 1.3999995032579928,
+        "cone_violation": 0.0,
+        "stationarity_inf": 1.931708445979119e-07,
+        "complementarity_abs": 0.0,
+        "dual_multiplier": 0.0
+      },
+      "actual_gap": 1.499999999999955,
+      "certificate_bound": 1.5000000000000004,
+      "bound_minus_gap": 4.551914400963142e-14,
+      "expected_equality": true,
+      "equality_abs_error": 4.551914400963142e-14,
+      "global_fold_solution_error": null
+    },
+    {
+      "matrix": "ideal_uncorrelated",
+      "direction_radians": 1.9,
+      "alpha": 2.0,
+      "I": 1.2,
+      "e": [
+        -0.32328956686350335,
+        0.9463000876874145
+      ],
+      "s_fold": [
+        1.2,
+        -0.387947480236204,
+        1.1355601052248974
+      ],
+      "z": [
+        3.2,
+        0.9052107872178099,
+        -2.649640245524761
+      ],
+      "z_cone_slack": 0.39999999999999947,
+      "z_feasible": true,
+      "full_raw_gradient_inf": 4.1984525022751254e-16,
+      "raw_gradient_fd_error_inf": 8.881788395453755e-10,
+      "rho_exact": -2.4,
+      "rho_gradient_fd": -2.4000000204006193,
+      "rho_energy_fd": -2.3999998433055225,
+      "rho_gradient_fd_error": 2.040061941599447e-08,
+      "rho_energy_fd_error": 1.5669447739341535e-07,
+      "fold_objective": 6.0,
+      "qp": {
+        "success": true,
+        "status": 0,
+        "message": "Optimization terminated successfully",
+        "iterations": 8,
+        "solution": [
+          3.1999999849966354,
+          0.9052107892768926,
+          -2.649640251551897
+        ],
+        "objective": 1.2269202375010187e-16,
+        "cone_slack": 0.3999999786274757,
+        "cone_violation": 0.0,
+        "stationarity_inf": 1.500336477278097e-08,
+        "complementarity_abs": 0.0,
+        "dual_multiplier": 0.0
+      },
+      "actual_gap": 6.0,
+      "certificate_bound": 6.000000000000002,
+      "bound_minus_gap": 1.7763568394002505e-15,
+      "expected_equality": true,
+      "equality_abs_error": 1.7763568394002505e-15,
+      "global_fold_solution_error": null
+    },
+    {
+      "matrix": "nonideal_angles",
+      "direction_radians": 0.0,
+      "alpha": -0.6,
+      "I": 1.2,
+      "e": [
+        1.0,
+        0.0
+      ],
+      "s_fold": [
+        1.2,
+        1.2,
+        0.0
+      ],
+      "z": [
+        0.3999086653417716,
+        2.635878881819099,
+        0.06210192867141744
+      ],
+      "z_cone_slack": -2.2367016830344566,
+      "z_feasible": false,
+      "full_raw_gradient_inf": 2.930988785010413e-16,
+      "raw_gradient_fd_error_inf": 2.930988785010413e-16,
+      "rho_exact": 0.72,
+      "rho_gradient_fd": 0.7200000108779264,
+      "rho_energy_fd": 0.7200000040619159,
+      "rho_gradient_fd_error": 1.0877926448493724e-08,
+      "rho_energy_fd_error": 4.0619159147325945e-09,
+      "fold_objective": 0.6707910649431981,
+      "qp": {
+        "success": true,
+        "status": 0,
+        "message": "Optimization terminated successfully",
+        "iterations": 7,
+        "solution": [
+          1.2000000000005882,
+          1.2000000000005864,
+          -4.815313723240423e-11
+        ],
+        "objective": 0.6707910649431992,
+        "cone_slack": 1.7763568394002505e-15,
+        "cone_violation": 0.0,
+        "stationarity_inf": 4.457578899286233e-11,
+        "complementarity_abs": 1.0658141036378466e-15,
+        "dual_multiplier": 0.5999999999987031
+      },
+      "actual_gap": -1.1102230246251565e-15,
+      "certificate_bound": 0.0,
+      "bound_minus_gap": 1.1102230246251565e-15,
+      "expected_equality": false,
+      "equality_abs_error": null,
+      "global_fold_solution_error": 4.815313723240423e-11
+    },
+    {
+      "matrix": "nonideal_angles",
+      "direction_radians": 0.0,
+      "alpha": -0.1,
+      "I": 1.2,
+      "e": [
+        1.0,
+        0.0
+      ],
+      "s_fold": [
+        1.2,
+        1.2,
+        0.0
+      ],
+      "z": [
+        1.0666514442236286,
+        1.43931314696985,
+        0.010350321445236241
+      ],
+      "z_cone_slack": -0.37269891763906693,
+      "z_feasible": false,
+      "full_raw_gradient_inf": 5.384581669432009e-17,
+      "raw_gradient_fd_error_inf": 1.7347276393131495e-12,
+      "rho_exact": 0.12,
+      "rho_gradient_fd": 0.12000000487845863,
+      "rho_energy_fd": 0.12000000333689531,
+      "rho_gradient_fd_error": 4.8784586370587135e-09,
+      "rho_energy_fd_error": 3.33689531561987e-09,
+      "fold_objective": 0.018633085137311066,
+      "qp": {
+        "success": true,
+        "status": 0,
+        "message": "Optimization terminated successfully",
+        "iterations": 9,
+        "solution": [
+          1.200000000870859,
+          1.2000000008708718,
+          -2.1674288894908836e-09
+        ],
+        "objective": 0.018633085137309786,
+        "cone_slack": -1.2878587085651816e-14,
+        "cone_violation": 1.2878587085651816e-14,
+        "stationarity_inf": 9.938230185951373e-10,
+        "complementarity_abs": 1.2878587108085144e-15,
+        "dual_multiplier": 0.10000000017419092
+      },
+      "actual_gap": 1.2802259252708836e-15,
+      "certificate_bound": 0.0,
+      "bound_minus_gap": -1.2802259252708836e-15,
+      "expected_equality": false,
+      "equality_abs_error": null,
+      "global_fold_solution_error": 2.1674288894908836e-09
+    },
+    {
+      "matrix": "nonideal_angles",
+      "direction_radians": 0.0,
+      "alpha": 0.01,
+      "I": 1.2,
+      "e": [
+        1.0,
+        0.0
+      ],
+      "s_fold": [
+        1.2,
+        1.2,
+        0.0
+      ],
+      "z": [
+        1.213334855577637,
+        1.176068685303015,
+        -0.0010350321445236242
+      ],
+      "z_cone_slack": 0.03726571482021468,
+      "z_feasible": true,
+      "full_raw_gradient_inf": 6.061817714453355e-17,
+      "raw_gradient_fd_error_inf": 1.3958496788979424e-12,
+      "rho_exact": -0.012,
+      "rho_gradient_fd": -0.011999996441424412,
+      "rho_energy_fd": -0.011999998263405483,
+      "rho_gradient_fd_error": 3.558575588716306e-09,
+      "rho_energy_fd_error": 1.7365945174929731e-09,
+      "fold_objective": 0.00018633085137311135,
+      "qp": {
+        "success": true,
+        "status": 0,
+        "message": "Optimization terminated successfully",
+        "iterations": 8,
+        "solution": [
+          1.2133348564282929,
+          1.1760686852678408,
+          -0.00103503796026768
+        ],
+        "objective": 7.141934903566602e-18,
+        "cone_slack": 0.03726571570092596,
+        "cone_violation": 0.0,
+        "stationarity_inf": 2.4053064005509754e-09,
+        "complementarity_abs": 0.0,
+        "dual_multiplier": 0.0
+      },
+      "actual_gap": 0.00018633085137310422,
+      "certificate_bound": 0.00018633085137311064,
+      "bound_minus_gap": 6.423897871976614e-18,
+      "expected_equality": true,
+      "equality_abs_error": 6.423897871976614e-18,
+      "global_fold_solution_error": null
+    },
+    {
+      "matrix": "nonideal_angles",
+      "direction_radians": 0.0,
+      "alpha": 0.1,
+      "I": 1.2,
+      "e": [
+        1.0,
+        0.0
+      ],
+      "s_fold": [
+        1.2,
+        1.2,
+        0.0
+      ],
+      "z": [
+        1.3333485557763713,
+        0.9606868530301501,
+        -0.010350321445236241
+      ],
+      "z_cone_slack": 0.3726059478219865,
+      "z_feasible": true,
+      "full_raw_gradient_inf": 1.2767564783189299e-17,
+      "raw_gradient_fd_error_inf": 3.4694597195183976e-12,
+      "rho_exact": -0.12,
+      "rho_gradient_fd": -0.11999999752132857,
+      "rho_energy_fd": -0.11999999917355897,
+      "rho_gradient_fd_error": 2.4786714208913097e-09,
+      "rho_energy_fd_error": 8.264410267244671e-10,
+      "fold_objective": 0.01863308513731106,
+      "qp": {
+        "success": true,
+        "status": 0,
+        "message": "Optimization terminated successfully",
+        "iterations": 9,
+        "solution": [
+          1.3333485521279618,
+          0.9606868563966263,
+          -0.01035035569046626
+        ],
+        "objective": 2.663334083404555e-16,
+        "cone_slack": 0.3726059404383629,
+        "cone_violation": 0.0,
+        "stationarity_inf": 1.4863547422345961e-08,
+        "complementarity_abs": 0.0,
+        "dual_multiplier": 0.0
+      },
+      "actual_gap": 0.018633085137310792,
+      "certificate_bound": 0.018633085137311062,
+      "bound_minus_gap": 2.706168622523819e-16,
+      "expected_equality": true,
+      "equality_abs_error": 2.706168622523819e-16,
+      "global_fold_solution_error": null
+    },
+    {
+      "matrix": "nonideal_angles",
+      "direction_radians": 0.0,
+      "alpha": 0.4,
+      "I": 1.2,
+      "e": [
+        1.0,
+        0.0
+      ],
+      "s_fold": [
+        1.2,
+        1.2,
+        0.0
+      ],
+      "z": [
+        1.7333942231054855,
+        0.24274741212060047,
+        -0.041401285780944964
+      ],
+      "z_cone_slack": 1.4871415631085545,
+      "z_feasible": true,
+      "full_raw_gradient_inf": 5.1070259132757197e-17,
+      "raw_gradient_fd_error_inf": 2.7755575615628914e-11,
+      "rho_exact": -0.48,
+      "rho_gradient_fd": -0.4800000011210093,
+      "rho_energy_fd": -0.4799999953064571,
+      "rho_gradient_fd_error": 1.121009340909751e-09,
+      "rho_energy_fd_error": 4.693542887679314e-09,
+      "fold_objective": 0.29812936219697694,
+      "qp": {
+        "success": true,
+        "status": 0,
+        "message": "Optimization terminated successfully",
+        "iterations": 10,
+        "solution": [
+          1.7333942734632104,
+          0.2427473435712903,
+          -0.041401416791247515
+        ],
+        "objective": 5.310408779965623e-15,
+        "cone_slack": 1.4871416590136566,
+        "cone_violation": 0.0,
+        "stationarity_inf": 5.3555842870663164e-08,
+        "complementarity_abs": 0.0,
+        "dual_multiplier": 0.0
+      },
+      "actual_gap": 0.2981293621969716,
+      "certificate_bound": 0.298129362196977,
+      "bound_minus_gap": 5.384581669432009e-15,
+      "expected_equality": true,
+      "equality_abs_error": 5.384581669432009e-15,
+      "global_fold_solution_error": null
+    },
+    {
+      "matrix": "nonideal_angles",
+      "direction_radians": 0.0,
+      "alpha": 1.0,
+      "I": 1.2,
+      "e": [
+        1.0,
+        0.0
+      ],
+      "s_fold": [
+        1.2,
+        1.2,
+        0.0
+      ],
+      "z": [
+        2.533485557763714,
+        -1.1931314696984987,
+        -0.10350321445236241
+      ],
+      "z_cone_slack": 1.3358730914847132,
+      "z_feasible": true,
+      "full_raw_gradient_inf": 3.552713678800501e-16,
+      "raw_gradient_fd_error_inf": 1.1102225250247955e-10,
+      "rho_exact": -1.2,
+      "rho_gradient_fd": -1.2000000083203708,
+      "rho_energy_fd": -1.1999999438572218,
+      "rho_gradient_fd_error": 8.320370836756297e-09,
+      "rho_energy_fd_error": 5.6142778204204546e-08,
+      "fold_objective": 1.863308513731106,
+      "qp": {
+        "success": true,
+        "status": 0,
+        "message": "Optimization terminated successfully",
+        "iterations": 9,
+        "solution": [
+          2.5334854749794866,
+          -1.1931312601797153,
+          -0.10350319871314115
+        ],
+        "objective": 1.1952329315908394e-14,
+        "cone_slack": 1.3358732187955882,
+        "cone_violation": 0.0,
+        "stationarity_inf": 9.354305804173074e-08,
+        "complementarity_abs": 0.0,
+        "dual_multiplier": 0.0
+      },
+      "actual_gap": 1.863308513731094,
+      "certificate_bound": 1.8633085137311063,
+      "bound_minus_gap": 1.2212453270876722e-14,
+      "expected_equality": true,
+      "equality_abs_error": 1.2212453270876722e-14,
+      "global_fold_solution_error": null
+    },
+    {
+      "matrix": "nonideal_angles",
+      "direction_radians": 0.0,
+      "alpha": 2.0,
+      "I": 1.2,
+      "e": [
+        1.0,
+        0.0
+      ],
+      "s_fold": [
+        1.2,
+        1.2,
+        0.0
+      ],
+      "z": [
+        3.866971115527428,
+        -3.586262939396997,
+        -0.20700642890472482
+      ],
+      "z_cone_slack": 0.2747387271510471,
+      "z_feasible": true,
+      "full_raw_gradient_inf": 1.7763568394002506e-16,
+      "raw_gradient_fd_error_inf": 4.4408938748574657e-10,
+      "rho_exact": -2.4,
+      "rho_gradient_fd": -2.4000000203193066,
+      "rho_energy_fd": -2.3999999321233645,
+      "rho_gradient_fd_error": 2.0319306681670923e-08,
+      "rho_energy_fd_error": 6.787663542340283e-08,
+      "fold_objective": 7.453234054924424,
+      "qp": {
+        "success": true,
+        "status": 0,
+        "message": "Optimization terminated successfully",
+        "iterations": 10,
+        "solution": [
+          3.866971005879661,
+          -3.5862629336380474,
+          -0.20700596886215167
+        ],
+        "objective": 4.67925801060045e-14,
+        "cone_slack": 0.27473864976310125,
+        "cone_violation": 0.0,
+        "stationarity_inf": 1.8633987878411912e-07,
+        "complementarity_abs": 0.0,
+        "dual_multiplier": 0.0
+      },
+      "actual_gap": 7.453234054924377,
+      "certificate_bound": 7.453234054924425,
+      "bound_minus_gap": 4.796163466380676e-14,
+      "expected_equality": true,
+      "equality_abs_error": 4.796163466380676e-14,
+      "global_fold_solution_error": null
+    },
+    {
+      "matrix": "nonideal_angles",
+      "direction_radians": 0.7,
+      "alpha": -0.6,
+      "I": 1.2,
+      "e": [
+        0.7648421872844885,
+        0.644217687237691
+      ],
+      "s_fold": [
+        1.2,
+        0.9178106247413862,
+        0.7730612246852292
+      ],
+      "z": [
+        0.3684389687770687,
+        2.0245688336845094,
+        1.7733725253926367
+      ],
+      "z_cone_slack": -2.3229787015491317,
+      "z_feasible": false,
+      "full_raw_gradient_inf": 8.449457399766319e-17,
+      "raw_gradient_fd_error_inf": 5.5511235725831826e-11,
+      "rho_exact": 0.72,
+      "rho_gradient_fd": 0.7200000108732125,
+      "rho_energy_fd": 0.7200000373686066,
+      "rho_gradient_fd_error": 1.0873212552553468e-08,
+      "rho_energy_fd_error": 3.736860665348729e-08,
+      "fold_objective": 0.6967423899616514,
+      "qp": {
+        "success": true,
+        "status": 0,
+        "message": "Optimization terminated successfully",
+        "iterations": 7,
+        "solution": [
+          1.199999999194191,
+          0.9178106228778248,
+          0.7730612256468962
+        ],
+        "objective": 0.6967423899616507,
+        "cone_slack": -1.5543122344752192e-15,
+        "cone_violation": 1.5543122344752192e-15,
+        "stationarity_inf": 1.8501171705764818e-09,
+        "complementarity_abs": 9.325873403379034e-16,
+        "dual_multiplier": 0.5999999997766033
+      },
+      "actual_gap": 6.661338147750939e-16,
+      "certificate_bound": 0.0,
+      "bound_minus_gap": -6.661338147750939e-16,
+      "expected_equality": false,
+      "equality_abs_error": null,
+      "global_fold_solution_error": 1.86356141629318e-09
+    },
+    {
+      "matrix": "nonideal_angles",
+      "direction_radians": 0.7,
+      "alpha": -0.1,
+      "I": 1.2,
+      "e": [
+        0.7648421872844885,
+        0.644217687237691
+      ],
+      "s_fold": [
+        1.2,
+        0.9178106247413862,
+        0.7730612246852292
+      ],
+      "z": [
+        1.061406494796178,
+        1.1022703262319067,
+        0.9397797748031305
+      ],
+      "z_cone_slack": -0.38710511966206185,
+      "z_feasible": false,
+      "full_raw_gradient_inf": 1.738758639828297e-17,
+      "raw_gradient_fd_error_inf": 3.4694355459683238e-12,
+      "rho_exact": 0.12,
+      "rho_gradient_fd": 0.12000000487363774,
+      "rho_energy_fd": 0.1200000043777294,
+      "rho_gradient_fd_error": 4.873637743374459e-09,
+      "rho_energy_fd_error": 4.377729401205954e-09,
+      "fold_objective": 0.019353955276712537,
+      "qp": {
+        "success": true,
+        "status": 0,
+        "message": "Optimization terminated successfully",
+        "iterations": 7,
+        "solution": [
+          1.2000000258030865,
+          0.9178106453385864,
+          0.7730612402847469
+        ],
+        "objective": 0.01935395527671256,
+        "cone_slack": -6.439293542825908e-15,
+        "cone_violation": 6.439293542825908e-15,
+        "stationarity_inf": 2.5259628583240712e-08,
+        "complementarity_abs": 6.439294001097166e-16,
+        "dual_multiplier": 0.10000000711679402
+      },
+      "actual_gap": -2.42861286636753e-17,
+      "certificate_bound": 0.0,
+      "bound_minus_gap": 2.42861286636753e-17,
+      "expected_equality": false,
+      "equality_abs_error": null,
+      "global_fold_solution_error": 2.5803086556308585e-08
+    },
+    {
+      "matrix": "nonideal_angles",
+      "direction_radians": 0.7,
+      "alpha": 0.01,
+      "I": 1.2,
+      "e": [
+        0.7648421872844885,
+        0.644217687237691
+      ],
+      "s_fold": [
+        1.2,
+        0.9178106247413862,
+        0.7730612246852292
+      ],
+      "z": [
+        1.213859350520382,
+        0.8993646545923342,
+        0.7563893696734391
+      ],
+      "z_cone_slack": 0.03870758990179235,
+      "z_feasible": true,
+      "full_raw_gradient_inf": 9.117812795480378e-17,
+      "raw_gradient_fd_error_inf": 1.4500292275714074e-12,
+      "rho_exact": -0.012,
+      "rho_gradient_fd": -0.011999996446293824,
+      "rho_energy_fd": -0.011999998434167325,
+      "rho_gradient_fd_error": 3.5537061765511524e-09,
+      "rho_energy_fd_error": 1.5658326753265062e-09,
+      "fold_objective": 0.0001935395527671246,
+      "qp": {
+        "success": true,
+        "status": 0,
+        "message": "Optimization terminated successfully",
+        "iterations": 9,
+        "solution": [
+          1.2138593461755773,
+          0.8993646487719648,
+          0.756389377751194
+        ],
+        "objective": 3.1944720155915445e-17,
+        "cone_slack": 0.038707584812153195,
+        "cone_violation": 0.0,
+        "stationarity_inf": 4.832366794914797e-09,
+        "complementarity_abs": 0.0,
+        "dual_multiplier": 0.0
+      },
+      "actual_gap": 0.00019353955276709266,
+      "certificate_bound": 0.00019353955276712543,
+      "bound_minus_gap": 3.277001066337437e-17,
+      "expected_equality": true,
+      "equality_abs_error": 3.277001066337437e-17,
+      "global_fold_solution_error": null
+    },
+    {
+      "matrix": "nonideal_angles",
+      "direction_radians": 0.7,
+      "alpha": 0.1,
+      "I": 1.2,
+      "e": [
+        0.7648421872844885,
+        0.644217687237691
+      ],
+      "s_fold": [
+        1.2,
+        0.9178106247413862,
+        0.7730612246852292
+      ],
+      "z": [
+        1.3385935052038218,
+        0.7333509232508657,
+        0.6063426745673279
+      ],
+      "z_cone_slack": 0.3870395048263563,
+      "z_feasible": true,
+      "full_raw_gradient_inf": 1.738758639828297e-17,
+      "raw_gradient_fd_error_inf": 5.204153040344023e-12,
+      "rho_exact": -0.12,
+      "rho_gradient_fd": -0.11999999752621368,
+      "rho_energy_fd": -0.12000000056133775,
+      "rho_gradient_fd_error": 2.4737863146828687e-09,
+      "rho_energy_fd_error": 5.613377540569786e-10,
+      "fold_objective": 0.019353955276712537,
+      "qp": {
+        "success": true,
+        "status": 0,
+        "message": "Optimization terminated successfully",
+        "iterations": 8,
+        "solution": [
+          1.3385935003767346,
+          0.7333508561988522,
+          0.6063427741398452
+        ],
+        "objective": 3.0577735260030963e-15,
+        "cone_slack": 0.38703948822650847,
+        "cone_violation": 0.0,
+        "stationarity_inf": 3.9771971377692614e-08,
+        "complementarity_abs": 0.0,
+        "dual_multiplier": 0.0
+      },
+      "actual_gap": 0.01935395527670948,
+      "certificate_bound": 0.019353955276712544,
+      "bound_minus_gap": 3.0635216585750413e-15,
+      "expected_equality": true,
+      "equality_abs_error": 3.0635216585750413e-15,
+      "global_fold_solution_error": null
+    },
+    {
+      "matrix": "nonideal_angles",
+      "direction_radians": 0.7,
+      "alpha": 0.4,
+      "I": 1.2,
+      "e": [
+        0.7648421872844885,
+        0.644217687237691
+      ],
+      "s_fold": [
+        1.2,
+        0.9178106247413862,
+        0.7730612246852292
+      ],
+      "z": [
+        1.7543740208152876,
+        0.17997181877930402,
+        0.10618702421362414
+      ],
+      "z_cone_slack": 1.5454110105333827,
+      "z_feasible": true,
+      "full_raw_gradient_inf": 1.5490160255901734e-16,
+      "raw_gradient_fd_error_inf": 2.775556664292833e-11,
+      "rho_exact": -0.48,
+      "rho_gradient_fd": -0.48000000112599844,
+      "rho_energy_fd": -0.4800000008575722,
+      "rho_gradient_fd_error": 1.1259984611378115e-09,
+      "rho_energy_fd_error": 8.575722354464688e-10,
+      "fold_objective": 0.3096632844274007,
+      "qp": {
+        "success": true,
+        "status": 0,
+        "message": "Optimization terminated successfully",
+        "iterations": 11,
+        "solution": [
+          1.7543740231501492,
+          0.1799717959691216,
+          0.10618704677690914
+        ],
+        "objective": 2.227803708330425e-16,
+        "cone_slack": 1.5454110210479766,
+        "cone_violation": 0.0,
+        "stationarity_inf": 1.0478722676024309e-08,
+        "complementarity_abs": 0.0,
+        "dual_multiplier": 0.0
+      },
+      "actual_gap": 0.3096632844274005,
+      "certificate_bound": 0.3096632844274007,
+      "bound_minus_gap": 2.220446049250313e-16,
+      "expected_equality": true,
+      "equality_abs_error": 2.220446049250313e-16,
+      "global_fold_solution_error": null
+    },
+    {
+      "matrix": "nonideal_angles",
+      "direction_radians": 0.7,
+      "alpha": 1.0,
+      "I": 1.2,
+      "e": [
+        0.7648421872844885,
+        0.644217687237691
+      ],
+      "s_fold": [
+        1.2,
+        0.9178106247413862,
+        0.7730612246852292
+      ],
+      "z": [
+        2.5859350520382187,
+        -0.9267863901638191,
+        -0.8941242764937835
+      ],
+      "z_cone_slack": 1.2981496526768133,
+      "z_feasible": true,
+      "full_raw_gradient_inf": 8.19426746256253e-17,
+      "raw_gradient_fd_error_inf": 2.2204454085991644e-10,
+      "rho_exact": -1.2,
+      "rho_gradient_fd": -1.2000000083256714,
+      "rho_energy_fd": -1.1999999216527613,
+      "rho_gradient_fd_error": 8.325671485565067e-09,
+      "rho_energy_fd_error": 7.834723869670768e-08,
+      "fold_objective": 1.935395527671254,
+      "qp": {
+        "success": true,
+        "status": 0,
+        "message": "Optimization terminated successfully",
+        "iterations": 10,
+        "solution": [
+          2.585935076916995,
+          -0.9267862908202809,
+          -0.8941243605274012
+        ],
+        "objective": 4.290613161115606e-15,
+        "cone_slack": 1.298149690705089,
+        "cone_violation": 0.0,
+        "stationarity_inf": 5.2075291673821345e-08,
+        "complementarity_abs": 0.0,
+        "dual_multiplier": 0.0
+      },
+      "actual_gap": 1.9353955276712498,
+      "certificate_bound": 1.9353955276712542,
+      "bound_minus_gap": 4.440892098500626e-15,
+      "expected_equality": true,
+      "equality_abs_error": 4.440892098500626e-15,
+      "global_fold_solution_error": null
+    },
+    {
+      "matrix": "nonideal_angles",
+      "direction_radians": 0.7,
+      "alpha": 2.0,
+      "I": 1.2,
+      "e": [
+        0.7648421872844885,
+        0.644217687237691
+      ],
+      "s_fold": [
+        1.2,
+        0.9178106247413862,
+        0.7730612246852292
+      ],
+      "z": [
+        3.9718701040764373,
+        -2.7713834050690247,
+        -2.561309777672796
+      ],
+      "z_cone_slack": 0.19816188071122198,
+      "z_feasible": true,
+      "full_raw_gradient_inf": 5.022484655238433e-16,
+      "raw_gradient_fd_error_inf": 8.88178402592198e-10,
+      "rho_exact": -2.4,
+      "rho_gradient_fd": -2.4000000203243124,
+      "rho_energy_fd": -2.4000001985768904,
+      "rho_gradient_fd_error": 2.0324312455244353e-08,
+      "rho_energy_fd_error": 1.9857689048663474e-07,
+      "fold_objective": 7.741582110685016,
+      "qp": {
+        "success": true,
+        "status": 0,
+        "message": "Optimization terminated successfully",
+        "iterations": 10,
+        "solution": [
+          3.9718701514820123,
+          -2.7713832222085912,
+          -2.5613098972368324
+        ],
+        "objective": 1.2965818377468041e-14,
+        "cone_slack": 0.19816198125705098,
+        "cone_violation": 0.0,
+        "stationarity_inf": 9.73403218642343e-08,
+        "complementarity_abs": 0.0,
+        "dual_multiplier": 0.0
+      },
+      "actual_gap": 7.741582110685003,
+      "certificate_bound": 7.741582110685017,
+      "bound_minus_gap": 1.4210854715202004e-14,
+      "expected_equality": true,
+      "equality_abs_error": 1.4210854715202004e-14,
+      "global_fold_solution_error": null
+    },
+    {
+      "matrix": "nonideal_angles",
+      "direction_radians": 1.9,
+      "alpha": -0.6,
+      "I": 1.2,
+      "e": [
+        -0.32328956686350335,
+        0.9463000876874145
+      ],
+      "s_fold": [
+        1.2,
+        -0.387947480236204,
+        1.1355601052248974
+      ],
+      "z": [
+        0.5428050052450376,
+        -0.6504887415573661,
+        2.6318865453524163
+      ],
+      "z_cone_slack": -2.168276400854743,
+      "z_feasible": false,
+      "full_raw_gradient_inf": 2.6657244830842847e-16,
+      "raw_gradient_fd_error_inf": 5.551141780370613e-11,
+      "rho_exact": 0.72,
+      "rho_gradient_fd": 0.7200000101874658,
+      "rho_energy_fd": 0.7199999929596856,
+      "rho_gradient_fd_error": 1.0187465870892254e-08,
+      "rho_energy_fd_error": 7.040314331518971e-09,
+      "fold_objective": 0.647413706073884,
+      "qp": {
+        "success": true,
+        "status": 0,
+        "message": "Optimization terminated successfully",
+        "iterations": 8,
+        "solution": [
+          1.2000000002004019,
+          -0.3879474804062341,
+          1.135560105378583
+        ],
+        "objective": 0.647413706073884,
+        "cone_slack": 0.0,
+        "cone_violation": 0.0,
+        "stationarity_inf": 1.4428080952200162e-10,
+        "complementarity_abs": 0.0,
+        "dual_multiplier": 0.6000000000542771
+      },
+      "actual_gap": 0.0,
+      "certificate_bound": 0.0,
+      "bound_minus_gap": 0.0,
+      "expected_equality": false,
+      "equality_abs_error": null,
+      "global_fold_solution_error": 2.004019172829885e-10
+    },
+    {
+      "matrix": "nonideal_angles",
+      "direction_radians": 1.9,
+      "alpha": -0.1,
+      "I": 1.2,
+      "e": [
+        -0.32328956686350335,
+        0.9463000876874145
+      ],
+      "s_fold": [
+        1.2,
+        -0.387947480236204,
+        1.1355601052248974
+      ],
+      "z": [
+        1.0904675008741729,
+        -0.4317043571230644,
+        1.3849478452461506
+      ],
+      "z_cone_slack": -0.3602044765249197,
+      "z_feasible": false,
+      "full_raw_gradient_inf": 3.541317190592897e-17,
+      "raw_gradient_fd_error_inf": 6.93889145448126e-12,
+      "rho_exact": 0.12,
+      "rho_gradient_fd": 0.12000000418733034,
+      "rho_energy_fd": 0.12000000229606123,
+      "rho_gradient_fd_error": 4.187330343574658e-09,
+      "rho_energy_fd_error": 2.2960612300337857e-09,
+      "fold_objective": 0.017983714057607895,
+      "qp": {
+        "success": true,
+        "status": 0,
+        "message": "Optimization terminated successfully",
+        "iterations": 10,
+        "solution": [
+          1.1999999996521886,
+          -0.38794748139488683,
+          1.135560104461508
+        ],
+        "objective": 0.017983714057607295,
+        "cone_slack": -5.995204332975845e-15,
+        "cone_violation": 5.995204332975845e-15,
+        "stationarity_inf": 7.05750360929791e-10,
+        "complementarity_abs": 5.99520431859754e-16,
+        "dual_multiplier": 0.09999999976016989
+      },
+      "actual_gap": 6.002143226879753e-16,
+      "certificate_bound": 0.0,
+      "bound_minus_gap": -6.002143226879753e-16,
+      "expected_equality": false,
+      "equality_abs_error": null,
+      "global_fold_solution_error": 1.1586828163601126e-09
+    },
+    {
+      "matrix": "nonideal_angles",
+      "direction_radians": 1.9,
+      "alpha": 0.01,
+      "I": 1.2,
+      "e": [
+        -0.32328956686350335,
+        0.9463000876874145
+      ],
+      "s_fold": [
+        1.2,
+        -0.387947480236204,
+        1.1355601052248974
+      ],
+      "z": [
+        1.2109532499125826,
+        -0.383571792547518,
+        1.110621331222772
+      ],
+      "z_cone_slack": 0.03596088338199177,
+      "z_feasible": true,
+      "full_raw_gradient_inf": 1.6670697553714834e-16,
+      "raw_gradient_fd_error_inf": 1.3550860086313435e-12,
+      "rho_exact": -0.012,
+      "rho_gradient_fd": -0.011999997132695306,
+      "rho_energy_fd": -0.01199999859679765,
+      "rho_gradient_fd_error": 2.8673046940236313e-09,
+      "rho_energy_fd_error": 1.4032023494536805e-09,
+      "fold_objective": 0.00017983714057607885,
+      "qp": {
+        "success": true,
+        "status": 0,
+        "message": "Optimization terminated successfully",
+        "iterations": 9,
+        "solution": [
+          1.2109532443977165,
+          -0.3835717822509054,
+          1.1106213327465355
+        ],
+        "objective": 3.383382559106867e-17,
+        "cone_slack": 0.03596087978813034,
+        "cone_violation": 0.0,
+        "stationarity_inf": 4.377566770326926e-09,
+        "complementarity_abs": 0.0,
+        "dual_multiplier": 0.0
+      },
+      "actual_gap": 0.00017983714057604502,
+      "certificate_bound": 0.0001798371405760789,
+      "bound_minus_gap": 3.3881317890172014e-17,
+      "expected_equality": true,
+      "equality_abs_error": 3.3881317890172014e-17,
+      "global_fold_solution_error": null
+    },
+    {
+      "matrix": "nonideal_angles",
+      "direction_radians": 1.9,
+      "alpha": 0.1,
+      "I": 1.2,
+      "e": [
+        -0.32328956686350335,
+        0.9463000876874145
+      ],
+      "s_fold": [
+        1.2,
+        -0.387947480236204,
+        1.1355601052248974
+      ],
+      "z": [
+        1.309532499125827,
+        -0.34419060334934365,
+        0.8861723652036442
+      ],
+      "z_cone_slack": 0.358865032403311,
+      "z_feasible": true,
+      "full_raw_gradient_inf": 3.541317190592897e-17,
+      "raw_gradient_fd_error_inf": 6.93889145448126e-12,
+      "rho_exact": -0.12,
+      "rho_gradient_fd": -0.1199999982127148,
+      "rho_energy_fd": -0.11999999952050366,
+      "rho_gradient_fd_error": 1.787285194843058e-09,
+      "rho_energy_fd_error": 4.794963315291056e-10,
+      "fold_objective": 0.017983714057607895,
+      "qp": {
+        "success": true,
+        "status": 0,
+        "message": "Optimization terminated successfully",
+        "iterations": 9,
+        "solution": [
+          1.309532458457947,
+          -0.3441904521834669,
+          0.8861724036441431
+        ],
+        "objective": 6.04005398293419e-15,
+        "cone_slack": 0.35886501063263243,
+        "cone_violation": 0.0,
+        "stationarity_inf": 7.165964469850968e-08,
+        "complementarity_abs": 0.0,
+        "dual_multiplier": 0.0
+      },
+      "actual_gap": 0.017983714057601855,
+      "certificate_bound": 0.017983714057607892,
+      "bound_minus_gap": 6.036837696399289e-15,
+      "expected_equality": true,
+      "equality_abs_error": 6.036837696399289e-15,
+      "global_fold_solution_error": null
+    },
+    {
+      "matrix": "nonideal_angles",
+      "direction_radians": 1.9,
+      "alpha": 0.4,
+      "I": 1.2,
+      "e": [
+        -0.32328956686350335,
+        0.9463000876874145
+      ],
+      "s_fold": [
+        1.2,
+        -0.387947480236204,
+        1.1355601052248974
+      ],
+      "z": [
+        1.6381299965033083,
+        -0.21291997268876253,
+        0.13800914513988471
+      ],
+      "z_cone_slack": 1.384395018796203,
+      "z_feasible": true,
+      "full_raw_gradient_inf": 1.4917778512578037e-16,
+      "raw_gradient_fd_error_inf": 5.5511093299016785e-11,
+      "rho_exact": -0.48,
+      "rho_gradient_fd": -0.4800000018127783,
+      "rho_energy_fd": -0.48000000640868734,
+      "rho_gradient_fd_error": 1.8127783163457423e-09,
+      "rho_energy_fd_error": 6.4086873585722515e-09,
+      "fold_objective": 0.2877394249217263,
+      "qp": {
+        "success": true,
+        "status": 0,
+        "message": "Optimization terminated successfully",
+        "iterations": 10,
+        "solution": [
+          1.6381299969814005,
+          -0.212919958259545,
+          0.13800916513421113
+        ],
+        "objective": 1.5075959423726413e-16,
+        "cone_slack": 1.3843950205073472,
+        "cone_violation": 0.0,
+        "stationarity_inf": 9.087133699097316e-09,
+        "complementarity_abs": 0.0,
+        "dual_multiplier": 0.0
+      },
+      "actual_gap": 0.2877394249217261,
+      "certificate_bound": 0.2877394249217263,
+      "bound_minus_gap": 1.6653345369377348e-16,
+      "expected_equality": true,
+      "equality_abs_error": 1.6653345369377348e-16,
+      "global_fold_solution_error": null
+    },
+    {
+      "matrix": "nonideal_angles",
+      "direction_radians": 1.9,
+      "alpha": 1.0,
+      "I": 1.2,
+      "e": [
+        -0.32328956686350335,
+        0.9463000876874145
+      ],
+      "s_fold": [
+        1.2,
+        -0.387947480236204,
+        1.1355601052248974
+      ],
+      "z": [
+        2.2953249912582705,
+        0.049621288632399674,
+        -1.358317294987634
+      ],
+      "z_cone_slack": 0.9361016298683689,
+      "z_feasible": true,
+      "full_raw_gradient_inf": 1.381944772779197e-16,
+      "raw_gradient_fd_error_inf": 1.381944772779197e-16,
+      "rho_exact": -1.2,
+      "rho_gradient_fd": -1.2000000090130298,
+      "rho_energy_fd": -1.2000000104706032,
+      "rho_gradient_fd_error": 9.01302987799113e-09,
+      "rho_energy_fd_error": 1.0470603273304846e-08,
+      "fold_objective": 1.798371405760789,
+      "qp": {
+        "success": true,
+        "status": 0,
+        "message": "Optimization terminated successfully",
+        "iterations": 10,
+        "solution": [
+          2.295324955671589,
+          0.0496214801067331,
+          -1.3583172977643412
+        ],
+        "objective": 8.874533229298493e-15,
+        "cone_slack": 0.9361015845166472,
+        "cone_violation": 0.0,
+        "stationarity_inf": 9.169260702922717e-08,
+        "complementarity_abs": 0.0,
+        "dual_multiplier": 0.0
+      },
+      "actual_gap": 1.79837140576078,
+      "certificate_bound": 1.7983714057607891,
+      "bound_minus_gap": 9.103828801926284e-15,
+      "expected_equality": true,
+      "equality_abs_error": 9.103828801926284e-15,
+      "global_fold_solution_error": null
+    },
+    {
+      "matrix": "nonideal_angles",
+      "direction_radians": 1.9,
+      "alpha": 2.0,
+      "I": 1.2,
+      "e": [
+        -0.32328956686350335,
+        0.9463000876874145
+      ],
+      "s_fold": [
+        1.2,
+        -0.387947480236204,
+        1.1355601052248974
+      ],
+      "z": [
+        3.390649982516541,
+        0.48719005750100336,
+        -3.8521946952001658
+      ],
+      "z_cone_slack": -0.49223014978939084,
+      "z_feasible": false,
+      "full_raw_gradient_inf": 4.1984525022751254e-16,
+      "raw_gradient_fd_error_inf": 8.88178331527957e-10,
+      "rho_exact": -2.4,
+      "rho_gradient_fd": -2.400000021013238,
+      "rho_energy_fd": -2.3999999321233645,
+      "rho_gradient_fd_error": 2.1013238260536582e-08,
+      "rho_energy_fd_error": 6.787663542340283e-08,
+      "fold_objective": 7.193485623043155,
+      "qp": {
+        "success": true,
+        "status": 0,
+        "message": "Optimization terminated successfully",
+        "iterations": 10,
+        "solution": [
+          3.5254436070951765,
+          0.3849629996138194,
+          -3.504362440692546
+        ],
+        "objective": 0.03905875330561148,
+        "cone_slack": -5.329070518200751e-15,
+        "cone_violation": 5.329070518200751e-15,
+        "stationarity_inf": 2.3904514478978456e-10,
+        "complementarity_abs": 8.466266981115312e-16,
+        "dual_multiplier": 0.15886948675570856
+      },
+      "actual_gap": 7.154426869737543,
+      "certificate_bound": 7.1934856230431565,
+      "bound_minus_gap": 0.03905875330561326,
+      "expected_equality": false,
+      "equality_abs_error": null,
+      "global_fold_solution_error": null
+    },
+    {
+      "matrix": "gain_and_efficiency",
+      "direction_radians": 0.0,
+      "alpha": -0.6,
+      "I": 1.2,
+      "e": [
+        1.0,
+        0.0
+      ],
+      "s_fold": [
+        1.2,
+        1.2,
+        0.0
+      ],
+      "z": [
+        0.538827223766751,
+        2.779972415794512,
+        -0.011672221282569421
+      ],
+      "z_cone_slack": -2.24116969589486,
+      "z_feasible": false,
+      "full_raw_gradient_inf": 2.6645352591003756e-17,
+      "raw_gradient_fd_error_inf": 5.551112458590524e-11,
+      "rho_exact": 0.72,
+      "rho_gradient_fd": 0.7200000101418954,
+      "rho_energy_fd": 0.7200000040619159,
+      "rho_gradient_fd_error": 1.0141895434578885e-08,
+      "rho_energy_fd_error": 4.0619159147325945e-09,
+      "fold_objective": 0.6723435576083283,
+      "qp": {
+        "success": true,
+        "status": 0,
+        "message": "Optimization terminated successfully",
+        "iterations": 7,
+        "solution": [
+          1.199999999117476,
+          1.199999999117479,
+          -1.8443671463452913e-09
+        ],
+        "objective": 0.6723435576083264,
+        "cone_slack": -3.1086244689504383e-15,
+        "cone_violation": 3.1086244689504383e-15,
+        "stationarity_inf": 1.9903925017704876e-09,
+        "complementarity_abs": 1.865174680337992e-15,
+        "dual_multiplier": 0.5999999996679332
+      },
+      "actual_gap": 1.887379141862766e-15,
+      "certificate_bound": 0.0,
+      "bound_minus_gap": -1.887379141862766e-15,
+      "expected_equality": false,
+      "equality_abs_error": null,
+      "global_fold_solution_error": 1.8443671463452913e-09
+    },
+    {
+      "matrix": "gain_and_efficiency",
+      "direction_radians": 0.0,
+      "alpha": -0.1,
+      "I": 1.2,
+      "e": [
+        1.0,
+        0.0
+      ],
+      "s_fold": [
+        1.2,
+        1.2,
+        0.0
+      ],
+      "z": [
+        1.0898045372944585,
+        1.463328735965752,
+        -0.0019453702137615704
+      ],
+      "z_cone_slack": -0.373525491772257,
+      "z_feasible": false,
+      "full_raw_gradient_inf": 6.772360450213455e-17,
+      "raw_gradient_fd_error_inf": 1.7347911995813093e-12,
+      "rho_exact": 0.12,
+      "rho_gradient_fd": 0.1200000041424275,
+      "rho_energy_fd": 0.12000000264300592,
+      "rho_gradient_fd_error": 4.142427498243784e-09,
+      "rho_energy_fd_error": 2.643005925229147e-09,
+      "fold_objective": 0.018676209933564683,
+      "qp": {
+        "success": true,
+        "status": 0,
+        "message": "Optimization terminated successfully",
+        "iterations": 10,
+        "solution": [
+          1.199999999843974,
+          1.1999999998439743,
+          -1.5925166571042957e-10
+        ],
+        "objective": 0.01867620993356466,
+        "cone_slack": -2.220446049250313e-16,
+        "cone_violation": 2.220446049250313e-16,
+        "stationarity_inf": 1.3557731326496736e-10,
+        "complementarity_abs": 2.220446048027909e-17,
+        "dual_multiplier": 0.09999999994494782
+      },
+      "actual_gap": 2.42861286636753e-17,
+      "certificate_bound": 0.0,
+      "bound_minus_gap": -2.42861286636753e-17,
+      "expected_equality": false,
+      "equality_abs_error": null,
+      "global_fold_solution_error": 1.5925166571042957e-10
+    },
+    {
+      "matrix": "gain_and_efficiency",
+      "direction_radians": 0.0,
+      "alpha": 0.01,
+      "I": 1.2,
+      "e": [
+        1.0,
+        0.0
+      ],
+      "s_fold": [
+        1.2,
+        1.2,
+        0.0
+      ],
+      "z": [
+        1.2110195462705542,
+        1.1736671264034249,
+        0.00019453702137615703
+      ],
+      "z_cone_slack": 0.037352403744733254,
+      "z_feasible": true,
+      "full_raw_gradient_inf": 1.7669199436909365e-16,
+      "raw_gradient_fd_error_inf": 1.1385889731041488e-12,
+      "rho_exact": -0.012,
+      "rho_gradient_fd": -0.011999997177455457,
+      "rho_energy_fd": -0.011999998632034221,
+      "rho_gradient_fd_error": 2.822544543576444e-09,
+      "rho_energy_fd_error": 1.3679657788479016e-09,
+      "fold_objective": 0.0001867620993356466,
+      "qp": {
+        "success": true,
+        "status": 0,
+        "message": "Optimization terminated successfully",
+        "iterations": 9,
+        "solution": [
+          1.211019543219263,
+          1.1736671194879542,
+          0.00019451798276443096
+        ],
+        "objective": 1.2053057606125603e-16,
+        "cone_slack": 0.03735240761206815,
+        "cone_violation": 0.0,
+        "stationarity_inf": 1.0446173709856794e-08,
+        "complementarity_abs": 0.0,
+        "dual_multiplier": 0.0
+      },
+      "actual_gap": 0.00018676209933552606,
+      "certificate_bound": 0.0001867620993356468,
+      "bound_minus_gap": 1.2072591190626092e-16,
+      "expected_equality": true,
+      "equality_abs_error": 1.2072591190626092e-16,
+      "global_fold_solution_error": null
+    },
+    {
+      "matrix": "gain_and_efficiency",
+      "direction_radians": 0.0,
+      "alpha": 0.1,
+      "I": 1.2,
+      "e": [
+        1.0,
+        0.0
+      ],
+      "s_fold": [
+        1.2,
+        1.2,
+        0.0
+      ],
+      "z": [
+        1.3101954627055414,
+        0.9366712640342478,
+        0.0019453702137615704
+      ],
+      "z_cone_slack": 0.37352217850619784,
+      "z_feasible": true,
+      "full_raw_gradient_inf": 6.772360450213455e-17,
+      "raw_gradient_fd_error_inf": 1.7346557523723049e-12,
+      "rho_exact": -0.12,
+      "rho_gradient_fd": -0.1199999982573598,
+      "rho_energy_fd": -0.11999999986744836,
+      "rho_gradient_fd_error": 1.742640198809653e-09,
+      "rho_energy_fd_error": 1.3255163633374423e-10,
+      "fold_objective": 0.018676209933564683,
+      "qp": {
+        "success": true,
+        "status": 0,
+        "message": "Optimization terminated successfully",
+        "iterations": 6,
+        "solution": [
+          1.310195462714398,
+          0.9366712640448205,
+          0.0019453701801352263
+        ],
+        "objective": 3.281567590428896e-22,
+        "cone_slack": 0.3735221785045516,
+        "cone_violation": 0.0,
+        "stationarity_inf": 1.641258858575944e-11,
+        "complementarity_abs": 0.0,
+        "dual_multiplier": 0.0
+      },
+      "actual_gap": 0.018676209933564683,
+      "certificate_bound": 0.01867620993356468,
+      "bound_minus_gap": -3.469446951953614e-18,
+      "expected_equality": true,
+      "equality_abs_error": 3.469446951953614e-18,
+      "global_fold_solution_error": null
+    },
+    {
+      "matrix": "gain_and_efficiency",
+      "direction_radians": 0.0,
+      "alpha": 0.4,
+      "I": 1.2,
+      "e": [
+        1.0,
+        0.0
+      ],
+      "s_fold": [
+        1.2,
+        1.2,
+        0.0
+      ],
+      "z": [
+        1.640781850822166,
+        0.14668505613699168,
+        0.0077814808550462815
+      ],
+      "z_cone_slack": 1.4938905401934912,
+      "z_feasible": true,
+      "full_raw_gradient_inf": 1.3988810110276973e-16,
+      "raw_gradient_fd_error_inf": 2.7755587064803854e-11,
+      "rho_exact": -0.48,
+      "rho_gradient_fd": -0.48000000185704067,
+      "rho_energy_fd": -0.48000000640868734,
+      "rho_gradient_fd_error": 1.857040687891498e-09,
+      "rho_energy_fd_error": 6.4086873585722515e-09,
+      "fold_objective": 0.29881935893703493,
+      "qp": {
+        "success": true,
+        "status": 0,
+        "message": "Optimization terminated successfully",
+        "iterations": 8,
+        "solution": [
+          1.6407818541545676,
+          0.14668505736858875,
+          0.007781473477754229
+        ],
+        "objective": 1.8363736873021937e-17,
+        "cone_slack": 1.4938905426868325,
+        "cone_violation": 0.0,
+        "stationarity_inf": 3.528368206845667e-09,
+        "complementarity_abs": 0.0,
+        "dual_multiplier": 0.0
+      },
+      "actual_gap": 0.29881935893703493,
+      "certificate_bound": 0.2988193589370349,
+      "bound_minus_gap": -5.551115123125783e-17,
+      "expected_equality": true,
+      "equality_abs_error": 5.551115123125783e-17,
+      "global_fold_solution_error": null
+    },
+    {
+      "matrix": "gain_and_efficiency",
+      "direction_radians": 0.0,
+      "alpha": 1.0,
+      "I": 1.2,
+      "e": [
+        1.0,
+        0.0
+      ],
+      "s_fold": [
+        1.2,
+        1.2,
+        0.0
+      ],
+      "z": [
+        2.301954627055415,
+        -1.4332873596575204,
+        0.019453702137615703
+      ],
+      "z_cone_slack": 0.8685352530127433,
+      "z_feasible": true,
+      "full_raw_gradient_inf": 8.326672684688674e-18,
+      "raw_gradient_fd_error_inf": 3.3306690738754696e-10,
+      "rho_exact": -1.2,
+      "rho_gradient_fd": -1.2000000090564025,
+      "rho_energy_fd": -1.2000000104706032,
+      "rho_gradient_fd_error": 9.056402516804951e-09,
+      "rho_energy_fd_error": 1.0470603273304846e-08,
+      "fold_objective": 1.8676209933564678,
+      "qp": {
+        "success": true,
+        "status": 0,
+        "message": "Optimization terminated successfully",
+        "iterations": 10,
+        "solution": [
+          2.3019546386450482,
+          -1.4332873351916202,
+          0.019453784689708903
+        ],
+        "objective": 2.146675773406027e-15,
+        "cone_slack": 0.8685352879456623,
+        "cone_violation": 0.0,
+        "stationarity_inf": 4.4949785575998355e-08,
+        "complementarity_abs": 0.0,
+        "dual_multiplier": 0.0
+      },
+      "actual_gap": 1.8676209933564656,
+      "certificate_bound": 1.8676209933564678,
+      "bound_minus_gap": 2.220446049250313e-15,
+      "expected_equality": true,
+      "equality_abs_error": 2.220446049250313e-15,
+      "global_fold_solution_error": null
+    },
+    {
+      "matrix": "gain_and_efficiency",
+      "direction_radians": 0.0,
+      "alpha": 2.0,
+      "I": 1.2,
+      "e": [
+        1.0,
+        0.0
+      ],
+      "s_fold": [
+        1.2,
+        1.2,
+        0.0
+      ],
+      "z": [
+        3.40390925411083,
+        -4.0665747193150406,
+        0.03890740427523141
+      ],
+      "z_cone_slack": -0.6628515863959779,
+      "z_feasible": false,
+      "full_raw_gradient_inf": 4.440892098500626e-16,
+      "raw_gradient_fd_error_inf": 4.4408876576085277e-10,
+      "rho_exact": -2.4,
+      "rho_gradient_fd": -2.4000000210553383,
+      "rho_energy_fd": -2.3999999321233645,
+      "rho_gradient_fd_error": 2.1055338361719578e-08,
+      "rho_energy_fd_error": 6.787663542340283e-08,
+      "fold_objective": 7.4704839734258695,
+      "qp": {
+        "success": true,
+        "status": 0,
+        "message": "Optimization terminated successfully",
+        "iterations": 9,
+        "solution": [
+          3.5739741254340283,
+          -3.5739098207234687,
+          -0.021439277232955124
+        ],
+        "objective": 0.06977578834838012,
+        "cone_slack": 0.0,
+        "cone_violation": 0.0,
+        "stationarity_inf": 2.867688508531585e-11,
+        "complementarity_abs": 0.0,
+        "dual_multiplier": 0.21068876124746239
+      },
+      "actual_gap": 7.400708185077489,
+      "certificate_bound": 7.470483973425871,
+      "bound_minus_gap": 0.06977578834838205,
+      "expected_equality": false,
+      "equality_abs_error": null,
+      "global_fold_solution_error": null
+    },
+    {
+      "matrix": "gain_and_efficiency",
+      "direction_radians": 0.7,
+      "alpha": -0.6,
+      "I": 1.2,
+      "e": [
+        0.7648421872844885,
+        0.644217687237691
+      ],
+      "s_fold": [
+        1.2,
+        0.9178106247413862,
+        0.7730612246852292
+      ],
+      "z": [
+        0.5057054725252239,
+        2.085598980445708,
+        1.5376814115261552
+      ],
+      "z_cone_slack": -2.0854694020421496,
+      "z_feasible": false,
+      "full_raw_gradient_inf": 9.357452576038145e-17,
+      "raw_gradient_fd_error_inf": 5.551115164999476e-11,
+      "rho_exact": 0.72,
+      "rho_gradient_fd": 0.7200000107505148,
+      "rho_energy_fd": 0.7200000262663764,
+      "rho_gradient_fd_error": 1.0750514811697087e-08,
+      "rho_energy_fd_error": 2.6266376407235725e-08,
+      "fold_objective": 0.6240150528356815,
+      "qp": {
+        "success": true,
+        "status": 0,
+        "message": "Optimization terminated successfully",
+        "iterations": 7,
+        "solution": [
+          1.2000000006442157,
+          0.9178106250972956,
+          0.7730612252626823
+        ],
+        "objective": 0.6240150528356789,
+        "cone_slack": -4.218847493575595e-15,
+        "cone_violation": 4.218847493575595e-15,
+        "stationarity_inf": 5.797353708203445e-10,
+        "complementarity_abs": 2.531308496909184e-15,
+        "dual_multiplier": 0.6000000001810512
+      },
+      "actual_gap": 2.55351295663786e-15,
+      "certificate_bound": 0.0,
+      "bound_minus_gap": -2.55351295663786e-15,
+      "expected_equality": false,
+      "equality_abs_error": null,
+      "global_fold_solution_error": 6.442157918229441e-10
+    },
+    {
+      "matrix": "gain_and_efficiency",
+      "direction_radians": 0.7,
+      "alpha": -0.1,
+      "I": 1.2,
+      "e": [
+        0.7648421872844885,
+        0.644217687237691
+      ],
+      "s_fold": [
+        1.2,
+        0.9178106247413862,
+        0.7730612246852292
+      ],
+      "z": [
+        1.0842842454208705,
+        1.1124420173587732,
+        0.9004979224920502
+      ],
+      "z_cone_slack": -0.34694730481750913,
+      "z_feasible": false,
+      "full_raw_gradient_inf": 3.303041768008991e-17,
+      "raw_gradient_fd_error_inf": 3.4694799823712943e-12,
+      "rho_exact": 0.12,
+      "rho_gradient_fd": 0.1200000047508786,
+      "rho_energy_fd": 0.12000000507161879,
+      "rho_gradient_fd_error": 4.750878607184816e-09,
+      "rho_energy_fd_error": 5.071618791596677e-09,
+      "fold_objective": 0.01733375146765783,
+      "qp": {
+        "success": true,
+        "status": 0,
+        "message": "Optimization terminated successfully",
+        "iterations": 7,
+        "solution": [
+          1.2000000000001165,
+          0.9178106247386162,
+          0.7730612246886985
+        ],
+        "objective": 0.01733375146765785,
+        "cone_slack": 2.220446049250313e-16,
+        "cone_violation": 0.0,
+        "stationarity_inf": 1.956046435935832e-12,
+        "complementarity_abs": 2.2204460492489148e-17,
+        "dual_multiplier": 0.09999999999993703
+      },
+      "actual_gap": -2.0816681711721685e-17,
+      "certificate_bound": 0.0,
+      "bound_minus_gap": 2.0816681711721685e-17,
+      "expected_equality": false,
+      "equality_abs_error": null,
+      "global_fold_solution_error": 3.4693359296511517e-12
+    },
+    {
+      "matrix": "gain_and_efficiency",
+      "direction_radians": 0.7,
+      "alpha": 0.01,
+      "I": 1.2,
+      "e": [
+        0.7648421872844885,
+        0.644217687237691
+      ],
+      "s_fold": [
+        1.2,
+        0.9178106247413862,
+        0.7730612246852292
+      ],
+      "z": [
+        1.2115715754579128,
+        0.8983474854796475,
+        0.7603175549045471
+      ],
+      "z_cone_slack": 0.034664192116456105,
+      "z_feasible": true,
+      "full_raw_gradient_inf": 8.439288098496706e-17,
+      "raw_gradient_fd_error_inf": 1.3145107412576891e-12,
+      "rho_exact": -0.012,
+      "rho_gradient_fd": -0.01199999656902996,
+      "rho_energy_fd": -0.011999998491087939,
+      "rho_gradient_fd_error": 3.4309700410600774e-09,
+      "rho_energy_fd_error": 1.5089120612710172e-09,
+      "fold_objective": 0.00017333751467657759,
+      "qp": {
+        "success": true,
+        "status": 0,
+        "message": "Optimization terminated successfully",
+        "iterations": 7,
+        "solution": [
+          1.2115716386601956,
+          0.8983475009311525,
+          0.7603175313153167
+        ],
+        "objective": 2.2609849683059218e-15,
+        "cone_slack": 0.03466425876377199,
+        "cone_violation": 0.0,
+        "stationarity_inf": 6.672710415207275e-08,
+        "complementarity_abs": 0.0,
+        "dual_multiplier": 0.0
+      },
+      "actual_gap": 0.0001733375146743166,
+      "certificate_bound": 0.0001733375146765782,
+      "bound_minus_gap": 2.26161862675045e-15,
+      "expected_equality": true,
+      "equality_abs_error": 2.26161862675045e-15,
+      "global_fold_solution_error": null
+    },
+    {
+      "matrix": "gain_and_efficiency",
+      "direction_radians": 0.7,
+      "alpha": 0.1,
+      "I": 1.2,
+      "e": [
+        0.7648421872844885,
+        0.644217687237691
+      ],
+      "s_fold": [
+        1.2,
+        0.9178106247413862,
+        0.7730612246852292
+      ],
+      "z": [
+        1.3157157545791294,
+        0.7231792321239993,
+        0.6456245268784082
+      ],
+      "z_cone_slack": 0.34627301182305215,
+      "z_feasible": true,
+      "full_raw_gradient_inf": 9.108714370182849e-17,
+      "raw_gradient_fd_error_inf": 3.4694619687291296e-12,
+      "rho_exact": -0.12,
+      "rho_gradient_fd": -0.11999999764896857,
+      "rho_energy_fd": -0.12000000090828244,
+      "rho_gradient_fd_error": 2.351031425096295e-09,
+      "rho_energy_fd_error": 9.0828244925234e-10,
+      "fold_objective": 0.017333751467657824,
+      "qp": {
+        "success": true,
+        "status": 0,
+        "message": "Optimization terminated successfully",
+        "iterations": 7,
+        "solution": [
+          1.3157157545981237,
+          0.7231792322207399,
+          0.645624527312736
+        ],
+        "objective": 5.3716184981334223e-20,
+        "cone_slack": 0.34627301148062917,
+        "cone_violation": 0.0,
+        "stationarity_inf": 2.3182982488186407e-10,
+        "complementarity_abs": 0.0,
+        "dual_multiplier": 0.0
+      },
+      "actual_gap": 0.017333751467657824,
+      "certificate_bound": 0.01733375146765782,
+      "bound_minus_gap": -3.469446951953614e-18,
+      "expected_equality": true,
+      "equality_abs_error": 3.469446951953614e-18,
+      "global_fold_solution_error": null
+    },
+    {
+      "matrix": "gain_and_efficiency",
+      "direction_radians": 0.7,
+      "alpha": 0.4,
+      "I": 1.2,
+      "e": [
+        0.7648421872844885,
+        0.644217687237691
+      ],
+      "s_fold": [
+        1.2,
+        0.9178106247413862,
+        0.7730612246852292
+      ],
+      "z": [
+        1.6628630183165174,
+        0.13928505427183846,
+        0.26331443345794514
+      ],
+      "z_cone_slack": 1.3649791194384686,
+      "z_feasible": true,
+      "full_raw_gradient_inf": 1.4039194361874057e-17,
+      "raw_gradient_fd_error_inf": 2.7755589654823275e-11,
+      "rho_exact": -0.48,
+      "rho_gradient_fd": -0.4800000012487129,
+      "rho_energy_fd": -0.4800000175109176,
+      "rho_gradient_fd_error": 1.2487129108507133e-09,
+      "rho_energy_fd_error": 1.7510917604823817e-08,
+      "fold_objective": 0.2773400234825252,
+      "qp": {
+        "success": true,
+        "status": 0,
+        "message": "Optimization terminated successfully",
+        "iterations": 8,
+        "solution": [
+          1.662863017776804,
+          0.13928505634962393,
+          0.26331443078007377
+        ],
+        "objective": 2.7378347527192488e-18,
+        "cone_slack": 1.3649791202943249,
+        "cone_violation": 0.0,
+        "stationarity_inf": 1.3619480204999857e-09,
+        "complementarity_abs": 0.0,
+        "dual_multiplier": 0.0
+      },
+      "actual_gap": 0.2773400234825252,
+      "certificate_bound": 0.2773400234825251,
+      "bound_minus_gap": -5.551115123125783e-17,
+      "expected_equality": true,
+      "equality_abs_error": 5.551115123125783e-17,
+      "global_fold_solution_error": null
+    },
+    {
+      "matrix": "gain_and_efficiency",
+      "direction_radians": 0.7,
+      "alpha": 1.0,
+      "I": 1.2,
+      "e": [
+        0.7648421872844885,
+        0.644217687237691
+      ],
+      "s_fold": [
+        1.2,
+        0.9178106247413862,
+        0.7730612246852292
+      ],
+      "z": [
+        2.3571575457912934,
+        -1.0285033014324831,
+        -0.5013057533829809
+      ],
+      "z_cone_slack": 1.2129868856918504,
+      "z_feasible": true,
+      "full_raw_gradient_inf": 2.259289674084523e-16,
+      "raw_gradient_fd_error_inf": 1.1102231890883212e-10,
+      "rho_exact": -1.2,
+      "rho_gradient_fd": -1.2000000084482627,
+      "rho_energy_fd": -1.2000000770839847,
+      "rho_gradient_fd_error": 8.448262756033387e-09,
+      "rho_energy_fd_error": 7.708398475081424e-08,
+      "fold_objective": 1.733375146765782,
+      "qp": {
+        "success": true,
+        "status": 0,
+        "message": "Optimization terminated successfully",
+        "iterations": 10,
+        "solution": [
+          2.357157545682472,
+          -1.0285032941826926,
+          -0.5013057477968257
+        ],
+        "objective": 2.032776281853365e-17,
+        "cone_slack": 1.2129868945474305,
+        "cone_violation": 0.0,
+        "stationarity_inf": 3.1819492935773242e-09,
+        "complementarity_abs": 0.0,
+        "dual_multiplier": 0.0
+      },
+      "actual_gap": 1.733375146765782,
+      "certificate_bound": 1.7333751467657819,
+      "bound_minus_gap": -2.220446049250313e-16,
+      "expected_equality": true,
+      "equality_abs_error": 2.220446049250313e-16,
+      "global_fold_solution_error": null
+    },
+    {
+      "matrix": "gain_and_efficiency",
+      "direction_radians": 0.7,
+      "alpha": 2.0,
+      "I": 1.2,
+      "e": [
+        0.7648421872844885,
+        0.644217687237691
+      ],
+      "s_fold": [
+        1.2,
+        0.9178106247413862,
+        0.7730612246852292
+      ],
+      "z": [
+        3.5143150915825867,
+        -2.9748172276063523,
+        -1.7756727314511909
+      ],
+      "z_cone_slack": 0.04984526390579269,
+      "z_feasible": true,
+      "full_raw_gradient_inf": 6.739025397419359e-16,
+      "raw_gradient_fd_error_inf": 1.332267481153983e-09,
+      "rho_exact": -2.4,
+      "rho_gradient_fd": -2.400000020447228,
+      "rho_energy_fd": -2.4000001985768904,
+      "rho_gradient_fd_error": 2.0447227910835863e-08,
+      "rho_energy_fd_error": 1.9857689048663474e-07,
+      "fold_objective": 6.9335005870631266,
+      "qp": {
+        "success": true,
+        "status": 0,
+        "message": "Optimization terminated successfully",
+        "iterations": 10,
+        "solution": [
+          3.514315092564709,
+          -2.9748171645035777,
+          -1.7756726452116178
+        ],
+        "objective": 2.973013450643141e-15,
+        "cone_slack": 0.04984536327309241,
+        "cone_violation": 0.0,
+        "stationarity_inf": 4.74783124004737e-08,
+        "complementarity_abs": 0.0,
+        "dual_multiplier": 0.0
+      },
+      "actual_gap": 6.933500587063124,
+      "certificate_bound": 6.933500587063127,
+      "bound_minus_gap": 3.552713678800501e-15,
+      "expected_equality": true,
+      "equality_abs_error": 3.552713678800501e-15,
+      "global_fold_solution_error": null
+    },
+    {
+      "matrix": "gain_and_efficiency",
+      "direction_radians": 1.9,
+      "alpha": -0.6,
+      "I": 1.2,
+      "e": [
+        -0.32328956686350335,
+        0.9463000876874145
+      ],
+      "s_fold": [
+        1.2,
+        -0.387947480236204,
+        1.1355601052248974
+      ],
+      "z": [
+        0.5764030187364991,
+        -0.8722057072481492,
+        2.357359881160623
+      ],
+      "z_cone_slack": -1.9371379904897021,
+      "z_feasible": false,
+      "full_raw_gradient_inf": 1.7060034085004182e-16,
+      "raw_gradient_fd_error_inf": 5.551132183159868e-11,
+      "rho_exact": 0.72,
+      "rho_gradient_fd": 0.7200000107030974,
+      "rho_energy_fd": 0.7199999929596856,
+      "rho_gradient_fd_error": 1.0703097408359952e-08,
+      "rho_energy_fd_error": 7.040314331518971e-09,
+      "fold_objective": 0.5809025546486163,
+      "qp": {
+        "success": true,
+        "status": 0,
+        "message": "Optimization terminated successfully",
+        "iterations": 7,
+        "solution": [
+          1.2000000019893933,
+          -0.3879474814638315,
+          1.1355601069077845
+        ],
+        "objective": 0.580902554648615,
+        "cone_slack": -2.220446049250313e-15,
+        "cone_violation": 2.220446049250313e-15,
+        "stationarity_inf": 1.6100282218545203e-09,
+        "complementarity_abs": 1.332267630819896e-15,
+        "dual_multiplier": 0.6000000005718257
+      },
+      "actual_gap": 1.3322676295501878e-15,
+      "certificate_bound": 0.0,
+      "bound_minus_gap": -1.3322676295501878e-15,
+      "expected_equality": false,
+      "equality_abs_error": null,
+      "global_fold_solution_error": 1.989393316748078e-09
+    },
+    {
+      "matrix": "gain_and_efficiency",
+      "direction_radians": 1.9,
+      "alpha": -0.1,
+      "I": 1.2,
+      "e": [
+        -0.32328956686350335,
+        0.9463000876874145
+      ],
+      "s_fold": [
+        1.2,
+        -0.387947480236204,
+        1.1355601052248974
+      ],
+      "z": [
+        1.0960671697894164,
+        -0.4686571847381949,
+        1.339193401214185
+      ],
+      "z_cone_slack": -0.32276281391629436,
+      "z_feasible": false,
+      "full_raw_gradient_inf": 1.9654109722598384e-17,
+      "raw_gradient_fd_error_inf": 6.938889610327744e-12,
+      "rho_exact": 0.12,
+      "rho_gradient_fd": 0.12000000470297205,
+      "rho_energy_fd": 0.12000000264300592,
+      "rho_gradient_fd_error": 4.702972053460819e-09,
+      "rho_energy_fd_error": 2.643005925229147e-09,
+      "fold_objective": 0.01613618207357269,
+      "qp": {
+        "success": true,
+        "status": 0,
+        "message": "Optimization terminated successfully",
+        "iterations": 9,
+        "solution": [
+          1.1999999996716524,
+          -0.387947480912272,
+          1.1355601046469632
+        ],
+        "objective": 0.016136182073571273,
+        "cone_slack": -1.4210854715202004e-14,
+        "cone_violation": 1.4210854715202004e-14,
+        "stationarity_inf": 4.774621531478118e-10,
+        "complementarity_abs": 1.4210854700038577e-15,
+        "dual_multiplier": 0.09999999989329687
+      },
+      "actual_gap": 1.4155343563970746e-15,
+      "certificate_bound": 0.0,
+      "bound_minus_gap": -1.4155343563970746e-15,
+      "expected_equality": false,
+      "equality_abs_error": null,
+      "global_fold_solution_error": 6.760679793771374e-10
+    },
+    {
+      "matrix": "gain_and_efficiency",
+      "direction_radians": 1.9,
+      "alpha": 0.01,
+      "I": 1.2,
+      "e": [
+        -0.32328956686350335,
+        0.9463000876874145
+      ],
+      "s_fold": [
+        1.2,
+        -0.387947480236204,
+        1.1355601052248974
+      ],
+      "z": [
+        1.2103932830210582,
+        -0.3798765097860049,
+        1.1151967756259686
+      ],
+      "z_cone_slack": 0.032271892393694435,
+      "z_feasible": true,
+      "full_raw_gradient_inf": 1.2031248367277552e-16,
+      "raw_gradient_fd_error_inf": 1.4364475660596205e-12,
+      "rho_exact": -0.012,
+      "rho_gradient_fd": -0.011999996617057954,
+      "rho_energy_fd": -0.011999998333878624,
+      "rho_gradient_fd_error": 3.3829420462844206e-09,
+      "rho_energy_fd_error": 1.6661213762814153e-09,
+      "fold_objective": 0.00016136182073572545,
+      "qp": {
+        "success": true,
+        "status": 0,
+        "message": "Optimization terminated successfully",
+        "iterations": 7,
+        "solution": [
+          1.210393283702609,
+          -0.3798765134483468,
+          1.1151967758235137
+        ],
+        "objective": 2.811942825384004e-18,
+        "cone_slack": 0.032271891707356115,
+        "cone_violation": 0.0,
+        "stationarity_inf": 1.4425448586804337e-09,
+        "complementarity_abs": 0.0,
+        "dual_multiplier": 0.0
+      },
+      "actual_gap": 0.00016136182073572263,
+      "certificate_bound": 0.00016136182073572675,
+      "bound_minus_gap": 4.119968255444917e-18,
+      "expected_equality": true,
+      "equality_abs_error": 4.119968255444917e-18,
+      "global_fold_solution_error": null
+    },
+    {
+      "matrix": "gain_and_efficiency",
+      "direction_radians": 1.9,
+      "alpha": 0.1,
+      "I": 1.2,
+      "e": [
+        -0.32328956686350335,
+        0.9463000876874145
+      ],
+      "s_fold": [
+        1.2,
+        -0.387947480236204,
+        1.1355601052248974
+      ],
+      "z": [
+        1.3039328302105835,
+        -0.3072377757342131,
+        0.9319268092356098
+      ],
+      "z_cone_slack": 0.3226670004732124,
+      "z_feasible": true,
+      "full_raw_gradient_inf": 9.656814626373518e-17,
+      "raw_gradient_fd_error_inf": 5.2041388164954825e-12,
+      "rho_exact": -0.12,
+      "rho_gradient_fd": -0.11999999769708428,
+      "rho_energy_fd": -0.11999999882661427,
+      "rho_gradient_fd_error": 2.302915719232246e-09,
+      "rho_energy_fd_error": 1.1733857219198285e-09,
+      "fold_objective": 0.016136182073572678,
+      "qp": {
+        "success": true,
+        "status": 0,
+        "message": "Optimization terminated successfully",
+        "iterations": 7,
+        "solution": [
+          1.3039328457148147,
+          -0.3072377819941915,
+          0.9319268176453499
+        ],
+        "objective": 1.5705156277400997e-16,
+        "cone_slack": 0.32266700603053244,
+        "cone_violation": 0.0,
+        "stationarity_inf": 1.6844781803487906e-08,
+        "complementarity_abs": 0.0,
+        "dual_multiplier": 0.0
+      },
+      "actual_gap": 0.016136182073572522,
+      "certificate_bound": 0.016136182073572675,
+      "bound_minus_gap": 1.5265566588595902e-16,
+      "expected_equality": true,
+      "equality_abs_error": 1.5265566588595902e-16,
+      "global_fold_solution_error": null
+    },
+    {
+      "matrix": "gain_and_efficiency",
+      "direction_radians": 1.9,
+      "alpha": 0.4,
+      "I": 1.2,
+      "e": [
+        -0.32328956686350335,
+        0.9463000876874145
+      ],
+      "s_fold": [
+        1.2,
+        -0.387947480236204,
+        1.1355601052248974
+      ],
+      "z": [
+        1.6157313208423338,
+        -0.06510866222824052,
+        0.3210269212677469
+      ],
+      "z_cone_slack": 1.2881684687424668,
+      "z_feasible": true,
+      "full_raw_gradient_inf": 7.831120258918383e-17,
+      "raw_gradient_fd_error_inf": 2.775557327004172e-11,
+      "rho_exact": -0.48,
+      "rho_gradient_fd": -0.48000000129720694,
+      "rho_energy_fd": -0.4800000008575722,
+      "rho_gradient_fd_error": 1.297206952965979e-09,
+      "rho_energy_fd_error": 8.575722354464688e-10,
+      "fold_objective": 0.2581789131771628,
+      "qp": {
+        "success": true,
+        "status": 0,
+        "message": "Optimization terminated successfully",
+        "iterations": 9,
+        "solution": [
+          1.6157313341505466,
+          -0.06510894348156149,
+          0.32102679175952814
+        ],
+        "objective": 2.1626382294239065e-14,
+        "cone_slack": 1.288168553070796,
+        "cone_violation": 0.0,
+        "stationarity_inf": 1.1897551988900913e-07,
+        "complementarity_abs": 0.0,
+        "dual_multiplier": 0.0
+      },
+      "actual_gap": 0.25817891317714114,
+      "certificate_bound": 0.2581789131771628,
+      "bound_minus_gap": 2.1649348980190553e-14,
+      "expected_equality": true,
+      "equality_abs_error": 2.1649348980190553e-14,
+      "global_fold_solution_error": null
+    },
+    {
+      "matrix": "gain_and_efficiency",
+      "direction_radians": 1.9,
+      "alpha": 1.0,
+      "I": 1.2,
+      "e": [
+        -0.32328956686350335,
+        0.9463000876874145
+      ],
+      "s_fold": [
+        1.2,
+        -0.387947480236204,
+        1.1355601052248974
+      ],
+      "z": [
+        2.239328302105835,
+        0.41914956478370463,
+        -0.9007728546679787
+      ],
+      "z_cone_slack": 1.2458102633339823,
+      "z_feasible": true,
+      "full_raw_gradient_inf": 3.60239082202951e-16,
+      "raw_gradient_fd_error_inf": 2.2204496516411352e-10,
+      "rho_exact": -1.2,
+      "rho_gradient_fd": -1.2000000084973597,
+      "rho_energy_fd": -1.1999999882661427,
+      "rho_gradient_fd_error": 8.497359704762175e-09,
+      "rho_energy_fd_error": 1.1733857219198285e-08,
+      "fold_objective": 1.6136182073572676,
+      "qp": {
+        "success": true,
+        "status": 0,
+        "message": "Optimization terminated successfully",
+        "iterations": 9,
+        "solution": [
+          2.2393282532618457,
+          0.4191496890008021,
+          -0.9007727569007734
+        ],
+        "objective": 6.5787077119561175e-15,
+        "cone_slack": 1.2458102507253597,
+        "cone_violation": 0.0,
+        "stationarity_inf": 5.1739227332743335e-08,
+        "complementarity_abs": 0.0,
+        "dual_multiplier": 0.0
+      },
+      "actual_gap": 1.613618207357261,
+      "certificate_bound": 1.6136182073572676,
+      "bound_minus_gap": 6.661338147750939e-15,
+      "expected_equality": true,
+      "equality_abs_error": 6.661338147750939e-15,
+      "global_fold_solution_error": null
+    },
+    {
+      "matrix": "gain_and_efficiency",
+      "direction_radians": 1.9,
+      "alpha": 2.0,
+      "I": 1.2,
+      "e": [
+        -0.32328956686350335,
+        0.9463000876874145
+      ],
+      "s_fold": [
+        1.2,
+        -0.387947480236204,
+        1.1355601052248974
+      ],
+      "z": [
+        3.27865660421167,
+        1.2262466098036133,
+        -2.937105814560855
+      ],
+      "z_cone_slack": 0.09584788957265777,
+      "z_feasible": true,
+      "full_raw_gradient_inf": 1.6770025529422322e-16,
+      "raw_gradient_fd_error_inf": 8.881783593766521e-10,
+      "rho_exact": -2.4,
+      "rho_gradient_fd": -2.4000000204975263,
+      "rho_energy_fd": -2.4000000209412065,
+      "rho_gradient_fd_error": 2.04975263429219e-08,
+      "rho_energy_fd_error": 2.0941206546609692e-08,
+      "fold_objective": 6.45447282942907,
+      "qp": {
+        "success": true,
+        "status": 0,
+        "message": "Optimization terminated successfully",
+        "iterations": 10,
+        "solution": [
+          3.2786566127317576,
+          1.2262466273463168,
+          -2.9371057539452026
+        ],
+        "objective": 1.1532623203622056e-15,
+        "cone_slack": 0.09584794727034884,
+        "cone_violation": 0.0,
+        "stationarity_inf": 3.2990078575780524e-08,
+        "complementarity_abs": 0.0,
+        "dual_multiplier": 0.0
+      },
+      "actual_gap": 6.454472829429069,
+      "certificate_bound": 6.45447282942907,
+      "bound_minus_gap": 8.881784197001252e-16,
+      "expected_equality": true,
+      "equality_abs_error": 8.881784197001252e-16,
+      "global_fold_solution_error": null
+    },
+    {
+      "matrix": "heteroscedastic",
+      "direction_radians": 0.0,
+      "alpha": -0.6,
+      "I": 1.2,
+      "e": [
+        1.0,
+        0.0
+      ],
+      "s_fold": [
+        1.2,
+        1.2,
+        0.0
+      ],
+      "z": [
+        0.4610515423860311,
+        2.460182485856258,
+        -0.25836563100568544
+      ],
+      "z_cone_slack": -2.0126603775833987,
+      "z_feasible": false,
+      "full_raw_gradient_inf": 4.0412118096355695e-16,
+      "raw_gradient_fd_error_inf": 5.551074711007686e-11,
+      "rho_exact": 0.72,
+      "rho_gradient_fd": 0.7200000111877647,
+      "rho_energy_fd": 0.7200000262663764,
+      "rho_gradient_fd_error": 1.1187764714648551e-08,
+      "rho_energy_fd_error": 2.6266376407235725e-08,
+      "fold_objective": 0.5997392830410679,
+      "qp": {
+        "success": true,
+        "status": 0,
+        "message": "Optimization terminated successfully",
+        "iterations": 7,
+        "solution": [
+          1.1999999997418846,
+          1.1999999997419635,
+          5.272667749296972e-09
+        ],
+        "objective": 0.5997392830410206,
+        "cone_slack": -7.882583474838611e-14,
+        "cone_violation": 7.882583474838611e-14,
+        "stationarity_inf": 4.5532303344228136e-09,
+        "complementarity_abs": 4.729550081674351e-14,
+        "dual_multiplier": 0.5999999995903861
+      },
+      "actual_gap": 4.729550084903167e-14,
+      "certificate_bound": 0.0,
+      "bound_minus_gap": -4.729550084903167e-14,
+      "expected_equality": false,
+      "equality_abs_error": null,
+      "global_fold_solution_error": 5.272667749296972e-09
+    },
+    {
+      "matrix": "heteroscedastic",
+      "direction_radians": 0.0,
+      "alpha": -0.1,
+      "I": 1.2,
+      "e": [
+        1.0,
+        0.0
+      ],
+      "s_fold": [
+        1.2,
+        1.2,
+        0.0
+      ],
+      "z": [
+        1.0768419237310052,
+        1.4100304143093765,
+        -0.043060938500947575
+      ],
+      "z_cone_slack": -0.33384585664495536,
+      "z_feasible": false,
+      "full_raw_gradient_inf": 1.7319479184152443e-16,
+      "raw_gradient_fd_error_inf": 1.7348966707686486e-12,
+      "rho_exact": 0.12,
+      "rho_gradient_fd": 0.1200000051882971,
+      "rho_energy_fd": 0.12000000333689531,
+      "rho_gradient_fd_error": 5.18829709750257e-09,
+      "rho_energy_fd_error": 3.33689531561987e-09,
+      "fold_objective": 0.016659424528918568,
+      "qp": {
+        "success": true,
+        "status": 0,
+        "message": "Optimization terminated successfully",
+        "iterations": 8,
+        "solution": [
+          1.200000000010868,
+          1.2000000000108684,
+          8.975502141759944e-11
+        ],
+        "objective": 0.016659424528918523,
+        "cone_slack": -4.440892098500626e-16,
+        "cone_violation": 4.440892098500626e-16,
+        "stationarity_inf": 3.7945990557982354e-11,
+        "complementarity_abs": 4.440892098372453e-17,
+        "dual_multiplier": 0.0999999999971138
+      },
+      "actual_gap": 4.5102810375396984e-17,
+      "certificate_bound": 0.0,
+      "bound_minus_gap": -4.5102810375396984e-17,
+      "expected_equality": false,
+      "equality_abs_error": null,
+      "global_fold_solution_error": 8.975502141759944e-11
+    },
+    {
+      "matrix": "heteroscedastic",
+      "direction_radians": 0.0,
+      "alpha": 0.01,
+      "I": 1.2,
+      "e": [
+        1.0,
+        0.0
+      ],
+      "s_fold": [
+        1.2,
+        1.2,
+        0.0
+      ],
+      "z": [
+        1.2123158076268994,
+        1.1789969585690623,
+        0.004306093850094757
+      ],
+      "z_cone_slack": 0.033310985431779905,
+      "z_feasible": true,
+      "full_raw_gradient_inf": 9.808820422563258e-17,
+      "raw_gradient_fd_error_inf": 1.3958122088708613e-12,
+      "rho_exact": -0.012,
+      "rho_gradient_fd": -0.011999996131585968,
+      "rho_energy_fd": -0.011999998114327684,
+      "rho_gradient_fd_error": 3.868414031812928e-09,
+      "rho_energy_fd_error": 1.88567231620973e-09,
+      "fold_objective": 0.00016659424528918547,
+      "qp": {
+        "success": true,
+        "status": 0,
+        "message": "Optimization terminated successfully",
+        "iterations": 7,
+        "solution": [
+          1.2123158080922383,
+          1.178996958666141,
+          0.004306093004629332
+        ],
+        "objective": 3.0793764410928745e-19,
+        "cone_slack": 0.033310985803128634,
+        "cone_violation": 0.0,
+        "stationarity_inf": 6.346063015842674e-10,
+        "complementarity_abs": 0.0,
+        "dual_multiplier": 0.0
+      },
+      "actual_gap": 0.00016659424528918517,
+      "certificate_bound": 0.0001665942452891856,
+      "bound_minus_gap": 4.336808689942018e-19,
+      "expected_equality": true,
+      "equality_abs_error": 4.336808689942018e-19,
+      "global_fold_solution_error": null
+    },
+    {
+      "matrix": "heteroscedastic",
+      "direction_radians": 0.0,
+      "alpha": 0.1,
+      "I": 1.2,
+      "e": [
+        1.0,
+        0.0
+      ],
+      "s_fold": [
+        1.2,
+        1.2,
+        0.0
+      ],
+      "z": [
+        1.3231580762689947,
+        0.9899695856906235,
+        0.043060938500947575
+      ],
+      "z_cone_slack": 0.33225241727968047,
+      "z_feasible": true,
+      "full_raw_gradient_inf": 7.882583474838611e-17,
+      "raw_gradient_fd_error_inf": 1.7346446501420588e-12,
+      "rho_exact": -0.12,
+      "rho_gradient_fd": -0.11999999721149018,
+      "rho_energy_fd": -0.11999999882661427,
+      "rho_gradient_fd_error": 2.788509811946227e-09,
+      "rho_energy_fd_error": 1.1733857219198285e-09,
+      "fold_objective": 0.016659424528918557,
+      "qp": {
+        "success": true,
+        "status": 0,
+        "message": "Optimization terminated successfully",
+        "iterations": 9,
+        "solution": [
+          1.3231580630301338,
+          0.9899695868528268,
+          0.043060904185373464
+        ],
+        "objective": 2.424377799682444e-16,
+        "cone_slack": 0.33225240437093606,
+        "cone_violation": 0.0,
+        "stationarity_inf": 1.0451027788710918e-08,
+        "complementarity_abs": 0.0,
+        "dual_multiplier": 0.0
+      },
+      "actual_gap": 0.016659424528918314,
+      "certificate_bound": 0.01665942452891856,
+      "bound_minus_gap": 2.463307335887066e-16,
+      "expected_equality": true,
+      "equality_abs_error": 2.463307335887066e-16,
+      "global_fold_solution_error": null
+    },
+    {
+      "matrix": "heteroscedastic",
+      "direction_radians": 0.0,
+      "alpha": 0.4,
+      "I": 1.2,
+      "e": [
+        1.0,
+        0.0
+      ],
+      "s_fold": [
+        1.2,
+        1.2,
+        0.0
+      ],
+      "z": [
+        1.6926323050759793,
+        0.3598783427624943,
+        0.1722437540037903
+      ],
+      "z_cone_slack": 1.2936582051862777,
+      "z_feasible": true,
+      "full_raw_gradient_inf": 2.6645352591003756e-17,
+      "raw_gradient_fd_error_inf": 2.7755602260981503e-11,
+      "rho_exact": -0.48,
+      "rho_gradient_fd": -0.48000000081117106,
+      "rho_energy_fd": -0.48000000640868734,
+      "rho_gradient_fd_error": 8.111710747549239e-10,
+      "rho_energy_fd_error": 6.4086873585722515e-09,
+      "fold_objective": 0.26655079246269703,
+      "qp": {
+        "success": true,
+        "status": 0,
+        "message": "Optimization terminated successfully",
+        "iterations": 8,
+        "solution": [
+          1.6926323569226704,
+          0.35987826067205786,
+          0.1722442087650044
+        ],
+        "objective": 3.6673387573428816e-14,
+        "cone_slack": 1.293658134751077,
+        "cone_violation": 0.0,
+        "stationarity_inf": 1.5566833942445657e-07,
+        "complementarity_abs": 0.0,
+        "dual_multiplier": 0.0
+      },
+      "actual_gap": 0.26655079246266034,
+      "certificate_bound": 0.266550792462697,
+      "bound_minus_gap": 3.6637359812630166e-14,
+      "expected_equality": true,
+      "equality_abs_error": 3.6637359812630166e-14,
+      "global_fold_solution_error": null
+    },
+    {
+      "matrix": "heteroscedastic",
+      "direction_radians": 0.0,
+      "alpha": 1.0,
+      "I": 1.2,
+      "e": [
+        1.0,
+        0.0
+      ],
+      "s_fold": [
+        1.2,
+        1.2,
+        0.0
+      ],
+      "z": [
+        2.431580762689948,
+        -0.9003041430937639,
+        0.4306093850094757
+      ],
+      "z_cone_slack": 1.4335967986253766,
+      "z_feasible": true,
+      "full_raw_gradient_inf": 2.6645352591003756e-16,
+      "raw_gradient_fd_error_inf": 2.2204463823172205e-10,
+      "rho_exact": -1.2,
+      "rho_gradient_fd": -1.2000000080105324,
+      "rho_energy_fd": -1.1999999882661427,
+      "rho_gradient_fd_error": 8.010532459579167e-09,
+      "rho_energy_fd_error": 1.1733857219198285e-08,
+      "fold_objective": 1.6659424528918558,
+      "qp": {
+        "success": true,
+        "status": 0,
+        "message": "Optimization terminated successfully",
+        "iterations": 9,
+        "solution": [
+          2.431580756195511,
+          -0.9003040241802053,
+          0.43060963082803483
+        ],
+        "objective": 1.46409161780025e-14,
+        "cone_slack": 1.4335967933399307,
+        "cone_violation": 0.0,
+        "stationarity_inf": 8.778858881616423e-08,
+        "complementarity_abs": 0.0,
+        "dual_multiplier": 0.0
+      },
+      "actual_gap": 1.6659424528918412,
+      "certificate_bound": 1.665942452891856,
+      "bound_minus_gap": 1.4876988529977098e-14,
+      "expected_equality": true,
+      "equality_abs_error": 1.4876988529977098e-14,
+      "global_fold_solution_error": null
+    },
+    {
+      "matrix": "heteroscedastic",
+      "direction_radians": 0.0,
+      "alpha": 2.0,
+      "I": 1.2,
+      "e": [
+        1.0,
+        0.0
+      ],
+      "s_fold": [
+        1.2,
+        1.2,
+        0.0
+      ],
+      "z": [
+        3.6631615253798966,
+        -3.0006082861875276,
+        0.8612187700189514
+      ],
+      "z_cone_slack": 0.5414075541370944,
+      "z_feasible": true,
+      "full_raw_gradient_inf": 9.769962616701378e-16,
+      "raw_gradient_fd_error_inf": 4.4409018684632427e-10,
+      "rho_exact": -2.4,
+      "rho_gradient_fd": -2.4000000200094687,
+      "rho_energy_fd": -2.3999998433055225,
+      "rho_gradient_fd_error": 2.0009468748583004e-08,
+      "rho_energy_fd_error": 1.5669447739341535e-07,
+      "fold_objective": 6.663769811567423,
+      "qp": {
+        "success": true,
+        "status": 0,
+        "message": "Optimization terminated successfully",
+        "iterations": 10,
+        "solution": [
+          3.6631615398191726,
+          -3.000608209596722,
+          0.8612188028701271
+        ],
+        "objective": 1.999785541618591e-15,
+        "cone_slack": 0.5414076331320521,
+        "cone_violation": 0.0,
+        "stationarity_inf": 4.4167393648113226e-08,
+        "complementarity_abs": 0.0,
+        "dual_multiplier": 0.0
+      },
+      "actual_gap": 6.6637698115674215,
+      "certificate_bound": 6.663769811567424,
+      "bound_minus_gap": 2.6645352591003757e-15,
+      "expected_equality": true,
+      "equality_abs_error": 2.6645352591003757e-15,
+      "global_fold_solution_error": null
+    },
+    {
+      "matrix": "heteroscedastic",
+      "direction_radians": 0.7,
+      "alpha": -0.6,
+      "I": 1.2,
+      "e": [
+        0.7648421872844885,
+        0.644217687237691
+      ],
+      "s_fold": [
+        1.2,
+        0.9178106247413862,
+        0.7730612246852292
+      ],
+      "z": [
+        0.638909058356541,
+        1.8930651603036115,
+        1.6611074072945016
+      ],
+      "z_cone_slack": -1.8796170026013361,
+      "z_feasible": false,
+      "full_raw_gradient_inf": 1.5878596504243832e-16,
+      "raw_gradient_fd_error_inf": 5.5511113761431587e-11,
+      "rho_exact": 0.72,
+      "rho_gradient_fd": 0.7200000105533293,
+      "rho_energy_fd": 0.7200000040619159,
+      "rho_gradient_fd_error": 1.055332932153874e-08,
+      "rho_energy_fd_error": 4.0619159147325945e-09,
+      "fold_objective": 0.5637305435108386,
+      "qp": {
+        "success": true,
+        "status": 0,
+        "message": "Optimization terminated successfully",
+        "iterations": 8,
+        "solution": [
+          1.199999999779091,
+          0.9178106238415985,
+          0.7730612254105866
+        ],
+        "objective": 0.5637305435108377,
+        "cone_slack": -1.3322676295501878e-15,
+        "cone_violation": 1.3322676295501878e-15,
+        "stationarity_inf": 9.909502107774415e-10,
+        "complementarity_abs": 7.993605775686353e-16,
+        "dual_multiplier": 0.599999999878795
+      },
+      "actual_gap": 8.881784197001252e-16,
+      "certificate_bound": 0.0,
+      "bound_minus_gap": -8.881784197001252e-16,
+      "expected_equality": false,
+      "equality_abs_error": null,
+      "global_fold_solution_error": 8.997876888017231e-10
+    },
+    {
+      "matrix": "heteroscedastic",
+      "direction_radians": 0.7,
+      "alpha": -0.1,
+      "I": 1.2,
+      "e": [
+        0.7648421872844885,
+        0.644217687237691
+      ],
+      "s_fold": [
+        1.2,
+        0.9178106247413862,
+        0.7730612246852292
+      ],
+      "z": [
+        1.1064848430594234,
+        1.0803530473350904,
+        0.9210689217867746
+      ],
+      "z_cone_slack": -0.313209020267339,
+      "z_feasible": false,
+      "full_raw_gradient_inf": 1.8654209843204483e-17,
+      "raw_gradient_fd_error_inf": 3.469432742928777e-12,
+      "rho_exact": 0.12,
+      "rho_gradient_fd": 0.12000000455375168,
+      "rho_energy_fd": 0.1200000043777294,
+      "rho_gradient_fd_error": 4.553751681291018e-09,
+      "rho_energy_fd_error": 4.377729401205954e-09,
+      "fold_objective": 0.015659181764189966,
+      "qp": {
+        "success": true,
+        "status": 0,
+        "message": "Optimization terminated successfully",
+        "iterations": 9,
+        "solution": [
+          1.19999999994232,
+          0.9178106246688215,
+          0.7730612246818462
+        ],
+        "objective": 0.01565918176418997,
+        "cone_slack": 0.0,
+        "cone_violation": 0.0,
+        "stationarity_inf": 6.564288002053331e-11,
+        "complementarity_abs": 0.0,
+        "dual_multiplier": 0.09999999997997774
+      },
+      "actual_gap": -3.469446951953614e-18,
+      "certificate_bound": 0.0,
+      "bound_minus_gap": 3.469446951953614e-18,
+      "expected_equality": false,
+      "equality_abs_error": null,
+      "global_fold_solution_error": 7.256473200101254e-11
+    },
+    {
+      "matrix": "heteroscedastic",
+      "direction_radians": 0.7,
+      "alpha": 0.01,
+      "I": 1.2,
+      "e": [
+        0.7648421872844885,
+        0.644217687237691
+      ],
+      "s_fold": [
+        1.2,
+        0.9178106247413862,
+        0.7730612246852292
+      ],
+      "z": [
+        1.2093515156940575,
+        0.9015563824820158,
+        0.7582604549750747
+      ],
+      "z_cone_slack": 0.031318057606781524,
+      "z_feasible": true,
+      "full_raw_gradient_inf": 1.2779778650357624e-16,
+      "raw_gradient_fd_error_inf": 1.1924945919475514e-12,
+      "rho_exact": -0.012,
+      "rho_gradient_fd": -0.011999996766168761,
+      "rho_energy_fd": -0.011999998594087145,
+      "rho_gradient_fd_error": 3.233831239249363e-09,
+      "rho_energy_fd_error": 1.4059128548848943e-09,
+      "fold_objective": 0.0001565918176418989,
+      "qp": {
+        "success": true,
+        "status": 0,
+        "message": "Optimization terminated successfully",
+        "iterations": 8,
+        "solution": [
+          1.2093515397385641,
+          0.9015563549384478,
+          0.7582605263762976
+        ],
+        "objective": 1.1245670579739993e-15,
+        "cone_slack": 0.031318056771988845,
+        "cone_violation": 0.0,
+        "stationarity_inf": 2.2379240197916135e-08,
+        "complementarity_abs": 0.0,
+        "dual_multiplier": 0.0
+      },
+      "actual_gap": 0.00015659181764077435,
+      "certificate_bound": 0.00015659181764189959,
+      "bound_minus_gap": 1.1252392247140808e-15,
+      "expected_equality": true,
+      "equality_abs_error": 1.1252392247140808e-15,
+      "global_fold_solution_error": null
+    },
+    {
+      "matrix": "heteroscedastic",
+      "direction_radians": 0.7,
+      "alpha": 0.1,
+      "I": 1.2,
+      "e": [
+        0.7648421872844885,
+        0.644217687237691
+      ],
+      "s_fold": [
+        1.2,
+        0.9178106247413862,
+        0.7730612246852292
+      ],
+      "z": [
+        1.2935151569405765,
+        0.755268202147682,
+        0.6250535275836838
+      ],
+      "z_cone_slack": 0.31314687434459265,
+      "z_feasible": true,
+      "full_raw_gradient_inf": 1.8654209843204483e-17,
+      "raw_gradient_fd_error_inf": 3.469432742928777e-12,
+      "rho_exact": -0.12,
+      "rho_gradient_fd": -0.1199999978461179,
+      "rho_energy_fd": -0.12000000160217184,
+      "rho_gradient_fd_error": 2.153882100452975e-09,
+      "rho_energy_fd_error": 1.6021718396430629e-09,
+      "fold_objective": 0.015659181764189966,
+      "qp": {
+        "success": true,
+        "status": 0,
+        "message": "Optimization terminated successfully",
+        "iterations": 7,
+        "solution": [
+          1.2935151730913896,
+          0.7552682042164249,
+          0.6250535545268658
+        ],
+        "objective": 2.1791282056400267e-16,
+        "cone_slack": 0.313146871723494,
+        "cone_violation": 0.0,
+        "stationarity_inf": 1.4224185846200696e-08,
+        "complementarity_abs": 0.0,
+        "dual_multiplier": 0.0
+      },
+      "actual_gap": 0.015659181764189747,
+      "certificate_bound": 0.015659181764189956,
+      "bound_minus_gap": 2.0816681711721685e-16,
+      "expected_equality": true,
+      "equality_abs_error": 2.0816681711721685e-16,
+      "global_fold_solution_error": null
+    },
+    {
+      "matrix": "heteroscedastic",
+      "direction_radians": 0.7,
+      "alpha": 0.4,
+      "I": 1.2,
+      "e": [
+        0.7648421872844885,
+        0.644217687237691
+      ],
+      "s_fold": [
+        1.2,
+        0.9178106247413862,
+        0.7730612246852292
+      ],
+      "z": [
+        1.574060627762306,
+        0.2676409343665693,
+        0.18103043627904758
+      ],
+      "z_cone_slack": 1.2509450314070811,
+      "z_feasible": true,
+      "full_raw_gradient_inf": 2.0848119070631807e-16,
+      "raw_gradient_fd_error_inf": 2.7755528754365157e-11,
+      "rho_exact": -0.48,
+      "rho_gradient_fd": -0.4800000014458092,
+      "rho_energy_fd": -0.4800000175109176,
+      "rho_gradient_fd_error": 1.4458091945890317e-09,
+      "rho_energy_fd_error": 1.7510917604823817e-08,
+      "fold_objective": 0.2505469082270394,
+      "qp": {
+        "success": true,
+        "status": 0,
+        "message": "Optimization terminated successfully",
+        "iterations": 10,
+        "solution": [
+          1.5740606335168204,
+          0.2676409246570062,
+          0.18103043676848943
+        ],
+        "objective": 3.6301972456820036e-17,
+        "cone_slack": 1.2509450449299382,
+        "cone_violation": 0.0,
+        "stationarity_inf": 4.89278124308169e-09,
+        "complementarity_abs": 0.0,
+        "dual_multiplier": 0.0
+      },
+      "actual_gap": 0.25054690822703934,
+      "certificate_bound": 0.2505469082270393,
+      "bound_minus_gap": -5.551115123125783e-17,
+      "expected_equality": true,
+      "equality_abs_error": 5.551115123125783e-17,
+      "global_fold_solution_error": null
+    },
+    {
+      "matrix": "heteroscedastic",
+      "direction_radians": 0.7,
+      "alpha": 1.0,
+      "I": 1.2,
+      "e": [
+        0.7648421872844885,
+        0.644217687237691
+      ],
+      "s_fold": [
+        1.2,
+        0.9178106247413862,
+        0.7730612246852292
+      ],
+      "z": [
+        2.135151569405765,
+        -0.707613601195656,
+        -0.7070157463302248
+      ],
+      "z_cone_slack": 1.1348574755733711,
+      "z_feasible": true,
+      "full_raw_gradient_inf": 7.558452143675612e-16,
+      "raw_gradient_fd_error_inf": 1.1102236395166679e-10,
+      "rho_exact": -1.2,
+      "rho_gradient_fd": -1.2000000086454485,
+      "rho_energy_fd": -1.1999999882661427,
+      "rho_gradient_fd_error": 8.645448579258641e-09,
+      "rho_energy_fd_error": 1.1733857219198285e-08,
+      "fold_objective": 1.5659181764189958,
+      "qp": {
+        "success": true,
+        "status": 0,
+        "message": "Optimization terminated successfully",
+        "iterations": 9,
+        "solution": [
+          2.1351515398023837,
+          -0.7076135539225504,
+          -0.7070158174088118
+        ],
+        "objective": 1.5445315488287167e-15,
+        "cone_slack": 1.1348574291723388,
+        "cone_violation": 0.0,
+        "stationarity_inf": 2.264232022698639e-08,
+        "complementarity_abs": 0.0,
+        "dual_multiplier": 0.0
+      },
+      "actual_gap": 1.5659181764189942,
+      "certificate_bound": 1.5659181764189956,
+      "bound_minus_gap": 1.3322676295501878e-15,
+      "expected_equality": true,
+      "equality_abs_error": 1.3322676295501878e-15,
+      "global_fold_solution_error": null
+    },
+    {
+      "matrix": "heteroscedastic",
+      "direction_radians": 0.7,
+      "alpha": 2.0,
+      "I": 1.2,
+      "e": [
+        0.7648421872844885,
+        0.644217687237691
+      ],
+      "s_fold": [
+        1.2,
+        0.9178106247413862,
+        0.7730612246852292
+      ],
+      "z": [
+        3.0703031388115303,
+        -2.3330378271326984,
+        -2.1870927173456787
+      ],
+      "z_cone_slack": -0.12757741822911184,
+      "z_feasible": false,
+      "full_raw_gradient_inf": 3.510768734030271e-16,
+      "raw_gradient_fd_error_inf": 4.440895098005202e-10,
+      "rho_exact": -2.4,
+      "rho_gradient_fd": -2.4000000206449053,
+      "rho_energy_fd": -2.4000001097590484,
+      "rho_gradient_fd_error": 2.0644905340816422e-08,
+      "rho_energy_fd_error": 1.0975904851662222e-07,
+      "fold_objective": 6.263672705675985,
+      "qp": {
+        "success": true,
+        "status": 0,
+        "message": "Optimization terminated successfully",
+        "iterations": 9,
+        "solution": [
+          3.109865724530874,
+          -2.292523650040842,
+          -2.101332943304167
+        ],
+        "objective": 0.002353206493164008,
+        "cone_slack": 0.0,
+        "cone_violation": 0.0,
+        "stationarity_inf": 2.871314297436811e-12,
+        "complementarity_abs": 0.0,
+        "dual_multiplier": 0.036948826583979195
+      },
+      "actual_gap": 6.261319499182821,
+      "certificate_bound": 6.263672705675982,
+      "bound_minus_gap": 0.002353206493161508,
+      "expected_equality": false,
+      "equality_abs_error": null,
+      "global_fold_solution_error": null
+    },
+    {
+      "matrix": "heteroscedastic",
+      "direction_radians": 1.9,
+      "alpha": -0.6,
+      "I": 1.2,
+      "e": [
+        -0.32328956686350335,
+        0.9463000876874145
+      ],
+      "s_fold": [
+        1.2,
+        -0.387947480236204,
+        1.1355601052248974
+      ],
+      "z": [
+        0.8618308413557132,
+        -0.6390634505640588,
+        2.594778710550152
+      ],
+      "z_cone_slack": -1.8104862525856384,
+      "z_feasible": false,
+      "full_raw_gradient_inf": 1.404999508417838e-16,
+      "raw_gradient_fd_error_inf": 5.551111645293466e-11,
+      "rho_exact": 0.72,
+      "rho_gradient_fd": 0.7200000099441928,
+      "rho_energy_fd": 0.7200000040619159,
+      "rho_gradient_fd_error": 9.944192802535667e-09,
+      "rho_energy_fd_error": 4.0619159147325945e-09,
+      "fold_objective": 0.5400633078295447,
+      "qp": {
+        "success": true,
+        "status": 0,
+        "message": "Optimization terminated successfully",
+        "iterations": 7,
+        "solution": [
+          1.1999999999999904,
+          -0.387947480236199,
+          1.1355601052248896
+        ],
+        "objective": 0.5400633078295443,
+        "cone_slack": -4.440892098500626e-16,
+        "cone_violation": 4.440892098500626e-16,
+        "stationarity_inf": 5.218048215738236e-15,
+        "complementarity_abs": 2.664535259100361e-16,
+        "dual_multiplier": 0.5999999999999966
+      },
+      "actual_gap": 4.440892098500626e-16,
+      "certificate_bound": 0.0,
+      "bound_minus_gap": -4.440892098500626e-16,
+      "expected_equality": false,
+      "equality_abs_error": null,
+      "global_fold_solution_error": 9.547918011776346e-15
+    },
+    {
+      "matrix": "heteroscedastic",
+      "direction_radians": 1.9,
+      "alpha": -0.1,
+      "I": 1.2,
+      "e": [
+        -0.32328956686350335,
+        0.9463000876874145
+      ],
+      "s_fold": [
+        1.2,
+        -0.387947480236204,
+        1.1355601052248974
+      ],
+      "z": [
+        1.1436384735592855,
+        -0.42980014195751315,
+        1.3787632061124397
+      ],
+      "z_cone_slack": -0.30056239216409164,
+      "z_feasible": false,
+      "full_raw_gradient_inf": 2.7179207224662886e-17,
+      "raw_gradient_fd_error_inf": 6.07150749337779e-12,
+      "rho_exact": 0.12,
+      "rho_gradient_fd": 0.12000000394401675,
+      "rho_energy_fd": 0.12000000246953357,
+      "rho_gradient_fd_error": 3.9440167520776725e-09,
+      "rho_energy_fd_error": 2.4695335776314664e-09,
+      "fold_objective": 0.015001758550820681,
+      "qp": {
+        "success": true,
+        "status": 0,
+        "message": "Optimization terminated successfully",
+        "iterations": 8,
+        "solution": [
+          1.2000001471880475,
+          -0.38794743876322835,
+          1.135560274934131
+        ],
+        "objective": 0.015001758550832016,
+        "cone_slack": -3.8413716652030416e-14,
+        "cone_violation": 3.8413716652030416e-14,
+        "stationarity_inf": 9.88278038016599e-08,
+        "complementarity_abs": 3.841373937483168e-15,
+        "dual_multiplier": 0.10000005915283197
+      },
+      "actual_gap": -1.1334683192032458e-14,
+      "certificate_bound": 0.0,
+      "bound_minus_gap": 1.1334683192032458e-14,
+      "expected_equality": false,
+      "equality_abs_error": null,
+      "global_fold_solution_error": 1.6970923355508205e-07
+    },
+    {
+      "matrix": "heteroscedastic",
+      "direction_radians": 1.9,
+      "alpha": 0.01,
+      "I": 1.2,
+      "e": [
+        -0.32328956686350335,
+        0.9463000876874145
+      ],
+      "s_fold": [
+        1.2,
+        -0.387947480236204,
+        1.1355601052248974
+      ],
+      "z": [
+        1.2056361526440713,
+        -0.3837622140640731,
+        1.111239795136143
+      ],
+      "z_cone_slack": 0.02999704167609374,
+      "z_feasible": true,
+      "full_raw_gradient_inf": 1.2201654125349124e-16,
+      "raw_gradient_fd_error_inf": 1.0569751016321134e-12,
+      "rho_exact": -0.012,
+      "rho_gradient_fd": -0.01199999737601107,
+      "rho_energy_fd": -0.011999998710638879,
+      "rho_gradient_fd_error": 2.623988930652854e-09,
+      "rho_energy_fd_error": 1.2893611213427025e-09,
+      "fold_objective": 0.00015001758550820687,
+      "qp": {
+        "success": true,
+        "status": 0,
+        "message": "Optimization terminated successfully",
+        "iterations": 8,
+        "solution": [
+          1.2056361518323928,
+          -0.3837622070871591,
+          1.1112397867755592
+        ],
+        "objective": 2.4990419284520362e-17,
+        "cone_slack": 0.029997051044486023,
+        "cone_violation": 0.0,
+        "stationarity_inf": 3.808242867829973e-09,
+        "complementarity_abs": 0.0,
+        "dual_multiplier": 0.0
+      },
+      "actual_gap": 0.00015001758550818188,
+      "certificate_bound": 0.0001500175855082069,
+      "bound_minus_gap": 2.5017965130103015e-17,
+      "expected_equality": true,
+      "equality_abs_error": 2.5017965130103015e-17,
+      "global_fold_solution_error": null
+    },
+    {
+      "matrix": "heteroscedastic",
+      "direction_radians": 1.9,
+      "alpha": 0.1,
+      "I": 1.2,
+      "e": [
+        -0.32328956686350335,
+        0.9463000876874145
+      ],
+      "s_fold": [
+        1.2,
+        -0.387947480236204,
+        1.1355601052248974
+      ],
+      "z": [
+        1.2563615264407144,
+        -0.3460948185148949,
+        0.8923570043373549
+      ],
+      "z_cone_slack": 0.29923946181531036,
+      "z_feasible": true,
+      "full_raw_gradient_inf": 8.10146589303053e-18,
+      "raw_gradient_fd_error_inf": 6.07152787233934e-12,
+      "rho_exact": -0.12,
+      "rho_gradient_fd": -0.11999999845603661,
+      "rho_energy_fd": -0.11999999969397601,
+      "rho_gradient_fd_error": 1.5439633876956904e-09,
+      "rho_energy_fd_error": 3.0602398393142494e-10,
+      "fold_objective": 0.015001758550820693,
+      "qp": {
+        "success": true,
+        "status": 0,
+        "message": "Optimization terminated successfully",
+        "iterations": 8,
+        "solution": [
+          1.2563615272848114,
+          -0.3460948137789241,
+          0.8923569958346859
+        ],
+        "objective": 2.1257871393491562e-17,
+        "cone_slack": 0.2992394722992554,
+        "cone_violation": 0.0,
+        "stationarity_inf": 3.176495557330608e-09,
+        "complementarity_abs": 0.0,
+        "dual_multiplier": 0.0
+      },
+      "actual_gap": 0.015001758550820673,
+      "certificate_bound": 0.015001758550820688,
+      "bound_minus_gap": 1.5612511283791264e-17,
+      "expected_equality": true,
+      "equality_abs_error": 1.5612511283791264e-17,
+      "global_fold_solution_error": null
+    },
+    {
+      "matrix": "heteroscedastic",
+      "direction_radians": 1.9,
+      "alpha": 0.4,
+      "I": 1.2,
+      "e": [
+        -0.32328956686350335,
+        0.9463000876874145
+      ],
+      "s_fold": [
+        1.2,
+        -0.387947480236204,
+        1.1355601052248974
+      ],
+      "z": [
+        1.4254461057628578,
+        -0.22053683335096746,
+        0.1627477016747274
+      ],
+      "z_cone_slack": 1.1513597885836186,
+      "z_feasible": true,
+      "full_raw_gradient_inf": 3.240586357212212e-17,
+      "raw_gradient_fd_error_inf": 2.7755558441310975e-11,
+      "rho_exact": -0.48,
+      "rho_gradient_fd": -0.4800000020561413,
+      "rho_energy_fd": -0.48000000640868734,
+      "rho_gradient_fd_error": 2.0561413127673234e-09,
+      "rho_energy_fd_error": 6.4086873585722515e-09,
+      "fold_objective": 0.2400281368131311,
+      "qp": {
+        "success": true,
+        "status": 0,
+        "message": "Optimization terminated successfully",
+        "iterations": 8,
+        "solution": [
+          1.4254461059312005,
+          -0.2205368293859586,
+          0.16274770947690442
+        ],
+        "objective": 1.4940204977833704e-17,
+        "cone_slack": 1.151359787309511,
+        "cone_violation": 0.0,
+        "stationarity_inf": 2.7344299036913903e-09,
+        "complementarity_abs": 0.0,
+        "dual_multiplier": 0.0
+      },
+      "actual_gap": 0.24002813681313107,
+      "certificate_bound": 0.240028136813131,
+      "bound_minus_gap": -5.551115123125783e-17,
+      "expected_equality": true,
+      "equality_abs_error": 5.551115123125783e-17,
+      "global_fold_solution_error": null
+    },
+    {
+      "matrix": "heteroscedastic",
+      "direction_radians": 1.9,
+      "alpha": 1.0,
+      "I": 1.2,
+      "e": [
+        -0.32328956686350335,
+        0.9463000876874145
+      ],
+      "s_fold": [
+        1.2,
+        -0.387947480236204,
+        1.1355601052248974
+      ],
+      "z": [
+        1.7636152644071443,
+        0.0305791369768873,
+        -1.2964709036505273
+      ],
+      "z_cone_slack": 0.4667837843640872,
+      "z_feasible": true,
+      "full_raw_gradient_inf": 1.1395051765536962e-16,
+      "raw_gradient_fd_error_inf": 2.2204462575244207e-10,
+      "rho_exact": -1.2,
+      "rho_gradient_fd": -1.2000000092562164,
+      "rho_energy_fd": -1.1999999660616822,
+      "rho_gradient_fd_error": 9.256216459974098e-09,
+      "rho_energy_fd_error": 3.3938317711701416e-08,
+      "fold_objective": 1.5001758550820687,
+      "qp": {
+        "success": true,
+        "status": 0,
+        "message": "Optimization terminated successfully",
+        "iterations": 10,
+        "solution": [
+          1.7636152686296045,
+          0.030579157680981753,
+          -1.2964709016782543
+        ],
+        "objective": 1.3954159290908873e-16,
+        "cone_slack": 0.46678379007007176,
+        "cone_violation": 0.0,
+        "stationarity_inf": 1.2026183272518005e-08,
+        "complementarity_abs": 0.0,
+        "dual_multiplier": 0.0
+      },
+      "actual_gap": 1.5001758550820685,
+      "certificate_bound": 1.5001758550820687,
+      "bound_minus_gap": 2.220446049250313e-16,
+      "expected_equality": true,
+      "equality_abs_error": 2.220446049250313e-16,
+      "global_fold_solution_error": null
+    },
+    {
+      "matrix": "heteroscedastic",
+      "direction_radians": 1.9,
+      "alpha": 2.0,
+      "I": 1.2,
+      "e": [
+        -0.32328956686350335,
+        0.9463000876874145
+      ],
+      "s_fold": [
+        1.2,
+        -0.387947480236204,
+        1.1355601052248974
+      ],
+      "z": [
+        2.327230528814289,
+        0.4491057541899786,
+        -3.728501912525952
+      ],
+      "z_cone_slack": -1.4282218394306114,
+      "z_feasible": false,
+      "full_raw_gradient_inf": 2.2790103531073924e-16,
+      "raw_gradient_fd_error_inf": 8.881783036792618e-10,
+      "rho_exact": -2.4,
+      "rho_gradient_fd": -2.400000021256522,
+      "rho_energy_fd": -2.3999997544876805,
+      "rho_gradient_fd_error": 2.1256521876011902e-08,
+      "rho_energy_fd_error": 2.455123193634279e-07,
+      "fold_objective": 6.000703420328276,
+      "qp": {
+        "success": true,
+        "status": 0,
+        "message": "Optimization terminated successfully",
+        "iterations": 9,
+        "solution": [
+          2.746903555914631,
+          0.29899390602810577,
+          -2.730582683174875
+        ],
+        "objective": 0.2154525136035263,
+        "cone_slack": 0.0,
+        "cone_violation": 0.0,
+        "stationarity_inf": 7.907025728615125e-11,
+        "complementarity_abs": 0.0,
+        "dual_multiplier": 0.30175371706748194
+      },
+      "actual_gap": 5.78525090672475,
+      "certificate_bound": 6.000703420328275,
+      "bound_minus_gap": 0.21545251360352502,
+      "expected_equality": false,
+      "equality_abs_error": null,
+      "global_fold_solution_error": null
+    }
+  ]
+}

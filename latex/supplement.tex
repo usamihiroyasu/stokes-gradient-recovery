@@ -1,0 +1,40 @@
+\documentclass[nolineno]{ieeeaccess}
+\usepackage{cite}
+\usepackage{amsmath,amssymb,amsfonts,amsthm}
+\newtheorem{theorem}{Theorem}
+\newtheorem{proposition}[theorem]{Proposition}
+\usepackage{graphicx,textcomp,mathtools}
+\usepackage{booktabs,array,tabularx,calc,microtype,placeins,etoolbox}
+\usepackage{xurl}
+\usepackage[hidelinks,bookmarksopen=false]{hyperref}
+\urlstyle{same}
+\hypersetup{pdftitle={Supplementary Material: Physical Gradient Recovery and Stopping Guarantees for a Folded Stokes Parametrization},pdfauthor={Hiroyasu Usami, Ayato Tsuboi, Keisuke Hara},pdfsubject={Gradient identifiability and finite-tolerance stopping bounds}}
+\providecommand{\tightlist}{\setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+\setlength{\emergencystretch}{1em}
+\renewcommand{\dbltopfraction}{0.85}
+% Remove publication-only placeholders in this review draft. The official class is unchanged.
+\makeatletter
+\patchcmd{\@maketitle}{Digital Object Identifier\space\@doi}{\ifx\@doi\@empty\else Digital Object Identifier\space\@doi\fi}{}{\PackageError{review}{DOI placeholder patch failed}{}}
+\def\AccessReviewOddFoot{\raisebox{3pt}{\hbox to\textwidth{{\footervolfont REVIEW DRAFT}\hfil{\footerpagefont\thepage}}}}
+\def\AccessReviewEvenFoot{\raisebox{3pt}{\hbox to\textwidth{{\footerpagefont\thepage}\hfil{\footervolfont REVIEW DRAFT}}}}
+\apptocmd{\ps@titlepage}{\let\@oddfoot\AccessReviewOddFoot\let\@evenfoot\AccessReviewEvenFoot}{}{\PackageError{review}{Footer patch failed}{}}
+\apptocmd{\ps@headings}{\let\@oddfoot\AccessReviewOddFoot\let\@evenfoot\AccessReviewEvenFoot}{}{\PackageError{review}{Footer patch failed}{}}
+\ps@headings
+\makeatother
+\begin{document}
+\history{Review draft prepared 22 October 2026.}
+\doi{}
+\title{Supplementary Material: Physical Gradient Recovery and Stopping Guarantees for a Folded Stokes Parametrization}
+\input{authors.tex}
+\markboth{Usami et al.: Physical Gradient Recovery and Stopping Guarantees for a Folded Stokes Parametrization}{Usami et al.: Physical Gradient Recovery and Stopping Guarantees for a Folded Stokes Parametrization}
+\renewcommand{\thesection}{S\arabic{section}}
+\renewcommand{\theequation}{S\arabic{equation}}
+\renewcommand{\thefigure}{S\arabic{figure}}
+\renewcommand{\thetable}{S\arabic{table}}
+\renewcommand{\thetheorem}{S\arabic{theorem}}
+\titlepgskip=-21pt
+\maketitle
+\input{supplement_body.tex}
+\FloatBarrier
+\input{supplement_bibliography.tex}
+\end{document}

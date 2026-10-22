@@ -1,0 +1,20 @@
+[
+  {
+    "dataset": "DeepSfP",
+    "members": 5,
+    "member_bytes": 43557579,
+    "network_bytes": 42740619
+  },
+  {
+    "dataset": "PolarNS",
+    "members": 4,
+    "member_bytes": 144154284,
+    "network_bytes": 115747474
+  },
+  {
+    "dataset": "PolarBurstSR",
+    "members": 42,
+    "member_bytes": 1767690,
+    "network_bytes": 5472877
+  }
+]

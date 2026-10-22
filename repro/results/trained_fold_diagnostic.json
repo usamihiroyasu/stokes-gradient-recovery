@@ -1,0 +1,5759 @@
+{
+  "protocol": {
+    "purpose": "Observed incidence of negative radial curvature near the rational Stokes fold after shared-MLP fitting of analyzer observations",
+    "datasets": [
+      "renderer",
+      "high_dolp"
+    ],
+    "seeds": [
+      0,
+      1,
+      2,
+      3,
+      4
+    ],
+    "initializations": [
+      "standard",
+      "broad"
+    ],
+    "dtype": "float32",
+    "device": "cpu",
+    "threads": 1,
+    "architecture": [
+      4,
+      32,
+      32,
+      3
+    ],
+    "activation": "SiLU; softplus intensity + 1e-6; rational folded polarization",
+    "optimizer": "Adam",
+    "steps": 1500,
+    "learning_rate": 0.003,
+    "full_batch_pixels": 1024,
+    "noise_std": 0.01,
+    "checkpoint_steps": [
+      0,
+      100,
+      500,
+      1000,
+      1500
+    ],
+    "radius_thresholds": [
+      0.001,
+      0.0001,
+      1e-05
+    ],
+    "negative_curvature_threshold_normalized": -1e-07,
+    "head_stationarity_threshold_normalized": 1e-05,
+    "diagnostic_precision": "float64 at stored float32 head coordinates",
+    "candidate_definition": "abs(r-1)<=threshold and radial_curvature/I**2 < -1e-7; candidate is not a proven stationary saddle",
+    "stationarity_definition": "norm([dL/da,dL/dw])/max(I**2,1e-12)<=1e-5 per unaveraged pixel loss; not backbone stationarity",
+    "radial_trials": [
+      0.001,
+      0.01,
+      0.05,
+      0.1
+    ],
+    "perturbation_space": "independent output head coordinates; shared network fixed",
+    "exact_fold_test": "normalize final candidate w to unit radius, solve intensity directional stationarity for same quadratic, compute exact-fold curvature and support-halfspace bound; distinguish transported construction from trained point",
+    "positive_control": "target-informed exact aligned stationary fold; calibration W=diag(1,.5,.5)",
+    "stop": "all20 fixed runs completed or 1200 seconds; no expanded seed or initialization search based on outcomes",
+    "weak_signal": "positive near-fold negative-curvature incidence under unmodified trained coordinates",
+    "kill_condition": "no additional training searches if incidence is absent or transient; report thresholds and retained predictions",
+    "remaining_assets": [
+      "script",
+      "config",
+      "per-run loss curves",
+      "float32 final predictions and head coordinates",
+      "weights stored as numpy arrays",
+      "float64 diagnostic records",
+      "positive control"
+    ],
+    "positive_control_escape": {
+      "optimizer": "Adam",
+      "lr": 0.003,
+      "steps": 300,
+      "start": "exact stationary fold vs same fold with radial offset 0.01; independent head coordinates",
+      "purpose": "detector and escape control; not an incidence sample"
+    }
+  },
+  "environment": {
+    "torch": "2.14.1",
+    "numpy": "2.3.5",
+    "python": "3.12.14",
+    "device": "cpu",
+    "threads": 1
+  },
+  "runs": [
+    {
+      "dataset": "renderer",
+      "initialization": "standard",
+      "seed": 0,
+      "checkpoints": {
+        "0": {
+          "loss": 0.012477877549827099,
+          "grad_norm": 0.11482562124729156,
+          "radius_q25": 0.0256042517721653,
+          "radius_q50": 0.026121264323592186,
+          "radius_q75": 0.026829645037651062,
+          "min_dolp": 0.04810694605112076,
+          "max_dolp": 0.054765310138463974,
+          "clean_w_err": 0.017438430339097977
+        },
+        "100": {
+          "loss": 0.0016417305450886488,
+          "grad_norm": 0.003266138257458806,
+          "radius_q25": 0.0006722391117364168,
+          "radius_q50": 0.0008444878039881587,
+          "radius_q75": 0.0011561779538169503,
+          "min_dolp": 0.0003034496330656111,
+          "max_dolp": 0.006750213913619518,
+          "clean_w_err": 0.0024994323030114174
+        },
+        "500": {
+          "loss": 0.00010310885409126058,
+          "grad_norm": 0.022308804094791412,
+          "radius_q25": 0.007050458341836929,
+          "radius_q50": 0.010635960847139359,
+          "radius_q75": 0.015618959441781044,
+          "min_dolp": 0.0005643190233968198,
+          "max_dolp": 0.07240265607833862,
+          "clean_w_err": 0.0002942502615042031
+        },
+        "1000": {
+          "loss": 5.6677672546356916e-05,
+          "grad_norm": 0.0010047865798696876,
+          "radius_q25": 0.006347156595438719,
+          "radius_q50": 0.010119505226612091,
+          "radius_q75": 0.015347715467214584,
+          "min_dolp": 0.0005851068999618292,
+          "max_dolp": 0.08282411843538284,
+          "clean_w_err": 0.00025405240012332797
+        },
+        "1500": {
+          "loss": 8.359450293937698e-05,
+          "grad_norm": 0.01742379553616047,
+          "radius_q25": 0.0071767112240195274,
+          "radius_q50": 0.01105116493999958,
+          "radius_q75": 0.016110433265566826,
+          "min_dolp": 0.0012981763575226068,
+          "max_dolp": 0.08574378490447998,
+          "clean_w_err": 0.00029969486058689654
+        }
+      },
+      "diagnostics": {
+        "0": {
+          "counts": {
+            "0.001": {
+              "near": 0,
+              "negative": 0,
+              "stationary_negative": 0,
+              "negative_fraction": 0.0,
+              "max_trial_drop": 0.0,
+              "max_drop_bound_ratio": 0.0
+            },
+            "0.0001": {
+              "near": 0,
+              "negative": 0,
+              "stationary_negative": 0,
+              "negative_fraction": 0.0,
+              "max_trial_drop": 0.0,
+              "max_drop_bound_ratio": 0.0
+            },
+            "1e-05": {
+              "near": 0,
+              "negative": 0,
+              "stationary_negative": 0,
+              "negative_fraction": 0.0,
+              "max_trial_drop": 0.0,
+              "max_drop_bound_ratio": 0.0
+            }
+          },
+          "mean_loss": 0.012477878005747529,
+          "minimum_bound_margin": -6.938893903907228e-18,
+          "minimum_radius_distance": 0.9725967832998463,
+          "maximum_stationarity": 0.16738953259434175
+        },
+        "100": {
+          "counts": {
+            "0.001": {
+              "near": 0,
+              "negative": 0,
+              "stationary_negative": 0,
+              "negative_fraction": 0.0,
+              "max_trial_drop": 0.0,
+              "max_drop_bound_ratio": 0.0
+            },
+            "0.0001": {
+              "near": 0,
+              "negative": 0,
+              "stationary_negative": 0,
+              "negative_fraction": 0.0,
+              "max_trial_drop": 0.0,
+              "max_drop_bound_ratio": 0.0
+            },
+            "1e-05": {
+              "near": 0,
+              "negative": 0,
+              "stationary_negative": 0,
+              "negative_fraction": 0.0,
+              "max_trial_drop": 0.0,
+              "max_drop_bound_ratio": 0.0
+            }
+          },
+          "mean_loss": 0.0016417305135355584,
+          "minimum_bound_margin": -8.673617379884035e-19,
+          "minimum_radius_distance": 0.9966248544811965,
+          "maximum_stationarity": 0.09415026855109496
+        },
+        "500": {
+          "counts": {
+            "0.001": {
+              "near": 0,
+              "negative": 0,
+              "stationary_negative": 0,
+              "negative_fraction": 0.0,
+              "max_trial_drop": 0.0,
+              "max_drop_bound_ratio": 0.0
+            },
+            "0.0001": {
+              "near": 0,
+              "negative": 0,
+              "stationary_negative": 0,
+              "negative_fraction": 0.0,
+              "max_trial_drop": 0.0,
+              "max_drop_bound_ratio": 0.0
+            },
+            "1e-05": {
+              "near": 0,
+              "negative": 0,
+              "stationary_negative": 0,
+              "negative_fraction": 0.0,
+              "max_trial_drop": 0.0,
+              "max_drop_bound_ratio": 0.0
+            }
+          },
+          "mean_loss": 0.00010310886372578244,
+          "minimum_bound_margin": -6.979551485375435e-19,
+          "minimum_radius_distance": 0.9637511062307988,
+          "maximum_stationarity": 0.023322321886624992
+        },
+        "1000": {
+          "counts": {
+            "0.001": {
+              "near": 0,
+              "negative": 0,
+              "stationary_negative": 0,
+              "negative_fraction": 0.0,
+              "max_trial_drop": 0.0,
+              "max_drop_bound_ratio": 0.0
+            },
+            "0.0001": {
+              "near": 0,
+              "negative": 0,
+              "stationary_negative": 0,
+              "negative_fraction": 0.0,
+              "max_trial_drop": 0.0,
+              "max_drop_bound_ratio": 0.0
+            },
+            "1e-05": {
+              "near": 0,
+              "negative": 0,
+              "stationary_negative": 0,
+              "negative_fraction": 0.0,
+              "max_trial_drop": 0.0,
+              "max_drop_bound_ratio": 0.0
+            }
+          },
+          "mean_loss": 5.667767451399498e-05,
+          "minimum_bound_margin": -6.877907531704919e-19,
+          "minimum_radius_distance": 0.9585166755396795,
+          "maximum_stationarity": 0.009571975941176189
+        },
+        "1500": {
+          "counts": {
+            "0.001": {
+              "near": 0,
+              "negative": 0,
+              "stationary_negative": 0,
+              "negative_fraction": 0.0,
+              "max_trial_drop": 0.0,
+              "max_drop_bound_ratio": 0.0
+            },
+            "0.0001": {
+              "near": 0,
+              "negative": 0,
+              "stationary_negative": 0,
+              "negative_fraction": 0.0,
+              "max_trial_drop": 0.0,
+              "max_drop_bound_ratio": 0.0
+            },
+            "1e-05": {
+              "near": 0,
+              "negative": 0,
+              "stationary_negative": 0,
+              "negative_fraction": 0.0,
+              "max_trial_drop": 0.0,
+              "max_drop_bound_ratio": 0.0
+            }
+          },
+          "mean_loss": 8.359450339534945e-05,
+          "minimum_bound_margin": -1.196010521523072e-18,
+          "minimum_radius_distance": 0.9570490186958754,
+          "maximum_stationarity": 0.015919671263131173
+        }
+      },
+      "final": {
+        "counts": {
+          "0.001": {
+            "near": 0,
+            "negative": 0,
+            "stationary_negative": 0,
+            "negative_fraction": 0.0,
+            "max_trial_drop": 0.0,
+            "max_drop_bound_ratio": 0.0
+          },
+          "0.0001": {
+            "near": 0,
+            "negative": 0,
+            "stationary_negative": 0,
+            "negative_fraction": 0.0,
+            "max_trial_drop": 0.0,
+            "max_drop_bound_ratio": 0.0
+          },
+          "1e-05": {
+            "near": 0,
+            "negative": 0,
+            "stationary_negative": 0,
+            "negative_fraction": 0.0,
+            "max_trial_drop": 0.0,
+            "max_drop_bound_ratio": 0.0
+          }
+        },
+        "mean_loss": 8.359450339534945e-05,
+        "minimum_bound_margin": -1.196010521523072e-18,
+        "minimum_radius_distance": 0.9570490186958754,
+        "maximum_stationarity": 0.015919671263131173
+      },
+      "record_sha256": "22c389b0e10bfbe9822637fe1a88fe8cb89523e7b468dddeaca90998558f8031"
+    },
+    {
+      "dataset": "renderer",
+      "initialization": "standard",
+      "seed": 1,
+      "checkpoints": {
+        "0": {
+          "loss": 0.009387318976223469,
+          "grad_norm": 0.08205518126487732,
+          "radius_q25": 0.0031343302689492702,
+          "radius_q50": 0.003329436294734478,
+          "radius_q75": 0.0035608478356152773,
+          "min_dolp": 0.0052338410168886185,
+          "max_dolp": 0.007557505741715431,
+          "clean_w_err": 0.013006405904889107
+        },
+        "100": {
+          "loss": 0.0005680534522980452,
+          "grad_norm": 0.002461477881297469,
+          "radius_q25": 0.0006725997664034367,
+          "radius_q50": 0.0009556908044032753,
+          "radius_q75": 0.0012509666848927736,
+          "min_dolp": 5.317353497957811e-05,
+          "max_dolp": 0.006038236897438765,
+          "clean_w_err": 0.0007868259563110769
+        },
+        "500": {
+          "loss": 5.658258305629715e-05,
+          "grad_norm": 0.0007527393172495067,
+          "radius_q25": 0.005594015121459961,
+          "radius_q50": 0.009100306779146194,
+          "radius_q75": 0.014619248919188976,
+          "min_dolp": 0.0008330646087415516,
+          "max_dolp": 0.06981112062931061,
+          "clean_w_err": 0.00022897738381288946
+        },
+        "1000": {
+          "loss": 5.2977571613155305e-05,
+          "grad_norm": 0.0011547851609066129,
+          "radius_q25": 0.005959308706223965,
+          "radius_q50": 0.009524737484753132,
+          "radius_q75": 0.015366786159574986,
+          "min_dolp": 0.0006170294946059585,
+          "max_dolp": 0.07335196435451508,
+          "clean_w_err": 0.00023877098283264786
+        },
+        "1500": {
+          "loss": 5.216285353526473e-05,
+          "grad_norm": 0.00011552720388863236,
+          "radius_q25": 0.006090695969760418,
+          "radius_q50": 0.009801813401281834,
+          "radius_q75": 0.01571534015238285,
+          "min_dolp": 0.0010480673518031836,
+          "max_dolp": 0.07358159124851227,
+          "clean_w_err": 0.00024307567218784243
+        }
+      },
+      "diagnostics": {
+        "0": {
+          "counts": {
+            "0.001": {
+              "near": 0,
+              "negative": 0,
+              "stationary_negative": 0,
+              "negative_fraction": 0.0,
+              "max_trial_drop": 0.0,
+              "max_drop_bound_ratio": 0.0
+            },
+            "0.0001": {
+              "near": 0,
+              "negative": 0,
+              "stationary_negative": 0,
+              "negative_fraction": 0.0,
+              "max_trial_drop": 0.0,
+              "max_drop_bound_ratio": 0.0
+            },
+            "1e-05": {
+              "near": 0,
+              "negative": 0,
+              "stationary_negative": 0,
+              "negative_fraction": 0.0,
+              "max_trial_drop": 0.0,
+              "max_drop_bound_ratio": 0.0
+            }
+          },
+          "mean_loss": 0.00938731842086879,
+          "minimum_bound_margin": -3.469446951953614e-18,
+          "minimum_radius_distance": 0.9962211931641493,
+          "maximum_stationarity": 0.13652392859199455
+        },
+        "100": {
+          "counts": {
+            "0.001": {
+              "near": 0,
+              "negative": 0,
+              "stationary_negative": 0,
+              "negative_fraction": 0.0,
+              "max_trial_drop": 0.0,
+              "max_drop_bound_ratio": 0.0
+            },
+            "0.0001": {
+              "near": 0,
+              "negative": 0,
+              "stationary_negative": 0,
+              "negative_fraction": 0.0,
+              "max_trial_drop": 0.0,
+              "max_drop_bound_ratio": 0.0
+            },
+            "1e-05": {
+              "near": 0,
+              "negative": 0,
+              "stationary_negative": 0,
+              "negative_fraction": 0.0,
+              "max_trial_drop": 0.0,
+              "max_drop_bound_ratio": 0.0
+            }
+          },
+          "mean_loss": 0.0005680534683873263,
+          "minimum_bound_margin": -8.673617379884035e-19,
+          "minimum_radius_distance": 0.9969808542747701,
+          "maximum_stationarity": 0.07455501519694141
+        },
+        "500": {
+          "counts": {
+            "0.001": {
+              "near": 0,
+              "negative": 0,
+              "stationary_negative": 0,
+              "negative_fraction": 0.0,
+              "max_trial_drop": 0.0,
+              "max_drop_bound_ratio": 0.0
+            },
+            "0.0001": {
+              "near": 0,
+              "negative": 0,
+              "stationary_negative": 0,
+              "negative_fraction": 0.0,
+              "max_trial_drop": 0.0,
+              "max_drop_bound_ratio": 0.0
+            },
+            "1e-05": {
+              "near": 0,
+              "negative": 0,
+              "stationary_negative": 0,
+              "negative_fraction": 0.0,
+              "max_trial_drop": 0.0,
+              "max_drop_bound_ratio": 0.0
+            }
+          },
+          "mean_loss": 5.658258613667117e-05,
+          "minimum_bound_margin": -6.166399856011306e-19,
+          "minimum_radius_distance": 0.96505180238705,
+          "maximum_stationarity": 0.013750069698508225
+        },
+        "1000": {
+          "counts": {
+            "0.001": {
+              "near": 0,
+              "negative": 0,
+              "stationary_negative": 0,
+              "negative_fraction": 0.0,
+              "max_trial_drop": 0.0,
+              "max_drop_bound_ratio": 0.0
+            },
+            "0.0001": {
+              "near": 0,
+              "negative": 0,
+              "stationary_negative": 0,
+              "negative_fraction": 0.0,
+              "max_trial_drop": 0.0,
+              "max_drop_bound_ratio": 0.0
+            },
+            "1e-05": {
+              "near": 0,
+              "negative": 0,
+              "stationary_negative": 0,
+              "negative_fraction": 0.0,
+              "max_trial_drop": 0.0,
+              "max_drop_bound_ratio": 0.0
+            }
+          },
+          "mean_loss": 5.297757167472145e-05,
+          "minimum_bound_margin": -6.030874584450618e-19,
+          "minimum_radius_distance": 0.9632745537330862,
+          "maximum_stationarity": 0.009752988509206193
+        },
+        "1500": {
+          "counts": {
+            "0.001": {
+              "near": 0,
+              "negative": 0,
+              "stationary_negative": 0,
+              "negative_fraction": 0.0,
+              "max_trial_drop": 0.0,
+              "max_drop_bound_ratio": 0.0
+            },
+            "0.0001": {
+              "near": 0,
+              "negative": 0,
+              "stationary_negative": 0,
+              "negative_fraction": 0.0,
+              "max_trial_drop": 0.0,
+              "max_drop_bound_ratio": 0.0
+            },
+            "1e-05": {
+              "near": 0,
+              "negative": 0,
+              "stationary_negative": 0,
+              "negative_fraction": 0.0,
+              "max_trial_drop": 0.0,
+              "max_drop_bound_ratio": 0.0
+            }
+          },
+          "mean_loss": 5.216285690650809e-05,
+          "minimum_bound_margin": -9.620176698440716e-19,
+          "minimum_radius_distance": 0.9631592704339158,
+          "maximum_stationarity": 0.008816078953222976
+        }
+      },
+      "final": {
+        "counts": {
+          "0.001": {
+            "near": 0,
+            "negative": 0,
+            "stationary_negative": 0,
+            "negative_fraction": 0.0,
+            "max_trial_drop": 0.0,
+            "max_drop_bound_ratio": 0.0
+          },
+          "0.0001": {
+            "near": 0,
+            "negative": 0,
+            "stationary_negative": 0,
+            "negative_fraction": 0.0,
+            "max_trial_drop": 0.0,
+            "max_drop_bound_ratio": 0.0
+          },
+          "1e-05": {
+            "near": 0,
+            "negative": 0,
+            "stationary_negative": 0,
+            "negative_fraction": 0.0,
+            "max_trial_drop": 0.0,
+            "max_drop_bound_ratio": 0.0
+          }
+        },
+        "mean_loss": 5.216285690650809e-05,
+        "minimum_bound_margin": -9.620176698440716e-19,
+        "minimum_radius_distance": 0.9631592704339158,
+        "maximum_stationarity": 0.008816078953222976
+      },
+      "record_sha256": "50e2c41856ba01fc75478727305ac8051dddb0eea9c2217d55fd6b681a510e2b"
+    },
+    {
+      "dataset": "renderer",
+      "initialization": "standard",
+      "seed": 2,
+      "checkpoints": {
+        "0": {
+          "loss": 0.0055601587519049644,
+          "grad_norm": 0.05709017068147659,
+          "radius_q25": 0.00929630920290947,
+          "radius_q50": 0.009507019072771072,
+          "radius_q75": 0.00967077910900116,
+          "min_dolp": 0.017015160992741585,
+          "max_dolp": 0.02007051557302475,
+          "clean_w_err": 0.007602636236697435
+        },
+        "100": {
+          "loss": 0.0002500630507711321,
+          "grad_norm": 0.0011026485590264201,
+          "radius_q25": 0.0005284562357701361,
+          "radius_q50": 0.0008840878726914525,
+          "radius_q75": 0.0014474410563707352,
+          "min_dolp": 7.752220699330792e-05,
+          "max_dolp": 0.008509126491844654,
+          "clean_w_err": 0.0003013047098647803
+        },
+        "500": {
+          "loss": 5.9238343965262175e-05,
+          "grad_norm": 0.0015230567660182714,
+          "radius_q25": 0.005302896723151207,
+          "radius_q50": 0.008579522371292114,
+          "radius_q75": 0.013537363149225712,
+          "min_dolp": 0.0006298114894889295,
+          "max_dolp": 0.06703470647335052,
+          "clean_w_err": 0.0002255817234981805
+        },
+        "1000": {
+          "loss": 4.9785372539190575e-05,
+          "grad_norm": 0.0012807472376152873,
+          "radius_q25": 0.006230995990335941,
+          "radius_q50": 0.009979445487260818,
+          "radius_q75": 0.015629984438419342,
+          "min_dolp": 0.0005878448719158769,
+          "max_dolp": 0.07225711643695831,
+          "clean_w_err": 0.00025768435443751514
+        },
+        "1500": {
+          "loss": 4.912874646834098e-05,
+          "grad_norm": 1.6035986845963635e-05,
+          "radius_q25": 0.006441212724894285,
+          "radius_q50": 0.010204210877418518,
+          "radius_q75": 0.015924377366900444,
+          "min_dolp": 0.0003426716721151024,
+          "max_dolp": 0.07286129891872406,
+          "clean_w_err": 0.0002637587604112923
+        }
+      },
+      "diagnostics": {
+        "0": {
+          "counts": {
+            "0.001": {
+              "near": 0,
+              "negative": 0,
+              "stationary_negative": 0,
+              "negative_fraction": 0.0,
+              "max_trial_drop": 0.0,
+              "max_drop_bound_ratio": 0.0
+            },
+            "0.0001": {
+              "near": 0,
+              "negative": 0,
+              "stationary_negative": 0,
+              "negative_fraction": 0.0,
+              "max_trial_drop": 0.0,
+              "max_drop_bound_ratio": 0.0
+            },
+            "1e-05": {
+              "near": 0,
+              "negative": 0,
+              "stationary_negative": 0,
+              "negative_fraction": 0.0,
+              "max_trial_drop": 0.0,
+              "max_drop_bound_ratio": 0.0
+            }
+          },
+          "mean_loss": 0.00556015848746499,
+          "minimum_bound_margin": -3.469446951953614e-18,
+          "minimum_radius_distance": 0.9899637314342524,
+          "maximum_stationarity": 0.11266151140037499
+        },
+        "100": {
+          "counts": {
+            "0.001": {
+              "near": 0,
+              "negative": 0,
+              "stationary_negative": 0,
+              "negative_fraction": 0.0,
+              "max_trial_drop": 0.0,
+              "max_drop_bound_ratio": 0.0
+            },
+            "0.0001": {
+              "near": 0,
+              "negative": 0,
+              "stationary_negative": 0,
+              "negative_fraction": 0.0,
+              "max_trial_drop": 0.0,
+              "max_drop_bound_ratio": 0.0
+            },
+            "1e-05": {
+              "near": 0,
+              "negative": 0,
+              "stationary_negative": 0,
+              "negative_fraction": 0.0,
+              "max_trial_drop": 0.0,
+              "max_drop_bound_ratio": 0.0
+            }
+          },
+          "mean_loss": 0.00025006304458581623,
+          "minimum_bound_margin": -4.336808689942018e-19,
+          "minimum_radius_distance": 0.9957453593144507,
+          "maximum_stationarity": 0.07124831334501458
+        },
+        "500": {
+          "counts": {
+            "0.001": {
+              "near": 0,
+              "negative": 0,
+              "stationary_negative": 0,
+              "negative_fraction": 0.0,
+              "max_trial_drop": 0.0,
+              "max_drop_bound_ratio": 0.0
+            },
+            "0.0001": {
+              "near": 0,
+              "negative": 0,
+              "stationary_negative": 0,
+              "negative_fraction": 0.0,
+              "max_trial_drop": 0.0,
+              "max_drop_bound_ratio": 0.0
+            },
+            "1e-05": {
+              "near": 0,
+              "negative": 0,
+              "stationary_negative": 0,
+              "negative_fraction": 0.0,
+              "max_trial_drop": 0.0,
+              "max_drop_bound_ratio": 0.0
+            }
+          },
+          "mean_loss": 5.923834435443889e-05,
+          "minimum_bound_margin": -7.555533889508359e-19,
+          "minimum_radius_distance": 0.9664449074363465,
+          "maximum_stationarity": 0.025602815053003512
+        },
+        "1000": {
+          "counts": {
+            "0.001": {
+              "near": 0,
+              "negative": 0,
+              "stationary_negative": 0,
+              "negative_fraction": 0.0,
+              "max_trial_drop": 0.0,
+              "max_drop_bound_ratio": 0.0
+            },
+            "0.0001": {
+              "near": 0,
+              "negative": 0,
+              "stationary_negative": 0,
+              "negative_fraction": 0.0,
+              "max_trial_drop": 0.0,
+              "max_drop_bound_ratio": 0.0
+            },
+            "1e-05": {
+              "near": 0,
+              "negative": 0,
+              "stationary_negative": 0,
+              "negative_fraction": 0.0,
+              "max_trial_drop": 0.0,
+              "max_drop_bound_ratio": 0.0
+            }
+          },
+          "mean_loss": 4.978537611777031e-05,
+          "minimum_bound_margin": -8.097634975751111e-19,
+          "minimum_radius_distance": 0.9638241594496609,
+          "maximum_stationarity": 0.011115251025333152
+        },
+        "1500": {
+          "counts": {
+            "0.001": {
+              "near": 0,
+              "negative": 0,
+              "stationary_negative": 0,
+              "negative_fraction": 0.0,
+              "max_trial_drop": 0.0,
+              "max_drop_bound_ratio": 0.0
+            },
+            "0.0001": {
+              "near": 0,
+              "negative": 0,
+              "stationary_negative": 0,
+              "negative_fraction": 0.0,
+              "max_trial_drop": 0.0,
+              "max_drop_bound_ratio": 0.0
+            },
+            "1e-05": {
+              "near": 0,
+              "negative": 0,
+              "stationary_negative": 0,
+              "negative_fraction": 0.0,
+              "max_trial_drop": 0.0,
+              "max_drop_bound_ratio": 0.0
+            }
+          },
+          "mean_loss": 4.912874413357794e-05,
+          "minimum_bound_margin": -1.0028870095490916e-18,
+          "minimum_radius_distance": 0.9635208682599232,
+          "maximum_stationarity": 0.009367434345708282
+        }
+      },
+      "final": {
+        "counts": {
+          "0.001": {
+            "near": 0,
+            "negative": 0,
+            "stationary_negative": 0,
+            "negative_fraction": 0.0,
+            "max_trial_drop": 0.0,
+            "max_drop_bound_ratio": 0.0
+          },
+          "0.0001": {
+            "near": 0,
+            "negative": 0,
+            "stationary_negative": 0,
+            "negative_fraction": 0.0,
+            "max_trial_drop": 0.0,
+            "max_drop_bound_ratio": 0.0
+          },
+          "1e-05": {
+            "near": 0,
+            "negative": 0,
+            "stationary_negative": 0,
+            "negative_fraction": 0.0,
+            "max_trial_drop": 0.0,
+            "max_drop_bound_ratio": 0.0
+          }
+        },
+        "mean_loss": 4.912874413357794e-05,
+        "minimum_bound_margin": -1.0028870095490916e-18,
+        "minimum_radius_distance": 0.9635208682599232,
+        "maximum_stationarity": 0.009367434345708282
+      },
+      "record_sha256": "6ca3f83d76208732006c11e62432228b14dfb5ee00239394514b81c6ef0f097e"
+    },
+    {
+      "dataset": "renderer",
+      "initialization": "standard",
+      "seed": 3,
+      "checkpoints": {
+        "0": {
+          "loss": 0.00821437407284975,
+          "grad_norm": 0.07859683036804199,
+          "radius_q25": 0.0025493106804788113,
+          "radius_q50": 0.0026782085187733173,
+          "radius_q75": 0.0027510663494467735,
+          "min_dolp": 0.004854007624089718,
+          "max_dolp": 0.0058637154288589954,
+          "clean_w_err": 0.01121915876865387
+        },
+        "100": {
+          "loss": 0.0005371561273932457,
+          "grad_norm": 0.0021605563815683126,
+          "radius_q25": 0.0002550349454395473,
+          "radius_q50": 0.0004080215294379741,
+          "radius_q75": 0.000590977375395596,
+          "min_dolp": 9.35276966629317e-06,
+          "max_dolp": 0.003070233389735222,
+          "clean_w_err": 0.0006995879812166095
+        },
+        "500": {
+          "loss": 5.659128146362491e-05,
+          "grad_norm": 0.0022241314873099327,
+          "radius_q25": 0.005854705348610878,
+          "radius_q50": 0.00968863070011139,
+          "radius_q75": 0.015156123787164688,
+          "min_dolp": 0.0004394004645291716,
+          "max_dolp": 0.06747782975435257,
+          "clean_w_err": 0.0002475591318216175
+        },
+        "1000": {
+          "loss": 5.8155965234618634e-05,
+          "grad_norm": 0.007933693937957287,
+          "radius_q25": 0.006456127390265465,
+          "radius_q50": 0.010546479374170303,
+          "radius_q75": 0.01615603268146515,
+          "min_dolp": 0.00028013138216920197,
+          "max_dolp": 0.07138865441083908,
+          "clean_w_err": 0.0002734442532528192
+        },
+        "1500": {
+          "loss": 5.9924976085312665e-05,
+          "grad_norm": 0.009489409625530243,
+          "radius_q25": 0.006382380146533251,
+          "radius_q50": 0.010759687051177025,
+          "radius_q75": 0.01621514931321144,
+          "min_dolp": 0.00036262028152123094,
+          "max_dolp": 0.07088887691497803,
+          "clean_w_err": 0.0002766255638562143
+        }
+      },
+      "diagnostics": {
+        "0": {
+          "counts": {
+            "0.001": {
+              "near": 0,
+              "negative": 0,
+              "stationary_negative": 0,
+              "negative_fraction": 0.0,
+              "max_trial_drop": 0.0,
+              "max_drop_bound_ratio": 0.0
+            },
+            "0.0001": {
+              "near": 0,
+              "negative": 0,
+              "stationary_negative": 0,
+              "negative_fraction": 0.0,
+              "max_trial_drop": 0.0,
+              "max_drop_bound_ratio": 0.0
+            },
+            "1e-05": {
+              "near": 0,
+              "negative": 0,
+              "stationary_negative": 0,
+              "negative_fraction": 0.0,
+              "max_trial_drop": 0.0,
+              "max_drop_bound_ratio": 0.0
+            }
+          },
+          "mean_loss": 0.008214374073266629,
+          "minimum_bound_margin": -3.469446951953614e-18,
+          "minimum_radius_distance": 0.9970681171420078,
+          "maximum_stationarity": 0.14017394915388087
+        },
+        "100": {
+          "counts": {
+            "0.001": {
+              "near": 0,
+              "negative": 0,
+              "stationary_negative": 0,
+              "negative_fraction": 0.0,
+              "max_trial_drop": 0.0,
+              "max_drop_bound_ratio": 0.0
+            },
+            "0.0001": {
+              "near": 0,
+              "negative": 0,
+              "stationary_negative": 0,
+              "negative_fraction": 0.0,
+              "max_trial_drop": 0.0,
+              "max_drop_bound_ratio": 0.0
+            },
+            "1e-05": {
+              "near": 0,
+              "negative": 0,
+              "stationary_negative": 0,
+              "negative_fraction": 0.0,
+              "max_trial_drop": 0.0,
+              "max_drop_bound_ratio": 0.0
+            }
+          },
+          "mean_loss": 0.0005371561334653787,
+          "minimum_bound_margin": -4.336808689942018e-19,
+          "minimum_radius_distance": 0.998464879768661,
+          "maximum_stationarity": 0.07812809401043222
+        },
+        "500": {
+          "counts": {
+            "0.001": {
+              "near": 0,
+              "negative": 0,
+              "stationary_negative": 0,
+              "negative_fraction": 0.0,
+              "max_trial_drop": 0.0,
+              "max_drop_bound_ratio": 0.0
+            },
+            "0.0001": {
+              "near": 0,
+              "negative": 0,
+              "stationary_negative": 0,
+              "negative_fraction": 0.0,
+              "max_trial_drop": 0.0,
+              "max_drop_bound_ratio": 0.0
+            },
+            "1e-05": {
+              "near": 0,
+              "negative": 0,
+              "stationary_negative": 0,
+              "negative_fraction": 0.0,
+              "max_trial_drop": 0.0,
+              "max_drop_bound_ratio": 0.0
+            }
+          },
+          "mean_loss": 5.659127786060828e-05,
+          "minimum_bound_margin": -5.21772295508649e-19,
+          "minimum_radius_distance": 0.9662225936371949,
+          "maximum_stationarity": 0.018001408014615177
+        },
+        "1000": {
+          "counts": {
+            "0.001": {
+              "near": 0,
+              "negative": 0,
+              "stationary_negative": 0,
+              "negative_fraction": 0.0,
+              "max_trial_drop": 0.0,
+              "max_drop_bound_ratio": 0.0
+            },
+            "0.0001": {
+              "near": 0,
+              "negative": 0,
+              "stationary_negative": 0,
+              "negative_fraction": 0.0,
+              "max_trial_drop": 0.0,
+              "max_drop_bound_ratio": 0.0
+            },
+            "1e-05": {
+              "near": 0,
+              "negative": 0,
+              "stationary_negative": 0,
+              "negative_fraction": 0.0,
+              "max_trial_drop": 0.0,
+              "max_drop_bound_ratio": 0.0
+            }
+          },
+          "mean_loss": 5.815596460639967e-05,
+          "minimum_bound_margin": -7.741881137904305e-19,
+          "minimum_radius_distance": 0.9642600804155801,
+          "maximum_stationarity": 0.010189287626562031
+        },
+        "1500": {
+          "counts": {
+            "0.001": {
+              "near": 0,
+              "negative": 0,
+              "stationary_negative": 0,
+              "negative_fraction": 0.0,
+              "max_trial_drop": 0.0,
+              "max_drop_bound_ratio": 0.0
+            },
+            "0.0001": {
+              "near": 0,
+              "negative": 0,
+              "stationary_negative": 0,
+              "negative_fraction": 0.0,
+              "max_trial_drop": 0.0,
+              "max_drop_bound_ratio": 0.0
+            },
+            "1e-05": {
+              "near": 0,
+              "negative": 0,
+              "stationary_negative": 0,
+              "negative_fraction": 0.0,
+              "max_trial_drop": 0.0,
+              "max_drop_bound_ratio": 0.0
+            }
+          },
+          "mean_loss": 5.992498139604288e-05,
+          "minimum_bound_margin": -1.001192943654583e-18,
+          "minimum_radius_distance": 0.9645109200975717,
+          "maximum_stationarity": 0.01583327526287193
+        }
+      },
+      "final": {
+        "counts": {
+          "0.001": {
+            "near": 0,
+            "negative": 0,
+            "stationary_negative": 0,
+            "negative_fraction": 0.0,
+            "max_trial_drop": 0.0,
+            "max_drop_bound_ratio": 0.0
+          },
+          "0.0001": {
+            "near": 0,
+            "negative": 0,
+            "stationary_negative": 0,
+            "negative_fraction": 0.0,
+            "max_trial_drop": 0.0,
+            "max_drop_bound_ratio": 0.0
+          },
+          "1e-05": {
+            "near": 0,
+            "negative": 0,
+            "stationary_negative": 0,
+            "negative_fraction": 0.0,
+            "max_trial_drop": 0.0,
+            "max_drop_bound_ratio": 0.0
+          }
+        },
+        "mean_loss": 5.992498139604288e-05,
+        "minimum_bound_margin": -1.001192943654583e-18,
+        "minimum_radius_distance": 0.9645109200975717,
+        "maximum_stationarity": 0.01583327526287193
+      },
+      "record_sha256": "e570ab99bfca83728c58d92c47a617bd405103a00f3850766b93643e463aece1"
+    },
+    {
+      "dataset": "renderer",
+      "initialization": "standard",
+      "seed": 4,
+      "checkpoints": {
+        "0": {
+          "loss": 0.010946081951260567,
+          "grad_norm": 0.09467240422964096,
+          "radius_q25": 0.006751292385160923,
+          "radius_q50": 0.007158360444009304,
+          "radius_q75": 0.008090438321232796,
+          "min_dolp": 0.011254766955971718,
+          "max_dolp": 0.017154177650809288,
+          "clean_w_err": 0.01503662671893835
+        },
+        "100": {
+          "loss": 0.0021973103284835815,
+          "grad_norm": 0.0030078880954533815,
+          "radius_q25": 0.0011668261140584946,
+          "radius_q50": 0.0017336428863927722,
+          "radius_q75": 0.0022208518348634243,
+          "min_dolp": 5.0455506425350904e-05,
+          "max_dolp": 0.011753947474062443,
+          "clean_w_err": 0.0033327427227050066
+        },
+        "500": {
+          "loss": 0.00012576839071698487,
+          "grad_norm": 0.029982000589370728,
+          "radius_q25": 0.008143260143697262,
+          "radius_q50": 0.01213674433529377,
+          "radius_q75": 0.017008546739816666,
+          "min_dolp": 0.0011872263858094811,
+          "max_dolp": 0.08636494725942612,
+          "clean_w_err": 0.0003609424165915698
+        },
+        "1000": {
+          "loss": 5.3868265240453184e-05,
+          "grad_norm": 0.000310907227685675,
+          "radius_q25": 0.006089761387556791,
+          "radius_q50": 0.009941088035702705,
+          "radius_q75": 0.015326587483286858,
+          "min_dolp": 0.0004166804428678006,
+          "max_dolp": 0.07883020490407944,
+          "clean_w_err": 0.0002552150981500745
+        },
+        "1500": {
+          "loss": 5.354815584723838e-05,
+          "grad_norm": 8.115402124531101e-06,
+          "radius_q25": 0.006161666940897703,
+          "radius_q50": 0.010059106163680553,
+          "radius_q75": 0.015444082207977772,
+          "min_dolp": 0.0005139901768416166,
+          "max_dolp": 0.08039454370737076,
+          "clean_w_err": 0.0002584069443400949
+        }
+      },
+      "diagnostics": {
+        "0": {
+          "counts": {
+            "0.001": {
+              "near": 0,
+              "negative": 0,
+              "stationary_negative": 0,
+              "negative_fraction": 0.0,
+              "max_trial_drop": 0.0,
+              "max_drop_bound_ratio": 0.0
+            },
+            "0.0001": {
+              "near": 0,
+              "negative": 0,
+              "stationary_negative": 0,
+              "negative_fraction": 0.0,
+              "max_trial_drop": 0.0,
+              "max_drop_bound_ratio": 0.0
+            },
+            "1e-05": {
+              "near": 0,
+              "negative": 0,
+              "stationary_negative": 0,
+              "negative_fraction": 0.0,
+              "max_trial_drop": 0.0,
+              "max_drop_bound_ratio": 0.0
+            }
+          },
+          "mean_loss": 0.010946082690945762,
+          "minimum_bound_margin": -6.938893903907228e-18,
+          "minimum_radius_distance": 0.9914222812590755,
+          "maximum_stationarity": 0.15215976394726205
+        },
+        "100": {
+          "counts": {
+            "0.001": {
+              "near": 0,
+              "negative": 0,
+              "stationary_negative": 0,
+              "negative_fraction": 0.0,
+              "max_trial_drop": 0.0,
+              "max_drop_bound_ratio": 0.0
+            },
+            "0.0001": {
+              "near": 0,
+              "negative": 0,
+              "stationary_negative": 0,
+              "negative_fraction": 0.0,
+              "max_trial_drop": 0.0,
+              "max_drop_bound_ratio": 0.0
+            },
+            "1e-05": {
+              "near": 0,
+              "negative": 0,
+              "stationary_negative": 0,
+              "negative_fraction": 0.0,
+              "max_trial_drop": 0.0,
+              "max_drop_bound_ratio": 0.0
+            }
+          },
+          "mean_loss": 0.002197310254896178,
+          "minimum_bound_margin": -8.673617379884035e-19,
+          "minimum_radius_distance": 0.9941228232182885,
+          "maximum_stationarity": 0.09531623259858965
+        },
+        "500": {
+          "counts": {
+            "0.001": {
+              "near": 0,
+              "negative": 0,
+              "stationary_negative": 0,
+              "negative_fraction": 0.0,
+              "max_trial_drop": 0.0,
+              "max_drop_bound_ratio": 0.0
+            },
+            "0.0001": {
+              "near": 0,
+              "negative": 0,
+              "stationary_negative": 0,
+              "negative_fraction": 0.0,
+              "max_trial_drop": 0.0,
+              "max_drop_bound_ratio": 0.0
+            },
+            "1e-05": {
+              "near": 0,
+              "negative": 0,
+              "stationary_negative": 0,
+              "negative_fraction": 0.0,
+              "max_trial_drop": 0.0,
+              "max_drop_bound_ratio": 0.0
+            }
+          },
+          "mean_loss": 0.0001257683789136461,
+          "minimum_bound_margin": -1.2468324983583301e-18,
+          "minimum_radius_distance": 0.9567367027146558,
+          "maximum_stationarity": 0.028248585973478676
+        },
+        "1000": {
+          "counts": {
+            "0.001": {
+              "near": 0,
+              "negative": 0,
+              "stationary_negative": 0,
+              "negative_fraction": 0.0,
+              "max_trial_drop": 0.0,
+              "max_drop_bound_ratio": 0.0
+            },
+            "0.0001": {
+              "near": 0,
+              "negative": 0,
+              "stationary_negative": 0,
+              "negative_fraction": 0.0,
+              "max_trial_drop": 0.0,
+              "max_drop_bound_ratio": 0.0
+            },
+            "1e-05": {
+              "near": 0,
+              "negative": 0,
+              "stationary_negative": 0,
+              "negative_fraction": 0.0,
+              "max_trial_drop": 0.0,
+              "max_drop_bound_ratio": 0.0
+            }
+          },
+          "mean_loss": 5.3868267129382084e-05,
+          "minimum_bound_margin": -1.294266343404571e-18,
+          "minimum_radius_distance": 0.9605234707900234,
+          "maximum_stationarity": 0.011255979994931642
+        },
+        "1500": {
+          "counts": {
+            "0.001": {
+              "near": 0,
+              "negative": 0,
+              "stationary_negative": 0,
+              "negative_fraction": 0.0,
+              "max_trial_drop": 0.0,
+              "max_drop_bound_ratio": 0.0
+            },
+            "0.0001": {
+              "near": 0,
+              "negative": 0,
+              "stationary_negative": 0,
+              "negative_fraction": 0.0,
+              "max_trial_drop": 0.0,
+              "max_drop_bound_ratio": 0.0
+            },
+            "1e-05": {
+              "near": 0,
+              "negative": 0,
+              "stationary_negative": 0,
+              "negative_fraction": 0.0,
+              "max_trial_drop": 0.0,
+              "max_drop_bound_ratio": 0.0
+            }
+          },
+          "mean_loss": 5.354815247235656e-05,
+          "minimum_bound_margin": -1.3417001884508117e-18,
+          "minimum_radius_distance": 0.9597375702420854,
+          "maximum_stationarity": 0.01015180396716421
+        }
+      },
+      "final": {
+        "counts": {
+          "0.001": {
+            "near": 0,
+            "negative": 0,
+            "stationary_negative": 0,
+            "negative_fraction": 0.0,
+            "max_trial_drop": 0.0,
+            "max_drop_bound_ratio": 0.0
+          },
+          "0.0001": {
+            "near": 0,
+            "negative": 0,
+            "stationary_negative": 0,
+            "negative_fraction": 0.0,
+            "max_trial_drop": 0.0,
+            "max_drop_bound_ratio": 0.0
+          },
+          "1e-05": {
+            "near": 0,
+            "negative": 0,
+            "stationary_negative": 0,
+            "negative_fraction": 0.0,
+            "max_trial_drop": 0.0,
+            "max_drop_bound_ratio": 0.0
+          }
+        },
+        "mean_loss": 5.354815247235656e-05,
+        "minimum_bound_margin": -1.3417001884508117e-18,
+        "minimum_radius_distance": 0.9597375702420854,
+        "maximum_stationarity": 0.01015180396716421
+      },
+      "record_sha256": "091fd60ffbf4c21b874495318b8293b0b17b4092ccb64758eef9605fb372ac3b"
+    },
+    {
+      "dataset": "renderer",
+      "initialization": "broad",
+      "seed": 0,
+      "checkpoints": {
+        "0": {
+          "loss": 0.12628570199012756,
+          "grad_norm": 0.9501065015792847,
+          "radius_q25": 0.3840637505054474,
+          "radius_q50": 0.39181897044181824,
+          "radius_q75": 0.40244463086128235,
+          "min_dolp": 0.638771653175354,
+          "max_dolp": 0.7032713294029236,
+          "clean_w_err": 0.19929930567741394
+        },
+        "100": {
+          "loss": 0.0027370366733521223,
+          "grad_norm": 0.0031452232506126165,
+          "radius_q25": 0.0024215381126850843,
+          "radius_q50": 0.0037684545386582613,
+          "radius_q75": 0.005301026161760092,
+          "min_dolp": 0.000285126268863678,
+          "max_dolp": 0.028851065784692764,
+          "clean_w_err": 0.004206642042845488
+        },
+        "500": {
+          "loss": 0.00015829504991415888,
+          "grad_norm": 0.0003195639874320477,
+          "radius_q25": 0.0020166931208223104,
+          "radius_q50": 0.0036384561099112034,
+          "radius_q75": 0.005993076134473085,
+          "min_dolp": 0.00021932294475845993,
+          "max_dolp": 0.04665365815162659,
+          "clean_w_err": 0.00022301284479908645
+        },
+        "1000": {
+          "loss": 6.622521323151886e-05,
+          "grad_norm": 0.0001104239490814507,
+          "radius_q25": 0.005415924359112978,
+          "radius_q50": 0.008421322330832481,
+          "radius_q75": 0.013148823752999306,
+          "min_dolp": 0.0005096558015793562,
+          "max_dolp": 0.07791437953710556,
+          "clean_w_err": 0.00022305463789962232
+        },
+        "1500": {
+          "loss": 5.608507854049094e-05,
+          "grad_norm": 1.9792945749941282e-05,
+          "radius_q25": 0.006261542905122042,
+          "radius_q50": 0.010005595162510872,
+          "radius_q75": 0.015381659381091595,
+          "min_dolp": 0.0005682897754013538,
+          "max_dolp": 0.08421319723129272,
+          "clean_w_err": 0.0002527996839489788
+        }
+      },
+      "diagnostics": {
+        "0": {
+          "counts": {
+            "0.001": {
+              "near": 0,
+              "negative": 0,
+              "stationary_negative": 0,
+              "negative_fraction": 0.0,
+              "max_trial_drop": 0.0,
+              "max_drop_bound_ratio": 0.0
+            },
+            "0.0001": {
+              "near": 0,
+              "negative": 0,
+              "stationary_negative": 0,
+              "negative_fraction": 0.0,
+              "max_trial_drop": 0.0,
+              "max_drop_bound_ratio": 0.0
+            },
+            "1e-05": {
+              "near": 0,
+              "negative": 0,
+              "stationary_negative": 0,
+              "negative_fraction": 0.0,
+              "max_trial_drop": 0.0,
+              "max_drop_bound_ratio": 0.0
+            }
+          },
+          "mean_loss": 0.1262857013705773,
+          "minimum_bound_margin": -5.551115123125783e-17,
+          "minimum_radius_distance": 0.5889517481127433,
+          "maximum_stationarity": 0.5106998319225503
+        },
+        "100": {
+          "counts": {
+            "0.001": {
+              "near": 0,
+              "negative": 0,
+              "stationary_negative": 0,
+              "negative_fraction": 0.0,
+              "max_trial_drop": 0.0,
+              "max_drop_bound_ratio": 0.0
+            },
+            "0.0001": {
+              "near": 0,
+              "negative": 0,
+              "stationary_negative": 0,
+              "negative_fraction": 0.0,
+              "max_trial_drop": 0.0,
+              "max_drop_bound_ratio": 0.0
+            },
+            "1e-05": {
+              "near": 0,
+              "negative": 0,
+              "stationary_negative": 0,
+              "negative_fraction": 0.0,
+              "max_trial_drop": 0.0,
+              "max_drop_bound_ratio": 0.0
+            }
+          },
+          "mean_loss": 0.0027370367767410616,
+          "minimum_bound_margin": -1.734723475976807e-18,
+          "minimum_radius_distance": 0.9855714650333299,
+          "maximum_stationarity": 0.12141809339710807
+        },
+        "500": {
+          "counts": {
+            "0.001": {
+              "near": 0,
+              "negative": 0,
+              "stationary_negative": 0,
+              "negative_fraction": 0.0,
+              "max_trial_drop": 0.0,
+              "max_drop_bound_ratio": 0.0
+            },
+            "0.0001": {
+              "near": 0,
+              "negative": 0,
+              "stationary_negative": 0,
+              "negative_fraction": 0.0,
+              "max_trial_drop": 0.0,
+              "max_drop_bound_ratio": 0.0
+            },
+            "1e-05": {
+              "near": 0,
+              "negative": 0,
+              "stationary_negative": 0,
+              "negative_fraction": 0.0,
+              "max_trial_drop": 0.0,
+              "max_drop_bound_ratio": 0.0
+            }
+          },
+          "mean_loss": 0.00015829505349304731,
+          "minimum_bound_margin": -7.589415207398531e-19,
+          "minimum_radius_distance": 0.9766604624049287,
+          "maximum_stationarity": 0.07490930510629204
+        },
+        "1000": {
+          "counts": {
+            "0.001": {
+              "near": 0,
+              "negative": 0,
+              "stationary_negative": 0,
+              "negative_fraction": 0.0,
+              "max_trial_drop": 0.0,
+              "max_drop_bound_ratio": 0.0
+            },
+            "0.0001": {
+              "near": 0,
+              "negative": 0,
+              "stationary_negative": 0,
+              "negative_fraction": 0.0,
+              "max_trial_drop": 0.0,
+              "max_drop_bound_ratio": 0.0
+            },
+            "1e-05": {
+              "near": 0,
+              "negative": 0,
+              "stationary_negative": 0,
+              "negative_fraction": 0.0,
+              "max_trial_drop": 0.0,
+              "max_drop_bound_ratio": 0.0
+            }
+          },
+          "mean_loss": 6.622520257155558e-05,
+          "minimum_bound_margin": -8.809142651444724e-19,
+          "minimum_radius_distance": 0.9609835061611234,
+          "maximum_stationarity": 0.025835921076546323
+        },
+        "1500": {
+          "counts": {
+            "0.001": {
+              "near": 0,
+              "negative": 0,
+              "stationary_negative": 0,
+              "negative_fraction": 0.0,
+              "max_trial_drop": 0.0,
+              "max_drop_bound_ratio": 0.0
+            },
+            "0.0001": {
+              "near": 0,
+              "negative": 0,
+              "stationary_negative": 0,
+              "negative_fraction": 0.0,
+              "max_trial_drop": 0.0,
+              "max_drop_bound_ratio": 0.0
+            },
+            "1e-05": {
+              "near": 0,
+              "negative": 0,
+              "stationary_negative": 0,
+              "negative_fraction": 0.0,
+              "max_trial_drop": 0.0,
+              "max_drop_bound_ratio": 0.0
+            }
+          },
+          "mean_loss": 5.608507780519725e-05,
+          "minimum_bound_margin": -1.1892342579450377e-18,
+          "minimum_radius_distance": 0.9578184815481474,
+          "maximum_stationarity": 0.009744299595000245
+        }
+      },
+      "final": {
+        "counts": {
+          "0.001": {
+            "near": 0,
+            "negative": 0,
+            "stationary_negative": 0,
+            "negative_fraction": 0.0,
+            "max_trial_drop": 0.0,
+            "max_drop_bound_ratio": 0.0
+          },
+          "0.0001": {
+            "near": 0,
+            "negative": 0,
+            "stationary_negative": 0,
+            "negative_fraction": 0.0,
+            "max_trial_drop": 0.0,
+            "max_drop_bound_ratio": 0.0
+          },
+          "1e-05": {
+            "near": 0,
+            "negative": 0,
+            "stationary_negative": 0,
+            "negative_fraction": 0.0,
+            "max_trial_drop": 0.0,
+            "max_drop_bound_ratio": 0.0
+          }
+        },
+        "mean_loss": 5.608507780519725e-05,
+        "minimum_bound_margin": -1.1892342579450377e-18,
+        "minimum_radius_distance": 0.9578184815481474,
+        "maximum_stationarity": 0.009744299595000245
+      },
+      "record_sha256": "5e758ab23405670122d57081f66619c57e282b7354d3f2a11ecf73675f599489"
+    },
+    {
+      "dataset": "renderer",
+      "initialization": "broad",
+      "seed": 1,
+      "checkpoints": {
+        "0": {
+          "loss": 0.011926389299333096,
+          "grad_norm": 0.20378689467906952,
+          "radius_q25": 0.047014955431222916,
+          "radius_q50": 0.049941543489694595,
+          "radius_q75": 0.05341272056102753,
+          "min_dolp": 0.07838736474514008,
+          "max_dolp": 0.11300116032361984,
+          "clean_w_err": 0.017017750069499016
+        },
+        "100": {
+          "loss": 0.002170382533222437,
+          "grad_norm": 0.003343339078128338,
+          "radius_q25": 0.001733334269374609,
+          "radius_q50": 0.0025824764743447304,
+          "radius_q75": 0.003820230485871434,
+          "min_dolp": 0.00019521015929058194,
+          "max_dolp": 0.0197425689548254,
+          "clean_w_err": 0.0033803966362029314
+        },
+        "500": {
+          "loss": 6.685276457574219e-05,
+          "grad_norm": 0.0008725312654860318,
+          "radius_q25": 0.005069931503385305,
+          "radius_q50": 0.008251229301095009,
+          "radius_q75": 0.013274606317281723,
+          "min_dolp": 0.000909430964384228,
+          "max_dolp": 0.06621771305799484,
+          "clean_w_err": 0.00021719072537962347
+        },
+        "1000": {
+          "loss": 0.00020637930720113218,
+          "grad_norm": 0.05396263673901558,
+          "radius_q25": 0.009598829783499241,
+          "radius_q50": 0.014395898208022118,
+          "radius_q75": 0.019715558737516403,
+          "min_dolp": 0.0007821361650712788,
+          "max_dolp": 0.0824609026312828,
+          "clean_w_err": 0.00048025150317698717
+        },
+        "1500": {
+          "loss": 5.307846004143357e-05,
+          "grad_norm": 0.00023770179541315883,
+          "radius_q25": 0.006201680283993483,
+          "radius_q50": 0.00991893745958805,
+          "radius_q75": 0.015738919377326965,
+          "min_dolp": 0.0007161485846154392,
+          "max_dolp": 0.07307935506105423,
+          "clean_w_err": 0.00024714122992008924
+        }
+      },
+      "diagnostics": {
+        "0": {
+          "counts": {
+            "0.001": {
+              "near": 0,
+              "negative": 0,
+              "stationary_negative": 0,
+              "negative_fraction": 0.0,
+              "max_trial_drop": 0.0,
+              "max_drop_bound_ratio": 0.0
+            },
+            "0.0001": {
+              "near": 0,
+              "negative": 0,
+              "stationary_negative": 0,
+              "negative_fraction": 0.0,
+              "max_trial_drop": 0.0,
+              "max_drop_bound_ratio": 0.0
+            },
+            "1e-05": {
+              "near": 0,
+              "negative": 0,
+              "stationary_negative": 0,
+              "negative_fraction": 0.0,
+              "max_trial_drop": 0.0,
+              "max_drop_bound_ratio": 0.0
+            }
+          },
+          "mean_loss": 0.01192638962263806,
+          "minimum_bound_margin": -6.938893903907228e-18,
+          "minimum_radius_distance": 0.9433178963600002,
+          "maximum_stationarity": 0.18532169809128182
+        },
+        "100": {
+          "counts": {
+            "0.001": {
+              "near": 0,
+              "negative": 0,
+              "stationary_negative": 0,
+              "negative_fraction": 0.0,
+              "max_trial_drop": 0.0,
+              "max_drop_bound_ratio": 0.0
+            },
+            "0.0001": {
+              "near": 0,
+              "negative": 0,
+              "stationary_negative": 0,
+              "negative_fraction": 0.0,
+              "max_trial_drop": 0.0,
+              "max_drop_bound_ratio": 0.0
+            },
+            "1e-05": {
+              "near": 0,
+              "negative": 0,
+              "stationary_negative": 0,
+              "negative_fraction": 0.0,
+              "max_trial_drop": 0.0,
+              "max_drop_bound_ratio": 0.0
+            }
+          },
+          "mean_loss": 0.002170382428884485,
+          "minimum_bound_margin": -1.734723475976807e-18,
+          "minimum_radius_distance": 0.9901277528490651,
+          "maximum_stationarity": 0.086783393827769
+        },
+        "500": {
+          "counts": {
+            "0.001": {
+              "near": 0,
+              "negative": 0,
+              "stationary_negative": 0,
+              "negative_fraction": 0.0,
+              "max_trial_drop": 0.0,
+              "max_drop_bound_ratio": 0.0
+            },
+            "0.0001": {
+              "near": 0,
+              "negative": 0,
+              "stationary_negative": 0,
+              "negative_fraction": 0.0,
+              "max_trial_drop": 0.0,
+              "max_drop_bound_ratio": 0.0
+            },
+            "1e-05": {
+              "near": 0,
+              "negative": 0,
+              "stationary_negative": 0,
+              "negative_fraction": 0.0,
+              "max_trial_drop": 0.0,
+              "max_drop_bound_ratio": 0.0
+            }
+          },
+          "mean_loss": 6.685276488795083e-05,
+          "minimum_bound_margin": -1.1384122811097797e-18,
+          "minimum_radius_distance": 0.9668547690064049,
+          "maximum_stationarity": 0.020333310275559263
+        },
+        "1000": {
+          "counts": {
+            "0.001": {
+              "near": 0,
+              "negative": 0,
+              "stationary_negative": 0,
+              "negative_fraction": 0.0,
+              "max_trial_drop": 0.0,
+              "max_drop_bound_ratio": 0.0
+            },
+            "0.0001": {
+              "near": 0,
+              "negative": 0,
+              "stationary_negative": 0,
+              "negative_fraction": 0.0,
+              "max_trial_drop": 0.0,
+              "max_drop_bound_ratio": 0.0
+            },
+            "1e-05": {
+              "near": 0,
+              "negative": 0,
+              "stationary_negative": 0,
+              "negative_fraction": 0.0,
+              "max_trial_drop": 0.0,
+              "max_drop_bound_ratio": 0.0
+            }
+          },
+          "mean_loss": 0.00020637929555715993,
+          "minimum_bound_margin": -9.75781955236954e-19,
+          "minimum_radius_distance": 0.9586992177473441,
+          "maximum_stationarity": 0.027733706758283173
+        },
+        "1500": {
+          "counts": {
+            "0.001": {
+              "near": 0,
+              "negative": 0,
+              "stationary_negative": 0,
+              "negative_fraction": 0.0,
+              "max_trial_drop": 0.0,
+              "max_drop_bound_ratio": 0.0
+            },
+            "0.0001": {
+              "near": 0,
+              "negative": 0,
+              "stationary_negative": 0,
+              "negative_fraction": 0.0,
+              "max_trial_drop": 0.0,
+              "max_drop_bound_ratio": 0.0
+            },
+            "1e-05": {
+              "near": 0,
+              "negative": 0,
+              "stationary_negative": 0,
+              "negative_fraction": 0.0,
+              "max_trial_drop": 0.0,
+              "max_drop_bound_ratio": 0.0
+            }
+          },
+          "mean_loss": 5.307845676820984e-05,
+          "minimum_bound_margin": -9.046311876675928e-19,
+          "minimum_radius_distance": 0.9634114046161283,
+          "maximum_stationarity": 0.007808645182848669
+        }
+      },
+      "final": {
+        "counts": {
+          "0.001": {
+            "near": 0,
+            "negative": 0,
+            "stationary_negative": 0,
+            "negative_fraction": 0.0,
+            "max_trial_drop": 0.0,
+            "max_drop_bound_ratio": 0.0
+          },
+          "0.0001": {
+            "near": 0,
+            "negative": 0,
+            "stationary_negative": 0,
+            "negative_fraction": 0.0,
+            "max_trial_drop": 0.0,
+            "max_drop_bound_ratio": 0.0
+          },
+          "1e-05": {
+            "near": 0,
+            "negative": 0,
+            "stationary_negative": 0,
+            "negative_fraction": 0.0,
+            "max_trial_drop": 0.0,
+            "max_drop_bound_ratio": 0.0
+          }
+        },
+        "mean_loss": 5.307845676820984e-05,
+        "minimum_bound_margin": -9.046311876675928e-19,
+        "minimum_radius_distance": 0.9634114046161283,
+        "maximum_stationarity": 0.007808645182848669
+      },
+      "record_sha256": "01bbe534e56c43f84c989459db01d65273021cfa8505f00f3f7d26b50a21924b"
+    },
+    {
+      "dataset": "renderer",
+      "initialization": "broad",
+      "seed": 2,
+      "checkpoints": {
+        "0": {
+          "loss": 0.027119580656290054,
+          "grad_norm": 0.5157120823860168,
+          "radius_q25": 0.13944460451602936,
+          "radius_q50": 0.14260528981685638,
+          "radius_q75": 0.14506162703037262,
+          "min_dolp": 0.25115516781806946,
+          "max_dolp": 0.29441553354263306,
+          "clean_w_err": 0.042140018194913864
+        },
+        "100": {
+          "loss": 0.0024937810376286507,
+          "grad_norm": 0.003478841856122017,
+          "radius_q25": 0.0015081650344654918,
+          "radius_q50": 0.00242044311016798,
+          "radius_q75": 0.0038199513219296932,
+          "min_dolp": 0.00027564604533836246,
+          "max_dolp": 0.02252647653222084,
+          "clean_w_err": 0.003864099271595478
+        },
+        "500": {
+          "loss": 0.00010813039261847734,
+          "grad_norm": 0.00914781540632248,
+          "radius_q25": 0.0036359443329274654,
+          "radius_q50": 0.0062657855451107025,
+          "radius_q75": 0.009906419552862644,
+          "min_dolp": 0.00016731154755689204,
+          "max_dolp": 0.055488333106040955,
+          "clean_w_err": 0.0002255545259686187
+        },
+        "1000": {
+          "loss": 5.2881303417962044e-05,
+          "grad_norm": 0.00019240000983700156,
+          "radius_q25": 0.005871979054063559,
+          "radius_q50": 0.009217940270900726,
+          "radius_q75": 0.014596295543015003,
+          "min_dolp": 0.0010431298287585378,
+          "max_dolp": 0.0686088353395462,
+          "clean_w_err": 0.000241415313212201
+        },
+        "1500": {
+          "loss": 5.3550920711131766e-05,
+          "grad_norm": 0.009393086656928062,
+          "radius_q25": 0.006241302937269211,
+          "radius_q50": 0.010112838819622993,
+          "radius_q75": 0.015542748384177685,
+          "min_dolp": 0.0005173073732294142,
+          "max_dolp": 0.07404372096061707,
+          "clean_w_err": 0.00026219518622383475
+        }
+      },
+      "diagnostics": {
+        "0": {
+          "counts": {
+            "0.001": {
+              "near": 0,
+              "negative": 0,
+              "stationary_negative": 0,
+              "negative_fraction": 0.0,
+              "max_trial_drop": 0.0,
+              "max_drop_bound_ratio": 0.0
+            },
+            "0.0001": {
+              "near": 0,
+              "negative": 0,
+              "stationary_negative": 0,
+              "negative_fraction": 0.0,
+              "max_trial_drop": 0.0,
+              "max_drop_bound_ratio": 0.0
+            },
+            "1e-05": {
+              "near": 0,
+              "negative": 0,
+              "stationary_negative": 0,
+              "negative_fraction": 0.0,
+              "max_trial_drop": 0.0,
+              "max_drop_bound_ratio": 0.0
+            }
+          },
+          "mean_loss": 0.027119580836931424,
+          "minimum_bound_margin": -1.3877787807814457e-17,
+          "minimum_radius_distance": 0.8494559931164786,
+          "maximum_stationarity": 0.3289677924436617
+        },
+        "100": {
+          "counts": {
+            "0.001": {
+              "near": 0,
+              "negative": 0,
+              "stationary_negative": 0,
+              "negative_fraction": 0.0,
+              "max_trial_drop": 0.0,
+              "max_drop_bound_ratio": 0.0
+            },
+            "0.0001": {
+              "near": 0,
+              "negative": 0,
+              "stationary_negative": 0,
+              "negative_fraction": 0.0,
+              "max_trial_drop": 0.0,
+              "max_drop_bound_ratio": 0.0
+            },
+            "1e-05": {
+              "near": 0,
+              "negative": 0,
+              "stationary_negative": 0,
+              "negative_fraction": 0.0,
+              "max_trial_drop": 0.0,
+              "max_drop_bound_ratio": 0.0
+            }
+          },
+          "mean_loss": 0.002493781165220906,
+          "minimum_bound_margin": -1.734723475976807e-18,
+          "minimum_radius_distance": 0.9887353325554807,
+          "maximum_stationarity": 0.09673490549424416
+        },
+        "500": {
+          "counts": {
+            "0.001": {
+              "near": 0,
+              "negative": 0,
+              "stationary_negative": 0,
+              "negative_fraction": 0.0,
+              "max_trial_drop": 0.0,
+              "max_drop_bound_ratio": 0.0
+            },
+            "0.0001": {
+              "near": 0,
+              "negative": 0,
+              "stationary_negative": 0,
+              "negative_fraction": 0.0,
+              "max_trial_drop": 0.0,
+              "max_drop_bound_ratio": 0.0
+            },
+            "1e-05": {
+              "near": 0,
+              "negative": 0,
+              "stationary_negative": 0,
+              "negative_fraction": 0.0,
+              "max_trial_drop": 0.0,
+              "max_drop_bound_ratio": 0.0
+            }
+          },
+          "mean_loss": 0.00010813040748617192,
+          "minimum_bound_margin": -4.87890977618477e-19,
+          "minimum_radius_distance": 0.9722344456765194,
+          "maximum_stationarity": 0.04916628094068353
+        },
+        "1000": {
+          "counts": {
+            "0.001": {
+              "near": 0,
+              "negative": 0,
+              "stationary_negative": 0,
+              "negative_fraction": 0.0,
+              "max_trial_drop": 0.0,
+              "max_drop_bound_ratio": 0.0
+            },
+            "0.0001": {
+              "near": 0,
+              "negative": 0,
+              "stationary_negative": 0,
+              "negative_fraction": 0.0,
+              "max_trial_drop": 0.0,
+              "max_drop_bound_ratio": 0.0
+            },
+            "1e-05": {
+              "near": 0,
+              "negative": 0,
+              "stationary_negative": 0,
+              "negative_fraction": 0.0,
+              "max_trial_drop": 0.0,
+              "max_drop_bound_ratio": 0.0
+            }
+          },
+          "mean_loss": 5.2881298579638624e-05,
+          "minimum_bound_margin": -4.946672411965114e-19,
+          "minimum_radius_distance": 0.9656551183451317,
+          "maximum_stationarity": 0.0162767003913119
+        },
+        "1500": {
+          "counts": {
+            "0.001": {
+              "near": 0,
+              "negative": 0,
+              "stationary_negative": 0,
+              "negative_fraction": 0.0,
+              "max_trial_drop": 0.0,
+              "max_drop_bound_ratio": 0.0
+            },
+            "0.0001": {
+              "near": 0,
+              "negative": 0,
+              "stationary_negative": 0,
+              "negative_fraction": 0.0,
+              "max_trial_drop": 0.0,
+              "max_drop_bound_ratio": 0.0
+            },
+            "1e-05": {
+              "near": 0,
+              "negative": 0,
+              "stationary_negative": 0,
+              "negative_fraction": 0.0,
+              "max_trial_drop": 0.0,
+              "max_drop_bound_ratio": 0.0
+            }
+          },
+          "mean_loss": 5.3550923173085517e-05,
+          "minimum_bound_margin": -8.233160247311799e-19,
+          "minimum_radius_distance": 0.9629272601906461,
+          "maximum_stationarity": 0.013091204912694075
+        }
+      },
+      "final": {
+        "counts": {
+          "0.001": {
+            "near": 0,
+            "negative": 0,
+            "stationary_negative": 0,
+            "negative_fraction": 0.0,
+            "max_trial_drop": 0.0,
+            "max_drop_bound_ratio": 0.0
+          },
+          "0.0001": {
+            "near": 0,
+            "negative": 0,
+            "stationary_negative": 0,
+            "negative_fraction": 0.0,
+            "max_trial_drop": 0.0,
+            "max_drop_bound_ratio": 0.0
+          },
+          "1e-05": {
+            "near": 0,
+            "negative": 0,
+            "stationary_negative": 0,
+            "negative_fraction": 0.0,
+            "max_trial_drop": 0.0,
+            "max_drop_bound_ratio": 0.0
+          }
+        },
+        "mean_loss": 5.3550923173085517e-05,
+        "minimum_bound_margin": -8.233160247311799e-19,
+        "minimum_radius_distance": 0.9629272601906461,
+        "maximum_stationarity": 0.013091204912694075
+      },
+      "record_sha256": "f94efda822f597c6f0152c0abd33bfd5d248e5324d7a59d3080b1bbfb8bca666"
+    },
+    {
+      "dataset": "renderer",
+      "initialization": "broad",
+      "seed": 3,
+      "checkpoints": {
+        "0": {
+          "loss": 0.009895184077322483,
+          "grad_norm": 0.16133971512317657,
+          "radius_q25": 0.038239654153585434,
+          "radius_q50": 0.040173131972551346,
+          "radius_q75": 0.04126598685979843,
+          "min_dolp": 0.07271413505077362,
+          "max_dolp": 0.08778669685125351,
+          "clean_w_err": 0.013938500545918941
+        },
+        "100": {
+          "loss": 0.002102380385622382,
+          "grad_norm": 0.0030235096346586943,
+          "radius_q25": 0.0015476346015930176,
+          "radius_q50": 0.002048203721642494,
+          "radius_q75": 0.002620413200929761,
+          "min_dolp": 0.0001665666204644367,
+          "max_dolp": 0.012025590986013412,
+          "clean_w_err": 0.0031960357446223497
+        },
+        "500": {
+          "loss": 6.87458596075885e-05,
+          "grad_norm": 0.0007295251125469804,
+          "radius_q25": 0.0048970491625368595,
+          "radius_q50": 0.008250638842582703,
+          "radius_q75": 0.01272544078528881,
+          "min_dolp": 0.0008186721825040877,
+          "max_dolp": 0.06414245814085007,
+          "clean_w_err": 0.00021948547509964556
+        },
+        "1000": {
+          "loss": 5.6166267313528806e-05,
+          "grad_norm": 0.006980500649660826,
+          "radius_q25": 0.006214115768671036,
+          "radius_q50": 0.010187549516558647,
+          "radius_q75": 0.015900202095508575,
+          "min_dolp": 0.0007439223700203001,
+          "max_dolp": 0.07145991921424866,
+          "clean_w_err": 0.0002629997325129807
+        },
+        "1500": {
+          "loss": 5.2898401918355376e-05,
+          "grad_norm": 0.0001102882088162005,
+          "radius_q25": 0.006101350300014019,
+          "radius_q50": 0.010257840156555176,
+          "radius_q75": 0.016156235709786415,
+          "min_dolp": 0.0006849119672551751,
+          "max_dolp": 0.07166561484336853,
+          "clean_w_err": 0.0002631586976349354
+        }
+      },
+      "diagnostics": {
+        "0": {
+          "counts": {
+            "0.001": {
+              "near": 0,
+              "negative": 0,
+              "stationary_negative": 0,
+              "negative_fraction": 0.0,
+              "max_trial_drop": 0.0,
+              "max_drop_bound_ratio": 0.0
+            },
+            "0.0001": {
+              "near": 0,
+              "negative": 0,
+              "stationary_negative": 0,
+              "negative_fraction": 0.0,
+              "max_trial_drop": 0.0,
+              "max_drop_bound_ratio": 0.0
+            },
+            "1e-05": {
+              "near": 0,
+              "negative": 0,
+              "stationary_negative": 0,
+              "negative_fraction": 0.0,
+              "max_trial_drop": 0.0,
+              "max_drop_bound_ratio": 0.0
+            }
+          },
+          "mean_loss": 0.009895184671341,
+          "minimum_bound_margin": -3.469446951953614e-18,
+          "minimum_radius_distance": 0.9560217585638018,
+          "maximum_stationarity": 0.17123603651418703
+        },
+        "100": {
+          "counts": {
+            "0.001": {
+              "near": 0,
+              "negative": 0,
+              "stationary_negative": 0,
+              "negative_fraction": 0.0,
+              "max_trial_drop": 0.0,
+              "max_drop_bound_ratio": 0.0
+            },
+            "0.0001": {
+              "near": 0,
+              "negative": 0,
+              "stationary_negative": 0,
+              "negative_fraction": 0.0,
+              "max_trial_drop": 0.0,
+              "max_drop_bound_ratio": 0.0
+            },
+            "1e-05": {
+              "near": 0,
+              "negative": 0,
+              "stationary_negative": 0,
+              "negative_fraction": 0.0,
+              "max_trial_drop": 0.0,
+              "max_drop_bound_ratio": 0.0
+            }
+          },
+          "mean_loss": 0.0021023805202998727,
+          "minimum_bound_margin": -1.734723475976807e-18,
+          "minimum_radius_distance": 0.9939869873708074,
+          "maximum_stationarity": 0.09129187753479097
+        },
+        "500": {
+          "counts": {
+            "0.001": {
+              "near": 0,
+              "negative": 0,
+              "stationary_negative": 0,
+              "negative_fraction": 0.0,
+              "max_trial_drop": 0.0,
+              "max_drop_bound_ratio": 0.0
+            },
+            "0.0001": {
+              "near": 0,
+              "negative": 0,
+              "stationary_negative": 0,
+              "negative_fraction": 0.0,
+              "max_trial_drop": 0.0,
+              "max_drop_bound_ratio": 0.0
+            },
+            "1e-05": {
+              "near": 0,
+              "negative": 0,
+              "stationary_negative": 0,
+              "negative_fraction": 0.0,
+              "max_trial_drop": 0.0,
+              "max_drop_bound_ratio": 0.0
+            }
+          },
+          "mean_loss": 6.874585260742273e-05,
+          "minimum_bound_margin": -5.963111948670274e-19,
+          "minimum_radius_distance": 0.9678957188439594,
+          "maximum_stationarity": 0.027270828950381045
+        },
+        "1000": {
+          "counts": {
+            "0.001": {
+              "near": 0,
+              "negative": 0,
+              "stationary_negative": 0,
+              "negative_fraction": 0.0,
+              "max_trial_drop": 0.0,
+              "max_drop_bound_ratio": 0.0
+            },
+            "0.0001": {
+              "near": 0,
+              "negative": 0,
+              "stationary_negative": 0,
+              "negative_fraction": 0.0,
+              "max_trial_drop": 0.0,
+              "max_drop_bound_ratio": 0.0
+            },
+            "1e-05": {
+              "near": 0,
+              "negative": 0,
+              "stationary_negative": 0,
+              "negative_fraction": 0.0,
+              "max_trial_drop": 0.0,
+              "max_drop_bound_ratio": 0.0
+            }
+          },
+          "mean_loss": 5.616626888101998e-05,
+          "minimum_bound_margin": -5.793705359219414e-19,
+          "minimum_radius_distance": 0.9642243103360972,
+          "maximum_stationarity": 0.011477682802293202
+        },
+        "1500": {
+          "counts": {
+            "0.001": {
+              "near": 0,
+              "negative": 0,
+              "stationary_negative": 0,
+              "negative_fraction": 0.0,
+              "max_trial_drop": 0.0,
+              "max_drop_bound_ratio": 0.0
+            },
+            "0.0001": {
+              "near": 0,
+              "negative": 0,
+              "stationary_negative": 0,
+              "negative_fraction": 0.0,
+              "max_trial_drop": 0.0,
+              "max_drop_bound_ratio": 0.0
+            },
+            "1e-05": {
+              "near": 0,
+              "negative": 0,
+              "stationary_negative": 0,
+              "negative_fraction": 0.0,
+              "max_trial_drop": 0.0,
+              "max_drop_bound_ratio": 0.0
+            }
+          },
+          "mean_loss": 5.289840186788205e-05,
+          "minimum_bound_margin": -5.624298769768554e-19,
+          "minimum_radius_distance": 0.9641210640485669,
+          "maximum_stationarity": 0.010293800199776285
+        }
+      },
+      "final": {
+        "counts": {
+          "0.001": {
+            "near": 0,
+            "negative": 0,
+            "stationary_negative": 0,
+            "negative_fraction": 0.0,
+            "max_trial_drop": 0.0,
+            "max_drop_bound_ratio": 0.0
+          },
+          "0.0001": {
+            "near": 0,
+            "negative": 0,
+            "stationary_negative": 0,
+            "negative_fraction": 0.0,
+            "max_trial_drop": 0.0,
+            "max_drop_bound_ratio": 0.0
+          },
+          "1e-05": {
+            "near": 0,
+            "negative": 0,
+            "stationary_negative": 0,
+            "negative_fraction": 0.0,
+            "max_trial_drop": 0.0,
+            "max_drop_bound_ratio": 0.0
+          }
+        },
+        "mean_loss": 5.289840186788205e-05,
+        "minimum_bound_margin": -5.624298769768554e-19,
+        "minimum_radius_distance": 0.9641210640485669,
+        "maximum_stationarity": 0.010293800199776285
+      },
+      "record_sha256": "f3f7ddb4dc097b6dfbcd5323e08ff5e353a8a7a624cd63f7e56bb2a4d43bc5a7"
+    },
+    {
+      "dataset": "renderer",
+      "initialization": "broad",
+      "seed": 4,
+      "checkpoints": {
+        "0": {
+          "loss": 0.02306993678212166,
+          "grad_norm": 0.44203078746795654,
+          "radius_q25": 0.10126934945583344,
+          "radius_q50": 0.10737540572881699,
+          "radius_q75": 0.1213565543293953,
+          "min_dolp": 0.16763237118721008,
+          "max_dolp": 0.2531408369541168,
+          "clean_w_err": 0.03388924151659012
+        },
+        "100": {
+          "loss": 0.0029544360004365444,
+          "grad_norm": 0.003179823514074087,
+          "radius_q25": 0.002003638306632638,
+          "radius_q50": 0.0028182780370116234,
+          "radius_q75": 0.0037742992863059044,
+          "min_dolp": 0.0004420907935127616,
+          "max_dolp": 0.016469264402985573,
+          "clean_w_err": 0.004526091739535332
+        },
+        "500": {
+          "loss": 6.0948623286094517e-05,
+          "grad_norm": 9.247587149729952e-05,
+          "radius_q25": 0.0054490468464791775,
+          "radius_q50": 0.008903216570615768,
+          "radius_q75": 0.013868017122149467,
+          "min_dolp": 0.0001929616992129013,
+          "max_dolp": 0.07556787133216858,
+          "clean_w_err": 0.00023664523905608803
+        },
+        "1000": {
+          "loss": 5.312893699738197e-05,
+          "grad_norm": 0.0025349250063300133,
+          "radius_q25": 0.006109003908932209,
+          "radius_q50": 0.009904289618134499,
+          "radius_q75": 0.015331747941672802,
+          "min_dolp": 0.0004770530213136226,
+          "max_dolp": 0.07817450910806656,
+          "clean_w_err": 0.0002540455316193402
+        },
+        "1500": {
+          "loss": 5.247179069556296e-05,
+          "grad_norm": 3.302022014395334e-05,
+          "radius_q25": 0.00613788515329361,
+          "radius_q50": 0.00992624182254076,
+          "radius_q75": 0.015316220931708813,
+          "min_dolp": 0.0005177335115149617,
+          "max_dolp": 0.07944469153881073,
+          "clean_w_err": 0.00025537231704220176
+        }
+      },
+      "diagnostics": {
+        "0": {
+          "counts": {
+            "0.001": {
+              "near": 0,
+              "negative": 0,
+              "stationary_negative": 0,
+              "negative_fraction": 0.0,
+              "max_trial_drop": 0.0,
+              "max_drop_bound_ratio": 0.0
+            },
+            "0.0001": {
+              "near": 0,
+              "negative": 0,
+              "stationary_negative": 0,
+              "negative_fraction": 0.0,
+              "max_trial_drop": 0.0,
+              "max_drop_bound_ratio": 0.0
+            },
+            "1e-05": {
+              "near": 0,
+              "negative": 0,
+              "stationary_negative": 0,
+              "negative_fraction": 0.0,
+              "max_trial_drop": 0.0,
+              "max_drop_bound_ratio": 0.0
+            }
+          },
+          "mean_loss": 0.023069937848277995,
+          "minimum_bound_margin": -6.938893903907228e-18,
+          "minimum_radius_distance": 0.8713342220337918,
+          "maximum_stationarity": 0.30079885640692683
+        },
+        "100": {
+          "counts": {
+            "0.001": {
+              "near": 0,
+              "negative": 0,
+              "stationary_negative": 0,
+              "negative_fraction": 0.0,
+              "max_trial_drop": 0.0,
+              "max_drop_bound_ratio": 0.0
+            },
+            "0.0001": {
+              "near": 0,
+              "negative": 0,
+              "stationary_negative": 0,
+              "negative_fraction": 0.0,
+              "max_trial_drop": 0.0,
+              "max_drop_bound_ratio": 0.0
+            },
+            "1e-05": {
+              "near": 0,
+              "negative": 0,
+              "stationary_negative": 0,
+              "negative_fraction": 0.0,
+              "max_trial_drop": 0.0,
+              "max_drop_bound_ratio": 0.0
+            }
+          },
+          "mean_loss": 0.0029544362971645156,
+          "minimum_bound_margin": -1.734723475976807e-18,
+          "minimum_radius_distance": 0.9917648094326502,
+          "maximum_stationarity": 0.09199574634796961
+        },
+        "500": {
+          "counts": {
+            "0.001": {
+              "near": 0,
+              "negative": 0,
+              "stationary_negative": 0,
+              "negative_fraction": 0.0,
+              "max_trial_drop": 0.0,
+              "max_drop_bound_ratio": 0.0
+            },
+            "0.0001": {
+              "near": 0,
+              "negative": 0,
+              "stationary_negative": 0,
+              "negative_fraction": 0.0,
+              "max_trial_drop": 0.0,
+              "max_drop_bound_ratio": 0.0
+            },
+            "1e-05": {
+              "near": 0,
+              "negative": 0,
+              "stationary_negative": 0,
+              "negative_fraction": 0.0,
+              "max_trial_drop": 0.0,
+              "max_drop_bound_ratio": 0.0
+            }
+          },
+          "mean_loss": 6.09486250823072e-05,
+          "minimum_bound_margin": -5.55653613398821e-19,
+          "minimum_radius_distance": 0.962161968417943,
+          "maximum_stationarity": 0.022946504927568195
+        },
+        "1000": {
+          "counts": {
+            "0.001": {
+              "near": 0,
+              "negative": 0,
+              "stationary_negative": 0,
+              "negative_fraction": 0.0,
+              "max_trial_drop": 0.0,
+              "max_drop_bound_ratio": 0.0
+            },
+            "0.0001": {
+              "near": 0,
+              "negative": 0,
+              "stationary_negative": 0,
+              "negative_fraction": 0.0,
+              "max_trial_drop": 0.0,
+              "max_drop_bound_ratio": 0.0
+            },
+            "1e-05": {
+              "near": 0,
+              "negative": 0,
+              "stationary_negative": 0,
+              "negative_fraction": 0.0,
+              "max_trial_drop": 0.0,
+              "max_drop_bound_ratio": 0.0
+            }
+          },
+          "mean_loss": 5.312893928961165e-05,
+          "minimum_bound_margin": -7.284483346386983e-19,
+          "minimum_radius_distance": 0.9608528434046594,
+          "maximum_stationarity": 0.013095910898385242
+        },
+        "1500": {
+          "counts": {
+            "0.001": {
+              "near": 0,
+              "negative": 0,
+              "stationary_negative": 0,
+              "negative_fraction": 0.0,
+              "max_trial_drop": 0.0,
+              "max_drop_bound_ratio": 0.0
+            },
+            "0.0001": {
+              "near": 0,
+              "negative": 0,
+              "stationary_negative": 0,
+              "negative_fraction": 0.0,
+              "max_trial_drop": 0.0,
+              "max_drop_bound_ratio": 0.0
+            },
+            "1e-05": {
+              "near": 0,
+              "negative": 0,
+              "stationary_negative": 0,
+              "negative_fraction": 0.0,
+              "max_trial_drop": 0.0,
+              "max_drop_bound_ratio": 0.0
+            }
+          },
+          "mean_loss": 5.247179081986471e-05,
+          "minimum_bound_margin": -8.152692117322641e-19,
+          "minimum_radius_distance": 0.9602147792295627,
+          "maximum_stationarity": 0.01265269617104258
+        }
+      },
+      "final": {
+        "counts": {
+          "0.001": {
+            "near": 0,
+            "negative": 0,
+            "stationary_negative": 0,
+            "negative_fraction": 0.0,
+            "max_trial_drop": 0.0,
+            "max_drop_bound_ratio": 0.0
+          },
+          "0.0001": {
+            "near": 0,
+            "negative": 0,
+            "stationary_negative": 0,
+            "negative_fraction": 0.0,
+            "max_trial_drop": 0.0,
+            "max_drop_bound_ratio": 0.0
+          },
+          "1e-05": {
+            "near": 0,
+            "negative": 0,
+            "stationary_negative": 0,
+            "negative_fraction": 0.0,
+            "max_trial_drop": 0.0,
+            "max_drop_bound_ratio": 0.0
+          }
+        },
+        "mean_loss": 5.247179081986471e-05,
+        "minimum_bound_margin": -8.152692117322641e-19,
+        "minimum_radius_distance": 0.9602147792295627,
+        "maximum_stationarity": 0.01265269617104258
+      },
+      "record_sha256": "b9c2886af0d7bb6d7837d94d3e3d58695f7a9fafc90994a38ea963938d0e5e41"
+    },
+    {
+      "dataset": "high_dolp",
+      "initialization": "standard",
+      "seed": 0,
+      "checkpoints": {
+        "0": {
+          "loss": 0.22996702790260315,
+          "grad_norm": 0.24673624336719513,
+          "radius_q25": 0.014654513448476791,
+          "radius_q50": 0.021293174475431442,
+          "radius_q75": 0.02908443473279476,
+          "min_dolp": 0.021632075309753418,
+          "max_dolp": 0.08192651718854904,
+          "clean_w_err": 0.4552293121814728
+        },
+        "100": {
+          "loss": 0.002063256222754717,
+          "grad_norm": 0.005733255296945572,
+          "radius_q25": 0.6838834881782532,
+          "radius_q50": 0.753034234046936,
+          "radius_q75": 0.8267086148262024,
+          "min_dolp": 0.8046709299087524,
+          "max_dolp": 0.9999995231628418,
+          "clean_w_err": 0.004452642519026995
+        },
+        "500": {
+          "loss": 0.00032325962092727423,
+          "grad_norm": 0.00015221456123981625,
+          "radius_q25": 0.6679537296295166,
+          "radius_q50": 0.7312960624694824,
+          "radius_q75": 0.8034569025039673,
+          "min_dolp": 0.8184462785720825,
+          "max_dolp": 0.9999806880950928,
+          "clean_w_err": 0.0006993886199779809
+        },
+        "1000": {
+          "loss": 0.00026173453079536557,
+          "grad_norm": 0.00011010533489752561,
+          "radius_q25": 0.6637888550758362,
+          "radius_q50": 0.7228168845176697,
+          "radius_q75": 0.8000370264053345,
+          "min_dolp": 0.836396336555481,
+          "max_dolp": 0.9994922876358032,
+          "clean_w_err": 0.0005758879124186933
+        },
+        "1500": {
+          "loss": 0.00019269375479780138,
+          "grad_norm": 0.00011068104504374787,
+          "radius_q25": 0.6618143320083618,
+          "radius_q50": 0.7121490240097046,
+          "radius_q75": 0.7766850590705872,
+          "min_dolp": 0.8500045537948608,
+          "max_dolp": 0.996381938457489,
+          "clean_w_err": 0.00044324572081677616
+        }
+      },
+      "diagnostics": {
+        "0": {
+          "counts": {
+            "0.001": {
+              "near": 0,
+              "negative": 0,
+              "stationary_negative": 0,
+              "negative_fraction": 0.0,
+              "max_trial_drop": 0.0,
+              "max_drop_bound_ratio": 0.0
+            },
+            "0.0001": {
+              "near": 0,
+              "negative": 0,
+              "stationary_negative": 0,
+              "negative_fraction": 0.0,
+              "max_trial_drop": 0.0,
+              "max_drop_bound_ratio": 0.0
+            },
+            "1e-05": {
+              "near": 0,
+              "negative": 0,
+              "stationary_negative": 0,
+              "negative_fraction": 0.0,
+              "max_trial_drop": 0.0,
+              "max_drop_bound_ratio": 0.0
+            }
+          },
+          "mean_loss": 0.22996701949849135,
+          "minimum_bound_margin": -1.1102230246251565e-16,
+          "minimum_radius_distance": 0.9589677734915028,
+          "maximum_stationarity": 1.2888394532047662
+        },
+        "100": {
+          "counts": {
+            "0.001": {
+              "near": 0,
+              "negative": 0,
+              "stationary_negative": 0,
+              "negative_fraction": 0.0,
+              "max_trial_drop": 0.0,
+              "max_drop_bound_ratio": 0.0
+            },
+            "0.0001": {
+              "near": 0,
+              "negative": 0,
+              "stationary_negative": 0,
+              "negative_fraction": 0.0,
+              "max_trial_drop": 0.0,
+              "max_drop_bound_ratio": 0.0
+            },
+            "1e-05": {
+              "near": 0,
+              "negative": 0,
+              "stationary_negative": 0,
+              "negative_fraction": 0.0,
+              "max_trial_drop": 0.0,
+              "max_drop_bound_ratio": 0.0
+            }
+          },
+          "mean_loss": 0.002063256145320788,
+          "minimum_bound_margin": -2.6020852139652106e-18,
+          "minimum_radius_distance": 0.0010320727480654934,
+          "maximum_stationarity": 0.11852738290721189
+        },
+        "500": {
+          "counts": {
+            "0.001": {
+              "near": 0,
+              "negative": 0,
+              "stationary_negative": 0,
+              "negative_fraction": 0.0,
+              "max_trial_drop": 0.0,
+              "max_drop_bound_ratio": 0.0
+            },
+            "0.0001": {
+              "near": 0,
+              "negative": 0,
+              "stationary_negative": 0,
+              "negative_fraction": 0.0,
+              "max_trial_drop": 0.0,
+              "max_drop_bound_ratio": 0.0
+            },
+            "1e-05": {
+              "near": 0,
+              "negative": 0,
+              "stationary_negative": 0,
+              "negative_fraction": 0.0,
+              "max_trial_drop": 0.0,
+              "max_drop_bound_ratio": 0.0
+            }
+          },
+          "mean_loss": 0.00032325960400577097,
+          "minimum_bound_margin": -1.4365678785432934e-18,
+          "minimum_radius_distance": 0.0061938339930051045,
+          "maximum_stationarity": 0.029746415503129533
+        },
+        "1000": {
+          "counts": {
+            "0.001": {
+              "near": 0,
+              "negative": 0,
+              "stationary_negative": 0,
+              "negative_fraction": 0.0,
+              "max_trial_drop": 0.0,
+              "max_drop_bound_ratio": 0.0
+            },
+            "0.0001": {
+              "near": 0,
+              "negative": 0,
+              "stationary_negative": 0,
+              "negative_fraction": 0.0,
+              "max_trial_drop": 0.0,
+              "max_drop_bound_ratio": 0.0
+            },
+            "1e-05": {
+              "near": 0,
+              "negative": 0,
+              "stationary_negative": 0,
+              "negative_fraction": 0.0,
+              "max_trial_drop": 0.0,
+              "max_drop_bound_ratio": 0.0
+            }
+          },
+          "mean_loss": 0.00026173454034562736,
+          "minimum_bound_margin": -1.463672932855431e-18,
+          "minimum_radius_distance": 0.03136972394862836,
+          "maximum_stationarity": 0.026312352732273045
+        },
+        "1500": {
+          "counts": {
+            "0.001": {
+              "near": 0,
+              "negative": 0,
+              "stationary_negative": 0,
+              "negative_fraction": 0.0,
+              "max_trial_drop": 0.0,
+              "max_drop_bound_ratio": 0.0
+            },
+            "0.0001": {
+              "near": 0,
+              "negative": 0,
+              "stationary_negative": 0,
+              "negative_fraction": 0.0,
+              "max_trial_drop": 0.0,
+              "max_drop_bound_ratio": 0.0
+            },
+            "1e-05": {
+              "near": 0,
+              "negative": 0,
+              "stationary_negative": 0,
+              "negative_fraction": 0.0,
+              "max_trial_drop": 0.0,
+              "max_drop_bound_ratio": 0.0
+            }
+          },
+          "mean_loss": 0.00019269373417432406,
+          "minimum_bound_margin": -1.9786689647860456e-18,
+          "minimum_radius_distance": 0.08166602368694864,
+          "maximum_stationarity": 0.020994119233352863
+        }
+      },
+      "final": {
+        "counts": {
+          "0.001": {
+            "near": 0,
+            "negative": 0,
+            "stationary_negative": 0,
+            "negative_fraction": 0.0,
+            "max_trial_drop": 0.0,
+            "max_drop_bound_ratio": 0.0
+          },
+          "0.0001": {
+            "near": 0,
+            "negative": 0,
+            "stationary_negative": 0,
+            "negative_fraction": 0.0,
+            "max_trial_drop": 0.0,
+            "max_drop_bound_ratio": 0.0
+          },
+          "1e-05": {
+            "near": 0,
+            "negative": 0,
+            "stationary_negative": 0,
+            "negative_fraction": 0.0,
+            "max_trial_drop": 0.0,
+            "max_drop_bound_ratio": 0.0
+          }
+        },
+        "mean_loss": 0.00019269373417432406,
+        "minimum_bound_margin": -1.9786689647860456e-18,
+        "minimum_radius_distance": 0.08166602368694864,
+        "maximum_stationarity": 0.020994119233352863
+      },
+      "record_sha256": "3fef20f6c7a217ea60b930c45f482da415bd974794184f7e9ddeda1a4c5c6683"
+    },
+    {
+      "dataset": "high_dolp",
+      "initialization": "standard",
+      "seed": 1,
+      "checkpoints": {
+        "0": {
+          "loss": 0.23220358788967133,
+          "grad_norm": 0.2847181260585785,
+          "radius_q25": 0.0016443980857729912,
+          "radius_q50": 0.0026267720386385918,
+          "radius_q75": 0.006435880437493324,
+          "min_dolp": 0.00021994089183863252,
+          "max_dolp": 0.01779647171497345,
+          "clean_w_err": 0.4604470133781433
+        },
+        "100": {
+          "loss": 0.002588931703940034,
+          "grad_norm": 0.005595536902546883,
+          "radius_q25": 0.700790286064148,
+          "radius_q50": 0.7599080801010132,
+          "radius_q75": 0.8204432725906372,
+          "min_dolp": 0.827252984046936,
+          "max_dolp": 0.999998152256012,
+          "clean_w_err": 0.0054144710302352905
+        },
+        "500": {
+          "loss": 0.0003106934600509703,
+          "grad_norm": 0.00021033029770478606,
+          "radius_q25": 0.6692464351654053,
+          "radius_q50": 0.7221336364746094,
+          "radius_q75": 0.7851542234420776,
+          "min_dolp": 0.8354794383049011,
+          "max_dolp": 0.997805118560791,
+          "clean_w_err": 0.0006561807822436094
+        },
+        "1000": {
+          "loss": 0.00023596256505697966,
+          "grad_norm": 0.0001129046140704304,
+          "radius_q25": 0.6620398163795471,
+          "radius_q50": 0.7161661386489868,
+          "radius_q75": 0.788862407207489,
+          "min_dolp": 0.8492673635482788,
+          "max_dolp": 0.9979618191719055,
+          "clean_w_err": 0.0005130326026119292
+        },
+        "1500": {
+          "loss": 0.00015139582683332264,
+          "grad_norm": 0.00010553590982453898,
+          "radius_q25": 0.6623666286468506,
+          "radius_q50": 0.7071996927261353,
+          "radius_q75": 0.7707197666168213,
+          "min_dolp": 0.8688328862190247,
+          "max_dolp": 0.992549479007721,
+          "clean_w_err": 0.00035220489371567965
+        }
+      },
+      "diagnostics": {
+        "0": {
+          "counts": {
+            "0.001": {
+              "near": 0,
+              "negative": 0,
+              "stationary_negative": 0,
+              "negative_fraction": 0.0,
+              "max_trial_drop": 0.0,
+              "max_drop_bound_ratio": 0.0
+            },
+            "0.0001": {
+              "near": 0,
+              "negative": 0,
+              "stationary_negative": 0,
+              "negative_fraction": 0.0,
+              "max_trial_drop": 0.0,
+              "max_drop_bound_ratio": 0.0
+            },
+            "1e-05": {
+              "near": 0,
+              "negative": 0,
+              "stationary_negative": 0,
+              "negative_fraction": 0.0,
+              "max_trial_drop": 0.0,
+              "max_drop_bound_ratio": 0.0
+            }
+          },
+          "mean_loss": 0.2322035948799756,
+          "minimum_bound_margin": -1.1102230246251565e-16,
+          "minimum_radius_distance": 0.9911010599176894,
+          "maximum_stationarity": 1.1941983165852021
+        },
+        "100": {
+          "counts": {
+            "0.001": {
+              "near": 0,
+              "negative": 0,
+              "stationary_negative": 0,
+              "negative_fraction": 0.0,
+              "max_trial_drop": 0.0,
+              "max_drop_bound_ratio": 0.0
+            },
+            "0.0001": {
+              "near": 0,
+              "negative": 0,
+              "stationary_negative": 0,
+              "negative_fraction": 0.0,
+              "max_trial_drop": 0.0,
+              "max_drop_bound_ratio": 0.0
+            },
+            "1e-05": {
+              "near": 0,
+              "negative": 0,
+              "stationary_negative": 0,
+              "negative_fraction": 0.0,
+              "max_trial_drop": 0.0,
+              "max_drop_bound_ratio": 0.0
+            }
+          },
+          "mean_loss": 0.002588931639911613,
+          "minimum_bound_margin": -3.469446951953614e-18,
+          "minimum_radius_distance": 0.0019147316119346725,
+          "maximum_stationarity": 0.12878924490643545
+        },
+        "500": {
+          "counts": {
+            "0.001": {
+              "near": 0,
+              "negative": 0,
+              "stationary_negative": 0,
+              "negative_fraction": 0.0,
+              "max_trial_drop": 0.0,
+              "max_drop_bound_ratio": 0.0
+            },
+            "0.0001": {
+              "near": 0,
+              "negative": 0,
+              "stationary_negative": 0,
+              "negative_fraction": 0.0,
+              "max_trial_drop": 0.0,
+              "max_drop_bound_ratio": 0.0
+            },
+            "1e-05": {
+              "near": 0,
+              "negative": 0,
+              "stationary_negative": 0,
+              "negative_fraction": 0.0,
+              "max_trial_drop": 0.0,
+              "max_drop_bound_ratio": 0.0
+            }
+          },
+          "mean_loss": 0.0003106934959159328,
+          "minimum_bound_margin": -2.0599841277224584e-18,
+          "minimum_radius_distance": 0.0641648063865724,
+          "maximum_stationarity": 0.027985619002421382
+        },
+        "1000": {
+          "counts": {
+            "0.001": {
+              "near": 0,
+              "negative": 0,
+              "stationary_negative": 0,
+              "negative_fraction": 0.0,
+              "max_trial_drop": 0.0,
+              "max_drop_bound_ratio": 0.0
+            },
+            "0.0001": {
+              "near": 0,
+              "negative": 0,
+              "stationary_negative": 0,
+              "negative_fraction": 0.0,
+              "max_trial_drop": 0.0,
+              "max_drop_bound_ratio": 0.0
+            },
+            "1e-05": {
+              "near": 0,
+              "negative": 0,
+              "stationary_negative": 0,
+              "negative_fraction": 0.0,
+              "max_trial_drop": 0.0,
+              "max_drop_bound_ratio": 0.0
+            }
+          },
+          "mean_loss": 0.00023596258664141444,
+          "minimum_bound_margin": -1.5178830414797062e-18,
+          "minimum_radius_distance": 0.06190167110250999,
+          "maximum_stationarity": 0.02508910737461368
+        },
+        "1500": {
+          "counts": {
+            "0.001": {
+              "near": 0,
+              "negative": 0,
+              "stationary_negative": 0,
+              "negative_fraction": 0.0,
+              "max_trial_drop": 0.0,
+              "max_drop_bound_ratio": 0.0
+            },
+            "0.0001": {
+              "near": 0,
+              "negative": 0,
+              "stationary_negative": 0,
+              "negative_fraction": 0.0,
+              "max_trial_drop": 0.0,
+              "max_drop_bound_ratio": 0.0
+            },
+            "1e-05": {
+              "near": 0,
+              "negative": 0,
+              "stationary_negative": 0,
+              "negative_fraction": 0.0,
+              "max_trial_drop": 0.0,
+              "max_drop_bound_ratio": 0.0
+            }
+          },
+          "mean_loss": 0.0001513958409299217,
+          "minimum_bound_margin": -1.5365177663193008e-18,
+          "minimum_radius_distance": 0.11525034517402888,
+          "maximum_stationarity": 0.01990929513087028
+        }
+      },
+      "final": {
+        "counts": {
+          "0.001": {
+            "near": 0,
+            "negative": 0,
+            "stationary_negative": 0,
+            "negative_fraction": 0.0,
+            "max_trial_drop": 0.0,
+            "max_drop_bound_ratio": 0.0
+          },
+          "0.0001": {
+            "near": 0,
+            "negative": 0,
+            "stationary_negative": 0,
+            "negative_fraction": 0.0,
+            "max_trial_drop": 0.0,
+            "max_drop_bound_ratio": 0.0
+          },
+          "1e-05": {
+            "near": 0,
+            "negative": 0,
+            "stationary_negative": 0,
+            "negative_fraction": 0.0,
+            "max_trial_drop": 0.0,
+            "max_drop_bound_ratio": 0.0
+          }
+        },
+        "mean_loss": 0.0001513958409299217,
+        "minimum_bound_margin": -1.5365177663193008e-18,
+        "minimum_radius_distance": 0.11525034517402888,
+        "maximum_stationarity": 0.01990929513087028
+      },
+      "record_sha256": "5a6df94b4c9227c697573cf124b252f722adb48281a7837c40ff7f92b667914b"
+    },
+    {
+      "dataset": "high_dolp",
+      "initialization": "standard",
+      "seed": 2,
+      "checkpoints": {
+        "0": {
+          "loss": 0.2307882457971573,
+          "grad_norm": 0.3068922162055969,
+          "radius_q25": 0.0036635822616517544,
+          "radius_q50": 0.010175042785704136,
+          "radius_q75": 0.01481911726295948,
+          "min_dolp": 0.002105475403368473,
+          "max_dolp": 0.038120169192552567,
+          "clean_w_err": 0.4599420428276062
+        },
+        "100": {
+          "loss": 0.0029233982786536217,
+          "grad_norm": 0.00636326102539897,
+          "radius_q25": 0.6590977311134338,
+          "radius_q50": 0.7215379476547241,
+          "radius_q75": 0.7907034158706665,
+          "min_dolp": 0.8080251216888428,
+          "max_dolp": 0.9997502565383911,
+          "clean_w_err": 0.006450610235333443
+        },
+        "500": {
+          "loss": 0.00032100258977152407,
+          "grad_norm": 0.00020103358838241547,
+          "radius_q25": 0.6680037975311279,
+          "radius_q50": 0.73465895652771,
+          "radius_q75": 0.7980018854141235,
+          "min_dolp": 0.8098195195198059,
+          "max_dolp": 0.9999778866767883,
+          "clean_w_err": 0.0007353465771302581
+        },
+        "1000": {
+          "loss": 0.0002282840432599187,
+          "grad_norm": 0.000143750716233626,
+          "radius_q25": 0.6649251580238342,
+          "radius_q50": 0.717939555644989,
+          "radius_q75": 0.791424572467804,
+          "min_dolp": 0.8356696367263794,
+          "max_dolp": 0.999092161655426,
+          "clean_w_err": 0.0005426944699138403
+        },
+        "1500": {
+          "loss": 0.00011961126438109204,
+          "grad_norm": 0.00034754080115817487,
+          "radius_q25": 0.6658724546432495,
+          "radius_q50": 0.705252468585968,
+          "radius_q75": 0.7634651064872742,
+          "min_dolp": 0.867340624332428,
+          "max_dolp": 0.9901889562606812,
+          "clean_w_err": 0.0003234565374441445
+        }
+      },
+      "diagnostics": {
+        "0": {
+          "counts": {
+            "0.001": {
+              "near": 0,
+              "negative": 0,
+              "stationary_negative": 0,
+              "negative_fraction": 0.0,
+              "max_trial_drop": 0.0,
+              "max_drop_bound_ratio": 0.0
+            },
+            "0.0001": {
+              "near": 0,
+              "negative": 0,
+              "stationary_negative": 0,
+              "negative_fraction": 0.0,
+              "max_trial_drop": 0.0,
+              "max_drop_bound_ratio": 0.0
+            },
+            "1e-05": {
+              "near": 0,
+              "negative": 0,
+              "stationary_negative": 0,
+              "negative_fraction": 0.0,
+              "max_trial_drop": 0.0,
+              "max_drop_bound_ratio": 0.0
+            }
+          },
+          "mean_loss": 0.2307882469385868,
+          "minimum_bound_margin": -1.1102230246251565e-16,
+          "minimum_radius_distance": 0.980932985654416,
+          "maximum_stationarity": 1.1446559705814652
+        },
+        "100": {
+          "counts": {
+            "0.001": {
+              "near": 0,
+              "negative": 0,
+              "stationary_negative": 0,
+              "negative_fraction": 0.0,
+              "max_trial_drop": 0.0,
+              "max_drop_bound_ratio": 0.0
+            },
+            "0.0001": {
+              "near": 0,
+              "negative": 0,
+              "stationary_negative": 0,
+              "negative_fraction": 0.0,
+              "max_trial_drop": 0.0,
+              "max_drop_bound_ratio": 0.0
+            },
+            "1e-05": {
+              "near": 0,
+              "negative": 0,
+              "stationary_negative": 0,
+              "negative_fraction": 0.0,
+              "max_trial_drop": 0.0,
+              "max_drop_bound_ratio": 0.0
+            }
+          },
+          "mean_loss": 0.0029233984904497813,
+          "minimum_bound_margin": -3.469446951953614e-18,
+          "minimum_radius_distance": 0.02210262065863544,
+          "maximum_stationarity": 0.13378165685411875
+        },
+        "500": {
+          "counts": {
+            "0.001": {
+              "near": 0,
+              "negative": 0,
+              "stationary_negative": 0,
+              "negative_fraction": 0.0,
+              "max_trial_drop": 0.0,
+              "max_drop_bound_ratio": 0.0
+            },
+            "0.0001": {
+              "near": 0,
+              "negative": 0,
+              "stationary_negative": 0,
+              "negative_fraction": 0.0,
+              "max_trial_drop": 0.0,
+              "max_drop_bound_ratio": 0.0
+            },
+            "1e-05": {
+              "near": 0,
+              "negative": 0,
+              "stationary_negative": 0,
+              "negative_fraction": 0.0,
+              "max_trial_drop": 0.0,
+              "max_drop_bound_ratio": 0.0
+            }
+          },
+          "mean_loss": 0.00032100259192911887,
+          "minimum_bound_margin": -2.5478751053409354e-18,
+          "minimum_radius_distance": 0.006628532668144782,
+          "maximum_stationarity": 0.030755451814898232
+        },
+        "1000": {
+          "counts": {
+            "0.001": {
+              "near": 0,
+              "negative": 0,
+              "stationary_negative": 0,
+              "negative_fraction": 0.0,
+              "max_trial_drop": 0.0,
+              "max_drop_bound_ratio": 0.0
+            },
+            "0.0001": {
+              "near": 0,
+              "negative": 0,
+              "stationary_negative": 0,
+              "negative_fraction": 0.0,
+              "max_trial_drop": 0.0,
+              "max_drop_bound_ratio": 0.0
+            },
+            "1e-05": {
+              "near": 0,
+              "negative": 0,
+              "stationary_negative": 0,
+              "negative_fraction": 0.0,
+              "max_trial_drop": 0.0,
+              "max_drop_bound_ratio": 0.0
+            }
+          },
+          "mean_loss": 0.00022828402527045677,
+          "minimum_bound_margin": -1.4094628242311558e-18,
+          "minimum_radius_distance": 0.041732602583375966,
+          "maximum_stationarity": 0.02820276396062196
+        },
+        "1500": {
+          "counts": {
+            "0.001": {
+              "near": 0,
+              "negative": 0,
+              "stationary_negative": 0,
+              "negative_fraction": 0.0,
+              "max_trial_drop": 0.0,
+              "max_drop_bound_ratio": 0.0
+            },
+            "0.0001": {
+              "near": 0,
+              "negative": 0,
+              "stationary_negative": 0,
+              "negative_fraction": 0.0,
+              "max_trial_drop": 0.0,
+              "max_drop_bound_ratio": 0.0
+            },
+            "1e-05": {
+              "near": 0,
+              "negative": 0,
+              "stationary_negative": 0,
+              "negative_fraction": 0.0,
+              "max_trial_drop": 0.0,
+              "max_drop_bound_ratio": 0.0
+            }
+          },
+          "mean_loss": 0.00011961124131637749,
+          "minimum_bound_margin": -1.2536087619363645e-18,
+          "minimum_radius_distance": 0.13121120811212106,
+          "maximum_stationarity": 0.021622049904479437
+        }
+      },
+      "final": {
+        "counts": {
+          "0.001": {
+            "near": 0,
+            "negative": 0,
+            "stationary_negative": 0,
+            "negative_fraction": 0.0,
+            "max_trial_drop": 0.0,
+            "max_drop_bound_ratio": 0.0
+          },
+          "0.0001": {
+            "near": 0,
+            "negative": 0,
+            "stationary_negative": 0,
+            "negative_fraction": 0.0,
+            "max_trial_drop": 0.0,
+            "max_drop_bound_ratio": 0.0
+          },
+          "1e-05": {
+            "near": 0,
+            "negative": 0,
+            "stationary_negative": 0,
+            "negative_fraction": 0.0,
+            "max_trial_drop": 0.0,
+            "max_drop_bound_ratio": 0.0
+          }
+        },
+        "mean_loss": 0.00011961124131637749,
+        "minimum_bound_margin": -1.2536087619363645e-18,
+        "minimum_radius_distance": 0.13121120811212106,
+        "maximum_stationarity": 0.021622049904479437
+      },
+      "record_sha256": "facc63d93b6d5f64cd1d3441d872ad3f2cb7dd36284fad00597c4b0c63190c53"
+    },
+    {
+      "dataset": "high_dolp",
+      "initialization": "standard",
+      "seed": 3,
+      "checkpoints": {
+        "0": {
+          "loss": 0.2335953712463379,
+          "grad_norm": 0.30678731203079224,
+          "radius_q25": 0.0031058923341333866,
+          "radius_q50": 0.004015143029391766,
+          "radius_q75": 0.004256959073245525,
+          "min_dolp": 0.002094441093504429,
+          "max_dolp": 0.009775000624358654,
+          "clean_w_err": 0.46413952112197876
+        },
+        "100": {
+          "loss": 0.0024459906853735447,
+          "grad_norm": 0.006752749904990196,
+          "radius_q25": 0.6687948703765869,
+          "radius_q50": 0.7271264791488647,
+          "radius_q75": 0.787676215171814,
+          "min_dolp": 0.8184518814086914,
+          "max_dolp": 0.9975839257240295,
+          "clean_w_err": 0.005279365461319685
+        },
+        "500": {
+          "loss": 0.00030680131749249995,
+          "grad_norm": 0.0001587224251125008,
+          "radius_q25": 0.6705116033554077,
+          "radius_q50": 0.7250522375106812,
+          "radius_q75": 0.790157675743103,
+          "min_dolp": 0.8190269470214844,
+          "max_dolp": 0.9989845752716064,
+          "clean_w_err": 0.0006840730202384293
+        },
+        "1000": {
+          "loss": 0.00023288821103051305,
+          "grad_norm": 0.00012604852963704616,
+          "radius_q25": 0.6647536754608154,
+          "radius_q50": 0.7128781080245972,
+          "radius_q75": 0.7821968197822571,
+          "min_dolp": 0.8343086838722229,
+          "max_dolp": 0.9970512986183167,
+          "clean_w_err": 0.0005438760854303837
+        },
+        "1500": {
+          "loss": 0.00013658119132742286,
+          "grad_norm": 0.00010760502482298762,
+          "radius_q25": 0.6681337356567383,
+          "radius_q50": 0.7043905258178711,
+          "radius_q75": 0.7580239772796631,
+          "min_dolp": 0.8562277555465698,
+          "max_dolp": 0.988056480884552,
+          "clean_w_err": 0.00035965448478236794
+        }
+      },
+      "diagnostics": {
+        "0": {
+          "counts": {
+            "0.001": {
+              "near": 0,
+              "negative": 0,
+              "stationary_negative": 0,
+              "negative_fraction": 0.0,
+              "max_trial_drop": 0.0,
+              "max_drop_bound_ratio": 0.0
+            },
+            "0.0001": {
+              "near": 0,
+              "negative": 0,
+              "stationary_negative": 0,
+              "negative_fraction": 0.0,
+              "max_trial_drop": 0.0,
+              "max_drop_bound_ratio": 0.0
+            },
+            "1e-05": {
+              "near": 0,
+              "negative": 0,
+              "stationary_negative": 0,
+              "negative_fraction": 0.0,
+              "max_trial_drop": 0.0,
+              "max_drop_bound_ratio": 0.0
+            }
+          },
+          "mean_loss": 0.23359537546645512,
+          "minimum_bound_margin": -1.1102230246251565e-16,
+          "minimum_radius_distance": 0.9951123835945814,
+          "maximum_stationarity": 1.1818203841400081
+        },
+        "100": {
+          "counts": {
+            "0.001": {
+              "near": 0,
+              "negative": 0,
+              "stationary_negative": 0,
+              "negative_fraction": 0.0,
+              "max_trial_drop": 0.0,
+              "max_drop_bound_ratio": 0.0
+            },
+            "0.0001": {
+              "near": 0,
+              "negative": 0,
+              "stationary_negative": 0,
+              "negative_fraction": 0.0,
+              "max_trial_drop": 0.0,
+              "max_drop_bound_ratio": 0.0
+            },
+            "1e-05": {
+              "near": 0,
+              "negative": 0,
+              "stationary_negative": 0,
+              "negative_fraction": 0.0,
+              "max_trial_drop": 0.0,
+              "max_drop_bound_ratio": 0.0
+            }
+          },
+          "mean_loss": 0.002445990733755293,
+          "minimum_bound_margin": -1.8431436932253575e-18,
+          "minimum_radius_distance": 0.0672184422593115,
+          "maximum_stationarity": 0.12392616161826178
+        },
+        "500": {
+          "counts": {
+            "0.001": {
+              "near": 0,
+              "negative": 0,
+              "stationary_negative": 0,
+              "negative_fraction": 0.0,
+              "max_trial_drop": 0.0,
+              "max_drop_bound_ratio": 0.0
+            },
+            "0.0001": {
+              "near": 0,
+              "negative": 0,
+              "stationary_negative": 0,
+              "negative_fraction": 0.0,
+              "max_trial_drop": 0.0,
+              "max_drop_bound_ratio": 0.0
+            },
+            "1e-05": {
+              "near": 0,
+              "negative": 0,
+              "stationary_negative": 0,
+              "negative_fraction": 0.0,
+              "max_trial_drop": 0.0,
+              "max_drop_bound_ratio": 0.0
+            }
+          },
+          "mean_loss": 0.0003068013268403445,
+          "minimum_bound_margin": -1.734723475976807e-18,
+          "minimum_radius_distance": 0.04408333903593997,
+          "maximum_stationarity": 0.02619915971293311
+        },
+        "1000": {
+          "counts": {
+            "0.001": {
+              "near": 0,
+              "negative": 0,
+              "stationary_negative": 0,
+              "negative_fraction": 0.0,
+              "max_trial_drop": 0.0,
+              "max_drop_bound_ratio": 0.0
+            },
+            "0.0001": {
+              "near": 0,
+              "negative": 0,
+              "stationary_negative": 0,
+              "negative_fraction": 0.0,
+              "max_trial_drop": 0.0,
+              "max_drop_bound_ratio": 0.0
+            },
+            "1e-05": {
+              "near": 0,
+              "negative": 0,
+              "stationary_negative": 0,
+              "negative_fraction": 0.0,
+              "max_trial_drop": 0.0,
+              "max_drop_bound_ratio": 0.0
+            }
+          },
+          "mean_loss": 0.00023288820049636164,
+          "minimum_bound_margin": -1.531435568635775e-18,
+          "minimum_radius_distance": 0.07400742538917982,
+          "maximum_stationarity": 0.025615384670993505
+        },
+        "1500": {
+          "counts": {
+            "0.001": {
+              "near": 0,
+              "negative": 0,
+              "stationary_negative": 0,
+              "negative_fraction": 0.0,
+              "max_trial_drop": 0.0,
+              "max_drop_bound_ratio": 0.0
+            },
+            "0.0001": {
+              "near": 0,
+              "negative": 0,
+              "stationary_negative": 0,
+              "negative_fraction": 0.0,
+              "max_trial_drop": 0.0,
+              "max_drop_bound_ratio": 0.0
+            },
+            "1e-05": {
+              "near": 0,
+              "negative": 0,
+              "stationary_negative": 0,
+              "negative_fraction": 0.0,
+              "max_trial_drop": 0.0,
+              "max_drop_bound_ratio": 0.0
+            }
+          },
+          "mean_loss": 0.00013658116443571124,
+          "minimum_bound_margin": -1.1655173354219173e-18,
+          "minimum_radius_distance": 0.14386689157901078,
+          "maximum_stationarity": 0.02196502559132607
+        }
+      },
+      "final": {
+        "counts": {
+          "0.001": {
+            "near": 0,
+            "negative": 0,
+            "stationary_negative": 0,
+            "negative_fraction": 0.0,
+            "max_trial_drop": 0.0,
+            "max_drop_bound_ratio": 0.0
+          },
+          "0.0001": {
+            "near": 0,
+            "negative": 0,
+            "stationary_negative": 0,
+            "negative_fraction": 0.0,
+            "max_trial_drop": 0.0,
+            "max_drop_bound_ratio": 0.0
+          },
+          "1e-05": {
+            "near": 0,
+            "negative": 0,
+            "stationary_negative": 0,
+            "negative_fraction": 0.0,
+            "max_trial_drop": 0.0,
+            "max_drop_bound_ratio": 0.0
+          }
+        },
+        "mean_loss": 0.00013658116443571124,
+        "minimum_bound_margin": -1.1655173354219173e-18,
+        "minimum_radius_distance": 0.14386689157901078,
+        "maximum_stationarity": 0.02196502559132607
+      },
+      "record_sha256": "6b493fa5a2536d2cb19ac7364a12d094b93700cde8337f0c8d70bff25b2ce158"
+    },
+    {
+      "dataset": "high_dolp",
+      "initialization": "standard",
+      "seed": 4,
+      "checkpoints": {
+        "0": {
+          "loss": 0.23453952372074127,
+          "grad_norm": 0.3040684759616852,
+          "radius_q25": 0.004031526856124401,
+          "radius_q50": 0.006848448887467384,
+          "radius_q75": 0.012658566236495972,
+          "min_dolp": 0.004146783147007227,
+          "max_dolp": 0.03551087528467178,
+          "clean_w_err": 0.46607574820518494
+        },
+        "100": {
+          "loss": 0.003541008336469531,
+          "grad_norm": 0.0061002555303275585,
+          "radius_q25": 0.6499674320220947,
+          "radius_q50": 0.7167729735374451,
+          "radius_q75": 0.7862035036087036,
+          "min_dolp": 0.8214566707611084,
+          "max_dolp": 0.9996588230133057,
+          "clean_w_err": 0.007727236952632666
+        },
+        "500": {
+          "loss": 0.0003441324515733868,
+          "grad_norm": 0.0001488728157710284,
+          "radius_q25": 0.6667013168334961,
+          "radius_q50": 0.7343282699584961,
+          "radius_q75": 0.8138797879219055,
+          "min_dolp": 0.8226776719093323,
+          "max_dolp": 0.9999997615814209,
+          "clean_w_err": 0.0007306118495762348
+        },
+        "1000": {
+          "loss": 0.00028293050127103925,
+          "grad_norm": 0.00012582687486428767,
+          "radius_q25": 0.6648670434951782,
+          "radius_q50": 0.7253237962722778,
+          "radius_q75": 0.7990710139274597,
+          "min_dolp": 0.830890953540802,
+          "max_dolp": 0.9999597668647766,
+          "clean_w_err": 0.0006165543454699218
+        },
+        "1500": {
+          "loss": 0.00018222542712464929,
+          "grad_norm": 0.0001607154990779236,
+          "radius_q25": 0.6640279293060303,
+          "radius_q50": 0.7067387104034424,
+          "radius_q75": 0.7691488862037659,
+          "min_dolp": 0.8388047218322754,
+          "max_dolp": 0.9949375987052917,
+          "clean_w_err": 0.00043790991185232997
+        }
+      },
+      "diagnostics": {
+        "0": {
+          "counts": {
+            "0.001": {
+              "near": 0,
+              "negative": 0,
+              "stationary_negative": 0,
+              "negative_fraction": 0.0,
+              "max_trial_drop": 0.0,
+              "max_drop_bound_ratio": 0.0
+            },
+            "0.0001": {
+              "near": 0,
+              "negative": 0,
+              "stationary_negative": 0,
+              "negative_fraction": 0.0,
+              "max_trial_drop": 0.0,
+              "max_drop_bound_ratio": 0.0
+            },
+            "1e-05": {
+              "near": 0,
+              "negative": 0,
+              "stationary_negative": 0,
+              "negative_fraction": 0.0,
+              "max_trial_drop": 0.0,
+              "max_drop_bound_ratio": 0.0
+            }
+          },
+          "mean_loss": 0.23453952025205863,
+          "minimum_bound_margin": -1.1102230246251565e-16,
+          "minimum_radius_distance": 0.9822389619784422,
+          "maximum_stationarity": 1.2122189393209692
+        },
+        "100": {
+          "counts": {
+            "0.001": {
+              "near": 0,
+              "negative": 0,
+              "stationary_negative": 0,
+              "negative_fraction": 0.0,
+              "max_trial_drop": 0.0,
+              "max_drop_bound_ratio": 0.0
+            },
+            "0.0001": {
+              "near": 0,
+              "negative": 0,
+              "stationary_negative": 0,
+              "negative_fraction": 0.0,
+              "max_trial_drop": 0.0,
+              "max_drop_bound_ratio": 0.0
+            },
+            "1e-05": {
+              "near": 0,
+              "negative": 0,
+              "stationary_negative": 0,
+              "negative_fraction": 0.0,
+              "max_trial_drop": 0.0,
+              "max_drop_bound_ratio": 0.0
+            }
+          },
+          "mean_loss": 0.0035410081814034313,
+          "minimum_bound_margin": -3.469446951953614e-18,
+          "minimum_radius_distance": 0.02578665385212664,
+          "maximum_stationarity": 0.17340325573676862
+        },
+        "500": {
+          "counts": {
+            "0.001": {
+              "near": 2,
+              "negative": 0,
+              "stationary_negative": 0,
+              "negative_fraction": 0.0,
+              "max_trial_drop": 0.0,
+              "max_drop_bound_ratio": 0.0
+            },
+            "0.0001": {
+              "near": 0,
+              "negative": 0,
+              "stationary_negative": 0,
+              "negative_fraction": 0.0,
+              "max_trial_drop": 0.0,
+              "max_drop_bound_ratio": 0.0
+            },
+            "1e-05": {
+              "near": 0,
+              "negative": 0,
+              "stationary_negative": 0,
+              "negative_fraction": 0.0,
+              "max_trial_drop": 0.0,
+              "max_drop_bound_ratio": 0.0
+            }
+          },
+          "mean_loss": 0.00034413247080168163,
+          "minimum_bound_margin": -1.7889335846010823e-18,
+          "minimum_radius_distance": 0.0006835756684206995,
+          "maximum_stationarity": 0.03317703943773648
+        },
+        "1000": {
+          "counts": {
+            "0.001": {
+              "near": 0,
+              "negative": 0,
+              "stationary_negative": 0,
+              "negative_fraction": 0.0,
+              "max_trial_drop": 0.0,
+              "max_drop_bound_ratio": 0.0
+            },
+            "0.0001": {
+              "near": 0,
+              "negative": 0,
+              "stationary_negative": 0,
+              "negative_fraction": 0.0,
+              "max_trial_drop": 0.0,
+              "max_drop_bound_ratio": 0.0
+            },
+            "1e-05": {
+              "near": 0,
+              "negative": 0,
+              "stationary_negative": 0,
+              "negative_fraction": 0.0,
+              "max_trial_drop": 0.0,
+              "max_drop_bound_ratio": 0.0
+            }
+          },
+          "mean_loss": 0.0002829305052491725,
+          "minimum_bound_margin": -1.4094628242311558e-18,
+          "minimum_radius_distance": 0.008932172436838859,
+          "maximum_stationarity": 0.030200757374817148
+        },
+        "1500": {
+          "counts": {
+            "0.001": {
+              "near": 0,
+              "negative": 0,
+              "stationary_negative": 0,
+              "negative_fraction": 0.0,
+              "max_trial_drop": 0.0,
+              "max_drop_bound_ratio": 0.0
+            },
+            "0.0001": {
+              "near": 0,
+              "negative": 0,
+              "stationary_negative": 0,
+              "negative_fraction": 0.0,
+              "max_trial_drop": 0.0,
+              "max_drop_bound_ratio": 0.0
+            },
+            "1e-05": {
+              "near": 0,
+              "negative": 0,
+              "stationary_negative": 0,
+              "negative_fraction": 0.0,
+              "max_trial_drop": 0.0,
+              "max_drop_bound_ratio": 0.0
+            }
+          },
+          "mean_loss": 0.00018222541207737328,
+          "minimum_bound_margin": -1.7923217163900995e-18,
+          "minimum_radius_distance": 0.09591771924538772,
+          "maximum_stationarity": 0.022715211172511574
+        }
+      },
+      "final": {
+        "counts": {
+          "0.001": {
+            "near": 0,
+            "negative": 0,
+            "stationary_negative": 0,
+            "negative_fraction": 0.0,
+            "max_trial_drop": 0.0,
+            "max_drop_bound_ratio": 0.0
+          },
+          "0.0001": {
+            "near": 0,
+            "negative": 0,
+            "stationary_negative": 0,
+            "negative_fraction": 0.0,
+            "max_trial_drop": 0.0,
+            "max_drop_bound_ratio": 0.0
+          },
+          "1e-05": {
+            "near": 0,
+            "negative": 0,
+            "stationary_negative": 0,
+            "negative_fraction": 0.0,
+            "max_trial_drop": 0.0,
+            "max_drop_bound_ratio": 0.0
+          }
+        },
+        "mean_loss": 0.00018222541207737328,
+        "minimum_bound_margin": -1.7923217163900995e-18,
+        "minimum_radius_distance": 0.09591771924538772,
+        "maximum_stationarity": 0.022715211172511574
+      },
+      "record_sha256": "8df7f3838ddb352d3a10fbf9efce7ef4484c9502098dabefd2c34cc4ab74a1ff"
+    },
+    {
+      "dataset": "high_dolp",
+      "initialization": "broad",
+      "seed": 0,
+      "checkpoints": {
+        "0": {
+          "loss": 0.28275907039642334,
+          "grad_norm": 0.40616050362586975,
+          "radius_q25": 0.21981769800186157,
+          "radius_q50": 0.31939762830734253,
+          "radius_q75": 0.43626654148101807,
+          "min_dolp": 0.3161942958831787,
+          "max_dolp": 0.8927683234214783,
+          "clean_w_err": 0.5698543787002563
+        },
+        "100": {
+          "loss": 0.00495036318898201,
+          "grad_norm": 0.005082400050014257,
+          "radius_q25": 0.6442347764968872,
+          "radius_q50": 0.7017884850502014,
+          "radius_q75": 0.7593971490859985,
+          "min_dolp": 0.791375458240509,
+          "max_dolp": 0.9949139356613159,
+          "clean_w_err": 0.01069446187466383
+        },
+        "500": {
+          "loss": 0.00033847609302029014,
+          "grad_norm": 0.00019825082563329488,
+          "radius_q25": 0.6666252017021179,
+          "radius_q50": 0.7269668579101562,
+          "radius_q75": 0.790982186794281,
+          "min_dolp": 0.8228548765182495,
+          "max_dolp": 0.9994438290596008,
+          "clean_w_err": 0.0007241522544063628
+        },
+        "1000": {
+          "loss": 0.00027858378598466516,
+          "grad_norm": 0.00012416491517797112,
+          "radius_q25": 0.6646758913993835,
+          "radius_q50": 0.7216863632202148,
+          "radius_q75": 0.7948863506317139,
+          "min_dolp": 0.8309832215309143,
+          "max_dolp": 0.9994641542434692,
+          "clean_w_err": 0.0006065602065064013
+        },
+        "1500": {
+          "loss": 0.0002252458652947098,
+          "grad_norm": 0.00010929953714367002,
+          "radius_q25": 0.6616073250770569,
+          "radius_q50": 0.7143861651420593,
+          "radius_q75": 0.7839851379394531,
+          "min_dolp": 0.844744861125946,
+          "max_dolp": 0.9981802701950073,
+          "clean_w_err": 0.0005020059179514647
+        }
+      },
+      "diagnostics": {
+        "0": {
+          "counts": {
+            "0.001": {
+              "near": 0,
+              "negative": 0,
+              "stationary_negative": 0,
+              "negative_fraction": 0.0,
+              "max_trial_drop": 0.0,
+              "max_drop_bound_ratio": 0.0
+            },
+            "0.0001": {
+              "near": 0,
+              "negative": 0,
+              "stationary_negative": 0,
+              "negative_fraction": 0.0,
+              "max_trial_drop": 0.0,
+              "max_drop_bound_ratio": 0.0
+            },
+            "1e-05": {
+              "near": 0,
+              "negative": 0,
+              "stationary_negative": 0,
+              "negative_fraction": 0.0,
+              "max_trial_drop": 0.0,
+              "max_drop_bound_ratio": 0.0
+            }
+          },
+          "mean_loss": 0.28275906347067886,
+          "minimum_bound_margin": -2.220446049250313e-16,
+          "minimum_radius_distance": 0.3845167354543664,
+          "maximum_stationarity": 1.0134311198228774
+        },
+        "100": {
+          "counts": {
+            "0.001": {
+              "near": 0,
+              "negative": 0,
+              "stationary_negative": 0,
+              "negative_fraction": 0.0,
+              "max_trial_drop": 0.0,
+              "max_drop_bound_ratio": 0.0
+            },
+            "0.0001": {
+              "near": 0,
+              "negative": 0,
+              "stationary_negative": 0,
+              "negative_fraction": 0.0,
+              "max_trial_drop": 0.0,
+              "max_drop_bound_ratio": 0.0
+            },
+            "1e-05": {
+              "near": 0,
+              "negative": 0,
+              "stationary_negative": 0,
+              "negative_fraction": 0.0,
+              "max_trial_drop": 0.0,
+              "max_drop_bound_ratio": 0.0
+            }
+          },
+          "mean_loss": 0.004950363172107192,
+          "minimum_bound_margin": -3.469446951953614e-18,
+          "minimum_radius_distance": 0.09613174635240951,
+          "maximum_stationarity": 0.17084933021454052
+        },
+        "500": {
+          "counts": {
+            "0.001": {
+              "near": 0,
+              "negative": 0,
+              "stationary_negative": 0,
+              "negative_fraction": 0.0,
+              "max_trial_drop": 0.0,
+              "max_drop_bound_ratio": 0.0
+            },
+            "0.0001": {
+              "near": 0,
+              "negative": 0,
+              "stationary_negative": 0,
+              "negative_fraction": 0.0,
+              "max_trial_drop": 0.0,
+              "max_drop_bound_ratio": 0.0
+            },
+            "1e-05": {
+              "near": 0,
+              "negative": 0,
+              "stationary_negative": 0,
+              "negative_fraction": 0.0,
+              "max_trial_drop": 0.0,
+              "max_drop_bound_ratio": 0.0
+            }
+          },
+          "mean_loss": 0.00033847608761063456,
+          "minimum_bound_margin": -2.5478751053409354e-18,
+          "minimum_radius_distance": 0.03280936398152523,
+          "maximum_stationarity": 0.030578920487395116
+        },
+        "1000": {
+          "counts": {
+            "0.001": {
+              "near": 0,
+              "negative": 0,
+              "stationary_negative": 0,
+              "negative_fraction": 0.0,
+              "max_trial_drop": 0.0,
+              "max_drop_bound_ratio": 0.0
+            },
+            "0.0001": {
+              "near": 0,
+              "negative": 0,
+              "stationary_negative": 0,
+              "negative_fraction": 0.0,
+              "max_trial_drop": 0.0,
+              "max_drop_bound_ratio": 0.0
+            },
+            "1e-05": {
+              "near": 0,
+              "negative": 0,
+              "stationary_negative": 0,
+              "negative_fraction": 0.0,
+              "max_trial_drop": 0.0,
+              "max_drop_bound_ratio": 0.0
+            }
+          },
+          "mean_loss": 0.0002785837968367951,
+          "minimum_bound_margin": -1.531435568635775e-18,
+          "minimum_radius_distance": 0.03221466370118686,
+          "maximum_stationarity": 0.028621399608848786
+        },
+        "1500": {
+          "counts": {
+            "0.001": {
+              "near": 0,
+              "negative": 0,
+              "stationary_negative": 0,
+              "negative_fraction": 0.0,
+              "max_trial_drop": 0.0,
+              "max_drop_bound_ratio": 0.0
+            },
+            "0.0001": {
+              "near": 0,
+              "negative": 0,
+              "stationary_negative": 0,
+              "negative_fraction": 0.0,
+              "max_trial_drop": 0.0,
+              "max_drop_bound_ratio": 0.0
+            },
+            "1e-05": {
+              "near": 0,
+              "negative": 0,
+              "stationary_negative": 0,
+              "negative_fraction": 0.0,
+              "max_trial_drop": 0.0,
+              "max_drop_bound_ratio": 0.0
+            }
+          },
+          "mean_loss": 0.00022524588344049074,
+          "minimum_bound_margin": -2.0599841277224584e-18,
+          "minimum_radius_distance": 0.05858789216483229,
+          "maximum_stationarity": 0.0248296176686577
+        }
+      },
+      "final": {
+        "counts": {
+          "0.001": {
+            "near": 0,
+            "negative": 0,
+            "stationary_negative": 0,
+            "negative_fraction": 0.0,
+            "max_trial_drop": 0.0,
+            "max_drop_bound_ratio": 0.0
+          },
+          "0.0001": {
+            "near": 0,
+            "negative": 0,
+            "stationary_negative": 0,
+            "negative_fraction": 0.0,
+            "max_trial_drop": 0.0,
+            "max_drop_bound_ratio": 0.0
+          },
+          "1e-05": {
+            "near": 0,
+            "negative": 0,
+            "stationary_negative": 0,
+            "negative_fraction": 0.0,
+            "max_trial_drop": 0.0,
+            "max_drop_bound_ratio": 0.0
+          }
+        },
+        "mean_loss": 0.00022524588344049074,
+        "minimum_bound_margin": -2.0599841277224584e-18,
+        "minimum_radius_distance": 0.05858789216483229,
+        "maximum_stationarity": 0.0248296176686577
+      },
+      "record_sha256": "7d4bbf1664f4b704ac7a459e454a4f0e5769ff6bae285526e78518d35adbeaf3"
+    },
+    {
+      "dataset": "high_dolp",
+      "initialization": "broad",
+      "seed": 1,
+      "checkpoints": {
+        "0": {
+          "loss": 0.2487371265888214,
+          "grad_norm": 0.6402532458305359,
+          "radius_q25": 0.024665972217917442,
+          "radius_q50": 0.0394015908241272,
+          "radius_q75": 0.09653819352388382,
+          "min_dolp": 0.00329912593588233,
+          "max_dolp": 0.26229462027549744,
+          "clean_w_err": 0.4945925772190094
+        },
+        "100": {
+          "loss": 0.004876369144767523,
+          "grad_norm": 0.004431686829775572,
+          "radius_q25": 0.6608474254608154,
+          "radius_q50": 0.706840455532074,
+          "radius_q75": 0.7577107548713684,
+          "min_dolp": 0.7722828388214111,
+          "max_dolp": 0.9972301125526428,
+          "clean_w_err": 0.010245341807603836
+        },
+        "500": {
+          "loss": 0.0003312709741294384,
+          "grad_norm": 0.00022639997769147158,
+          "radius_q25": 0.669455349445343,
+          "radius_q50": 0.7213034629821777,
+          "radius_q75": 0.7786210775375366,
+          "min_dolp": 0.8355669975280762,
+          "max_dolp": 0.996925413608551,
+          "clean_w_err": 0.0006938715232536197
+        },
+        "1000": {
+          "loss": 0.00026975537184625864,
+          "grad_norm": 0.00012122401676606387,
+          "radius_q25": 0.6654514074325562,
+          "radius_q50": 0.7199976444244385,
+          "radius_q75": 0.7863496541976929,
+          "min_dolp": 0.8393924832344055,
+          "max_dolp": 0.9980364441871643,
+          "clean_w_err": 0.0005776472389698029
+        },
+        "1500": {
+          "loss": 0.00021668912086170167,
+          "grad_norm": 0.00011151193757541478,
+          "radius_q25": 0.6618304252624512,
+          "radius_q50": 0.712775468826294,
+          "radius_q75": 0.7831982970237732,
+          "min_dolp": 0.8531918525695801,
+          "max_dolp": 0.9965172410011292,
+          "clean_w_err": 0.0004772453976329416
+        }
+      },
+      "diagnostics": {
+        "0": {
+          "counts": {
+            "0.001": {
+              "near": 0,
+              "negative": 0,
+              "stationary_negative": 0,
+              "negative_fraction": 0.0,
+              "max_trial_drop": 0.0,
+              "max_drop_bound_ratio": 0.0
+            },
+            "0.0001": {
+              "near": 0,
+              "negative": 0,
+              "stationary_negative": 0,
+              "negative_fraction": 0.0,
+              "max_trial_drop": 0.0,
+              "max_drop_bound_ratio": 0.0
+            },
+            "1e-05": {
+              "near": 0,
+              "negative": 0,
+              "stationary_negative": 0,
+              "negative_fraction": 0.0,
+              "max_trial_drop": 0.0,
+              "max_drop_bound_ratio": 0.0
+            }
+          },
+          "mean_loss": 0.2487371301313263,
+          "minimum_bound_margin": -1.1102230246251565e-16,
+          "minimum_radius_distance": 0.8665159103982252,
+          "maximum_stationarity": 1.345326378151604
+        },
+        "100": {
+          "counts": {
+            "0.001": {
+              "near": 0,
+              "negative": 0,
+              "stationary_negative": 0,
+              "negative_fraction": 0.0,
+              "max_trial_drop": 0.0,
+              "max_drop_bound_ratio": 0.0
+            },
+            "0.0001": {
+              "near": 0,
+              "negative": 0,
+              "stationary_negative": 0,
+              "negative_fraction": 0.0,
+              "max_trial_drop": 0.0,
+              "max_drop_bound_ratio": 0.0
+            },
+            "1e-05": {
+              "near": 0,
+              "negative": 0,
+              "stationary_negative": 0,
+              "negative_fraction": 0.0,
+              "max_trial_drop": 0.0,
+              "max_drop_bound_ratio": 0.0
+            }
+          },
+          "mean_loss": 0.004876369019382055,
+          "minimum_bound_margin": -6.938893903907228e-18,
+          "minimum_radius_distance": 0.07180736520675679,
+          "maximum_stationarity": 0.17009766621627623
+        },
+        "500": {
+          "counts": {
+            "0.001": {
+              "near": 0,
+              "negative": 0,
+              "stationary_negative": 0,
+              "negative_fraction": 0.0,
+              "max_trial_drop": 0.0,
+              "max_drop_bound_ratio": 0.0
+            },
+            "0.0001": {
+              "near": 0,
+              "negative": 0,
+              "stationary_negative": 0,
+              "negative_fraction": 0.0,
+              "max_trial_drop": 0.0,
+              "max_drop_bound_ratio": 0.0
+            },
+            "1e-05": {
+              "near": 0,
+              "negative": 0,
+              "stationary_negative": 0,
+              "negative_fraction": 0.0,
+              "max_trial_drop": 0.0,
+              "max_drop_bound_ratio": 0.0
+            }
+          },
+          "mean_loss": 0.0003312709838867704,
+          "minimum_bound_margin": -1.5449880957918438e-18,
+          "minimum_radius_distance": 0.07551404596687039,
+          "maximum_stationarity": 0.03007998639119805
+        },
+        "1000": {
+          "counts": {
+            "0.001": {
+              "near": 0,
+              "negative": 0,
+              "stationary_negative": 0,
+              "negative_fraction": 0.0,
+              "max_trial_drop": 0.0,
+              "max_drop_bound_ratio": 0.0
+            },
+            "0.0001": {
+              "near": 0,
+              "negative": 0,
+              "stationary_negative": 0,
+              "negative_fraction": 0.0,
+              "max_trial_drop": 0.0,
+              "max_drop_bound_ratio": 0.0
+            },
+            "1e-05": {
+              "near": 0,
+              "negative": 0,
+              "stationary_negative": 0,
+              "negative_fraction": 0.0,
+              "max_trial_drop": 0.0,
+              "max_drop_bound_ratio": 0.0
+            }
+          },
+          "mean_loss": 0.0002697553576601454,
+          "minimum_bound_margin": -1.5720931501039814e-18,
+          "minimum_radius_distance": 0.060791408619716436,
+          "maximum_stationarity": 0.028936153099548386
+        },
+        "1500": {
+          "counts": {
+            "0.001": {
+              "near": 0,
+              "negative": 0,
+              "stationary_negative": 0,
+              "negative_fraction": 0.0,
+              "max_trial_drop": 0.0,
+              "max_drop_bound_ratio": 0.0
+            },
+            "0.0001": {
+              "near": 0,
+              "negative": 0,
+              "stationary_negative": 0,
+              "negative_fraction": 0.0,
+              "max_trial_drop": 0.0,
+              "max_drop_bound_ratio": 0.0
+            },
+            "1e-05": {
+              "near": 0,
+              "negative": 0,
+              "stationary_negative": 0,
+              "negative_fraction": 0.0,
+              "max_trial_drop": 0.0,
+              "max_drop_bound_ratio": 0.0
+            }
+          },
+          "mean_loss": 0.00021668913534653438,
+          "minimum_bound_margin": -1.478072492958754e-18,
+          "minimum_radius_distance": 0.08018364952114032,
+          "maximum_stationarity": 0.02532810422833509
+        }
+      },
+      "final": {
+        "counts": {
+          "0.001": {
+            "near": 0,
+            "negative": 0,
+            "stationary_negative": 0,
+            "negative_fraction": 0.0,
+            "max_trial_drop": 0.0,
+            "max_drop_bound_ratio": 0.0
+          },
+          "0.0001": {
+            "near": 0,
+            "negative": 0,
+            "stationary_negative": 0,
+            "negative_fraction": 0.0,
+            "max_trial_drop": 0.0,
+            "max_drop_bound_ratio": 0.0
+          },
+          "1e-05": {
+            "near": 0,
+            "negative": 0,
+            "stationary_negative": 0,
+            "negative_fraction": 0.0,
+            "max_trial_drop": 0.0,
+            "max_drop_bound_ratio": 0.0
+          }
+        },
+        "mean_loss": 0.00021668913534653438,
+        "minimum_bound_margin": -1.478072492958754e-18,
+        "minimum_radius_distance": 0.08018364952114032,
+        "maximum_stationarity": 0.02532810422833509
+      },
+      "record_sha256": "b348080ed58674b606037934da1942fdfd39a052086dbb047b344e6f17ca9e6c"
+    },
+    {
+      "dataset": "high_dolp",
+      "initialization": "broad",
+      "seed": 2,
+      "checkpoints": {
+        "0": {
+          "loss": 0.22631999850273132,
+          "grad_norm": 0.38542595505714417,
+          "radius_q25": 0.05495372414588928,
+          "radius_q50": 0.1526256501674652,
+          "radius_q75": 0.22228673100471497,
+          "min_dolp": 0.0315743051469326,
+          "max_dolp": 0.5287584662437439,
+          "clean_w_err": 0.46001169085502625
+        },
+        "100": {
+          "loss": 0.004780009388923645,
+          "grad_norm": 0.004443756304681301,
+          "radius_q25": 0.6400649547576904,
+          "radius_q50": 0.6940605044364929,
+          "radius_q75": 0.7493170499801636,
+          "min_dolp": 0.794615626335144,
+          "max_dolp": 0.991805374622345,
+          "clean_w_err": 0.010354580357670784
+        },
+        "500": {
+          "loss": 0.00031982726068235934,
+          "grad_norm": 0.00020179660350549966,
+          "radius_q25": 0.6706258058547974,
+          "radius_q50": 0.7290495038032532,
+          "radius_q75": 0.785860538482666,
+          "min_dolp": 0.8190083503723145,
+          "max_dolp": 0.9988423585891724,
+          "clean_w_err": 0.0007296067196875811
+        },
+        "1000": {
+          "loss": 0.00025085656670853496,
+          "grad_norm": 0.0001121486202464439,
+          "radius_q25": 0.6661681532859802,
+          "radius_q50": 0.7206836938858032,
+          "radius_q75": 0.7896264791488647,
+          "min_dolp": 0.8310213685035706,
+          "max_dolp": 0.9990658760070801,
+          "clean_w_err": 0.0005907391896471381
+        },
+        "1500": {
+          "loss": 0.0001880030322354287,
+          "grad_norm": 0.00010673146607587114,
+          "radius_q25": 0.6644534468650818,
+          "radius_q50": 0.7115464210510254,
+          "radius_q75": 0.7778959274291992,
+          "min_dolp": 0.8463895320892334,
+          "max_dolp": 0.9970489740371704,
+          "clean_w_err": 0.0004636606608983129
+        }
+      },
+      "diagnostics": {
+        "0": {
+          "counts": {
+            "0.001": {
+              "near": 0,
+              "negative": 0,
+              "stationary_negative": 0,
+              "negative_fraction": 0.0,
+              "max_trial_drop": 0.0,
+              "max_drop_bound_ratio": 0.0
+            },
+            "0.0001": {
+              "near": 0,
+              "negative": 0,
+              "stationary_negative": 0,
+              "negative_fraction": 0.0,
+              "max_trial_drop": 0.0,
+              "max_drop_bound_ratio": 0.0
+            },
+            "1e-05": {
+              "near": 0,
+              "negative": 0,
+              "stationary_negative": 0,
+              "negative_fraction": 0.0,
+              "max_trial_drop": 0.0,
+              "max_drop_bound_ratio": 0.0
+            }
+          },
+          "mean_loss": 0.2263199939821907,
+          "minimum_bound_margin": -1.1102230246251565e-16,
+          "minimum_radius_distance": 0.7139948151183102,
+          "maximum_stationarity": 1.280228629865873
+        },
+        "100": {
+          "counts": {
+            "0.001": {
+              "near": 0,
+              "negative": 0,
+              "stationary_negative": 0,
+              "negative_fraction": 0.0,
+              "max_trial_drop": 0.0,
+              "max_drop_bound_ratio": 0.0
+            },
+            "0.0001": {
+              "near": 0,
+              "negative": 0,
+              "stationary_negative": 0,
+              "negative_fraction": 0.0,
+              "max_trial_drop": 0.0,
+              "max_drop_bound_ratio": 0.0
+            },
+            "1e-05": {
+              "near": 0,
+              "negative": 0,
+              "stationary_negative": 0,
+              "negative_fraction": 0.0,
+              "max_trial_drop": 0.0,
+              "max_drop_bound_ratio": 0.0
+            }
+          },
+          "mean_loss": 0.004780009689947015,
+          "minimum_bound_margin": -5.204170427930421e-18,
+          "minimum_radius_distance": 0.12055107638515583,
+          "maximum_stationarity": 0.1791302006312971
+        },
+        "500": {
+          "counts": {
+            "0.001": {
+              "near": 0,
+              "negative": 0,
+              "stationary_negative": 0,
+              "negative_fraction": 0.0,
+              "max_trial_drop": 0.0,
+              "max_drop_bound_ratio": 0.0
+            },
+            "0.0001": {
+              "near": 0,
+              "negative": 0,
+              "stationary_negative": 0,
+              "negative_fraction": 0.0,
+              "max_trial_drop": 0.0,
+              "max_drop_bound_ratio": 0.0
+            },
+            "1e-05": {
+              "near": 0,
+              "negative": 0,
+              "stationary_negative": 0,
+              "negative_fraction": 0.0,
+              "max_trial_drop": 0.0,
+              "max_drop_bound_ratio": 0.0
+            }
+          },
+          "mean_loss": 0.0003198272615315761,
+          "minimum_bound_margin": -1.5009423825346202e-18,
+          "minimum_radius_distance": 0.04700132779473587,
+          "maximum_stationarity": 0.027590493741600965
+        },
+        "1000": {
+          "counts": {
+            "0.001": {
+              "near": 0,
+              "negative": 0,
+              "stationary_negative": 0,
+              "negative_fraction": 0.0,
+              "max_trial_drop": 0.0,
+              "max_drop_bound_ratio": 0.0
+            },
+            "0.0001": {
+              "near": 0,
+              "negative": 0,
+              "stationary_negative": 0,
+              "negative_fraction": 0.0,
+              "max_trial_drop": 0.0,
+              "max_drop_bound_ratio": 0.0
+            },
+            "1e-05": {
+              "near": 0,
+              "negative": 0,
+              "stationary_negative": 0,
+              "negative_fraction": 0.0,
+              "max_trial_drop": 0.0,
+              "max_drop_bound_ratio": 0.0
+            }
+          },
+          "mean_loss": 0.00025085659686456557,
+          "minimum_bound_margin": -1.5178830414797062e-18,
+          "minimum_radius_distance": 0.04231972822023744,
+          "maximum_stationarity": 0.027049233744935276
+        },
+        "1500": {
+          "counts": {
+            "0.001": {
+              "near": 0,
+              "negative": 0,
+              "stationary_negative": 0,
+              "negative_fraction": 0.0,
+              "max_trial_drop": 0.0,
+              "max_drop_bound_ratio": 0.0
+            },
+            "0.0001": {
+              "near": 0,
+              "negative": 0,
+              "stationary_negative": 0,
+              "negative_fraction": 0.0,
+              "max_trial_drop": 0.0,
+              "max_drop_bound_ratio": 0.0
+            },
+            "1e-05": {
+              "near": 0,
+              "negative": 0,
+              "stationary_negative": 0,
+              "negative_fraction": 0.0,
+              "max_trial_drop": 0.0,
+              "max_drop_bound_ratio": 0.0
+            }
+          },
+          "mean_loss": 0.00018800303937718474,
+          "minimum_bound_margin": -1.6127507315721878e-18,
+          "minimum_radius_distance": 0.0740355077134659,
+          "maximum_stationarity": 0.02277811946871931
+        }
+      },
+      "final": {
+        "counts": {
+          "0.001": {
+            "near": 0,
+            "negative": 0,
+            "stationary_negative": 0,
+            "negative_fraction": 0.0,
+            "max_trial_drop": 0.0,
+            "max_drop_bound_ratio": 0.0
+          },
+          "0.0001": {
+            "near": 0,
+            "negative": 0,
+            "stationary_negative": 0,
+            "negative_fraction": 0.0,
+            "max_trial_drop": 0.0,
+            "max_drop_bound_ratio": 0.0
+          },
+          "1e-05": {
+            "near": 0,
+            "negative": 0,
+            "stationary_negative": 0,
+            "negative_fraction": 0.0,
+            "max_trial_drop": 0.0,
+            "max_drop_bound_ratio": 0.0
+          }
+        },
+        "mean_loss": 0.00018800303937718474,
+        "minimum_bound_margin": -1.6127507315721878e-18,
+        "minimum_radius_distance": 0.0740355077134659,
+        "maximum_stationarity": 0.02277811946871931
+      },
+      "record_sha256": "1231d4d427e9d6ed61fa759afc6084de611caf6c76a23cc0a8064bb0b96a5c0b"
+    },
+    {
+      "dataset": "high_dolp",
+      "initialization": "broad",
+      "seed": 3,
+      "checkpoints": {
+        "0": {
+          "loss": 0.2698444128036499,
+          "grad_norm": 0.6652988195419312,
+          "radius_q25": 0.04658837243914604,
+          "radius_q50": 0.06022713705897331,
+          "radius_q75": 0.06385435909032822,
+          "min_dolp": 0.031408924609422684,
+          "max_dolp": 0.14584456384181976,
+          "clean_w_err": 0.5341742634773254
+        },
+        "100": {
+          "loss": 0.004527184646576643,
+          "grad_norm": 0.004821488633751869,
+          "radius_q25": 0.6427581310272217,
+          "radius_q50": 0.6942352056503296,
+          "radius_q75": 0.7466604113578796,
+          "min_dolp": 0.8178175091743469,
+          "max_dolp": 0.9914228916168213,
+          "clean_w_err": 0.009684205055236816
+        },
+        "500": {
+          "loss": 0.00030694162705913186,
+          "grad_norm": 0.00020663523173425347,
+          "radius_q25": 0.6685688495635986,
+          "radius_q50": 0.7202856540679932,
+          "radius_q75": 0.776814877986908,
+          "min_dolp": 0.825859546661377,
+          "max_dolp": 0.996945321559906,
+          "clean_w_err": 0.0006869628559798002
+        },
+        "1000": {
+          "loss": 0.0002468431193847209,
+          "grad_norm": 0.00013029661204200238,
+          "radius_q25": 0.6661052703857422,
+          "radius_q50": 0.7157548666000366,
+          "radius_q75": 0.7742059230804443,
+          "min_dolp": 0.833920419216156,
+          "max_dolp": 0.9964510202407837,
+          "clean_w_err": 0.0005730655393563211
+        },
+        "1500": {
+          "loss": 0.0001963529211934656,
+          "grad_norm": 0.00011328292748657987,
+          "radius_q25": 0.6643043756484985,
+          "radius_q50": 0.7073832750320435,
+          "radius_q75": 0.765780508518219,
+          "min_dolp": 0.8446828722953796,
+          "max_dolp": 0.9934678673744202,
+          "clean_w_err": 0.00047675782116129994
+        }
+      },
+      "diagnostics": {
+        "0": {
+          "counts": {
+            "0.001": {
+              "near": 0,
+              "negative": 0,
+              "stationary_negative": 0,
+              "negative_fraction": 0.0,
+              "max_trial_drop": 0.0,
+              "max_drop_bound_ratio": 0.0
+            },
+            "0.0001": {
+              "near": 0,
+              "negative": 0,
+              "stationary_negative": 0,
+              "negative_fraction": 0.0,
+              "max_trial_drop": 0.0,
+              "max_drop_bound_ratio": 0.0
+            },
+            "1e-05": {
+              "near": 0,
+              "negative": 0,
+              "stationary_negative": 0,
+              "negative_fraction": 0.0,
+              "max_trial_drop": 0.0,
+              "max_drop_bound_ratio": 0.0
+            }
+          },
+          "mean_loss": 0.2698444256562653,
+          "minimum_bound_margin": -1.1102230246251565e-16,
+          "minimum_radius_distance": 0.9266857587173232,
+          "maximum_stationarity": 1.2812928071975174
+        },
+        "100": {
+          "counts": {
+            "0.001": {
+              "near": 0,
+              "negative": 0,
+              "stationary_negative": 0,
+              "negative_fraction": 0.0,
+              "max_trial_drop": 0.0,
+              "max_drop_bound_ratio": 0.0
+            },
+            "0.0001": {
+              "near": 0,
+              "negative": 0,
+              "stationary_negative": 0,
+              "negative_fraction": 0.0,
+              "max_trial_drop": 0.0,
+              "max_drop_bound_ratio": 0.0
+            },
+            "1e-05": {
+              "near": 0,
+              "negative": 0,
+              "stationary_negative": 0,
+              "negative_fraction": 0.0,
+              "max_trial_drop": 0.0,
+              "max_drop_bound_ratio": 0.0
+            }
+          },
+          "mean_loss": 0.004527184798487828,
+          "minimum_bound_margin": -3.469446951953614e-18,
+          "minimum_radius_distance": 0.12317230743038776,
+          "maximum_stationarity": 0.17008107470583544
+        },
+        "500": {
+          "counts": {
+            "0.001": {
+              "near": 0,
+              "negative": 0,
+              "stationary_negative": 0,
+              "negative_fraction": 0.0,
+              "max_trial_drop": 0.0,
+              "max_drop_bound_ratio": 0.0
+            },
+            "0.0001": {
+              "near": 0,
+              "negative": 0,
+              "stationary_negative": 0,
+              "negative_fraction": 0.0,
+              "max_trial_drop": 0.0,
+              "max_drop_bound_ratio": 0.0
+            },
+            "1e-05": {
+              "near": 0,
+              "negative": 0,
+              "stationary_negative": 0,
+              "negative_fraction": 0.0,
+              "max_trial_drop": 0.0,
+              "max_drop_bound_ratio": 0.0
+            }
+          },
+          "mean_loss": 0.00030694163205415237,
+          "minimum_bound_margin": -1.463672932855431e-18,
+          "minimum_radius_distance": 0.07527829093492255,
+          "maximum_stationarity": 0.029513705892972766
+        },
+        "1000": {
+          "counts": {
+            "0.001": {
+              "near": 0,
+              "negative": 0,
+              "stationary_negative": 0,
+              "negative_fraction": 0.0,
+              "max_trial_drop": 0.0,
+              "max_drop_bound_ratio": 0.0
+            },
+            "0.0001": {
+              "near": 0,
+              "negative": 0,
+              "stationary_negative": 0,
+              "negative_fraction": 0.0,
+              "max_trial_drop": 0.0,
+              "max_drop_bound_ratio": 0.0
+            },
+            "1e-05": {
+              "near": 0,
+              "negative": 0,
+              "stationary_negative": 0,
+              "negative_fraction": 0.0,
+              "max_trial_drop": 0.0,
+              "max_drop_bound_ratio": 0.0
+            }
+          },
+          "mean_loss": 0.00024684310622540066,
+          "minimum_bound_margin": -1.765216662077962e-18,
+          "minimum_radius_distance": 0.08091288778597228,
+          "maximum_stationarity": 0.029006103000186433
+        },
+        "1500": {
+          "counts": {
+            "0.001": {
+              "near": 0,
+              "negative": 0,
+              "stationary_negative": 0,
+              "negative_fraction": 0.0,
+              "max_trial_drop": 0.0,
+              "max_drop_bound_ratio": 0.0
+            },
+            "0.0001": {
+              "near": 0,
+              "negative": 0,
+              "stationary_negative": 0,
+              "negative_fraction": 0.0,
+              "max_trial_drop": 0.0,
+              "max_drop_bound_ratio": 0.0
+            },
+            "1e-05": {
+              "near": 0,
+              "negative": 0,
+              "stationary_negative": 0,
+              "negative_fraction": 0.0,
+              "max_trial_drop": 0.0,
+              "max_drop_bound_ratio": 0.0
+            }
+          },
+          "mean_loss": 0.00019635294625660872,
+          "minimum_bound_margin": -1.179069862577986e-18,
+          "minimum_radius_distance": 0.1082869862556346,
+          "maximum_stationarity": 0.02897653930987025
+        }
+      },
+      "final": {
+        "counts": {
+          "0.001": {
+            "near": 0,
+            "negative": 0,
+            "stationary_negative": 0,
+            "negative_fraction": 0.0,
+            "max_trial_drop": 0.0,
+            "max_drop_bound_ratio": 0.0
+          },
+          "0.0001": {
+            "near": 0,
+            "negative": 0,
+            "stationary_negative": 0,
+            "negative_fraction": 0.0,
+            "max_trial_drop": 0.0,
+            "max_drop_bound_ratio": 0.0
+          },
+          "1e-05": {
+            "near": 0,
+            "negative": 0,
+            "stationary_negative": 0,
+            "negative_fraction": 0.0,
+            "max_trial_drop": 0.0,
+            "max_drop_bound_ratio": 0.0
+          }
+        },
+        "mean_loss": 0.00019635294625660872,
+        "minimum_bound_margin": -1.179069862577986e-18,
+        "minimum_radius_distance": 0.1082869862556346,
+        "maximum_stationarity": 0.02897653930987025
+      },
+      "record_sha256": "249722f8a36c8e489028aebc34cab45bfe9e645200d0368d2a84fd7fbc52eb03"
+    },
+    {
+      "dataset": "high_dolp",
+      "initialization": "broad",
+      "seed": 4,
+      "checkpoints": {
+        "0": {
+          "loss": 0.2948070764541626,
+          "grad_norm": 0.5610548257827759,
+          "radius_q25": 0.06047287955880165,
+          "radius_q50": 0.10272672772407532,
+          "radius_q75": 0.1898784637451172,
+          "min_dolp": 0.06214197725057602,
+          "max_dolp": 0.49751847982406616,
+          "clean_w_err": 0.5976106524467468
+        },
+        "100": {
+          "loss": 0.005792615003883839,
+          "grad_norm": 0.004643096588551998,
+          "radius_q25": 0.6275508999824524,
+          "radius_q50": 0.683995246887207,
+          "radius_q75": 0.7436453104019165,
+          "min_dolp": 0.8262616395950317,
+          "max_dolp": 0.9987092614173889,
+          "clean_w_err": 0.012460882775485516
+        },
+        "500": {
+          "loss": 0.00033865010482259095,
+          "grad_norm": 0.0001955473271664232,
+          "radius_q25": 0.6658486127853394,
+          "radius_q50": 0.7277019023895264,
+          "radius_q75": 0.797031581401825,
+          "min_dolp": 0.8287013173103333,
+          "max_dolp": 0.9995958209037781,
+          "clean_w_err": 0.0007237292593345046
+        },
+        "1000": {
+          "loss": 0.0002891783369705081,
+          "grad_norm": 0.00012538758164737374,
+          "radius_q25": 0.6662932634353638,
+          "radius_q50": 0.72269606590271,
+          "radius_q75": 0.7925109267234802,
+          "min_dolp": 0.8324816226959229,
+          "max_dolp": 0.9993196725845337,
+          "clean_w_err": 0.0006302958936430514
+        },
+        "1500": {
+          "loss": 0.00022826602798886597,
+          "grad_norm": 0.00012493354734033346,
+          "radius_q25": 0.6639730930328369,
+          "radius_q50": 0.7122164964675903,
+          "radius_q75": 0.7760902643203735,
+          "min_dolp": 0.8382860422134399,
+          "max_dolp": 0.9969251751899719,
+          "clean_w_err": 0.0005201918538659811
+        }
+      },
+      "diagnostics": {
+        "0": {
+          "counts": {
+            "0.001": {
+              "near": 0,
+              "negative": 0,
+              "stationary_negative": 0,
+              "negative_fraction": 0.0,
+              "max_trial_drop": 0.0,
+              "max_drop_bound_ratio": 0.0
+            },
+            "0.0001": {
+              "near": 0,
+              "negative": 0,
+              "stationary_negative": 0,
+              "negative_fraction": 0.0,
+              "max_trial_drop": 0.0,
+              "max_drop_bound_ratio": 0.0
+            },
+            "1e-05": {
+              "near": 0,
+              "negative": 0,
+              "stationary_negative": 0,
+              "negative_fraction": 0.0,
+              "max_trial_drop": 0.0,
+              "max_drop_bound_ratio": 0.0
+            }
+          },
+          "mean_loss": 0.2948070733693671,
+          "minimum_bound_margin": -1.1102230246251565e-16,
+          "minimum_radius_distance": 0.7335845321648251,
+          "maximum_stationarity": 1.3419736713587305
+        },
+        "100": {
+          "counts": {
+            "0.001": {
+              "near": 0,
+              "negative": 0,
+              "stationary_negative": 0,
+              "negative_fraction": 0.0,
+              "max_trial_drop": 0.0,
+              "max_drop_bound_ratio": 0.0
+            },
+            "0.0001": {
+              "near": 0,
+              "negative": 0,
+              "stationary_negative": 0,
+              "negative_fraction": 0.0,
+              "max_trial_drop": 0.0,
+              "max_drop_bound_ratio": 0.0
+            },
+            "1e-05": {
+              "near": 0,
+              "negative": 0,
+              "stationary_negative": 0,
+              "negative_fraction": 0.0,
+              "max_trial_drop": 0.0,
+              "max_drop_bound_ratio": 0.0
+            }
+          },
+          "mean_loss": 0.005792615352317759,
+          "minimum_bound_margin": -6.938893903907228e-18,
+          "minimum_radius_distance": 0.04956519729216846,
+          "maximum_stationarity": 0.18930935125181206
+        },
+        "500": {
+          "counts": {
+            "0.001": {
+              "near": 0,
+              "negative": 0,
+              "stationary_negative": 0,
+              "negative_fraction": 0.0,
+              "max_trial_drop": 0.0,
+              "max_drop_bound_ratio": 0.0
+            },
+            "0.0001": {
+              "near": 0,
+              "negative": 0,
+              "stationary_negative": 0,
+              "negative_fraction": 0.0,
+              "max_trial_drop": 0.0,
+              "max_drop_bound_ratio": 0.0
+            },
+            "1e-05": {
+              "near": 0,
+              "negative": 0,
+              "stationary_negative": 0,
+              "negative_fraction": 0.0,
+              "max_trial_drop": 0.0,
+              "max_drop_bound_ratio": 0.0
+            }
+          },
+          "mean_loss": 0.00033865011662782997,
+          "minimum_bound_margin": -1.9109063290057016e-18,
+          "minimum_radius_distance": 0.02803727509373022,
+          "maximum_stationarity": 0.03385199832516396
+        },
+        "1000": {
+          "counts": {
+            "0.001": {
+              "near": 0,
+              "negative": 0,
+              "stationary_negative": 0,
+              "negative_fraction": 0.0,
+              "max_trial_drop": 0.0,
+              "max_drop_bound_ratio": 0.0
+            },
+            "0.0001": {
+              "near": 0,
+              "negative": 0,
+              "stationary_negative": 0,
+              "negative_fraction": 0.0,
+              "max_trial_drop": 0.0,
+              "max_drop_bound_ratio": 0.0
+            },
+            "1e-05": {
+              "near": 0,
+              "negative": 0,
+              "stationary_negative": 0,
+              "negative_fraction": 0.0,
+              "max_trial_drop": 0.0,
+              "max_drop_bound_ratio": 0.0
+            }
+          },
+          "mean_loss": 0.00028917835006285616,
+          "minimum_bound_margin": -1.2468324983583301e-18,
+          "minimum_radius_distance": 0.03622528716146567,
+          "maximum_stationarity": 0.030830114038493013
+        },
+        "1500": {
+          "counts": {
+            "0.001": {
+              "near": 0,
+              "negative": 0,
+              "stationary_negative": 0,
+              "negative_fraction": 0.0,
+              "max_trial_drop": 0.0,
+              "max_drop_bound_ratio": 0.0
+            },
+            "0.0001": {
+              "near": 0,
+              "negative": 0,
+              "stationary_negative": 0,
+              "negative_fraction": 0.0,
+              "max_trial_drop": 0.0,
+              "max_drop_bound_ratio": 0.0
+            },
+            "1e-05": {
+              "near": 0,
+              "negative": 0,
+              "stationary_negative": 0,
+              "negative_fraction": 0.0,
+              "max_trial_drop": 0.0,
+              "max_drop_bound_ratio": 0.0
+            }
+          },
+          "mean_loss": 0.0002282660542030647,
+          "minimum_bound_margin": -1.5178830414797062e-18,
+          "minimum_radius_distance": 0.07551643896427818,
+          "maximum_stationarity": 0.02557967403274931
+        }
+      },
+      "final": {
+        "counts": {
+          "0.001": {
+            "near": 0,
+            "negative": 0,
+            "stationary_negative": 0,
+            "negative_fraction": 0.0,
+            "max_trial_drop": 0.0,
+            "max_drop_bound_ratio": 0.0
+          },
+          "0.0001": {
+            "near": 0,
+            "negative": 0,
+            "stationary_negative": 0,
+            "negative_fraction": 0.0,
+            "max_trial_drop": 0.0,
+            "max_drop_bound_ratio": 0.0
+          },
+          "1e-05": {
+            "near": 0,
+            "negative": 0,
+            "stationary_negative": 0,
+            "negative_fraction": 0.0,
+            "max_trial_drop": 0.0,
+            "max_drop_bound_ratio": 0.0
+          }
+        },
+        "mean_loss": 0.0002282660542030647,
+        "minimum_bound_margin": -1.5178830414797062e-18,
+        "minimum_radius_distance": 0.07551643896427818,
+        "maximum_stationarity": 0.02557967403274931
+      },
+      "record_sha256": "807c04fd64f9bdbef81b2dc4f352767f2c9f85ca716a170d1df2b795fb1fb055"
+    }
+  ],
+  "positive_control": {
+    "I": 0.8902734644166457,
+    "e": [
+      0.8944271909999159,
+      0.4472135954999579
+    ],
+    "gradient": [
+      -0.10972653558335432,
+      0.09814239699997196,
+      0.04907119849998598
+    ],
+    "gamma": -0.09768662297222923,
+    "bound": 0.018059868916687694,
+    "gap": 0.018059868916687694,
+    "loss_paths": {
+      "stationary": [
+        0.01805986891668769,
+        0.018059868916687705,
+        0.01805986891673019,
+        0.018060685076662048,
+        0.01805986911200396,
+        0.018060432666181854,
+        0.01806026112647168,
+        0.018059807436276252,
+        0.018058815740413563,
+        0.018057266002724427,
+        0.018054614212586723,
+        0.018050855936165143,
+        0.018046267724936123,
+        0.01804082394431521,
+        0.018034112767693473,
+        0.01802581146787629,
+        0.01801594163927104,
+        0.018004577501216184,
+        0.017991565863463975,
+        0.01797660498789734,
+        0.01795952380520923,
+        0.017940340236752693,
+        0.017919082857509126,
+        0.017895651768094017,
+        0.017869875175087542,
+        0.017841649412712067,
+        0.017810944739907113,
+        0.017777697779060006,
+        0.017741766986200957,
+        0.017703008230439472,
+        0.01766134111078191,
+        0.017616713299306988,
+        0.01756903692609712,
+        0.017518195058812774,
+        0.017464099921419736,
+        0.017406701929969463,
+        0.01734593567223862,
+        0.01728169464145681,
+        0.01721387355983519,
+        0.017142404634371618,
+        0.01706723322844183,
+        0.016988280885198916,
+        0.016905455174728384,
+        0.01681868405149517,
+        0.016727915437437728,
+        0.0166330875820214,
+        0.016534123706905973,
+        0.016430956755386552,
+        0.016323539492938438,
+        0.01621182631580301,
+        0.016095761144099132,
+        0.015975290002928872,
+        0.0158503722503308,
+        0.01572097123081395,
+        0.0155870454387653,
+        0.015448557605065659,
+        0.015305484251167335,
+        0.015157809461787396,
+        0.01500551597300688,
+        0.014848588873584761,
+        0.014687022479953496,
+        0.014520817164156378,
+        0.014349974600590832,
+        0.014174502472925999,
+        0.013994420371225537,
+        0.01380975697460094,
+        0.013620545230623268,
+        0.013426824068438132,
+        0.013228641526421406,
+        0.013026053010077605,
+        0.012819119804887846,
+        0.012607912280268974,
+        0.01239251248652603,
+        0.012173012673371057,
+        0.011949513823890468,
+        0.011722126393937266,
+        0.011490970703471392,
+        0.011256176534604869,
+        0.011017883716097474,
+        0.010776243311357125,
+        0.010531418412909884,
+        0.010283584338626682,
+        0.010032927895133426,
+        0.009779646734328143,
+        0.009523949926654647,
+        0.009266058275438246,
+        0.009006203965154887,
+        0.008744631231798755,
+        0.008481596982134677,
+        0.00821737004395709,
+        0.007952230646485162,
+        0.007686470266632562,
+        0.007420391078088399,
+        0.0071543057319012685,
+        0.006888537009562337,
+        0.006623417276125247,
+        0.006359288286988287,
+        0.006096500272564768,
+        0.005835410700816637,
+        0.005576383374725864,
+        0.005319787205290566,
+        0.005065995144684831,
+        0.004815382963137617,
+        0.004568327750724387,
+        0.004325206495248874,
+        0.004086394186943532,
+        0.0038522619871811537,
+        0.0036231752291284295,
+        0.003399491226403625,
+        0.0031815571365747487,
+        0.002969707653809375,
+        0.002764262829429899,
+        0.0025655255453875593,
+        0.002373778966746027,
+        0.0021892839844591485,
+        0.002012276802511821,
+        0.0018429665194443887,
+        0.0016815326907539132,
+        0.0015281231246481461,
+        0.0013828518812052182,
+        0.0012457974797451929,
+        0.0011170012125582315,
+        0.0009964658801633977,
+        0.0008841549327335469,
+        0.000779992027571279,
+        0.0006838609173924684,
+        0.0005956059075896527,
+        0.0005150328601858616,
+        0.00044191069698679966,
+        0.0003759733759994683,
+        0.00031692246370051383,
+        0.0002644302509813046,
+        0.000218143277110322,
+        0.0001776862724108367,
+        0.00014266648552314963,
+        0.00011267829662860149,
+        8.730795038420707e-05,
+        6.613840051477487e-05,
+        4.875414009646157e-05,
+        3.474587477165648e-05,
+        2.3714944188480866e-05,
+        1.5277419498734794e-05,
+        9.067779950992163e-06,
+        4.742064300551843e-06,
+        1.9804799489128623e-06,
+        4.894214068557784e-07,
+        2.8654893326470316e-09,
+        2.831605384564734e-07,
+        1.1212277762807801e-06,
+        2.336212863808764e-06,
+        3.7746359672049684e-06,
+        5.309108394076173e-06,
+        6.836688735231034e-06,
+        8.276948731419232e-06,
+        9.56983227031651e-06,
+        1.067338173967513e-05,
+        1.1561401412509904e-05,
+        1.2221126473905266e-05,
+        1.2650951543668257e-05,
+        1.2858267972119586e-05,
+        1.2857449842757664e-05,
+        1.2668014886315001e-05,
+        1.2312981855634345e-05,
+        1.18174356742685e-05,
+        1.1207302454574618e-05,
+        1.0508332599192718e-05,
+        9.745283022812064e-06,
+        8.941285445094757e-06,
+        8.117385377594625e-06,
+        7.292232939529971e-06,
+        6.48190659841928e-06,
+        5.699850370499102e-06,
+        4.956904252253402e-06,
+        4.261409878057583e-06,
+        3.619374167945101e-06,
+        3.0346744623527145e-06,
+        2.5092915868192397e-06,
+        2.043558701950924e-06,
+        1.6364150605901525e-06,
+        1.2856564583171989e-06,
+        9.88175589927761e-07,
+        7.40186759122778e-07,
+        5.37431364764239e-07,
+        3.7536166458932036e-07,
+        2.493012465784933e-07,
+        1.5458188042687805e-07,
+        8.665703168034826e-08,
+        4.1192874941798394e-08,
+        1.4138300418655358e-08,
+        1.775617219611621e-09,
+        7.538740720569241e-10,
+        8.106974947760612e-09,
+        2.125870792048961e-08,
+        3.8016777490225533e-08,
+        5.655795062460863e-08,
+        7.54062380908121e-08,
+        9.340586174698015e-08,
+        1.0969065865979738e-07,
+        1.2365135517251212e-07,
+        1.349019198033804e-07,
+        1.4324606166783717e-07,
+        1.4864475348725805e-07,
+        1.5118544569795834e-07,
+        1.510534990387607e-07,
+        1.4850622841191247e-07,
+        1.438497875888746e-07,
+        1.374190126845903e-07,
+        1.2956026131371638e-07,
+        1.2061718349451772e-07,
+        1.10919286138381e-07,
+        1.0077311495357251e-07,
+        9.045583378005819e-08,
+        8.021094499172813e-08,
+        7.024588656050944e-08,
+        6.073123845770612e-08,
+        5.1801266077122694e-08,
+        4.3555539315037134e-08,
+        3.6061385157239307e-08,
+        2.9356947142945445e-08,
+        2.3454646724532465e-08,
+        1.8344867825948514e-08,
+        1.3999709699657363e-08,
+        1.0376678712643736e-08,
+        7.4222145509274944e-09,
+        5.07496859597649e-09,
+        3.2687752717114265e-09,
+        1.9352772606704805e-09,
+        1.0061814316461729e-09,
+        4.151381725466245e-10,
+        9.925091805819481e-11,
+        2.3198399706392643e-13,
+        6.522823929225629e-11,
+        2.473475594297908e-10,
+        5.059210807964548e-10,
+        8.065374050806043e-10,
+        1.1208863041045948e-09,
+        1.4264494530893442e-09,
+        1.706073494358676e-09,
+        1.947458465414952e-09,
+        2.142591838730595e-09,
+        2.2871546740564944e-09,
+        2.3799228831808418e-09,
+        2.4221829665444755e-09,
+        2.4171774888538287e-09,
+        2.369592106559141e-09,
+        2.2850929005911526e-09,
+        2.1699194524660977e-09,
+        2.030536343706303e-09,
+        1.873343670493544e-09,
+        1.7044451270637316e-09,
+        1.5294705847556942e-09,
+        1.3534490224539571e-09,
+        1.1807267224936482e-09,
+        1.0149250556839211e-09,
+        8.589320335026219e-10,
+        7.149217037514173e-10,
+        5.843955508017102e-10,
+        4.68240469037125e-10,
+        3.6679829691247784e-10,
+        2.7994237259978615e-10,
+        2.0715720336829912e-10,
+        1.4761792790716562e-10,
+        1.002668171888173e-10,
+        6.388469577477875e-11,
+        3.715571906009894e-11,
+        1.8724413460438804e-11,
+        7.244372084443522e-12,
+        1.4183938986285449e-12,
+        3.016198451978102e-14,
+        1.9678518553348066e-12,
+        6.24027025881537e-12,
+        1.1986256748641874e-11,
+        1.8478197483138366e-11,
+        2.5120556564087764e-11,
+        3.144432991202536e-11,
+        3.709831948215018e-11,
+        4.183807984110719e-11,
+        4.5513309799452824e-11,
+        4.805438854036792e-11,
+        4.9458664487981406e-11,
+        4.9777000176654096e-11,
+        4.910098611668418e-11,
+        4.755114221694408e-11,
+        4.526633010155369e-11,
+        4.2394523596476206e-11,
+        3.908501226032114e-11,
+        3.548204627428797e-11,
+        3.171988341529748e-11,
+        2.7919157038263188e-11,
+        2.4184449601753653e-11,
+        2.060293756683919e-11,
+        1.724395948202103e-11,
+        1.4159351106538903e-11,
+        1.1384394538017512e-11,
+        8.93923340338977e-12,
+        6.830614922181622e-12,
+        5.053834658891379e-12,
+        3.5947742964196478e-12,
+        2.431938365026589e-12,
+        1.538414173416171e-12,
+        8.836950314628348e-13
+      ],
+      "perturbed": [
+        0.01805503367020412,
+        0.018052907932726764,
+        0.01804549016144591,
+        0.018039648385855322,
+        0.018033114338439626,
+        0.018024276478643842,
+        0.018013924703162536,
+        0.018002807610526403,
+        0.017990999983780134,
+        0.017977997100970953,
+        0.017963376848450736,
+        0.01794721072641341,
+        0.01792980797490625,
+        0.017911351376038366,
+        0.017891737329221488,
+        0.0178707019897692,
+        0.01784809014388611,
+        0.017823952347992614,
+        0.01779842815457494,
+        0.017771591008240738,
+        0.017743381401617624,
+        0.01771367093668077,
+        0.017682388689090126,
+        0.017649572543986983,
+        0.01761530557801834,
+        0.01757962074985823,
+        0.017542469200594418,
+        0.017503776027072482,
+        0.017463516060336477,
+        0.017421728856263245,
+        0.01737847030536501,
+        0.017333759372032773,
+        0.01728757152320226,
+        0.017239879758064285,
+        0.017190694363124853,
+        0.017140058054154673,
+        0.01708800778846073,
+        0.017034549447635126,
+        0.016979671673972595,
+        0.016923378528102134,
+        0.016865702124290012,
+        0.016806684638831726,
+        0.016746354099621125,
+        0.01668472118572813,
+        0.016621797430798987,
+        0.016557610571213972,
+        0.016492199064437975,
+        0.016425595216533306,
+        0.016357818948468425,
+        0.016288888445100784,
+        0.01621883251622938,
+        0.016147689542453894,
+        0.01607549626434175,
+        0.01600228126617427,
+        0.015928070085565113,
+        0.015852893548673974,
+        0.015776788057769987,
+        0.015699788584259727,
+        0.01562192461594645,
+        0.015543224067234858,
+        0.015463719008045801,
+        0.01538344552276311,
+        0.015302438725170266,
+        0.015220730014644829,
+        0.0151383495904039,
+        0.015055329807349933,
+        0.014971704549662485,
+        0.014887506076006116,
+        0.01480276416013335,
+        0.01471750847986842,
+        0.01463177051702221,
+        0.014545582411020726,
+        0.014458974761577073,
+        0.014371976473791976,
+        0.014284616374925126,
+        0.014196923896119061,
+        0.014108927948352053,
+        0.014020655947531912,
+        0.013932134463674715,
+        0.013843390357077948,
+        0.01375445068549436,
+        0.013665341684723026,
+        0.013576088396480605,
+        0.013486715294750411,
+        0.013397246738498986,
+        0.013307706572953543,
+        0.013218117648209897,
+        0.013128502056263104,
+        0.013038881659715881,
+        0.012949278080492177,
+        0.012859712245358132,
+        0.01277020422515112,
+        0.012680773522306574,
+        0.012591439252142095,
+        0.012502219949200961,
+        0.012413133393964264,
+        0.012324196773674786,
+        0.012235426904602647,
+        0.01214684017193274,
+        0.012058452330542303,
+        0.011970278495520096,
+        0.011882333289897306,
+        0.011794630879321229,
+        0.01170718487038982,
+        0.01162000829145657,
+        0.011533113707923792,
+        0.011446513287698187,
+        0.011360218733445277,
+        0.011274241221731752,
+        0.011188591448921986,
+        0.011103279691302193,
+        0.01101831578753357,
+        0.010933709108067315,
+        0.01084946859321589,
+        0.010765602810296784,
+        0.010682119949992946,
+        0.010599027792024825,
+        0.010516333712850497,
+        0.01043404472313866,
+        0.010352167477389467,
+        0.010270708261968586,
+        0.010189673008569985,
+        0.010109067328204688,
+        0.010028896522647882,
+        0.009949165572743352,
+        0.009869879140340114,
+        0.009791041589239598,
+        0.00971265699754316,
+        0.009634729156913777,
+        0.009557261580928884,
+        0.009480257525065846,
+        0.009403719997829477,
+        0.00932765175931205,
+        0.009252055324549119,
+        0.009176932976466995,
+        0.009102286775636417,
+        0.009028118563662643,
+        0.00895442997054357,
+        0.008881222427392947,
+        0.008808497174700218,
+        0.008736255264550333,
+        0.00866449756525218,
+        0.008593224770284524,
+        0.008522437405395687,
+        0.008452135832981825,
+        0.008382320258676594,
+        0.008312990739935569,
+        0.008244147191858817,
+        0.008175789390447009,
+        0.008107916977434923,
+        0.008040529466758504,
+        0.00797362624971955,
+        0.007907206599239863,
+        0.007841269675407488,
+        0.007775814531369595,
+        0.007710840117494034,
+        0.0076463452847136655,
+        0.0075823287888605526,
+        0.007518789295343876,
+        0.007455725383004638,
+        0.007393135547870712,
+        0.0073310182075194946,
+        0.007269371705116275,
+        0.007208194312522001,
+        0.00714748423334342,
+        0.007087239606446066,
+        0.007027458509308915,
+        0.00696813896099361,
+        0.006909278925251935,
+        0.0068508763137503335,
+        0.006792928988861836,
+        0.006735434766099021,
+        0.006678391416680071,
+        0.006621796670178053,
+        0.006565648216945864,
+        0.006509943710442591,
+        0.006454680769643799,
+        0.006399856981321352,
+        0.006345469902042251,
+        0.006291517060104782,
+        0.0062379959575396045,
+        0.006184904072026133,
+        0.006132238858685067,
+        0.006079997751869184,
+        0.006028178166918858,
+        0.00597677750175718,
+        0.005925793138379905,
+        0.005875222444352435,
+        0.00582506277427532,
+        0.005775311471160494,
+        0.005725965867768381,
+        0.00567702328792311,
+        0.0056284810477416,
+        0.005580336456774315,
+        0.00553258681912263,
+        0.005485229434535492,
+        0.005438261599448082,
+        0.005391680607976515,
+        0.00534548375288866,
+        0.005299668326524296,
+        0.005254231621652663,
+        0.005209170932299267,
+        0.005164483554552646,
+        0.005120166787331973,
+        0.005076217933117136,
+        0.005032634298654991,
+        0.004989413195631445,
+        0.004946551941300872,
+        0.004904047859087722,
+        0.004861898279168896,
+        0.004820100539027683,
+        0.004778651983978601,
+        0.004737549967670613,
+        0.0046967918525655334,
+        0.0046563750103869265,
+        0.004616296822546665,
+        0.004576554680554507,
+        0.00453714598640607,
+        0.004498068152948637,
+        0.004459318604229048,
+        0.004420894775822715,
+        0.004382794115141833,
+        0.004345014081726622,
+        0.004307552147522256,
+        0.004270405797139199,
+        0.004233572528096774,
+        0.004197049851052572,
+        0.004160835290017352,
+        0.004124926382555201,
+        0.004089320679970846,
+        0.004054015747485509,
+        0.004019009164399925,
+        0.00398429852424486,
+        0.003949881434920547,
+        0.003915755518825349,
+        0.0038819184129736096,
+        0.003848367769103976,
+        0.0038151012537788074,
+        0.0037821165484736175,
+        0.0037494113496573138,
+        0.003716983368864009,
+        0.003684830332756849,
+        0.0036529499831839613,
+        0.0036213400772274534,
+        0.0035899983872452502,
+        0.003558922700905771,
+        0.0035281108212155427,
+        0.0034975605665407685,
+        0.00346726977062292,
+        0.0034372362825887547,
+        0.003407457966955083,
+        0.0033779327036281936,
+        0.0033486583878978597,
+        0.003319632930426375,
+        0.0032908542572331052,
+        0.003262320309674823,
+        0.003234029044421963,
+        0.0032059784334310835,
+        0.003178166463913276,
+        0.0031505911382987647,
+        0.0031232504741978947,
+        0.0030961425043590446,
+        0.003069265276623503,
+        0.0030426168538774867,
+        0.0030161953140013815,
+        0.0029899987498160814,
+        0.0029640252690266208,
+        0.0029382729941634326,
+        0.0029127400625214225,
+        0.0028874246260969685,
+        0.0028623248515229774,
+        0.002837438920001915,
+        0.0028127650272368916,
+        0.002788301383360878,
+        0.002764046212864457,
+        0.0027399977545220673,
+        0.0027161542613169188,
+        0.0026925140003646385,
+        0.002669075252835393,
+        0.0026458363138749464,
+        0.002622795492524463,
+        0.002599951111639445,
+        0.0025773015078077227,
+        0.002554845031266664,
+        0.0025325800458195404,
+        0.002510504928750988,
+        0.002488618070741842,
+        0.0024669178757832856,
+        0.0024454027610905675,
+        0.0024240711570162085,
+        0.0024029215069627363,
+        0.002381952267294993,
+        0.0023611619072519945,
+        0.002340548908858513,
+        0.0023201117668363675,
+        0.0022998489885155873,
+        0.002279759093745365,
+        0.0022598406148048454,
+        0.0022400920963137325,
+        0.0022205120951428675,
+        0.0022010991803246777
+      ]
+    },
+    "precision": "float64",
+    "purpose": "constructed control, excluded from incidence"
+  },
+  "source_sha256": {
+    "trained_fold_diagnostic.py": "1d2eceecf22acf5ee2e30fa596b549e1a52be21ff14318021e9b339a3bb3a4bb",
+    "trained_fold_core.py": "e06a9b80d002a35dfb6bed512a4518eb4a79943b4ba724cb6398e31e54ca2ee1",
+    "trained_fold_protocol.json": "4b084f41f9eb86fc1165444e0fcb604b3db4f9be6a250c87f029e32a5a305580"
+  }
+}

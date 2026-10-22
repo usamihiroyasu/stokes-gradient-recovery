@@ -1,0 +1,93 @@
+{
+  "passed": true,
+  "scope": "arithmetic enclosure checks only; no scientific inputs or proof review",
+  "arithmetic_sha256": "74713f07556f4a8e02c5aeb99f0055e88bd7941edd84d42fc2ee995f4866a178",
+  "independent_checks_sha256": "8e192b7181f38cb48fcee5169defcbbb605b4ba4ead3d53b06e396f4dcd5b68f",
+  "python": "3.12.3",
+  "reports": [
+    {
+      "precision_bits": 32,
+      "counts": {
+        "add": 525,
+        "sub": 525,
+        "mul": 525,
+        "div": 320,
+        "neg": 525,
+        "square": 525,
+        "abs": 525,
+        "sqrt": 207,
+        "exp": 57,
+        "rejected": 212
+      },
+      "exp_oracle": "exact Fraction Taylor at original argument; geometric tail; no range reduction",
+      "exp_oracle_tail_bits": 160,
+      "exp_oracle_max_degree": 262,
+      "passed": true,
+      "scalar_conversion_checks": 10,
+      "api_edge_checks": 70
+    },
+    {
+      "precision_bits": 64,
+      "counts": {
+        "add": 525,
+        "sub": 525,
+        "mul": 525,
+        "div": 311,
+        "neg": 525,
+        "square": 525,
+        "abs": 525,
+        "sqrt": 207,
+        "exp": 57,
+        "rejected": 221
+      },
+      "exp_oracle": "exact Fraction Taylor at original argument; geometric tail; no range reduction",
+      "exp_oracle_tail_bits": 192,
+      "exp_oracle_max_degree": 277,
+      "passed": true,
+      "scalar_conversion_checks": 10,
+      "api_edge_checks": 70
+    },
+    {
+      "precision_bits": 128,
+      "counts": {
+        "add": 525,
+        "sub": 525,
+        "mul": 525,
+        "div": 307,
+        "neg": 525,
+        "square": 525,
+        "abs": 525,
+        "sqrt": 207,
+        "exp": 57,
+        "rejected": 225
+      },
+      "exp_oracle": "exact Fraction Taylor at original argument; geometric tail; no range reduction",
+      "exp_oracle_tail_bits": 256,
+      "exp_oracle_max_degree": 306,
+      "passed": true,
+      "scalar_conversion_checks": 10,
+      "api_edge_checks": 70
+    },
+    {
+      "precision_bits": 256,
+      "counts": {
+        "add": 525,
+        "sub": 525,
+        "mul": 525,
+        "div": 308,
+        "neg": 525,
+        "square": 525,
+        "abs": 525,
+        "sqrt": 207,
+        "exp": 57,
+        "rejected": 224
+      },
+      "exp_oracle": "exact Fraction Taylor at original argument; geometric tail; no range reduction",
+      "exp_oracle_tail_bits": 384,
+      "exp_oracle_max_degree": 360,
+      "passed": true,
+      "scalar_conversion_checks": 10,
+      "api_edge_checks": 70
+    }
+  ]
+}

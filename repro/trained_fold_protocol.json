@@ -1,0 +1,78 @@
+{
+  "purpose": "Observed incidence of negative radial curvature near the rational Stokes fold after shared-MLP fitting of analyzer observations",
+  "datasets": [
+    "renderer",
+    "high_dolp"
+  ],
+  "seeds": [
+    0,
+    1,
+    2,
+    3,
+    4
+  ],
+  "initializations": [
+    "standard",
+    "broad"
+  ],
+  "dtype": "float32",
+  "device": "cpu",
+  "threads": 1,
+  "architecture": [
+    4,
+    32,
+    32,
+    3
+  ],
+  "activation": "SiLU; softplus intensity + 1e-6; rational folded polarization",
+  "optimizer": "Adam",
+  "steps": 1500,
+  "learning_rate": 0.003,
+  "full_batch_pixels": 1024,
+  "noise_std": 0.01,
+  "checkpoint_steps": [
+    0,
+    100,
+    500,
+    1000,
+    1500
+  ],
+  "radius_thresholds": [
+    0.001,
+    0.0001,
+    1e-05
+  ],
+  "negative_curvature_threshold_normalized": -1e-07,
+  "head_stationarity_threshold_normalized": 1e-05,
+  "diagnostic_precision": "float64 at stored float32 head coordinates",
+  "candidate_definition": "abs(r-1)<=threshold and radial_curvature/I**2 < -1e-7; candidate is not a proven stationary saddle",
+  "stationarity_definition": "norm([dL/da,dL/dw])/max(I**2,1e-12)<=1e-5 per unaveraged pixel loss; not backbone stationarity",
+  "radial_trials": [
+    0.001,
+    0.01,
+    0.05,
+    0.1
+  ],
+  "perturbation_space": "independent output head coordinates; shared network fixed",
+  "exact_fold_test": "normalize final candidate w to unit radius, solve intensity directional stationarity for same quadratic, compute exact-fold curvature and support-halfspace bound; distinguish transported construction from trained point",
+  "positive_control": "target-informed exact aligned stationary fold; calibration W=diag(1,.5,.5)",
+  "stop": "all20 fixed runs completed or 1200 seconds; no expanded seed or initialization search based on outcomes",
+  "weak_signal": "positive near-fold negative-curvature incidence under unmodified trained coordinates",
+  "kill_condition": "no additional training searches if incidence is absent or transient; report thresholds and retained predictions",
+  "remaining_assets": [
+    "script",
+    "config",
+    "per-run loss curves",
+    "float32 final predictions and head coordinates",
+    "weights stored as numpy arrays",
+    "float64 diagnostic records",
+    "positive control"
+  ],
+  "positive_control_escape": {
+    "optimizer": "Adam",
+    "lr": 0.003,
+    "steps": 300,
+    "start": "exact stationary fold vs same fold with radial offset 0.01; independent head coordinates",
+    "purpose": "detector and escape control; not an incidence sample"
+  }
+}

@@ -1,0 +1,18 @@
+{
+  "scope": "Independent deterministic near-fold derivative and analytic ideal-cone projection checks",
+  "numpy_version": "2.3.5",
+  "cases": 28,
+  "finite_difference_step": 1e-05,
+  "max_errors": {
+    "hvp": 1.5732792846279153e-10,
+    "bias": 2.220446049250313e-16,
+    "bias_envelope_excess": 0.0,
+    "robust_gap_excess": 0.0
+  },
+  "zero_slack_counterexample": {
+    "radius": 0.8,
+    "old_bound": 0.0,
+    "true_gap": 0.0047789014475510955,
+    "exact_gap_fraction": "241/50430"
+  }
+}

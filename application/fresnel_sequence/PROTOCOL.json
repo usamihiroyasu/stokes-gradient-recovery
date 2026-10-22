@@ -1,0 +1,44 @@
+{
+  "registered_at": "2026-10-21T22:47:15.933853+00:00",
+  "scope": "One predeclared local Fresnel sequence pilot; no parameter search, network training, paper edits or dataset download",
+  "physics": "Air to nonabsorbing n=1.5 interface; unpolarized incident light; single-interface Fresnel reflection; normalized specular S0=1 at Brewster; constant unpolarized background 0, 0.02 or 0.1 in the same units",
+  "incidence": "atan(1.5) + 18 degrees*cos(2*pi*t/40), t=0..40",
+  "AoLP": "fixed zero, or 0.05*sin(2*pi*t/40) radians; two physical motion controls",
+  "camera": "Ideal analyzer angles 0,45,90,135 degrees; independent Poisson(photon_scale*A*s) plus Gaussian read noise SD 2 electrons; divide by photon_scale; no clipping or denoising",
+  "photon_scale": [
+    1000,
+    10000
+  ],
+  "seed": [
+    0,
+    1
+  ],
+  "seed_rule": "SeedSequence([20261022, configuration_index, seed]); independent configurations and frames",
+  "unique_sequences": 24,
+  "frames_per_sequence": 41,
+  "unique_observations": 984,
+  "fit": "Unweighted least squares, not claimed Poisson maximum likelihood",
+  "arms": [
+    "BFGS and L-BFGS-B: folded baseline",
+    "BFGS and L-BFGS-B: radius-guarded curvature restart",
+    "BFGS and L-BFGS-B: physical gap audit plus same radial restart",
+    "BFGS: monotone ball-map baseline",
+    "direct weighted cone reference every frame"
+  ],
+  "sequence_state": "Each solver/arm carries its own previous raw estimate; all begin at [0,0.2,-0.1], independently of truth; retain failures",
+  "native_gtol": 1e-06,
+  "objective_gap_threshold": 1e-06,
+  "maxiter": 500,
+  "restart": "At most once per frame; choose least-loss candidate among radial offsets -0.01,+0.01,0, then same solver; interventions propagate only in their own arm",
+  "curvature_gate": "abs(r-1)<=1e-3 and c_r/I^2 < -1e-7; same frozen gate as manuscript",
+  "report": "All native flags, physical objective gaps, truth Stokes RMSE, independent physical certificate, evaluation counts and warnings; raw endpoint diagnostic Hessians are post-hoc coverage overhead; no universal speed claim",
+  "stop_rule": "No adaptation to outcome. Zero occurrence or absence of added diagnostic value is retained; do not add to manuscript automatically.",
+  "physics_source": "https://pbr-book.org/3ed-2018/Reflection_Models/Specular_Reflection_and_Transmission",
+  "code_sha256": "bf708a4d3c94312f75213cd4b0a151c23bd8d04c167b27b3ce77661ba1589626",
+  "core_sha256": "6fd8492d1d585b09c83f99625d2a9b0c7b65a9a338c5424197ce2603b49a1bae",
+  "environment": {
+    "python": "3.12.3",
+    "numpy": "2.5.4",
+    "scipy": "1.18.1"
+  }
+}

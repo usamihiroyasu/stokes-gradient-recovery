@@ -1,0 +1,39 @@
+{
+  "cases": 60,
+  "saved_false_success": 12,
+  "new_false_success": 12,
+  "saved_failures": 1,
+  "new_failures": 1,
+  "saved_ids": [
+    1,
+    2,
+    3,
+    21,
+    25,
+    29,
+    40,
+    41,
+    45,
+    47,
+    53,
+    55
+  ],
+  "new_ids": [
+    1,
+    2,
+    3,
+    21,
+    25,
+    29,
+    40,
+    41,
+    45,
+    47,
+    53,
+    55
+  ],
+  "max_previous_coordinate_difference": 5.617728504603292e-14,
+  "max_loss_gap_difference": 4.853420616790505e-12,
+  "new_after_restart_false_success": 0,
+  "new_after_restart_failures": 1
+}

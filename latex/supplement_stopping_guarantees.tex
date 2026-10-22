@@ -1,0 +1,157 @@
+\section{Proofs and checks for finite-tolerance stopping}
+\label{sec:sstopproof}
+Write $\Delta(s)=f(s)-\min_{u\in\mathcal C}f(u)$ and $x_+=\max\{x,0\}$.
+The guarantee concerns a $C^2$, $\mu$-strongly convex physical objective on $\mathbb R^3$. The evaluated Stokes state has $0<I\le\overline I$ and $0\le r\le1$. The radial physical Hessian is bounded above by $L\ge\mu$ at the evaluated point when $r\ge1/2$. A global Hessian upper bound is sufficient but not necessary for this pointwise assumption. The intensity coordinate may be any regular coordinate specified in the main text. All identities below use its exact evaluated $I,I'$ and exact $r,e$. Uncertain geometry requires an additional error model.
+
+\subsection{Supporting-gap inequality from strong convexity}
+Let $s=I(1,\phi e)$, $n=(-1,e)$ and $\sigma=I(1-\phi)$. For every $u\in\mathcal C$, $n^{\mathsf T}(u-s)\le\sigma$. Strong convexity gives, with $d=u-s$,
+\begin{equation}
+ f(s)-f(u)\le-g^{\mathsf T}d-\frac\mu2\|d\|^2
+ \le-(g+\lambda n)^{\mathsf T}d-\frac\mu2\|d\|^2+\lambda\sigma.
+ \label{eq:sstrongsupport}
+\end{equation}
+Taking the supremum over $d\in\mathbb R^3$ yields $\Delta(s)\le\|g+\lambda n\|^2/(2\mu)+\lambda\sigma$ for every $\lambda\ge0$. This is the standard strong-convexity/dual-residual argument. The original quadratic corollary is sharper when the full metric is known; this isotropic inequality extends to the present strongly convex class.
+
+\subsection{A pointwise bound using one-sided radial curvature}
+For $r>0$ write $g_p=me+u$, $u\perp e$. The first derivatives satisfy
+\begin{equation}
+ b=g_I+\phi m,\qquad j/I=a_rm e+t_ru.
+ \label{eq:sstopdecomposition}
+\end{equation}
+Suppose $|b|\le\varepsilon$ and $\|j\|/I\le\varepsilon$. Then $|a_rm|\le\varepsilon$, $\|u\|\le\varepsilon/t_r$. For $r<1$, setting $\lambda=0$ in \eqref{eq:sstrongsupport} gives
+\begin{equation}
+ \begin{aligned}
+ U_1=\frac1{2\mu}\bigl[&(\varepsilon+\phi\varepsilon/a_r)^2\\
+              &+(\varepsilon/a_r)^2+(\varepsilon/t_r)^2\bigr],\qquad
+ \Delta(s)\le U_1.
+ \end{aligned}
+ \label{eq:sstopfirst}
+\end{equation}
+At $r=1$ define $U_1=+\infty$. At the origin $\phi=0$ and $DF=2\operatorname{Id}_2$; the displayed first-order estimate remains a conservative bound with $a_r=t_r=2$ and does not require a radial direction.
+
+For $1/2\le r\le1$ let $k_r=|\kappa_r|$ and assume $c_r\ge-I\nu$. Since $\kappa_r<0$, the chain rule implies
+\begin{equation}
+ m\le M_r:=\frac{\nu+ILa_r^2}{k_r}.
+ \label{eq:sstopmplus}
+\end{equation}
+Define the continuous slack-to-derivative ratio
+\begin{equation}
+ D_r=\frac{(1-r)(1+r^2)}{2(1+r)}.
+ \label{eq:sstopD}
+\end{equation}
+For $r<1$ this equals $(1-\phi)/a_r$, while $D_1=0$. If $m\ge0$, choose $\lambda=0$ and bound $m$ by $M_r$. If $m<0$, choose $\lambda=-m$; then $g+\lambda n=(b+(1-\phi)m,u)$ and $\lambda\sigma=-mI(1-\phi)$. Consequently,
+\begin{equation}
+ \begin{aligned}
+ U_+&=\frac{(\varepsilon+\phi M_r)^2+M_r^2+(\varepsilon/t_r)^2}{2\mu},\\
+ U_-&=\frac{(\varepsilon+\varepsilon D_r)^2+(\varepsilon/t_r)^2}{2\mu}
+             +I\varepsilon D_r,\\
+ \Delta(s)&\le\min\{U_1,\max(U_+,U_-)\}.
+ \end{aligned}
+ \label{eq:sstoplocal}
+\end{equation}
+At $r=1$ the negative-$m$ residual needs no bound on $|m|$: its slack and radial residual are exactly zero. At $r<1/2$ only $U_1$ is used. These gap bounds use an upper bound on one physical curvature. Complete gradient recovery requires the signed derivative values specified in the main text.
+
+\subsection{Uniform constants and the tolerance exponents}
+Put $\delta=1-r$ and $K_0=\overline I L$. The following bounds hold:
+\begin{equation}
+ \begin{aligned}
+ &t_r\ge1,\quad \phi\le1,\quad a_r\ge\delta &&(0\le r\le1),\\
+ &a_r\le2\delta,\quad k_r\ge1 &&(1/2\le r\le1),\\
+ &1-\phi=\delta^2/(1+r^2),\quad D_r\le\delta.
+ \end{aligned}
+ \label{eq:sstopgeometrybounds}
+\end{equation}
+For example, $a_r\ge\delta$ follows from
+\begin{equation*}
+ 2(1+r)-(1+r^2)^2=(1-r)(r^3+r^2+3r+1)\ge0.
+\end{equation*}
+For $r\ge1/2$, $a_r\le2\delta$ follows from $(1+r^2)^2-(1+r)=r(r^3+2r-1)\ge0$. Also
+\begin{equation*}
+ k_r-1=\frac{(1-r)(r^5+r^4+4r^3+8r^2+11r-1)}{(1+r^2)^3}\ge0
+\end{equation*}
+on that interval. The bound on $D_r$ is immediate; in fact $D_r\le\delta/2$ also holds, but is not needed for the stated constant.
+
+Fix any $0<h\le1/2$. If $\delta\ge h$, first-order inversion gives $\|g\|^2\le3\varepsilon^2+3\varepsilon^2/a_r^2\le6\varepsilon^2/\delta^2$, so
+\begin{equation}
+ \Delta(s)\le\frac{3\varepsilon^2}{\mu h^2}.
+ \label{eq:sstopfar}
+\end{equation}
+If $\delta<h$, then $r>1/2$ and \eqref{eq:sstopmplus} gives $m_+\le\nu+4K_0\delta^2$. For $m\ge0$, the zero-multiplier residual obeys
+\begin{equation}
+ \|g\|^2\le3\varepsilon^2+3m^2
+ \le3\varepsilon^2+6\nu^2+96K_0^2\delta^4.
+ \label{eq:sstoppositive}
+\end{equation}
+For $m<0$ and $r<1$, $|m|(1-\phi)\le\varepsilon D_r\le\varepsilon\delta$. With $\lambda=-m$, this gives $\|g+\lambda n\|^2\le5\varepsilon^2$ and $\lambda\sigma\le\overline I\varepsilon\delta$. At the exact fold these claims hold because the corresponding slack terms vanish. Combining both signs,
+\begin{equation}
+ \Delta(s)\le\frac{5\varepsilon^2+6\nu^2+96K_0^2h^4}{2\mu}
+                   +\overline I\varepsilon h.
+ \label{eq:sstopnear}
+\end{equation}
+For $0<\varepsilon\le K_0/8$, set $h=(\varepsilon/K_0)^{1/3}\le1/2$. Let $X=K_0^{2/3}\varepsilon^{4/3}/\mu$. Then $\varepsilon^2/\mu\le X$ and $\overline I\varepsilon h\le X$, the latter because $\mu\le L$. The far bound is $3X$ and the near bound is at most $(5/2+48+1)X+3\nu^2/\mu$. Thus 52 is a conservative common coefficient. When $\varepsilon=0$, first-order inversion gives $g=0$ away from the fold; at the fold the same multiplier argument yields the remaining $\nu^2$ bound.
+
+\subsection{Noisy observations and native tolerances}
+The main-text error inflation follows directly from the supplied absolute/norm budgets. In particular, $c_r\ge\widehat c_r-E_c\ge-I\nu$, including when the supplied curvature is positive. The proof applies to any valid supplied budgets. Establishing rounding-error budgets is a separate numerical task. Model constants and geometry must correspond to the objective actually optimized.
+
+Suppose a native infinity-norm gradient test satisfies $\|\nabla_{a,w}\widetilde f\|_\infty\le t_g$, with $t_g\ge0$, and $I\ge I_{\min}>0$, $|I'|\ge J_{\min}>0$. Then
+\begin{equation}
+ \begin{aligned}
+ \varepsilon_{\mathrm{actual}}&:=\max\{|b|,\|j\|_2/I\}\\
+ &\le\varepsilon_{\mathrm{native}}
+ :=\max\{t_g/J_{\min},\sqrt2\,t_g/I_{\min}\}.
+ \end{aligned}
+ \label{eq:sstoprawconversion}
+\end{equation}
+Thus $\varepsilon=\varepsilon_{\mathrm{native}}$ is a valid tolerance value for the theorem. Similarly, a scalar-curvature test $c_r\ge-t_H$, with $t_H\ge0$, gives
+\begin{equation*}
+ \nu_{\mathrm{actual}}:=\max\{0,-c_r/I\}
+ \le\nu_{\mathrm{native}}:=t_H/I_{\min}.
+\end{equation*}
+When curvature is required, use $\nu=\nu_{\mathrm{native}}$. The other theorem assumptions, including $\varepsilon_{\mathrm{native}}\le K_0/8$, must also hold. Supplied derivative errors require the error-inflation formulas in the main text. For an exponential intensity coordinate $J_{\min}=I_{\min}$. Native objective-reduction tolerances or successful line-search flags alone do not supply these derivative bounds.
+
+For target gap $\tau$, the two main-text thresholds allocate half of $\tau$ to each term. The example in the code has $\mu=L=1/2$, $\overline I=8$, $\tau=10^{-6}$. Rounding its exact thresholds downward gives the sufficient choices $\varepsilon\le2.886\times10^{-7}$ and $\nu\le2.886\times10^{-4}$ in the stated normalized units. The pointwise bound can accept points rejected by the coarse uniform threshold.
+
+\subsection{Sharp examples and failure of unrestricted transfer}
+For the first tolerance take the single objective $f(s)=\tfrac12\|s-(1,e)\|^2$ with fixed unit $e$. Let $r\uparrow1$, $\phi=2r/(1+r^2)$, $I=(1+\phi)/(1+\phi^2)$. These intensities are bounded by two. Define $m=I\phi-1=(\phi-1)/(1+\phi^2)$. The intensity derivative satisfies $b=(I-1)+\phi m=0$. Exact formulas are
+\begin{equation}
+ \begin{aligned}
+ \varepsilon&=a_r|m|
+ =\frac{2(1-r)^3(1+r)}{(1+r^2)(r^4+6r^2+1)},\\
+ \Delta(s)&=\frac{(1-r)^4}{2(r^4+6r^2+1)}.
+ \end{aligned}
+ \label{eq:ssharpexact}
+\end{equation}
+Here $c_r/I=Ia_r^2+\kappa_rm\ge0$ for $0<r<1$: $I a_r^2\ge0$, $m<0$ and $\kappa_r<0$. Hence $\nu=0$, while $\varepsilon\sim(1-r)^3/4$ and $\Delta\sim(1-r)^4/16$. Any putative uniform upper bound $C\varepsilon^p$ with $p>4/3$ and fixed $C$ fails. The exact intensity adjustment is essential; keeping $I=1$ would leave a first intensity derivative of order $(1-r)^2$ and would not establish this claim.
+
+For the curvature tolerance let $s=(1,e)$, $n=(-1,e)$, $0<\alpha<1$, and $f_\alpha(u)=\tfrac12\|u-z_\alpha\|^2$ with $z_\alpha=s-\alpha n$. The center $z_\alpha=(1+\alpha,(1-\alpha)e)$ is in $\mathcal C$. At the fold, $g=\alpha n$, $b=0$, $j=0$, $c_r=-\alpha$, and $\Delta=\alpha^2$. Thus the $\nu^2$ order cannot be improved. This is the Euclidean-metric version of the fold ambiguity family used earlier. It also proves that first-order tolerances alone cannot imply a vanishing gap at the fold.
+
+For unbounded outer coordinates, use the fixed objective $f(s)=\tfrac12\|s-(1,1/2,0)\|^2$. Let $r\to\infty$, $e=(1,0)$ and $I=(1+\phi/2)/(1+\phi^2)$. Again $b=0$, while $m=I\phi-1/2\to-1/2$, $a_r\sim-2/r^2$, and $\kappa_r\sim4/r^3$. Therefore
+\begin{equation}
+ \varepsilon\sim r^{-2},\qquad\nu\sim2r^{-3},\qquad\Delta(s)\to1/8.
+ \label{eq:sstopoutercounter}
+\end{equation}
+No bound depending only on vanishing $\varepsilon,\nu$ can hold over both unrestricted sheets. Canonicalization changes the derivatives: the inner first derivative in this example does not remain small.
+
+For intensity scaling, set $w=0$, $I=\exp a\downarrow0$ and $f(s)=\tfrac12\|s-(1,0,0)\|^2$. The raw intensity derivative is $I(I-1)$, its second derivative is $I(2I-1)$, and the polarization Hessian is $4I^2\operatorname{Id}_2$ with zero mixed block. Raw first derivatives and the negative part of the full raw Hessian tend to zero, but $\Delta\to1/2$. In contrast, $b=I-1$ does not vanish, so the normalized test rejects the sequence. This explains why a lower intensity/coordinate-derivative bound is needed when converting a raw solver tolerance.
+
+\subsection{Relation to squared slack and KL results}
+The scalar slack of the normalized polarization boundary is
+\begin{equation}
+ I-\|p\|=I\frac{(1-r)^2}{1+r^2}
+       =\left(\frac{\sqrt I(1-r)}{\sqrt{1+r^2}}\right)^2.
+ \label{eq:sstopslacklink}
+\end{equation}
+Locally at a nonzero fold this is a squared slack in a regular radial coordinate. This identity connects the fold to squared-variable theory. The proof combines the corresponding chain-rule geometry with the standard dual-residual bound. Ding--Wright \cite[Thm.~3.6, Cor.~3.7]{dingwright} already establish quantitative approximate second-order transfer with active-Jacobian rank conditions and conditioning-dependent constants. Their conclusion is an approximate weak second-order condition, whereas the present strongly convex specialization reports an explicit gap from a single radial lower test.
+
+Ouyang \emph{et al.} \cite[Thm.~3.11, Rem.~3.12]{ouyang} establish local KL exponents for Hadamard difference models under a KL assumption and an additional error bound, including exponent $3/4$ without strict complementarity. A gradient-to-gap power $4/3$ is therefore a known type of degenerate-contact behavior. The Stokes result makes this power explicit on the stated coordinate domain, with uniform constants, a scalar curvature test, and a supplied-error model. Li \emph{et al.} \cite[Thm.~5, Lem.~6.1]{hadamard} provide a separate algorithmic guarantee under nondegeneracy/strict-saddle assumptions and qualitative proximity of approximate stationary sets. The main-text theorem uses stronger convexity of the physical objective, but does not require those assumptions or a known neighborhood of its optimum. These comparisons delimit the specialization addressed here.
+
+For a general nonconvex $C^2$ objective, the existing recovery-error bound can instead be combined with a standard projected-gradient residual. With the Euclidean projection $\Pi_{\mathcal C}$ in \eqref{eq:euclideancone}, define $R_\gamma(g)=\gamma^{-1}\|s-\Pi_{\mathcal C}(s-\gamma g)\|$ for $\gamma>0$. Euclidean nonexpansiveness gives $R_\gamma(g)\le R_\gamma(\widehat g)+\|g-\widehat g\|$. This standard inequality gives an approximate stationarity statement for the nonconvex case.
+
+\subsection{Fixed verification and reproduction}
+The fixed grid has three SPD metrics, intensities $0.02,1,4$, radii $0,0.25,0.5,0.75,0.9,0.99,0.999,1$, two directions and four gradient-center choices, giving 576 quadratics. Twenty-four additional strongly convex quartics use the ideal metric plus $0.1(v^{\mathsf T}(s-z))^4/4$, $v=(1,0.3,-0.2)$, with the same intensities, four radii and two directions. Their Hessian's actual polarization upper eigenvalue supplies a valid pointwise $L$. Supplied derivative perturbations have budgets zero, $10^{-8}$ or $10^{-4}$. Every result is retained; no configuration is added in response to its outcome. SLSQP supplies independent physical minima, with 600 native successes and maximum feasibility violation $9.64\times10^{-14}$. Computed gap-minus-bound residuals reach $1.24\times10^{-14}$, consistent with that reference accuracy; these are not symbolic proofs. Independent PyTorch derivatives check all 600 objectives, including the prescribed radial directions at the origin, where the coordinate alone does not encode that direction.
+
+Ninety-digit decimal calculations retain 12 first-tolerance and 12 curvature-tolerance examples, eight unbounded-outer examples and 16 vanishing-intensity examples. The last first-tolerance ratio is $0.3968502629915207$, approaching $2^{-4/3}=0.3968502629920499$. The constructions and their limiting calculations above provide the proofs; finite precision checks do not establish the exponents on their own.
+
+The retrospective endpoint check uses all 9\,284 previously stored real-data warm endpoints. Exactly 463 are switched inward, preserving their outputs. Derivative tests are recomputed at the inner coordinates; $\mu=L=1/2$, $\overline I=8$ and zero supplied derivative-error budgets are used. All recorded intensities satisfy that domain. The pointwise bound accepts 8\,861 endpoints and rejects all 295 historical false successes, plus 128 accurate endpoints. The coarse uniform bound alone accepts 980. This check makes no new optimizer calls but acquires 9\,284 full head Hessians, including points where the theorem would not require one. The implementation prioritizes complete coverage of the stored endpoints over monitor cost. Validated rounding-error budgets and evaluation on unseen observations remain outside this retrospective check.
+
+Sources, fixed protocols, all numeric records, a standalone certificate implementation, an independent AD audit and replay scripts are in \nolinkurl{theory/stopping_guarantee/}. Prior experiments and their files remain unchanged.

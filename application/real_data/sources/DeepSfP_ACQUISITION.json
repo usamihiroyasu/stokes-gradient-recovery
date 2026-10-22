@@ -1,0 +1,143 @@
+{
+  "dataset": "DeepSfP",
+  "archive_bytes": 4956684332,
+  "source_url": "https://drive.usercontent.google.com/download?id=1EtjfMTfpanJotH92GFz300X_ZEmGXuqr&export=download&confirm=t",
+  "fetched_members": [
+    {
+      "member": "deepSfP_data/test_list.csv",
+      "bytes": 548,
+      "compressed_bytes": 139,
+      "sha256": "1b26ce899ea850fbf41b2e75f1707a6dfe1034374a6ec0675f85c34d22414abd",
+      "compressed_sha256": "f3d0919522e9529fdef41b635473c9077378a19649f70ad62a62ce04c8acdfc0",
+      "crc32": "7e730a0b",
+      "verified_local_header": 1779,
+      "payload_range": [
+        1851,
+        1989
+      ]
+    },
+    {
+      "member": "deepSfP_data/README.txt",
+      "bytes": 2931,
+      "compressed_bytes": 1395,
+      "sha256": "57a318d8779c95e02f4ad2045000e67d248cfde4cca29508c74656ff28c7ecaa",
+      "compressed_sha256": "c4c95a205739219f96b2a346be81695714716cdef17d531d9e3c200c8070aa8b",
+      "crc32": "28ea47c6",
+      "verified_local_header": 1719094396,
+      "payload_range": [
+        1719094465,
+        1719095859
+      ]
+    },
+    {
+      "member": "deepSfP_data/indoor/box_f.mat",
+      "bytes": 12964363,
+      "compressed_bytes": 12635627,
+      "sha256": "c74452c84f06af7eb4b8985c96c6c5f97fdc23f1be5b462074c8299a787bc798",
+      "compressed_sha256": "731a35dbe5d4e975b3e3209829ebaabe5bd8e80354bec7513ee7e437f6be3845",
+      "crc32": "7b727c81",
+      "verified_local_header": 3553373116,
+      "payload_range": [
+        3553373191,
+        3566008817
+      ]
+    },
+    {
+      "member": "deepSfP_data/indoor/father_christmas_f.mat",
+      "bytes": 13775287,
+      "compressed_bytes": 13479694,
+      "sha256": "bf6e12a19493e7b91d1dd0530dbe601abcaa1a20f2090d62d6551723e866547d",
+      "compressed_sha256": "16fa03171c25ea8526044d835435ae4aee012bcd10a7f948f2a78e8f970abb48",
+      "crc32": "256d6db7",
+      "verified_local_header": 3750245899,
+      "payload_range": [
+        3750245987,
+        3763725680
+      ]
+    },
+    {
+      "member": "deepSfP_data/indoor/horse_l.mat",
+      "bytes": 16814450,
+      "compressed_bytes": 16553064,
+      "sha256": "d71e6a323c2f3c9e049e0bc85663f71d1b0057f994028cba1b8f69a0d61a6ecc",
+      "compressed_sha256": "f2c90afeca97888cf67020b58dc61a4109a51e68ab3d84cd4e9474826e72d27c",
+      "crc32": "3db69cd4",
+      "verified_local_header": 4127374665,
+      "payload_range": [
+        4127374742,
+        4143927805
+      ]
+    }
+  ],
+  "range_ledger": [
+    {
+      "start": 4956618752,
+      "end": 4956684331,
+      "bytes": 65580,
+      "sha256": "7c5e4d75887e6066b059bfaa430513980083fe2dcf937fb6c95c7c1478aa608c"
+    },
+    {
+      "start": 1779,
+      "end": 2802,
+      "bytes": 1024,
+      "sha256": "b18767ac6ba4956d81c09c87214d74b86bb63f9c700b097a5786e4fea113409a"
+    },
+    {
+      "start": 1851,
+      "end": 1989,
+      "bytes": 139,
+      "sha256": "f3d0919522e9529fdef41b635473c9077378a19649f70ad62a62ce04c8acdfc0"
+    },
+    {
+      "start": 1719094396,
+      "end": 1719095419,
+      "bytes": 1024,
+      "sha256": "88e8122efcb83d58aeb5226db1a6687de736754960a6db6528b6736fb73dce65"
+    },
+    {
+      "start": 1719094465,
+      "end": 1719095859,
+      "bytes": 1395,
+      "sha256": "c4c95a205739219f96b2a346be81695714716cdef17d531d9e3c200c8070aa8b"
+    },
+    {
+      "start": 3553373116,
+      "end": 3553374139,
+      "bytes": 1024,
+      "sha256": "2763715c8b794e499ba8d657adf76f7ff09567ffd56dd4e8a00b5ce45dd8445d"
+    },
+    {
+      "start": 3553373191,
+      "end": 3566008817,
+      "bytes": 12635627,
+      "sha256": "731a35dbe5d4e975b3e3209829ebaabe5bd8e80354bec7513ee7e437f6be3845"
+    },
+    {
+      "start": 3750245899,
+      "end": 3750246922,
+      "bytes": 1024,
+      "sha256": "4bc2715dde18ca4e5449abf044afebde1f3549baece231f1b538442a3e6d495c"
+    },
+    {
+      "start": 3750245987,
+      "end": 3763725680,
+      "bytes": 13479694,
+      "sha256": "16fa03171c25ea8526044d835435ae4aee012bcd10a7f948f2a78e8f970abb48"
+    },
+    {
+      "start": 4127374665,
+      "end": 4127375688,
+      "bytes": 1024,
+      "sha256": "0227e42eb31939da2172f2ce4a2291e77b727d1b1656f319ba213314e5635f62"
+    },
+    {
+      "start": 4127374742,
+      "end": 4143927805,
+      "bytes": 16553064,
+      "sha256": "f2c90afeca97888cf67020b58dc61a4109a51e68ab3d84cd4e9474826e72d27c"
+    }
+  ],
+  "network_bytes": 42740619,
+  "whole_archive_downloaded": false,
+  "whole_archive_sha256_available": false
+}

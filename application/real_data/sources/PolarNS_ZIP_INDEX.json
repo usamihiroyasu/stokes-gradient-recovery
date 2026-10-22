@@ -1,0 +1,44 @@
+{
+  "dataset": "PolarNS",
+  "size": 14202427825,
+  "scope": "Selected-member index only; acquisition script checks complete live ZIP directory and verifies pinned payload hashes.",
+  "complete_index_sha256": "82f441bffdc91c0224330b5a12cb6980cd203007d2b6ba16321a68cdb05d77f6",
+  "files": [
+    {
+      "name": "object/241015104249/capture_info.txt",
+      "uncompressed": 1842,
+      "compressed": 654,
+      "crc32": "34b44d20",
+      "offset": 1217626309,
+      "method": 8,
+      "flags": 0
+    },
+    {
+      "name": "object/241015104249/img_stat.mat",
+      "uncompressed": 63934201,
+      "compressed": 63951552,
+      "crc32": "134efcab",
+      "offset": 1217627029,
+      "method": 8,
+      "flags": 0
+    },
+    {
+      "name": "scene/241021103114/capture_info.txt",
+      "uncompressed": 1841,
+      "compressed": 654,
+      "crc32": "779b0e9e",
+      "offset": 4227341067,
+      "method": 8,
+      "flags": 0
+    },
+    {
+      "name": "scene/241021103114/img_stat.mat",
+      "uncompressed": 80216400,
+      "compressed": 51276037,
+      "crc32": "e920f16b",
+      "offset": 4227341786,
+      "method": 8,
+      "flags": 0
+    }
+  ]
+}

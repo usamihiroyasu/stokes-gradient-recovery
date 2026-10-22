@@ -1,0 +1,11 @@
+{
+  "inputs": 49,
+  "checked": 196,
+  "inconclusive": 0,
+  "method": "Exact Fraction Cartesian Jacobian/Hessian at I=1; compared with outward radial tolerance enclosures.",
+  "source_sha256": {
+    "arithmetic.py": "74713f07556f4a8e02c5aeb99f0055e88bd7941edd84d42fc2ee995f4866a178",
+    "monitor.py": "af48a4d030005f6bdfec28bb08b2b3d27ac76e2eb16b9f741126b7001c26697d",
+    "check_cartesian.py": "3ff305bd8802e6464ffa0ef0d01177bccf1a8c9df67534f9bc307172c9413cdd"
+  }
+}

@@ -1,0 +1,43 @@
+\subsection{A noisy physical-reflection sequence}
+\label{sec:fresnel}
+We generate a rocking air--dielectric interface from the Fresnel coefficients, with refractive index $1.5$ and incidence angle $\arctan(1.5)+18^{\circ}\cos(2\pi t/40)$ for $t=0,\ldots,40$. Unpolarized incident light gives normalized specular intensity one at Brewster's angle. Two polarization-orientation trajectories, three constant unpolarized background levels, two photon scales, and two seeds give 24 sequences and 984 frames per arm. Four ideal analyzer observations have independent Poisson shot noise and Gaussian read noise of standard deviation two electrons. We fit these observations with unweighted least squares.
+
+Every solver/arm starts from $(0,0.2,-0.1)$ and inherits its own preceding raw endpoint. We use the existing $10^{-6}$ gradient tolerance, gap threshold, and local curvature gate, with at most one restart per frame. BFGS and L-BFGS-B report nine and seven inaccurate successes. Both curvature-triggered and physically audited branches have zero such endpoints, with seven interventions per solver; their corrections propagate through subsequent frames. On the uncorrected branches, the curvature gate detects all 16 false successes and flags no accurate accepted endpoint. The physical bound also rejects all 16. Both solvers have zero native failures in this grid. The simulation exhibits the fold mechanism under a specified physical noise model; direct physical auditing detects the same inaccurate endpoints. Supplementary Section S18 gives the complete protocol and alternative-map control.
+
+\begin{figure*}[!t]
+\centering\includegraphics[width=.96\textwidth]{images/fresnel_sequence.pdf}
+\caption{Fresnel-reflection continuation with shot and read noise. The displayed BFGS sequence is selected by the largest baseline objective gap in the fixed complete grid, rather than as a typical sequence. (a) Polarization estimate and physical truth. (b) Gap to the direct cone optimum; the dashed line is $10^{-6}$. Both audited branches overlap to plotting accuracy. Gaps below $10^{-15}$ are displayed at that floor. The complete grid has 984 frames per arm, with nine BFGS and seven L-BFGS-B false successes, versus zero in either audited branch.}
+\label{fig:fresnel}
+\end{figure*}
+
+\subsection{Released polarization observations}
+\label{sec:real}
+We freeze small subsets of DeepSfP \cite{ba} and PolarNS/PolarBurstSR \cite{polarns} before optimization. DeepSfP contributes three indoor test objects and their four-angle observations. PolarNS contributes the lexicographically first object and scene mean/variance records, averaged over 10\,000 and 1\,017 captures. Those means are not treated as individual noisy frames. The first three released PolarBurstSR test crops contribute all 14 raw frames and four nominal color planes, unpacked with the authors' sensor layout.
+
+For each static image, we select 128 seeded uniform eligible pixels and 64 pixels from an observed-high-DoLP stratum. For each burst color plane, a fixed $4\times4$ sensor grid is supplemented by eight high-DoLP positions selected using only the first frame. Finite, nonsaturated observations above a fixed relative intensity floor are eligible. The selections are reported separately in Supplementary Section S18; overlapping inputs and within-image/frame dependencies preclude a prevalence interpretation. Static samples follow a prescribed spatial scan. Burst samples follow fixed sensor coordinates without motion compensation, and are not asserted to follow one material point.
+
+The reference is the cone optimum of the nominal four-analyzer quadratic. It measures optimization accuracy under that model; the available observations do not provide noise-free Stokes truth or a calibrated camera likelihood. Both solvers use $10^{-6}$ tolerance. Each arm carries its own state; a cold-start control resets intensity from the current observation and uses fixed polarization raw coordinates. The fixed protocol yields 576 DeepSfP, 384 PolarNS-mean, and 3\,682 burst entries per solver/arm, totaling 37\,136 fits across two solvers and four arms.
+
+\begin{table*}[!t]
+\caption{Released-data stopping audit. Every count pair is BFGS/L-BFGS-B. A false success is native acceptance with nominal quadratic gap above $10^{-6}$. Counts combine the separately reported sampling strata, not independent scenes. ``Detected'' and ``rejected'' refer to audits of the uncorrected warm-start endpoints. All native failure counts are zero.}
+\label{tab:realdata}
+\centering\small\renewcommand{\arraystretch}{1.15}
+\begin{tabularx}{\textwidth}{@{}Xrrrrr@{}}\toprule
+Subset & Entries & Cold false & Warm false & Local detected & Physical rejected\\\midrule
+DeepSfP & 576 & 0/0 & 0/0 & 0/0 & 0/0\\
+PolarNS means & 384 & 0/7 & 111/64 & 0/0 & 111/64\\
+PolarBurstSR & 3\,682 & 0/7 & 16/104 & 0/0 & 16/104\\\bottomrule
+\end{tabularx}
+\end{table*}
+
+Table~\ref{tab:realdata} shows inaccurate native successes in the PolarNS and burst subsets, while DeepSfP has none. None of the 295 uncorrected warm-start false successes satisfies the predeclared local fold gate, so curvature-triggered restarting leaves those counts unchanged. The physical bound rejects every inaccurate accepted endpoint. One physically audited radial restart leaves 68/64 native false successes in the PolarNS means and 16/99 in the bursts; their final bounds still reject them. The audit thus detects errors that a single radial restart leaves unresolved. On these observations, the physical stopping bound has broader coverage than the local fold gate. Figure~\ref{fig:realregimes} places them in the radius and gap-bound regimes.
+
+An independent physical-coordinate SLSQP check of 29 selected reference minima has maximum loss discrepancy $1.31\times10^{-18}$. Independent float64 PyTorch AD audits all 309 cold/warm false successes and 32 control endpoints; maximum head-gradient, Hessian, and physical-gradient discrepancies are $7.77\times10^{-18}$, $8.89\times10^{-16}$, and $1.39\times10^{-17}$. No solver warning or native failure is removed. These checks assess the nominal objective and its derivatives. Aligned denoising, super-resolution, and surface-normal accuracy require separate evaluation.
+
+\begin{figure*}[!t]
+\centering\includegraphics[width=.96\textwidth]{images/real_stopping_regimes.pdf}
+\caption{All 9\,284 uncorrected real-data warm-start fits across two solvers. The subsets include uniform and enriched selections with repeated observations across distinct histories. (a) Objective gaps against raw radius. Crosses mark native false successes; the dotted line marks $r=1$ and the dashed line marks gap $10^{-6}$. None passes the fixed local fold gate. (b) Physical supporting-half-space bound against the reference gap; the dotted line is equality and dashed lines mark $10^{-6}$. The bound rejects all inaccurate endpoints. Values below $10^{-14}$ are displayed at that floor. The comparisons use float64 arithmetic, without outward-rounded certification.}
+\label{fig:realregimes}
+\end{figure*}
+
+\input{chart_repair_results.tex}
