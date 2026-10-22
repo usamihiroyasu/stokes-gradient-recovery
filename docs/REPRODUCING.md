@@ -189,3 +189,12 @@ error budgets; the float64 checks do not establish those budgets.
 Machine names and absolute interpreter paths are omitted from the public
 environment metadata. Recorded package versions, scientific inputs, and
 numerical outcomes are retained.
+
+## Optional symbolic audit
+
+The exact-rational symbolic identities additionally use SymPy 1.14.0:
+
+```sh
+python -m pip install sympy==1.14.0
+python theory/stopping_guarantee/symbolic_audit.py
+```

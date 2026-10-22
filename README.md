@@ -12,6 +12,8 @@ This repository accompanies the [manuscript](paper/main.pdf) and [supplement](pa
 
 ![At the Stokes fold, first derivatives lose one physical-gradient component. A signed radial curvature recovers it. Under the paper's assumptions, recovered information supports a physical objective-gap bound.](assets/stokes-overview.svg)
 
+Author preprint: [PDF](paper/main.pdf) · [Full paper and supplement](paper/complete.pdf). We plan to submit to arXiv in November 2026; the submitting author has reached the current [monthly new-submission limit](https://info.arxiv.org/help/moderation/index.html#submission-rate).
+
 ## The question
 
 The rational Stokes head maps unconstrained coordinates into physically admissible linear-polarization states:
