@@ -25,7 +25,7 @@
 \expandafter\patchcmd\csname\string\IEEEbiography\endcsname{\vskip \@IEEEBIOskipN plus 1fil minus 0\baselineskip}{\vskip 1.5\baselineskip}{}{\PackageError{manuscript}{Could not remove elastic biography gap}{Check official class}}
 \makeatother
 \begin{document}
-\history{Review draft prepared 22 October 2026.}
+\history{This work has been submitted to the IEEE for possible publication. Copyright may be transferred without notice, after which this version may no longer be accessible.}
 \doi{}
 \title{Physical Gradient Recovery and Stopping Guarantees for a Folded Stokes Parametrization}
 \input{authors.tex}
@@ -36,7 +36,9 @@ Small derivatives in a constraint-enforcing parametrization can coexist with a s
 \begin{keywords}
 Stokes parametrization, polarization imaging, gradient recovery, stopping criteria, Hessian--vector products, constrained optimization.
 \end{keywords}
-\titlepgskip=-21pt
+% ieeeaccess doubles the extra 8.4pt history line in its title-box spacing.
+% Original -21pt - 2*8.4pt preserves the scientific page breaks.
+\titlepgskip=-37.8pt
 \maketitle
 \input{body.tex}
 \FloatBarrier

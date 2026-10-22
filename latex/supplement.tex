@@ -22,7 +22,7 @@
 \ps@headings
 \makeatother
 \begin{document}
-\history{Review draft prepared 22 October 2026.}
+\history{This work has been submitted to the IEEE for possible publication. Copyright may be transferred without notice, after which this version may no longer be accessible.}
 \doi{}
 \title{Supplementary Material: Physical Gradient Recovery and Stopping Guarantees for a Folded Stokes Parametrization}
 \input{authors.tex}
@@ -32,7 +32,9 @@
 \renewcommand{\thefigure}{S\arabic{figure}}
 \renewcommand{\thetable}{S\arabic{table}}
 \renewcommand{\thetheorem}{S\arabic{theorem}}
-\titlepgskip=-21pt
+% ieeeaccess doubles the extra 8.4pt history line in its title-box spacing.
+% Original -21pt - 2*8.4pt preserves the scientific page breaks.
+\titlepgskip=-37.8pt
 \maketitle
 \input{supplement_body.tex}
 \FloatBarrier

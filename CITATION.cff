@@ -1,7 +1,7 @@
 cff-version: 1.2.0
 message: "Please cite the accompanying manuscript using the preferred citation below."
 type: software
-version: 1.0.0
+version: 1.0.1
 date-released: 2026-10-22
 title: "Physical Gradient Recovery and Stopping Guarantees for a Folded Stokes Parametrization"
 repository-code: "https://github.com/usamihiroyasu/stokes-gradient-recovery"
@@ -31,4 +31,4 @@ preferred-citation:
       orcid: "https://orcid.org/0009-0006-0679-2098"
   year: 2026
   url: "https://github.com/usamihiroyasu/stokes-gradient-recovery"
-  notes: "Research manuscript."
+  notes: "Author preprint. Submitted to IEEE Access."

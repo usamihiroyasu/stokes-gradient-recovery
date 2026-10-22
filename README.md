@@ -4,6 +4,10 @@
 
 Hiroyasu Usami · Ayato Tsuboi · Keisuke Hara
 
+Author preprint · Submitted to IEEE Access on 22 October 2026 · [Releases](https://github.com/usamihiroyasu/stokes-gradient-recovery/releases)
+
+> This work has been submitted to the IEEE for possible publication. Copyright may be transferred without notice, after which this version may no longer be accessible.
+
 **A small gradient through a physicality-preserving output map can hide an inaccurate physical solution.**
 
 This repository accompanies the [manuscript](paper/main.pdf) and [supplement](paper/supplement.pdf). It provides recovery formulas, conditional stopping bounds, an outward-interval implementation, and reproducible polarization-fitting experiments.
@@ -139,7 +143,7 @@ The preparation script retrieves the hash-pinned official template. Its class, l
            for a Folded Stokes Parametrization},
   year = {2026},
   url = {https://github.com/usamihiroyasu/stokes-gradient-recovery},
-  note = {Research manuscript}
+  note = {Author preprint. Submitted to IEEE Access}
 }
 ```
 
