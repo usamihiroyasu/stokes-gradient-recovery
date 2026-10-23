@@ -4,7 +4,11 @@
 
 Hiroyasu Usami · Ayato Tsuboi · Keisuke Hara
 
-Author preprint · Submitted to IEEE Access on 22 October 2026 · [Releases](https://github.com/usamihiroyasu/stokes-gradient-recovery/releases)
+**Author preprint · 22 October 2026**
+
+[Read the paper](paper/main.pdf) · [Paper and supplement](paper/complete.pdf) · [Reproduce the results](docs/REPRODUCING.md) · [Version 1.0.1](https://github.com/usamihiroyasu/stokes-gradient-recovery/releases/tag/v1.0.1)
+
+Submitted to IEEE Access on 22 October 2026.
 
 > This work has been submitted to the IEEE for possible publication. Copyright may be transferred without notice, after which this version may no longer be accessible.
 
@@ -15,8 +19,6 @@ This repository accompanies the [manuscript](paper/main.pdf) and [supplement](pa
 [Main results](#main-results) · [Quickstart](#quickstart) · [Reproduce](#reproduce-the-paper) · [Code and data](#code-and-data) · [Citation](#citation)
 
 ![At the Stokes fold, first derivatives lose one physical-gradient component. A signed radial curvature recovers it. Under the paper's assumptions, recovered information supports a physical objective-gap bound.](assets/stokes-overview.svg)
-
-Author preprint: [PDF](paper/main.pdf) · [Full paper and supplement](paper/complete.pdf). We plan to submit to arXiv in November 2026; the submitting author has reached the current [monthly new-submission limit](https://info.arxiv.org/help/moderation/index.html#submission-rate).
 
 ## The question
 
@@ -142,8 +144,8 @@ The preparation script retrieves the hash-pinned official template. Its class, l
   title = {Physical Gradient Recovery and Stopping Guarantees
            for a Folded Stokes Parametrization},
   year = {2026},
-  url = {https://github.com/usamihiroyasu/stokes-gradient-recovery},
-  note = {Author preprint. Submitted to IEEE Access}
+  url = {https://github.com/usamihiroyasu/stokes-gradient-recovery/releases/tag/v1.0.1},
+  note = {Author preprint, version 1.0.1. Submitted to IEEE Access on 22 October 2026}
 }
 ```
 

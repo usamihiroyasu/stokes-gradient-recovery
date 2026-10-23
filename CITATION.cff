@@ -5,7 +5,7 @@ version: 1.0.1
 date-released: 2026-10-22
 title: "Physical Gradient Recovery and Stopping Guarantees for a Folded Stokes Parametrization"
 repository-code: "https://github.com/usamihiroyasu/stokes-gradient-recovery"
-url: "https://github.com/usamihiroyasu/stokes-gradient-recovery"
+url: "https://github.com/usamihiroyasu/stokes-gradient-recovery/releases/tag/v1.0.1"
 authors:
   - family-names: "Usami"
     given-names: "Hiroyasu"
@@ -30,5 +30,5 @@ preferred-citation:
       given-names: "Keisuke"
       orcid: "https://orcid.org/0009-0006-0679-2098"
   year: 2026
-  url: "https://github.com/usamihiroyasu/stokes-gradient-recovery"
-  notes: "Author preprint. Submitted to IEEE Access."
+  url: "https://github.com/usamihiroyasu/stokes-gradient-recovery/releases/tag/v1.0.1"
+  notes: "Author preprint, version 1.0.1. Submitted to IEEE Access on 22 October 2026."
