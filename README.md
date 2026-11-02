@@ -5,11 +5,13 @@ Chubu University, Japan · Research code and reproducibility materials
 
 A small gradient in **head coordinates** need not control the objective gap in **physical Stokes coordinates**. This study connects the information lost by a folded map from $(a,w)$ to $(I,Q,U)$ to a conditional stopping certificate. It supplies the recovery identities, their assumptions, and fixed numerical records against which the implementation can be checked.
 
-[**Read the arXiv-generated paper**](paper/arxiv.pdf) · [Exact source ZIP](manuscript/arxiv/stokes-arxiv-source.zip) · [Evidence and code](docs/RESULTS_MAP.md) · [Reproduce](#start-with-an-integrity-check) · [2-minute overview](#watch-the-research-overview)
+[**Read the arXiv-generated paper**](paper/arxiv.pdf) · [Exact source ZIP](manuscript/arxiv/stokes-arxiv-source.zip) · [Evidence and code](docs/RESULTS_MAP.md) · [Reproduce](#start-with-an-integrity-check) · [2-minute overview](#research-overview)
 
 The primary PDF is the **49-page arXiv-generated reader copy**, including the complete Supplementary Information. The manuscript has been submitted to arXiv; its public identifier will be added when available. [Source and build instructions](manuscript/arxiv/) · [Separate journal-format copies](paper/README.md).
 
-![The degree of linear polarization increases to a fold at head radius one, where radial first-order sensitivity vanishes; the outer sheet folds back. A signed radial second derivative of the composite objective completes the first-order information. A stopping certificate additionally requires the theorem's assumptions.](media/research-workflow.svg)
+![The degree of linear polarization increases to a fold at head radius one, where radial first-order sensitivity vanishes; the outer sheet folds back. A signed radial second derivative of the composite objective completes the first-order information. A stopping certificate additionally requires the theorem's assumptions.](media/research-workflow.gif)
+
+[Animation source and LaTeX formulas](media/research-workflow-source.zip)
 
 ## Two results, two scopes
 
@@ -105,13 +107,11 @@ For a complete replay, use the [reproduction guide](docs/REPRODUCING.md). It sep
 - **Fixed observations:** selected endpoints and dependent continuation histories do not estimate population failure rates.
 - **Head derivatives:** a small gradient in arbitrary shared neural-network parameters does not by itself establish the required head-derivative conditions.
 
-## Watch the research overview
+## Research overview
 
-[![Play the silent research overview](media/video-preview.png)](media/stokes-conditional-stopping.mp4)
+![Stokes conditional stopping overview](media/stokes-conditional-stopping.gif)
 
-[**Open or download the MP4**](media/stokes-conditional-stopping.mp4) · [English captions](media/stokes-conditional-stopping.en.srt)
-
-2 min 6 sec · 1080p · silent, with on-screen explanations and author names. No portrait photographs. GitHub may offer the file for download rather than play it inline.
+**2:06 · Animated GIF · Silent.** [Open the 1080p MP4](media/stokes-conditional-stopping.mp4) · [English captions](media/stokes-conditional-stopping.en.srt).
 
 <details>
 <summary><strong>Browse the repository by directory</strong></summary>
