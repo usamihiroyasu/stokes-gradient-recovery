@@ -1,131 +1,118 @@
 # Conditional stopping guarantees for a folded parametrization of reduced Stokes vectors
 
 **Hiroyasu Usami · Ayato Tsuboi · Keisuke Hara**<br>
-Chubu University, Japan
+Chubu University, Japan · Private author-review repository · Working manuscript
 
-**An optimizer says “converged.” What does that certify in physical coordinates?**
+A small gradient in **head coordinates** need not control the objective gap in **physical Stokes coordinates**. This study connects the information lost by a folded map from $(a,w)$ to $(I,Q,U)$ to a conditional stopping certificate. It supplies the recovery identities, their assumptions, and fixed numerical records against which the implementation can be checked.
 
-A small gradient in optimization coordinates can conceal a nonzero physical objective gap. We study this problem for a smooth, folded parametrization of reduced Stokes vectors $(I,Q,U)$, including partial linear polarization. At the fully linearly polarized boundary, first derivatives lose one component of the physical gradient. A signed radial second derivative recovers it.
+[**Read the paper**](paper/main.pdf) · [Supplement](paper/supplement.pdf) · [Evidence and code](docs/RESULTS_MAP.md) · [Reproduce](#start-with-an-integrity-check) · [2-minute overview](#watch-the-research-overview)
 
-[**Read the paper**](paper/main.pdf) · [Supplementary Information](paper/supplement.pdf) · [Combined PDF](paper/complete.pdf) · [Watch the overview](#watch-the-research-overview) · [Reproduce](#start-with-a-small-check)
+![The degree of linear polarization increases to a fold at head radius one, where radial first-order sensitivity vanishes; the outer sheet folds back. A signed radial second derivative of the composite objective completes the first-order information. A stopping certificate additionally requires the theorem's assumptions.](media/research-workflow.svg)
 
-![Identify information lost at the fold, recover the physical gradient using signed radial curvature, and bound the physical objective gap under the theorem's assumptions.](media/research-workflow.svg)
+## Two results, two scopes
 
-> Private author-review repository. Access is restricted to invited collaborators and reviewers; the accompanying manuscript is a working draft.
+| Result | What it establishes | Conditions and location |
+| --- | --- | --- |
+| **Recover the lost information** | At the fold, first derivatives and **one signed radial second derivative** determine the full physical gradient. | Any $C^2$ physical objective; stationary or nonstationary points. **Proposition 1**, Figure 2. |
+| **Certify a stopping decision** | On the bounded-intensity inner sheet, specified derivative tests give an explicit physical objective-gap bound with sharp tolerance orders $\varepsilon^{4/3}+\nu^2$. | Strong convexity, the stated geometry, and derivative-error conditions. **Theorem 7**, Figure 1. |
 
-## Why, how, and what
+The second derivative is taken along the head's radial direction, at fixed intensity coordinate and polarization direction. It is a derivative of the **composite objective**, rather than the curvature of the map drawn above. Recovery at the exact fold and finite-tolerance stopping throughout the inner sheet are distinct statements.
 
-| Question | Contribution |
-| --- | --- |
-| **Why can a stopping decision be misleading?** | At the fold, first-order information in parametrization coordinates does not determine the full physical gradient. |
-| **How do we recover the missing information?** | One signed radial second derivative gives an exact recovery identity at the fold, without stationarity or knowledge of the physical Hessian. |
-| **What can we certify?** | For strongly convex physical objectives on the bounded-intensity inner sheet, normalized first derivatives and a radial lower-curvature test give an explicit objective-gap bound. |
+<details>
+<summary><strong>Exact uniform bound and assumptions</strong></summary>
 
-The uniform theorem has the form
+The gap $\Delta(s)$ is measured against the best physically feasible objective value:
 
 ```math
 \Delta(s) \leq \frac{52(\bar I L)^{2/3}}{\mu}\,\varepsilon^{4/3}
 + \frac{3}{\mu}\,\nu^2.
 ```
 
-Here $\Delta(s)$ is the gap to the best physically feasible objective value, $\mu$ is the strong-convexity constant, $\bar I$ bounds intensity, and $L$ bounds physical radial curvature. The objective is $C^2$, with $L\geq\mu>0$. The normalized first-derivative tolerance is $\varepsilon\geq0$; $\nu\geq0$ bounds negative normalized radial curvature. The theorem also requires $0<I\leq\bar I$, $0\leq r\leq1$, and $\varepsilon\leq\bar I L/8$. The radial curvature test is needed only for $r\geq1/2$. The two tolerance orders are sharp; the coefficient 52 is conservative.
+- The physical objective is $C^2$ and $\mu$-strongly convex.
+- The evaluated coordinates satisfy $0<I\leq\bar I$ and $0\leq r\leq1$, where $r=\|w\|$.
+- $\varepsilon\geq0$ bounds the normalized first derivatives, with $\varepsilon\leq\bar I L/8$.
+- Choose $L\geq\mu$. For $r\geq1/2$, $L$ also bounds the physical radial curvature at the evaluated point, and $\nu\geq0$ bounds the negative part of the normalized radial curvature. No radial-curvature observation is required for $r<1/2$.
 
-See **Theorem 7** in the [paper](paper/main.pdf) for the complete statement, and [the stopping-bound implementation](theory/stopping_guarantee/) for the pointwise formula and input-error model.
+The coefficient 52 is conservative; the two tolerance orders are sharp. See **Theorem 7** in the [main paper](paper/main.pdf) for the complete statement and the [stopping-bound implementation](theory/stopping_guarantee/) for the pointwise formula and derivative-error budgets.
 
-## Results at a glance
+</details>
 
-The outward-rounded implementation evaluates a tighter **pointwise** bound for the nominal ideal four-analyzer quadratic. These outcomes use the same **9,284 stored endpoints** and an absolute nominal objective-gap target of $10^{-6}$.
+## What the fixed records show
 
-| Outcome | Stored result | Evidence |
+The outward-rounded **pointwise** certificate was evaluated on all **9,284 stored endpoints** for the nominal ideal four-analyzer quadratic, at an absolute objective-gap target of $10^{-6}$.
+
+Outer-sheet endpoints are represented by paired inner coordinates with the same physical output before the derivatives are evaluated.
+
+| At 128 fractional bits | Endpoints | Inspect the evidence |
 | --- | ---: | --- |
-| Endpoints certified at 128 fractional bits | **8,861** | [Interval results](theory/validated_stopping/results/SUMMARY.json) |
-| Historical false successes rejected | **295 of 295** | [Endpoint records](theory/validated_stopping/results/ENDPOINTS.json) |
-| Accurate endpoints that remain uncertified | **128** | [Interval study](theory/validated_stopping/README.md) |
-| Endpoints accepted by the coarser uniform bound | **980** | [Stopping-bound study](theory/stopping_guarantee/README.md) |
+| Certified within the nominal gap target | **8,861 / 9,284** | [Interval summary](theory/validated_stopping/results/SUMMARY.json) |
+| Historical false successes rejected | **295 / 295** | [Endpoint records](theory/validated_stopping/results/ENDPOINTS.json) |
+| Accurate by the reference, but not certified | **128** | [Interval study and definitions](theory/validated_stopping/README.md) |
 
-[![Paper Figure 1: uniform, pointwise and outward-rounded bounds on all 9,284 stored endpoints, plus a separate sharpness family.](media/stopping-certification.png)](latex/images/stopping_certification.pdf)
+The 423 rejected endpoints include the 295 inaccurate endpoints and 128 accurate endpoints. A failure to certify therefore does **not** establish inaccuracy. On the same endpoint set, the coarser uniform bound certifies **980** endpoints. Both bounds reject all 295 historical false successes.
 
-*Figure 1 from the manuscript. The validated pointwise bound rejects every inaccurate endpoint in this fixed set, while retaining more accurate endpoints than the uniform bound. The lower-right panel is a separate deterministic sharpness family. [Open the vector figure](latex/images/stopping_certification.pdf).*
+<details>
+<summary><strong>Inspect the bound comparison — manuscript Figure 1</strong></summary>
 
-At 128 fractional bits, the recorded complete pass takes **7.32 seconds**, includes **52 scalar curvature evaluations**, and forms no full head Hessian. This timing is specific to the recorded run and excludes the separate reference computation. Direct physical solvers are cheaper on the tested quadratics.
+[![Uniform, pointwise and outward-rounded bounds on the same 9,284 stored endpoints, followed by a separate deterministic sharpness family.](media/stopping-certification.png)](latex/images/stopping_certification.pdf)
 
-The application studies also retain the limits of local fold diagnosis: the fixed local gate misses the 295 false successes in the selected released-observation warm starts. Twenty fixed shared-network fits contain no saved near-fold negative-curvature candidates. [Follow each claim to its evidence](docs/RESULTS_MAP.md).
+The pointwise and interval bounds certify more of the accurate endpoints than the uniform bound. No endpoint is omitted. The lower-right panel is a **separate deterministic sharpness family**, not another sample of the endpoint audit. [Open the vector figure](latex/images/stopping_certification.pdf).
 
-## Watch the research overview
+</details>
 
-[![Play the silent research overview](media/video-preview.png)](media/stokes-conditional-stopping.mp4)
+The stored interval pass uses **52 scalar curvature evaluations** and forms no full head Hessian. Timings depend on the recorded implementation; direct physical solvers are cheaper on the tested quadratics. These are stopping audits for a specified nominal objective, rather than claims of a faster general-purpose solver.
 
-[**Open or download the video**](media/stokes-conditional-stopping.mp4) · [English captions](media/stokes-conditional-stopping.en.srt)
+Other retained findings matter to the interpretation: the fixed local fold gate misses the 295 false successes in the selected released-observation warm starts, and 20 fixed shared-network fits contain no saved near-fold negative-curvature candidates. The [evidence map](docs/RESULTS_MAP.md) connects these findings, the positive results, and the repair controls to their source files.
 
-2 min 6 sec · 1080p · silent, with on-screen explanations. The overview includes the authors' names and affiliations, without portrait photographs. GitHub may open the video file in its viewer or offer a download.
+## Choose a reading path
 
-## Choose your starting point
-
-| You want to… | Start here |
+| Your question | Recommended path |
 | --- | --- |
-| Understand the main guarantee | [Main paper](paper/main.pdf): Theorem 7 and Figure 1 |
-| Understand the geometric obstruction | [Main paper](paper/main.pdf): Proposition 1 and Figure 2 |
-| Check every proof and numerical protocol | [Supplementary Information](paper/supplement.pdf) |
-| Find the source and records behind a result | [Result-to-file map](docs/RESULTS_MAP.md) |
-| Replay a result in its recorded environment | [Reproduction guide](docs/REPRODUCING.md) |
-| Inspect the exact interval acceptance rule | [Interval implementation and scope](theory/validated_stopping/README.md) |
-| Locate data sources and redistribution limits | [Source and rights notes](docs/THIRD_PARTY.md) |
+| **What is the main guarantee?** | [Main paper](paper/main.pdf): Theorem 7 and Figure 1; then the exact conditions above. |
+| **Why are first derivatives insufficient?** | [Main paper](paper/main.pdf): Proposition 1 and Figure 2; [Supplement](paper/supplement.pdf) for proofs. |
+| **Where did a reported number come from?** | [Result-to-file map](docs/RESULTS_MAP.md), then the linked summaries and endpoint records. |
+| **How can I check or reproduce it?** | Integrity check below, then the study-specific [reproduction guide](docs/REPRODUCING.md). |
 
-## Start with a small check
+[Combined paper and supplement](paper/complete.pdf) · [Data sources and redistribution limits](docs/THIRD_PARTY.md)
 
-Run these commands from the repository root. The first two need only Python's standard library and do not run training or download data.
+## Start with an integrity check
 
-**1. Check the supplied files and Python syntax.**
+From the repository root, using Python's standard library:
 
 ```sh
 python3 validate_package.py
 ```
 
-This verifies the package manifest, unchanged scientific records, and Python source syntax. It does not rerun experiments.
+This checks the file manifest, preserved scientific records, and Python syntax. It does not train a model, download data, or rerun an experiment.
 
-**2. Evaluate one interval certificate.**
+To evaluate one nominal interval certificate:
 
 ```sh
 python3 theory/validated_stopping/cli.py --x 0 1 0 --y 1 .5 0 .5
 ```
 
-The example evaluates a folded optimum. Its JSON output includes the exact integer upper bound and acceptance decision. [Read the input and output conventions](theory/validated_stopping/README.md).
+This example is a folded optimum. The output includes the exact integer upper bound and the acceptance decision. [Input and output conventions](theory/validated_stopping/README.md) explain its domain and interpretation.
 
-**3. Replay the stored interval study.**
+For a complete replay, use the [reproduction guide](docs/REPRODUCING.md). It separates the recorded environments and identifies which commands write outputs. Use fresh output directories or a separate working copy, and preserve the supplied reference records. A replay is compared with the saved scientific outcomes; variable PDF metadata and implementation-specific timings are not substitutes for that comparison.
 
-Choose a new or empty output directory:
+## Scope and limits
 
-```sh
-python3 theory/validated_stopping/replay.py \
-  --output /tmp/stokes-interval-replay
-```
+- **Physical model:** $(I,Q,U)$ includes partial linear polarization. Circular polarization $V$ is outside the model.
+- **Conditional certificate:** strong convexity, the specified inner-sheet geometry, and the derivative-error conditions are part of the guarantee.
+- **Nominal accuracy:** the certificate bounds optimization error for the stated objective. Noise-free Stokes error and uncertain instrument calibration require additional models.
+- **Fixed observations:** selected endpoints and dependent continuation histories do not estimate population failure rates.
+- **Head derivatives:** a small gradient in arbitrary shared neural-network parameters does not by itself establish the required head-derivative conditions.
 
-The replay compares deterministic endpoint, reference, and stress records. Timing and environment fields are excluded from the scientific comparison. Other studies use separately recorded numerical environments; follow [the reproduction guide](docs/REPRODUCING.md) before running them.
+## Watch the research overview
+
+[![Play the silent research overview](media/video-preview.png)](media/stokes-conditional-stopping.mp4)
+
+[**Open or download the MP4**](media/stokes-conditional-stopping.mp4) · [English captions](media/stokes-conditional-stopping.en.srt)
+
+2 min 6 sec · 1080p · silent, with on-screen explanations and author names. No portrait photographs. GitHub may offer the file for download rather than play it inline.
 
 <details>
-<summary><strong>Optional: try the physical-gradient recovery example</strong></summary>
-
-The example compares recovery routes at radii 0.99, 1.00, and 1.01. Install the pinned numerical dependencies in an isolated environment:
-
-```sh
-python3 -m venv .venv
-.venv/bin/python -m pip install -r repro/requirements.txt
-.venv/bin/python examples/recover_gradient.py
-```
-
-See [recorded environments](docs/REPRODUCING.md#recorded-environments) for the Python version and environments used by other studies.
-
-</details>
-
-## Scope of the claims
-
-- **Reduced Stokes model:** $(I,Q,U)$ includes partial linear polarization; circular polarization $V$ is outside the model.
-- **Conditional guarantee:** strong convexity, the stated geometry, model constants, and derivative-error assumptions are part of the theorem.
-- **Nominal objective:** the numerical certificate bounds optimization error for the specified model. It does not bound error to noise-free Stokes truth or establish unknown instrument calibration.
-- **Fixed observations:** selected endpoints and dependent continuation histories do not estimate population failure rates.
-- **Head coordinates:** the results do not imply the same guarantee for arbitrary shared neural-network parameters. Direct physical methods remain explicit controls.
-
-## Repository map
+<summary><strong>Browse the repository by directory</strong></summary>
 
 | Directory | Contents |
 | --- | --- |
@@ -137,12 +124,14 @@ See [recorded environments](docs/REPRODUCING.md#recorded-environments) for the P
 | [`examples/`](examples/) | Small physical-gradient recovery example |
 | [`verification/`](verification/) | Numerical core used by the application replays |
 | [`docs/`](docs/) | Evidence index, environments, numerical conventions, and attribution |
-| [`media/`](media/) | Research overview, captions, and README visuals |
+| [`media/`](media/) | Overview video, captions, and README visuals |
+
+</details>
 
 ## Integrity, citation, and reuse
 
-[`MANIFEST.sha256`](MANIFEST.sha256) covers this repository snapshot. [`FROZEN_FILES.sha256`](FROZEN_FILES.sha256) identifies unchanged scientific files carried into it. Preserve the supplied reference records when regenerating outputs. Figure generators write to `latex/images/`; manuscript inputs are separate in `manuscript/source/images/`.
+[`MANIFEST.sha256`](MANIFEST.sha256) covers this repository snapshot; [`FROZEN_FILES.sha256`](FROZEN_FILES.sha256) identifies the unchanged scientific files. Figure generators write to `latex/images/`; manuscript inputs are separate in `manuscript/source/images/`.
 
 Use [`CITATION.cff`](CITATION.cff) for author and title metadata. When reporting a reproduction, identify the repository commit, command, environment, and relevant file hashes.
 
-Original author-contributed code and software documentation use the [MIT License](LICENSE). Manuscripts, figures, and selected third-party observations are outside that code licence. Full original datasets and model weights are not included. Read [the source and rights notes](docs/THIRD_PARTY.md) before using external data.
+Original author-contributed code and software documentation use the [MIT License](LICENSE). Manuscripts, figures, and selected third-party observations are outside that code licence. Full original datasets and model weights are not included. Consult the [source and rights notes](docs/THIRD_PARTY.md) before using external data. Access to this author-review repository is restricted to invited collaborators and reviewers.

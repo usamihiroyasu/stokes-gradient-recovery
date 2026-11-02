@@ -1,31 +1,40 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="348" viewBox="0 0 1200 348" role="img" aria-labelledby="title desc">
-  <title id="title">From a stopping decision to a physical guarantee</title>
-  <desc id="desc">Identify information lost at the folded Stokes boundary, recover it with signed radial curvature, and certify an objective gap under stated assumptions.</desc>
-  <defs>
-    <marker id="arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M 0 0 L 10 5 L 0 10 z" fill="#72928f"/></marker>
-  </defs>
-  <rect x="1" y="1" width="1198" height="346" rx="18" fill="#f3f7f7" stroke="#dce6e5"/>
-  <g font-family="Arial, Helvetica, sans-serif">
-    <text x="38" y="43" font-size="12" font-weight="700" letter-spacing="2.2" fill="#39716c">FOLDED STOKES PARAMETRIZATION</text>
-    <text x="38" y="92" font-size="34" font-weight="700" fill="#162e3c">From a stopping decision to a physical guarantee.</text>
-    <text x="38" y="125" font-size="17" fill="#516875">Recover the missing information. Bound the objective gap. Check the arithmetic.</text>
-    <rect x="38" y="159" width="346" height="130" rx="10" fill="#ffffff" stroke="#d1e0de"/>
-    <rect x="427" y="159" width="346" height="130" rx="10" fill="#ffffff" stroke="#d1e0de"/>
-    <rect x="816" y="159" width="346" height="130" rx="10" fill="#ffffff" stroke="#d1e0de"/>
-    <path d="M 397 225 H 414" stroke="#72928f" stroke-width="2" marker-end="url(#arrow)"/>
-    <path d="M 786 225 H 803" stroke="#72928f" stroke-width="2" marker-end="url(#arrow)"/>
-    <text x="59" y="190" font-size="13" font-weight="700" fill="#39716c">01  /  GEOMETRY</text>
-    <text x="59" y="221" font-size="20" font-weight="700" fill="#162e3c">Identify lost information</text>
-    <text x="59" y="250" font-size="15" fill="#516875">First derivatives lose one component</text>
-    <text x="59" y="271" font-size="15" fill="#516875">at the fully linearly polarized fold.</text>
-    <text x="448" y="190" font-size="13" font-weight="700" fill="#39716c">02  /  RECOVERY</text>
-    <text x="448" y="221" font-size="20" font-weight="700" fill="#162e3c">Recover the gradient</text>
-    <text x="448" y="250" font-size="15" fill="#516875">One signed radial second derivative</text>
-    <text x="448" y="271" font-size="15" fill="#516875">restores the missing component.</text>
-    <text x="837" y="190" font-size="13" font-weight="700" fill="#39716c">03  /  STOPPING</text>
-    <text x="837" y="221" font-size="20" font-weight="700" fill="#162e3c">Bound the physical gap</text>
-    <text x="837" y="250" font-size="15" fill="#516875">Strong convexity and the stated</text>
-    <text x="837" y="271" font-size="15" fill="#516875">derivative tests give a certificate.</text>
-    <text x="38" y="323" font-size="13" fill="#627782">Reduced Stokes (I, Q, U)  ·  Partial linear polarization  ·  Conditional objective-gap guarantee</text>
-  </g>
-</svg>
+<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="460" viewBox="0 0 1000 460" role="img" aria-labelledby="title desc">
+<title id="title">A geometric fold and a conditional stopping certificate</title>
+<desc id="desc">At fixed intensity and polarization direction, the degree of linear polarization d equals 2r divided by 1 plus r squared. It reaches one at head radius r equals one, then decreases on the outer sheet. Radial first-order sensitivity vanishes at this fold. A signed radial second derivative of the composite objective completes the first-order information there. A stopping certificate on the bounded-intensity inner sheet additionally requires strong convexity and the specified derivative tests.</desc>
+<defs><marker id="arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M0 0L10 5L0 10Z" fill="#697c89"/></marker></defs>
+<rect x="1" y="1" width="998" height="458" rx="16" fill="#f6f8fa" stroke="#dce3e8"/>
+<g font-family="Arial, Helvetica, sans-serif">
+<text x="30" y="46" font-size="29" font-weight="700" fill="#102b3a">A geometric fold. A conditional certificate.</text>
+<text x="30" y="80" font-size="20" fill="#4b6271">Head coordinates (a, w) → physical Stokes coordinates (I, Q, U)</text>
+<line x1="530" y1="108" x2="530" y2="414" stroke="#d5dfe4"/>
+<text x="30" y="123" font-size="20" font-weight="700" fill="#126d68">01  THE GEOMETRY</text>
+<path d="M64.00,352.00 L65.53,348.93 L67.07,345.87 L68.60,342.81 L70.13,339.75 L71.67,336.69 L73.20,333.65 L74.73,330.61 L76.27,327.58 L77.80,324.55 L79.33,321.54 L80.87,318.55 L82.40,315.56 L83.93,312.60 L85.47,309.64 L87.00,306.71 L88.53,303.79 L90.07,300.89 L91.60,298.01 L93.13,295.16 L94.67,292.32 L96.20,289.51 L97.73,286.73 L99.27,283.97 L100.80,281.23 L102.33,278.52 L103.87,275.84 L105.40,273.19 L106.93,270.57 L108.47,267.97 L110.00,265.41 L111.53,262.88 L113.07,260.38 L114.60,257.92 L116.13,255.48 L117.67,253.08 L119.20,250.72 L120.73,248.38 L122.27,246.09 L123.80,243.83 L125.33,241.60 L126.87,239.41 L128.40,237.26 L129.93,235.14 L131.47,233.06 L133.00,231.01 L134.53,229.01 L136.07,227.04 L137.60,225.10 L139.13,223.21 L140.67,221.35 L142.20,219.53 L143.73,217.74 L145.27,216.00 L146.80,214.29 L148.33,212.61 L149.87,210.98 L151.40,209.38 L152.93,207.82 L154.47,206.29 L156.00,204.80 L157.53,203.35 L159.07,201.93 L160.60,200.54 L162.13,199.20 L163.67,197.88 L165.20,196.61 L166.73,195.36 L168.27,194.15 L169.80,192.98 L171.33,191.83 L172.87,190.72 L174.40,189.65 L175.93,188.60 L177.47,187.59 L179.00,186.61 L180.53,185.66 L182.07,184.74 L183.60,183.85 L185.13,182.98 L186.67,182.15 L188.20,181.35 L189.73,180.58 L191.27,179.83 L192.80,179.11 L194.33,178.42 L195.87,177.76 L197.40,177.12 L198.93,176.51 L200.47,175.92 L202.00,175.36 L203.53,174.82 L205.07,174.31 L206.60,173.82 L208.13,173.35 L209.67,172.91 L211.20,172.49 L212.73,172.09 L214.27,171.71 L215.80,171.35 L217.33,171.02 L218.87,170.70 L220.40,170.40 L221.93,170.13 L223.47,169.87 L225.00,169.63 L226.53,169.41 L228.07,169.20 L229.60,169.02 L231.13,168.85 L232.67,168.69 L234.20,168.56 L235.73,168.44 L237.27,168.33 L238.80,168.24 L240.33,168.17 L241.87,168.11 L243.40,168.06 L244.93,168.03 L246.47,168.01 L248.00,168.00 L248,352 L64,352Z" fill="#d9efeb"/>
+<path d="M64 147V352H497" fill="none" stroke="#697c89" stroke-width="1.6" marker-end="url(#arrow)"/>
+<path d="M64 168H487" fill="none" stroke="#d0dbe1" stroke-dasharray="4 5"/>
+<path d="M248 168V352" fill="none" stroke="#97afaf" stroke-dasharray="4 5"/>
+<path d="M64.00,352.00 L65.53,348.93 L67.07,345.87 L68.60,342.81 L70.13,339.75 L71.67,336.69 L73.20,333.65 L74.73,330.61 L76.27,327.58 L77.80,324.55 L79.33,321.54 L80.87,318.55 L82.40,315.56 L83.93,312.60 L85.47,309.64 L87.00,306.71 L88.53,303.79 L90.07,300.89 L91.60,298.01 L93.13,295.16 L94.67,292.32 L96.20,289.51 L97.73,286.73 L99.27,283.97 L100.80,281.23 L102.33,278.52 L103.87,275.84 L105.40,273.19 L106.93,270.57 L108.47,267.97 L110.00,265.41 L111.53,262.88 L113.07,260.38 L114.60,257.92 L116.13,255.48 L117.67,253.08 L119.20,250.72 L120.73,248.38 L122.27,246.09 L123.80,243.83 L125.33,241.60 L126.87,239.41 L128.40,237.26 L129.93,235.14 L131.47,233.06 L133.00,231.01 L134.53,229.01 L136.07,227.04 L137.60,225.10 L139.13,223.21 L140.67,221.35 L142.20,219.53 L143.73,217.74 L145.27,216.00 L146.80,214.29 L148.33,212.61 L149.87,210.98 L151.40,209.38 L152.93,207.82 L154.47,206.29 L156.00,204.80 L157.53,203.35 L159.07,201.93 L160.60,200.54 L162.13,199.20 L163.67,197.88 L165.20,196.61 L166.73,195.36 L168.27,194.15 L169.80,192.98 L171.33,191.83 L172.87,190.72 L174.40,189.65 L175.93,188.60 L177.47,187.59 L179.00,186.61 L180.53,185.66 L182.07,184.74 L183.60,183.85 L185.13,182.98 L186.67,182.15 L188.20,181.35 L189.73,180.58 L191.27,179.83 L192.80,179.11 L194.33,178.42 L195.87,177.76 L197.40,177.12 L198.93,176.51 L200.47,175.92 L202.00,175.36 L203.53,174.82 L205.07,174.31 L206.60,173.82 L208.13,173.35 L209.67,172.91 L211.20,172.49 L212.73,172.09 L214.27,171.71 L215.80,171.35 L217.33,171.02 L218.87,170.70 L220.40,170.40 L221.93,170.13 L223.47,169.87 L225.00,169.63 L226.53,169.41 L228.07,169.20 L229.60,169.02 L231.13,168.85 L232.67,168.69 L234.20,168.56 L235.73,168.44 L237.27,168.33 L238.80,168.24 L240.33,168.17 L241.87,168.11 L243.40,168.06 L244.93,168.03 L246.47,168.01 L248.00,168.00" fill="none" stroke="#087e78" stroke-width="4"/>
+<path d="M248.00,168.00 L249.99,168.01 L251.99,168.04 L253.98,168.09 L255.97,168.17 L257.97,168.26 L259.96,168.36 L261.95,168.49 L263.95,168.63 L265.94,168.79 L267.93,168.97 L269.93,169.16 L271.92,169.37 L273.91,169.59 L275.91,169.82 L277.90,170.07 L279.89,170.33 L281.89,170.60 L283.88,170.88 L285.87,171.18 L287.87,171.48 L289.86,171.80 L291.85,172.13 L293.85,172.46 L295.84,172.81 L297.83,173.16 L299.83,173.52 L301.82,173.89 L303.81,174.27 L305.81,174.66 L307.80,175.05 L309.79,175.45 L311.79,175.86 L313.78,176.27 L315.77,176.69 L317.77,177.12 L319.76,177.54 L321.75,177.98 L323.75,178.42 L325.74,178.86 L327.73,179.31 L329.73,179.76 L331.72,180.22 L333.71,180.68 L335.71,181.14 L337.70,181.61 L339.69,182.08 L341.69,182.55 L343.68,183.03 L345.67,183.51 L347.67,183.99 L349.66,184.47 L351.65,184.95 L353.65,185.44 L355.64,185.93 L357.63,186.42 L359.63,186.91 L361.62,187.40 L363.61,187.89 L365.61,188.39 L367.60,188.88 L369.59,189.38 L371.59,189.88 L373.58,190.37 L375.57,190.87 L377.57,191.37 L379.56,191.87 L381.55,192.37 L383.55,192.86 L385.54,193.36 L387.53,193.86 L389.53,194.36 L391.52,194.86 L393.51,195.35 L395.51,195.85 L397.50,196.35 L399.49,196.84 L401.49,197.34 L403.48,197.83 L405.47,198.33 L407.47,198.82 L409.46,199.31 L411.45,199.80 L413.45,200.29 L415.44,200.78 L417.43,201.27 L419.43,201.76 L421.42,202.24 L423.41,202.73 L425.41,203.21 L427.40,203.69 L429.39,204.17 L431.39,204.65 L433.38,205.13 L435.37,205.61 L437.37,206.08 L439.36,206.56 L441.35,207.03 L443.35,207.50 L445.34,207.97 L447.33,208.44 L449.33,208.90 L451.32,209.37 L453.31,209.83 L455.31,210.29 L457.30,210.75 L459.29,211.21 L461.29,211.67 L463.28,212.12 L465.27,212.57 L467.27,213.02 L469.26,213.47 L471.25,213.92 L473.25,214.37 L475.24,214.81 L477.23,215.25 L479.23,215.69 L481.22,216.13 L483.21,216.57 L485.21,217.00 L487.20,217.44" fill="none" stroke="#7c8f9c" stroke-width="3" stroke-dasharray="8 6"/>
+<path d="M209 168H287" stroke="#b86b20" stroke-width="2.5"/>
+<circle cx="248" cy="168" r="6" fill="#b86b20" stroke="#fff" stroke-width="2"/>
+<text x="35" y="151" font-size="19" fill="#4b6271">d</text>
+<text x="39" y="175" font-size="17" fill="#4b6271">1</text>
+<text x="48" y="374" font-size="17" fill="#4b6271">0</text>
+<text x="243" y="374" font-size="17" fill="#4b6271">1</text>
+<text x="427" y="374" font-size="17" fill="#4b6271">2</text>
+<text x="354" y="399" font-size="18" fill="#4b6271">head radius r</text>
+<text x="86" y="321" font-size="20" fill="#075f5b">inner sheet</text>
+<text x="344" y="248" font-size="19" fill="#687e8b">outer sheet</text>
+<text x="303" y="154" font-size="20" font-weight="700" fill="#8e5118">radial slope = 0</text>
+<text x="98" y="417" font-size="20" fill="#183d4d">d(r) = 2r / (1 + r²)</text>
+<text x="560" y="123" font-size="20" font-weight="700" fill="#126d68">02  AT THE FOLD</text>
+<text x="560" y="159" font-size="21" fill="#102b3a">First head derivatives leave one</text>
+<text x="560" y="188" font-size="21" fill="#102b3a">physical-gradient component hidden.</text>
+<text x="560" y="228" font-size="21" font-weight="700" fill="#075f5b">One signed radial second derivative</text>
+<text x="560" y="257" font-size="21" fill="#102b3a">completes the recovery.</text>
+<rect x="551" y="286" width="419" height="132" rx="10" fill="#e7eef3"/>
+<text x="570" y="315" font-size="20" font-weight="700" fill="#244e68">03  STOPPING ON THE INNER SHEET</text>
+<text x="570" y="347" font-size="20" fill="#183d4d">Strong convexity, bounded intensity</text>
+<text x="570" y="374" font-size="20" fill="#183d4d">and the specified derivative tests</text>
+<text x="570" y="401" font-size="20" font-weight="700" fill="#183d4d">give a physical objective-gap bound.</text>
+<text x="30" y="445" font-size="16" fill="#526977">Curve: fixed intensity and direction. Recovery: derivatives of the composite objective. Details and assumptions below.</text>
+</g></svg>
