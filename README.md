@@ -23,10 +23,10 @@ A small gradient in optimization coordinates can conceal a nonzero physical obje
 
 The uniform theorem has the form
 
-$$
+```math
 \Delta(s) \leq \frac{52(\bar I L)^{2/3}}{\mu}\,\varepsilon^{4/3}
 + \frac{3}{\mu}\,\nu^2.
-$$
+```
 
 Here $\Delta(s)$ is the gap to the best physically feasible objective value, $\mu$ is the strong-convexity constant, $\bar I$ bounds intensity, and $L$ bounds physical radial curvature. The objective is $C^2$, with $L\geq\mu>0$. The normalized first-derivative tolerance is $\varepsilon\geq0$; $\nu\geq0$ bounds negative normalized radial curvature. The theorem also requires $0<I\leq\bar I$, $0\leq r\leq1$, and $\varepsilon\leq\bar I L/8$. The radial curvature test is needed only for $r\geq1/2$. The two tolerance orders are sharp; the coefficient 52 is conservative.
 
