@@ -1,0 +1,31 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="348" viewBox="0 0 1200 348" role="img" aria-labelledby="title desc">
+  <title id="title">From a stopping decision to a physical guarantee</title>
+  <desc id="desc">Identify information lost at the folded Stokes boundary, recover it with signed radial curvature, and certify an objective gap under stated assumptions.</desc>
+  <defs>
+    <marker id="arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M 0 0 L 10 5 L 0 10 z" fill="#72928f"/></marker>
+  </defs>
+  <rect x="1" y="1" width="1198" height="346" rx="18" fill="#f3f7f7" stroke="#dce6e5"/>
+  <g font-family="Arial, Helvetica, sans-serif">
+    <text x="38" y="43" font-size="12" font-weight="700" letter-spacing="2.2" fill="#39716c">FOLDED STOKES PARAMETRIZATION</text>
+    <text x="38" y="92" font-size="34" font-weight="700" fill="#162e3c">From a stopping decision to a physical guarantee.</text>
+    <text x="38" y="125" font-size="17" fill="#516875">Recover the missing information. Bound the objective gap. Check the arithmetic.</text>
+    <rect x="38" y="159" width="346" height="130" rx="10" fill="#ffffff" stroke="#d1e0de"/>
+    <rect x="427" y="159" width="346" height="130" rx="10" fill="#ffffff" stroke="#d1e0de"/>
+    <rect x="816" y="159" width="346" height="130" rx="10" fill="#ffffff" stroke="#d1e0de"/>
+    <path d="M 397 225 H 414" stroke="#72928f" stroke-width="2" marker-end="url(#arrow)"/>
+    <path d="M 786 225 H 803" stroke="#72928f" stroke-width="2" marker-end="url(#arrow)"/>
+    <text x="59" y="190" font-size="13" font-weight="700" fill="#39716c">01  /  GEOMETRY</text>
+    <text x="59" y="221" font-size="20" font-weight="700" fill="#162e3c">Identify lost information</text>
+    <text x="59" y="250" font-size="15" fill="#516875">First derivatives lose one component</text>
+    <text x="59" y="271" font-size="15" fill="#516875">at the fully linearly polarized fold.</text>
+    <text x="448" y="190" font-size="13" font-weight="700" fill="#39716c">02  /  RECOVERY</text>
+    <text x="448" y="221" font-size="20" font-weight="700" fill="#162e3c">Recover the gradient</text>
+    <text x="448" y="250" font-size="15" fill="#516875">One signed radial second derivative</text>
+    <text x="448" y="271" font-size="15" fill="#516875">restores the missing component.</text>
+    <text x="837" y="190" font-size="13" font-weight="700" fill="#39716c">03  /  STOPPING</text>
+    <text x="837" y="221" font-size="20" font-weight="700" fill="#162e3c">Bound the physical gap</text>
+    <text x="837" y="250" font-size="15" fill="#516875">Strong convexity and the stated</text>
+    <text x="837" y="271" font-size="15" fill="#516875">derivative tests give a certificate.</text>
+    <text x="38" y="323" font-size="13" fill="#627782">Reduced Stokes (I, Q, U)  ·  Partial linear polarization  ·  Conditional objective-gap guarantee</text>
+  </g>
+</svg>
