@@ -2,7 +2,7 @@
 
 The numerical code requires NumPy, SciPy, and Matplotlib. The optional automatic-differentiation experiment requires PyTorch. Dependencies are installed separately through the pinned requirement files.
 
-The manuscript sources include the unmodified Springer Nature `sn-jnl.cls` supplied in the official LaTeX author template, version 3.1 (December 2024). Its copyright and licence notice remain in `manuscript/source/sn-jnl.cls`. Template source: https://www.springernature.com/gp/authors/campaigns/latex-author-support .
+The manuscript sources include the unmodified Springer Nature `sn-jnl.cls` supplied in the official LaTeX author template, version 3.1 (December 2024). Its copyright and licence notice remain in `manuscript/source/sn-jnl.cls`. Template source: https://www.springernature.com/gp/authors/campaigns/latex-author-support . The unchanged official template package and complete official LaTeX base archive accompany it in [third_party/latex-support](../third_party/latex-support/), with source links, licences, and hashes. These archives are not installed or used automatically by the build.
 
 The rational ball map and relevant differential results are attributed in [SOURCES.md](SOURCES.md) and the manuscript bibliography. The saved renderer reference uses the analytic scene described in Supplement S3.
 

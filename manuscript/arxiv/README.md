@@ -1,6 +1,6 @@
 # Source of the arXiv-generated reader copy
 
-This is the exact 16-file source bundle uploaded for the current arXiv draft. The draft has not been submitted or announced.
+This is the exact 16-file source bundle used to generate the archived arXiv reader copy. The manuscript is submitted to arXiv. The source is preserved unchanged; its private-review availability wording predates this repository becoming public.
 
 - [arXiv-generated PDF](../../paper/arxiv.pdf): the primary reader copy, with the complete Supplementary Information.
 - [Download the exact uploaded source ZIP](stokes-arxiv-source.zip).

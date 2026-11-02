@@ -1,0 +1,63 @@
+{
+  "validated_utc": "2026-11-02T02:56:04.375804+00:00",
+  "method": "Python standard-library ZIP CRC, member-name/type checks, and SHA-256 of complete downloaded archives. No archive member extracted or executed.",
+  "archives": [
+    {
+      "file": "latex-base-2026-11-01.zip",
+      "bytes": 40981416,
+      "sha256": "f47fe2da5d6e442a030fab647abda831d3a47dfdc7a8e47b80f397efbfab1526",
+      "member_count": 321,
+      "file_member_count": 320,
+      "uncompressed_bytes": 48821559,
+      "crc": "PASS",
+      "relative_paths": "PASS",
+      "symlinks": 0,
+      "duplicate_members": 0,
+      "encryption": false,
+      "modified": false,
+      "source_url": "https://mirrors.ctan.org/macros/latex/base.zip",
+      "download_url": "https://ftp.jaist.ac.jp/pub/CTAN/macros/latex/base.zip",
+      "catalog_url": "https://www.ctan.org/pkg/latex-base",
+      "license": "LPPL-1.3c-or-later",
+      "required_members": {
+        "base/manifest.txt": "bba1dfc53712f71737f98b7f86fa48441d35ec0123df43483f64ab32a5e8c0c3",
+        "base/legal.txt": "a258aa1193a2012f9deb25c7c09507b0744b97875cc80ddf11a975919fa0ce20",
+        "base/lppl.txt": "ca3227f672053cb608959d7e1d476c7a13efea11be3f6e53758a68b650c918e8",
+        "base/README.md": "0e42be58ce64d3babfbb50df2613d038474d4332fe49cdbb29f6ff4be15dc1b4",
+        "base/classes.dtx": "7d2add3d0c5f4deff4aaae06e61c0332aef89b19e56be26c105cb8bc34189a41",
+        "base/unpack.ins": "d188479f1ceef8d7fd77fa4b2d78a42752ccc3f804a863f3d84e826e87e6be28",
+        "base/ltvers.dtx": "0a06003be70d2fec59eeb814f6c9b217fe00c10117d977849760768ca7959f02"
+      },
+      "manifest_explicit_filenames": 187,
+      "manifest_explicit_missing": [
+        "latexchanges.tex",
+        "lttemplate.dtx",
+        "ltxdoc.cfg"
+      ],
+      "directory_comparison": {
+        "url": "https://ftp.jaist.ac.jp/pub/CTAN/macros/latex/base/",
+        "listed_files": 320,
+        "matches_all_archive_regular_files": true
+      }
+    },
+    {
+      "file": "springer-nature-template-3.1-2024-12.zip",
+      "bytes": 901814,
+      "sha256": "812e76dcaa9c28dc1bff1fb6065d51729b67d4ea140552a05088317414a3ecae",
+      "member_count": 18,
+      "file_member_count": 16,
+      "uncompressed_bytes": 1528643,
+      "crc": "PASS",
+      "relative_paths": "PASS",
+      "symlinks": 0,
+      "duplicate_members": 0,
+      "encryption": false,
+      "modified": false,
+      "source_url": "https://cms-resources.apps.public.k8s.springernature.io/springer-cms/rest/v1/content/18782940/data/v12",
+      "catalog_url": "https://www.springernature.com/gp/authors/campaigns/latex-author-support",
+      "license": "Original per-file notices retained; sn-jnl.cls states LPPL-1.3c-or-later",
+      "class_sha256": "36d0c3273a59d48dc6a9c7b080dfa1ec50dc10229d8751568d1f2e490ffa5ecc",
+      "class_byte_equal_repository": true
+    }
+  ]
+}

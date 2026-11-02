@@ -1,13 +1,13 @@
 # Conditional stopping guarantees for a folded parametrization of reduced Stokes vectors
 
 **Hiroyasu Usami · Ayato Tsuboi · Keisuke Hara**<br>
-Chubu University, Japan · Private author-review repository · Working manuscript
+Chubu University, Japan · Research code and reproducibility materials
 
 A small gradient in **head coordinates** need not control the objective gap in **physical Stokes coordinates**. This study connects the information lost by a folded map from $(a,w)$ to $(I,Q,U)$ to a conditional stopping certificate. It supplies the recovery identities, their assumptions, and fixed numerical records against which the implementation can be checked.
 
 [**Read the arXiv-generated paper**](paper/arxiv.pdf) · [Exact source ZIP](manuscript/arxiv/stokes-arxiv-source.zip) · [Evidence and code](docs/RESULTS_MAP.md) · [Reproduce](#start-with-an-integrity-check) · [2-minute overview](#watch-the-research-overview)
 
-The primary PDF is the **49-page arXiv-generated draft**, including the complete Supplementary Information. It has not yet been submitted or announced. [Source and build instructions](manuscript/arxiv/) · [Separate journal-format copies](paper/README.md).
+The primary PDF is the **49-page arXiv-generated reader copy**, including the complete Supplementary Information. The manuscript has been submitted to arXiv; its public identifier will be added when available. [Source and build instructions](manuscript/arxiv/) · [Separate journal-format copies](paper/README.md).
 
 ![The degree of linear polarization increases to a fold at head radius one, where radial first-order sensitivity vanishes; the outer sheet folds back. A signed radial second derivative of the composite objective completes the first-order information. A stopping certificate additionally requires the theorem's assumptions.](media/research-workflow.svg)
 
@@ -127,6 +127,7 @@ For a complete replay, use the [reproduction guide](docs/REPRODUCING.md). It sep
 | [`verification/`](verification/) | Numerical core used by the application replays |
 | [`docs/`](docs/) | Evidence index, environments, numerical conventions, and attribution |
 | [`media/`](media/) | Overview video, captions, and README visuals |
+| [`third_party/latex-support/`](third_party/latex-support/) | Unmodified upstream archives and licence notices accompanying the journal template |
 
 </details>
 
@@ -136,4 +137,4 @@ For a complete replay, use the [reproduction guide](docs/REPRODUCING.md). It sep
 
 Use [`CITATION.cff`](CITATION.cff) for author and title metadata. When reporting a reproduction, identify the repository commit, command, environment, and relevant file hashes.
 
-Original author-contributed code and software documentation use the [MIT License](LICENSE). Manuscripts, figures, and selected third-party observations are outside that code licence. Full original datasets and model weights are not included. Consult the [source and rights notes](docs/THIRD_PARTY.md) before using external data. Access to this author-review repository is restricted to invited collaborators and reviewers.
+Original author-contributed code and software documentation use the [MIT License](LICENSE). Manuscripts, figures, and selected third-party observations are outside that code licence. Full original datasets and model weights are not included. Consult the [source and rights notes](docs/THIRD_PARTY.md) before using external data. This repository is publicly accessible. The archived manuscript PDFs retain the data/code availability wording from the earlier private-review stage; the linked code and selected numerical records can now be accessed here without an invitation.
