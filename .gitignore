@@ -1,0 +1,11 @@
+# Local environments and caches
+.venv/
+.ad-venv/
+.figure-venv/
+**/__pycache__/
+*.py[cod]
+.DS_Store
+
+# Generated manuscript build products
+/manuscript/build/
+/build/

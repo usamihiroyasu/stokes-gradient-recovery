@@ -1,0 +1,3168 @@
+{
+  "status": "PASS",
+  "source_sha256": "97b00984a1cc7d71a7179fb127c1a455224f71122a495d1dff9a3f1894b8e7e0",
+  "scope": "One CPU eager-AD graph and quartic loss; curvature acquisition included; no optimizer or learned reconstruction.",
+  "scalar_implementation": "c=e dot HVP and hrr=e dot physical Hessian action; physical curvature query omitted at the exact fold; no scalar-kernel cost advantage assumed.",
+  "environment": {
+    "python": "3.12.14",
+    "torch": "2.14.1",
+    "numpy": "2.3.5",
+    "machine": "arm64",
+    "hardware": "Apple M4 Max",
+    "system": "macOS-27.0.1-arm64-arm-64bit",
+    "threads": 1,
+    "device": "cpu"
+  },
+  "protocol": {
+    "repeats_per_batch": 20,
+    "batches": 7,
+    "warmup_calls": 5,
+    "rotating_method_order": true
+  },
+  "accuracy_records": [
+    {
+      "dtype": "float32",
+      "I_requested": 0.02,
+      "r_requested": 1.0,
+      "method": "direct",
+      "physical_state": [
+        0.019999999552965164,
+        0.012000000104308128,
+        0.01600000075995922
+      ],
+      "actual_radius": null,
+      "status": "evaluated",
+      "gradient": [
+        0.40006402134895325,
+        0.20009848475456238,
+        -0.29988864064216614
+      ],
+      "error": 4.360663243463621e-08
+    },
+    {
+      "dtype": "float32",
+      "I_requested": 0.02,
+      "r_requested": 1.0,
+      "method": "first",
+      "physical_state": [
+        0.019999999552965164,
+        0.012000000104308128,
+        0.01600000075995922
+      ],
+      "actual_radius": 1.0,
+      "status": "singular_first_inverse",
+      "gradient": null,
+      "error": null
+    },
+    {
+      "dtype": "float32",
+      "I_requested": 0.02,
+      "r_requested": 1.0,
+      "method": "vector",
+      "physical_state": [
+        0.019999999552965164,
+        0.012000000104308128,
+        0.01600000075995922
+      ],
+      "actual_radius": 1.0,
+      "status": "evaluated",
+      "gradient": [
+        0.40006402134895325,
+        0.20009848475456238,
+        -0.29988864064216614
+      ],
+      "error": 4.360663243463621e-08
+    },
+    {
+      "dtype": "float32",
+      "I_requested": 0.02,
+      "r_requested": 1.0,
+      "method": "mixed",
+      "physical_state": [
+        0.019999999552965164,
+        0.012000000104308128,
+        0.01600000075995922
+      ],
+      "actual_radius": 1.0,
+      "status": "evaluated",
+      "gradient": [
+        0.40006402134895325,
+        0.20009848475456238,
+        -0.29988864064216614
+      ],
+      "error": 4.360663243463621e-08
+    },
+    {
+      "dtype": "float32",
+      "I_requested": 0.02,
+      "r_requested": 0.9,
+      "method": "direct",
+      "physical_state": [
+        0.019999999552965164,
+        0.011933702044188976,
+        0.01591160148382187
+      ],
+      "actual_radius": null,
+      "status": "evaluated",
+      "gradient": [
+        0.4000633656978607,
+        0.200097918510437,
+        -0.2998894453048706
+      ],
+      "error": 5.026906995796152e-09
+    },
+    {
+      "dtype": "float32",
+      "I_requested": 0.02,
+      "r_requested": 0.9,
+      "method": "first",
+      "physical_state": [
+        0.019999999552965164,
+        0.011933702044188976,
+        0.01591160148382187
+      ],
+      "actual_radius": 0.9000000357627869,
+      "status": "evaluated",
+      "gradient": [
+        0.4000634551048279,
+        0.20009785890579224,
+        -0.2998895049095154
+      ],
+      "error": 1.2637467079970994e-07
+    },
+    {
+      "dtype": "float32",
+      "I_requested": 0.02,
+      "r_requested": 0.9,
+      "method": "vector",
+      "physical_state": [
+        0.019999999552965164,
+        0.011933702044188976,
+        0.01591160148382187
+      ],
+      "actual_radius": 0.9000000357627869,
+      "status": "evaluated",
+      "gradient": [
+        0.4000633955001831,
+        0.2000979334115982,
+        -0.2998894453048706
+      ],
+      "error": 3.3245083756999666e-08
+    },
+    {
+      "dtype": "float32",
+      "I_requested": 0.02,
+      "r_requested": 0.9,
+      "method": "mixed",
+      "physical_state": [
+        0.019999999552965164,
+        0.011933702044188976,
+        0.01591160148382187
+      ],
+      "actual_radius": 0.9000000357627869,
+      "status": "evaluated",
+      "gradient": [
+        0.4000633955001831,
+        0.200097918510437,
+        -0.2998894453048706
+      ],
+      "error": 3.0620005580197416e-08
+    },
+    {
+      "dtype": "float32",
+      "I_requested": 0.02,
+      "r_requested": 1.1,
+      "method": "direct",
+      "physical_state": [
+        0.019999999552965164,
+        0.011945701204240322,
+        0.015927599743008614
+      ],
+      "actual_radius": null,
+      "status": "evaluated",
+      "gradient": [
+        0.40006348490715027,
+        0.20009802281856537,
+        -0.29988929629325867
+      ],
+      "error": 8.66433845617884e-09
+    },
+    {
+      "dtype": "float32",
+      "I_requested": 0.02,
+      "r_requested": 1.1,
+      "method": "first",
+      "physical_state": [
+        0.019999999552965164,
+        0.011945701204240322,
+        0.015927599743008614
+      ],
+      "actual_radius": 1.100000023841858,
+      "status": "evaluated",
+      "gradient": [
+        0.40006333589553833,
+        0.20009811222553253,
+        -0.2998892068862915
+      ],
+      "error": 1.8804014964392977e-07
+    },
+    {
+      "dtype": "float32",
+      "I_requested": 0.02,
+      "r_requested": 1.1,
+      "method": "vector",
+      "physical_state": [
+        0.019999999552965164,
+        0.011945701204240322,
+        0.015927599743008614
+      ],
+      "actual_radius": 1.100000023841858,
+      "status": "evaluated",
+      "gradient": [
+        0.40006348490715027,
+        0.2000979483127594,
+        -0.2998892664909363
+      ],
+      "error": 7.893847433555615e-08
+    },
+    {
+      "dtype": "float32",
+      "I_requested": 0.02,
+      "r_requested": 1.1,
+      "method": "mixed",
+      "physical_state": [
+        0.019999999552965164,
+        0.011945701204240322,
+        0.015927599743008614
+      ],
+      "actual_radius": 1.100000023841858,
+      "status": "evaluated",
+      "gradient": [
+        0.40006351470947266,
+        0.20009802281856537,
+        -0.29988932609558105
+      ],
+      "error": 5.0673465415472366e-08
+    },
+    {
+      "dtype": "float32",
+      "I_requested": 0.02,
+      "r_requested": 0.999,
+      "method": "direct",
+      "physical_state": [
+        0.019999999552965164,
+        0.011999992653727531,
+        0.015999991446733475
+      ],
+      "actual_radius": null,
+      "status": "evaluated",
+      "gradient": [
+        0.40006402134895325,
+        0.20009848475456238,
+        -0.29988864064216614
+      ],
+      "error": 4.3552775521687107e-08
+    },
+    {
+      "dtype": "float32",
+      "I_requested": 0.02,
+      "r_requested": 0.999,
+      "method": "first",
+      "physical_state": [
+        0.019999999552965164,
+        0.011999992653727531,
+        0.015999991446733475
+      ],
+      "actual_radius": 0.9990000128746033,
+      "status": "evaluated",
+      "gradient": [
+        0.4000588357448578,
+        0.20010164380073547,
+        -0.29988452792167664
+      ],
+      "error": 7.294763136383545e-06
+    },
+    {
+      "dtype": "float32",
+      "I_requested": 0.02,
+      "r_requested": 0.999,
+      "method": "vector",
+      "physical_state": [
+        0.019999999552965164,
+        0.011999992653727531,
+        0.015999991446733475
+      ],
+      "actual_radius": 0.9990000128746033,
+      "status": "evaluated",
+      "gradient": [
+        0.40006405115127563,
+        0.20009849965572357,
+        -0.2998887002468109
+      ],
+      "error": 1.0986988013400095e-07
+    },
+    {
+      "dtype": "float32",
+      "I_requested": 0.02,
+      "r_requested": 0.999,
+      "method": "mixed",
+      "physical_state": [
+        0.019999999552965164,
+        0.011999992653727531,
+        0.015999991446733475
+      ],
+      "actual_radius": 0.9990000128746033,
+      "status": "evaluated",
+      "gradient": [
+        0.40006405115127563,
+        0.20009851455688477,
+        -0.2998887002468109
+      ],
+      "error": 1.1193404331373941e-07
+    },
+    {
+      "dtype": "float32",
+      "I_requested": 0.02,
+      "r_requested": 1.001,
+      "method": "direct",
+      "physical_state": [
+        0.019999999552965164,
+        0.011999992653727531,
+        0.015999991446733475
+      ],
+      "actual_radius": null,
+      "status": "evaluated",
+      "gradient": [
+        0.40006402134895325,
+        0.20009848475456238,
+        -0.29988864064216614
+      ],
+      "error": 4.3552775521687107e-08
+    },
+    {
+      "dtype": "float32",
+      "I_requested": 0.02,
+      "r_requested": 1.001,
+      "method": "first",
+      "physical_state": [
+        0.019999999552965164,
+        0.011999992653727531,
+        0.015999991446733475
+      ],
+      "actual_radius": 1.0010000467300415,
+      "status": "evaluated",
+      "gradient": [
+        0.40006399154663086,
+        0.20009851455688477,
+        -0.29988861083984375
+      ],
+      "error": 2.5428510993392758e-08
+    },
+    {
+      "dtype": "float32",
+      "I_requested": 0.02,
+      "r_requested": 1.001,
+      "method": "vector",
+      "physical_state": [
+        0.019999999552965164,
+        0.011999992653727531,
+        0.015999991446733475
+      ],
+      "actual_radius": 1.0010000467300415,
+      "status": "evaluated",
+      "gradient": [
+        0.40006399154663086,
+        0.2000984251499176,
+        -0.299888551235199
+      ],
+      "error": 8.498760657685767e-08
+    },
+    {
+      "dtype": "float32",
+      "I_requested": 0.02,
+      "r_requested": 1.001,
+      "method": "mixed",
+      "physical_state": [
+        0.019999999552965164,
+        0.011999992653727531,
+        0.015999991446733475
+      ],
+      "actual_radius": 1.0010000467300415,
+      "status": "evaluated",
+      "gradient": [
+        0.40006402134895325,
+        0.20009848475456238,
+        -0.29988864064216614
+      ],
+      "error": 4.3552775521687107e-08
+    },
+    {
+      "dtype": "float32",
+      "I_requested": 0.02,
+      "r_requested": 0.99999,
+      "method": "direct",
+      "physical_state": [
+        0.019999999552965164,
+        0.012000000104308128,
+        0.01600000075995922
+      ],
+      "actual_radius": null,
+      "status": "evaluated",
+      "gradient": [
+        0.40006402134895325,
+        0.20009848475456238,
+        -0.29988864064216614
+      ],
+      "error": 4.360663243463621e-08
+    },
+    {
+      "dtype": "float32",
+      "I_requested": 0.02,
+      "r_requested": 0.99999,
+      "method": "first",
+      "physical_state": [
+        0.019999999552965164,
+        0.012000000104308128,
+        0.01600000075995922
+      ],
+      "actual_radius": 0.9999899864196777,
+      "status": "evaluated",
+      "gradient": [
+        0.4011175036430359,
+        0.19946636259555817,
+        -0.3007314205169678
+      ],
+      "error": 0.0014898987069526391
+    },
+    {
+      "dtype": "float32",
+      "I_requested": 0.02,
+      "r_requested": 0.99999,
+      "method": "vector",
+      "physical_state": [
+        0.019999999552965164,
+        0.012000000104308128,
+        0.01600000075995922
+      ],
+      "actual_radius": 0.9999899864196777,
+      "status": "evaluated",
+      "gradient": [
+        0.40006405115127563,
+        0.20009846985340118,
+        -0.2998886704444885
+      ],
+      "error": 8.72325845113248e-08
+    },
+    {
+      "dtype": "float32",
+      "I_requested": 0.02,
+      "r_requested": 0.99999,
+      "method": "mixed",
+      "physical_state": [
+        0.019999999552965164,
+        0.012000000104308128,
+        0.01600000075995922
+      ],
+      "actual_radius": 0.9999899864196777,
+      "status": "evaluated",
+      "gradient": [
+        0.40006405115127563,
+        0.2000984400510788,
+        -0.29988864064216614
+      ],
+      "error": 8.179689858114911e-08
+    },
+    {
+      "dtype": "float32",
+      "I_requested": 0.02,
+      "r_requested": 1.00001,
+      "method": "direct",
+      "physical_state": [
+        0.019999999552965164,
+        0.011999999172985554,
+        0.01600000075995922
+      ],
+      "actual_radius": null,
+      "status": "evaluated",
+      "gradient": [
+        0.40006402134895325,
+        0.20009848475456238,
+        -0.29988864064216614
+      ],
+      "error": 4.360384222408388e-08
+    },
+    {
+      "dtype": "float32",
+      "I_requested": 0.02,
+      "r_requested": 1.00001,
+      "method": "first",
+      "physical_state": [
+        0.019999999552965164,
+        0.011999999172985554,
+        0.01600000075995922
+      ],
+      "actual_radius": 1.0000098943710327,
+      "status": "evaluated",
+      "gradient": [
+        0.402579128742218,
+        0.19858938455581665,
+        -0.3019006848335266
+      ],
+      "error": 0.0035569297789986164
+    },
+    {
+      "dtype": "float32",
+      "I_requested": 0.02,
+      "r_requested": 1.00001,
+      "method": "vector",
+      "physical_state": [
+        0.019999999552965164,
+        0.011999999172985554,
+        0.01600000075995922
+      ],
+      "actual_radius": 1.0000098943710327,
+      "status": "evaluated",
+      "gradient": [
+        0.40006402134895325,
+        0.20009848475456238,
+        -0.29988861083984375
+      ],
+      "error": 2.3720371319708787e-08
+    },
+    {
+      "dtype": "float32",
+      "I_requested": 0.02,
+      "r_requested": 1.00001,
+      "method": "mixed",
+      "physical_state": [
+        0.019999999552965164,
+        0.011999999172985554,
+        0.01600000075995922
+      ],
+      "actual_radius": 1.0000098943710327,
+      "status": "evaluated",
+      "gradient": [
+        0.40006405115127563,
+        0.2000984251499176,
+        -0.29988861083984375
+      ],
+      "error": 8.435922472148853e-08
+    },
+    {
+      "dtype": "float32",
+      "I_requested": 0.02,
+      "r_requested": 0.9999999,
+      "method": "direct",
+      "physical_state": [
+        0.019999999552965164,
+        0.012000000104308128,
+        0.01600000075995922
+      ],
+      "actual_radius": null,
+      "status": "evaluated",
+      "gradient": [
+        0.40006402134895325,
+        0.20009848475456238,
+        -0.29988864064216614
+      ],
+      "error": 4.360663243463621e-08
+    },
+    {
+      "dtype": "float32",
+      "I_requested": 0.02,
+      "r_requested": 0.9999999,
+      "method": "first",
+      "physical_state": [
+        0.019999999552965164,
+        0.012000000104308128,
+        0.01600000075995922
+      ],
+      "actual_radius": 0.9999998807907104,
+      "status": "evaluated",
+      "gradient": [
+        0.2802121639251709,
+        0.27200958132743835,
+        -0.20400717854499817
+      ],
+      "error": 0.1694960619488553
+    },
+    {
+      "dtype": "float32",
+      "I_requested": 0.02,
+      "r_requested": 0.9999999,
+      "method": "vector",
+      "physical_state": [
+        0.019999999552965164,
+        0.012000000104308128,
+        0.01600000075995922
+      ],
+      "actual_radius": 0.9999998807907104,
+      "status": "evaluated",
+      "gradient": [
+        0.40006405115127563,
+        0.20009846985340118,
+        -0.2998887002468109
+      ],
+      "error": 1.1180884852862938e-07
+    },
+    {
+      "dtype": "float32",
+      "I_requested": 0.02,
+      "r_requested": 0.9999999,
+      "method": "mixed",
+      "physical_state": [
+        0.019999999552965164,
+        0.012000000104308128,
+        0.01600000075995922
+      ],
+      "actual_radius": 0.9999998807907104,
+      "status": "evaluated",
+      "gradient": [
+        0.40006405115127563,
+        0.20009846985340118,
+        -0.2998886704444885
+      ],
+      "error": 8.72325845113248e-08
+    },
+    {
+      "dtype": "float32",
+      "I_requested": 0.02,
+      "r_requested": 1.0000001,
+      "method": "direct",
+      "physical_state": [
+        0.019999999552965164,
+        0.012000000104308128,
+        0.01599999889731407
+      ],
+      "actual_radius": null,
+      "status": "evaluated",
+      "gradient": [
+        0.40006402134895325,
+        0.20009848475456238,
+        -0.29988864064216614
+      ],
+      "error": 4.3600296877116244e-08
+    },
+    {
+      "dtype": "float32",
+      "I_requested": 0.02,
+      "r_requested": 1.0000001,
+      "method": "first",
+      "physical_state": [
+        0.019999999552965164,
+        0.012000000104308128,
+        0.01599999889731407
+      ],
+      "actual_radius": 1.0000001192092896,
+      "status": "evaluated",
+      "gradient": [
+        0.2802122235298157,
+        0.27200955152511597,
+        -0.20400719344615936
+      ],
+      "error": 0.16949599873383384
+    },
+    {
+      "dtype": "float32",
+      "I_requested": 0.02,
+      "r_requested": 1.0000001,
+      "method": "vector",
+      "physical_state": [
+        0.019999999552965164,
+        0.012000000104308128,
+        0.01599999889731407
+      ],
+      "actual_radius": 1.0000001192092896,
+      "status": "evaluated",
+      "gradient": [
+        0.40006399154663086,
+        0.20009849965572357,
+        -0.29988858103752136
+      ],
+      "error": 2.506395293490623e-08
+    },
+    {
+      "dtype": "float32",
+      "I_requested": 0.02,
+      "r_requested": 1.0000001,
+      "method": "mixed",
+      "physical_state": [
+        0.019999999552965164,
+        0.012000000104308128,
+        0.01599999889731407
+      ],
+      "actual_radius": 1.0000001192092896,
+      "status": "evaluated",
+      "gradient": [
+        0.40006399154663086,
+        0.20009848475456238,
+        -0.29988861083984375
+      ],
+      "error": 1.3341446026379865e-08
+    },
+    {
+      "dtype": "float32",
+      "I_requested": 1.2,
+      "r_requested": 1.0,
+      "method": "direct",
+      "physical_state": [
+        1.2000000476837158,
+        0.7200000286102295,
+        0.9600000381469727
+      ],
+      "actual_radius": null,
+      "status": "evaluated",
+      "gradient": [
+        1.989760160446167,
+        1.083829402923584,
+        0.3127317428588867
+      ],
+      "error": 1.6922754058197435e-07
+    },
+    {
+      "dtype": "float32",
+      "I_requested": 1.2,
+      "r_requested": 1.0,
+      "method": "first",
+      "physical_state": [
+        1.2000000476837158,
+        0.7200000286102295,
+        0.9600000381469727
+      ],
+      "actual_radius": 1.0,
+      "status": "singular_first_inverse",
+      "gradient": null,
+      "error": null
+    },
+    {
+      "dtype": "float32",
+      "I_requested": 1.2,
+      "r_requested": 1.0,
+      "method": "vector",
+      "physical_state": [
+        1.2000000476837158,
+        0.7200000286102295,
+        0.9600000381469727
+      ],
+      "actual_radius": 1.0,
+      "status": "evaluated",
+      "gradient": [
+        1.9897600412368774,
+        1.083829402923584,
+        0.3127317428588867
+      ],
+      "error": 2.1866563043366222e-07
+    },
+    {
+      "dtype": "float32",
+      "I_requested": 1.2,
+      "r_requested": 1.0,
+      "method": "mixed",
+      "physical_state": [
+        1.2000000476837158,
+        0.7200000286102295,
+        0.9600000381469727
+      ],
+      "actual_radius": 1.0,
+      "status": "evaluated",
+      "gradient": [
+        1.989759922027588,
+        1.083829402923584,
+        0.3127317726612091
+      ],
+      "error": 3.12941733457205e-07
+    },
+    {
+      "dtype": "float32",
+      "I_requested": 1.2,
+      "r_requested": 0.9,
+      "method": "direct",
+      "physical_state": [
+        1.2000000476837158,
+        0.7160221338272095,
+        0.9546961188316345
+      ],
+      "actual_radius": null,
+      "status": "evaluated",
+      "gradient": [
+        1.9874751567840576,
+        1.0730481147766113,
+        0.3062276840209961
+      ],
+      "error": 8.621947093415653e-08
+    },
+    {
+      "dtype": "float32",
+      "I_requested": 1.2,
+      "r_requested": 0.9,
+      "method": "first",
+      "physical_state": [
+        1.2000000476837158,
+        0.7160221338272095,
+        0.9546961188316345
+      ],
+      "actual_radius": 0.9000000357627869,
+      "status": "evaluated",
+      "gradient": [
+        1.9874752759933472,
+        1.0730479955673218,
+        0.30622756481170654
+      ],
+      "error": 1.3466739561936362e-07
+    },
+    {
+      "dtype": "float32",
+      "I_requested": 1.2,
+      "r_requested": 0.9,
+      "method": "vector",
+      "physical_state": [
+        1.2000000476837158,
+        0.7160221338272095,
+        0.9546961188316345
+      ],
+      "actual_radius": 0.9000000357627869,
+      "status": "evaluated",
+      "gradient": [
+        1.9874751567840576,
+        1.0730479955673218,
+        0.3062276244163513
+      ],
+      "error": 1.1512065887138962e-07
+    },
+    {
+      "dtype": "float32",
+      "I_requested": 1.2,
+      "r_requested": 0.9,
+      "method": "mixed",
+      "physical_state": [
+        1.2000000476837158,
+        0.7160221338272095,
+        0.9546961188316345
+      ],
+      "actual_radius": 0.9000000357627869,
+      "status": "evaluated",
+      "gradient": [
+        1.9874751567840576,
+        1.0730481147766113,
+        0.3062276244163513
+      ],
+      "error": 9.253037426411566e-08
+    },
+    {
+      "dtype": "float32",
+      "I_requested": 1.2,
+      "r_requested": 1.1,
+      "method": "direct",
+      "physical_state": [
+        1.2000000476837158,
+        0.7167421579360962,
+        0.955656111240387
+      ],
+      "actual_radius": null,
+      "status": "evaluated",
+      "gradient": [
+        1.9878878593444824,
+        1.0749921798706055,
+        0.3074013590812683
+      ],
+      "error": 3.0765105620345816e-08
+    },
+    {
+      "dtype": "float32",
+      "I_requested": 1.2,
+      "r_requested": 1.1,
+      "method": "first",
+      "physical_state": [
+        1.2000000476837158,
+        0.7167421579360962,
+        0.955656111240387
+      ],
+      "actual_radius": 1.100000023841858,
+      "status": "evaluated",
+      "gradient": [
+        1.9878880977630615,
+        1.0749921798706055,
+        0.30740123987197876
+      ],
+      "error": 2.6367205144184765e-07
+    },
+    {
+      "dtype": "float32",
+      "I_requested": 1.2,
+      "r_requested": 1.1,
+      "method": "vector",
+      "physical_state": [
+        1.2000000476837158,
+        0.7167421579360962,
+        0.955656111240387
+      ],
+      "actual_radius": 1.100000023841858,
+      "status": "evaluated",
+      "gradient": [
+        1.9878877401351929,
+        1.074992060661316,
+        0.3074016571044922
+      ],
+      "error": 3.438315709815691e-07
+    },
+    {
+      "dtype": "float32",
+      "I_requested": 1.2,
+      "r_requested": 1.1,
+      "method": "mixed",
+      "physical_state": [
+        1.2000000476837158,
+        0.7167421579360962,
+        0.955656111240387
+      ],
+      "actual_radius": 1.100000023841858,
+      "status": "evaluated",
+      "gradient": [
+        1.9878878593444824,
+        1.074992299079895,
+        0.3074014186859131
+      ],
+      "error": 1.0600949400774859e-07
+    },
+    {
+      "dtype": "float32",
+      "I_requested": 1.2,
+      "r_requested": 0.999,
+      "method": "direct",
+      "physical_state": [
+        1.2000000476837158,
+        0.7199996113777161,
+        0.9599995613098145
+      ],
+      "actual_radius": null,
+      "status": "evaluated",
+      "gradient": [
+        1.989759922027588,
+        1.083828091621399,
+        0.3127310276031494
+      ],
+      "error": 1.0237086948013869e-07
+    },
+    {
+      "dtype": "float32",
+      "I_requested": 1.2,
+      "r_requested": 0.999,
+      "method": "first",
+      "physical_state": [
+        1.2000000476837158,
+        0.7199996113777161,
+        0.9599995613098145
+      ],
+      "actual_radius": 0.9990000128746033,
+      "status": "evaluated",
+      "gradient": [
+        1.9897077083587646,
+        1.0838595628738403,
+        0.31277284026145935
+      ],
+      "error": 7.388987966431928e-05
+    },
+    {
+      "dtype": "float32",
+      "I_requested": 1.2,
+      "r_requested": 0.999,
+      "method": "vector",
+      "physical_state": [
+        1.2000000476837158,
+        0.7199996113777161,
+        0.9599995613098145
+      ],
+      "actual_radius": 0.9990000128746033,
+      "status": "evaluated",
+      "gradient": [
+        1.9897594451904297,
+        1.0838284492492676,
+        0.31273147463798523
+      ],
+      "error": 7.067179128587489e-07
+    },
+    {
+      "dtype": "float32",
+      "I_requested": 1.2,
+      "r_requested": 0.999,
+      "method": "mixed",
+      "physical_state": [
+        1.2000000476837158,
+        0.7199996113777161,
+        0.9599995613098145
+      ],
+      "actual_radius": 0.9990000128746033,
+      "status": "evaluated",
+      "gradient": [
+        1.9897594451904297,
+        1.0838284492492676,
+        0.31273141503334045
+      ],
+      "error": 6.745649224201659e-07
+    },
+    {
+      "dtype": "float32",
+      "I_requested": 1.2,
+      "r_requested": 1.001,
+      "method": "direct",
+      "physical_state": [
+        1.2000000476837158,
+        0.7199996113777161,
+        0.9599995613098145
+      ],
+      "actual_radius": null,
+      "status": "evaluated",
+      "gradient": [
+        1.989759922027588,
+        1.083828091621399,
+        0.3127310276031494
+      ],
+      "error": 1.0237086948013869e-07
+    },
+    {
+      "dtype": "float32",
+      "I_requested": 1.2,
+      "r_requested": 1.001,
+      "method": "first",
+      "physical_state": [
+        1.2000000476837158,
+        0.7199996113777161,
+        0.9599995613098145
+      ],
+      "actual_radius": 1.0010000467300415,
+      "status": "evaluated",
+      "gradient": [
+        1.9898266792297363,
+        1.0837880373001099,
+        0.3126777112483978
+      ],
+      "error": 9.439412734000295e-05
+    },
+    {
+      "dtype": "float32",
+      "I_requested": 1.2,
+      "r_requested": 1.001,
+      "method": "vector",
+      "physical_state": [
+        1.2000000476837158,
+        0.7199996113777161,
+        0.9599995613098145
+      ],
+      "actual_radius": 1.0010000467300415,
+      "status": "evaluated",
+      "gradient": [
+        1.989759922027588,
+        1.0838278532028198,
+        0.3127312660217285
+      ],
+      "error": 3.7851511925241376e-07
+    },
+    {
+      "dtype": "float32",
+      "I_requested": 1.2,
+      "r_requested": 1.001,
+      "method": "mixed",
+      "physical_state": [
+        1.2000000476837158,
+        0.7199996113777161,
+        0.9599995613098145
+      ],
+      "actual_radius": 1.0010000467300415,
+      "status": "evaluated",
+      "gradient": [
+        1.989759922027588,
+        1.0838279724121094,
+        0.3127311170101166
+      ],
+      "error": 2.1189760663075471e-07
+    },
+    {
+      "dtype": "float32",
+      "I_requested": 1.2,
+      "r_requested": 0.99999,
+      "method": "direct",
+      "physical_state": [
+        1.2000000476837158,
+        0.7200000286102295,
+        0.9600000381469727
+      ],
+      "actual_radius": null,
+      "status": "evaluated",
+      "gradient": [
+        1.989760160446167,
+        1.083829402923584,
+        0.3127317428588867
+      ],
+      "error": 1.6922754058197435e-07
+    },
+    {
+      "dtype": "float32",
+      "I_requested": 1.2,
+      "r_requested": 0.99999,
+      "method": "first",
+      "physical_state": [
+        1.2000000476837158,
+        0.7200000286102295,
+        0.9600000381469727
+      ],
+      "actual_radius": 0.9999899864196777,
+      "status": "evaluated",
+      "gradient": [
+        1.989963412284851,
+        1.083707332611084,
+        0.31256893277168274
+      ],
+      "error": 0.0002875096393072151
+    },
+    {
+      "dtype": "float32",
+      "I_requested": 1.2,
+      "r_requested": 0.99999,
+      "method": "vector",
+      "physical_state": [
+        1.2000000476837158,
+        0.7200000286102295,
+        0.9600000381469727
+      ],
+      "actual_radius": 0.9999899864196777,
+      "status": "evaluated",
+      "gradient": [
+        1.9897600412368774,
+        1.0838292837142944,
+        0.3127317726612091
+      ],
+      "error": 1.5824034906847297e-07
+    },
+    {
+      "dtype": "float32",
+      "I_requested": 1.2,
+      "r_requested": 0.99999,
+      "method": "mixed",
+      "physical_state": [
+        1.2000000476837158,
+        0.7200000286102295,
+        0.9600000381469727
+      ],
+      "actual_radius": 0.9999899864196777,
+      "status": "evaluated",
+      "gradient": [
+        1.989759922027588,
+        1.083829402923584,
+        0.3127317726612091
+      ],
+      "error": 3.12941733457205e-07
+    },
+    {
+      "dtype": "float32",
+      "I_requested": 1.2,
+      "r_requested": 1.00001,
+      "method": "direct",
+      "physical_state": [
+        1.2000000476837158,
+        0.7199999690055847,
+        0.9600000381469727
+      ],
+      "actual_radius": null,
+      "status": "evaluated",
+      "gradient": [
+        1.989760160446167,
+        1.0838291645050049,
+        0.31273165345191956
+      ],
+      "error": 1.5966528441859923e-08
+    },
+    {
+      "dtype": "float32",
+      "I_requested": 1.2,
+      "r_requested": 1.00001,
+      "method": "first",
+      "physical_state": [
+        1.2000000476837158,
+        0.7199999690055847,
+        0.9600000381469727
+      ],
+      "actual_radius": 1.0000098943710327,
+      "status": "evaluated",
+      "gradient": [
+        1.9815905094146729,
+        1.0887309312820435,
+        0.3192674517631531
+      ],
+      "error": 0.011553670497749736
+    },
+    {
+      "dtype": "float32",
+      "I_requested": 1.2,
+      "r_requested": 1.00001,
+      "method": "vector",
+      "physical_state": [
+        1.2000000476837158,
+        0.7199999690055847,
+        0.9600000381469727
+      ],
+      "actual_radius": 1.0000098943710327,
+      "status": "evaluated",
+      "gradient": [
+        1.989760160446167,
+        1.0838291645050049,
+        0.3127315938472748
+      ],
+      "error": 6.699522339132443e-08
+    },
+    {
+      "dtype": "float32",
+      "I_requested": 1.2,
+      "r_requested": 1.00001,
+      "method": "mixed",
+      "physical_state": [
+        1.2000000476837158,
+        0.7199999690055847,
+        0.9600000381469727
+      ],
+      "actual_radius": 1.0000098943710327,
+      "status": "evaluated",
+      "gradient": [
+        1.989760160446167,
+        1.0838291645050049,
+        0.31273162364959717
+      ],
+      "error": 3.851579642392154e-08
+    },
+    {
+      "dtype": "float32",
+      "I_requested": 1.2,
+      "r_requested": 0.9999999,
+      "method": "direct",
+      "physical_state": [
+        1.2000000476837158,
+        0.7200000286102295,
+        0.9600000381469727
+      ],
+      "actual_radius": null,
+      "status": "evaluated",
+      "gradient": [
+        1.989760160446167,
+        1.083829402923584,
+        0.3127317428588867
+      ],
+      "error": 1.6922754058197435e-07
+    },
+    {
+      "dtype": "float32",
+      "I_requested": 1.2,
+      "r_requested": 0.9999999,
+      "method": "first",
+      "physical_state": [
+        1.2000000476837158,
+        0.7200000286102295,
+        0.9600000381469727
+      ],
+      "actual_radius": 0.9999998807907104,
+      "status": "evaluated",
+      "gradient": [
+        2.8902430534362793,
+        0.5435395240783691,
+        -0.40765464305877686
+      ],
+      "error": 1.2734751205955015
+    },
+    {
+      "dtype": "float32",
+      "I_requested": 1.2,
+      "r_requested": 0.9999999,
+      "method": "vector",
+      "physical_state": [
+        1.2000000476837158,
+        0.7200000286102295,
+        0.9600000381469727
+      ],
+      "actual_radius": 0.9999998807907104,
+      "status": "evaluated",
+      "gradient": [
+        1.989759922027588,
+        1.083829402923584,
+        0.3127318322658539
+      ],
+      "error": 3.2909045341066576e-07
+    },
+    {
+      "dtype": "float32",
+      "I_requested": 1.2,
+      "r_requested": 0.9999999,
+      "method": "mixed",
+      "physical_state": [
+        1.2000000476837158,
+        0.7200000286102295,
+        0.9600000381469727
+      ],
+      "actual_radius": 0.9999998807907104,
+      "status": "evaluated",
+      "gradient": [
+        1.989759922027588,
+        1.083829402923584,
+        0.31273192167282104
+      ],
+      "error": 3.703717049152044e-07
+    },
+    {
+      "dtype": "float32",
+      "I_requested": 1.2,
+      "r_requested": 1.0000001,
+      "method": "direct",
+      "physical_state": [
+        1.2000000476837158,
+        0.7200000286102295,
+        0.9599999785423279
+      ],
+      "actual_radius": null,
+      "status": "evaluated",
+      "gradient": [
+        1.989760160446167,
+        1.0838292837142944,
+        0.3127317428588867
+      ],
+      "error": 1.1855121287681555e-07
+    },
+    {
+      "dtype": "float32",
+      "I_requested": 1.2,
+      "r_requested": 1.0000001,
+      "method": "first",
+      "physical_state": [
+        1.2000000476837158,
+        0.7200000286102295,
+        0.9599999785423279
+      ],
+      "actual_radius": 1.0000001192092896,
+      "status": "evaluated",
+      "gradient": [
+        2.0569095611572266,
+        1.0435395240783691,
+        0.2590121030807495
+      ],
+      "error": 0.09496362887440352
+    },
+    {
+      "dtype": "float32",
+      "I_requested": 1.2,
+      "r_requested": 1.0000001,
+      "method": "vector",
+      "physical_state": [
+        1.2000000476837158,
+        0.7200000286102295,
+        0.9599999785423279
+      ],
+      "actual_radius": 1.0000001192092896,
+      "status": "evaluated",
+      "gradient": [
+        1.989760160446167,
+        1.0838291645050049,
+        0.31273171305656433
+      ],
+      "error": 3.397953504421841e-08
+    },
+    {
+      "dtype": "float32",
+      "I_requested": 1.2,
+      "r_requested": 1.0000001,
+      "method": "mixed",
+      "physical_state": [
+        1.2000000476837158,
+        0.7200000286102295,
+        0.9599999785423279
+      ],
+      "actual_radius": 1.0000001192092896,
+      "status": "evaluated",
+      "gradient": [
+        1.9897602796554565,
+        1.0838291645050049,
+        0.31273162364959717
+      ],
+      "error": 1.2780571598936778e-07
+    },
+    {
+      "dtype": "float64",
+      "I_requested": 0.02,
+      "r_requested": 1.0,
+      "method": "direct",
+      "physical_state": [
+        0.02,
+        0.012,
+        0.016
+      ],
+      "actual_radius": null,
+      "status": "evaluated",
+      "gradient": [
+        0.40006400000000003,
+        0.20009849180160003,
+        -0.29988860327935996
+      ],
+      "error": 8.326672684688674e-17
+    },
+    {
+      "dtype": "float64",
+      "I_requested": 0.02,
+      "r_requested": 1.0,
+      "method": "first",
+      "physical_state": [
+        0.02,
+        0.012,
+        0.016
+      ],
+      "actual_radius": 1.0,
+      "status": "singular_first_inverse",
+      "gradient": null,
+      "error": null
+    },
+    {
+      "dtype": "float64",
+      "I_requested": 0.02,
+      "r_requested": 1.0,
+      "method": "vector",
+      "physical_state": [
+        0.02,
+        0.012,
+        0.016
+      ],
+      "actual_radius": 1.0,
+      "status": "evaluated",
+      "gradient": [
+        0.40006400000000003,
+        0.20009849180160003,
+        -0.29988860327935996
+      ],
+      "error": 8.326672684688674e-17
+    },
+    {
+      "dtype": "float64",
+      "I_requested": 0.02,
+      "r_requested": 1.0,
+      "method": "mixed",
+      "physical_state": [
+        0.02,
+        0.012,
+        0.016
+      ],
+      "actual_radius": 1.0,
+      "status": "evaluated",
+      "gradient": [
+        0.4000640000000001,
+        0.2000984918016,
+        -0.29988860327935996
+      ],
+      "error": 1.2412670766236366e-16
+    },
+    {
+      "dtype": "float64",
+      "I_requested": 0.02,
+      "r_requested": 0.9,
+      "method": "direct",
+      "physical_state": [
+        0.02,
+        0.011933701657458565,
+        0.015911602209944753
+      ],
+      "actual_radius": null,
+      "status": "evaluated",
+      "gradient": [
+        0.40006336529409975,
+        0.20009792034204046,
+        -0.29988944063580986
+      ],
+      "error": 8.326672684688674e-17
+    },
+    {
+      "dtype": "float64",
+      "I_requested": 0.02,
+      "r_requested": 0.9,
+      "method": "first",
+      "physical_state": [
+        0.02,
+        0.011933701657458565,
+        0.015911602209944753
+      ],
+      "actual_radius": 0.9,
+      "status": "evaluated",
+      "gradient": [
+        0.4000633652940997,
+        0.2000979203420405,
+        -0.2998894406358098
+      ],
+      "error": 5.551115123125783e-17
+    },
+    {
+      "dtype": "float64",
+      "I_requested": 0.02,
+      "r_requested": 0.9,
+      "method": "vector",
+      "physical_state": [
+        0.02,
+        0.011933701657458565,
+        0.015911602209944753
+      ],
+      "actual_radius": 0.9,
+      "status": "evaluated",
+      "gradient": [
+        0.40006336529409975,
+        0.20009792034204046,
+        -0.29988944063580986
+      ],
+      "error": 8.326672684688674e-17
+    },
+    {
+      "dtype": "float64",
+      "I_requested": 0.02,
+      "r_requested": 0.9,
+      "method": "mixed",
+      "physical_state": [
+        0.02,
+        0.011933701657458565,
+        0.015911602209944753
+      ],
+      "actual_radius": 0.9,
+      "status": "evaluated",
+      "gradient": [
+        0.4000633652940997,
+        0.2000979203420405,
+        -0.2998894406358098
+      ],
+      "error": 5.551115123125783e-17
+    },
+    {
+      "dtype": "float64",
+      "I_requested": 0.02,
+      "r_requested": 1.1,
+      "method": "direct",
+      "physical_state": [
+        0.02,
+        0.011945701357466063,
+        0.015927601809954756
+      ],
+      "actual_radius": null,
+      "status": "evaluated",
+      "gradient": [
+        0.40006347991236874,
+        0.20009802373992372,
+        -0.2998892892653171
+      ],
+      "error": 7.850462293418876e-17
+    },
+    {
+      "dtype": "float64",
+      "I_requested": 0.02,
+      "r_requested": 1.1,
+      "method": "first",
+      "physical_state": [
+        0.02,
+        0.011945701357466063,
+        0.015927601809954756
+      ],
+      "actual_radius": 1.1,
+      "status": "evaluated",
+      "gradient": [
+        0.4000634799123691,
+        0.20009802373992341,
+        -0.29988928926531744
+      ],
+      "error": 6.061909215660398e-16
+    },
+    {
+      "dtype": "float64",
+      "I_requested": 0.02,
+      "r_requested": 1.1,
+      "method": "vector",
+      "physical_state": [
+        0.02,
+        0.011945701357466063,
+        0.015927601809954756
+      ],
+      "actual_radius": 1.1,
+      "status": "evaluated",
+      "gradient": [
+        0.40006347991236857,
+        0.20009802373992383,
+        -0.29988928926531705
+      ],
+      "error": 1.9229626863835638e-16
+    },
+    {
+      "dtype": "float64",
+      "I_requested": 0.02,
+      "r_requested": 1.1,
+      "method": "mixed",
+      "physical_state": [
+        0.02,
+        0.011945701357466063,
+        0.015927601809954756
+      ],
+      "actual_radius": 1.1,
+      "status": "evaluated",
+      "gradient": [
+        0.4000634799123685,
+        0.2000980237399238,
+        -0.29988928926531694
+      ],
+      "error": 2.897767167584095e-16
+    },
+    {
+      "dtype": "float64",
+      "I_requested": 0.02,
+      "r_requested": 0.999,
+      "method": "direct",
+      "physical_state": [
+        0.02,
+        0.011999993993997,
+        0.015999991991996
+      ],
+      "actual_radius": null,
+      "status": "evaluated",
+      "gradient": [
+        0.40006399994234243,
+        0.20009849174981054,
+        -0.29988860335533096
+      ],
+      "error": 7.850462293418876e-17
+    },
+    {
+      "dtype": "float64",
+      "I_requested": 0.02,
+      "r_requested": 0.999,
+      "method": "first",
+      "physical_state": [
+        0.02,
+        0.011999993993997,
+        0.015999991991996
+      ],
+      "actual_radius": 0.999,
+      "status": "evaluated",
+      "gradient": [
+        0.40006399994232983,
+        0.20009849174981803,
+        -0.29988860335532086
+      ],
+      "error": 1.7797363354545032e-14
+    },
+    {
+      "dtype": "float64",
+      "I_requested": 0.02,
+      "r_requested": 0.999,
+      "method": "vector",
+      "physical_state": [
+        0.02,
+        0.011999993993997,
+        0.015999991991996
+      ],
+      "actual_radius": 0.999,
+      "status": "evaluated",
+      "gradient": [
+        0.40006399994234243,
+        0.20009849174981048,
+        -0.2998886033553309
+      ],
+      "error": 1.3597399555105182e-16
+    },
+    {
+      "dtype": "float64",
+      "I_requested": 0.02,
+      "r_requested": 0.999,
+      "method": "mixed",
+      "physical_state": [
+        0.02,
+        0.011999993993997,
+        0.015999991991996
+      ],
+      "actual_radius": 0.999,
+      "status": "evaluated",
+      "gradient": [
+        0.4000639999423424,
+        0.20009849174981048,
+        -0.29988860335533085
+      ],
+      "error": 1.7554167342883506e-16
+    },
+    {
+      "dtype": "float64",
+      "I_requested": 0.02,
+      "r_requested": 1.001,
+      "method": "direct",
+      "physical_state": [
+        0.02,
+        0.011999994005997,
+        0.015999992007996
+      ],
+      "actual_radius": null,
+      "status": "evaluated",
+      "gradient": [
+        0.4000639999424576,
+        0.20009849174991404,
+        -0.29988860335517914
+      ],
+      "error": 8.326672684688674e-17
+    },
+    {
+      "dtype": "float64",
+      "I_requested": 0.02,
+      "r_requested": 1.001,
+      "method": "first",
+      "physical_state": [
+        0.02,
+        0.011999994005997,
+        0.015999992007996
+      ],
+      "actual_radius": 1.001,
+      "status": "evaluated",
+      "gradient": [
+        0.40006399994246045,
+        0.2000984917499123,
+        -0.2998886033551814
+      ],
+      "error": 4.027906882180629e-15
+    },
+    {
+      "dtype": "float64",
+      "I_requested": 0.02,
+      "r_requested": 1.001,
+      "method": "vector",
+      "physical_state": [
+        0.02,
+        0.011999994005997,
+        0.015999992007996
+      ],
+      "actual_radius": 1.001,
+      "status": "evaluated",
+      "gradient": [
+        0.40006399994245767,
+        0.20009849174991404,
+        -0.29988860335517925
+      ],
+      "error": 1.2719202621569003e-16
+    },
+    {
+      "dtype": "float64",
+      "I_requested": 0.02,
+      "r_requested": 1.001,
+      "method": "mixed",
+      "physical_state": [
+        0.02,
+        0.011999994005997,
+        0.015999992007996
+      ],
+      "actual_radius": 1.001,
+      "status": "evaluated",
+      "gradient": [
+        0.4000639999424576,
+        0.20009849174991398,
+        -0.29988860335517914
+      ],
+      "error": 8.326672684688674e-17
+    },
+    {
+      "dtype": "float64",
+      "I_requested": 0.02,
+      "r_requested": 0.99999,
+      "method": "direct",
+      "physical_state": [
+        0.02,
+        0.011999999999399992,
+        0.01599999999919999
+      ],
+      "actual_radius": null,
+      "status": "evaluated",
+      "gradient": [
+        0.40006399999999426,
+        0.20009849180159484,
+        -0.29988860327936756
+      ],
+      "error": 5.551115123125783e-17
+    },
+    {
+      "dtype": "float64",
+      "I_requested": 0.02,
+      "r_requested": 0.99999,
+      "method": "first",
+      "physical_state": [
+        0.02,
+        0.011999999999399992,
+        0.01599999999919999
+      ],
+      "actual_radius": 0.99999,
+      "status": "evaluated",
+      "gradient": [
+        0.40006399999605435,
+        0.20009849180395875,
+        -0.29988860327621564
+      ],
+      "error": 5.5718852392208665e-12
+    },
+    {
+      "dtype": "float64",
+      "I_requested": 0.02,
+      "r_requested": 0.99999,
+      "method": "vector",
+      "physical_state": [
+        0.02,
+        0.011999999999399992,
+        0.01599999999919999
+      ],
+      "actual_radius": 0.99999,
+      "status": "evaluated",
+      "gradient": [
+        0.4000639999999942,
+        0.2000984918015949,
+        -0.29988860327936756
+      ],
+      "error": 9.614813431917819e-17
+    },
+    {
+      "dtype": "float64",
+      "I_requested": 0.02,
+      "r_requested": 0.99999,
+      "method": "mixed",
+      "physical_state": [
+        0.02,
+        0.011999999999399992,
+        0.01599999999919999
+      ],
+      "actual_radius": 0.99999,
+      "status": "evaluated",
+      "gradient": [
+        0.4000639999999942,
+        0.20009849180159484,
+        -0.2998886032793675
+      ],
+      "error": 1.2412670766236366e-16
+    },
+    {
+      "dtype": "float64",
+      "I_requested": 0.02,
+      "r_requested": 1.00001,
+      "method": "direct",
+      "physical_state": [
+        0.02,
+        0.011999999999400006,
+        0.01599999999920001
+      ],
+      "actual_radius": null,
+      "status": "evaluated",
+      "gradient": [
+        0.40006399999999426,
+        0.20009849180159484,
+        -0.29988860327936756
+      ],
+      "error": 5.551115123125783e-17
+    },
+    {
+      "dtype": "float64",
+      "I_requested": 0.02,
+      "r_requested": 1.00001,
+      "method": "first",
+      "physical_state": [
+        0.02,
+        0.011999999999400006,
+        0.01599999999920001
+      ],
+      "actual_radius": 1.00001,
+      "status": "evaluated",
+      "gradient": [
+        0.4000639999955758,
+        0.20009849180424588,
+        -0.2998886032758328
+      ],
+      "error": 6.2486775188560136e-12
+    },
+    {
+      "dtype": "float64",
+      "I_requested": 0.02,
+      "r_requested": 1.00001,
+      "method": "vector",
+      "physical_state": [
+        0.02,
+        0.011999999999400006,
+        0.01599999999920001
+      ],
+      "actual_radius": 1.00001,
+      "status": "evaluated",
+      "gradient": [
+        0.4000639999999943,
+        0.20009849180159475,
+        -0.29988860327936756
+      ],
+      "error": 1.1443916996305594e-16
+    },
+    {
+      "dtype": "float64",
+      "I_requested": 0.02,
+      "r_requested": 1.00001,
+      "method": "mixed",
+      "physical_state": [
+        0.02,
+        0.011999999999400006,
+        0.01599999999920001
+      ],
+      "actual_radius": 1.00001,
+      "status": "evaluated",
+      "gradient": [
+        0.40006399999999437,
+        0.20009849180159478,
+        -0.2998886032793676
+      ],
+      "error": 1.2412670766236366e-16
+    },
+    {
+      "dtype": "float64",
+      "I_requested": 0.02,
+      "r_requested": 0.9999999,
+      "method": "direct",
+      "physical_state": [
+        0.02,
+        0.01199999999999994,
+        0.01599999999999992
+      ],
+      "actual_radius": null,
+      "status": "evaluated",
+      "gradient": [
+        0.40006400000000003,
+        0.20009849180160003,
+        -0.29988860327935996
+      ],
+      "error": 8.326672684688674e-17
+    },
+    {
+      "dtype": "float64",
+      "I_requested": 0.02,
+      "r_requested": 0.9999999,
+      "method": "first",
+      "physical_state": [
+        0.02,
+        0.01199999999999994,
+        0.01599999999999992
+      ],
+      "actual_radius": 0.9999999,
+      "status": "evaluated",
+      "gradient": [
+        0.4000639998845552,
+        0.20009849187086687,
+        -0.2998886031870041
+      ],
+      "error": 1.632636071215498e-10
+    },
+    {
+      "dtype": "float64",
+      "I_requested": 0.02,
+      "r_requested": 0.9999999,
+      "method": "vector",
+      "physical_state": [
+        0.02,
+        0.01199999999999994,
+        0.01599999999999992
+      ],
+      "actual_radius": 0.9999999,
+      "status": "evaluated",
+      "gradient": [
+        0.4000640000000001,
+        0.20009849180160003,
+        -0.29988860327936
+      ],
+      "error": 1.1443916996305594e-16
+    },
+    {
+      "dtype": "float64",
+      "I_requested": 0.02,
+      "r_requested": 0.9999999,
+      "method": "mixed",
+      "physical_state": [
+        0.02,
+        0.01199999999999994,
+        0.01599999999999992
+      ],
+      "actual_radius": 0.9999999,
+      "status": "evaluated",
+      "gradient": [
+        0.40006400000000003,
+        0.2000984918016,
+        -0.29988860327935996
+      ],
+      "error": 7.850462293418876e-17
+    },
+    {
+      "dtype": "float64",
+      "I_requested": 0.02,
+      "r_requested": 1.0000001,
+      "method": "direct",
+      "physical_state": [
+        0.02,
+        0.01199999999999994,
+        0.01599999999999992
+      ],
+      "actual_radius": null,
+      "status": "evaluated",
+      "gradient": [
+        0.40006400000000003,
+        0.20009849180160003,
+        -0.29988860327935996
+      ],
+      "error": 8.326672684688674e-17
+    },
+    {
+      "dtype": "float64",
+      "I_requested": 0.02,
+      "r_requested": 1.0000001,
+      "method": "first",
+      "physical_state": [
+        0.02,
+        0.01199999999999994,
+        0.01599999999999992
+      ],
+      "actual_radius": 1.0000001,
+      "status": "evaluated",
+      "gradient": [
+        0.40006399993793706,
+        0.20009849183883782,
+        -0.29988860322970956
+      ],
+      "error": 8.777031161668917e-11
+    },
+    {
+      "dtype": "float64",
+      "I_requested": 0.02,
+      "r_requested": 1.0000001,
+      "method": "vector",
+      "physical_state": [
+        0.02,
+        0.01199999999999994,
+        0.01599999999999992
+      ],
+      "actual_radius": 1.0000001,
+      "status": "evaluated",
+      "gradient": [
+        0.400064,
+        0.20009849180160003,
+        -0.2998886032793599
+      ],
+      "error": 1.1443916996305594e-16
+    },
+    {
+      "dtype": "float64",
+      "I_requested": 0.02,
+      "r_requested": 1.0000001,
+      "method": "mixed",
+      "physical_state": [
+        0.02,
+        0.01199999999999994,
+        0.01599999999999992
+      ],
+      "actual_radius": 1.0000001,
+      "status": "evaluated",
+      "gradient": [
+        0.40006400000000003,
+        0.20009849180160003,
+        -0.29988860327935996
+      ],
+      "error": 8.326672684688674e-17
+    },
+    {
+      "dtype": "float64",
+      "I_requested": 1.2,
+      "r_requested": 1.0,
+      "method": "direct",
+      "physical_state": [
+        1.2,
+        0.72,
+        0.96
+      ],
+      "actual_radius": null,
+      "status": "evaluated",
+      "gradient": [
+        1.98976,
+        1.0838291456000002,
+        0.31273165824000004
+      ],
+      "error": 3.3306690738754696e-16
+    },
+    {
+      "dtype": "float64",
+      "I_requested": 1.2,
+      "r_requested": 1.0,
+      "method": "first",
+      "physical_state": [
+        1.2,
+        0.72,
+        0.96
+      ],
+      "actual_radius": 1.0,
+      "status": "singular_first_inverse",
+      "gradient": null,
+      "error": null
+    },
+    {
+      "dtype": "float64",
+      "I_requested": 1.2,
+      "r_requested": 1.0,
+      "method": "vector",
+      "physical_state": [
+        1.2,
+        0.72,
+        0.96
+      ],
+      "actual_radius": 1.0,
+      "status": "evaluated",
+      "gradient": [
+        1.98976,
+        1.0838291456000002,
+        0.31273165824000004
+      ],
+      "error": 3.3306690738754696e-16
+    },
+    {
+      "dtype": "float64",
+      "I_requested": 1.2,
+      "r_requested": 1.0,
+      "method": "mixed",
+      "physical_state": [
+        1.2,
+        0.72,
+        0.96
+      ],
+      "actual_radius": 1.0,
+      "status": "evaluated",
+      "gradient": [
+        1.98976,
+        1.0838291456000002,
+        0.3127316582400001
+      ],
+      "error": 3.554447978966673e-16
+    },
+    {
+      "dtype": "float64",
+      "I_requested": 1.2,
+      "r_requested": 0.9,
+      "method": "direct",
+      "physical_state": [
+        1.2,
+        0.7160220994475138,
+        0.9546961325966852
+      ],
+      "actual_radius": null,
+      "status": "evaluated",
+      "gradient": [
+        1.9874750587588903,
+        1.0730480243806944,
+        0.3062276282987201
+      ],
+      "error": 4.996003610813204e-16
+    },
+    {
+      "dtype": "float64",
+      "I_requested": 1.2,
+      "r_requested": 0.9,
+      "method": "first",
+      "physical_state": [
+        1.2,
+        0.7160220994475138,
+        0.9546961325966852
+      ],
+      "actual_radius": 0.9,
+      "status": "evaluated",
+      "gradient": [
+        1.9874750587588919,
+        1.0730480243806932,
+        0.30622762829871897
+      ],
+      "error": 2.1706208825930276e-15
+    },
+    {
+      "dtype": "float64",
+      "I_requested": 1.2,
+      "r_requested": 0.9,
+      "method": "vector",
+      "physical_state": [
+        1.2,
+        0.7160220994475138,
+        0.9546961325966852
+      ],
+      "actual_radius": 0.9,
+      "status": "evaluated",
+      "gradient": [
+        1.9874750587588905,
+        1.0730480243806944,
+        0.3062276282987197
+      ],
+      "error": 7.108895957933346e-16
+    },
+    {
+      "dtype": "float64",
+      "I_requested": 1.2,
+      "r_requested": 0.9,
+      "method": "mixed",
+      "physical_state": [
+        1.2,
+        0.7160220994475138,
+        0.9546961325966852
+      ],
+      "actual_radius": 0.9,
+      "status": "evaluated",
+      "gradient": [
+        1.9874750587588907,
+        1.073048024380694,
+        0.30622762829871986
+      ],
+      "error": 6.866350197783356e-16
+    },
+    {
+      "dtype": "float64",
+      "I_requested": 1.2,
+      "r_requested": 1.1,
+      "method": "direct",
+      "physical_state": [
+        1.2,
+        0.7167420814479638,
+        0.9556561085972852
+      ],
+      "actual_radius": null,
+      "status": "evaluated",
+      "gradient": [
+        1.9878876845273439,
+        1.0749920769174997,
+        0.3074012901351537
+      ],
+      "error": 3.188872858294072e-16
+    },
+    {
+      "dtype": "float64",
+      "I_requested": 1.2,
+      "r_requested": 1.1,
+      "method": "first",
+      "physical_state": [
+        1.2,
+        0.7167420814479638,
+        0.9556561085972852
+      ],
+      "actual_radius": 1.1,
+      "status": "evaluated",
+      "gradient": [
+        1.9878876845273439,
+        1.0749920769174999,
+        0.30740129013515405
+      ],
+      "error": 3.554447978966673e-16
+    },
+    {
+      "dtype": "float64",
+      "I_requested": 1.2,
+      "r_requested": 1.1,
+      "method": "vector",
+      "physical_state": [
+        1.2,
+        0.7167420814479638,
+        0.9556561085972852
+      ],
+      "actual_radius": 1.1,
+      "status": "evaluated",
+      "gradient": [
+        1.9878876845273439,
+        1.0749920769174999,
+        0.30740129013515366
+      ],
+      "error": 2.482534153247273e-16
+    },
+    {
+      "dtype": "float64",
+      "I_requested": 1.2,
+      "r_requested": 1.1,
+      "method": "mixed",
+      "physical_state": [
+        1.2,
+        0.7167420814479638,
+        0.9556561085972852
+      ],
+      "actual_radius": 1.1,
+      "status": "evaluated",
+      "gradient": [
+        1.9878876845273439,
+        1.0749920769174999,
+        0.30740129013515394
+      ],
+      "error": 2.7755575615628914e-16
+    },
+    {
+      "dtype": "float64",
+      "I_requested": 1.2,
+      "r_requested": 0.999,
+      "method": "direct",
+      "physical_state": [
+        1.2,
+        0.7199996396398199,
+        0.95999951951976
+      ],
+      "actual_radius": null,
+      "status": "evaluated",
+      "gradient": [
+        1.9897597924325883,
+        1.0838281644760523,
+        0.3127310668716362
+      ],
+      "error": 3.188872858294072e-16
+    },
+    {
+      "dtype": "float64",
+      "I_requested": 1.2,
+      "r_requested": 0.999,
+      "method": "first",
+      "physical_state": [
+        1.2,
+        0.7199996396398199,
+        0.95999951951976
+      ],
+      "actual_radius": 0.999,
+      "status": "evaluated",
+      "gradient": [
+        1.9897597924326158,
+        1.083828164476036,
+        0.31273106687161417
+      ],
+      "error": 3.894019223443194e-14
+    },
+    {
+      "dtype": "float64",
+      "I_requested": 1.2,
+      "r_requested": 0.999,
+      "method": "vector",
+      "physical_state": [
+        1.2,
+        0.7199996396398199,
+        0.95999951951976
+      ],
+      "actual_radius": 0.999,
+      "status": "evaluated",
+      "gradient": [
+        1.9897597924325887,
+        1.083828164476052,
+        0.3127310668716362
+      ],
+      "error": 7.043575467574348e-16
+    },
+    {
+      "dtype": "float64",
+      "I_requested": 1.2,
+      "r_requested": 0.999,
+      "method": "mixed",
+      "physical_state": [
+        1.2,
+        0.7199996396398199,
+        0.95999951951976
+      ],
+      "actual_radius": 0.999,
+      "status": "evaluated",
+      "gradient": [
+        1.9897597924325885,
+        1.0838281644760523,
+        0.31273106687163615
+      ],
+      "error": 4.965068306494546e-16
+    },
+    {
+      "dtype": "float64",
+      "I_requested": 1.2,
+      "r_requested": 1.001,
+      "method": "direct",
+      "physical_state": [
+        1.2,
+        0.7199996403598199,
+        0.95999952047976
+      ],
+      "actual_radius": null,
+      "status": "evaluated",
+      "gradient": [
+        1.989759792847308,
+        1.083828166436338,
+        0.3127310680531903
+      ],
+      "error": 3.1401849173675503e-16
+    },
+    {
+      "dtype": "float64",
+      "I_requested": 1.2,
+      "r_requested": 1.001,
+      "method": "first",
+      "physical_state": [
+        1.2,
+        0.7199996403598199,
+        0.95999952047976
+      ],
+      "actual_radius": 1.001,
+      "status": "evaluated",
+      "gradient": [
+        1.98975979284716,
+        1.0838281664364269,
+        0.3127310680533088
+      ],
+      "error": 2.0938771660307143e-13
+    },
+    {
+      "dtype": "float64",
+      "I_requested": 1.2,
+      "r_requested": 1.001,
+      "method": "vector",
+      "physical_state": [
+        1.2,
+        0.7199996403598199,
+        0.95999952047976
+      ],
+      "actual_radius": 1.001,
+      "status": "evaluated",
+      "gradient": [
+        1.989759792847308,
+        1.083828166436338,
+        0.3127310680531903
+      ],
+      "error": 3.1401849173675503e-16
+    },
+    {
+      "dtype": "float64",
+      "I_requested": 1.2,
+      "r_requested": 1.001,
+      "method": "mixed",
+      "physical_state": [
+        1.2,
+        0.7199996403598199,
+        0.95999952047976
+      ],
+      "actual_radius": 1.001,
+      "status": "evaluated",
+      "gradient": [
+        1.989759792847308,
+        1.083828166436338,
+        0.3127310680531901
+      ],
+      "error": 3.554447978966673e-16
+    },
+    {
+      "dtype": "float64",
+      "I_requested": 1.2,
+      "r_requested": 0.99999,
+      "method": "direct",
+      "physical_state": [
+        1.2,
+        0.7199999999639995,
+        0.9599999999519995
+      ],
+      "actual_radius": null,
+      "status": "evaluated",
+      "gradient": [
+        1.989759999979264,
+        1.0838291455019844,
+        0.31273165818092163
+      ],
+      "error": 2.482534153247273e-16
+    },
+    {
+      "dtype": "float64",
+      "I_requested": 1.2,
+      "r_requested": 0.99999,
+      "method": "first",
+      "physical_state": [
+        1.2,
+        0.7199999999639995,
+        0.9599999999519995
+      ],
+      "actual_radius": 0.99999,
+      "status": "evaluated",
+      "gradient": [
+        1.9897599999762525,
+        1.0838291455037914,
+        0.3127316581833311
+      ],
+      "error": 4.258907228110658e-12
+    },
+    {
+      "dtype": "float64",
+      "I_requested": 1.2,
+      "r_requested": 0.99999,
+      "method": "vector",
+      "physical_state": [
+        1.2,
+        0.7199999999639995,
+        0.9599999999519995
+      ],
+      "actual_radius": 0.99999,
+      "status": "evaluated",
+      "gradient": [
+        1.989759999979264,
+        1.0838291455019844,
+        0.3127316581809219
+      ],
+      "error": 4.47545209131181e-16
+    },
+    {
+      "dtype": "float64",
+      "I_requested": 1.2,
+      "r_requested": 0.99999,
+      "method": "mixed",
+      "physical_state": [
+        1.2,
+        0.7199999999639995,
+        0.9599999999519995
+      ],
+      "actual_radius": 0.99999,
+      "status": "evaluated",
+      "gradient": [
+        1.9897599999792641,
+        1.0838291455019844,
+        0.3127316581809218
+      ],
+      "error": 5.23691153334427e-16
+    },
+    {
+      "dtype": "float64",
+      "I_requested": 1.2,
+      "r_requested": 1.00001,
+      "method": "direct",
+      "physical_state": [
+        1.2,
+        0.7199999999640003,
+        0.9599999999520004
+      ],
+      "actual_radius": null,
+      "status": "evaluated",
+      "gradient": [
+        1.9897599999792641,
+        1.0838291455019864,
+        0.31273165818092274
+      ],
+      "error": 0.0
+    },
+    {
+      "dtype": "float64",
+      "I_requested": 1.2,
+      "r_requested": 1.00001,
+      "method": "first",
+      "physical_state": [
+        1.2,
+        0.7199999999640003,
+        0.9599999999520004
+      ],
+      "actual_radius": 1.00001,
+      "status": "evaluated",
+      "gradient": [
+        1.9897599999765727,
+        1.0838291455036013,
+        0.3127316581830759
+      ],
+      "error": 3.806280942816751e-12
+    },
+    {
+      "dtype": "float64",
+      "I_requested": 1.2,
+      "r_requested": 1.00001,
+      "method": "vector",
+      "physical_state": [
+        1.2,
+        0.7199999999640003,
+        0.9599999999520004
+      ],
+      "actual_radius": 1.00001,
+      "status": "evaluated",
+      "gradient": [
+        1.9897599999792641,
+        1.0838291455019862,
+        0.31273165818092286
+      ],
+      "error": 2.482534153247273e-16
+    },
+    {
+      "dtype": "float64",
+      "I_requested": 1.2,
+      "r_requested": 1.00001,
+      "method": "mixed",
+      "physical_state": [
+        1.2,
+        0.7199999999640003,
+        0.9599999999520004
+      ],
+      "actual_radius": 1.00001,
+      "status": "evaluated",
+      "gradient": [
+        1.9897599999792637,
+        1.0838291455019866,
+        0.31273165818092297
+      ],
+      "error": 5.438959822042073e-16
+    },
+    {
+      "dtype": "float64",
+      "I_requested": 1.2,
+      "r_requested": 0.9999999,
+      "method": "direct",
+      "physical_state": [
+        1.2,
+        0.7199999999999963,
+        0.9599999999999952
+      ],
+      "actual_radius": null,
+      "status": "evaluated",
+      "gradient": [
+        1.989759999999998,
+        1.08382914559999,
+        0.31273165823999405
+      ],
+      "error": 2.2887833992611187e-16
+    },
+    {
+      "dtype": "float64",
+      "I_requested": 1.2,
+      "r_requested": 0.9999999,
+      "method": "first",
+      "physical_state": [
+        1.2,
+        0.7199999999999963,
+        0.9599999999999952
+      ],
+      "actual_radius": 0.9999999,
+      "status": "evaluated",
+      "gradient": [
+        1.9897600001940674,
+        1.0838291454835485,
+        0.31273165808473885
+      ],
+      "error": 2.744554903743207e-10
+    },
+    {
+      "dtype": "float64",
+      "I_requested": 1.2,
+      "r_requested": 0.9999999,
+      "method": "vector",
+      "physical_state": [
+        1.2,
+        0.7199999999999963,
+        0.9599999999999952
+      ],
+      "actual_radius": 0.9999999,
+      "status": "evaluated",
+      "gradient": [
+        1.9897599999999986,
+        1.08382914559999,
+        0.3127316582399936
+      ],
+      "error": 9.694605782913356e-16
+    },
+    {
+      "dtype": "float64",
+      "I_requested": 1.2,
+      "r_requested": 0.9999999,
+      "method": "mixed",
+      "physical_state": [
+        1.2,
+        0.7199999999999963,
+        0.9599999999999952
+      ],
+      "actual_radius": 0.9999999,
+      "status": "evaluated",
+      "gradient": [
+        1.9897599999999986,
+        1.0838291455999896,
+        0.3127316582399939
+      ],
+      "error": 9.992007221626409e-16
+    },
+    {
+      "dtype": "float64",
+      "I_requested": 1.2,
+      "r_requested": 1.0000001,
+      "method": "direct",
+      "physical_state": [
+        1.2,
+        0.7199999999999963,
+        0.9599999999999951
+      ],
+      "actual_radius": null,
+      "status": "evaluated",
+      "gradient": [
+        1.989759999999998,
+        1.08382914559999,
+        0.312731658239994
+      ],
+      "error": 2.2887833992611187e-16
+    },
+    {
+      "dtype": "float64",
+      "I_requested": 1.2,
+      "r_requested": 1.0000001,
+      "method": "first",
+      "physical_state": [
+        1.2,
+        0.7199999999999963,
+        0.9599999999999951
+      ],
+      "actual_radius": 1.0000001,
+      "status": "evaluated",
+      "gradient": [
+        1.9897599988182906,
+        1.0838291463090146,
+        0.3127316591853602
+      ],
+      "error": 1.671186755465487e-09
+    },
+    {
+      "dtype": "float64",
+      "I_requested": 1.2,
+      "r_requested": 1.0000001,
+      "method": "vector",
+      "physical_state": [
+        1.2,
+        0.7199999999999963,
+        0.9599999999999951
+      ],
+      "actual_radius": 1.0000001,
+      "status": "evaluated",
+      "gradient": [
+        1.9897599999999982,
+        1.0838291455999898,
+        0.31273165823999405
+      ],
+      "error": 5.087681048627601e-16
+    },
+    {
+      "dtype": "float64",
+      "I_requested": 1.2,
+      "r_requested": 1.0000001,
+      "method": "mixed",
+      "physical_state": [
+        1.2,
+        0.7199999999999963,
+        0.9599999999999951
+      ],
+      "actual_radius": 1.0000001,
+      "status": "evaluated",
+      "gradient": [
+        1.9897599999999982,
+        1.08382914559999,
+        0.312731658239994
+      ],
+      "error": 4.47545209131181e-16
+    }
+  ],
+  "timing_records": [
+    {
+      "dtype": "float32",
+      "r": 0.999,
+      "I": 1.2,
+      "method": "direct",
+      "batch_mean_us": [
+        70.60625,
+        69.60419999999999,
+        68.50625,
+        67.85210000000001,
+        67.1,
+        70.72085000000001,
+        75.8917
+      ],
+      "median_us": 69.60419999999999,
+      "q25_us": 68.179175,
+      "q75_us": 70.66355000000001
+    },
+    {
+      "dtype": "float32",
+      "r": 0.999,
+      "I": 1.2,
+      "method": "first",
+      "batch_mean_us": [
+        115.44789999999999,
+        122.70205,
+        112.79164999999999,
+        112.25210000000001,
+        109.75415,
+        121.12295,
+        128.96875
+      ],
+      "median_us": 115.44789999999999,
+      "q25_us": 112.521875,
+      "q75_us": 121.9125
+    },
+    {
+      "dtype": "float32",
+      "r": 0.999,
+      "I": 1.2,
+      "method": "vector",
+      "batch_mean_us": [
+        291.8417,
+        315.575,
+        277.5104,
+        316.78540000000004,
+        290.55415000000005,
+        300.91875,
+        310.10835
+      ],
+      "median_us": 300.91875,
+      "q25_us": 291.19792500000005,
+      "q75_us": 312.841675
+    },
+    {
+      "dtype": "float32",
+      "r": 0.999,
+      "I": 1.2,
+      "method": "mixed",
+      "batch_mean_us": [
+        279.31455,
+        276.10835,
+        286.18125,
+        301.15835,
+        260.1979,
+        296.14375,
+        305.04585
+      ],
+      "median_us": 286.18125,
+      "q25_us": 277.71145,
+      "q75_us": 298.65105
+    },
+    {
+      "dtype": "float32",
+      "r": 1.0,
+      "I": 1.2,
+      "method": "direct",
+      "batch_mean_us": [
+        69.04375,
+        76.24585,
+        70.24164999999999,
+        70.04375,
+        71.29164999999999,
+        70.42085,
+        69.425
+      ],
+      "median_us": 70.24164999999999,
+      "q25_us": 69.734375,
+      "q75_us": 70.85624999999999
+    },
+    {
+      "dtype": "float32",
+      "r": 1.0,
+      "I": 1.2,
+      "method": "vector",
+      "batch_mean_us": [
+        222.27085,
+        248.04585,
+        239.47915,
+        251.3646,
+        242.0854,
+        237.54170000000002,
+        241.87295
+      ],
+      "median_us": 241.87295,
+      "q25_us": 238.510425,
+      "q75_us": 245.065625
+    },
+    {
+      "dtype": "float32",
+      "r": 1.0,
+      "I": 1.2,
+      "method": "mixed",
+      "batch_mean_us": [
+        209.74375,
+        220.76665,
+        234.375,
+        218.24795,
+        219.5917,
+        230.34375,
+        221.54375
+      ],
+      "median_us": 220.76665,
+      "q25_us": 218.919825,
+      "q75_us": 225.94375
+    },
+    {
+      "dtype": "float32",
+      "r": 1.001,
+      "I": 1.2,
+      "method": "direct",
+      "batch_mean_us": [
+        70.2792,
+        70.52705,
+        89.0875,
+        69.9229,
+        72.85419999999999,
+        67.94789999999999,
+        77.99375
+      ],
+      "median_us": 70.52705,
+      "q25_us": 70.10105,
+      "q75_us": 75.423975
+    },
+    {
+      "dtype": "float32",
+      "r": 1.001,
+      "I": 1.2,
+      "method": "first",
+      "batch_mean_us": [
+        112.7771,
+        116.3458,
+        115.53960000000001,
+        126.675,
+        135.68125,
+        110.2979,
+        117.55625
+      ],
+      "median_us": 116.3458,
+      "q25_us": 114.15835000000001,
+      "q75_us": 122.115625
+    },
+    {
+      "dtype": "float32",
+      "r": 1.001,
+      "I": 1.2,
+      "method": "vector",
+      "batch_mean_us": [
+        293.4625,
+        295.2979,
+        291.09795,
+        357.0729,
+        281.08959999999996,
+        303.74170000000004,
+        322.3104
+      ],
+      "median_us": 295.2979,
+      "q25_us": 292.280225,
+      "q75_us": 313.02605000000005
+    },
+    {
+      "dtype": "float32",
+      "r": 1.001,
+      "I": 1.2,
+      "method": "mixed",
+      "batch_mean_us": [
+        280.1729,
+        284.79375,
+        275.5625,
+        291.7625,
+        290.375,
+        300.53540000000004,
+        284.25834999999995
+      ],
+      "median_us": 284.79375,
+      "q25_us": 282.215625,
+      "q75_us": 291.06875
+    },
+    {
+      "dtype": "float64",
+      "r": 0.999,
+      "I": 1.2,
+      "method": "direct",
+      "batch_mean_us": [
+        75.03335000000001,
+        60.13955,
+        62.86875,
+        73.0,
+        62.21875,
+        62.695800000000006,
+        63.366699999999994
+      ],
+      "median_us": 62.86875,
+      "q25_us": 62.457275,
+      "q75_us": 68.18334999999999
+    },
+    {
+      "dtype": "float64",
+      "r": 0.999,
+      "I": 1.2,
+      "method": "first",
+      "batch_mean_us": [
+        113.05,
+        115.93125,
+        113.69794999999999,
+        114.375,
+        117.93125,
+        104.25210000000001,
+        119.64795
+      ],
+      "median_us": 114.375,
+      "q25_us": 113.373975,
+      "q75_us": 116.93125
+    },
+    {
+      "dtype": "float64",
+      "r": 0.999,
+      "I": 1.2,
+      "method": "vector",
+      "batch_mean_us": [
+        282.5021,
+        276.9375,
+        274.4583,
+        264.52290000000005,
+        264.26045,
+        264.38955,
+        288.7875
+      ],
+      "median_us": 274.4583,
+      "q25_us": 264.456225,
+      "q75_us": 279.71979999999996
+    },
+    {
+      "dtype": "float64",
+      "r": 0.999,
+      "I": 1.2,
+      "method": "mixed",
+      "batch_mean_us": [
+        277.58540000000005,
+        271.68334999999996,
+        293.82079999999996,
+        275.33545000000004,
+        282.96459999999996,
+        285.96040000000005,
+        264.05834999999996
+      ],
+      "median_us": 277.58540000000005,
+      "q25_us": 273.5094,
+      "q75_us": 284.4625
+    },
+    {
+      "dtype": "float64",
+      "r": 1.0,
+      "I": 1.2,
+      "method": "direct",
+      "batch_mean_us": [
+        67.5875,
+        65.0146,
+        63.38125,
+        64.29169999999999,
+        63.59165,
+        60.9354,
+        65.7458
+      ],
+      "median_us": 64.29169999999999,
+      "q25_us": 63.486450000000005,
+      "q75_us": 65.3802
+    },
+    {
+      "dtype": "float64",
+      "r": 1.0,
+      "I": 1.2,
+      "method": "vector",
+      "batch_mean_us": [
+        230.14375,
+        215.5021,
+        235.625,
+        220.36665,
+        223.26665,
+        225.60420000000002,
+        234.1
+      ],
+      "median_us": 225.60420000000002,
+      "q25_us": 221.81664999999998,
+      "q75_us": 232.121875
+    },
+    {
+      "dtype": "float64",
+      "r": 1.0,
+      "I": 1.2,
+      "method": "mixed",
+      "batch_mean_us": [
+        215.74375,
+        235.07920000000001,
+        216.14375,
+        224.85,
+        219.025,
+        216.525,
+        230.06875
+      ],
+      "median_us": 219.025,
+      "q25_us": 216.33437500000002,
+      "q75_us": 227.459375
+    },
+    {
+      "dtype": "float64",
+      "r": 1.001,
+      "I": 1.2,
+      "method": "direct",
+      "batch_mean_us": [
+        68.225,
+        64.70625,
+        62.4729,
+        62.725,
+        62.11875,
+        63.42085,
+        65.1354
+      ],
+      "median_us": 63.42085,
+      "q25_us": 62.59895,
+      "q75_us": 64.92082500000001
+    },
+    {
+      "dtype": "float64",
+      "r": 1.001,
+      "I": 1.2,
+      "method": "first",
+      "batch_mean_us": [
+        107.6521,
+        104.74585,
+        105.01665,
+        107.15625,
+        104.7646,
+        108.34375,
+        108.38125
+      ],
+      "median_us": 107.15625,
+      "q25_us": 104.890625,
+      "q75_us": 107.99792500000001
+    },
+    {
+      "dtype": "float64",
+      "r": 1.001,
+      "I": 1.2,
+      "method": "vector",
+      "batch_mean_us": [
+        270.0292,
+        274.48545,
+        286.21455,
+        281.44584999999995,
+        274.7125,
+        275.1271,
+        277.8
+      ],
+      "median_us": 275.1271,
+      "q25_us": 274.598975,
+      "q75_us": 279.622925
+    },
+    {
+      "dtype": "float64",
+      "r": 1.001,
+      "I": 1.2,
+      "method": "mixed",
+      "batch_mean_us": [
+        274.9542,
+        257.2958,
+        258.5854,
+        275.19584999999995,
+        260.98125,
+        260.8417,
+        259.6375
+      ],
+      "median_us": 260.8417,
+      "q25_us": 259.11145,
+      "q75_us": 267.967725
+    }
+  ],
+  "summary": {
+    "accuracy_rows": 144,
+    "evaluated": 140,
+    "singular_rows": 4,
+    "timing_rows": 22,
+    "max_error_by_dtype": {
+      "float32": {
+        "direct": 1.6922754058197435e-07,
+        "first": 1.2734751205955015,
+        "vector": 7.067179128587489e-07,
+        "mixed": 6.745649224201659e-07
+      },
+      "float64": {
+        "direct": 4.996003610813204e-16,
+        "first": 1.671186755465487e-09,
+        "vector": 9.694605782913356e-16,
+        "mixed": 9.992007221626409e-16
+      }
+    },
+    "median_us_float64_r0999": {
+      "direct": 62.86875,
+      "first": 114.375,
+      "vector": 274.4583,
+      "mixed": 277.58540000000005
+    }
+  }
+}

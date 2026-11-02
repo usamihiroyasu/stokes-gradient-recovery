@@ -1,0 +1,7 @@
+{
+  "weights_replayed": 20,
+  "head_HVP_checks": 80,
+  "max_curvature_discrepancy": 1.7763568394002505e-15,
+  "max_gradient_discrepancy": 1.6653345369377348e-16,
+  "positive_detector_control_passed": true
+}

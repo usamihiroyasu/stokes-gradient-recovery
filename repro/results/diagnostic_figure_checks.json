@@ -1,0 +1,48 @@
+{
+  "concept": {
+    "target_Ip": [
+      1.0,
+      0.5
+    ],
+    "fold_Ip": [
+      0.8333333333333334,
+      0.8333333333333334
+    ],
+    "physical_gradient_Ip": [
+      -0.16666666666666663,
+      0.16666666666666669
+    ],
+    "radial_curvature_exact": -0.1388888888888889,
+    "radial_curvature_fd": -0.13888888789059806,
+    "radial_fd_step": 0.0001
+  },
+  "certificate": {
+    "illustrative_slice_W_pI": [
+      [
+        0.5,
+        0
+      ],
+      [
+        0,
+        1
+      ]
+    ],
+    "s_pI": [
+      0.8,
+      0.8
+    ],
+    "z_equals_h_pI": [
+      -1.4,
+      0.2
+    ],
+    "cone_minimum_pI": [
+      -0.6,
+      0.6
+    ],
+    "gap": 1.1500000000000001,
+    "bound": 1.3900000000000001,
+    "stationary_scatter_feasible_z": 56,
+    "stationary_scatter_infeasible_z": 4
+  },
+  "scope": "mathematical diagrams and retained numerical records"
+}

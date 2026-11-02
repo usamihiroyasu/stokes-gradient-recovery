@@ -1,0 +1,9 @@
+{
+  "registered_at": "2026-10-22T06:41:45.907881+09:00",
+  "files": {
+    "PROTOCOL.json": "73be16d0659ab52e992d13808784d5a15934c266bf436eed2607dfca72b6264d",
+    "verify_warm_start.py": "6fd8492d1d585b09c83f99625d2a9b0c7b65a9a338c5424197ce2603b49a1bae",
+    "precision_and_ad.py": "5989213e26283bc446a434b61a9183ec603f8bf94c7733f7068e748528a4b7aa"
+  },
+  "optimization_runs_before_registration": 0
+}

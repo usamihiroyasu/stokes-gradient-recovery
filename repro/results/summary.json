@@ -1,0 +1,86 @@
+{
+  "scope": "direct-output deterministic numerical diagnostics, not shared-network training",
+  "maps": [
+    "F folded",
+    "G monotone",
+    "P disk"
+  ],
+  "beta": 0.5,
+  "seed": "none; deterministic",
+  "matched_GD": {
+    "target": [
+      1.0,
+      0.3,
+      0.0
+    ],
+    "initial_normalized_output": [
+      0.8,
+      0.0
+    ],
+    "step_size": 0.1,
+    "steps": 4000,
+    "results": {
+      "F inner": {
+        "initial_raw_radius": 0.5000000000000001,
+        "initial_output_degree": 0.8,
+        "final_loss": 3.0814879110195774e-33,
+        "final_raw_radius": 0.15353599527684791
+      },
+      "F outer": {
+        "initial_raw_radius": 1.9999999999999998,
+        "initial_output_degree": 0.8,
+        "final_loss": 0.0011236348955414408,
+        "final_raw_radius": 5.258820986462196
+      },
+      "G monotone": {
+        "initial_raw_radius": 1.3333333333333337,
+        "initial_output_degree": 0.8,
+        "final_loss": 9.321500930834222e-32,
+        "final_raw_radius": 0.3144854510165762
+      },
+      "Disk interior": {
+        "initial_raw_radius": 0.8,
+        "initial_output_degree": 0.8,
+        "final_loss": 6.240013019814644e-32,
+        "final_raw_radius": 0.3000000000000005
+      }
+    }
+  },
+  "independent_checks": {
+    "jacobian_cases": 36,
+    "full_head_fold_cases": 8,
+    "finite_difference_step": 1e-05,
+    "max_fd_jacobian_error": 1.997497722783237e-10,
+    "max_singular_value_error": 6.661338147750939e-16,
+    "max_stationary_gradient": 1.6653345369377348e-16,
+    "max_fd_full_hessian_error": 7.416867120468851e-11
+  },
+  "renderer": {
+    "source_sha256": "7bd03aa4a8c6c6a4384d02f6ff5cb027f240e3475475f61bb0133c301c2db824",
+    "shape": [
+      32,
+      32,
+      3
+    ],
+    "first_RGB_output_channel": true,
+    "max_DoLP": 0.047435583104188425,
+    "mean_DoLP": 0.013110322950552328,
+    "min_I": 0.9733667969703674,
+    "max_I": 1.2136913537979126
+  },
+  "constructed_stationary_field": {
+    "pixels": 1024,
+    "step_size": 0.1,
+    "steps": 1000,
+    "oracle_reference_direction_initialization": true,
+    "initial_mean_half_normalized_W_loss": 0.16236768712655608,
+    "final_mean_half_normalized_W_loss": 0.16236768712655608,
+    "max_raw_gradient_over_steps": 2.6596846265757816e-16,
+    "max_parameter_drift": 4.440892098500626e-16,
+    "mean_normalized_W_error": 0.32473537425311216,
+    "min_normalized_W_error": 0.3024596561120192,
+    "max_normalized_W_error": 0.33333333333333337
+  },
+  "new_neural_network_training_runs": 0,
+  "new_renderer_runs": 0
+}

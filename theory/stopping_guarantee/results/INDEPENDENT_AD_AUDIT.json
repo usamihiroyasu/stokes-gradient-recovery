@@ -1,0 +1,11 @@
+{
+  "objectives": 600,
+  "torch": "2.9.1",
+  "max_absolute_derivative_discrepancy": {
+    "b": 1.7763568394002505e-15,
+    "j": 5.329070518200751e-15,
+    "cr": 1.4210854715202004e-14
+  },
+  "origin_directions_restored_from_frozen_input_grid": 72,
+  "independent_manuscript_review": false
+}

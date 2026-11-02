@@ -1,0 +1,707 @@
+\documentclass[pdflatex,sn-mathphys-num]{sn-jnl}
+\usepackage{amsmath,amssymb,amsfonts,amsthm}
+\usepackage{graphicx,xcolor,float,textcomp,mathtools,booktabs,array,tabularx,calc,microtype,placeins,etoolbox,xurl}
+\usepackage{xr-hyper}
+\newtheorem{theorem}{Theorem}
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{lemma}{Lemma}
+\newtheorem{corollary}[theorem]{Corollary}
+\providecommand{\tightlist}{\setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+\newcommand{\PARstart}[2]{#1#2}
+\newcommand{\EOD}{}
+\urlstyle{same}
+\setlength{\emergencystretch}{2em}
+\raggedbottom
+
+\geometry{reset,a4paper,margin=25mm,headheight=12pt,headsep=8mm}
+\externaldocument[SI-]{../build/stokes-scientific-reports-supplement}[stokes-scientific-reports-supplement.pdf]
+\hypersetup{hidelinks,pdftitle={Conditional stopping guarantees for a folded parametrization of reduced Stokes vectors},pdfauthor={Hiroyasu Usami, Ayato Tsuboi, Keisuke Hara}}
+\AtBeginDocument{\raggedright}
+\begin{document}
+\title[Conditional stopping for reduced Stokes estimation]{Conditional stopping guarantees for a folded parametrization of reduced Stokes vectors}
+\author*[1]{\fnm{Hiroyasu} \sur{Usami}}\email{usami@fsc.chubu.ac.jp}
+\author[2]{\fnm{Ayato} \sur{Tsuboi}}
+\author[2]{\fnm{Keisuke} \sur{Hara}}
+\affil[1]{\orgdiv{Department of Computer Science, College of Engineering}, \orgname{Chubu University}, \orgaddress{\city{Kasugai}, \state{Aichi}, \postcode{487-8501}, \country{Japan}}}
+\affil[2]{\orgdiv{Department of Computer Science, Graduate School of Engineering}, \orgname{Chubu University}, \orgaddress{\city{Kasugai}, \state{Aichi}, \postcode{487-8501}, \country{Japan}}}
+\abstract{Stopping decisions made in parametrization coordinates need not certify physically accurate estimates. We establish conditional stopping guarantees for a folded parametrization of reduced Stokes vectors, including partial linear polarization. For strongly convex physical objectives on the bounded-intensity inner sheet, normalized first derivatives and one radial lower-curvature test give an explicit objective-gap bound with sharp tolerance orders $\varepsilon^{4/3}+\nu^2$. The guarantee requires neither prior localization near an optimum nor a positive-semidefinite head Hessian. Its information basis is an exact recovery identity: one signed radial curvature restores the physical-gradient component lost at the fully linearly polarized fold, without stationarity or knowledge of the physical Hessian. For a nominal quadratic model, an outward-rounded implementation certifies a gap of at most $10^{-6}$ for 8,861 of 9,284 stored endpoints; it rejects all 295 historical false successes and 128 accurate endpoints. The full 128-fractional-bit pass takes 7.32 seconds and includes 52 scalar curvature evaluations. Controlled fits and released observations distinguish stopping certification from local fold diagnosis and subsequent coordinate repair. Twenty shared-network fits contain no saved near-fold negative-curvature candidates, and direct physical solvers are cheaper on the tested quadratics.}
+\keywords{Stokes parametrization, polarization imaging, gradient recovery, stopping criteria, constrained optimization}
+\maketitle
+\section{Introduction}
+\label{sec:intro}
+An optimizer can report convergence while a physically constrained polarization estimate remains inaccurate. We ask when derivatives in a specified smooth output parametrization provide a sufficient certificate for the physical objective gap. Our main result is a conditional stopping guarantee, supported by explicit physical-gradient recovery identities and numerical certification for a nominal quadratic model.
+
+We study the reduced Stokes vector $s=(I,Q,U)$, where $I$ is total intensity and $Q,U$ describe linear polarization. The circular-polarization component $V$ is outside the model and is not estimated. Feasible reduced states satisfy $I\geq\sqrt{Q^2+U^2}$, so the model includes partial polarization. For $I>0$, the degree of linear polarization is $d=\sqrt{Q^2+U^2}/I\in[0,1]$. The rational Stokes parametrization studied here folds at the fully linearly polarized boundary $d=1$; it also represents partially polarized states in the interior.
+
+Physicality-constrained Stokes estimation enforces an admissible polarization state \cite{hu,spc,psara}. Polarization also supplies cues for learned shape and inverse rendering \cite{ba,pandora}, with acquisition noise requiring separate evaluation \cite{polarns}. Smooth output maps offer one way to enforce constraints in differentiable models. Optimization layers \cite{optnet,cvxlayers} and constrained networks \cite{hardnet} make the differential information carried by such maps a relevant design question.
+
+Theorem~\ref{thm:uniformstopping} gives a uniform stopping bound for strongly convex physical objectives. On the inner sheet with bounded intensity, normalized first derivatives and a lower test on one radial curvature bound the gap by an explicit expression of order $\varepsilon^{4/3}+\nu^2$. The result holds throughout this domain, including points far from the optimum. Sharp examples, derivative-error budgets, and counterexamples specify its accuracy and scope. It builds on quantitative second-order transfer for squared-variable formulations \cite{dingwright} and the degenerate behavior described by known Kurdyka--\L{}ojasiewicz (KL) exponents for Hadamard models \cite{ouyang}. The Stokes specialization supplies explicit constants and uses a single curvature direction. Figure~\ref{fig:stopping_certificate} connects this guarantee to the conservatism and coverage of the numerical stopping bounds.
+
+The recovery identities provide the information underlying this stopping analysis. At the fold, first derivatives leave one physical-gradient component undetermined. One signed radial second derivative recovers that component for any $C^2$ objective, without stationarity or knowledge of the physical Hessian (Proposition~\ref{prop:recovery}). Figure~\ref{fig:principle} exhibits objectives with the same value, first head derivatives, and physical Hessian but different physical gradients. Away from the fold, complete first derivatives identify the gradient, but their radial inverse amplifies errors. Propositions~\ref{prop:mixed} and \ref{prop:localcurvature} correct second-order observations using, respectively, one physical-curvature scalar or one Hessian action. Their error formulas distinguish radial and tangential input gains. Corollary~\ref{cor:gap} converts recovered gradients into a quadratic gap bound, with an exact tightness condition and the slack required at interior outputs.
+
+The rational ball map and its first derivative are established \cite[Sec.~V-B, (78)--(79)]{gcopter}. Smooth-lift theory describes how critical-point properties transfer through a parametrization \cite{lifts}; Hadamard parametrizations provide related stationary-point and strict-saddle correspondences \cite{hadamard}. Within this framework, our inverse-information question concerns which signed derivative values determine the physical gradient, their sensitivity, and the stopping implications of finite tolerances. Supplementary Table~\ref{SI-tab:priorart} relates the statements.
+
+The numerical evaluation follows this information-to-certificate structure. Frozen endpoints and outward interval arithmetic assess the stopping bounds. Nonquadratic checks and a common-graph automatic differentiation (AD) experiment test recovery and acquisition cost. Controlled two-frame fits, Fresnel-reflection sequences and released observations then compare local fold diagnosis and coordinate repair with cold starts, physical stopping bounds and direct cone solutions. The shared-network experiment supplies a fixed check of near-fold curvature at stored checkpoints.
+
+
+\section{Results}
+\label{sec:results}
+
+\subsection{Conditional stopping and numerical certification}
+\label{sec:certificate_results}
+Theorem~\ref{thm:uniformstopping} bounds the gap $\Delta(s)$ to the best physically feasible objective value using normalized first derivatives and one radial lower-curvature test:
+\[
+ \Delta(s)\leq\frac{52(\overline I L)^{2/3}}{\mu}\varepsilon^{4/3}
+             +\frac{3}{\mu}\nu^2.
+\]
+The physical objective is $C^2$ and $\mu$-strongly convex. The evaluated coordinates satisfy $0<I\leq\overline I$ and $0\leq r\leq1$; $\varepsilon\geq0$ bounds the normalized first derivatives. For $r\geq1/2$, the physical radial curvature is at most $L\geq\mu$, and $\nu\geq0$ bounds $\max\{0,-c_r/I\}$. The small-tolerance condition $\varepsilon\leq\overline I L/8$ applies throughout the domain. No radial-curvature observation is required at $r<1/2$. The coefficient 52 is conservative; the two tolerance orders are sharp. This is a sufficient endpoint test, without a prescribed neighborhood of an optimum. Methods gives the exact conditions, error-budget inflation and proof.
+
+Figure~\ref{fig:stopping_certificate} compares this uniform bound with the tighter pointwise expression and its outward interval evaluation on the same 9\,284 stored warm-start endpoints. The uniform bound accepts 980 endpoints at gap threshold $10^{-6}$; the pointwise and 128-fractional-bit interval bounds accept 8\,861. The interval test rejects all 295 historical false successes and also 128 accurate endpoints. Outer-sheet endpoints are represented by paired inner coordinates with the same physical output before derivatives are evaluated. This derivative-based certificate is distinct from the direct physical-gradient bound used in the repair studies.
+
+The nominal objective is the ideal four-analyzer least-squares loss, $\tfrac12\|As-y\|_2^2$, evaluated per observation. Data retain their specified units: stored normalized DeepSfP values, PolarNS means divided by 4\,096, and burst PNG values divided by 65\,535, without per-pixel renormalization. Consequently, $10^{-6}$ is an absolute optimization-gap target for this scaled model, not a universal imaging-accuracy threshold or a bound on error to noise-free Stokes truth.
+
+At 128 fractional bits, the complete outward pass takes 7.32 s, including 52 scalar curvature evaluations. Decisions agree at 64--256 bits. At 32 bits, three additional accurate endpoints are inconclusive. Supplementary Sections S20--S21 provide the reference calculations, inclusion arithmetic, stress checks and replay instructions.
+
+\begin{figure*}[!t]
+\centering\includegraphics[width=\textwidth]{images/stopping_certification.pdf}
+\caption{Conditional stopping bounds on the same 9\,284 frozen warm-start endpoints. (a) Uniform bound; (b) float64 pointwise bound; (c) outward pointwise bound at 128 fractional bits. The horizontal and vertical dashed lines mark $10^{-6}$; the dotted diagonal is equality. The reference nominal gap is the midpoint of an independently computed 256-bit enclosure. Colors separate accepted states, accurate states rejected by the bound, and inaccurate states; no endpoint is omitted. For display, 35 reference gaps and 21 bounds in each of (b,c) below $10^{-18}$ are placed at that floor. Four unavailable uniform bounds are marked by triangles at the top edge. (d) The ratio $\Delta/\varepsilon^{4/3}$ for the 12 stored sharpness examples approaches $2^{-4/3}$ as the radial offset $1-r$ vanishes; this is a separate deterministic family. All three bounds reject every one of the 295 inaccurate endpoints.}
+\label{fig:stopping_certificate}
+\end{figure*}
+
+\subsection{Recovering information lost at full linear polarization}
+The rational Stokes map reaches the boundary of the physical polarization cone at a finite raw radius. At that fold, different physical gradients can produce the same first head derivatives. One signed radial second derivative recovers the missing component for any twice continuously differentiable objective, without stationarity or knowledge of its physical Hessian (Proposition~\ref{prop:recovery}). Figure~\ref{fig:principle} exhibits the ambiguity and its resolution. The observation sets and required physical-curvature inputs are kept distinct in Table~\ref{tab:contract}; the exact coordinates, assumptions, and proofs are given in Methods.
+
+\begin{figure*}[!t]
+\centering\includegraphics[width=\textwidth]{images/identifiability_principle.pdf}
+\caption{Identical first-order information, different physical gradients. Fix $I=1$, $e=(1,0)$, $s=(1,e)$, the ideal four-analyzer metric $W=\operatorname{diag}(1,1/2,1/2)$, and $z_\alpha=s-\alpha W^{-1}n$, $n=(-1,e)$ for $\alpha=-0.3,0,0.3$. The objectives are $f_\alpha(u)=\tfrac12\|u-z_\alpha\|_W^2+c_\alpha$, with $c_\alpha$ chosen so that $f_\alpha(s)=0$. (a) The physical gradients $g_\alpha=\alpha n$ differ at the same output. (b) The objectives have identical value, zero first head derivatives, and the same physical Hessian. Their radial slices separate at second order. (c) In this stationary family, $\gamma_r=c_r=-I\alpha$ distinguishes two constrained optima from a strict saddle. The general gradient-recovery identity also holds without stationarity.}
+\label{fig:principle}
+\end{figure*}
+
+\begin{table*}[!t]
+\caption{Observations and supplied curvature. Recovery uses any $C^2$ objective with known geometry, $I>0$, $r>0$. The gap row additionally assumes a fixed calibrated quadratic with $W\succ0$.}
+\label{tab:contract}
+\centering\small\renewcommand{\arraystretch}{1.13}
+\begin{tabularx}{\textwidth}{@{}p{.18\textwidth}p{.22\textwidth}p{.24\textwidth}X@{}}\toprule
+Route & Head observations & Physical-curvature input & Result and domain\\\midrule
+Fold scalar & $b,j,c_r$ & None & Full gradient, \eqref{eq:scalarrecovery}; $r=1$\\
+First-order inverse & $b_r,j_r$ & None & Full gradient, \eqref{eq:firstinverse}; $r\ne1$\\
+Mixed scalar & $b_r,P_\perp j_r,c_r$ & Scalar $h_{rr}=e^{\mathsf T}H_{pp}e$ & \eqref{eq:mixedrecovery}; $r\ne\sqrt3$; curvature cancels at $r=1$\\
+Vector HVP & $b_r,v_r$ & Action $h_p=H_{pp}e$ & \eqref{eq:correctedrecovery}; $r\ne\sqrt3$; curvature cancels at $r=1$\\
+Quadratic gap & Recovered gradient & Fixed metric $W$ & Corollary~\ref{cor:gap}; supporting normal and interior slack\\\bottomrule
+\end{tabularx}
+\end{table*}
+
+Table~\ref{tab:contract} specifies chosen local observation models: the question is what the listed head derivatives establish about physical optimality. For a calibrated quadratic, the polarization Hessian block $H_{pp}=W_{pp}$ is fixed by the instrument and weighting, independently of the observations, so it supplies the stated curvature inputs without supplying the gradient. At a stationary fold, nonnegative radial curvature characterizes the constrained optimum; negative curvature identifies a strict saddle. The experiments expose the full objective and observations and include direct physical gradients as controls. Information sufficiency and computational cost are evaluated separately.
+
+\subsection{Recovery sensitivity near the fold}
+Complete first derivatives determine the physical gradient away from the fold, although radial inversion becomes sensitive near it. The mixed-scalar and vector-Hessian routes use different physical-curvature inputs and have different error gains (Propositions~\ref{prop:mixed} and \ref{prop:localcurvature}). The measured finite-precision errors in Figure~\ref{fig:sensitivity} are distinguished from the deterministic input-error bounds.
+
+\begin{figure*}[!t]
+\centering\includegraphics[width=.94\textwidth]{images/near_fold_information.pdf}
+\caption{Theory and observed finite-precision error. (a) Vector-HVP curvature-input gains, normalized by intensity, on the inner and outer sheets. Mixed recovery uses only the radial coefficient. (b) Observed float32 gradient-recovery errors from the common-graph AD experiment at requested $I=1.2$, maximized over the two sheets at each requested radius offset. References are 80-digit physical gradients at the represented Stokes states. These are measured errors, not deterministic derivative-error envelopes. Prescribed-envelope experiments and the support-slack counterexample are specified in Supplementary Sections S4 and S8--S9.}
+\label{fig:sensitivity}
+\end{figure*}
+
+\subsection{Local diagnostics, controls and subsequent repair}
+\label{sec:numerics}
+Supplementary Sections S8--S13 document scalar, vector, and mixed recovery checks, controlled input errors, and 274 quadratic primal-dual records. They include three nonquadratic $C^2$ objectives and tests of the local-curvature correction. The main experiments evaluate finite-precision AD and shared-network fitting.
+
+\subsubsection{Acquisition cost and finite-precision recovery}
+We also evaluate all three routes and direct physical differentiation on the same eager PyTorch graph \cite{pytorch}. The objective is the quartic in Supplementary Section S9. The test uses one CPU thread on an Apple M4 Max, PyTorch 2.14.1, float32/float64, intensities $0.02,1.2$, and nine radii from $0.9$ to $1.1$, including offsets down to $10^{-7}$. Eighty-digit physical gradients at the represented Stokes states provide the error reference.
+
+Supplementary Table~\ref{SI-tab:adcost} includes the cost of acquiring physical curvature in the corrected routes; Error32 and Error64 denote float32 and float64 gradient errors. This implementation obtains scalar curvatures by contracting vector HVPs. The largest float32 first-inverse error is $1.27$ at requested $I=1.2$, $r=0.9999999$ (represented radius $0.9999998808$), while the maximum vector and mixed errors are $7.07\times10^{-7}$ and $6.75\times10^{-7}$. These errors quantify how accurately the physical gradient is recovered from rounded derivatives. Direct differentiation has the smallest time and maximum-error entries in the table. The mixed route reduces the required curvature input to one scalar; these measurements distinguish that reduction from AD acquisition cost. Supplementary Section S14 gives timings on both sheets and at the fold, plus the warmup and batch protocol.
+
+
+\subsubsection{Shared-network fitting}
+Twenty fixed shared-MLP fits contain no near-fold negative-curvature candidates at the saved checkpoints. The full architecture, training settings, saved-checkpoint diagnostics and constructed positive control are in Supplementary Sections S15 and S23 (Fig.~\ref{SI-fig:training}).
+
+\subsubsection{Same-solver two-frame continuation}
+\label{sec:warmexperiment}
+We use 60 stored conditions: five noise seeds, three polarization angles $0,0.7,1.3$, two analyzer-noise standard deviations $0.001,0.01$, and next-frame DoLP $0.8,0.99$. The previous true DoLP is one and both true intensities are one. The same seed's noise is reused across conditions. These are dependent controlled conditions, not 60 independent scenes. Each solver estimates the previous frame from $(a,w)=(0,0.2,-0.1)$ with $I=\exp(a)$, then retains its raw coordinates for the next fit.
+
+Before execution we fixed three angle changes $0,0.05,0.2$ radians, three solvers (BFGS, L-BFGS-B, and an exact-Hessian trust-region method), and gradient tolerances $10^{-4},10^{-6},10^{-8}$. This gives 1,620 continuations using the stored noise. A separate PyTorch LBFGS control uses genuine float32 and float64 tensors at tolerance $10^{-6}$, giving 360 continuations. A false success is solver acceptance with cone objective gap exceeding $10^{-6}$. PyTorch has no success flag, so its acceptance here means a finite native gradient infinity norm at most $10^{-6}$. Supplementary Section S17 specifies solver options and keeps nonacceptance separate from objective error.
+
+We compare one unconditional radial restart with the same restart gated by $|r-1|\leq10^{-3}$ and $c_r/I^2<-10^{-7}$. The restart selects the lowest-loss point among offsets $\pm0.01$ and the current point, then reruns the same solver. A direct physical-gradient evaluation of Corollary~\ref{cor:gap}, including support slack, supplies a separate sufficient stopping test with bound threshold $10^{-6}$. A direct cone solution provides the reference objective.
+
+
+
+At tolerance $10^{-6}$, BFGS reproduces all 12 preliminary false-success condition IDs and the separate failure. L-BFGS-B and float64 PyTorch LBFGS also produce false successes (Supplementary Table~\ref{SI-tab:warm}). The trust-region arm has none. Changing angle by $0.05$ removes the SciPy false successes at this tolerance, while float64 PyTorch LBFGS retains one; changing by $0.2$ gives none in these arms. The float32 previous-frame fits have 22 nonacceptances among the 60 row references, retained in the comparison.
+
+At zero angle change and tolerance $10^{-6}$, triggering detects all 28 SciPy false successes and no accurate accepted fit. BFGS uses 280 additional function/gradient pairs after triggering, against 479 after unconditional restarting; L-BFGS-B uses 320 against 496. Applying the radius test before curvature would require 17 and 21 full Hessian queries, respectively, plus endpoint diagnostic evaluations. For coverage analysis, the saved run evaluates curvature at every endpoint; Supplementary Section S17 separates that logging work from the required gated queries. Unconditional restarting also repairs the nonfold BFGS failure, which the curvature gate misses.
+
+At tolerance $10^{-4}$, the 540 SciPy continuations contain 68 false successes; triggering detects 14 and leaves 58 after restart, whereas unconditional restarting leaves 32. At zero angle change and tolerance $10^{-8}$, BFGS and L-BFGS-B each have eight false successes, reduced to zero by triggered restarting (Fig.~\ref{fig:warmaudit}(d)). Separately, BFGS has seven native failures, including six nonfinite terminal losses from exponential-intensity overflow; triggering retains all seven. Native failures and false successes are disjoint categories. Direct physical bounds falsely accept no inaccurate endpoint among the 1,620 SciPy continuations, and reject no endpoint whose finite gap is at most $10^{-6}$.
+
+\begin{figure*}[!t]
+\centering\includegraphics[width=\textwidth]{images/warm_start_audit.pdf}
+\caption{Controlled two-frame stopping audit. The same 60 stored conditions are reused throughout. (a) False successes with tolerance $10^{-6}$. (b) Zero-angle-change endpoints for BFGS and L-BFGS-B; dashed lines mark the radius and gap thresholds. The cross is the nonfold BFGS failure. Displayed gaps below $10^{-12}$ and radius distances below $10^{-10}$ are clipped. (c) Additional restart function/gradient calls, including three trial pairs per restart. The separate Hessian counts are queries required after a radius guard; coverage logging evaluates every endpoint. (d) Zero-angle-change false-success counts across the fixed tolerances. Nonacceptances and nonfinite endpoints are retained in the records and are not plotted as false successes.}
+\label{fig:warmaudit}
+\end{figure*}
+
+\subsubsection{A noisy physical-reflection sequence}
+\label{sec:fresnel}
+We generate a rocking air--dielectric interface from the Fresnel coefficients, with refractive index $1.5$ and incidence angle $\arctan(1.5)+18^{\circ}\cos(2\pi t/40)$ for $t=0,\ldots,40$. Unpolarized incident light gives normalized specular intensity one at Brewster's angle. Two polarization-orientation trajectories, three constant unpolarized background levels, two photon scales, and two seeds give 24 sequences and 984 frames per arm. Four ideal analyzer observations have independent Poisson shot noise and Gaussian read noise of standard deviation two electrons. We fit these observations with unweighted least squares.
+
+Every solver/arm starts from $(0,0.2,-0.1)$ and inherits its own preceding raw endpoint. We use the existing $10^{-6}$ gradient tolerance, gap threshold, and local curvature gate, with at most one restart per frame. BFGS and L-BFGS-B report nine and seven inaccurate successes. Both curvature-triggered and physically audited branches have zero such endpoints, with seven interventions per solver; their corrections propagate through subsequent frames. On the uncorrected branches, the curvature gate detects all 16 false successes and flags no accurate accepted endpoint. The direct physical-gradient bound also rejects all 16. Both solvers have zero native failures in this grid. The simulation exhibits the fold mechanism under a specified physical noise model; direct physical auditing detects the same inaccurate endpoints. Supplementary Section S18 gives the complete protocol and alternative-map control.
+
+\begin{figure*}[!t]
+\centering\includegraphics[width=.96\textwidth]{images/fresnel_sequence.pdf}
+\caption{Fresnel-reflection continuation with shot and read noise. The displayed BFGS sequence is selected by the largest baseline objective gap in the fixed complete grid, rather than as a typical sequence. (a) Polarization estimate and physical truth. (b) Gap to the direct cone optimum; the dashed line is $10^{-6}$. Both audited branches overlap to plotting accuracy. Gaps below $10^{-15}$ are displayed at that floor. The complete grid has 984 frames per arm, with nine BFGS and seven L-BFGS-B false successes, versus zero in either audited branch.}
+\label{fig:fresnel}
+\end{figure*}
+
+\subsubsection{Released polarization observations}
+\label{sec:real}
+We freeze small subsets of DeepSfP \cite{ba} and PolarNS/PolarBurstSR \cite{polarns} before optimization. DeepSfP contributes three indoor test objects and their four-angle observations. PolarNS contributes the lexicographically first object and scene mean/variance records, averaged over 10\,000 and 1\,017 captures. Those means are not treated as individual noisy frames. The first three released PolarBurstSR test crops contribute all 14 raw frames and four nominal color planes, unpacked with the authors' sensor layout.
+
+For each static image, we select 128 seeded uniform eligible pixels and 64 pixels from an observed-high-DoLP stratum. For each burst color plane, a fixed $4\times4$ sensor grid is supplemented by eight high-DoLP positions selected using only the first frame. Finite, nonsaturated observations above a fixed relative intensity floor are eligible. The selections are reported separately in Supplementary Section S18; overlapping inputs and within-image/frame dependencies preclude a prevalence interpretation. Static samples follow a prescribed spatial scan. Burst samples follow fixed sensor coordinates without motion compensation, and are not asserted to follow one material point.
+
+The reference is the cone optimum of the nominal four-analyzer quadratic. Both solvers use $10^{-6}$ tolerance. Each arm carries its own state; a cold-start control resets intensity from the current observation and uses fixed polarization raw coordinates. The fixed protocol yields 576 DeepSfP, 384 PolarNS-mean, and 3\,682 burst entries per solver/arm, totaling 37\,136 fits across two solvers and four arms. The 9\,284 uncorrected warm-start fits form one of these four arms and supply the historical endpoint audit.
+
+
+
+Supplementary Table~\ref{SI-tab:realdata} shows inaccurate native successes in the PolarNS and burst subsets, while DeepSfP has none. None of the 295 uncorrected warm-start false successes satisfies the predeclared local fold gate, so curvature-triggered restarting leaves those counts unchanged. The direct physical-gradient bound rejects every inaccurate accepted endpoint. For BFGS and L-BFGS-B, respectively, one physically audited radial restart leaves 68 and 64 native false successes in the PolarNS means and 16 and 99 in the bursts; their final bounds still reject them. The audit thus detects errors that a single radial restart leaves unresolved. On these observations, the physical stopping bound has broader coverage than the local fold gate. Figure~\ref{fig:realregimes} places them in the radius and gap-bound regimes.
+
+An independent physical-coordinate SLSQP check of 29 selected reference minima has maximum loss discrepancy $1.31\times10^{-18}$. Independent float64 PyTorch AD audits all 309 cold/warm false successes and 32 control endpoints; maximum head-gradient, Hessian, and physical-gradient discrepancies are $7.77\times10^{-18}$, $8.89\times10^{-16}$, and $1.39\times10^{-17}$. No solver warning or native failure is removed.
+
+\begin{figure*}[!t]
+\centering\includegraphics[width=.96\textwidth]{images/real_stopping_regimes.pdf}
+\caption{All 9\,284 uncorrected real-data warm-start fits across two solvers. The subsets include uniform and enriched selections with repeated observations across distinct histories. (a) Objective gaps against raw radius. Crosses mark native false successes; the dotted line marks $r=1$ and the dashed line marks gap $10^{-6}$. None passes the fixed local fold gate. (b) Physical supporting-half-space bound against the reference gap; the dotted line is equality and dashed lines mark $10^{-6}$. The bound rejects all inaccurate endpoints. Values below $10^{-14}$ are displayed at that floor. The comparisons use float64 arithmetic, without outward-rounded certification.}
+\label{fig:realregimes}
+\end{figure*}
+
+\subsubsection{Coordinate repair with physical stopping controls}
+\label{sec:chartrepair}
+The real-data failures motivate a follow-up on the same observations. We develop the repair rule after inspecting the previous audit, then freeze it before evaluation. The inputs, ordering, and thresholds are retained. Every arm carries its own preceding endpoint. Repeating the raw warm and cold branches reproduces all 18\,568 stored real-data endpoints exactly in raw coordinates.
+
+For $r>1$, replacing $w$ by $C(w)=w/\|w\|^2$ preserves $F(w)$ and moves to the inner sheet. At fixed intensity and data, $\|\nabla_w\widetilde f(C(w))\|_2=r^2\|\nabla_w\widetilde f(w)\|_2$; the Jacobian condition number is unchanged. This relation follows from the paired preimages in Supplementary Section S6. A fresh solver invocation resets quasi-Newton memory. The fold and the dependence on intensity remain.
+
+We compare applying this switch before every warm-start solve with a physically audited repair. On a bound rejection, the latter uses the existing radial trial rule if the local negative-curvature gate holds; otherwise it switches an outer endpoint and restarts once. Inner nonfold failures remain rejected. A control restarts once from the cold initialization instead. A guarded variant follows the coordinate repair with standard projected-gradient steps in physical coordinates when the bound still rejects. This fallback uses step one, at most 64 updates, and the same $10^{-6}$ bound threshold. No reference optimum initializes any iterative arm. A standalone physical projected-gradient solver and the direct cone solution are additional controls. Supplementary Section S19 specifies the algorithm and accounting.
+
+\begin{table*}[!t]
+\caption{Two evaluations of repair on the same released observations. Entries are inaccurate outputs for BFGS/L-BFGS-B at nominal gap threshold $10^{-6}$. Fixed-endpoint repair starts from each historical endpoint; intervening in a continuation changes subsequent warm starts. Supplementary Table~\ref{SI-tab:chartrepairdetail} retains all strategies, Fresnel results and native-call accounting.}
+\label{tab:chartrepair}
+\centering\small\renewcommand{\arraystretch}{1.12}
+\begin{tabularx}{\textwidth}{@{}Xrr@{}}\toprule
+Evaluation & Fixed historical endpoints & Evolving continuation histories\\\midrule
+Uncorrected warm start & 127/168 & 127/168\\
+Audited coordinate repair & 7/39 & 7/22\\
+Coordinate repair with physical fallback & 0/0 & 0/0\\
+Audited cold restart & 0/5 & 0/2\\\bottomrule
+\end{tabularx}
+\end{table*}
+
+Table~\ref{tab:chartrepair} distinguishes the fixed-endpoint and evolving-history evaluations; Supplementary Table~\ref{SI-tab:chartrepairdetail} gives the full strategy comparison. Switching before each solve reduces released-data inaccurate endpoints from 295 to 25, but increases the Fresnel count from 16 to 22. The audited coordinate arm leaves 29 inaccurate released-data endpoints, all rejected. Adding physical fallback leaves none: BFGS and L-BFGS-B require respectively two and 15 fallback calls, with three and 22 projected updates in total. There are 4\,663 and 4\,704 physical-gradient queries in the BFGS and L-BFGS-B guarded branches, respectively, including stopping audits. No real-data repair invokes the local curvature gate. In the Fresnel grid, each guarded solver uses seven full head-Hessian queries and 21 trial FG evaluations; neither requires physical fallback.
+
+The paired-endpoint audit applies repair to the same 9\,284 historical warm endpoints, rather than changed continuation histories. Coordinate repair leaves 7/39 of the original 127/168 inaccurate endpoints; physical fallback removes those remaining 46. Audited cold restarting leaves 0/5. Thus the coordinate-only step corrects 249 of the 295 original failures, while full correction depends on physical fallback. The fixed-endpoint evaluation leaves 46 residuals; the evolving-history evaluation leaves 29 (Table~\ref{tab:chartrepair}). Independent PyTorch checks cover all 295 historical false successes and 32 controls; the largest output-preservation and gradient-transformation discrepancies are $1.74\times10^{-18}$ and $7.78\times10^{-16}$.
+
+The physical controls are substantially cheaper in this implementation. Across 4\,642 released entries, standalone projected gradient uses 9\,575 updates and 14\,217 physical-gradient queries, with no inaccurate or rejected outputs. Its observed time is 0.203 s, versus 4.64 and 1.35 s for the guarded BFGS and L-BFGS-B head solvers, respectively, and 0.0219 s for the direct cone solution. The timings describe one CPU pass in the stated implementation. All released-data repairs in this follow-up use first derivatives.
+
+
+
+
+
+
+
+\section{Discussion}
+The stopping theorem supplies a domain-wide sufficient test for strongly convex physical objectives on the bounded-intensity inner sheet. For the stored endpoints, replacing the uniform formula with the pointwise expression substantially increases acceptance, while outward evaluation at 64--256 fractional bits preserves the pointwise decisions. This comparison identifies the conservatism of the uniform constants separately from the effect of validated arithmetic.
+
+The recovery routes differ in their information requirements and sensitivity. At the fold, one signed radial curvature resolves the one-dimensional physical-gradient ambiguity. Away from it, complete first derivatives suffice; the restricted mixed and vector routes additionally use different physical-curvature inputs. The mixed route has a quadratic radial curvature-input gain, while the vector route also has a first-order tangential gain. Both retain derivative-error coefficients proportional to $1/I$. These error formulas hold at the evaluated geometry; perturbations of the coordinates require their own error analysis.
+
+The real-data endpoints explain why avoiding the fold alone cannot ensure reliable first-order stopping. The inverse in \eqref{eq:firstinverse} has gain $1/(I\min\{|a_r|,t_r\})$, which grows near the fold, at low intensity and as $r^2/(2I)$ on the large-radius outer sheet. The released-data audit contains radii above $10^2$, while the DeepSfP subset remains well inside the fold. The local gate detects controlled fold failures but misses all 295 inaccurate warm-start acceptances in the released observations. On these observations, the direct physical-gap audit rejects the inaccurate endpoints across these regimes.
+
+An endpoint audit therefore begins with the geometry $r,I,I'$ and the available derivative-error budgets. Table~\ref{tab:contract} selects the recovery route. Corollary~\ref{cor:gap} provides the calibrated quadratic test, including support slack; Theorem~\ref{thm:uniformstopping} applies under its strong-convexity and chart conditions. A valid bound below the requested gap supports stopping. When a physical gradient is available, the corresponding bound can be evaluated directly. Table~\ref{tab:chartrepair} illustrates subsequent repair decisions on rejected endpoints.
+
+The numerical certificates concern the specified nominal objective. Extending them to uncertain instrument calibration or noise-free Stokes error requires an additional model of those uncertainties. The 20 shared-network fits contain no saved near-fold negative-curvature candidates. Translating the head-coordinate conditions into guarantees on shared network parameters also requires a separate error analysis: a small upstream parameter gradient alone does not establish the head-derivative conditions. These extensions define the next questions beyond the present endpoint certificate.
+
+
+\section{Methods}
+\label{sec:methods}
+
+\subsection{Stokes geometry and coordinates}
+\label{sec:model}
+Let $s=(I,p)^{\mathsf T}$ be the reduced Stokes vector, where $I$ is total intensity and $p=(Q,U)^{\mathsf T}\in\mathbb R^2$ contains the linear-polarization components, in one radiometric unit and a fixed polarization basis. The admissible cone for this reduced model is
+\begin{equation}
+ \mathcal C=\{(I,Q,U):I\geq\sqrt{Q^2+U^2}\}.
+ \label{eq:cone}
+\end{equation}
+For $I>0$, $q=p/I$ has degree of linear polarization (DoLP) $d=\|q\|_2$. The circular-polarization component $V$ is not estimated in this reduced model. The constraint allows $0\leq d\leq1$ and therefore includes partial polarization; $d=1$ is the fully linearly polarized boundary. For an objective $f$, write $g=\nabla_s f=(g_I,g_p)$ and $H_{pp}=\nabla^2_{pp}f\in\mathbb R^{2\times2}$; $W_{pp}$ is the polarization block of metric $W$. For $M\succ0$, $\|x\|_M=(x^{\mathsf T}Mx)^{1/2}$ and $M_{00}$ is its intensity--intensity entry. Bare vector norms are Euclidean; matrix $2$-norms are spectral.
+
+We keep three coordinate spaces distinct:
+\begin{equation}
+ \theta\longmapsto(a,w)\xmapsto{\ T_F\ }s=(I,Q,U).
+ \label{eq:spaces}
+\end{equation}
+Here $\theta$ denotes network parameters, $a\in\mathbb R$ and $w\in\mathbb R^2$ are independent head (raw) coordinates, and $s$ is the physical Stokes vector. For $r=\|w\|_2>0$, let $e=w/r$ and $P_\perp=\operatorname{Id}_2-ee^{\mathsf T}$, where $\operatorname{Id}_k$ is the $k\times k$ identity. Radial directions are parallel to $e$, tangential directions orthogonal to it. Our derivatives and stationarity tests are in the head space. Define
+\begin{equation}
+ F(w)=\frac{2w}{1+\|w\|^2},\qquad
+ T_F(a,w)=I(a)(1,F(w)).
+ \label{eq:foldmap}
+\end{equation}
+The intensity coordinate is smooth and bijective onto $(0,\infty)$, with $I'(a)=dI/da\ne0$. We use $I(a)=I_0\log(1+e^a)$ with intensity scale $I_0>0$, unless an experiment states another regular coordinate. The regions $r<1$ and $r>1$ are the inner and outer sheets; they meet at the fold $r=1$, where $s=I(1,e)$ is fully linearly polarized. The folded map reaches full linear polarization at finite coordinates. The monotone map $G(w)=w/\sqrt{1+\|w\|^2}$ reaches only the disk interior, whereas disk projection reaches the boundary nonsmoothly. For a radial $C^2$ map admissible on a two-sided neighborhood of a finite boundary radius, Supplementary Section S6 proves a condition-number lower rate proportional to $(1-d)^{-1/2}$; the rational fold attains this rate. Section~\ref{sec:robust} treats recovery at finite radius offsets.
+
+
+\subsection{What head derivatives identify at the fold}
+\label{sec:stationarity}
+The observation model in Table~\ref{tab:contract} first leaves one physical component unspecified, then restores it with a radial second derivative.
+
+\subsubsection{A derivative-observation rank condition}
+The underlying mechanism is the second-order chain rule, consistent with the differential framework of smooth-lift theory \cite{lifts}. The following lemma states the corresponding observation criterion.
+\begin{lemma}[Kernel-contracted observations]
+\label{lem:observation}
+Let $\mathcal U\subset\mathbb R^{n_x}$ be open, $T:\mathcal U\to\mathbb R^m$ and $f$ be $C^2$, and $h=f\circ T$. At $x\in\mathcal U$, choose $N$ pairs $k_i\in\ker DT(x)$, $u_i\in\mathbb R^{n_x}$, $i=1,\ldots,N$. Put $q_i=D^2T(x)[k_i,u_i]$. Then, for $g=\nabla f(T(x))$,
+\begin{equation}
+ \nabla h=DT^{\mathsf T}g,\qquad
+ D^2h[k_i,u_i]=q_i^{\mathsf T}g.
+ \label{eq:observation}
+\end{equation}
+The gradient is uniquely identifiable from precisely these observations, for arbitrary $C^2$ objectives, if and only if
+\begin{equation}
+ \operatorname{rank}\mathcal A_x=m,\qquad
+ \mathcal A_x=\begin{pmatrix}DT(x)^{\mathsf T}\\q_1^{\mathsf T}\\\vdots\\q_N^{\mathsf T}\end{pmatrix}.
+ \label{eq:observationrank}
+\end{equation}
+\end{lemma}
+\begin{proof}
+The chain rule adds $D^2f[DTk_i,DTu_i]$ to the second expression; it vanishes because $DTk_i=0$. Full column rank gives uniqueness. If $d_0\ne0$ lies in $\ker\mathcal A_x$, replacing $f(u)$ by $f(u)+d_0^{\mathsf T}(u-T(x))$ changes its gradient but preserves its value and all the stated observations, even with its physical Hessian fixed.
+\end{proof}
+At the Stokes fold the first-order rank is two; one scalar radial observation raises it to three.
+
+\subsubsection{First-order ambiguity and second-order recovery}
+At the fold, radial contraction of the composite Hessian removes the unknown physical-Hessian contribution. At a fixed fold output $s$, let $n=(-1,e)$ and consider
+\begin{equation}
+ f_\tau(u)=f(u)+\tau n^{\mathsf T}(u-s),\qquad \tau\in\mathbb R.
+ \label{eq:ambiguity}
+\end{equation}
+All these objectives have the same value and first head derivatives at the fold, but their physical gradients differ by $\tau n$. Their physical Hessians also agree, so the ambiguity persists among fixed-metric quadratics. Since the full-head differential has rank two, this is its entire gradient ambiguity. Thus single-point first-order information cannot determine the physical gradient for this class. A radial second derivative resolves precisely this missing component.
+
+\begin{proposition}[Physical-gradient recovery at the fold]
+\label{prop:recovery}
+Let $f$ be $C^2$ on an open neighborhood of the physical point $s$, including the cone boundary, and let $\widetilde f=f\circ T_F$. At $w=e$, $\|e\|=1$, write $g=(g_I,g_p)=\nabla_s f$, and define
+\begin{equation}
+ b=\frac{\partial_a\widetilde f}{I'(a)},\qquad
+ v=\nabla^2_{ww}\widetilde f\,e.
+ \label{eq:hvpinputs}
+\end{equation}
+With $j=\nabla_w\widetilde f$ and $c_r=e^{\mathsf T}v$, first derivatives and one scalar radial curvature recover the missing component. Here $b,j,v,c_r$ are, respectively, the normalized intensity derivative, head-polarization gradient, radial HVP, and radial second derivative:
+\begin{subequations}\label{eq:recoveryroutes}
+\begin{equation}
+ g_p=\frac{j-c_re}{I},\qquad g_I=b+\frac{c_r}{I}.
+ \label{eq:scalarrecovery}
+\end{equation}
+A vector HVP is an alternative that gives the polarization gradient directly:
+\begin{equation}
+ g_p=-\frac{v}{I},\qquad g_I=b+\frac{e^{\mathsf T}v}{I}.
+ \label{eq:gradientrecovery}
+\end{equation}
+\end{subequations}
+The identities hold at stationary and nonstationary folds.
+\end{proposition}
+\begin{proof}
+At the fold, $DF(e)e=0$ and $D(DF)(e)[e]=-\operatorname{Id}$. The $ww$ Hessian of the composite has a term $I^2 DF^{\mathsf T}(\nabla^2_{pp}f)DF$ and a term from second derivatives of the head. Multiplying by $e$ kills the first term and gives $v=-Ig_p$ from the second. The intensity derivative gives $b=g_I+e^{\mathsf T}g_p$, proving \eqref{eq:gradientrecovery}. Also $j=I(\operatorname{Id}-ee^{\mathsf T})g_p$ and $c_r=-Ie^{\mathsf T}g_p$, giving \eqref{eq:scalarrecovery}.
+\end{proof}
+The scalar $c_r$ is a directional second derivative at any fold, including nonstationary points. Its interpretation as a Hessian eigenvalue will require stationarity. First derivatives already reveal the tangential physical gradient; second derivatives supply its missing radial component.
+
+
+\subsection{Recovery at finite radius offsets}
+\label{sec:robust}
+\subsubsection{First-order inversion at $r\ne1$}
+For any $C^2$ physical objective, let $w=re$, $r>0$, $r\ne1$, and $\phi=2r/(1+r^2)$, the output DoLP. The polarization differential has radial and tangential eigenvalues $a_r,t_r$:
+\begin{equation}
+ \begin{aligned}
+ J&=DF(re)=a_ree^{\mathsf T}+t_rP_\perp,\\
+ a_r&=\frac{2(1-r^2)}{(1+r^2)^2},\qquad t_r=\frac2{1+r^2}.
+ \end{aligned}
+ \label{eq:nearjacobian}
+\end{equation}
+The subscript $r$ indicates evaluation at $w=re$. Writing $j_r=\nabla_w\widetilde f$ and $b_r=\partial_a\widetilde f/I'$, first derivatives alone recover the physical gradient at $s_r=I(1,\phi e)$:
+\begin{equation}
+ g_p=\frac{ee^{\mathsf T}j_r}{Ia_r}+\frac{P_\perp j_r}{It_r},\quad
+ g_I=b_r-\phi e^{\mathsf T}g_p.
+ \label{eq:firstinverse}
+\end{equation}
+Since $a_r=-(r-1)+O((r-1)^2)$, the gradient is identifiable away from the fold, while radial derivative error is amplified by $1/(I|a_r|)$. Supplementary Section S8 gives the induced-norm error bound.
+
+\subsubsection{Mixed recovery from a physical-curvature scalar}
+Tangential physical-gradient information remains in the first derivatives near the fold. Combining it with the scalar radial curvature reduces the supplied physical curvature to $h_{rr}=e^{\mathsf T}H_{pp}e$.
+\begin{proposition}[Mixed scalar recovery]
+\label{prop:mixed}
+Let $f$ be $C^2$, $I>0$, $r>0$, and $r\ne\sqrt3$. From $b_r$, $P_\perp j_r$, $c_r=e^{\mathsf T}\nabla^2_{ww}\widetilde f\,e$, and supplied $h_{rr}$, the physical gradient is
+\begin{equation}
+ \begin{aligned}
+ m_r&=\frac{c_r/I-Ia_r^2h_{rr}}{\kappa_r},\\
+ g_p&=\frac{P_\perp j_r}{It_r}+e m_r,\qquad
+ g_I=b_r-\phi m_r,
+ \end{aligned}
+ \label{eq:mixedrecovery}
+\end{equation}
+where $\kappa_r=4r(r^2-3)/(1+r^2)^3$. At $r=1$, this reduces to \eqref{eq:scalarrecovery}: the composite radial second derivative $c_r$ remains an input, but no supplied physical-Hessian scalar $h_{rr}$ is required.
+\end{proposition}
+\begin{proof}
+The first derivative gives $P_\perp j_r=It_rP_\perp g_p$. Radial contraction of the composite Hessian gives $c_r=I^2a_r^2h_{rr}+I\kappa_r e^{\mathsf T}g_p$, so $m_r=e^{\mathsf T}g_p$ in \eqref{eq:mixedrecovery}. At the fold, $a_r=0$, $t_r=1$, and $\kappa_r=-1$.
+
+For $r\ne1$, the triple $(b_r,P_\perp j_r,c_r)$ alone leaves an ambiguity when physical curvature is unknown. Change $g_p$ by $\tau e$, $g_I$ by $-\phi\tau$, and $H_{pp}$ by $-\kappa_r\tau ee^{\mathsf T}/(Ia_r^2)$. A centered linear-plus-quadratic perturbation of $f$ realizes these changes while preserving its value and the observed triple. Supplying $h_{rr}$ removes this ambiguity. In contrast, the complete $j_r$ already identifies $g$ through \eqref{eq:firstinverse}.
+\end{proof}
+
+For fixed geometry, put $u_\phi=(-\phi,e)^{\mathsf T}$, $e_0=(1,0,0)^{\mathsf T}$, and $T_\perp=\binom{0_{1\times2}}{P_\perp}/(It_r)$. Errors in the mixed inputs propagate exactly as
+\begin{equation}
+ \begin{aligned}
+ \delta g={}&e_0\delta b+T_\perp\delta j\\
+ &+u_\phi\left(\frac{\delta c_r}{I\kappa_r}
+                  +\beta_{\parallel}\delta h_{rr}\right),
+ \end{aligned}
+ \label{eq:mixederror}
+\end{equation}
+where $\beta_{\parallel}=-Ia_r^2/\kappa_r$. Each $\delta$ is supplied minus exact input. With $|\delta b|\leq\varepsilon_b$, $\|\delta j\|_2\leq\varepsilon_j$, $|\delta c_r|\leq\varepsilon_c$, $|\delta h_{rr}|\leq\varepsilon_h$, and any fixed $M\succ0$, the triangle inequality gives
+\begin{equation}
+ \begin{aligned}
+ \|\delta g\|_M\leq{}&\sqrt{M_{00}}\varepsilon_b
+   +\|M^{1/2}T_\perp\|_2\varepsilon_j\\
+ &+\|u_\phi\|_M\left(\frac{\varepsilon_c}{I|\kappa_r|}
+              +|\beta_{\parallel}|\varepsilon_h\right).
+ \end{aligned}
+ \label{eq:mixedenvelope}
+\end{equation}
+Only the radial physical-curvature scalar enters. Near $r=1$, its gain is $O((r-1)^2)$, while the $j_r$ and $c_r$ error coefficients remain of order $1/I$. The geometry $r,e,I,I'$ is obtained from the evaluated head coordinates and held fixed in this input-error calculation.
+
+\subsubsection{Vector-HVP recovery from a curvature action}
+For a general $C^2$ objective $f$, set $H_{pp}=\nabla^2_{pp}f(s_r)$ and $h_p=H_{pp}e$ at the same physical point $s_r=I(1,\phi e)$. The correction uses this single Hessian action. With $J=DF(re)$ and $v_r=\nabla^2_{ww}\widetilde f(a,re)e$, the radial HVP satisfies
+\begin{equation}
+ v_r=I^2a_rJ h_p+IKg_p,\qquad
+ b_r=g_I+\phi e^{\mathsf T}g_p.
+ \label{eq:nearhvp}
+\end{equation}
+Here the map-curvature matrix is
+\begin{equation}
+ \begin{aligned}
+ K&=D(DF)(re)[e]=\kappa_r ee^{\mathsf T}+\ell_rP_\perp,\\
+ \kappa_r&=\frac{4r(r^2-3)}{(1+r^2)^3},\qquad
+ \ell_r=\frac{-4r}{(1+r^2)^2}.
+ \end{aligned}
+ \label{eq:Keigenvalues}
+\end{equation}
+\begin{proposition}[Local-curvature recovery]
+\label{prop:localcurvature}
+Let $f$ be $C^2$, $I>0$, $r>0$, and $r\ne\sqrt3$. Given $h_p=H_{pp}e$, the complete physical gradient is
+\begin{equation}
+ \begin{aligned}
+ g_p&=K^{-1}\left(\frac{v_r}{I}-Ia_rJ h_p\right),\\
+ g_I&=b_r-\phi e^{\mathsf T}g_p.
+ \end{aligned}
+ \label{eq:correctedrecovery}
+\end{equation}
+The Hessian may be indefinite and state dependent.
+\end{proposition}
+\begin{proof}
+The composite Hessian is $I^2J^{\mathsf T}H_{pp}J$ plus map curvature. Since $J^{\mathsf T}=J$ and $Je=a_re$, radial contraction gives \eqref{eq:nearhvp}. The eigenvalues in \eqref{eq:Keigenvalues} are nonzero under the stated conditions, so subtraction and inversion give \eqref{eq:correctedrecovery}.
+\end{proof}
+Formula~\eqref{eq:correctedrecovery} holds at every radius in Proposition~\ref{prop:localcurvature}. At $r=1$, $a_r=0$ and $K=-\operatorname{Id}$: physical curvature cancels and \eqref{eq:gradientrecovery} is recovered. Both eigenvalues tend to $-1$, giving a bounded inverse nearby. At $r=\sqrt3$, $K$ is singular while $J$ has eigenvalues $-1/4$ and $1/2$, so first-order inversion remains regular. The inverse $K^{-1}$ also degenerates as $r\downarrow0$ or $r\to\infty$.
+
+\subsubsection{Vector-HVP derivative and curvature-input errors}
+Choose any fixed reporting metric $M\succ0$, independently of $H_{pp}$, and write $\|x\|_M^2=x^{\mathsf T}Mx$. Define $e_0=(1,0,0)^{\mathsf T}$, $k_b=\sqrt{M_{00}}$, and
+\begin{equation}
+ \begin{aligned}
+ A_\phi&=\begin{pmatrix}-\phi e^{\mathsf T}\\\operatorname{Id}_2\end{pmatrix},\quad
+ R_r=A_\phi K^{-1}/I,\\
+ E_r&=-Ia_r A_\phi K^{-1}J.
+ \end{aligned}
+ \label{eq:correctedoperator}
+\end{equation}
+With exact $r,e,I,I'$ and errors $\delta b,\delta v,\delta h_p$, the recovery error is exactly
+\begin{equation}
+ \delta g=e_0\delta b+R_r\delta v+E_r\delta h_p.
+ \label{eq:curvatureerror}
+\end{equation}
+The triangle inequality gives a conservative norm envelope. Supplied bounds $|\delta b|\leq\varepsilon_b$, $\|\delta v\|_2\leq\varepsilon_v$, $\|\delta h_p\|_2\leq\varepsilon_h$ imply
+\begin{equation}
+ \begin{aligned}
+ \|\delta g\|_M\leq\eta_r={}&k_b\varepsilon_b
+ +\|M^{1/2}R_r\|_2\varepsilon_v\\
+ &+\|M^{1/2}E_r\|_2\varepsilon_h.
+ \end{aligned}
+ \label{eq:correctederror}
+\end{equation}
+If $\widehat H_{pp}=H_{pp}+\Delta H_{pp}$ with $\|\Delta H_{pp}\|_2\leq\varepsilon_H$, then $\delta h_p=\Delta H_{pp}e$ and one may set $\varepsilon_h=\varepsilon_H$. In particular, with only curvature input perturbed,
+\begin{equation}
+ \delta g_p=-Ia_rK^{-1}J\Delta H_{pp}e.
+ \label{eq:curvaturebias}
+\end{equation}
+This perturbation varies the curvature input at a fixed physical state. Its two directional gains have different orders.
+
+\begin{corollary}[Vector-HVP curvature-input sensitivity]
+\label{cor:anisotropy}
+Under Proposition~\ref{prop:localcurvature}, with $r,e,I,I',b_r,v_r$ exact and only $h_p$ perturbed, the polarization-gradient error is
+\begin{equation}
+ \begin{aligned}
+ \delta g_p&=\beta_{\parallel}ee^{\mathsf T}\delta h_p
+             +\beta_{\perp}P_\perp\delta h_p,\\
+ \beta_{\parallel}&=\frac{I(1-r^2)^2}{r(3-r^2)(1+r^2)},\\
+ \beta_{\perp}&=\frac{I(1-r^2)}{r(1+r^2)}.
+ \end{aligned}
+ \label{eq:anisotropiccurvature}
+\end{equation}
+For fixed $I>0$ and $\delta=r-1$, these are $\beta_{\parallel}=I\delta^2+O(\delta^3)$ and $\beta_{\perp}=-I\delta+O(\delta^2)$.
+\end{corollary}
+\begin{proof}
+The matrices $J$ and $K$ have the common projectors $ee^{\mathsf T}$ and $P_\perp$ because the output map is radial; this does not assume an isotropic physical Hessian. Thus $-Ia_rK^{-1}J$ has eigenvalues $-Ia_r^2/\kappa_r$ and $-Ia_rt_r/\ell_r$. Substitution gives \eqref{eq:anisotropiccurvature}; expansion at $r=1$ gives the stated orders. Also $\delta g_I=-\phi e^{\mathsf T}\delta g_p$, so tangential curvature-input error leaves the intensity gradient unchanged.
+\end{proof}
+Figure~\ref{fig:sensitivity}(a) shows these vector-HVP gains. Mixed recovery shares the radial coefficient and uses no tangential physical-curvature input. The first-order tangential sensitivity is therefore a property of the vector-HVP route.
+
+Reusing the fold formula omits the $I^2a_rJh_p$ term in \eqref{eq:nearhvp}. Supplementary Section S4 separates this recovery bias from the supporting-plane error in an interior gap bound. Figure~\ref{fig:sensitivity} places the analytic input gains beside measured AD recovery errors.
+
+
+
+
+\subsection{A quadratic gap-bound corollary}
+\label{sec:gap}
+Let $B\in\mathbb R^{m\times3}$ be a full-column-rank calibrated linear instrument, $y\in\mathbb R^m$ its observations, and $\Sigma\in\mathbb R^{m\times m}$ a fixed SPD observation covariance. Its data term can be written
+\begin{equation}
+ \begin{aligned}
+ L(s)&=\tfrac12\|Bs-y\|_{\Sigma^{-1}}^2
+       =\tfrac12\|s-z\|_W^2+c,\\
+ W&=B^{\mathsf T}\Sigma^{-1}B,\qquad
+ z=W^{-1}B^{\mathsf T}\Sigma^{-1}y,
+ \end{aligned}
+ \label{eq:calibrated}
+\end{equation}
+where $c$ is the additive least-squares residual independent of $s$. The generalized least-squares estimate $z$ can be unphysical. Define the constrained objective gap $\Delta_{\mathcal C}(s)=L(s)-\min_{u\in\mathcal C}L(u)$.
+
+Set $M=W^{-1}$, $n=(-1,e)$, and $D_n=n^{\mathsf T}Mn$. For any mapped output $s_r=I(1,\phi e)$, the cone lies in the supporting half-space $H_e=\{u:n^{\mathsf T}u\leq0\}$ and
+\begin{equation}
+ n^{\mathsf T}(u-s_r)\leq\sigma_r,\quad
+ \sigma_r=I(1-\phi)=\frac{I(r-1)^2}{1+r^2}.
+ \label{eq:supportslack}
+\end{equation}
+\begin{corollary}[Quadratic gap bound from recovered gradients]
+\label{cor:gap}
+If $\|\widehat g-g\|_M\leq\eta$, then for any $\lambda\geq0$,
+\begin{equation}
+ \Delta_{\mathcal C}(s_r)\leq
+ \tfrac12\bigl(\|\widehat g+\lambda n\|_M+\eta\bigr)^2
+ +\lambda\sigma_r.
+ \label{eq:nearcertificate}
+\end{equation}
+For an exact gradient, the minimizing multiplier is
+\begin{equation}
+ \lambda_r=\max\{0,-(n^{\mathsf T}Mg+\sigma_r)/D_n\}.
+ \label{eq:nearmultiplier}
+\end{equation}
+\end{corollary}
+\begin{proof}
+For $u\in\mathcal C$ and $d=u-s_r$, complete the quadratic:
+\begin{equation*}
+ L(s_r)-L(u)\leq\tfrac12\|g+\lambda n\|_M^2+\lambda\sigma_r.
+\end{equation*}
+The right-hand side is independent of $u$, so taking the supremum over $u\in\mathcal C$ bounds $\Delta_{\mathcal C}(s_r)$. The triangle inequality gives \eqref{eq:nearcertificate}; minimizing the exact-gradient quadratic in $\lambda$ gives \eqref{eq:nearmultiplier}.
+\end{proof}
+At a fold $\sigma_r=0$. With $\widehat\lambda=\max\{0,-n^{\mathsf T}Mg/D_n\}$, define
+\begin{equation}
+ \mathcal B(s)=\tfrac12\|g+\widehat\lambda n\|_M^2.
+ \label{eq:residualcertificate}
+\end{equation}
+This is exactly $L(s)-\min_{H_e}L$, the gap of the supporting-half-space relaxation. Since $\mathcal C\subset H_e$, this relaxation gap is an upper bound on $\Delta_{\mathcal C}(s)$. Its minimizer is $h_s=z-\widehat\lambda Mn$, so $\Delta_{\mathcal C}(s)=\mathcal B(s)$ if and only if $h_s\in\mathcal C$; strict convexity gives both directions. Supplementary Section S10 displays the two objective gaps. Alternatively, $g,W$ determine $z=s-W^{-1}g$, after which the original cone quadratic gives the exact gap. The half-space expression is the closed-form relaxation obtained by standard quadratic duality \cite{cvxbook}.
+
+At an exact stationary fold, $g=\alpha n$ and the raw radial curvature in $w=(1+t)e$ is $\gamma_r=c_r=-I\alpha$. Nonnegative $\gamma_r$ gives the constrained optimum; negative $\gamma_r$ gives a strict saddle and gap at most $D_n\gamma_r^2/(2I^2)$. Supplementary Section S10 proves the classification and equality condition. A regular radial rescaling multiplies $\gamma_r$ by the squared coordinate Jacobian at stationarity. Its sign is invariant; the displayed coefficient uses $w=(1+t)e$.
+
+Support slack remains necessary even with exact recovery; Supplementary Section S4 gives the positive-gap counterexample and Section S10 the relaxation geometry.
+
+
+
+
+
+\subsection{Sequential initialization and boundary-restricted flow}
+\label{sec:sequential}
+A previous constrained estimate can be fully linearly polarized. Every finite raw preimage of that nonzero boundary state has $r=1$. Exact optimization followed by a raw-coordinate lift can therefore put mass on the fold, even when the observations have a density. This is a conditional statement about a boundary estimate; it does not assert that a finite solver returns the exact fold. At a fold, the first-order obstruction is already described by smooth-lift theory \cite[Thm.~2.4]{lifts}. The following specialization explains what ordinary continuous flow does after such an initialization.
+
+\begin{proposition}[Flow restricted to a Stokes fold]
+\label{prop:restrictedflow}
+Let $L(s)=\tfrac12\|s-z\|_W^2+c$, $W=\operatorname{diag}(1,1/2,1/2)$, and $z_I>\rho=\|z_p\|>0$. Use any $C^2$ bijective intensity coordinate onto $(0,\infty)$ with $I'\ne0$. For raw Euclidean gradient flow of $L\circ T_F$, the set $r=1$ is invariant. If $r(0)=1$ and $e(0)\ne-z_p/\rho$, then
+\begin{equation}
+ e(t)\longrightarrow z_p/\rho,\qquad
+ I(t)\longrightarrow I_b=\frac{2z_I+\rho}{3}.
+ \label{eq:foldflowlimit}
+\end{equation}
+The limiting state has gap $(z_I-\rho)^2/6$ and radial head curvature $-I_b(z_I-\rho)/3<0$.
+\end{proposition}
+\begin{proof}
+Writing $a_r=2(1-r^2)/(1+r^2)^2$, the chain rule gives
+\begin{equation}
+ \frac{d r^2}{dt}=-2Ia_r w^{\mathsf T}g_p.
+ \label{eq:radiusflow}
+\end{equation}
+Thus the smooth vector field is tangent to $r=1$, and uniqueness gives invariance. On that set, put $u=e^{\mathsf T}z_p/\rho$. Then
+\begin{equation}
+ \begin{aligned}
+ \dot I&=-(I')^2(3I/2-z_I-\rho u/2),\\
+ \dot u&=I\rho(1-u^2)/2.
+ \end{aligned}
+ \label{eq:restrictedflow}
+\end{equation}
+The intensity remains between the positive bounds $\min\{I(0),(2z_I-\rho)/3\}$ and $\max\{I(0),(2z_I+\rho)/3\}$. Hence $u\to1$ unless $u(0)=-1$. Scalar comparison in the first equation gives \eqref{eq:foldflowlimit}. Substitution into the quadratic objective and radial curvature gives the last assertion. Supplementary Section S16 details global existence and the antipodal exception.
+\end{proof}
+
+This is a property of continuous raw Euclidean flow. A plain gradient-descent step from the fold instead satisfies
+\begin{equation}
+ \|w-\eta\nabla_w(L\circ T_F)\|^2
+ =1+\eta^2 I^2\|P_\perp g_p\|^2.
+ \label{eq:discretefoldstep}
+\end{equation}
+It can leave the fold through a tangential update. Adam and quasi-Newton updates have different coordinate scalings and are not covered by invariance. The absolutely continuous random initialization and small fixed gradient step in \cite{lee} also differ from a boundary-derived initialization and finite solver termination. The proposition supplies a model-specific dynamical explanation; the numerical experiments in Section~\ref{sec:numerics} evaluate discrete solvers directly.
+
+
+\subsection{Finite-tolerance stopping guarantees}
+\label{sec:stoppingguarantees}
+The recovery formulas identify the physical gradient from head derivatives. For stopping, we also need a tolerance that controls the objective gap. For strongly convex physical objectives, a lower test on one radial curvature near the fold provides such a bound.
+
+\subsubsection{Relation to approximate-lift results}
+Approximate second-order transfer is established for squared-variable formulations \cite[Thm.~3.6 and Cor.~3.7]{dingwright}. Local gap control through the Kurdyka--\L{}ojasiewicz (KL) exponent is also established for Hadamard difference parametrizations \cite[Thm.~3.11 and Rem.~3.12]{ouyang}. In particular, a KL exponent $3/4$ leads to a gradient-to-gap power $4/3$. Supplementary Table~\ref{SI-tab:stoppingprior} places the Stokes result in this framework. It gives explicit constants over the whole inner sheet with bounded intensity, uses one radial lower-curvature test, and accommodates supplied derivative-error budgets. Its domain is specified by evaluated coordinates and model bounds, independently of the distance to an optimum or nondegeneracy at that optimum.
+
+
+
+\subsubsection{One radial test and a uniform gap bound}
+Write $\Delta(s)=f(s)-\min_{u\in\mathcal C}f(u)$ for the objective gap and $x_+=\max\{x,0\}$ for the positive part. At the evaluated point, retain $b=\partial_a\widetilde f/I'$ and $j=\nabla_w\widetilde f$. For $r>0$, set $c_r=e^{\mathsf T}\nabla^2_{ww}\widetilde f\,e$. The following gradient tolerance is normalized in physical units; Supplementary Section S20 gives the conversion from a native solver tolerance.
+
+\begin{theorem}[Uniform stopping on the inner Stokes sheet]
+\label{thm:uniformstopping}
+Let $f:\mathbb R^3\to\mathbb R$ be $C^2$ and $\mu$-strongly convex, $\mu>0$, and fix $L\ge\mu$. At $s=T_F(a,w)$, suppose $0<I\le\overline I$, $0\le r\le1$, and
+\begin{equation}
+ |b|\le\varepsilon,\qquad \|j\|_2/I\le\varepsilon.
+ \label{eq:normalizedstop}
+\end{equation}
+When $r\ge1/2$, additionally suppose
+\begin{equation}
+ e^{\mathsf T}H_{pp}(s)e\le L,\qquad c_r\ge-I\nu,
+ \quad L\ge\mu,\quad \nu\ge0.
+ \label{eq:radialstop}
+\end{equation}
+No curvature observation is required at $r<1/2$. Put $K_0=\overline I L$ and assume $\varepsilon\le K_0/8$. Then
+\begin{equation}
+ \boxed{\ f(s)-\min_{u\in\mathcal C}f(u)
+ \le \frac{52K_0^{2/3}}{\mu}\varepsilon^{4/3}
+       +\frac{3}{\mu}\nu^2.\ }
+ \label{eq:uniformstopgap}
+\end{equation}
+The coefficient 52 is conservative; the two tolerance orders are sharp.
+\end{theorem}
+\begin{proof}
+Write $g_p=me+u$, $u\perp e$, and $\delta=1-r$. Then $g_I=b-\phi m$, $|a_rm|\le\varepsilon$, and $\|u\|\le\varepsilon/t_r$. Strong convexity and the supporting inequality give, for every $\lambda\ge0$,
+\begin{equation}
+ \Delta(s)\le\frac{\|g+\lambda n\|_2^2}{2\mu}
+                  +\lambda I(1-\phi),\quad n=(-1,e).
+ \label{eq:strongstopdual}
+\end{equation}
+For any $0<h\le1/2$, $\delta\ge h$ implies $a_r\ge\delta$ and hence $\Delta(s)\le3\varepsilon^2/(\mu h^2)$. If $\delta<h$, then $1\le|\kappa_r|$, $a_r\le2\delta$, and $1-\phi\le\delta^2$. The radial identity from Proposition~\ref{prop:mixed}, $c_r/I=Ia_r^2 e^{\mathsf T}H_{pp}e+\kappa_r m$, yields
+\begin{equation}
+ m_+\le\nu+4K_0\delta^2.
+ \label{eq:positivegradientbound}
+\end{equation}
+Choose $\lambda=(-m)_+$. For $m<0$, use $|m|(1-\phi)\le\varepsilon\delta$; for $m\ge0$, use \eqref{eq:positivegradientbound}. The two cases give
+\begin{equation}
+ \Delta(s)\le\frac{5\varepsilon^2+6\nu^2+96K_0^2h^4}{2\mu}
+                  +\overline I\varepsilon h.
+ \label{eq:bandstopgap}
+\end{equation}
+Set $h=(\varepsilon/K_0)^{1/3}$ and use $L\ge\mu$ to obtain \eqref{eq:uniformstopgap}. The zero-tolerance case follows separately or by taking a limit. At $r=0$, $DF=2\operatorname{Id}_2$ gives the first-order bound directly. Supplementary Section S20 gives all inequalities and a tighter pointwise certificate.
+\end{proof}
+
+\subsubsection{Input errors and a target stopping rule}
+Suppose supplied $\widehat b,\widehat j,\widehat c_r$ have valid error budgets $E_b,E_j,E_c$:
+\begin{equation}
+ |\widehat b-b|\le E_b,\quad\|\widehat j-j\|\le E_j,
+ \quad|\widehat c_r-c_r|\le E_c.
+ \label{eq:stopinputerrors}
+\end{equation}
+With exact evaluated geometry, sufficient tolerance values are
+\begin{equation}
+ \begin{aligned}
+ \varepsilon&=\max\{ |\widehat b|+E_b,
+                         (\|\widehat j\|+E_j)/I\},\\
+ \nu&=\max\{0,(-\widehat c_r+E_c)/I\}.
+ \end{aligned}
+ \label{eq:stopinflation}
+\end{equation}
+The triangle inequality gives this inflation. Here $E_b$ bounds the error in the normalized quantity $b$, not in the raw derivative $\partial_a\widetilde f$. With exact $I'$, a raw-derivative error bound $E_a$ gives $E_b=E_a/|I'|$. Applying the inflation requires valid budgets and justified bounds $\mu,L,\overline I$ for the objective being optimized. Numerical certification would additionally require validated rounding-error bounds; the measured float32/float64 discrepancies alone are insufficient. Equation~\eqref{eq:stopinputerrors} assumes exact evaluated geometry and a fixed instrument model.
+
+For a desired objective gap $\tau>0$, one explicit sufficient rule is
+\begin{equation}
+ \begin{aligned}
+ \varepsilon&\le\min\!\left\{K_0/8,
+            \left(\frac{\mu\tau}{104K_0^{2/3}}\right)^{3/4}\right\},\\
+ \nu&\le\sqrt{\mu\tau/6}.
+ \end{aligned}
+ \label{eq:targetstop}
+\end{equation}
+Theorem~\ref{thm:uniformstopping} then gives $\Delta(s)\le\tau$. A raw gradient tolerance requires conversion through $I$ and $I'$; without positive lower bounds on $I$ and $|I'|$ it cannot uniformly imply \eqref{eq:normalizedstop}. The rule certifies the gap at any point satisfying these conditions. The number of iterations needed to reach them depends on the optimizer.
+
+\subsubsection{Sharp orders and necessary restrictions}
+The $4/3$ order cannot be replaced uniformly by a larger power. For the fixed objective $f(s)=\tfrac12\|s-(1,e)\|^2$, take $r\uparrow1$ and $I=(1+\phi)/(1+\phi^2)$. Then $b=0$, $c_r\ge0$, and, with $\delta=1-r$,
+\begin{equation}
+ \varepsilon\sim\delta^3/4,\qquad
+ \Delta(s)\sim\delta^4/16,\qquad
+ \Delta/\varepsilon^{4/3}\to2^{-4/3}.
+ \label{eq:stopsharpfirst}
+\end{equation}
+For the curvature order, the fold family in Fig.~\ref{fig:principle}, with Euclidean metric and $g=\alpha(-1,e)$, $\alpha>0$, has $\varepsilon=0$, $\nu=\alpha$ and exact gap $\alpha^2$. Thus a larger power than $\nu^2$ also fails. Both orders are therefore sharp within the stated objective class.
+
+Curvature cannot be omitted at the fold: the same family has zero first derivatives and positive gap. The inner-sheet restriction is also necessary for this uniform implication. On an unbounded outer sheet, the quadratic centered at $(1,1/2,0)$ admits states with both normalized first derivatives and negative radial curvature tending to zero while the gap tends to $1/8$. With exponential intensity, raw first- and second-order tests also tend to zero as $I\downarrow0$ for the quadratic centered at $(1,0,0)$, while its gap tends to $1/2$. Section S20 supplies the constructions. Moving inward preserves the physical output but requires recomputing derivative tests there.
+
+\subsubsection{Numerical verification}
+A fixed check set contains 576 quadratic and 24 strongly convex quartic objectives with three supplied derivative-error budgets, giving 1\,800 checks. Of these, 1\,431 satisfy the uniform theorem's small-tolerance hypothesis $\varepsilon\le K_0/8$. The largest computed gap above a bound is $1.24\times10^{-14}$; the smallest signed cone slack $I-\|(Q,U)\|_2$ reported for the independent SLSQP references is $-9.64\times10^{-14}$. All 600 reference solves return success. Independent PyTorch differentiation gives maximum $b$, $j$, and $c_r$ discrepancies $1.78\times10^{-15}$, $5.33\times10^{-15}$, and $1.43\times10^{-14}$. Ninety-digit decimal examples check the sharp-order limits and the counterexamples.
+
+On the existing 9\,284 real-data warm endpoints, we switch outer coordinates inward and recompute derivatives, without running another solver. The pointwise certificate in Section S20 accepts 8\,861 endpoints at nominal gap $10^{-6}$, rejects all 295 historical false successes, and additionally rejects 128 accurate endpoints. The coarse uniform bound alone accepts 980. This retrospective calculation checks the formula's coverage using zero supplied error budgets in float64 and a full analytic head Hessian at every endpoint. Its cost includes these Hessians. Direct physical auditing and the direct solvers in Section~\ref{sec:chartrepair} provide the practical cost comparison.
+
+Section S21 adds outward evaluation of the nominal quadratic bound, including exponential intensity, geometry, and derivative arithmetic. At 128 fractional bits, it certifies gap at most $10^{-6}$ for the same 8\,861 endpoints and rejects all 295 inaccurate endpoints; 128 accurate endpoints remain rejected. It uses 52 scalar curvature evaluations and forms no full head Hessian. The complete pass takes 7.32 s. Decisions agree at 64--256 bits; 32 bits leave three additional accurate endpoints inconclusive. The accompanying standard-library implementation returns an integer-enclosed bound or an explicit inconclusive result.
+
+\section*{Data availability}
+The original source images are available from the DeepSfP and PolarNS/PolarBurstSR providers \cite{ba,polarns}. The selected numerical observations, endpoint records and reference outputs used in this study are maintained in the private reproducibility repository at \url{https://github.com/usamihiroyasu/stokes-gradient-recovery}. Access for peer review can be arranged by the corresponding author. The released-observation audit identifies archive members, byte ranges, checksums and selected coordinates. Full source images and model weights are not redistributed. Source attribution and the scope of third-party rights are documented in the repository.
+
+\section*{Code availability}
+The same private repository contains the numerical code, interval arithmetic, figure generators, matching TeX sources, fixed protocols, software versions and file hashes. Its README links each result to its input and output files. The nominal interval certificate can be replayed using Python's standard library with \texttt{python3 theory/validated\_stopping/replay.py --output NEW\_DIRECTORY}; the output directory must be new or empty. The reproduction guide lists the separate environments and commands for the other studies. The repository is not publicly accessible; reviewer access is arranged through the corresponding author.
+
+\section*{Author contributions}
+H.U. conceived the study, developed the theoretical analysis, and wrote and revised the manuscript. A.T. and K.H. performed the experiments and developed the experimental code.
+
+\section*{Funding}
+No funding was received for this research.
+
+\section*{Competing interests}
+H.U. is a member of the Editorial Board of Scientific Reports. The authors declare no other competing interests.
+
+\FloatBarrier
+\setlength{\bibsep}{0.5em}
+\begin{thebibliography}{99}
+\bibitem{hu} H. Hu, G. Anna, and F. Goudail, ``On the performance of the physicality-constrained maximum-likelihood estimation of Stokes vector,'' \emph{Appl. Opt.}, vol. 52, no. 27, pp. 6636--6644, 2013, doi: \href{https://doi.org/10.1364/AO.52.006636}{\nolinkurl{10.1364/AO.52.006636}}.
+
+\bibitem{spc} S. Song and T. Mu, ``Stokes physical constraint method for improving polarization imaging-based vision task,'' \emph{Opt. Laser Technol.}, vol. 192, Part A, Art. no. 113408, 2025, doi: \href{https://doi.org/10.1016/j.optlastec.2025.113408}{\nolinkurl{10.1016/j.optlastec.2025.113408}}.
+
+\bibitem{psara} J. Birdi, A. Repetti, and Y. Wiaux, ``Sparse interferometric Stokes imaging under the polarization constraint (Polarized SARA),'' \emph{Mon. Not. R. Astron. Soc.}, vol. 478, no. 4, pp. 4442--4463, 2018, doi: \href{https://doi.org/10.1093/mnras/sty1182}{\nolinkurl{10.1093/mnras/sty1182}}.
+
+\bibitem{ba} Y. Ba \emph{et al.}, ``Deep shape from polarization,'' in \emph{Proc. Eur. Conf. Comput. Vis.}, 2020. [Online]. Available: \url{https://www.ecva.net/papers/eccv_2020/papers_ECCV/html/4676_ECCV_2020_paper.php}
+
+\bibitem{pandora} A. Dave, Y. Zhao, and A. Veeraraghavan, ``PANDORA: Polarization-aided neural decomposition of radiance,'' in \emph{Proc. Eur. Conf. Comput. Vis.}, 2022. [Online]. Available: \url{https://akshatdave.github.io/pandora/}
+
+\bibitem{polarns} I. Hwang, K. Choi, H. Ha, and M. H. Kim, ``Benchmarking burst super-resolution for polarization images: Noise dataset and analysis,'' in \emph{Proc. IEEE/CVF Int. Conf. Comput. Vis.}, pp. 24899--24909, 2025. [Online]. Available: \url{https://openaccess.thecvf.com/content/ICCV2025/html/Hwang_Benchmarking_Burst_Super-Resolution_for_Polarization_Images_Noise_Dataset_and_Analysis_ICCV_2025_paper.html}
+
+\bibitem{optnet} B. Amos and J. Z. Kolter, ``OptNet: Differentiable optimization as a layer in neural networks,'' in \emph{Proc. 34th Int. Conf. Mach. Learn.}, PMLR, vol. 70, pp. 136--145, 2017. [Online]. Available: \url{https://proceedings.mlr.press/v70/amos17a.html}
+
+\bibitem{cvxlayers} A. Agrawal, B. Amos, S. Barratt, S. Boyd, S. Diamond, and J. Z. Kolter, ``Differentiable convex optimization layers,'' in \emph{Adv. Neural Inf. Process. Syst.}, vol. 32, 2019. [Online]. Available: \url{https://papers.neurips.cc/paper_files/paper/2019/hash/9ce3c52fc54362e22053399d3181c638-Abstract.html}
+
+\bibitem{hardnet} Y. Min and N. Azizan, ``HardNet: Hard-constrained neural networks with universal approximation guarantees,'' \emph{arXiv:2410.10807v4}, revised Oct. 19, 2025, first submitted 2024. [Online]. Available: \url{https://arxiv.org/abs/2410.10807v4}
+
+\bibitem{dingwright} L. Ding and S. J. Wright, ``On squared-variable formulations,'' \emph{SIAM J. Optim.}, vol. 35, no. 4, pp. 2265--2293, 2025, doi: \href{https://doi.org/10.1137/23M1608343}{\nolinkurl{10.1137/23M1608343}}. Theorem locators use \href{https://arxiv.org/abs/2310.01784v2}{arXiv:2310.01784v2}.
+
+\bibitem{ouyang} W. Ouyang, Y. Liu, T. K. Pong, and H. Wang, ``Kurdyka--\L{}ojasiewicz exponent via Hadamard parametrization,'' \emph{SIAM J. Optim.}, vol. 35, no. 1, pp. 62--91, 2025, doi: \href{https://doi.org/10.1137/24M1636186}{\nolinkurl{10.1137/24M1636186}}. Theorem locators use \href{https://arxiv.org/abs/2402.00377v2}{arXiv:2402.00377v2}.
+
+\bibitem{gcopter} Z. Wang, X. Zhou, C. Xu, and F. Gao, ``Geometrically constrained trajectory optimization for multicopters,'' \emph{IEEE Trans. Robot.}, vol. 38, no. 5, pp. 3259--3278, 2022, doi: \href{https://doi.org/10.1109/TRO.2022.3160022}{\nolinkurl{10.1109/TRO.2022.3160022}}.
+
+\bibitem{lifts} E. Levin, J. Kileel, and N. Boumal, ``The effect of smooth parametrizations on nonconvex optimization landscapes,'' \emph{Math. Program.}, vol. 209, pp. 63--111, 2025, doi: \href{https://doi.org/10.1007/s10107-024-02058-3}{\nolinkurl{10.1007/s10107-024-02058-3}}. Theorem locators use \href{https://arxiv.org/abs/2207.03512v5}{arXiv:2207.03512v5}.
+
+\bibitem{hadamard} Q. Li, D. McKenzie, and W. Yin, ``From the simplex to the sphere: Faster constrained optimization using the Hadamard parametrization,'' \emph{Information and Inference}, vol. 12, no. 3, pp. 1898--1937, 2023, doi: \href{https://doi.org/10.1093/imaiai/iaad017}{\nolinkurl{10.1093/imaiai/iaad017}}. Theorem locators use \href{https://arxiv.org/abs/2112.05273v2}{arXiv:2112.05273v2}.
+
+\bibitem{pytorch} A. Paszke \emph{et al.}, ``PyTorch: An imperative style, high-performance deep learning library,'' in \emph{Adv. Neural Inf. Process. Syst.}, vol.~32, 2019.
+
+\bibitem{cvxbook} S. Boyd and L. Vandenberghe, \emph{Convex Optimization}. Cambridge, U.K.: Cambridge University Press, 2004, ch. 5. [Online]. Available: \url{https://web.stanford.edu/~boyd/cvxbook/}
+
+\bibitem{lee} J. D. Lee, M. Simchowitz, M. I. Jordan, and B. Recht, ``Gradient descent only converges to minimizers,'' in \emph{Proc. 29th Conf. Learning Theory}, vol. 49, pp. 1246--1257, 2016. [Online]. Available: \url{https://proceedings.mlr.press/v49/lee16.html}
+\end{thebibliography}
+
+\end{document}

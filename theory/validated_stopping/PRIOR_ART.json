@@ -1,0 +1,11 @@
+{
+  "reference": "S. M. Rump, Verification methods: Rigorous results using floating-point arithmetic, Acta Numerica 19, 287\u2013449 (2010).",
+  "doi": "10.1017/S096249291000005X",
+  "url": "https://www.tuhh.de/ti3/rump/intlab/ActaNumerica2010.pdf",
+  "source_sha256": "6d4d2eaa2dd40389fa75fbdc26f4e37f863806d734a6bbbf02005271cc08fea2",
+  "sections_checked": [
+    "5.3 Floating-point bounds",
+    "5.5 The inclusion property"
+  ],
+  "relation": "Standard outward rounding and inclusion arithmetic. The added implementation specializes these ideas to evaluating the stated Stokes bounds; it is not a new interval-arithmetic principle."
+}

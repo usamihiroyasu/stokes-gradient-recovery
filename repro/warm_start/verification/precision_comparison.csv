@@ -1,0 +1,7 @@
+dtype,angle_change,cases,previous_failures,triggers,detected_false_success,accurate_success_triggered,baseline_false_success,baseline_failures,baseline_inaccurate,baseline_max_gap,always_restart_false_success,always_restart_failures,always_restart_inaccurate,always_restart_max_gap,triggered_restart_false_success,triggered_restart_failures,triggered_restart_inaccurate,triggered_restart_max_gap
+torch.float32,0.0,60,22,24,9,0,9,17,24,0.008561569302213976,0,7,0,2.4466010105719544e-10,0,7,0,2.4466010105719544e-10
+torch.float32,0.05,60,22,1,0,0,0,21,10,0.00011471883433553804,0,10,0,4.303999214667187e-08,0,20,9,0.00011471883433553804
+torch.float32,0.2,60,22,0,0,0,0,11,0,1.3292498432661932e-10,0,9,0,1.108578837654881e-10,0,11,0,1.3292498432661932e-10
+torch.float64,0.0,60,0,14,14,0,14,0,14,0.0066766007552364155,0,0,0,3.098310498791397e-11,0,0,0,3.098310498791397e-11
+torch.float64,0.05,60,0,1,1,0,1,0,1,7.2055361104836395e-06,0,1,0,3.654427050356899e-08,0,0,0,5.5492143705181737e-08
+torch.float64,0.2,60,0,0,0,0,0,0,0,3.2113675186396196e-11,0,0,0,3.2113675186396196e-11,0,0,0,3.2113675186396196e-11

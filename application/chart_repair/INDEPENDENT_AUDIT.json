@@ -1,0 +1,16 @@
+{
+  "endpoints": 327,
+  "original_false_successes": 295,
+  "controls": 32,
+  "selection_sha256": "83d725b38a65542d93b2f76cc44f968a484ceaf4bea3ca4efa0e25eb33634ee8",
+  "torch": "2.9.1",
+  "max_output_difference": 1.734723475976807e-18,
+  "max_gradient_transform_difference": 7.771561172376096e-16,
+  "max_projected_step_objective_increase": 0.0,
+  "max_half_contraction_excess": 5.551115123125783e-17,
+  "max_gap_above_bound": 0.0,
+  "max_pg_updates": 9,
+  "inaccurate_after_physical_steps": 0,
+  "max_physical_lift_difference": 1.1102230246251565e-16,
+  "independent_paper_review": false
+}

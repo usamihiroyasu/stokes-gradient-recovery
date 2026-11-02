@@ -1,0 +1,45 @@
+{
+  "at": "2026-10-22T00:07:57.002133+00:00",
+  "kind": "Retrospective validated-arithmetic extension, fixed before endpoint evaluation.",
+  "dataset": "All 9284 previously stored uncorrected warm endpoints, in original order; no solver calls, observations, thresholds, seeds, or histories changed.",
+  "precisions": [
+    32,
+    64,
+    128,
+    256
+  ],
+  "primary_precision": 128,
+  "target_gap": "1/1000000 exactly",
+  "intensity_upper": 8,
+  "semantics": "Original raw coordinates and observation binary64 values denote exact real values. Exact inner preimage preserves the original mapped output. All interval decisions use exact Python integers; libm exp and sqrt are not used.",
+  "exp_domain": [
+    -64,
+    64
+  ],
+  "exp_Taylor_degree": 48,
+  "metrics": [
+    "certified acceptances",
+    "inconclusive/above-target cases",
+    "false acceptances against independent direct-cone intervals",
+    "accurate rejections",
+    "scalar curvature queries",
+    "full Hessians",
+    "single-pass descriptive time",
+    "rounding widths"
+  ],
+  "reference": "Independent ideal-metric cone reduction in 256-bit outward intervals. Report any reference threshold overlap; do not label it accurate or inaccurate.",
+  "comparisons": "Previous float64 pointwise records at the same physical states. Ordinary-float discrepancies do not define error budgets.",
+  "restrictions": "Nominal ideal four-analyzer quadratic only; no real-camera calibration or imaging-truth certification, new interval theory, runtime superiority, unseen-scene generalization, or optimizer convergence claim.",
+  "source_sha256": {
+    "application/real_data/INPUTS.json": "a6fcf1f55c756b77fd8d60104ce1c043cf6c0a10c67941d28b235fcdebce42ef",
+    "application/real_data/RESULTS.json": "bacde3b06144515c0b8b09bb271ff99ec4e8046c130be4f4a93346e2281f2404",
+    "theory/stopping_guarantee/results/FROZEN_ENDPOINT_AUDIT.json": "f421912577cf64a1e8926764afe45b391b2f035dfbfabedb2c2aa6003289ef06"
+  },
+  "implementation_sha256": {
+    "arithmetic.py": "74713f07556f4a8e02c5aeb99f0055e88bd7941edd84d42fc2ee995f4866a178",
+    "monitor.py": "af48a4d030005f6bdfec28bb08b2b3d27ac76e2eb16b9f741126b7001c26697d",
+    "run.py": "6218ba0590c5882d97bd1175ec462321595b690a0013f3c29970c8936525c0cb",
+    "cli.py": "790bc769b5a6638049734f02793e79e9982e737060a5fef6fe4e5ed9c7b71c02"
+  },
+  "stress_inputs": "43 fixed inputs: 33 chart/intensity, 6 stationary-fold, 4 unsupported-input cases."
+}

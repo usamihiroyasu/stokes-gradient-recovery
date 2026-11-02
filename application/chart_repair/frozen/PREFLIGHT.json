@@ -1,0 +1,169 @@
+{
+  "states": [
+    {
+      "I": 0.005,
+      "r": 0.0,
+      "changed": false,
+      "physical_difference": 0.0
+    },
+    {
+      "I": 0.005,
+      "r": 1e-07,
+      "changed": false,
+      "physical_difference": 0.0
+    },
+    {
+      "I": 0.005,
+      "r": 0.5,
+      "changed": false,
+      "physical_difference": 0.0
+    },
+    {
+      "I": 0.005,
+      "r": 0.9999,
+      "changed": false,
+      "physical_difference": 0.0
+    },
+    {
+      "I": 0.005,
+      "r": 1.0,
+      "changed": false,
+      "physical_difference": 0.0
+    },
+    {
+      "I": 0.005,
+      "r": 1.0001,
+      "changed": true,
+      "physical_difference": 0.0
+    },
+    {
+      "I": 0.005,
+      "r": 2.0,
+      "changed": true,
+      "physical_difference": 0.0
+    },
+    {
+      "I": 0.005,
+      "r": 100.0,
+      "changed": true,
+      "physical_difference": 0.0
+    },
+    {
+      "I": 0.005,
+      "r": 10000000.0,
+      "changed": true,
+      "physical_difference": 1.0339757656912846e-25
+    },
+    {
+      "I": 1.0,
+      "r": 0.0,
+      "changed": false,
+      "physical_difference": 0.0
+    },
+    {
+      "I": 1.0,
+      "r": 1e-07,
+      "changed": false,
+      "physical_difference": 0.0
+    },
+    {
+      "I": 1.0,
+      "r": 0.5,
+      "changed": false,
+      "physical_difference": 0.0
+    },
+    {
+      "I": 1.0,
+      "r": 0.9999,
+      "changed": false,
+      "physical_difference": 0.0
+    },
+    {
+      "I": 1.0,
+      "r": 1.0,
+      "changed": false,
+      "physical_difference": 0.0
+    },
+    {
+      "I": 1.0,
+      "r": 1.0001,
+      "changed": true,
+      "physical_difference": 0.0
+    },
+    {
+      "I": 1.0,
+      "r": 2.0,
+      "changed": true,
+      "physical_difference": 0.0
+    },
+    {
+      "I": 1.0,
+      "r": 100.0,
+      "changed": true,
+      "physical_difference": 0.0
+    },
+    {
+      "I": 1.0,
+      "r": 10000000.0,
+      "changed": true,
+      "physical_difference": 2.6469779601696886e-23
+    },
+    {
+      "I": 4.0,
+      "r": 0.0,
+      "changed": false,
+      "physical_difference": 0.0
+    },
+    {
+      "I": 4.0,
+      "r": 1e-07,
+      "changed": false,
+      "physical_difference": 0.0
+    },
+    {
+      "I": 4.0,
+      "r": 0.5,
+      "changed": false,
+      "physical_difference": 0.0
+    },
+    {
+      "I": 4.0,
+      "r": 0.9999,
+      "changed": false,
+      "physical_difference": 0.0
+    },
+    {
+      "I": 4.0,
+      "r": 1.0,
+      "changed": false,
+      "physical_difference": 0.0
+    },
+    {
+      "I": 4.0,
+      "r": 1.0001,
+      "changed": true,
+      "physical_difference": 0.0
+    },
+    {
+      "I": 4.0,
+      "r": 2.0,
+      "changed": true,
+      "physical_difference": 0.0
+    },
+    {
+      "I": 4.0,
+      "r": 100.0,
+      "changed": true,
+      "physical_difference": 0.0
+    },
+    {
+      "I": 4.0,
+      "r": 10000000.0,
+      "changed": true,
+      "physical_difference": 1.0587911840678754e-22
+    }
+  ],
+  "max_output_difference": 1.0587911840678754e-22,
+  "max_gradient_transform_difference": 1.3322676295501878e-15,
+  "max_lift_difference": 4.440892098500626e-16
+}

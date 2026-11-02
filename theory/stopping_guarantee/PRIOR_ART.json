@@ -1,0 +1,64 @@
+{
+  "checked_at": "2026-10-22",
+  "novelty_status": "Concrete Stokes-specific statement established and compared with checked primary sources; no exhaustive novelty certification or claim that general robust transfer is open.",
+  "sources": [
+    {
+      "authors": "Ding and Wright",
+      "title": "On Squared-Variable Formulations",
+      "year": 2025,
+      "doi": "10.1137/23M1608343",
+      "version": "2310.01784v2",
+      "url": "https://arxiv.org/pdf/2310.01784v2",
+      "read": "PDF Section 3.2, Theorem 3.6, Corollary 3.7, Definitions 3.4-3.5; Section 2 scope checked",
+      "html_locators": "Theorem 13, Corollary 14; HTML numbering differs from PDF",
+      "established": "Approximate squared-slack 2N transfers to approximate weak 2N; rank and conditioning dependencies are explicit in its hypotheses.",
+      "difference": "Our narrower strongly convex Stokes class gives a direct uniform objective-gap bound with explicit constants and one radial lower-curvature test. General quantitative transfer is not novel."
+    },
+    {
+      "authors": "Ouyang, Liu, Pong and Wang",
+      "title": "Kurdyka-Lojasiewicz Exponent via Hadamard Parametrization",
+      "year": 2025,
+      "doi": "10.1137/24M1636186",
+      "version": "2402.00377v2",
+      "url": "https://arxiv.org/pdf/2402.00377v2",
+      "read": "PDF Theorem 3.11, Remarks 3.12-3.15; HTML Theorem 17, Remark 18 and surrounding assumptions/proof",
+      "established": "Local KL exponent (1+beta)/2 under KL and Holderian error-bound assumptions; common convex losses have exponent 3/4 without strict complementarity.",
+      "difference": "The 4/3 power is a known consequence of a KL 3/4 gradient inequality. Our claim is the uniform explicit Stokes implication with scalar curvature and an error model, not novelty of that exponent."
+    },
+    {
+      "authors": "Li, McKenzie and Yin",
+      "title": "From the simplex to the sphere: Faster constrained optimization using the Hadamard parametrization",
+      "year": 2023,
+      "version": "2112.05273v2",
+      "url": "https://arxiv.org/pdf/2112.05273v2",
+      "read": "PDF Section 6, Lemma 6.1 and Theorem 5",
+      "established": "Qualitative compactness proximity of approximate SOSPs and an algorithmic objective-gap guarantee under strict-saddle, all-local-global and nondegenerate-KKT assumptions.",
+      "difference": "The stopping theorem is deterministic and does not require an unknown optimal neighborhood or those nondegeneracy assumptions, but assumes strong convexity of the physical objective."
+    },
+    {
+      "authors": "Levin, Kileel and Boumal",
+      "version": "2207.03512v5",
+      "url": "https://arxiv.org/pdf/2207.03512v5",
+      "read": "Existing project audit: Theorems 2.4 and 3.23, Lemma 3.24, Proposition 3.26, Section 6(b)",
+      "established": "Exact criticality transfer and kernel-curvature differential calculus. Historical future-work wording does not establish current open status."
+    }
+  ],
+  "existing_tools_not_new": [
+    "Second-order chain rule",
+    "Strong convexity plus a supporting half-space dual residual",
+    "Triangle-inequality inflation of supplied observation errors",
+    "General projected-gradient stationarity residual",
+    "KL 3/4 or quartic-contact origin of gap power 4/3"
+  ],
+  "new_statement_being_assessed": {
+    "domain": "0<I<=Ibar, inner sheet 0<=r<=1, C2 mu-strongly convex physical objective",
+    "observations": "epsilon=max(|b|,||j||/I); for r>=1/2 a single c_r>=-I*nu",
+    "physical_curvature": "Only upper bound e^T Hpp e<=L with L>=mu at evaluated point; no exact Hessian input",
+    "bound": "gap <= 52*(Ibar*L)^(2/3)*epsilon^(4/3)/mu + 3*nu^2/mu, epsilon<=(Ibar*L)/8",
+    "constants": "Explicit conservative 52 and 3, not optimal prefactors",
+    "sharpness": "Exponents 4/3 and 2 cannot be replaced uniformly by larger exponents in the stated class",
+    "errors": "Supplied head-derivative/curvature budgets, exact evaluated geometry; no inferred floating-point or calibration certification"
+  },
+  "remaining_risk": "The result may be judged an incremental specialization of established squared-slack/KL/convex-duality theory. A bounded source comparison is not proof of literature-wide novelty.",
+  "full_source_pdfs_in_submission_package": false
+}

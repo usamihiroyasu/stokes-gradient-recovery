@@ -1,0 +1,2536 @@
+{
+  "scope": "Controlled two-frame fit; data-derived warm start, not a training-incidence study.",
+  "summary": {
+    "cases": 60,
+    "previous_boundary": 28,
+    "baseline_false_accepts": 20,
+    "baseline_failures": 0,
+    "audit_triggers": 20,
+    "audited_false_accepts": 0,
+    "audited_failures": 0,
+    "max_baseline_gap": 0.006845521616999459,
+    "max_audited_gap": 1.5217364735388254e-11
+  },
+  "records": [
+    {
+      "seed": 0,
+      "angle": 0.0,
+      "noise": 0.001,
+      "next_DoLP": 0.8,
+      "previous_projection_boundary": true,
+      "baseline_success": true,
+      "baseline_gap": 0.006676600755401494,
+      "baseline_gradient_inf": 2.5853523745027232e-08,
+      "baseline_radius": 1.000000009994998,
+      "normalized_radial_curvature": -0.07153214819205674,
+      "audit_trigger": true,
+      "audited_success": true,
+      "audited_gap": 3.2281553430995765e-15,
+      "initial_coordinates": [
+        0.0007288646362746545,
+        0.9999999690821706,
+        -0.0002486677652775983
+      ],
+      "previous_observations": [
+        1.0001942204813552,
+        0.5007749422146904,
+        -0.0012809986284708637,
+        0.501023976827107
+      ],
+      "observations": [
+        0.8991882063017427,
+        0.49962808907574285,
+        0.09994506896262072,
+        0.5000230172058272
+      ],
+      "baseline_coordinates": [
+        -0.06969756221670712,
+        0.9999998879149341,
+        -0.0004941256065416933
+      ],
+      "audited_coordinates": [
+        -0.0006080681605081874,
+        0.4997182023384513,
+        -0.00024692459125024585
+      ]
+    },
+    {
+      "seed": 0,
+      "angle": 0.0,
+      "noise": 0.001,
+      "next_DoLP": 0.99,
+      "previous_projection_boundary": true,
+      "baseline_success": true,
+      "baseline_gap": 1.7166947723902727e-05,
+      "baseline_gradient_inf": 6.505250271940991e-07,
+      "baseline_radius": 1.0000000038409782,
+      "normalized_radial_curvature": -0.0033967635328238737,
+      "audit_trigger": true,
+      "audited_success": true,
+      "audited_gap": 6.183322842408041e-14,
+      "initial_coordinates": [
+        0.0007288646362746545,
+        0.9999999690821706,
+        -0.0002486677652775983
+      ],
+      "previous_observations": [
+        1.0001942204813552,
+        0.5007749422146904,
+        -0.0012809986284708637,
+        0.501023976827107
+      ],
+      "observations": [
+        0.9941882063017426,
+        0.49962808907574285,
+        0.0049450689626207404,
+        0.5000230172058272
+      ],
+      "baseline_coordinates": [
+        -0.003998348091024434,
+        0.9999999242018308,
+        -0.00039909684185151953
+      ],
+      "audited_coordinates": [
+        -0.0006081876576567276,
+        0.8666502226155599,
+        -0.000345622658302626
+      ]
+    },
+    {
+      "seed": 0,
+      "angle": 0.0,
+      "noise": 0.01,
+      "next_DoLP": 0.8,
+      "previous_projection_boundary": true,
+      "baseline_success": true,
+      "baseline_gap": 0.006765744960767025,
+      "baseline_gradient_inf": 7.729072834759555e-08,
+      "baseline_radius": 1.00000123615451,
+      "normalized_radial_curvature": -0.07246735011291905,
+      "audit_trigger": true,
+      "audited_success": true,
+      "audited_gap": 6.118725877124519e-15,
+      "initial_coordinates": [
+        0.007265758953098152,
+        0.999996988606756,
+        -0.0024541347597957703
+      ],
+      "previous_observations": [
+        1.001942204813552,
+        0.5077494221469048,
+        -0.012809986284708638,
+        0.5102397682710694
+      ],
+      "observations": [
+        0.8918820630174262,
+        0.4962808907574288,
+        0.09945068962620733,
+        0.5002301720582719
+      ],
+      "baseline_coordinates": [
+        -0.07605888578258625,
+        0.9999888165215919,
+        -0.004983888270634832
+      ],
+      "audited_coordinates": [
+        -0.00609673983711479,
+        0.49717976780630285,
+        -0.0024778188077846887
+      ]
+    },
+    {
+      "seed": 0,
+      "angle": 0.0,
+      "noise": 0.01,
+      "next_DoLP": 0.99,
+      "previous_projection_boundary": true,
+      "baseline_success": true,
+      "baseline_gap": 2.1975003908302635e-05,
+      "baseline_gradient_inf": 6.309052579338802e-07,
+      "baseline_radius": 1.0000004142167453,
+      "normalized_radial_curvature": -0.003866033651339069,
+      "audit_trigger": true,
+      "audited_success": true,
+      "audited_gap": 3.577608781801605e-14,
+      "initial_coordinates": [
+        0.007265758953098152,
+        0.999996988606756,
+        -0.0024541347597957703
+      ],
+      "previous_observations": [
+        1.001942204813552,
+        0.5077494221469048,
+        -0.012809986284708638,
+        0.5102397682710694
+      ],
+      "observations": [
+        0.9868820630174262,
+        0.4962808907574288,
+        0.004450689626207364,
+        0.5002301720582719
+      ],
+      "baseline_coordinates": [
+        -0.00995458248467266,
+        0.9999923329314969,
+        -0.004020262663583711
+      ],
+      "audited_coordinates": [
+        -0.006096545098865805,
+        0.85834166314612,
+        -0.0034506579736022806
+      ]
+    },
+    {
+      "seed": 0,
+      "angle": 0.7,
+      "noise": 0.001,
+      "next_DoLP": 0.8,
+      "previous_projection_boundary": false,
+      "baseline_success": true,
+      "baseline_gap": 2.155724370938453e-14,
+      "baseline_gradient_inf": 1.4235026640358334e-07,
+      "baseline_radius": 0.49996765865949444,
+      "normalized_radial_curvature": 0.4608870619308608,
+      "audit_trigger": false,
+      "audited_success": true,
+      "audited_gap": 2.155724370938453e-14,
+      "initial_coordinates": [
+        0.000356007069303389,
+        0.16696734480959785,
+        0.959484822087602
+      ],
+      "previous_observations": [
+        0.5851777919314757,
+        0.9934998072089205,
+        0.4137354299214086,
+        0.008299111832876873
+      ],
+      "observations": [
+        0.5671750634618391,
+        0.8938079810711269,
+        0.4319582118025243,
+        0.10584312521044315
+      ],
+      "baseline_coordinates": [
+        -0.0006079848489219635,
+        0.08455969191796156,
+        0.4927649725865224
+      ],
+      "audited_coordinates": [
+        -0.0006079848489219635,
+        0.08455969191796156,
+        0.4927649725865224
+      ]
+    },
+    {
+      "seed": 0,
+      "angle": 0.7,
+      "noise": 0.001,
+      "next_DoLP": 0.99,
+      "previous_projection_boundary": false,
+      "baseline_success": true,
+      "baseline_gap": 1.7198718828445474e-14,
+      "baseline_gradient_inf": 1.3480671020161947e-07,
+      "baseline_radius": 0.8681314937047041,
+      "normalized_radial_curvature": 0.012833917971943965,
+      "audit_trigger": false,
+      "audited_success": true,
+      "audited_gap": 1.7198718828445474e-14,
+      "initial_coordinates": [
+        0.000356007069303389,
+        0.16696734480959785,
+        0.959484822087602
+      ],
+      "previous_observations": [
+        0.5851777919314757,
+        0.9934998072089205,
+        0.4137354299214086,
+        0.008299111832876873
+      ],
+      "observations": [
+        0.583321942037362,
+        0.9874257054200306,
+        0.4158113332270014,
+        0.012225400861539441
+      ],
+      "baseline_coordinates": [
+        -0.0006080045286684884,
+        0.14696690973848112,
+        0.8556009687955489
+      ],
+      "audited_coordinates": [
+        -0.0006080045286684884,
+        0.14696690973848112,
+        0.8556009687955489
+      ]
+    },
+    {
+      "seed": 0,
+      "angle": 0.7,
+      "noise": 0.01,
+      "next_DoLP": 0.8,
+      "previous_projection_boundary": false,
+      "baseline_success": true,
+      "baseline_gap": 1.6982350626727869e-13,
+      "baseline_gradient_inf": 3.319045978529559e-07,
+      "baseline_radius": 0.4997003992443532,
+      "normalized_radial_curvature": 0.4616098166196258,
+      "audit_trigger": false,
+      "audited_success": true,
+      "audited_gap": 1.6982350626727869e-13,
+      "initial_coordinates": [
+        0.003554380173431206,
+        0.17008437652311723,
+        0.9050814028674572
+      ],
+      "previous_observations": [
+        0.5869257762636724,
+        1.000474287141135,
+        0.4022064422651708,
+        0.017514903276839376
+      ],
+      "observations": [
+        0.5598689201775227,
+        0.8904607827528128,
+        0.4314638324661109,
+        0.10605028006288791
+      ],
+      "baseline_coordinates": [
+        -0.006097134213598588,
+        0.08072456069180707,
+        0.49313693261211006
+      ],
+      "audited_coordinates": [
+        -0.006097134213598588,
+        0.08072456069180707,
+        0.49313693261211006
+      ]
+    },
+    {
+      "seed": 0,
+      "angle": 0.7,
+      "noise": 0.01,
+      "next_DoLP": 0.99,
+      "previous_projection_boundary": false,
+      "baseline_success": true,
+      "baseline_gap": 8.933380037960198e-12,
+      "baseline_gradient_inf": 5.029844304333592e-07,
+      "baseline_radius": 0.8730887867214945,
+      "normalized_radial_curvature": 0.011721107470440334,
+      "audit_trigger": false,
+      "audited_success": true,
+      "audited_gap": 8.933380037960198e-12,
+      "initial_coordinates": [
+        0.003554380173431206,
+        0.17008437652311723,
+        0.9050814028674572
+      ],
+      "previous_observations": [
+        0.5869257762636724,
+        1.000474287141135,
+        0.4022064422651708,
+        0.017514903276839376
+      ],
+      "observations": [
+        0.5760157987530455,
+        0.9840785071017165,
+        0.41531695389058804,
+        0.012432555713984212
+      ],
+      "baseline_coordinates": [
+        -0.006094089003692483,
+        0.14246267161339912,
+        0.8613874950889315
+      ],
+      "audited_coordinates": [
+        -0.006094089003692483,
+        0.14246267161339912,
+        0.8613874950889315
+      ]
+    },
+    {
+      "seed": 0,
+      "angle": 1.3,
+      "noise": 0.001,
+      "next_DoLP": 0.8,
+      "previous_projection_boundary": false,
+      "baseline_success": true,
+      "baseline_gap": 2.783901561762354e-13,
+      "baseline_gradient_inf": 7.677475673840007e-07,
+      "baseline_radius": 0.5009720127282388,
+      "normalized_radial_curvature": 0.4581780012260909,
+      "audit_trigger": false,
+      "audited_success": true,
+      "audited_gap": 2.783901561762354e-13,
+      "initial_coordinates": [
+        0.000356007069303389,
+        -0.8073942124125608,
+        0.4863282357987713
+      ],
+      "previous_observations": [
+        0.07174984379688154,
+        0.7585256281254226,
+        0.9271633780560028,
+        0.24327329091637487
+      ],
+      "observations": [
+        0.1564327049541637,
+        0.7058286378043285,
+        0.8427005703101996,
+        0.2938224684772415
+      ],
+      "baseline_coordinates": [
+        -0.0006084837407396562,
+        -0.42951204423654815,
+        0.25786112811496836
+      ],
+      "audited_coordinates": [
+        -0.0006084837407396562,
+        -0.42951204423654815,
+        0.25786112811496836
+      ]
+    },
+    {
+      "seed": 0,
+      "angle": 1.3,
+      "noise": 0.001,
+      "next_DoLP": 0.99,
+      "previous_projection_boundary": false,
+      "baseline_success": true,
+      "baseline_gap": 2.7929840203730073e-15,
+      "baseline_gradient_inf": 3.0859516606168214e-08,
+      "baseline_radius": 0.8743189554176355,
+      "normalized_radial_curvature": 0.011450716821343885,
+      "audit_trigger": false,
+      "audited_success": true,
+      "audited_gap": 2.7929840203730073e-15,
+      "initial_coordinates": [
+        0.000356007069303389,
+        -0.8073942124125608,
+        0.4863282357987713
+      ],
+      "previous_observations": [
+        0.07174984379688154,
+        0.7585256281254226,
+        0.9271633780560028,
+        0.24327329091637487
+      ],
+      "observations": [
+        0.07502827338411369,
+        0.7548012681273676,
+        0.9241050018802496,
+        0.24484983815420247
+      ],
+      "baseline_coordinates": [
+        -0.0006080102295794228,
+        -0.7495254403284078,
+        0.4501613600733537
+      ],
+      "audited_coordinates": [
+        -0.0006080102295794228,
+        -0.7495254403284078,
+        0.4501613600733537
+      ]
+    },
+    {
+      "seed": 0,
+      "angle": 1.3,
+      "noise": 0.01,
+      "next_DoLP": 0.8,
+      "previous_projection_boundary": false,
+      "baseline_success": true,
+      "baseline_gap": 3.678573415048423e-14,
+      "baseline_gradient_inf": 2.2836693974167826e-07,
+      "baseline_radius": 0.5099382741108839,
+      "normalized_radial_curvature": 0.43442728782061607,
+      "audit_trigger": false,
+      "audited_success": true,
+      "audited_gap": 3.678573415048423e-14,
+      "initial_coordinates": [
+        0.003554380173431206,
+        -0.7076775048851917,
+        0.4311015325889205
+      ],
+      "previous_observations": [
+        0.07349782812907829,
+        0.7655001080576369,
+        0.915634390399765,
+        0.25248908236033735
+      ],
+      "observations": [
+        0.1491265616698473,
+        0.7024814394860144,
+        0.8422061909737862,
+        0.2940296233296863
+      ],
+      "baseline_coordinates": [
+        -0.006096755696853696,
+        -0.4393230830799868,
+        0.2589059135598914
+      ],
+      "audited_coordinates": [
+        -0.006096755696853696,
+        -0.4393230830799868,
+        0.2589059135598914
+      ]
+    },
+    {
+      "seed": 0,
+      "angle": 1.3,
+      "noise": 0.01,
+      "next_DoLP": 0.99,
+      "previous_projection_boundary": false,
+      "baseline_success": true,
+      "baseline_gap": 4.820020589797226e-13,
+      "baseline_gradient_inf": 5.539561197827456e-07,
+      "baseline_radius": 0.9999856587746543,
+      "normalized_radial_curvature": 0.0001860201272190523,
+      "audit_trigger": false,
+      "audited_success": true,
+      "audited_gap": 4.820020589797226e-13,
+      "initial_coordinates": [
+        0.003554380173431206,
+        -0.7076775048851917,
+        0.4311015325889205
+      ],
+      "previous_observations": [
+        0.07349782812907829,
+        0.7655001080576369,
+        0.915634390399765,
+        0.25248908236033735
+      ],
+      "observations": [
+        0.06772213009979729,
+        0.7514540698090535,
+        0.9236106225438362,
+        0.24505699300664724
+      ],
+      "baseline_coordinates": [
+        -0.00591096698674632,
+        -0.8606294158419896,
+        0.5092036197263872
+      ],
+      "audited_coordinates": [
+        -0.00591096698674632,
+        -0.8606294158419896,
+        0.5092036197263872
+      ]
+    },
+    {
+      "seed": 1,
+      "angle": 0.0,
+      "noise": 0.001,
+      "next_DoLP": 0.8,
+      "previous_projection_boundary": false,
+      "baseline_success": true,
+      "baseline_gap": 8.44306116255645e-14,
+      "baseline_gradient_inf": 2.587373587233892e-07,
+      "baseline_radius": 0.5000760696168659,
+      "normalized_radial_curvature": 0.46059489839238704,
+      "audit_trigger": false,
+      "audited_success": true,
+      "audited_gap": 8.44306116255645e-14,
+      "initial_coordinates": [
+        0.0006051462195185862,
+        0.9284985790757284,
+        -0.0008940217696227113
+      ],
+      "previous_observations": [
+        0.9991099120939001,
+        0.49994387568088633,
+        0.00125218977510817,
+        0.5009046811649692
+      ],
+      "observations": [
+        0.8992409725990429,
+        0.500214103691599,
+        0.09972597252659353,
+        0.4994236507678565
+      ],
+      "baseline_coordinates": [
+        -0.0006976696641946376,
+        0.5000758250146581,
+        0.0004946103128083216
+      ],
+      "audited_coordinates": [
+        -0.0006976696641946376,
+        0.5000758250146581,
+        0.0004946103128083216
+      ]
+    },
+    {
+      "seed": 1,
+      "angle": 0.0,
+      "noise": 0.001,
+      "next_DoLP": 0.99,
+      "previous_projection_boundary": false,
+      "baseline_success": true,
+      "baseline_gap": 4.261887461292213e-12,
+      "baseline_gradient_inf": 3.986040888260318e-07,
+      "baseline_radius": 0.8689282376274278,
+      "normalized_radial_curvature": 0.012647726716425875,
+      "audit_trigger": false,
+      "audited_success": true,
+      "audited_gap": 4.261887461292213e-12,
+      "initial_coordinates": [
+        0.0006051462195185862,
+        0.9284985790757284,
+        -0.0008940217696227113
+      ],
+      "previous_observations": [
+        0.9991099120939001,
+        0.49994387568088633,
+        0.00125218977510817,
+        0.5009046811649692
+      ],
+      "observations": [
+        0.9942409725990429,
+        0.500214103691599,
+        0.0047259725265935614,
+        0.4994236507678565
+      ],
+      "baseline_coordinates": [
+        -0.0006998244310650591,
+        0.8689279602333754,
+        0.0006943133106095467
+      ],
+      "audited_coordinates": [
+        -0.0006998244310650591,
+        0.8689279602333754,
+        0.0006943133106095467
+      ]
+    },
+    {
+      "seed": 1,
+      "angle": 0.0,
+      "noise": 0.01,
+      "next_DoLP": 0.8,
+      "previous_projection_boundary": false,
+      "baseline_success": true,
+      "baseline_gap": 7.163765565997016e-14,
+      "baseline_gradient_inf": 3.3837144241090904e-07,
+      "baseline_radius": 0.5008093506352732,
+      "normalized_radial_curvature": 0.4586148538579902,
+      "audit_trigger": false,
+      "audited_success": true,
+      "audited_gap": 7.163765565997016e-14,
+      "initial_coordinates": [
+        0.006035045994382953,
+        0.7895751785780976,
+        -0.007752358666209058
+      ],
+      "previous_observations": [
+        0.9910991209390013,
+        0.4994387568088634,
+        0.012521897751081701,
+        0.5090468116496923
+      ],
+      "observations": [
+        0.8924097259904284,
+        0.5021410369159908,
+        0.09725972526593556,
+        0.4942365076785647
+      ],
+      "baseline_coordinates": [
+        -0.0070007375336808095,
+        0.5007846050471981,
+        0.004978456733347016
+      ],
+      "audited_coordinates": [
+        -0.0070007375336808095,
+        0.5007846050471981,
+        0.004978456733347016
+      ]
+    },
+    {
+      "seed": 1,
+      "angle": 0.0,
+      "noise": 0.01,
+      "next_DoLP": 0.99,
+      "previous_projection_boundary": false,
+      "baseline_success": true,
+      "baseline_gap": 3.174591225476014e-13,
+      "baseline_gradient_inf": 1.0933768891928917e-07,
+      "baseline_radius": 0.8815461633208252,
+      "normalized_radial_curvature": 0.009959972696730214,
+      "audit_trigger": false,
+      "audited_success": true,
+      "audited_gap": 3.174591225476014e-13,
+      "initial_coordinates": [
+        0.006035045994382953,
+        0.7895751785780976,
+        -0.007752358666209058
+      ],
+      "previous_observations": [
+        0.9910991209390013,
+        0.4994387568088634,
+        0.012521897751081701,
+        0.5090468116496923
+      ],
+      "observations": [
+        0.9874097259904284,
+        0.5021410369159908,
+        0.0022597252659355767,
+        0.4942365076785647
+      ],
+      "baseline_coordinates": [
+        -0.007001353446827656,
+        0.8815177893718399,
+        0.007072841483561993
+      ],
+      "audited_coordinates": [
+        -0.007001353446827656,
+        0.8815177893718399,
+        0.007072841483561993
+      ]
+    },
+    {
+      "seed": 1,
+      "angle": 0.7,
+      "noise": 0.001,
+      "next_DoLP": 0.8,
+      "previous_projection_boundary": false,
+      "baseline_success": true,
+      "baseline_gap": 3.79458343925711e-14,
+      "baseline_gradient_inf": 3.0961937333797524e-07,
+      "baseline_radius": 0.5013105296742473,
+      "normalized_radial_curvature": 0.4572660744485187,
+      "audit_trigger": false,
+      "audited_success": true,
+      "audited_gap": 3.79458343925711e-14,
+      "initial_coordinates": [
+        0.0006051462195185862,
+        0.15795708227606223,
+        0.9266028478250431
+      ],
+      "previous_observations": [
+        0.5840934835440206,
+        0.9926687406751165,
+        0.4162686183249876,
+        0.008179816170739158
+      ],
+      "observations": [
+        0.5672278297591393,
+        0.8943939956869831,
+        0.4317391153664971,
+        0.10524375877247241
+      ],
+      "baseline_coordinates": [
+        -0.0006981111480443497,
+        0.0848284794309097,
+        0.49408134577184165
+      ],
+      "audited_coordinates": [
+        -0.0006981111480443497,
+        0.0848284794309097,
+        0.49408134577184165
+      ]
+    },
+    {
+      "seed": 1,
+      "angle": 0.7,
+      "noise": 0.001,
+      "next_DoLP": 0.99,
+      "previous_projection_boundary": false,
+      "baseline_success": true,
+      "baseline_gap": 3.9653523154366337e-13,
+      "baseline_gradient_inf": 5.813390818024759e-07,
+      "baseline_radius": 0.8765890096182462,
+      "normalized_radial_curvature": 0.010968554989010844,
+      "audit_trigger": false,
+      "audited_success": true,
+      "audited_gap": 3.9653523154366337e-13,
+      "initial_coordinates": [
+        0.0006051462195185862,
+        0.15795708227606223,
+        0.9266028478250431
+      ],
+      "previous_observations": [
+        0.5840934835440206,
+        0.9926687406751165,
+        0.4162686183249876,
+        0.008179816170739158
+      ],
+      "observations": [
+        0.5833747083346622,
+        0.9880117200358868,
+        0.41559223679097423,
+        0.011626034423568715
+      ],
+      "baseline_coordinates": [
+        -0.0006972481873516276,
+        0.14845666443002659,
+        0.8639264497454677
+      ],
+      "audited_coordinates": [
+        -0.0006972481873516276,
+        0.14845666443002659,
+        0.8639264497454677
+      ]
+    },
+    {
+      "seed": 1,
+      "angle": 0.7,
+      "noise": 0.01,
+      "next_DoLP": 0.8,
+      "previous_projection_boundary": false,
+      "baseline_success": true,
+      "baseline_gap": 1.028142990937373e-15,
+      "baseline_gradient_inf": 3.825066439109459e-08,
+      "baseline_radius": 0.5134496515469793,
+      "normalized_radial_curvature": 0.42534482212269537,
+      "audit_trigger": false,
+      "audited_success": true,
+      "audited_gap": 1.028142990937373e-15,
+      "initial_coordinates": [
+        0.006035045994382733,
+        0.12373506965851944,
+        0.8128604324072186
+      ],
+      "previous_observations": [
+        0.5760826923891218,
+        0.9921636218030935,
+        0.42753832630096117,
+        0.01632194665546223
+      ],
+      "observations": [
+        0.5603965831505249,
+        0.8963209289113748,
+        0.42927286810583914,
+        0.10005661568318064
+      ],
+      "baseline_coordinates": [
+        -0.007000966376311977,
+        0.08342800595993072,
+        0.5066264032749026
+      ],
+      "audited_coordinates": [
+        -0.007000966376311977,
+        0.08342800595993072,
+        0.5066264032749026
+      ]
+    },
+    {
+      "seed": 1,
+      "angle": 0.7,
+      "noise": 0.01,
+      "next_DoLP": 0.99,
+      "previous_projection_boundary": false,
+      "baseline_success": true,
+      "baseline_gap": 8.746761741138713e-13,
+      "baseline_gradient_inf": 6.885677955099106e-07,
+      "baseline_radius": 1.0000271367338118,
+      "normalized_radial_curvature": 0.0013273293710347018,
+      "audit_trigger": false,
+      "audited_success": true,
+      "audited_gap": 8.746761741138713e-13,
+      "initial_coordinates": [
+        0.006035045994382733,
+        0.12373506965851944,
+        0.8128604324072186
+      ],
+      "previous_observations": [
+        0.5760826923891218,
+        0.9921636218030935,
+        0.42753832630096117,
+        0.01632194665546223
+      ],
+      "observations": [
+        0.5765434617260478,
+        0.9899386532602785,
+        0.41312598953031626,
+        0.006438891334276946
+      ],
+      "baseline_coordinates": [
+        -0.00567193540585976,
+        0.16391723541726438,
+        0.9865016037174937
+      ],
+      "audited_coordinates": [
+        -0.00567193540585976,
+        0.16391723541726438,
+        0.9865016037174937
+      ]
+    },
+    {
+      "seed": 1,
+      "angle": 1.3,
+      "noise": 0.001,
+      "next_DoLP": 0.8,
+      "previous_projection_boundary": true,
+      "baseline_success": true,
+      "baseline_gap": 0.0065656631723819605,
+      "baseline_gradient_inf": 5.602923026996365e-07,
+      "baseline_radius": 1.0000011193034084,
+      "normalized_radial_curvature": -0.07089948078056393,
+      "audit_trigger": true,
+      "audited_success": true,
+      "audited_gap": 1.2421093632351013e-15,
+      "initial_coordinates": [
+        0.0008506085469112357,
+        -0.8578795400619179,
+        0.5138508487325404
+      ],
+      "previous_observations": [
+        0.07066553540942647,
+        0.7576945615916185,
+        0.9296965664595819,
+        0.24315399525423714
+      ],
+      "observations": [
+        0.15648547125146392,
+        0.7064146524201846,
+        0.8424814738741725,
+        0.2932231020392708
+      ],
+      "baseline_coordinates": [
+        -0.0691976484279585,
+        -0.8566142403561747,
+        0.5159595738302405
+      ],
+      "audited_coordinates": [
+        -0.0006979406827865905,
+        -0.42954285955803956,
+        0.2587237790691479
+      ]
+    },
+    {
+      "seed": 1,
+      "angle": 1.3,
+      "noise": 0.001,
+      "next_DoLP": 0.99,
+      "previous_projection_boundary": true,
+      "baseline_success": true,
+      "baseline_gap": 1.1982769162889198e-05,
+      "baseline_gradient_inf": 7.437592377910467e-07,
+      "baseline_radius": 1.0000010020385268,
+      "normalized_radial_curvature": -0.002836631004673401,
+      "audit_trigger": true,
+      "audited_success": true,
+      "audited_gap": 3.321340370478602e-14,
+      "initial_coordinates": [
+        0.0008506085469112357,
+        -0.8578795400619179,
+        0.5138508487325404
+      ],
+      "previous_observations": [
+        0.07066553540942647,
+        0.7576945615916185,
+        0.9296965664595819,
+        0.24315399525423714
+      ],
+      "observations": [
+        0.07508103968141391,
+        0.7553872827432238,
+        0.9238859054442224,
+        0.24425047171623174
+      ],
+      "baseline_coordinates": [
+        -0.0035297706313516153,
+        -0.8566671769050905,
+        0.5158714491920637
+      ],
+      "audited_coordinates": [
+        -0.0006978872348909562,
+        -0.751683473187351,
+        0.45265222731272664
+      ]
+    },
+    {
+      "seed": 1,
+      "angle": 1.3,
+      "noise": 0.01,
+      "next_DoLP": 0.8,
+      "previous_projection_boundary": true,
+      "baseline_success": true,
+      "baseline_gap": 1.151016622644033e-13,
+      "baseline_gradient_inf": 1.3163799705031274e-07,
+      "baseline_radius": 1.9424230127124926,
+      "normalized_radial_curvature": 0.029632173422416697,
+      "audit_trigger": false,
+      "audited_success": true,
+      "audited_gap": 1.151016622644033e-13,
+      "initial_coordinates": [
+        0.008528157022132068,
+        -0.8665376330206106,
+        0.4991117415559742
+      ],
+      "previous_observations": [
+        0.06265474425452763,
+        0.7571894427195955,
+        0.9409662744355554,
+        0.2512961257389602
+      ],
+      "observations": [
+        0.14965422464284953,
+        0.7083415856445764,
+        0.8400152266135145,
+        0.288035958949979
+      ],
+      "baseline_coordinates": [
+        -0.0070009570475811685,
+        -1.659122498757583,
+        1.0101087537644005
+      ],
+      "audited_coordinates": [
+        -0.0070009570475811685,
+        -1.659122498757583,
+        1.0101087537644005
+      ]
+    },
+    {
+      "seed": 1,
+      "angle": 1.3,
+      "noise": 0.01,
+      "next_DoLP": 0.99,
+      "previous_projection_boundary": true,
+      "baseline_success": true,
+      "baseline_gap": 1.5217364735388254e-11,
+      "baseline_gradient_inf": 1.8529166103704994e-07,
+      "baseline_radius": 1.0001326547761065,
+      "normalized_radial_curvature": 0.0017472495012180612,
+      "audit_trigger": false,
+      "audited_success": true,
+      "audited_gap": 1.5217364735388254e-11,
+      "initial_coordinates": [
+        0.008528157022132068,
+        -0.8665376330206106,
+        0.4991117415559742
+      ],
+      "previous_observations": [
+        0.06265474425452763,
+        0.7571894427195955,
+        0.9409662744355554,
+        0.2512961257389602
+      ],
+      "observations": [
+        0.06824979307279953,
+        0.7573142159676155,
+        0.9214196581835644,
+        0.23906332862693996
+      ],
+      "baseline_coordinates": [
+        -0.0052514667969883475,
+        -0.8547875736353818,
+        0.5192335997487442
+      ],
+      "audited_coordinates": [
+        -0.0052514667969883475,
+        -0.8547875736353818,
+        0.5192335997487442
+      ]
+    },
+    {
+      "seed": 2,
+      "angle": 0.0,
+      "noise": 0.001,
+      "next_DoLP": 0.8,
+      "previous_projection_boundary": true,
+      "baseline_success": true,
+      "baseline_gap": 0.006546946021630161,
+      "baseline_gradient_inf": 1.700688370918404e-07,
+      "baseline_radius": 1.000000016359367,
+      "normalized_radial_curvature": -0.07078856799997033,
+      "audit_trigger": true,
+      "audited_success": true,
+      "audited_gap": 1.5046468281898777e-15,
+      "initial_coordinates": [
+        0.00010755693874119967,
+        0.9999999976609566,
+        -6.839654225545479e-05
+      ],
+      "previous_observations": [
+        1.0001273282627605,
+        0.4999997899655824,
+        -0.0006450738962875785,
+        0.5000682393376349
+      ],
+      "observations": [
+        0.8998230232534803,
+        0.5001899026916581,
+        0.09867740283861585,
+        0.4999930699623805
+      ],
+      "baseline_coordinates": [
+        -0.06905405947128991,
+        0.99999998618536,
+        0.0002456583280400499
+      ],
+      "audited_coordinates": [
+        -0.0006585689757459689,
+        0.5017476444075771,
+        0.0001232740651225019
+      ]
+    },
+    {
+      "seed": 2,
+      "angle": 0.0,
+      "noise": 0.001,
+      "next_DoLP": 0.99,
+      "previous_projection_boundary": true,
+      "baseline_success": true,
+      "baseline_gap": 1.1195898319921392e-05,
+      "baseline_gradient_inf": 6.495435033474968e-08,
+      "baseline_radius": 1.0000000120471053,
+      "normalized_radial_curvature": -0.002741335316915977,
+      "audit_trigger": true,
+      "audited_success": true,
+      "audited_gap": 1.8155675774214722e-14,
+      "initial_coordinates": [
+        0.00010755693874119967,
+        0.9999999976609566,
+        -6.839654225545479e-05
+      ],
+      "previous_observations": [
+        1.0001273282627605,
+        0.4999997899655824,
+        -0.0006450738962875785,
+        0.5000682393376349
+      ],
+      "observations": [
+        0.9948230232534803,
+        0.5001899026916581,
+        0.0036774028386158827,
+        0.4999930699623805
+      ],
+      "baseline_coordinates": [
+        -0.003396036992631668,
+        0.9999999923280475,
+        0.00019859032106986225
+      ],
+      "audited_coordinates": [
+        -0.0006586864572505709,
+        0.8794016521091598,
+        0.00017463269839284313
+      ]
+    },
+    {
+      "seed": 2,
+      "angle": 0.0,
+      "noise": 0.01,
+      "next_DoLP": 0.8,
+      "previous_projection_boundary": true,
+      "baseline_success": true,
+      "baseline_gap": 0.005518143362798398,
+      "baseline_gradient_inf": 1.5523091843302107e-07,
+      "baseline_radius": 1.0000017582811678,
+      "normalized_radial_curvature": -0.065024400635545,
+      "audit_trigger": true,
+      "audited_success": true,
+      "audited_gap": 2.069699663390101e-13,
+      "initial_coordinates": [
+        0.0010751187718315027,
+        0.9999997693117001,
+        -0.0006792470437884087
+      ],
+      "previous_observations": [
+        1.001273282627604,
+        0.4999978996558243,
+        -0.006450738962875785,
+        0.5006823933763489
+      ],
+      "observations": [
+        0.8982302325348028,
+        0.501899026916581,
+        0.08677402838615876,
+        0.499930699623805
+      ],
+      "baseline_coordinates": [
+        -0.06960296969242825,
+        0.9999988158363124,
+        0.00242587951065983
+      ],
+      "audited_coordinates": [
+        -0.006604135491768645,
+        0.518008929034726,
+        0.001256524858254304
+      ]
+    },
+    {
+      "seed": 2,
+      "angle": 0.0,
+      "noise": 0.01,
+      "next_DoLP": 0.99,
+      "previous_projection_boundary": true,
+      "baseline_success": true,
+      "baseline_gap": 2.319522205600569e-13,
+      "baseline_gradient_inf": 8.247639898570179e-07,
+      "baseline_radius": 1.0000012457169614,
+      "normalized_radial_curvature": 0.0026905944671296467,
+      "audit_trigger": false,
+      "audited_success": true,
+      "audited_gap": 2.319522205600569e-13,
+      "initial_coordinates": [
+        0.0010751187718315027,
+        0.9999997693117001,
+        -0.0006792470437884087
+      ],
+      "previous_observations": [
+        1.001273282627604,
+        0.4999978996558243,
+        -0.006450738962875785,
+        0.5006823933763489
+      ],
+      "observations": [
+        0.9932302325348028,
+        0.501899026916581,
+        -0.008225971613841214,
+        0.499930699623805
+      ],
+      "baseline_coordinates": [
+        -0.003909705635633237,
+        0.9999993140485967,
+        0.0019655375373462
+      ],
+      "audited_coordinates": [
+        -0.003909705635633237,
+        0.9999993140485967,
+        0.0019655375373462
+      ]
+    },
+    {
+      "seed": 2,
+      "angle": 0.7,
+      "noise": 0.001,
+      "next_DoLP": 0.8,
+      "previous_projection_boundary": true,
+      "baseline_success": true,
+      "baseline_gap": 0.006597000497394024,
+      "baseline_gradient_inf": 2.1930300894356396e-07,
+      "baseline_radius": 1.000000062829867,
+      "normalized_radial_curvature": -0.07107783029282673,
+      "audit_trigger": true,
+      "audited_success": true,
+      "audited_gap": 1.8547025165818265e-15,
+      "initial_coordinates": [
+        -0.00012853765006920327,
+        0.17072859654820316,
+        0.9853180939781228
+      ],
+      "previous_observations": [
+        0.5851108997128809,
+        0.9927246549598125,
+        0.4143713546535919,
+        0.007343374343404818
+      ],
+      "observations": [
+        0.5678098804135767,
+        0.8943697946870421,
+        0.43069054567851944,
+        0.10581317796699644
+      ],
+      "baseline_coordinates": [
+        -0.06932422461067296,
+        0.17131582928819755,
+        0.985216226163087
+      ],
+      "audited_coordinates": [
+        -0.0006585744046063559,
+        0.08582171461946582,
+        0.4935502439665741
+      ]
+    },
+    {
+      "seed": 2,
+      "angle": 0.7,
+      "noise": 0.001,
+      "next_DoLP": 0.99,
+      "previous_projection_boundary": true,
+      "baseline_success": true,
+      "baseline_gap": 1.3357598533271513e-05,
+      "baseline_gradient_inf": 8.949064394385879e-07,
+      "baseline_radius": 1.000000018686822,
+      "normalized_radial_curvature": -0.0029953434141923494,
+      "audit_trigger": true,
+      "audited_success": true,
+      "audited_gap": 9.610476772002105e-13,
+      "initial_coordinates": [
+        -0.00012853765006920327,
+        0.17072859654820316,
+        0.9853180939781228
+      ],
+      "previous_observations": [
+        0.5851108997128809,
+        0.9927246549598125,
+        0.4143713546535919,
+        0.007343374343404818
+      ],
+      "observations": [
+        0.5839567589890996,
+        0.9879875190359458,
+        0.41454366710299656,
+        0.012195453618092742
+      ],
+      "baseline_coordinates": [
+        -0.003648485111825094,
+        0.17105672294569685,
+        0.9852612013617119
+      ],
+      "audited_coordinates": [
+        -0.0006581376259107302,
+        0.14954910132100122,
+        0.8613786078373048
+      ]
+    },
+    {
+      "seed": 2,
+      "angle": 0.7,
+      "noise": 0.01,
+      "next_DoLP": 0.8,
+      "previous_projection_boundary": true,
+      "baseline_success": true,
+      "baseline_gap": 0.005982230256550182,
+      "baseline_gradient_inf": 3.1246910664776625e-07,
+      "baseline_radius": 1.000005706381201,
+      "normalized_radial_curvature": -0.06788469612645695,
+      "audit_trigger": true,
+      "audited_success": true,
+      "audited_gap": 2.2281823738520834e-13,
+      "initial_coordinates": [
+        -0.001277157303864957,
+        0.17757252171054352,
+        0.9841077174442636
+      ],
+      "previous_observations": [
+        0.5862568540777245,
+        0.9927227646500544,
+        0.4085656895870037,
+        0.00795752838211883
+      ],
+      "observations": [
+        0.5662170896948993,
+        0.896078918911965,
+        0.41878717122606235,
+        0.1057508076284209
+      ],
+      "baseline_coordinates": [
+        -0.07228555995843047,
+        0.18338012660123634,
+        0.9830478838605365
+      ],
+      "audited_coordinates": [
+        -0.006604111871243082,
+        0.09348984295423629,
+        0.5011713765573954
+      ]
+    },
+    {
+      "seed": 2,
+      "angle": 0.7,
+      "noise": 0.01,
+      "next_DoLP": 0.99,
+      "previous_projection_boundary": true,
+      "baseline_success": true,
+      "baseline_gap": 4.27026578160572e-16,
+      "baseline_gradient_inf": 7.934844500898162e-09,
+      "baseline_radius": 1.0000019968102252,
+      "normalized_radial_curvature": 0.0001778848495761104,
+      "audit_trigger": false,
+      "audited_success": true,
+      "audited_gap": 4.27026578160572e-16,
+      "initial_coordinates": [
+        -0.001277157303864957,
+        0.17757252171054352,
+        0.9841077174442636
+      ],
+      "previous_observations": [
+        0.5862568540777245,
+        0.9927227646500544,
+        0.4085656895870037,
+        0.00795752838211883
+      ],
+      "observations": [
+        0.5823639682704221,
+        0.9896966432608687,
+        0.40264029265053947,
+        0.012133083279517207
+      ],
+      "baseline_coordinates": [
+        -0.006426862034050193,
+        0.1808185015612976,
+        0.9835185118326774
+      ],
+      "audited_coordinates": [
+        -0.006426862034050193,
+        0.1808185015612976,
+        0.9835185118326774
+      ]
+    },
+    {
+      "seed": 2,
+      "angle": 1.3,
+      "noise": 0.001,
+      "next_DoLP": 0.8,
+      "previous_projection_boundary": false,
+      "baseline_success": true,
+      "baseline_gap": 1.696621779369249e-14,
+      "baseline_gradient_inf": 1.993085390187755e-07,
+      "baseline_radius": 0.4996320152725637,
+      "normalized_radial_curvature": 0.46179566651389337,
+      "audit_trigger": false,
+      "audited_success": true,
+      "audited_gap": 1.696621779369249e-14,
+      "initial_coordinates": [
+        -0.00022488344954238546,
+        -0.8307774632595613,
+        0.500177406012419
+      ],
+      "previous_observations": [
+        0.07168295157828675,
+        0.7577504758763146,
+        0.9277993027881861,
+        0.2423175534269028
+      ],
+      "observations": [
+        0.15706752190590134,
+        0.7063904514202437,
+        0.8414329041861948,
+        0.29379252123379485
+      ],
+      "baseline_coordinates": [
+        -0.0006586617127328601,
+        -0.4278841290909086,
+        0.25796767773780876
+      ],
+      "audited_coordinates": [
+        -0.0006586617127328601,
+        -0.4278841290909086,
+        0.25796767773780876
+      ]
+    },
+    {
+      "seed": 2,
+      "angle": 1.3,
+      "noise": 0.001,
+      "next_DoLP": 0.99,
+      "previous_projection_boundary": false,
+      "baseline_success": true,
+      "baseline_gap": 2.86165617525052e-13,
+      "baseline_gradient_inf": 9.011377885327349e-07,
+      "baseline_radius": 0.8661996626323365,
+      "normalized_radial_curvature": 0.01328596597458296,
+      "audit_trigger": false,
+      "audited_success": true,
+      "audited_gap": 2.86165617525052e-13,
+      "initial_coordinates": [
+        -0.00022488344954238546,
+        -0.8307774632595613,
+        0.500177406012419
+      ],
+      "previous_observations": [
+        0.07168295157828675,
+        0.7577504758763146,
+        0.9277993027881861,
+        0.2423175534269028
+      ],
+      "observations": [
+        0.07566309033585135,
+        0.7553630817432828,
+        0.9228373357562447,
+        0.24481989091075576
+      ],
+      "baseline_coordinates": [
+        -0.0006579416309752859,
+        -0.7418936847111629,
+        0.4470968755539085
+      ],
+      "audited_coordinates": [
+        -0.0006579416309752859,
+        -0.7418936847111629,
+        0.4470968755539085
+      ]
+    },
+    {
+      "seed": 2,
+      "angle": 1.3,
+      "noise": 0.01,
+      "next_DoLP": 0.8,
+      "previous_projection_boundary": false,
+      "baseline_success": true,
+      "baseline_gap": 1.0597588345068187e-14,
+      "baseline_gradient_inf": 1.1400912621120235e-07,
+      "baseline_radius": 0.4963505078953568,
+      "normalized_radial_curvature": 0.4707323527306396,
+      "audit_trigger": false,
+      "audited_success": true,
+      "audited_gap": 1.0597588345068187e-14,
+      "initial_coordinates": [
+        -0.002251113507372758,
+        -0.7757357474764033,
+        0.4702996259756199
+      ],
+      "previous_observations": [
+        0.07282890594313042,
+        0.7577485855665564,
+        0.9219936377215979,
+        0.24293170746561682
+      ],
+      "observations": [
+        0.1554747311872239,
+        0.7080995756451666,
+        0.8295295297337377,
+        0.2937301508952193
+      ],
+      "baseline_coordinates": [
+        -0.00660481025534074,
+        -0.42284244287192674,
+        0.25993863736289763
+      ],
+      "audited_coordinates": [
+        -0.00660481025534074,
+        -0.42284244287192674,
+        0.25993863736289763
+      ]
+    },
+    {
+      "seed": 2,
+      "angle": 1.3,
+      "noise": 0.01,
+      "next_DoLP": 0.99,
+      "previous_projection_boundary": false,
+      "baseline_success": true,
+      "baseline_gap": 2.522567251654964e-13,
+      "baseline_gradient_inf": 8.173224825951875e-07,
+      "baseline_radius": 0.8543067579513258,
+      "normalized_radial_curvature": 0.016302880847315064,
+      "audit_trigger": false,
+      "audited_success": true,
+      "audited_gap": 2.522567251654964e-13,
+      "initial_coordinates": [
+        -0.002251113507372758,
+        -0.7757357474764033,
+        0.4702996259756199
+      ],
+      "previous_observations": [
+        0.07282890594313042,
+        0.7577485855665564,
+        0.9219936377215979,
+        0.24293170746561682
+      ],
+      "observations": [
+        0.07407029961717389,
+        0.7570722059682057,
+        0.9109339613037877,
+        0.24475752057218023
+      ],
+      "baseline_coordinates": [
+        -0.006605198227515593,
+        -0.7286163322466128,
+        0.44604739329447785
+      ],
+      "audited_coordinates": [
+        -0.006605198227515593,
+        -0.7286163322466128,
+        0.44604739329447785
+      ]
+    },
+    {
+      "seed": 3,
+      "angle": 0.0,
+      "noise": 0.001,
+      "next_DoLP": 0.8,
+      "previous_projection_boundary": false,
+      "baseline_success": true,
+      "baseline_gap": 1.6242621846110816e-14,
+      "baseline_gradient_inf": 1.6036688462049928e-07,
+      "baseline_radius": 0.5005627388459016,
+      "normalized_radial_curvature": 0.45928040006363124,
+      "audit_trigger": false,
+      "audited_success": true,
+      "audited_gap": 1.6242621846110816e-14,
+      "initial_coordinates": [
+        0.0009745413971447974,
+        0.9491675291875931,
+        0.0018733011172988134
+      ],
+      "previous_observations": [
+        1.000684293286028,
+        0.5010834208136583,
+        0.0010717585805205695,
+        0.4991105601536097
+      ],
+      "observations": [
+        0.9007562681175205,
+        0.5007664686255541,
+        0.0993228452440526,
+        0.5013876251381917
+      ],
+      "baseline_coordinates": [
+        0.00111588216408397,
+        0.5005625884016363,
+        -0.00038808963458824273
+      ],
+      "audited_coordinates": [
+        0.00111588216408397,
+        0.5005625884016363,
+        -0.00038808963458824273
+      ]
+    },
+    {
+      "seed": 3,
+      "angle": 0.0,
+      "noise": 0.001,
+      "next_DoLP": 0.99,
+      "previous_projection_boundary": false,
+      "baseline_success": true,
+      "baseline_gap": 4.9594096699094505e-15,
+      "baseline_gradient_inf": 1.0777696469397227e-07,
+      "baseline_radius": 0.8696646451333213,
+      "normalized_radial_curvature": 0.012481631683150182,
+      "audit_trigger": false,
+      "audited_success": true,
+      "audited_gap": 4.9594096699094505e-15,
+      "initial_coordinates": [
+        0.0009745413971447974,
+        0.9491675291875931,
+        0.0018733011172988134
+      ],
+      "previous_observations": [
+        1.000684293286028,
+        0.5010834208136583,
+        0.0010717585805205695,
+        0.4991105601536097
+      ],
+      "observations": [
+        0.9957562681175205,
+        0.5007664686255541,
+        0.004322845244052637,
+        0.5013876251381917
+      ],
+      "baseline_coordinates": [
+        0.0011158864810955056,
+        0.8696644744679147,
+        -0.0005448332876673116
+      ],
+      "audited_coordinates": [
+        0.0011158864810955056,
+        0.8696644744679147,
+        -0.0005448332876673116
+      ]
+    },
+    {
+      "seed": 3,
+      "angle": 0.0,
+      "noise": 0.01,
+      "next_DoLP": 0.8,
+      "previous_projection_boundary": false,
+      "baseline_success": true,
+      "baseline_gap": 1.0028870095490916e-18,
+      "baseline_gradient_inf": 1.5608213209278937e-09,
+      "baseline_radius": 0.5056352390486218,
+      "normalized_radial_curvature": 0.44572462888101755,
+      "audit_trigger": false,
+      "audited_success": true,
+      "audited_gap": 1.0028870095490916e-18,
+      "initial_coordinates": [
+        0.009702938045262411,
+        0.8485709980975364,
+        0.016806241748130734
+      ],
+      "previous_observations": [
+        1.0068429328602806,
+        0.5108342081365833,
+        0.010717585805205694,
+        0.4911056015360971
+      ],
+      "observations": [
+        0.907562681175205,
+        0.5076646862555412,
+        0.0932284524405263,
+        0.5138762513819166
+      ],
+      "baseline_coordinates": [
+        0.01110415686759874,
+        0.505620529985581,
+        -0.0038567635210207834
+      ],
+      "audited_coordinates": [
+        0.01110415686759874,
+        0.505620529985581,
+        -0.0038567635210207834
+      ]
+    },
+    {
+      "seed": 3,
+      "angle": 0.0,
+      "noise": 0.01,
+      "next_DoLP": 0.99,
+      "previous_projection_boundary": false,
+      "baseline_success": true,
+      "baseline_gap": 5.912936833956176e-13,
+      "baseline_gradient_inf": 5.77630766355828e-07,
+      "baseline_radius": 0.8901225256576797,
+      "normalized_radial_curvature": 0.008358542239519587,
+      "audit_trigger": false,
+      "audited_success": true,
+      "audited_gap": 5.912936833956176e-13,
+      "initial_coordinates": [
+        0.009702938045262411,
+        0.8485709980975364,
+        0.016806241748130734
+      ],
+      "previous_observations": [
+        1.0068429328602806,
+        0.5108342081365833,
+        0.010717585805205694,
+        0.4911056015360971
+      ],
+      "observations": [
+        1.002562681175205,
+        0.5076646862555412,
+        -0.0017715475594736688,
+        0.5138762513819166
+      ],
+      "baseline_coordinates": [
+        0.011103811505358299,
+        0.8901055076150888,
+        -0.005504179910922783
+      ],
+      "audited_coordinates": [
+        0.011103811505358299,
+        0.8901055076150888,
+        -0.005504179910922783
+      ]
+    },
+    {
+      "seed": 3,
+      "angle": 0.7,
+      "noise": 0.001,
+      "next_DoLP": 0.8,
+      "previous_projection_boundary": true,
+      "baseline_success": true,
+      "baseline_gap": 0.0067659432780075995,
+      "baseline_gradient_inf": 3.814773278126167e-07,
+      "baseline_radius": 1.0000012745512654,
+      "normalized_radial_curvature": -0.07191011783194874,
+      "audit_trigger": true,
+      "audited_success": true,
+      "audited_gap": 2.569611029558665e-15,
+      "initial_coordinates": [
+        0.0012753824002469207,
+        0.16926171012227775,
+        0.9855711407536658
+      ],
+      "previous_observations": [
+        0.5856678647361485,
+        0.9938082858078884,
+        0.4160881871304,
+        0.006385695159379642
+      ],
+      "observations": [
+        0.568743125277617,
+        0.8949463606209381,
+        0.4313359880839562,
+        0.1072077331428076
+      ],
+      "baseline_coordinates": [
+        -0.06832689771571764,
+        0.17183839314853963,
+        0.9851264465764196
+      ],
+      "audited_coordinates": [
+        0.0011159139802925655,
+        0.0856939829034648,
+        0.49127333165441983
+      ]
+    },
+    {
+      "seed": 3,
+      "angle": 0.7,
+      "noise": 0.001,
+      "next_DoLP": 0.99,
+      "previous_projection_boundary": true,
+      "baseline_success": true,
+      "baseline_gap": 2.1980080818022328e-05,
+      "baseline_gradient_inf": 7.531268102611124e-07,
+      "baseline_radius": 1.0000009220981148,
+      "normalized_radial_curvature": -0.0038386214068620505,
+      "audit_trigger": true,
+      "audited_success": true,
+      "audited_gap": 1.0195464736727217e-13,
+      "initial_coordinates": [
+        0.0012753824002469207,
+        0.16926171012227775,
+        0.9855711407536658
+      ],
+      "previous_observations": [
+        0.5856678647361485,
+        0.9938082858078884,
+        0.4160881871304,
+        0.006385695159379642
+      ],
+      "observations": [
+        0.5848900038531398,
+        0.9885640849698418,
+        0.4151891095084333,
+        0.013590008793903903
+      ],
+      "baseline_coordinates": [
+        -0.0027145483222473826,
+        0.17147889783166645,
+        0.9851887290237932
+      ],
+      "audited_coordinates": [
+        0.0011159773986793861,
+        0.14726982641141542,
+        0.8460987512438422
+      ]
+    },
+    {
+      "seed": 3,
+      "angle": 0.7,
+      "noise": 0.01,
+      "next_DoLP": 0.8,
+      "previous_projection_boundary": true,
+      "baseline_success": true,
+      "baseline_gap": 1.7113562086543133e-14,
+      "baseline_gradient_inf": 6.864203866955487e-08,
+      "baseline_radius": 2.0517666214446884,
+      "normalized_radial_curvature": 0.027970811172105283,
+      "audit_trigger": false,
+      "audited_success": true,
+      "audited_gap": 1.7113562086543133e-14,
+      "initial_coordinates": [
+        0.012688675660390324,
+        0.1630262551287417,
+        0.9866217310290193
+      ],
+      "previous_observations": [
+        0.5918265043104011,
+        1.0035590731308133,
+        0.4257340143550852,
+        -0.0016192634581329319
+      ],
+      "observations": [
+        0.5755495383353014,
+        0.9018445782509252,
+        0.4252415952804299,
+        0.11969635938653253
+      ],
+      "baseline_coordinates": [
+        0.011104124986573809,
+        0.38721010178684273,
+        2.014898162674425
+      ],
+      "audited_coordinates": [
+        0.011104124986573809,
+        0.38721010178684273,
+        2.014898162674425
+      ]
+    },
+    {
+      "seed": 3,
+      "angle": 0.7,
+      "noise": 0.01,
+      "next_DoLP": 0.99,
+      "previous_projection_boundary": true,
+      "baseline_success": true,
+      "baseline_gap": 9.3883729187106e-14,
+      "baseline_gradient_inf": 6.075966220241328e-08,
+      "baseline_radius": 1.2504080982088097,
+      "normalized_radial_curvature": 0.0147061464055183,
+      "audit_trigger": false,
+      "audited_success": true,
+      "audited_gap": 9.3883729187106e-14,
+      "initial_coordinates": [
+        0.012688675660390324,
+        0.1630262551287417,
+        0.9866217310290193
+      ],
+      "previous_observations": [
+        0.5918265043104011,
+        1.0035590731308133,
+        0.4257340143550852,
+        -0.0016192634581329319
+      ],
+      "observations": [
+        0.5916964169108243,
+        0.9954623025998289,
+        0.409094716704907,
+        0.026078635037628826
+      ],
+      "baseline_coordinates": [
+        0.011103959889468662,
+        0.23146702950993256,
+        1.228797553023288
+      ],
+      "audited_coordinates": [
+        0.011103959889468662,
+        0.23146702950993256,
+        1.228797553023288
+      ]
+    },
+    {
+      "seed": 3,
+      "angle": 1.3,
+      "noise": 0.001,
+      "next_DoLP": 0.8,
+      "previous_projection_boundary": true,
+      "baseline_success": true,
+      "baseline_gap": 0.006845521616999459,
+      "baseline_gradient_inf": 3.5414142597611775e-08,
+      "baseline_radius": 1.0000002927469709,
+      "normalized_radial_curvature": -0.07236261271317004,
+      "audit_trigger": true,
+      "audited_success": true,
+      "audited_gap": 4.760759903229346e-15,
+      "initial_coordinates": [
+        0.0010994519089552706,
+        -0.8561203391315948,
+        0.5167765135193384
+      ],
+      "previous_observations": [
+        0.0722399166015544,
+        0.7588341067243904,
+        0.9295161352649942,
+        0.24135987424287764
+      ],
+      "observations": [
+        0.15800076676994157,
+        0.7069670173541397,
+        0.8420783465916316,
+        0.295187076409606
+      ],
+      "baseline_coordinates": [
+        -0.06874837073743754,
+        -0.8567555860620872,
+        0.5157232312446638
+      ],
+      "audited_coordinates": [
+        0.0011158913920074256,
+        -0.42620909989073685,
+        0.2565562204643496
+      ]
+    },
+    {
+      "seed": 3,
+      "angle": 1.3,
+      "noise": 0.001,
+      "next_DoLP": 0.99,
+      "previous_projection_boundary": true,
+      "baseline_success": true,
+      "baseline_gap": 2.6734012060975518e-05,
+      "baseline_gradient_inf": 1.2604204577535232e-07,
+      "baseline_radius": 1.000000282883133,
+      "normalized_radial_curvature": -0.004234878850948158,
+      "audit_trigger": true,
+      "audited_success": true,
+      "audited_gap": 3.030483971736049e-13,
+      "initial_coordinates": [
+        0.0010994519089552706,
+        -0.8561203391315948,
+        0.5167765135193384
+      ],
+      "previous_observations": [
+        0.0722399166015544,
+        0.7588341067243904,
+        0.9295161352649942,
+        0.24135987424287764
+      ],
+      "observations": [
+        0.07659633519989156,
+        0.7559396476771788,
+        0.9234827781616816,
+        0.24621444608656692
+      ],
+      "baseline_coordinates": [
+        -0.003109833648396922,
+        -0.8567811972490175,
+        0.5156806626264805
+      ],
+      "audited_coordinates": [
+        0.001116458514261674,
+        -0.7301664598266945,
+        0.439473002746983
+      ]
+    },
+    {
+      "seed": 3,
+      "angle": 1.3,
+      "noise": 0.01,
+      "next_DoLP": 0.8,
+      "previous_projection_boundary": true,
+      "baseline_success": true,
+      "baseline_gap": 7.708508039782486e-14,
+      "baseline_gradient_inf": 1.5396879135144398e-07,
+      "baseline_radius": 2.102086792368508,
+      "normalized_radial_curvature": 0.027112317795097544,
+      "audit_trigger": false,
+      "audited_success": true,
+      "audited_gap": 7.708508039782486e-14,
+      "initial_coordinates": [
+        0.010972987737688822,
+        -0.849214172552367,
+        0.5280485670240935
+      ],
+      "previous_observations": [
+        0.07839855617580697,
+        0.7685848940473154,
+        0.9391619624896793,
+        0.23335491562536506
+      ],
+      "observations": [
+        0.16480717982762608,
+        0.7138652349841268,
+        0.8359839537881053,
+        0.3076757026533309
+      ],
+      "baseline_coordinates": [
+        0.011104212603089442,
+        -1.798393491792368,
+        1.0883702179538806
+      ],
+      "audited_coordinates": [
+        0.011104212603089442,
+        -1.798393491792368,
+        1.0883702179538806
+      ]
+    },
+    {
+      "seed": 3,
+      "angle": 1.3,
+      "noise": 0.01,
+      "next_DoLP": 0.99,
+      "previous_projection_boundary": true,
+      "baseline_success": true,
+      "baseline_gap": 0.00022385518664900828,
+      "baseline_gradient_inf": 3.425534807069766e-07,
+      "baseline_radius": 1.0000342136226343,
+      "normalized_radial_curvature": -0.012227886501155204,
+      "audit_trigger": true,
+      "audited_success": true,
+      "audited_gap": 1.6038642717533177e-13,
+      "initial_coordinates": [
+        0.010972987737688822,
+        -0.849214172552367,
+        0.5280485670240935
+      ],
+      "previous_observations": [
+        0.07839855617580697,
+        0.7685848940473154,
+        0.9391619624896793,
+        0.23335491562536506
+      ],
+      "observations": [
+        0.08340274825757607,
+        0.7628378653071659,
+        0.9173883853581553,
+        0.25870307233029183
+      ],
+      "baseline_coordinates": [
+        -0.0010506690102927002,
+        -0.8558230208992237,
+        0.5173348870072145
+      ],
+      "audited_coordinates": [
+        0.011104376857604384,
+        -0.651076697698754,
+        0.3935678712008269
+      ]
+    },
+    {
+      "seed": 4,
+      "angle": 0.0,
+      "noise": 0.001,
+      "next_DoLP": 0.8,
+      "previous_projection_boundary": false,
+      "baseline_success": true,
+      "baseline_gap": 1.4670007421343183e-13,
+      "baseline_gradient_inf": 4.638950350152234e-07,
+      "baseline_radius": 0.49830192428237974,
+      "normalized_radial_curvature": 0.4654052080795325,
+      "audit_trigger": false,
+      "audited_success": true,
+      "audited_gap": 1.4670007421343183e-13,
+      "initial_coordinates": [
+        0.0004281657741861959,
+        0.976300889555294,
+        0.0007654853649005807
+      ],
+      "previous_observations": [
+        1.0018521196180594,
+        0.4990383644611262,
+        0.0017118434027900424,
+        0.49825418741849425
+      ],
+      "observations": [
+        0.9008216472133134,
+        0.5009709713506989,
+        0.1014417168434258,
+        0.4993106665979043
+      ],
+      "baseline_coordinates": [
+        0.001271368787427668,
+        0.4983008487265723,
+        0.0010353269532720904
+      ],
+      "audited_coordinates": [
+        0.001271368787427668,
+        0.4983008487265723,
+        0.0010353269532720904
+      ]
+    },
+    {
+      "seed": 4,
+      "angle": 0.0,
+      "noise": 0.001,
+      "next_DoLP": 0.99,
+      "previous_projection_boundary": false,
+      "baseline_success": true,
+      "baseline_gap": 8.457536066902176e-14,
+      "baseline_gradient_inf": 9.940826500320116e-08,
+      "baseline_radius": 0.8565091368300363,
+      "normalized_radial_curvature": 0.01571365756144978,
+      "audit_trigger": false,
+      "audited_success": true,
+      "audited_gap": 8.457536066902176e-14,
+      "initial_coordinates": [
+        0.0004281657741861959,
+        0.976300889555294,
+        0.0007654853649005807
+      ],
+      "previous_observations": [
+        1.0018521196180594,
+        0.4990383644611262,
+        0.0017118434027900424,
+        0.49825418741849425
+      ],
+      "observations": [
+        0.9958216472133133,
+        0.5009709713506989,
+        0.006441716843425823,
+        0.4993106665979043
+      ],
+      "baseline_coordinates": [
+        0.0012719860557536755,
+        0.8565079309595043,
+        0.0014372462568559888
+      ],
+      "audited_coordinates": [
+        0.0012719860557536755,
+        0.8565079309595043,
+        0.0014372462568559888
+      ]
+    },
+    {
+      "seed": 4,
+      "angle": 0.0,
+      "noise": 0.01,
+      "next_DoLP": 0.8,
+      "previous_projection_boundary": false,
+      "baseline_success": true,
+      "baseline_gap": 1.9643046412533283e-14,
+      "baseline_gradient_inf": 1.9448854675575012e-07,
+      "baseline_radius": 0.4837201800173448,
+      "normalized_radial_curvature": 0.5061324554877825,
+      "audit_trigger": false,
+      "audited_success": true,
+      "audited_gap": 1.9643046412533283e-14,
+      "initial_coordinates": [
+        0.004273430377798751,
+        0.9273304669631534,
+        0.007261726156641009
+      ],
+      "previous_observations": [
+        1.0185211961805933,
+        0.4903836446112618,
+        0.017118434027900423,
+        0.48254187418494227
+      ],
+      "observations": [
+        0.908216472133134,
+        0.5097097135069892,
+        0.11441716843425817,
+        0.4931066659790431
+      ],
+      "baseline_coordinates": [
+        0.01264482272757633,
+        0.4836144064476871,
+        0.010115257399777191
+      ],
+      "audited_coordinates": [
+        0.01264482272757633,
+        0.4836144064476871,
+        0.010115257399777191
+      ]
+    },
+    {
+      "seed": 4,
+      "angle": 0.0,
+      "noise": 0.01,
+      "next_DoLP": 0.99,
+      "previous_projection_boundary": false,
+      "baseline_success": true,
+      "baseline_gap": 3.10157173381842e-14,
+      "baseline_gradient_inf": 1.4408856386808449e-07,
+      "baseline_radius": 0.7856010994601156,
+      "normalized_radial_curvature": 0.04285719113665749,
+      "audit_trigger": false,
+      "audited_success": true,
+      "audited_gap": 3.10157173381842e-14,
+      "initial_coordinates": [
+        0.004273430377798751,
+        0.9273304669631534,
+        0.007261726156641009
+      ],
+      "previous_observations": [
+        1.0185211961805933,
+        0.4903836446112618,
+        0.017118434027900423,
+        0.48254187418494227
+      ],
+      "observations": [
+        1.003216472133134,
+        0.5097097135069892,
+        0.01941716843425819,
+        0.4931066659790431
+      ],
+      "baseline_coordinates": [
+        0.01264494566420247,
+        0.7854892480707677,
+        0.013256267882114217
+      ],
+      "audited_coordinates": [
+        0.01264494566420247,
+        0.7854892480707677,
+        0.013256267882114217
+      ]
+    },
+    {
+      "seed": 4,
+      "angle": 0.7,
+      "noise": 0.001,
+      "next_DoLP": 0.8,
+      "previous_projection_boundary": true,
+      "baseline_success": true,
+      "baseline_gap": 0.006649427683408343,
+      "baseline_gradient_inf": 2.838273033441141e-08,
+      "baseline_radius": 1.0000002416679774,
+      "normalized_radial_curvature": -0.07123240020511544,
+      "audit_trigger": true,
+      "audited_success": true,
+      "audited_gap": 2.593412231860037e-15,
+      "initial_coordinates": [
+        0.0005508896708062031,
+        0.1699720178058911,
+        0.9854488891682783
+      ],
+      "previous_observations": [
+        0.5868356910681798,
+        0.9917632294553562,
+        0.41672827195266954,
+        0.005529322424264155
+      ],
+      "observations": [
+        0.5688085043734098,
+        0.895150863346083,
+        0.43345485968332936,
+        0.10513077460252025
+      ],
+      "baseline_coordinates": [
+        -0.06753814224127885,
+        0.16886880152730913,
+        0.9856387833312686
+      ],
+      "audited_coordinates": [
+        0.0012716253661989724,
+        0.08452467097152587,
+        0.4933460633722852
+      ]
+    },
+    {
+      "seed": 4,
+      "angle": 0.7,
+      "noise": 0.001,
+      "next_DoLP": 0.99,
+      "previous_projection_boundary": true,
+      "baseline_success": true,
+      "baseline_gap": 1.5815628038643234e-05,
+      "baseline_gradient_inf": 7.571513164657057e-08,
+      "baseline_radius": 1.0000001426883418,
+      "normalized_radial_curvature": -0.003253562677318393,
+      "audit_trigger": true,
+      "audited_success": true,
+      "audited_gap": 9.471951015927688e-13,
+      "initial_coordinates": [
+        0.0005508896708062031,
+        0.1699720178058911,
+        0.9854488891682783
+      ],
+      "previous_observations": [
+        0.5868356910681798,
+        0.9917632294553562,
+        0.41672827195266954,
+        0.005529322424264155
+      ],
+      "observations": [
+        0.5849553829489327,
+        0.9887685876949867,
+        0.4173079811078065,
+        0.011513050253616557
+      ],
+      "baseline_coordinates": [
+        -0.0019765148549750833,
+        0.16907932701283077,
+        0.9856025905777603
+      ],
+      "audited_coordinates": [
+        0.0012717447646800068,
+        0.1469793880532157,
+        0.8567772032492281
+      ]
+    },
+    {
+      "seed": 4,
+      "angle": 0.7,
+      "noise": 0.01,
+      "next_DoLP": 0.8,
+      "previous_projection_boundary": true,
+      "baseline_success": true,
+      "baseline_gap": 1.78379785443529e-14,
+      "baseline_gradient_inf": 2.0440407856430743e-07,
+      "baseline_radius": 1.9787620291963728,
+      "normalized_radial_curvature": 0.029119588934990406,
+      "audit_trigger": false,
+      "audited_success": true,
+      "audited_gap": 1.78379785443529e-14,
+      "initial_coordinates": [
+        0.005495287957487404,
+        0.17001554502889238,
+        0.9854413805237371
+      ],
+      "previous_observations": [
+        0.6035047676307139,
+        0.9831085096054919,
+        0.4321348625777799,
+        -0.010182990809287803
+      ],
+      "observations": [
+        0.5762033292932304,
+        0.9038896055023733,
+        0.4464303112741617,
+        0.09892677398365905
+      ],
+      "baseline_coordinates": [
+        0.012644609173142488,
+        0.31494182076392424,
+        1.9535380256660608
+      ],
+      "audited_coordinates": [
+        0.012644609173142488,
+        0.31494182076392424,
+        1.9535380256660608
+      ]
+    },
+    {
+      "seed": 4,
+      "angle": 0.7,
+      "noise": 0.01,
+      "next_DoLP": 0.99,
+      "previous_projection_boundary": true,
+      "baseline_success": true,
+      "baseline_gap": 9.071922014151465e-06,
+      "baseline_gradient_inf": 1.5485521089910918e-07,
+      "baseline_radius": 1.000021002554439,
+      "normalized_radial_curvature": -0.0024340640992653955,
+      "audit_trigger": true,
+      "audited_success": true,
+      "audited_gap": 5.3534759091034e-14,
+      "initial_coordinates": [
+        0.005495287957487404,
+        0.17001554502889238,
+        0.9854413805237371
+      ],
+      "previous_observations": [
+        0.6035047676307139,
+        0.9831085096054919,
+        0.4321348625777799,
+        -0.010182990809287803
+      ],
+      "observations": [
+        0.5923502078687533,
+        0.997507329851277,
+        0.43028343269863883,
+        0.005309049634755358
+      ],
+      "baseline_coordinates": [
+        0.010213316296429964,
+        0.16120805989398526,
+        0.9869417242042218
+      ],
+      "audited_coordinates": [
+        0.012644405638824574,
+        0.14282259704517164,
+        0.8743825305779185
+      ]
+    },
+    {
+      "seed": 4,
+      "angle": 1.3,
+      "noise": 0.001,
+      "next_DoLP": 0.8,
+      "previous_projection_boundary": false,
+      "baseline_success": true,
+      "baseline_gap": 3.519960269982893e-14,
+      "baseline_gradient_inf": 2.4198578772393955e-07,
+      "baseline_radius": 0.5003848512502885,
+      "normalized_radial_curvature": 0.45976083129672785,
+      "audit_trigger": false,
+      "audited_success": true,
+      "audited_gap": 3.519960269982893e-14,
+      "initial_coordinates": [
+        0.0004281657741861959,
+        -0.8420975383453917,
+        0.5074567406599193
+      ],
+      "previous_observations": [
+        0.07340774293358568,
+        0.7567890503718583,
+        0.9301562200872637,
+        0.24050350150776215
+      ],
+      "observations": [
+        0.15806614586573448,
+        0.7071715200792845,
+        0.8441972181910048,
+        0.2931101178693186
+      ],
+      "baseline_coordinates": [
+        0.0012715879044644775,
+        -0.4284186868239056,
+        0.2585390263400357
+      ],
+      "audited_coordinates": [
+        0.0012715879044644775,
+        -0.4284186868239056,
+        0.2585390263400357
+      ]
+    },
+    {
+      "seed": 4,
+      "angle": 1.3,
+      "noise": 0.001,
+      "next_DoLP": 0.99,
+      "previous_projection_boundary": false,
+      "baseline_success": true,
+      "baseline_gap": 1.617065552875006e-12,
+      "baseline_gradient_inf": 9.132744763180717e-07,
+      "baseline_radius": 0.8684237697064563,
+      "normalized_radial_curvature": 0.012765191864494886,
+      "audit_trigger": false,
+      "audited_success": true,
+      "audited_gap": 1.617065552875006e-12,
+      "initial_coordinates": [
+        0.0004281657741861959,
+        -0.8420975383453917,
+        0.5074567406599193
+      ],
+      "previous_observations": [
+        0.07340774293358568,
+        0.7567890503718583,
+        0.9301562200872637,
+        0.24050350150776215
+      ],
+      "observations": [
+        0.07666171429568445,
+        0.7561441504023236,
+        0.9256016497610547,
+        0.2441374875462796
+      ],
+      "baseline_coordinates": [
+        0.001270144066082556,
+        -0.7436439780752854,
+        0.4485013686306172
+      ],
+      "audited_coordinates": [
+        0.001270144066082556,
+        -0.7436439780752854,
+        0.4485013686306172
+      ]
+    },
+    {
+      "seed": 4,
+      "angle": 1.3,
+      "noise": 0.01,
+      "next_DoLP": 0.8,
+      "previous_projection_boundary": false,
+      "baseline_success": true,
+      "baseline_gap": 1.501207741016336e-13,
+      "baseline_gradient_inf": 5.122347457153188e-07,
+      "baseline_radius": 0.5038972945824495,
+      "normalized_radial_curvature": 0.45034008632377664,
+      "audit_trigger": false,
+      "audited_success": true,
+      "audited_gap": 1.501207741016336e-13,
+      "initial_coordinates": [
+        0.004273430377798973,
+        -0.8089194293554524,
+        0.4948560705036161
+      ],
+      "previous_observations": [
+        0.09007681949611976,
+        0.748134330521994,
+        0.9455628107123741,
+        0.22479118827421019
+      ],
+      "observations": [
+        0.16546097078555502,
+        0.7159102622355749,
+        0.8571726697818371,
+        0.28690611725045745
+      ],
+      "baseline_coordinates": [
+        0.012644218623540864,
+        -0.42822395949639697,
+        0.2655875072377089
+      ],
+      "audited_coordinates": [
+        0.012644218623540864,
+        -0.42822395949639697,
+        0.2655875072377089
+      ]
+    },
+    {
+      "seed": 4,
+      "angle": 1.3,
+      "noise": 0.01,
+      "next_DoLP": 0.99,
+      "previous_projection_boundary": false,
+      "baseline_success": true,
+      "baseline_gap": 1.49857258763611e-13,
+      "baseline_gradient_inf": 4.574674444328428e-07,
+      "baseline_radius": 0.8761175027799943,
+      "normalized_radial_curvature": 0.011067669392735999,
+      "audit_trigger": false,
+      "audited_success": true,
+      "audited_gap": 1.49857258763611e-13,
+      "initial_coordinates": [
+        0.004273430377798973,
+        -0.8089194293554524,
+        0.4948560705036161
+      ],
+      "previous_observations": [
+        0.09007681949611976,
+        0.748134330521994,
+        0.9455628107123741,
+        0.22479118827421019
+      ],
+      "observations": [
+        0.08405653921550503,
+        0.764882892558614,
+        0.9385771013518871,
+        0.2379334869274184
+      ],
+      "baseline_coordinates": [
+        0.012645251429333424,
+        -0.7457275755431718,
+        0.4598611331173318
+      ],
+      "audited_coordinates": [
+        0.012645251429333424,
+        -0.7457275755431718,
+        0.4598611331173318
+      ]
+    }
+  ]
+}

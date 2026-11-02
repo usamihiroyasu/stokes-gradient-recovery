@@ -1,0 +1,102 @@
+{
+  "datasets": [
+    {
+      "dataset": "DeepSfP",
+      "methods": {
+        "BFGS": {
+          "n": 576,
+          "cold_false": 0,
+          "warm_false": 0,
+          "curvature_false": 0,
+          "curvature_detected_on_raw": 0,
+          "physical_rejected_on_raw": 0,
+          "max_warm_gap": 3.797135445088025e-11,
+          "max_warm_radius": 0.4150293122885031,
+          "physical_restart_native_false": 0,
+          "physical_restart_interventions": 0,
+          "native_failures": 0
+        },
+        "L-BFGS-B": {
+          "n": 576,
+          "cold_false": 0,
+          "warm_false": 0,
+          "curvature_false": 0,
+          "curvature_detected_on_raw": 0,
+          "physical_rejected_on_raw": 0,
+          "max_warm_gap": 3.2327381033435145e-11,
+          "max_warm_radius": 0.41502987240328176,
+          "physical_restart_native_false": 0,
+          "physical_restart_interventions": 0,
+          "native_failures": 0
+        }
+      }
+    },
+    {
+      "dataset": "PolarNS_means",
+      "methods": {
+        "BFGS": {
+          "n": 384,
+          "cold_false": 0,
+          "warm_false": 111,
+          "curvature_false": 111,
+          "curvature_detected_on_raw": 0,
+          "physical_rejected_on_raw": 111,
+          "max_warm_gap": 0.19813311848067783,
+          "max_warm_radius": 6739300.755515482,
+          "physical_restart_native_false": 68,
+          "physical_restart_interventions": 69,
+          "native_failures": 0
+        },
+        "L-BFGS-B": {
+          "n": 384,
+          "cold_false": 7,
+          "warm_false": 64,
+          "curvature_false": 64,
+          "curvature_detected_on_raw": 0,
+          "physical_rejected_on_raw": 64,
+          "max_warm_gap": 0.19802929692368043,
+          "max_warm_radius": 4608.242140241608,
+          "physical_restart_native_false": 64,
+          "physical_restart_interventions": 64,
+          "native_failures": 0
+        }
+      }
+    },
+    {
+      "dataset": "PolarBurstSR",
+      "methods": {
+        "BFGS": {
+          "n": 3682,
+          "cold_false": 0,
+          "warm_false": 16,
+          "curvature_false": 16,
+          "curvature_detected_on_raw": 0,
+          "physical_rejected_on_raw": 16,
+          "max_warm_gap": 3.6467030717259652e-06,
+          "max_warm_radius": 38.46043388392051,
+          "physical_restart_native_false": 16,
+          "physical_restart_interventions": 16,
+          "native_failures": 0
+        },
+        "L-BFGS-B": {
+          "n": 3682,
+          "cold_false": 7,
+          "warm_false": 104,
+          "curvature_false": 104,
+          "curvature_detected_on_raw": 0,
+          "physical_rejected_on_raw": 104,
+          "max_warm_gap": 0.0003913981630682315,
+          "max_warm_radius": 313.5183926927279,
+          "physical_restart_native_false": 99,
+          "physical_restart_interventions": 101,
+          "native_failures": 0
+        }
+      }
+    }
+  ],
+  "figure_selection": {
+    "fresnel_sequence": 3,
+    "rule": "maximum BFGS raw objective gap across all fixed sequences"
+  },
+  "note": "Counts include separate strata and repeated inputs across histories; no independent-scene or prevalence inference."
+}

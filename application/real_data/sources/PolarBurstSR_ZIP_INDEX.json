@@ -1,0 +1,386 @@
+{
+  "dataset": "PolarBurstSR",
+  "size": 5630323009,
+  "scope": "Selected-member index only; acquisition script checks complete live ZIP directory and verifies pinned payload hashes.",
+  "complete_index_sha256": "8d142e96ba519ebc16c112188e8eccce149da84fc08f34f5af3d3c404337d7b1",
+  "files": [
+    {
+      "name": "test/0000000/frame_00.png",
+      "uncompressed": 40385,
+      "compressed": 40274,
+      "crc32": "a866fb4b",
+      "offset": 78,
+      "method": 8,
+      "flags": 0
+    },
+    {
+      "name": "test/0000000/frame_01.png",
+      "uncompressed": 40563,
+      "compressed": 40476,
+      "crc32": "ca0161b9",
+      "offset": 134518,
+      "method": 8,
+      "flags": 0
+    },
+    {
+      "name": "test/0000000/frame_02.png",
+      "uncompressed": 40278,
+      "compressed": 40227,
+      "crc32": "8942accc",
+      "offset": 217703,
+      "method": 8,
+      "flags": 0
+    },
+    {
+      "name": "test/0000000/frame_03.png",
+      "uncompressed": 40431,
+      "compressed": 40301,
+      "crc32": "145bf69a",
+      "offset": 300374,
+      "method": 8,
+      "flags": 0
+    },
+    {
+      "name": "test/0000000/frame_04.png",
+      "uncompressed": 40090,
+      "compressed": 40048,
+      "crc32": "88189228",
+      "offset": 383522,
+      "method": 8,
+      "flags": 0
+    },
+    {
+      "name": "test/0000000/frame_05.png",
+      "uncompressed": 40583,
+      "compressed": 40501,
+      "crc32": "1cfbb11d",
+      "offset": 466432,
+      "method": 8,
+      "flags": 0
+    },
+    {
+      "name": "test/0000000/frame_06.png",
+      "uncompressed": 41405,
+      "compressed": 41356,
+      "crc32": "2925ec58",
+      "offset": 549594,
+      "method": 8,
+      "flags": 0
+    },
+    {
+      "name": "test/0000000/frame_07.png",
+      "uncompressed": 41399,
+      "compressed": 41361,
+      "crc32": "1769d77f",
+      "offset": 633249,
+      "method": 8,
+      "flags": 0
+    },
+    {
+      "name": "test/0000000/frame_08.png",
+      "uncompressed": 41917,
+      "compressed": 41868,
+      "crc32": "0e20ecf3",
+      "offset": 717106,
+      "method": 8,
+      "flags": 0
+    },
+    {
+      "name": "test/0000000/frame_09.png",
+      "uncompressed": 42530,
+      "compressed": 42495,
+      "crc32": "d4309e05",
+      "offset": 801335,
+      "method": 8,
+      "flags": 0
+    },
+    {
+      "name": "test/0000000/frame_10.png",
+      "uncompressed": 42881,
+      "compressed": 42860,
+      "crc32": "9c7c10fd",
+      "offset": 885856,
+      "method": 8,
+      "flags": 0
+    },
+    {
+      "name": "test/0000000/frame_11.png",
+      "uncompressed": 42540,
+      "compressed": 42504,
+      "crc32": "6a019499",
+      "offset": 971672,
+      "method": 8,
+      "flags": 0
+    },
+    {
+      "name": "test/0000000/frame_12.png",
+      "uncompressed": 41979,
+      "compressed": 41954,
+      "crc32": "1ffeccd7",
+      "offset": 1057091,
+      "method": 8,
+      "flags": 0
+    },
+    {
+      "name": "test/0000000/frame_13.png",
+      "uncompressed": 41928,
+      "compressed": 41879,
+      "crc32": "150361d3",
+      "offset": 1141924,
+      "method": 8,
+      "flags": 0
+    },
+    {
+      "name": "test/0000001/frame_00.png",
+      "uncompressed": 43499,
+      "compressed": 43461,
+      "crc32": "8529780d",
+      "offset": 7920249,
+      "method": 8,
+      "flags": 0
+    },
+    {
+      "name": "test/0000001/frame_01.png",
+      "uncompressed": 43411,
+      "compressed": 43404,
+      "crc32": "0c4738b1",
+      "offset": 8056003,
+      "method": 8,
+      "flags": 0
+    },
+    {
+      "name": "test/0000001/frame_02.png",
+      "uncompressed": 43295,
+      "compressed": 43250,
+      "crc32": "3a673a1c",
+      "offset": 8141227,
+      "method": 8,
+      "flags": 0
+    },
+    {
+      "name": "test/0000001/frame_03.png",
+      "uncompressed": 43411,
+      "compressed": 43402,
+      "crc32": "4effcd01",
+      "offset": 8226451,
+      "method": 8,
+      "flags": 0
+    },
+    {
+      "name": "test/0000001/frame_04.png",
+      "uncompressed": 43212,
+      "compressed": 43200,
+      "crc32": "a13bfa2b",
+      "offset": 8311601,
+      "method": 8,
+      "flags": 0
+    },
+    {
+      "name": "test/0000001/frame_05.png",
+      "uncompressed": 43300,
+      "compressed": 43277,
+      "crc32": "8da4b22e",
+      "offset": 8397054,
+      "method": 8,
+      "flags": 0
+    },
+    {
+      "name": "test/0000001/frame_06.png",
+      "uncompressed": 43699,
+      "compressed": 43673,
+      "crc32": "4b259f24",
+      "offset": 8482339,
+      "method": 8,
+      "flags": 0
+    },
+    {
+      "name": "test/0000001/frame_07.png",
+      "uncompressed": 43810,
+      "compressed": 43786,
+      "crc32": "52485784",
+      "offset": 8568372,
+      "method": 8,
+      "flags": 0
+    },
+    {
+      "name": "test/0000001/frame_08.png",
+      "uncompressed": 43698,
+      "compressed": 43655,
+      "crc32": "879f8a0c",
+      "offset": 8654334,
+      "method": 8,
+      "flags": 0
+    },
+    {
+      "name": "test/0000001/frame_09.png",
+      "uncompressed": 43851,
+      "compressed": 43778,
+      "crc32": "0f55632e",
+      "offset": 8740095,
+      "method": 8,
+      "flags": 0
+    },
+    {
+      "name": "test/0000001/frame_10.png",
+      "uncompressed": 43495,
+      "compressed": 43419,
+      "crc32": "ab54cba9",
+      "offset": 8826220,
+      "method": 8,
+      "flags": 0
+    },
+    {
+      "name": "test/0000001/frame_11.png",
+      "uncompressed": 43412,
+      "compressed": 43353,
+      "crc32": "3c02cdc5",
+      "offset": 8911974,
+      "method": 8,
+      "flags": 0
+    },
+    {
+      "name": "test/0000001/frame_12.png",
+      "uncompressed": 43148,
+      "compressed": 43103,
+      "crc32": "a86e707d",
+      "offset": 8997305,
+      "method": 8,
+      "flags": 0
+    },
+    {
+      "name": "test/0000001/frame_13.png",
+      "uncompressed": 43139,
+      "compressed": 43098,
+      "crc32": "0b22a065",
+      "offset": 9082926,
+      "method": 8,
+      "flags": 0
+    },
+    {
+      "name": "test/0000002/frame_00.png",
+      "uncompressed": 41169,
+      "compressed": 41099,
+      "crc32": "b46a47cd",
+      "offset": 15766116,
+      "method": 8,
+      "flags": 0
+    },
+    {
+      "name": "test/0000002/frame_01.png",
+      "uncompressed": 41305,
+      "compressed": 41235,
+      "crc32": "2b98cc8d",
+      "offset": 15902099,
+      "method": 8,
+      "flags": 0
+    },
+    {
+      "name": "test/0000002/frame_02.png",
+      "uncompressed": 41473,
+      "compressed": 41423,
+      "crc32": "4aa73550",
+      "offset": 15986749,
+      "method": 8,
+      "flags": 0
+    },
+    {
+      "name": "test/0000002/frame_03.png",
+      "uncompressed": 41274,
+      "compressed": 41227,
+      "crc32": "a9add87c",
+      "offset": 16071960,
+      "method": 8,
+      "flags": 0
+    },
+    {
+      "name": "test/0000002/frame_04.png",
+      "uncompressed": 41426,
+      "compressed": 41390,
+      "crc32": "b1e58b10",
+      "offset": 16156860,
+      "method": 8,
+      "flags": 0
+    },
+    {
+      "name": "test/0000002/frame_05.png",
+      "uncompressed": 41417,
+      "compressed": 41374,
+      "crc32": "00fe7fa8",
+      "offset": 16241612,
+      "method": 8,
+      "flags": 0
+    },
+    {
+      "name": "test/0000002/frame_06.png",
+      "uncompressed": 41556,
+      "compressed": 41530,
+      "crc32": "3fe75971",
+      "offset": 16326754,
+      "method": 8,
+      "flags": 0
+    },
+    {
+      "name": "test/0000002/frame_07.png",
+      "uncompressed": 41197,
+      "compressed": 41085,
+      "crc32": "53162d02",
+      "offset": 16411988,
+      "method": 8,
+      "flags": 0
+    },
+    {
+      "name": "test/0000002/frame_08.png",
+      "uncompressed": 41332,
+      "compressed": 41321,
+      "crc32": "f42be0ff",
+      "offset": 16496611,
+      "method": 8,
+      "flags": 0
+    },
+    {
+      "name": "test/0000002/frame_09.png",
+      "uncompressed": 41277,
+      "compressed": 41255,
+      "crc32": "dee3b520",
+      "offset": 16581589,
+      "method": 8,
+      "flags": 0
+    },
+    {
+      "name": "test/0000002/frame_10.png",
+      "uncompressed": 41554,
+      "compressed": 41496,
+      "crc32": "17a44307",
+      "offset": 16666256,
+      "method": 8,
+      "flags": 0
+    },
+    {
+      "name": "test/0000002/frame_11.png",
+      "uncompressed": 41691,
+      "compressed": 41617,
+      "crc32": "f64f7701",
+      "offset": 16750778,
+      "method": 8,
+      "flags": 0
+    },
+    {
+      "name": "test/0000002/frame_12.png",
+      "uncompressed": 41847,
+      "compressed": 41815,
+      "crc32": "f42cc1ae",
+      "offset": 16835514,
+      "method": 8,
+      "flags": 0
+    },
+    {
+      "name": "test/0000002/frame_13.png",
+      "uncompressed": 41883,
+      "compressed": 41846,
+      "crc32": "db24d2af",
+      "offset": 16920860,
+      "method": 8,
+      "flags": 0
+    }
+  ]
+}

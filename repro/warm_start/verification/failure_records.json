@@ -1,0 +1,964 @@
+{
+  "records": [
+    {
+      "method": "BFGS",
+      "gtol": 1e-06,
+      "angle_change": 0.0,
+      "case": 52,
+      "arm": "baseline",
+      "previous_success": true,
+      "result": {
+        "x": [
+          0.030896255839598957,
+          0.043000198183132776,
+          0.5152545984239685
+        ],
+        "success": false,
+        "status": 2,
+        "message": "Desired error not necessarily achieved due to precision loss.",
+        "nit": 10,
+        "loss": 0.0021129181348710758,
+        "native_gradient_inf": 0.054423590958892765,
+        "result_dtype": "float64",
+        "elapsed_seconds": 0.0026465420378372073,
+        "counts": {
+          "function": 34,
+          "gradient": 34,
+          "hessian": 0,
+          "nonfinite_calls": 1,
+          "input_dtypes": [
+            "float64"
+          ],
+          "gradient_dtypes": [
+            "float64"
+          ]
+        },
+        "warnings": {},
+        "gap": 0.0021124272300751174,
+        "false_success": false,
+        "inaccurate": true
+      },
+      "baseline_diagnostic": {
+        "physical": [
+          1.0313784988396264,
+          0.06998849352551754,
+          0.8386448121054165
+        ],
+        "physical_gradient": [
+          0.030105997836955188,
+          -0.032682575582281465,
+          0.024312361680926882
+        ],
+        "head_gradient_inf": 0.054423590958892765,
+        "radius": 0.5170457602967398,
+        "near_fold": false,
+        "normalized_radial_curvature": 0.35826498363414333,
+        "trigger": false,
+        "physical_bound": 0.0021124272300751174,
+        "physical_accept": false,
+        "recovered_gradient": null,
+        "recovered_bound": null,
+        "recovered_gradient_error": null
+      }
+    },
+    {
+      "method": "BFGS",
+      "gtol": 1e-08,
+      "angle_change": 0.0,
+      "case": 0,
+      "arm": "baseline",
+      "previous_success": true,
+      "result": {
+        "x": [
+          2735943.7910306617,
+          13773975.937419446,
+          -380791.16364064073
+        ],
+        "success": false,
+        "status": 2,
+        "message": "Desired error not necessarily achieved due to precision loss.",
+        "nit": 9,
+        "loss": null,
+        "native_gradient_inf": null,
+        "result_dtype": "float64",
+        "elapsed_seconds": 0.013279416016303003,
+        "counts": {
+          "function": 136,
+          "gradient": 136,
+          "hessian": 0,
+          "nonfinite_calls": 111,
+          "input_dtypes": [
+            "float64"
+          ],
+          "gradient_dtypes": [
+            "float64"
+          ]
+        },
+        "warnings": {
+          "overflow encountered in exp": 111
+        },
+        "gap": null,
+        "false_success": false,
+        "inaccurate": true
+      },
+      "baseline_diagnostic": {
+        "physical": [
+          null,
+          null,
+          null
+        ],
+        "physical_gradient": [
+          null,
+          null,
+          null
+        ],
+        "head_gradient_inf": null,
+        "radius": 13779238.550620884,
+        "near_fold": false,
+        "normalized_radial_curvature": null,
+        "trigger": false,
+        "physical_bound": null,
+        "physical_accept": false,
+        "recovered_gradient": null,
+        "recovered_bound": null,
+        "recovered_gradient_error": null
+      }
+    },
+    {
+      "method": "BFGS",
+      "gtol": 1e-08,
+      "angle_change": 0.0,
+      "case": 0,
+      "arm": "always_restart",
+      "previous_success": true,
+      "result": {
+        "x": [
+          2735943.7910306617,
+          13773975.927423265,
+          -380791.1633642893
+        ],
+        "success": false,
+        "status": 3,
+        "message": "NaN result encountered.",
+        "nit": 0,
+        "loss": null,
+        "native_gradient_inf": null,
+        "result_dtype": "float64",
+        "elapsed_seconds": 0.00019516702741384506,
+        "counts": {
+          "function": 1,
+          "gradient": 1,
+          "hessian": 0,
+          "nonfinite_calls": 1,
+          "input_dtypes": [
+            "float64"
+          ],
+          "gradient_dtypes": [
+            "float64"
+          ]
+        },
+        "warnings": {
+          "overflow encountered in exp": 1
+        },
+        "trial_function_evaluations": 3,
+        "trial_gradient_evaluations": 3,
+        "chosen_offset": -0.01,
+        "gap": null,
+        "false_success": false,
+        "inaccurate": true
+      },
+      "baseline_diagnostic": {
+        "physical": [
+          null,
+          null,
+          null
+        ],
+        "physical_gradient": [
+          null,
+          null,
+          null
+        ],
+        "head_gradient_inf": null,
+        "radius": 13779238.550620884,
+        "near_fold": false,
+        "normalized_radial_curvature": null,
+        "trigger": false,
+        "physical_bound": null,
+        "physical_accept": false,
+        "recovered_gradient": null,
+        "recovered_bound": null,
+        "recovered_gradient_error": null
+      }
+    },
+    {
+      "method": "BFGS",
+      "gtol": 1e-08,
+      "angle_change": 0.0,
+      "case": 20,
+      "arm": "baseline",
+      "previous_success": true,
+      "result": {
+        "x": [
+          1770149.850567455,
+          -17925328.06834226,
+          3621962.0314351823
+        ],
+        "success": false,
+        "status": 2,
+        "message": "Desired error not necessarily achieved due to precision loss.",
+        "nit": 11,
+        "loss": null,
+        "native_gradient_inf": null,
+        "result_dtype": "float64",
+        "elapsed_seconds": 0.013297708006575704,
+        "counts": {
+          "function": 137,
+          "gradient": 137,
+          "hessian": 0,
+          "nonfinite_calls": 111,
+          "input_dtypes": [
+            "float64"
+          ],
+          "gradient_dtypes": [
+            "float64"
+          ]
+        },
+        "warnings": {
+          "overflow encountered in exp": 111
+        },
+        "gap": null,
+        "false_success": false,
+        "inaccurate": true
+      },
+      "baseline_diagnostic": {
+        "physical": [
+          null,
+          null,
+          null
+        ],
+        "physical_gradient": [
+          null,
+          null,
+          null
+        ],
+        "head_gradient_inf": null,
+        "radius": 18287591.293411415,
+        "near_fold": false,
+        "normalized_radial_curvature": null,
+        "trigger": false,
+        "physical_bound": null,
+        "physical_accept": false,
+        "recovered_gradient": null,
+        "recovered_bound": null,
+        "recovered_gradient_error": null
+      }
+    },
+    {
+      "method": "BFGS",
+      "gtol": 1e-08,
+      "angle_change": 0.0,
+      "case": 20,
+      "arm": "always_restart",
+      "previous_success": true,
+      "result": {
+        "x": [
+          1770149.850567455,
+          -17925328.05854035,
+          3621962.029454625
+        ],
+        "success": false,
+        "status": 3,
+        "message": "NaN result encountered.",
+        "nit": 0,
+        "loss": null,
+        "native_gradient_inf": null,
+        "result_dtype": "float64",
+        "elapsed_seconds": 0.0002667499938979745,
+        "counts": {
+          "function": 1,
+          "gradient": 1,
+          "hessian": 0,
+          "nonfinite_calls": 1,
+          "input_dtypes": [
+            "float64"
+          ],
+          "gradient_dtypes": [
+            "float64"
+          ]
+        },
+        "warnings": {
+          "overflow encountered in exp": 1
+        },
+        "trial_function_evaluations": 3,
+        "trial_gradient_evaluations": 3,
+        "chosen_offset": -0.01,
+        "gap": null,
+        "false_success": false,
+        "inaccurate": true
+      },
+      "baseline_diagnostic": {
+        "physical": [
+          null,
+          null,
+          null
+        ],
+        "physical_gradient": [
+          null,
+          null,
+          null
+        ],
+        "head_gradient_inf": null,
+        "radius": 18287591.293411415,
+        "near_fold": false,
+        "normalized_radial_curvature": null,
+        "trigger": false,
+        "physical_bound": null,
+        "physical_accept": false,
+        "recovered_gradient": null,
+        "recovered_bound": null,
+        "recovered_gradient_error": null
+      }
+    },
+    {
+      "method": "BFGS",
+      "gtol": 1e-08,
+      "angle_change": 0.0,
+      "case": 24,
+      "arm": "baseline",
+      "previous_success": true,
+      "result": {
+        "x": [
+          6313948.322770136,
+          32571787.576208226,
+          914612.4527880555
+        ],
+        "success": false,
+        "status": 2,
+        "message": "Desired error not necessarily achieved due to precision loss.",
+        "nit": 10,
+        "loss": null,
+        "native_gradient_inf": null,
+        "result_dtype": "float64",
+        "elapsed_seconds": 0.013719707960262895,
+        "counts": {
+          "function": 135,
+          "gradient": 135,
+          "hessian": 0,
+          "nonfinite_calls": 111,
+          "input_dtypes": [
+            "float64"
+          ],
+          "gradient_dtypes": [
+            "float64"
+          ]
+        },
+        "warnings": {
+          "overflow encountered in exp": 111
+        },
+        "gap": null,
+        "false_success": false,
+        "inaccurate": true
+      },
+      "baseline_diagnostic": {
+        "physical": [
+          null,
+          null,
+          null
+        ],
+        "physical_gradient": [
+          null,
+          null,
+          null
+        ],
+        "head_gradient_inf": null,
+        "radius": 32584626.157874323,
+        "near_fold": false,
+        "normalized_radial_curvature": null,
+        "trigger": false,
+        "physical_bound": null,
+        "physical_accept": false,
+        "recovered_gradient": null,
+        "recovered_bound": null,
+        "recovered_gradient_error": null
+      }
+    },
+    {
+      "method": "BFGS",
+      "gtol": 1e-08,
+      "angle_change": 0.0,
+      "case": 24,
+      "arm": "always_restart",
+      "previous_success": true,
+      "result": {
+        "x": [
+          6313948.322770136,
+          32571787.566212166,
+          914612.4525073672
+        ],
+        "success": false,
+        "status": 3,
+        "message": "NaN result encountered.",
+        "nit": 0,
+        "loss": null,
+        "native_gradient_inf": null,
+        "result_dtype": "float64",
+        "elapsed_seconds": 0.00019804202020168304,
+        "counts": {
+          "function": 1,
+          "gradient": 1,
+          "hessian": 0,
+          "nonfinite_calls": 1,
+          "input_dtypes": [
+            "float64"
+          ],
+          "gradient_dtypes": [
+            "float64"
+          ]
+        },
+        "warnings": {
+          "overflow encountered in exp": 1
+        },
+        "trial_function_evaluations": 3,
+        "trial_gradient_evaluations": 3,
+        "chosen_offset": -0.01,
+        "gap": null,
+        "false_success": false,
+        "inaccurate": true
+      },
+      "baseline_diagnostic": {
+        "physical": [
+          null,
+          null,
+          null
+        ],
+        "physical_gradient": [
+          null,
+          null,
+          null
+        ],
+        "head_gradient_inf": null,
+        "radius": 32584626.157874323,
+        "near_fold": false,
+        "normalized_radial_curvature": null,
+        "trigger": false,
+        "physical_bound": null,
+        "physical_accept": false,
+        "recovered_gradient": null,
+        "recovered_bound": null,
+        "recovered_gradient_error": null
+      }
+    },
+    {
+      "method": "BFGS",
+      "gtol": 1e-08,
+      "angle_change": 0.0,
+      "case": 26,
+      "arm": "baseline",
+      "previous_success": true,
+      "result": {
+        "x": [
+          0.011048687835917226,
+          1.5595054522938623,
+          -0.14743779017670205
+        ],
+        "success": false,
+        "status": 2,
+        "message": "Desired error not necessarily achieved due to precision loss.",
+        "nit": 11,
+        "loss": 0.004723774244400226,
+        "native_gradient_inf": 0.06810641193331915,
+        "result_dtype": "float64",
+        "elapsed_seconds": 0.004304624977521598,
+        "counts": {
+          "function": 39,
+          "gradient": 39,
+          "hessian": 0,
+          "nonfinite_calls": 1,
+          "input_dtypes": [
+            "float64"
+          ],
+          "gradient_dtypes": [
+            "float64"
+          ]
+        },
+        "warnings": {},
+        "gap": 0.004688387207736422,
+        "false_success": false,
+        "inaccurate": true
+      },
+      "baseline_diagnostic": {
+        "physical": [
+          1.0111099500016583,
+          0.9131007531687381,
+          -0.08632580095046255
+        ],
+        "physical_gradient": [
+          0.0176929562709845,
+          0.050822274510047,
+          -0.044147064121619284
+        ],
+        "head_gradient_inf": 0.06810641193331915,
+        "radius": 1.5664594337889741,
+        "near_fold": false,
+        "normalized_radial_curvature": 0.025208138059877688,
+        "trigger": false,
+        "physical_bound": 0.004688387207736422,
+        "physical_accept": false,
+        "recovered_gradient": null,
+        "recovered_bound": null,
+        "recovered_gradient_error": null
+      }
+    },
+    {
+      "method": "BFGS",
+      "gtol": 1e-08,
+      "angle_change": 0.0,
+      "case": 28,
+      "arm": "baseline",
+      "previous_success": true,
+      "result": {
+        "x": [
+          13012189.8230529,
+          -421499.14837871975,
+          127641763.47444013
+        ],
+        "success": false,
+        "status": 2,
+        "message": "Desired error not necessarily achieved due to precision loss.",
+        "nit": 10,
+        "loss": null,
+        "native_gradient_inf": null,
+        "result_dtype": "float64",
+        "elapsed_seconds": 0.015032791066914797,
+        "counts": {
+          "function": 139,
+          "gradient": 139,
+          "hessian": 0,
+          "nonfinite_calls": 111,
+          "input_dtypes": [
+            "float64"
+          ],
+          "gradient_dtypes": [
+            "float64"
+          ]
+        },
+        "warnings": {
+          "overflow encountered in exp": 111
+        },
+        "gap": null,
+        "false_success": false,
+        "inaccurate": true
+      },
+      "baseline_diagnostic": {
+        "physical": [
+          null,
+          null,
+          null
+        ],
+        "physical_gradient": [
+          null,
+          null,
+          null
+        ],
+        "head_gradient_inf": null,
+        "radius": 127642459.41064048,
+        "near_fold": false,
+        "normalized_radial_curvature": null,
+        "trigger": false,
+        "physical_bound": null,
+        "physical_accept": false,
+        "recovered_gradient": null,
+        "recovered_bound": null,
+        "recovered_gradient_error": null
+      }
+    },
+    {
+      "method": "BFGS",
+      "gtol": 1e-08,
+      "angle_change": 0.0,
+      "case": 28,
+      "arm": "always_restart",
+      "previous_success": true,
+      "result": {
+        "x": [
+          13012189.8230529,
+          -421499.1483456979,
+          127641763.46444018
+        ],
+        "success": false,
+        "status": 3,
+        "message": "NaN result encountered.",
+        "nit": 0,
+        "loss": null,
+        "native_gradient_inf": null,
+        "result_dtype": "float64",
+        "elapsed_seconds": 0.000197333050891757,
+        "counts": {
+          "function": 1,
+          "gradient": 1,
+          "hessian": 0,
+          "nonfinite_calls": 1,
+          "input_dtypes": [
+            "float64"
+          ],
+          "gradient_dtypes": [
+            "float64"
+          ]
+        },
+        "warnings": {
+          "overflow encountered in exp": 1
+        },
+        "trial_function_evaluations": 3,
+        "trial_gradient_evaluations": 3,
+        "chosen_offset": -0.01,
+        "gap": null,
+        "false_success": false,
+        "inaccurate": true
+      },
+      "baseline_diagnostic": {
+        "physical": [
+          null,
+          null,
+          null
+        ],
+        "physical_gradient": [
+          null,
+          null,
+          null
+        ],
+        "head_gradient_inf": null,
+        "radius": 127642459.41064048,
+        "near_fold": false,
+        "normalized_radial_curvature": null,
+        "trigger": false,
+        "physical_bound": null,
+        "physical_accept": false,
+        "recovered_gradient": null,
+        "recovered_bound": null,
+        "recovered_gradient_error": null
+      }
+    },
+    {
+      "method": "BFGS",
+      "gtol": 1e-08,
+      "angle_change": 0.0,
+      "case": 40,
+      "arm": "baseline",
+      "previous_success": true,
+      "result": {
+        "x": [
+          2024135.975916067,
+          -2192264.8804773944,
+          18552770.17084124
+        ],
+        "success": false,
+        "status": 2,
+        "message": "Desired error not necessarily achieved due to precision loss.",
+        "nit": 11,
+        "loss": null,
+        "native_gradient_inf": null,
+        "result_dtype": "float64",
+        "elapsed_seconds": 0.01622145902365446,
+        "counts": {
+          "function": 138,
+          "gradient": 138,
+          "hessian": 0,
+          "nonfinite_calls": 111,
+          "input_dtypes": [
+            "float64"
+          ],
+          "gradient_dtypes": [
+            "float64"
+          ]
+        },
+        "warnings": {
+          "overflow encountered in exp": 111
+        },
+        "gap": null,
+        "false_success": false,
+        "inaccurate": true
+      },
+      "baseline_diagnostic": {
+        "physical": [
+          null,
+          null,
+          null
+        ],
+        "physical_gradient": [
+          null,
+          null,
+          null
+        ],
+        "head_gradient_inf": null,
+        "radius": 18681844.296488263,
+        "near_fold": false,
+        "normalized_radial_curvature": null,
+        "trigger": false,
+        "physical_bound": null,
+        "physical_accept": false,
+        "recovered_gradient": null,
+        "recovered_bound": null,
+        "recovered_gradient_error": null
+      }
+    },
+    {
+      "method": "BFGS",
+      "gtol": 1e-08,
+      "angle_change": 0.0,
+      "case": 40,
+      "arm": "always_restart",
+      "previous_success": true,
+      "result": {
+        "x": [
+          2024135.975916067,
+          -2192264.879303921,
+          18552770.16091033
+        ],
+        "success": false,
+        "status": 3,
+        "message": "NaN result encountered.",
+        "nit": 0,
+        "loss": null,
+        "native_gradient_inf": null,
+        "result_dtype": "float64",
+        "elapsed_seconds": 0.0001966669224202633,
+        "counts": {
+          "function": 1,
+          "gradient": 1,
+          "hessian": 0,
+          "nonfinite_calls": 1,
+          "input_dtypes": [
+            "float64"
+          ],
+          "gradient_dtypes": [
+            "float64"
+          ]
+        },
+        "warnings": {
+          "overflow encountered in exp": 1
+        },
+        "trial_function_evaluations": 3,
+        "trial_gradient_evaluations": 3,
+        "chosen_offset": -0.01,
+        "gap": null,
+        "false_success": false,
+        "inaccurate": true
+      },
+      "baseline_diagnostic": {
+        "physical": [
+          null,
+          null,
+          null
+        ],
+        "physical_gradient": [
+          null,
+          null,
+          null
+        ],
+        "head_gradient_inf": null,
+        "radius": 18681844.296488263,
+        "near_fold": false,
+        "normalized_radial_curvature": null,
+        "trigger": false,
+        "physical_bound": null,
+        "physical_accept": false,
+        "recovered_gradient": null,
+        "recovered_bound": null,
+        "recovered_gradient_error": null
+      }
+    },
+    {
+      "method": "BFGS",
+      "gtol": 1e-08,
+      "angle_change": 0.0,
+      "case": 44,
+      "arm": "baseline",
+      "previous_success": true,
+      "result": {
+        "x": [
+          1729537.574836298,
+          -11598557.181371797,
+          14406117.759766446
+        ],
+        "success": false,
+        "status": 2,
+        "message": "Desired error not necessarily achieved due to precision loss.",
+        "nit": 12,
+        "loss": null,
+        "native_gradient_inf": null,
+        "result_dtype": "float64",
+        "elapsed_seconds": 0.01870124996639788,
+        "counts": {
+          "function": 139,
+          "gradient": 139,
+          "hessian": 0,
+          "nonfinite_calls": 111,
+          "input_dtypes": [
+            "float64"
+          ],
+          "gradient_dtypes": [
+            "float64"
+          ]
+        },
+        "warnings": {
+          "overflow encountered in exp": 111
+        },
+        "gap": null,
+        "false_success": false,
+        "inaccurate": true
+      },
+      "baseline_diagnostic": {
+        "physical": [
+          null,
+          null,
+          null
+        ],
+        "physical_gradient": [
+          null,
+          null,
+          null
+        ],
+        "head_gradient_inf": null,
+        "radius": 18494938.70219119,
+        "near_fold": false,
+        "normalized_radial_curvature": null,
+        "trigger": false,
+        "physical_bound": null,
+        "physical_accept": false,
+        "recovered_gradient": null,
+        "recovered_bound": null,
+        "recovered_gradient_error": null
+      }
+    },
+    {
+      "method": "BFGS",
+      "gtol": 1e-08,
+      "angle_change": 0.0,
+      "case": 44,
+      "arm": "always_restart",
+      "previous_success": true,
+      "result": {
+        "x": [
+          1729537.574836298,
+          -11598557.175100591,
+          14406117.751977224
+        ],
+        "success": false,
+        "status": 3,
+        "message": "NaN result encountered.",
+        "nit": 0,
+        "loss": null,
+        "native_gradient_inf": null,
+        "result_dtype": "float64",
+        "elapsed_seconds": 0.0002077920362353325,
+        "counts": {
+          "function": 1,
+          "gradient": 1,
+          "hessian": 0,
+          "nonfinite_calls": 1,
+          "input_dtypes": [
+            "float64"
+          ],
+          "gradient_dtypes": [
+            "float64"
+          ]
+        },
+        "warnings": {
+          "overflow encountered in exp": 1
+        },
+        "trial_function_evaluations": 3,
+        "trial_gradient_evaluations": 3,
+        "chosen_offset": -0.01,
+        "gap": null,
+        "false_success": false,
+        "inaccurate": true
+      },
+      "baseline_diagnostic": {
+        "physical": [
+          null,
+          null,
+          null
+        ],
+        "physical_gradient": [
+          null,
+          null,
+          null
+        ],
+        "head_gradient_inf": null,
+        "radius": 18494938.70219119,
+        "near_fold": false,
+        "normalized_radial_curvature": null,
+        "trigger": false,
+        "physical_bound": null,
+        "physical_accept": false,
+        "recovered_gradient": null,
+        "recovered_bound": null,
+        "recovered_gradient_error": null
+      }
+    },
+    {
+      "method": "L-BFGS-B",
+      "gtol": 1e-08,
+      "angle_change": 0.0,
+      "case": 28,
+      "arm": "baseline",
+      "previous_success": true,
+      "result": {
+        "x": [
+          -0.0006585171450958881,
+          0.34197753228588185,
+          1.9666712169476466
+        ],
+        "success": true,
+        "status": 0,
+        "message": "CONVERGENCE: NORM OF PROJECTED GRADIENT <= PGTOL",
+        "nit": 24,
+        "loss": 3.5387036663892726e-07,
+        "native_gradient_inf": 6.599355557937977e-10,
+        "result_dtype": "float64",
+        "elapsed_seconds": 0.0041852910071611404,
+        "counts": {
+          "function": 54,
+          "gradient": 54,
+          "hessian": 0,
+          "nonfinite_calls": 18,
+          "input_dtypes": [
+            "float64"
+          ],
+          "gradient_dtypes": [
+            "float64"
+          ]
+        },
+        "warnings": {
+          "overflow encountered in exp": 18
+        },
+        "gap": 9.199307202773736e-19,
+        "false_success": false,
+        "inaccurate": false
+      },
+      "baseline_diagnostic": {
+        "physical": [
+          0.9993416996297334,
+          0.13711933339906682,
+          0.7885566179755891
+        ],
+        "physical_gradient": [
+          2.5666606340291054e-10,
+          -6.679952146981805e-10,
+          6.277716818603452e-10
+        ],
+        "head_gradient_inf": 6.599355557937977e-10,
+        "radius": 1.996182433586339,
+        "near_fold": false,
+        "normalized_radial_curvature": 0.02885843110993729,
+        "trigger": false,
+        "physical_bound": 8.732536254568082e-19,
+        "physical_accept": true,
+        "recovered_gradient": null,
+        "recovered_bound": null,
+        "recovered_gradient_error": null
+      }
+    }
+  ],
+  "nonfinite_serialization": "Nonfinite numeric values are null in raw JSON, with status/warnings/counts retained. This file and audited_summary count them explicitly. Raw summaries max_gap=null may indicate nonfinite gaps, never zero error."
+}

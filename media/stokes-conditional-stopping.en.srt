@@ -1,0 +1,99 @@
+1
+00:00:08,450 --> 00:00:10,470
+A solver reports success.
+
+2
+00:00:10,570 --> 00:00:13,930
+But has the physical objective met the target accuracy?
+
+3
+00:00:16,000 --> 00:00:17,980
+Reflections can polarize light.
+
+4
+00:00:18,100 --> 00:00:21,380
+A rotating polarizer changes the transmitted brightness.
+
+5
+00:00:21,860 --> 00:00:24,980
+Stokes coordinates describe the polarization state.
+
+6
+00:00:25,960 --> 00:00:29,220
+The smooth Stokes map keeps estimates physical.
+
+7
+00:00:29,400 --> 00:00:34,500
+At full linear polarization, its fold hides one physical-gradient component from first derivatives.
+
+8
+00:00:36,850 --> 00:00:45,090
+At the exact fold, first derivatives plus one signed radial second derivative recover the physical gradient.
+
+9
+00:00:45,350 --> 00:00:51,190
+This holds for objectives with continuous second derivatives, even at nonstationary points,
+
+10
+00:00:51,210 --> 00:00:53,090
+without knowing the physical Hessian.
+
+11
+00:00:54,950 --> 00:01:01,930
+In this saved noisy reflection simulation, the raw warm start reports success at an inaccurate endpoint.
+
+12
+00:01:02,170 --> 00:01:04,530
+The marked gap exceeds the target.
+
+13
+00:01:04,550 --> 00:01:09,670
+Both audited branches are below the target gap here, following earlier restarts.
+
+14
+00:01:13,980 --> 00:01:17,920
+Selected by the largest baseline gap, this is not a typical scene.
+
+15
+00:01:18,000 --> 00:01:21,180
+Dashed curves show noise-free polarization truth.
+
+16
+00:01:21,360 --> 00:01:25,480
+The gap measures optimization error for the noisy fitting objective.
+
+17
+00:01:27,350 --> 00:01:32,730
+Under strong convexity, bounded intensity, and all inner-sheet theorem conditions,
+
+18
+00:01:32,750 --> 00:01:37,890
+the displayed derivative and curvature tolerances bound the objective gap.
+
+19
+00:01:37,910 --> 00:01:40,810
+Stop when this upper bound meets the target.
+
+20
+00:01:44,350 --> 00:01:45,990
+The guarantees are conditional.
+
+21
+00:01:46,010 --> 00:01:49,430
+Real-data failures extend beyond the local fold gate.
+
+22
+00:01:49,450 --> 00:01:53,970
+Direct physical solvers were cheaper in our tested implementation.
+
+23
+00:01:54,650 --> 00:01:59,670
+Recover what first derivatives hide. Bound the remaining objective gap.
+
+24
+00:01:59,710 --> 00:02:01,750
+Decide whether stopping is justified.
+
+25
+00:02:01,910 --> 00:02:04,970
+The contribution is information for assessing convergence.

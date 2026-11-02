@@ -1,0 +1,47 @@
+{
+  "registered_at": "2026-10-21T23:24:54.420259+00:00",
+  "design_status": "Retrospective method development after inspecting the original real-data audit. Freeze this follow-up before new method outcomes. Fresnel is a previously used mechanism control, not held-out validation.",
+  "source_sha256": {
+    "real_inputs": "a6fcf1f55c756b77fd8d60104ce1c043cf6c0a10c67941d28b235fcdebce42ef",
+    "real_results": "bacde3b06144515c0b8b09bb271ff99ec4e8046c130be4f4a93346e2281f2404",
+    "fresnel_inputs": "420f93b13cccf9ace2a5d9a22bf21be5d5e62d63d50f18a07733868e11f780b5",
+    "core": "6fd8492d1d585b09c83f99625d2a9b0c7b65a9a338c5424197ce2603b49a1bae",
+    "algorithm": "d5dc9ba4d54b697ef400006a4b745f3d3c12092507dca6fff8aee7df0a200fe2"
+  },
+  "observations": "All 4642 existing real-data entries and all 984 existing Fresnel frames, with no new selection, reordering, noise, normalization, thresholds, seeds or data. Preserve original strata and dependencies.",
+  "objective": "Unchanged nominal four-analyzer unweighted quadratic, W=diag(1,0.5,0.5).",
+  "methods": [
+    "BFGS",
+    "L-BFGS-B"
+  ],
+  "arms": [
+    "warm_start",
+    "cold_start",
+    "canonical_warm",
+    "audited_cold",
+    "audited_chart",
+    "guarded_chart",
+    "physical_projected_gradient",
+    "direct_cone"
+  ],
+  "gradient_tolerance": 1e-06,
+  "objective_gap_threshold": 1e-06,
+  "solver_options": "Unchanged core: gtol=1e-6, maxiter=500; LBFGSB ftol=0, maxfun=5000, maxls=40. Each new minimize invocation resets quasi-Newton memory.",
+  "initialization": "Real first/cold: [log(max(S0_LS,1e-6)),.2,-.1]; Fresnel first/cold: [0,.2,-.1]. Each arm carries its own endpoint, including rejected states; no oracle solution initializes iterative arms.",
+  "canonical_warm": "Before each solve replace a previous outer w by w/(w dot w), preserving its physical output. No stopping audit in this arm.",
+  "audited_cold": "Raw warm solve, physical bound audit; at most one cold-start solve if rejected, then audit again.",
+  "audited_chart": "Raw warm solve and physical bound. On rejection, if abs(r-1)<=1e-3 query one full analytic head Hessian; if c_r/I^2 < -1e-7 choose the lowest objective among radial offsets -.01,0,+.01, canonicalize this candidate, and solve once. Otherwise an outer endpoint is canonicalized and solved once. Inner nonfold endpoints are left rejected. At most one such repair.",
+  "guarded_chart": "Same audited chart; if still rejected, use the standard physical projected-gradient control from the current physical state. This fallback, not the coordinate change, is responsible for any additional repaired outputs.",
+  "physical_projected_gradient": "Euclidean cone projection after s-g, step 1 since lambda_max(W)=1; audit before and after updates; at most 64 updates. Terminate only if the existing physical bound <=1e-6. Native head flags do not accept physical outputs.",
+  "physical_lift": "Map a corrected positive-intensity physical point to the inner inverse. An exact apex has no finite exponential lift, is returned in physical coordinates and makes the next head start cold. Clamp DoLP only to [0,1] to remove cone-projection roundoff when lifting; log physical-lift discrepancy.",
+  "direct_cone": "Existing exact nominal cone reduction, timed as a direct baseline, with no iterative arm using its answer.",
+  "paired_endpoint_audit": "All 9284 stored raw real-data warm endpoints are audited. Apply the cold, chart, and chart-plus-physical procedures to every bound rejection, independent of reference gap. Preserve all non-rejections in denominator.",
+  "metrics": "Reference gap, distance to direct cone solution, native and monitored acceptance separately, unresolved bound rejections, native FG pairs, physical-gradient audits/updates, full Hessians, trial FG pairs, coordinate switches, optimizer calls, observed wall time. Report strata and full histories.",
+  "timing": "One sequential local CPU execution, fixed arm order; no timing superiority or significance inferred from a single pass. Count-based comparison primary. Direct controls included.",
+  "exclusions": "No adaptive run expansion, threshold tuning, discarded failures, remote compute, training, external submission, or claim that frozen development data constitute generalization.",
+  "environment": {
+    "python": "3.12.3",
+    "numpy": "2.5.4",
+    "scipy": "1.18.1"
+  }
+}

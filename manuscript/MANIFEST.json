@@ -1,0 +1,21 @@
+{
+  "README.txt": "8df52ce9be500abe79c02f77531586cc30c585e3ce81d130ff49cc80d691c8e2",
+  "build.py": "773963e98eb416239d6b82cc895980a0de65735cb82134dfff4a503b0840b884",
+  "source/images/conditioning_and_dynamics.pdf": "f059097eafcd84e1fb93f18ec9d0baddd0069677ecf49bd07677e7a6837d02e2",
+  "source/images/fresnel_sequence.pdf": "65a399cc924edce620e21ebb6d6e54103ce860d67a4d1fbd0c9f1fb38e1d8e5b",
+  "source/images/head_geometry.pdf": "016faf4057a201dee0bd33fff283885d2a464f3cc058aae7e9b4e1dbdd2729eb",
+  "source/images/identifiability_principle.pdf": "55cef89376a5ce75dba2dd2a87d4f3f40be2d94d8ed267f439c0b988e42e367b",
+  "source/images/near_fold_information.pdf": "cd8b57805fed5b4da55da33dca4ed77cd18e484856d88f1f199e8e508aaa39c0",
+  "source/images/objective_gap_geometry.pdf": "709f2fedfdc3aecc9fa9556677c54025abb70ff4888c99495f4f60d495010218",
+  "source/images/real_stopping_regimes.pdf": "8f4b14895a1121a2d0d619348cdca1695ae3024cc9248e6fd38df83be4740cb4",
+  "source/images/renderer_and_counterexample.pdf": "ebf35a75558739e5abc127d7576dee16ce7f61833a3104dec8b10ed3230a2ec1",
+  "source/images/sensitivity.pdf": "a080d85fa4eddb838e37412514321b10f290ee1709f7060b590ffba2c75c873d",
+  "source/images/stationary_landscapes.pdf": "9f00f2b53b7b1977bbd3d85b1c57af7b11b45a7e45cbe6e70efab86a75935a89",
+  "source/images/stopping_certification.pdf": "fa0eba40793e5603060242c7681e5440222ed99ee8e84bec4f3808aea6a97f40",
+  "source/images/trained_curvature_histograms.pdf": "317eff8317f5419fff530c0b6385c5e4934c42302f6ff94bb798d3154f7fc8a7",
+  "source/images/trained_fold_incidence.pdf": "50573827af0ab7714e2e1dbed5b057d5445bd7651ea83cc21e3335b6d189320f",
+  "source/images/warm_start_audit.pdf": "988cdf61d72b8b3d9e3552ae8883db8dcecc962216d96f8df372e75720567dfe",
+  "source/main.tex": "39c4437f8131e004577de8320f240076a0e54b48b3e00d6a8f2fb5d60ddde5c4",
+  "source/sn-jnl.cls": "36d0c3273a59d48dc6a9c7b080dfa1ec50dc10229d8751568d1f2e490ffa5ecc",
+  "source/supplement.tex": "e7449c8aa56fe0950368dabaa9c80beaf86dd64fa14ac227e168ba9802cfa23b"
+}

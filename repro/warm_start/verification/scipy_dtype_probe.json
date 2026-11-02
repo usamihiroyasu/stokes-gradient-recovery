@@ -1,0 +1,28 @@
+{
+  "x": [
+    0.0007288232921085051,
+    0.9999805225992525,
+    -0.00025033407210817664
+  ],
+  "success": true,
+  "status": 0,
+  "message": "Optimization terminated successfully.",
+  "nit": 16,
+  "loss": 1.2496673108271504e-06,
+  "native_gradient_inf": 8.374431926294758e-07,
+  "result_dtype": "float64",
+  "elapsed_seconds": 0.0075945829739794135,
+  "counts": {
+    "function": 18,
+    "gradient": 18,
+    "hessian": 0,
+    "nonfinite_calls": 0,
+    "input_dtypes": [
+      "float32"
+    ],
+    "gradient_dtypes": [
+      "float64"
+    ]
+  },
+  "warnings": {}
+}

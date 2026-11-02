@@ -1,0 +1,8 @@
+{
+  "scientific_summary_exact_match": true,
+  "timing_excluded": true,
+  "internal_native_invocations": 68556,
+  "native_failures": 0,
+  "warning_invocations": 0,
+  "nonfinite_queries": 0
+}

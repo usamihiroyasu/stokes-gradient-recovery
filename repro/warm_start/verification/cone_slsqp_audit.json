@@ -1,0 +1,2888 @@
+{
+  "cases": 180,
+  "failures": 0,
+  "max_objective_discrepancy": 4.995645895564689e-14,
+  "max_cone_violation": 7.66053886991358e-15,
+  "records": [
+    {
+      "case": 0,
+      "angle_change": 0.0,
+      "success": true,
+      "status": 0,
+      "message": "Optimization terminated successfully",
+      "gap_error": 3.1005634416798763e-17,
+      "physical": [
+        0.9993921905578275,
+        0.799243148357228,
+        -0.0003949297120261316
+      ],
+      "cone_violation": 0.0,
+      "nfev": 6,
+      "njev": 6
+    },
+    {
+      "case": 1,
+      "angle_change": 0.0,
+      "success": true,
+      "status": 0,
+      "message": "Optimization terminated successfully",
+      "gap_error": 2.1001752865277923e-14,
+      "physical": [
+        0.9993921262991787,
+        0.9892434107264635,
+        -0.00039495899532397254
+      ],
+      "cone_violation": 0.0,
+      "nfev": 5,
+      "njev": 5
+    },
+    {
+      "case": 2,
+      "angle_change": 0.0,
+      "success": true,
+      "status": 0,
+      "message": "Optimization terminated successfully",
+      "gap_error": 1.1329235076115718e-16,
+      "physical": [
+        0.9939219072468847,
+        0.7924313944255721,
+        -0.003949284458565295
+      ],
+      "cone_violation": 0.0,
+      "nfev": 6,
+      "njev": 6
+    },
+    {
+      "case": 3,
+      "angle_change": 0.0,
+      "success": true,
+      "status": 0,
+      "message": "Optimization terminated successfully",
+      "gap_error": 1.0088162401798717e-18,
+      "physical": [
+        0.9939219077063781,
+        0.9824313753134742,
+        -0.00394928152728229
+      ],
+      "cone_violation": 0.0,
+      "nfev": 6,
+      "njev": 5
+    },
+    {
+      "case": 4,
+      "angle_change": 0.0,
+      "success": true,
+      "status": 0,
+      "message": "Optimization terminated successfully",
+      "gap_error": 5.0557960636065795e-17,
+      "physical": [
+        0.9993921904795415,
+        0.1352168523860158,
+        0.7879648700568638
+      ],
+      "cone_violation": 0.0,
+      "nfev": 6,
+      "njev": 6
+    },
+    {
+      "case": 5,
+      "angle_change": 0.0,
+      "success": true,
+      "status": 0,
+      "message": "Optimization terminated successfully",
+      "gap_error": 2.819512125472312e-14,
+      "physical": [
+        0.9993921146717201,
+        0.16751063327628102,
+        0.9752006217320643
+      ],
+      "cone_violation": 0.0,
+      "nfev": 5,
+      "njev": 5
+    },
+    {
+      "case": 6,
+      "angle_change": 0.0,
+      "success": true,
+      "status": 0,
+      "message": "Optimization terminated successfully",
+      "gap_error": 1.7088805007560784e-16,
+      "physical": [
+        0.9939219071021125,
+        0.1284050887951696,
+        0.7844105288026862
+      ],
+      "cone_violation": 0.0,
+      "nfev": 6,
+      "njev": 6
+    },
+    {
+      "case": 7,
+      "angle_change": 0.0,
+      "success": true,
+      "status": 0,
+      "message": "Optimization terminated successfully",
+      "gap_error": 1.2641966737770433e-18,
+      "physical": [
+        0.9939219077005528,
+        0.1606988450230116,
+        0.9716459536933167
+      ],
+      "cone_violation": 0.0,
+      "nfev": 6,
+      "njev": 5
+    },
+    {
+      "case": 8,
+      "angle_change": 0.0,
+      "success": true,
+      "status": 0,
+      "message": "Optimization terminated successfully",
+      "gap_error": 4.9364811358751324e-14,
+      "physical": [
+        0.9993920864452128,
+        -0.6862682549572595,
+        0.4120063239283249
+      ],
+      "cone_violation": 0.0,
+      "nfev": 5,
+      "njev": 5
+    },
+    {
+      "case": 9,
+      "angle_change": 0.0,
+      "success": true,
+      "status": 0,
+      "message": "Optimization terminated successfully",
+      "gap_error": 2.1987749230530486e-15,
+      "physical": [
+        0.9993921726368649,
+        -0.8490768113079764,
+        0.5099514657435422
+      ],
+      "cone_violation": 0.0,
+      "nfev": 5,
+      "njev": 5
+    },
+    {
+      "case": 10,
+      "angle_change": 0.0,
+      "success": true,
+      "status": 0,
+      "message": "Optimization terminated successfully",
+      "gap_error": 2.3259524731603087e-18,
+      "physical": [
+        0.9939219076883795,
+        -0.6930796321462458,
+        0.4084518172617842
+      ],
+      "cone_violation": 0.0,
+      "nfev": 6,
+      "njev": 6
+    },
+    {
+      "case": 11,
+      "angle_change": 0.0,
+      "success": true,
+      "status": 0,
+      "message": "Optimization terminated successfully",
+      "gap_error": -6.013933925505532e-20,
+      "physical": [
+        0.9941067050986627,
+        -0.8555704035533437,
+        0.5062088755500915
+      ],
+      "cone_violation": 0.0,
+      "nfev": 8,
+      "njev": 7
+    },
+    {
+      "case": 12,
+      "angle_change": 0.0,
+      "success": true,
+      "status": 0,
+      "message": "Optimization terminated successfully",
+      "gap_error": 3.1512285850709943e-17,
+      "physical": [
+        0.9993023495752046,
+        0.7995150111842043,
+        0.0007904513478046619
+      ],
+      "cone_violation": 0.0,
+      "nfev": 6,
+      "njev": 6
+    },
+    {
+      "case": 13,
+      "angle_change": 0.0,
+      "success": true,
+      "status": 0,
+      "message": "Optimization terminated successfully",
+      "gap_error": 2.1278598523274283e-14,
+      "physical": [
+        0.9993022848490687,
+        0.9895152752760031,
+        0.0007904222296901995
+      ],
+      "cone_violation": 0.0,
+      "nfev": 5,
+      "njev": 5
+    },
+    {
+      "case": 14,
+      "angle_change": 0.0,
+      "success": true,
+      "status": 0,
+      "message": "Optimization terminated successfully",
+      "gap_error": 1.3149170066586308e-16,
+      "physical": [
+        0.9930234973961651,
+        0.7951500234316246,
+        0.007904526229119956
+      ],
+      "cone_violation": 0.0,
+      "nfev": 6,
+      "njev": 6
+    },
+    {
+      "case": 15,
+      "angle_change": 0.0,
+      "success": true,
+      "status": 0,
+      "message": "Optimization terminated successfully",
+      "gap_error": 1.009663273127126e-18,
+      "physical": [
+        0.9930234978997218,
+        0.9851500028124474,
+        0.007904529020184748
+      ],
+      "cone_violation": 0.0,
+      "nfev": 6,
+      "njev": 5
+    },
+    {
+      "case": 16,
+      "angle_change": 0.0,
+      "success": true,
+      "status": 0,
+      "message": "Optimization terminated successfully",
+      "gap_error": 4.9828566006806336e-17,
+      "physical": [
+        0.999302349501885,
+        0.135488715118391,
+        0.7891502510077222
+      ],
+      "cone_violation": 0.0,
+      "nfev": 6,
+      "njev": 6
+    },
+    {
+      "case": 17,
+      "angle_change": 0.0,
+      "success": true,
+      "status": 0,
+      "message": "Optimization terminated successfully",
+      "gap_error": 2.8041193186531708e-14,
+      "physical": [
+        0.9993022739340411,
+        0.16778249600874517,
+        0.9763860019304664
+      ],
+      "cone_violation": 0.0,
+      "nfev": 5,
+      "njev": 5
+    },
+    {
+      "case": 18,
+      "angle_change": 0.0,
+      "success": true,
+      "status": 0,
+      "message": "Optimization terminated successfully",
+      "gap_error": 1.473532396361471e-16,
+      "physical": [
+        0.993023497356095,
+        0.1311237161279084,
+        0.7962643374608179
+      ],
+      "cone_violation": 0.0,
+      "nfev": 6,
+      "njev": 6
+    },
+    {
+      "case": 19,
+      "angle_change": 0.0,
+      "success": true,
+      "status": 0,
+      "message": "Optimization terminated successfully",
+      "gap_error": 1.2217603231196028e-17,
+      "physical": [
+        0.9943436618412963,
+        0.16298469176866906,
+        0.9808951565244016
+      ],
+      "cone_violation": 1.1102230246251565e-16,
+      "nfev": 8,
+      "njev": 8
+    },
+    {
+      "case": 20,
+      "angle_change": 0.0,
+      "success": true,
+      "status": 0,
+      "message": "Optimization terminated successfully",
+      "gap_error": 4.995645895564689e-14,
+      "physical": [
+        0.9993022447739375,
+        -0.6859963942991864,
+        0.4131917064501087
+      ],
+      "cone_violation": 0.0,
+      "nfev": 5,
+      "njev": 5
+    },
+    {
+      "case": 21,
+      "angle_change": 0.0,
+      "success": true,
+      "status": 0,
+      "message": "Optimization terminated successfully",
+      "gap_error": 2.2266786434076633e-15,
+      "physical": [
+        0.9993023315297617,
+        -0.84880494905168,
+        0.5111368471177861
+      ],
+      "cone_violation": 0.0,
+      "nfev": 5,
+      "njev": 5
+    },
+    {
+      "case": 22,
+      "angle_change": 0.0,
+      "success": true,
+      "status": 0,
+      "message": "Optimization terminated successfully",
+      "gap_error": 2.696105871110438e-18,
+      "physical": [
+        0.9930234978802535,
+        -0.6903610050131718,
+        0.4203056279276188
+      ],
+      "cone_violation": 0.0,
+      "nfev": 6,
+      "njev": 6
+    },
+    {
+      "case": 23,
+      "angle_change": 0.0,
+      "success": true,
+      "status": 0,
+      "message": "Optimization terminated successfully",
+      "gap_error": -3.804871999066317e-18,
+      "physical": [
+        0.9947622830448573,
+        -0.8501976801079205,
+        0.5164454516284768
+      ],
+      "cone_violation": 7.327471962526033e-15,
+      "nfev": 9,
+      "njev": 8
+    },
+    {
+      "case": 24,
+      "angle_change": 0.0,
+      "success": true,
+      "status": 0,
+      "message": "Optimization terminated successfully",
+      "gap_error": 2.983578265496707e-17,
+      "physical": [
+        0.9993416991632117,
+        0.8011456312220566,
+        0.0001968311909494226
+      ],
+      "cone_violation": 0.0,
+      "nfev": 6,
+      "njev": 6
+    },
+    {
+      "case": 25,
+      "angle_change": 0.0,
+      "success": true,
+      "status": 0,
+      "message": "Optimization terminated successfully",
+      "gap_error": 2.0534162448373604e-14,
+      "physical": [
+        0.9993416357151713,
+        0.9911458908125993,
+        0.00019680244629154917
+      ],
+      "cone_violation": 0.0,
+      "nfev": 5,
+      "njev": 5
+    },
+    {
+      "case": 26,
+      "angle_change": 0.0,
+      "success": true,
+      "status": 0,
+      "message": "Optimization terminated successfully",
+      "gap_error": 7.721552347170202e-17,
+      "physical": [
+        0.9934169933526494,
+        0.811456221550305,
+        0.0019683248949981334
+      ],
+      "cone_violation": 0.0,
+      "nfev": 6,
+      "njev": 6
+    },
+    {
+      "case": 27,
+      "angle_change": 0.0,
+      "success": true,
+      "status": 0,
+      "message": "Optimization terminated successfully",
+      "gap_error": -6.850802477392781e-18,
+      "physical": [
+        0.9960973755771972,
+        0.9960954515992226,
+        0.0019577883254347688
+      ],
+      "cone_violation": 3.219646771412954e-15,
+      "nfev": 9,
+      "njev": 8
+    },
+    {
+      "case": 28,
+      "angle_change": 0.0,
+      "success": true,
+      "status": 0,
+      "message": "Optimization terminated successfully",
+      "gap_error": 5.014509163128343e-17,
+      "physical": [
+        0.9993416990812912,
+        0.1371193354969416,
+        0.7885566308528554
+      ],
+      "cone_violation": 0.0,
+      "nfev": 6,
+      "njev": 6
+    },
+    {
+      "case": 29,
+      "angle_change": 0.0,
+      "success": true,
+      "status": 0,
+      "message": "Optimization terminated successfully",
+      "gap_error": 2.8078116391641372e-14,
+      "physical": [
+        0.9993416234545844,
+        0.16941311696907763,
+        0.9757923818923037
+      ],
+      "cone_violation": 0.0,
+      "nfev": 5,
+      "njev": 5
+    },
+    {
+      "case": 30,
+      "angle_change": 0.0,
+      "success": true,
+      "status": 0,
+      "message": "Optimization terminated successfully",
+      "gap_error": 1.5638938711745598e-16,
+      "physical": [
+        0.9934169931390663,
+        0.14742992018095244,
+        0.7903281362028675
+      ],
+      "cone_violation": 0.0,
+      "nfev": 6,
+      "njev": 6
+    },
+    {
+      "case": 31,
+      "angle_change": 0.0,
+      "success": true,
+      "status": 0,
+      "message": "Optimization terminated successfully",
+      "gap_error": 2.710505431213761e-20,
+      "physical": [
+        0.9935937420648181,
+        0.17965975701552953,
+        0.9772158901591239
+      ],
+      "cone_violation": 0.0,
+      "nfev": 8,
+      "njev": 7
+    },
+    {
+      "case": 32,
+      "angle_change": 0.0,
+      "success": true,
+      "status": 0,
+      "message": "Optimization terminated successfully",
+      "gap_error": 8.646618204690305e-19,
+      "physical": [
+        0.9993416993513929,
+        -0.6843653839603294,
+        0.4125979308560039
+      ],
+      "cone_violation": 0.0,
+      "nfev": 6,
+      "njev": 5
+    },
+    {
+      "case": 33,
+      "angle_change": 0.0,
+      "success": true,
+      "status": 0,
+      "message": "Optimization terminated successfully",
+      "gap_error": 2.270945994746937e-15,
+      "physical": [
+        0.9993416809063888,
+        -0.8471743295212294,
+        0.5105432272851922
+      ],
+      "cone_violation": 0.0,
+      "nfev": 5,
+      "njev": 5
+    },
+    {
+      "case": 34,
+      "angle_change": 0.0,
+      "success": true,
+      "status": 0,
+      "message": "Optimization terminated successfully",
+      "gap_error": 3.7947076036992655e-18,
+      "physical": [
+        0.9934169936745313,
+        -0.6740548021553857,
+        0.4143694262156302
+      ],
+      "cone_violation": 0.0,
+      "nfev": 6,
+      "njev": 6
+    },
+    {
+      "case": 35,
+      "angle_change": 0.0,
+      "success": true,
+      "status": 0,
+      "message": "Optimization terminated successfully",
+      "gap_error": 7.18655278515723e-15,
+      "physical": [
+        0.9934169587102035,
+        -0.8368638100988354,
+        0.5123147507124007
+      ],
+      "cone_violation": 0.0,
+      "nfev": 5,
+      "njev": 5
+    },
+    {
+      "case": 36,
+      "angle_change": 0.0,
+      "success": true,
+      "status": 0,
+      "message": "Optimization terminated successfully",
+      "gap_error": 2.0041858323220814e-17,
+      "physical": [
+        1.0011166033987111,
+        0.8014334317333911,
+        -0.0006211577836003654
+      ],
+      "cone_violation": 0.0,
+      "nfev": 6,
+      "njev": 6
+    },
+    {
+      "case": 37,
+      "angle_change": 0.0,
+      "success": true,
+      "status": 0,
+      "message": "Optimization terminated successfully",
+      "gap_error": 1.4978508287441723e-14,
+      "physical": [
+        1.0011165501397792,
+        0.9914336542264285,
+        -0.0006211826267610615
+      ],
+      "cone_violation": 0.0,
+      "nfev": 5,
+      "njev": 5
+    },
+    {
+      "case": 38,
+      "angle_change": 0.0,
+      "success": true,
+      "status": 0,
+      "message": "Optimization terminated successfully",
+      "gap_error": 1.2332799712022613e-18,
+      "physical": [
+        1.0111660355975907,
+        0.8143342309320427,
+        -0.006211565453092928
+      ],
+      "cone_violation": 0.0,
+      "nfev": 6,
+      "njev": 5
+    },
+    {
+      "case": 39,
+      "angle_change": 0.0,
+      "success": true,
+      "status": 0,
+      "message": "Optimization terminated successfully",
+      "gap_error": 1.7838107293360883e-15,
+      "physical": [
+        1.0111660192484948,
+        1.0043343094268222,
+        -0.006211574603445565
+      ],
+      "cone_violation": 0.0,
+      "nfev": 5,
+      "njev": 5
+    },
+    {
+      "case": 40,
+      "angle_change": 0.0,
+      "success": true,
+      "status": 0,
+      "message": "Optimization terminated successfully",
+      "gap_error": 3.5000248413494944e-17,
+      "physical": [
+        1.0011166033290997,
+        0.13740713783629546,
+        0.7877386392931139
+      ],
+      "cone_violation": 0.0,
+      "nfev": 6,
+      "njev": 6
+    },
+    {
+      "case": 41,
+      "angle_change": 0.0,
+      "success": true,
+      "status": 0,
+      "message": "Optimization terminated successfully",
+      "gap_error": 2.093762012301859e-14,
+      "physical": [
+        1.0011165390598928,
+        0.16970091615386088,
+        0.9749743499521188
+      ],
+      "cone_violation": 0.0,
+      "nfev": 5,
+      "njev": 5
+    },
+    {
+      "case": 42,
+      "angle_change": 0.0,
+      "success": true,
+      "status": 0,
+      "message": "Optimization terminated successfully",
+      "gap_error": 4.377466271410224e-18,
+      "physical": [
+        1.0111660355675895,
+        0.15030794334180544,
+        0.7821482227550597
+      ],
+      "cone_violation": 0.0,
+      "nfev": 6,
+      "njev": 6
+    },
+    {
+      "case": 43,
+      "angle_change": 0.0,
+      "success": true,
+      "status": 0,
+      "message": "Optimization terminated successfully",
+      "gap_error": 3.4581034867239846e-15,
+      "physical": [
+        1.011166011878802,
+        0.18260171086709348,
+        0.9693837797711788
+      ],
+      "cone_violation": 0.0,
+      "nfev": 5,
+      "njev": 5
+    },
+    {
+      "case": 44,
+      "angle_change": 0.0,
+      "success": true,
+      "status": 0,
+      "message": "Optimization terminated successfully",
+      "gap_error": 3.815956663966825e-14,
+      "physical": [
+        1.0011165131233182,
+        -0.6840779228576098,
+        0.4117800773490446
+      ],
+      "cone_violation": 0.0,
+      "nfev": 5,
+      "njev": 5
+    },
+    {
+      "case": 45,
+      "angle_change": 0.0,
+      "success": true,
+      "status": 0,
+      "message": "Optimization terminated successfully",
+      "gap_error": 1.6650924972730569e-15,
+      "physical": [
+        1.0011165880138893,
+        -0.8468865150915807,
+        0.5097252328017389
+      ],
+      "cone_violation": 0.0,
+      "nfev": 5,
+      "njev": 5
+    },
+    {
+      "case": 46,
+      "angle_change": 0.0,
+      "success": true,
+      "status": 0,
+      "message": "Optimization terminated successfully",
+      "gap_error": 7.702836307167671e-15,
+      "physical": [
+        1.0111659983798433,
+        -0.6711769295812675,
+        0.4061895941187776
+      ],
+      "cone_violation": 0.0,
+      "nfev": 5,
+      "njev": 5
+    },
+    {
+      "case": 47,
+      "angle_change": 0.0,
+      "success": true,
+      "status": 0,
+      "message": "Optimization terminated successfully",
+      "gap_error": 2.971052765789184e-16,
+      "physical": [
+        1.0111660296341136,
+        -0.833985667768036,
+        0.5041348062466566
+      ],
+      "cone_violation": 0.0,
+      "nfev": 5,
+      "njev": 5
+    },
+    {
+      "case": 48,
+      "angle_change": 0.0,
+      "success": true,
+      "status": 0,
+      "message": "Optimization terminated successfully",
+      "gap_error": 2.070974380213083e-17,
+      "physical": [
+        1.0012725008353538,
+        0.799379939373773,
+        0.0016603034867597607
+      ],
+      "cone_violation": 0.0,
+      "nfev": 6,
+      "njev": 6
+    },
+    {
+      "case": 49,
+      "angle_change": 0.0,
+      "success": true,
+      "status": 0,
+      "message": "Optimization terminated successfully",
+      "gap_error": 1.515911498179589e-14,
+      "physical": [
+        1.001272447207659,
+        0.9893801631495952,
+        0.0016602790140920354
+      ],
+      "cone_violation": 0.0,
+      "nfev": 5,
+      "njev": 5
+    },
+    {
+      "case": 50,
+      "angle_change": 0.0,
+      "success": true,
+      "status": 0,
+      "message": "Optimization terminated successfully",
+      "gap_error": 1.3688052427629493e-18,
+      "physical": [
+        1.01272500999189,
+        0.7937993062395718,
+        0.016603047222546092
+      ],
+      "cone_violation": 0.0,
+      "nfev": 6,
+      "njev": 5
+    },
+    {
+      "case": 51,
+      "angle_change": 0.0,
+      "success": true,
+      "status": 0,
+      "message": "Optimization terminated successfully",
+      "gap_error": 1.9464003976274458e-15,
+      "physical": [
+        1.012724992793665,
+        0.98379938812096,
+        0.016603039561720646
+      ],
+      "cone_violation": 0.0,
+      "nfev": 5,
+      "njev": 5
+    },
+    {
+      "case": 52,
+      "angle_change": 0.0,
+      "success": true,
+      "status": 0,
+      "message": "Optimization terminated successfully",
+      "gap_error": 3.184293310260454e-17,
+      "physical": [
+        1.0012725007827241,
+        0.13535364526734517,
+        0.7900201000104139
+      ],
+      "cone_violation": 0.0,
+      "nfev": 6,
+      "njev": 6
+    },
+    {
+      "case": 53,
+      "angle_change": 0.0,
+      "success": true,
+      "status": 0,
+      "message": "Optimization terminated successfully",
+      "gap_error": 1.9636043779400095e-14,
+      "physical": [
+        1.0012724387758662,
+        0.1676474222986793,
+        0.9772558027361369
+      ],
+      "cone_violation": 0.0,
+      "nfev": 5,
+      "njev": 5
+    },
+    {
+      "case": 54,
+      "angle_change": 0.0,
+      "success": true,
+      "status": 0,
+      "message": "Optimization terminated successfully",
+      "gap_error": 1.3417001884508117e-18,
+      "physical": [
+        1.012725009996055,
+        0.1297730181166673,
+        0.8049628338296458
+      ],
+      "cone_violation": 0.0,
+      "nfev": 6,
+      "njev": 5
+    },
+    {
+      "case": 55,
+      "angle_change": 0.0,
+      "success": true,
+      "status": 0,
+      "message": "Optimization terminated successfully",
+      "gap_error": 1.7300343015808073e-15,
+      "physical": [
+        1.0127249939012857,
+        0.16206678072010866,
+        0.9921983599966497
+      ],
+      "cone_violation": 0.0,
+      "nfev": 5,
+      "njev": 5
+    },
+    {
+      "case": 56,
+      "angle_change": 0.0,
+      "success": true,
+      "status": 0,
+      "message": "Optimization terminated successfully",
+      "gap_error": 3.535649543627529e-14,
+      "physical": [
+        1.0012724143503091,
+        -0.686131402492507,
+        0.41406153411263324
+      ],
+      "cone_violation": 0.0,
+      "nfev": 5,
+      "njev": 5
+    },
+    {
+      "case": 57,
+      "angle_change": 0.0,
+      "success": true,
+      "status": 0,
+      "message": "Optimization terminated successfully",
+      "gap_error": 1.550025612487402e-15,
+      "physical": [
+        1.0012724860634385,
+        -0.8489400050437002,
+        0.5120066930652644
+      ],
+      "cone_violation": 0.0,
+      "nfev": 5,
+      "njev": 5
+    },
+    {
+      "case": 58,
+      "angle_change": 0.0,
+      "success": true,
+      "status": 0,
+      "message": "Optimization terminated successfully",
+      "gap_error": 3.375866751940959e-15,
+      "physical": [
+        1.0127249865454604,
+        -0.6917118018338319,
+        0.4290041877203456
+      ],
+      "cone_violation": 0.0,
+      "nfev": 5,
+      "njev": 5
+    },
+    {
+      "case": 59,
+      "angle_change": 0.0,
+      "success": true,
+      "status": 0,
+      "message": "Optimization terminated successfully",
+      "gap_error": 1.373684152539134e-16,
+      "physical": [
+        1.0127250061242727,
+        -0.8545205829540938,
+        0.5269494149427915
+      ],
+      "cone_violation": 0.0,
+      "nfev": 5,
+      "njev": 5
+    },
+    {
+      "case": 0,
+      "angle_change": 0.05,
+      "success": true,
+      "status": 0,
+      "message": "Optimization terminated successfully",
+      "gap_error": 4.1949928752589864e-17,
+      "physical": [
+        0.9993921905123758,
+        0.7952464825021911,
+        0.07947180480528614
+      ],
+      "cone_violation": 0.0,
+      "nfev": 6,
+      "njev": 6
+    },
+    {
+      "case": 1,
+      "angle_change": 0.05,
+      "success": true,
+      "status": 0,
+      "message": "Optimization terminated successfully",
+      "gap_error": 2.5196502364148362e-14,
+      "physical": [
+        0.9993921193400005,
+        0.9842975619301302,
+        0.09844015381939054
+      ],
+      "cone_violation": 0.0,
+      "nfev": 5,
+      "njev": 5
+    },
+    {
+      "case": 2,
+      "angle_change": 0.05,
+      "success": true,
+      "status": 0,
+      "message": "Optimization terminated successfully",
+      "gap_error": 1.5363991817066852e-16,
+      "physical": [
+        0.9939219071426758,
+        0.7884347303980836,
+        0.07591745114961992
+      ],
+      "cone_violation": 0.0,
+      "nfev": 6,
+      "njev": 6
+    },
+    {
+      "case": 3,
+      "angle_change": 0.05,
+      "success": true,
+      "status": 0,
+      "message": "Optimization terminated successfully",
+      "gap_error": 1.220997993467074e-18,
+      "physical": [
+        0.9939219077021602,
+        0.9774854992256635,
+        0.09488580116664098
+      ],
+      "cone_violation": 0.0,
+      "nfev": 6,
+      "njev": 5
+    },
+    {
+      "case": 4,
+      "angle_change": 0.05,
+      "success": true,
+      "status": 0,
+      "message": "Optimization terminated successfully",
+      "gap_error": 3.8091078255470787e-17,
+      "physical": [
+        0.999392190527797,
+        0.055832897893645754,
+        0.7976010734672263
+      ],
+      "cone_violation": 0.0,
+      "nfev": 6,
+      "njev": 6
+    },
+    {
+      "case": 5,
+      "angle_change": 0.05,
+      "success": true,
+      "status": 0,
+      "message": "Optimization terminated successfully",
+      "gap_error": 2.3779262189274635e-14,
+      "physical": [
+        0.9993921216303705,
+        0.0692729568650344,
+        0.9871254009317074
+      ],
+      "cone_violation": 0.0,
+      "nfev": 5,
+      "njev": 5
+    },
+    {
+      "case": 6,
+      "angle_change": 0.05,
+      "success": true,
+      "status": 0,
+      "message": "Optimization terminated successfully",
+      "gap_error": 1.2702106077025488e-16,
+      "physical": [
+        0.9939219072100498,
+        0.04902113307458799,
+        0.7940467304569614
+      ],
+      "cone_violation": 0.0,
+      "nfev": 6,
+      "njev": 6
+    },
+    {
+      "case": 7,
+      "angle_change": 0.05,
+      "success": true,
+      "status": 0,
+      "message": "Optimization terminated successfully",
+      "gap_error": 1.179069862577986e-18,
+      "physical": [
+        0.9939219077048714,
+        0.06246120295589042,
+        0.9835707574697399
+      ],
+      "cone_violation": 0.0,
+      "nfev": 6,
+      "njev": 5
+    },
+    {
+      "case": 8,
+      "angle_change": 0.05,
+      "success": true,
+      "status": 0,
+      "message": "Optimization terminated successfully",
+      "gap_error": 3.938350388378441e-14,
+      "physical": [
+        0.9993920989122294,
+        -0.7240149361778657,
+        0.341509081540413
+      ],
+      "cone_violation": 0.0,
+      "nfev": 5,
+      "njev": 5
+    },
+    {
+      "case": 9,
+      "angle_change": 0.05,
+      "success": true,
+      "status": 0,
+      "message": "Optimization terminated successfully",
+      "gap_error": 1.8029443565816157e-15,
+      "physical": [
+        0.9993921745488563,
+        -0.8957883610387777,
+        0.422711178508371
+      ],
+      "cone_violation": 0.0,
+      "nfev": 5,
+      "njev": 5
+    },
+    {
+      "case": 10,
+      "angle_change": 0.05,
+      "success": true,
+      "status": 0,
+      "message": "Optimization terminated successfully",
+      "gap_error": 1.754628750237283e-18,
+      "physical": [
+        0.9939219076960026,
+        -0.7308263427158023,
+        0.3379546236003403
+      ],
+      "cone_violation": 0.0,
+      "nfev": 6,
+      "njev": 5
+    },
+    {
+      "case": 11,
+      "angle_change": 0.05,
+      "success": true,
+      "status": 0,
+      "message": "Optimization terminated successfully",
+      "gap_error": 9.452887691357992e-19,
+      "physical": [
+        0.9943406091365272,
+        -0.9018405485178019,
+        0.41880409743352576
+      ],
+      "cone_violation": 0.0,
+      "nfev": 8,
+      "njev": 7
+    },
+    {
+      "case": 12,
+      "angle_change": 0.05,
+      "success": true,
+      "status": 0,
+      "message": "Optimization terminated successfully",
+      "gap_error": 4.2471396645633094e-17,
+      "physical": [
+        0.9993023495299468,
+        0.7955183453171308,
+        0.08065718587904758
+      ],
+      "cone_violation": 0.0,
+      "nfev": 6,
+      "njev": 6
+    },
+    {
+      "case": 13,
+      "angle_change": 0.05,
+      "success": true,
+      "status": 0,
+      "message": "Optimization terminated successfully",
+      "gap_error": 2.546853157443095e-14,
+      "physical": [
+        0.9993022779345164,
+        0.9845694262649719,
+        0.09962553527601664
+      ],
+      "cone_violation": 0.0,
+      "nfev": 5,
+      "njev": 5
+    },
+    {
+      "case": 14,
+      "angle_change": 0.05,
+      "success": true,
+      "status": 0,
+      "message": "Optimization terminated successfully",
+      "gap_error": 1.7190533664526025e-16,
+      "physical": [
+        0.9930234972975818,
+        0.7911533591360941,
+        0.08777126209151728
+      ],
+      "cone_violation": 0.0,
+      "nfev": 6,
+      "njev": 6
+    },
+    {
+      "case": 15,
+      "angle_change": 0.05,
+      "success": true,
+      "status": 0,
+      "message": "Optimization terminated successfully",
+      "gap_error": 1.5754812818929986e-18,
+      "physical": [
+        0.9930234978956858,
+        0.9802041267064121,
+        0.10673961173583067
+      ],
+      "cone_violation": 0.0,
+      "nfev": 6,
+      "njev": 5
+    },
+    {
+      "case": 16,
+      "angle_change": 0.05,
+      "success": true,
+      "status": 0,
+      "message": "Optimization terminated successfully",
+      "gap_error": 3.757899389929636e-17,
+      "physical": [
+        0.9993023495494923,
+        0.056104760638183246,
+        0.798786454439916
+      ],
+      "cone_violation": 0.0,
+      "nfev": 6,
+      "njev": 6
+    },
+    {
+      "case": 17,
+      "angle_change": 0.05,
+      "success": true,
+      "status": 0,
+      "message": "Optimization terminated successfully",
+      "gap_error": 2.3665520275776723e-14,
+      "physical": [
+        0.9993022808440793,
+        0.06954481972475446,
+        0.9883107813025022
+      ],
+      "cone_violation": 0.0,
+      "nfev": 5,
+      "njev": 5
+    },
+    {
+      "case": 18,
+      "angle_change": 0.05,
+      "success": true,
+      "status": 0,
+      "message": "Optimization terminated successfully",
+      "gap_error": 1.1092235257473965e-16,
+      "physical": [
+        0.9930234974502813,
+        0.05173976062327408,
+        0.8059005395159307
+      ],
+      "cone_violation": 0.0,
+      "nfev": 6,
+      "njev": 6
+    },
+    {
+      "case": 19,
+      "angle_change": 0.05,
+      "success": true,
+      "status": 0,
+      "message": "Optimization terminated successfully",
+      "gap_error": 1.7936769691057064e-16,
+      "physical": [
+        0.9945344311834494,
+        0.0649823795074963,
+        0.9924092024779567
+      ],
+      "cone_violation": 1.5543122344752192e-15,
+      "nfev": 8,
+      "njev": 8
+    },
+    {
+      "case": 20,
+      "angle_change": 0.05,
+      "success": true,
+      "status": 0,
+      "message": "Optimization terminated successfully",
+      "gap_error": 3.9938190602456496e-14,
+      "physical": [
+        0.9993022572156977,
+        -0.7237430757860559,
+        0.3426944638368278
+      ],
+      "cone_violation": 0.0,
+      "nfev": 5,
+      "njev": 5
+    },
+    {
+      "case": 21,
+      "angle_change": 0.05,
+      "success": true,
+      "status": 0,
+      "message": "Optimization terminated successfully",
+      "gap_error": 1.829086281493166e-15,
+      "physical": [
+        0.9993023334385475,
+        -0.8955164988334298,
+        0.4238965598334778
+      ],
+      "cone_violation": 0.0,
+      "nfev": 5,
+      "njev": 5
+    },
+    {
+      "case": 22,
+      "angle_change": 0.05,
+      "success": true,
+      "status": 0,
+      "message": "Optimization terminated successfully",
+      "gap_error": 2.0989476432961562e-18,
+      "physical": [
+        0.9930234978879358,
+        -0.7281077156003745,
+        0.3498084342423608
+      ],
+      "cone_violation": 0.0,
+      "nfev": 6,
+      "njev": 6
+    },
+    {
+      "case": 23,
+      "angle_change": 0.05,
+      "success": true,
+      "status": 0,
+      "message": "Optimization terminated successfully",
+      "gap_error": -2.5766742255475816e-18,
+      "physical": [
+        0.9946076273370359,
+        -0.897024010417213,
+        0.4296420103900882
+      ],
+      "cone_violation": 4.440892098500626e-15,
+      "nfev": 9,
+      "njev": 8
+    },
+    {
+      "case": 24,
+      "angle_change": 0.05,
+      "success": true,
+      "status": 0,
+      "message": "Optimization terminated successfully",
+      "gap_error": 4.019483678120955e-17,
+      "physical": [
+        0.9993416991193333,
+        0.797148965310585,
+        0.08006356568432055
+      ],
+      "cone_violation": 0.0,
+      "nfev": 6,
+      "njev": 6
+    },
+    {
+      "case": 25,
+      "angle_change": 0.05,
+      "success": true,
+      "status": 0,
+      "message": "Optimization terminated successfully",
+      "gap_error": 2.4595793903614782e-14,
+      "physical": [
+        0.9993416289083893,
+        0.986200041449494,
+        0.09903191488474733
+      ],
+      "cone_violation": 0.0,
+      "nfev": 5,
+      "njev": 5
+    },
+    {
+      "case": 26,
+      "angle_change": 0.05,
+      "success": true,
+      "status": 0,
+      "message": "Optimization terminated successfully",
+      "gap_error": 1.0172526883345245e-16,
+      "physical": [
+        0.9934169932789257,
+        0.8074595565726739,
+        0.08183506009153602
+      ],
+      "cone_violation": 0.0,
+      "nfev": 6,
+      "njev": 6
+    },
+    {
+      "case": 27,
+      "angle_change": 0.05,
+      "success": true,
+      "status": 0,
+      "message": "Optimization terminated successfully",
+      "gap_error": -3.6591823321385775e-18,
+      "physical": [
+        0.9961432649767669,
+        0.9910854704033321,
+        0.10025464933848274
+      ],
+      "cone_violation": 1.5543122344752192e-15,
+      "nfev": 9,
+      "njev": 8
+    },
+    {
+      "case": 28,
+      "angle_change": 0.05,
+      "success": true,
+      "status": 0,
+      "message": "Optimization terminated successfully",
+      "gap_error": 3.802309724400873e-17,
+      "physical": [
+        0.9993416991283035,
+        0.05773538100436916,
+        0.7981928343139358
+      ],
+      "cone_violation": 0.0,
+      "nfev": 6,
+      "njev": 6
+    },
+    {
+      "case": 29,
+      "angle_change": 0.05,
+      "success": true,
+      "status": 0,
+      "message": "Optimization terminated successfully",
+      "gap_error": 2.376957779689088e-14,
+      "physical": [
+        0.9993416302507873,
+        0.071175440575173,
+        0.9877171617552853
+      ],
+      "cone_violation": 0.0,
+      "nfev": 5,
+      "njev": 5
+    },
+    {
+      "case": 30,
+      "angle_change": 0.05,
+      "success": true,
+      "status": 0,
+      "message": "Optimization terminated successfully",
+      "gap_error": 1.233415496473822e-16,
+      "physical": [
+        0.9934169932215228,
+        0.06804596447039665,
+        0.7999643387532098
+      ],
+      "cone_violation": 0.0,
+      "nfev": 6,
+      "njev": 6
+    },
+    {
+      "case": 31,
+      "angle_change": 0.05,
+      "success": true,
+      "status": 0,
+      "message": "Optimization terminated successfully",
+      "gap_error": 1.0164395367051604e-18,
+      "physical": [
+        0.9934169937061691,
+        0.081486033757689,
+        0.9894883660477315
+      ],
+      "cone_violation": 0.0,
+      "nfev": 6,
+      "njev": 5
+    },
+    {
+      "case": 32,
+      "angle_change": 0.05,
+      "success": true,
+      "status": 0,
+      "message": "Optimization terminated successfully",
+      "gap_error": 4.090082466082326e-14,
+      "physical": [
+        0.9993416055411571,
+        -0.7221124597281381,
+        0.3421008448542094
+      ],
+      "cone_violation": 0.0,
+      "nfev": 5,
+      "njev": 5
+    },
+    {
+      "case": 33,
+      "angle_change": 0.05,
+      "success": true,
+      "status": 0,
+      "message": "Optimization terminated successfully",
+      "gap_error": 1.8650216013408705e-15,
+      "physical": [
+        0.99934168283873,
+        -0.893885879250266,
+        0.4233029398810202
+      ],
+      "cone_violation": 0.0,
+      "nfev": 5,
+      "njev": 5
+    },
+    {
+      "case": 34,
+      "angle_change": 0.05,
+      "success": true,
+      "status": 0,
+      "message": "Optimization terminated successfully",
+      "gap_error": 3.042542346537447e-18,
+      "physical": [
+        0.9934169936842058,
+        -0.7118015126760113,
+        0.343872232444454
+      ],
+      "cone_violation": 0.0,
+      "nfev": 6,
+      "njev": 6
+    },
+    {
+      "case": 35,
+      "angle_change": 0.05,
+      "success": true,
+      "status": 0,
+      "message": "Optimization terminated successfully",
+      "gap_error": 5.9562272648749914e-15,
+      "physical": [
+        0.9934169622158389,
+        -0.8835753567651845,
+        0.42507445509941494
+      ],
+      "cone_violation": 0.0,
+      "nfev": 5,
+      "njev": 5
+    },
+    {
+      "case": 36,
+      "angle_change": 0.05,
+      "success": true,
+      "status": 0,
+      "message": "Optimization terminated successfully",
+      "gap_error": 2.723729733102769e-17,
+      "physical": [
+        1.0011166033638046,
+        0.7974367655143065,
+        0.07924557649479214
+      ],
+      "cone_violation": 0.0,
+      "nfev": 6,
+      "njev": 6
+    },
+    {
+      "case": 37,
+      "angle_change": 0.05,
+      "success": true,
+      "status": 0,
+      "message": "Optimization terminated successfully",
+      "gap_error": 1.7985445815799572e-14,
+      "physical": [
+        1.0011165443476489,
+        0.9864878013097896,
+        0.09821392545433501
+      ],
+      "cone_violation": 0.0,
+      "nfev": 5,
+      "njev": 5
+    },
+    {
+      "case": 38,
+      "angle_change": 0.05,
+      "success": true,
+      "status": 0,
+      "message": "Optimization terminated successfully",
+      "gap_error": 1.4365678785432934e-18,
+      "physical": [
+        1.0111660355908545,
+        0.8103375635772269,
+        0.07365516809391243
+      ],
+      "cone_violation": 0.0,
+      "nfev": 6,
+      "njev": 5
+    },
+    {
+      "case": 39,
+      "angle_change": 0.05,
+      "success": true,
+      "status": 0,
+      "message": "Optimization terminated successfully",
+      "gap_error": 2.170044200756893e-15,
+      "physical": [
+        1.0111660173481671,
+        0.9993884418599869,
+        0.09262351661993487
+      ],
+      "cone_violation": 0.0,
+      "nfev": 5,
+      "njev": 5
+    },
+    {
+      "case": 40,
+      "angle_change": 0.05,
+      "success": true,
+      "status": 0,
+      "message": "Optimization terminated successfully",
+      "gap_error": 2.6506625534902448e-17,
+      "physical": [
+        1.00111660336694,
+        0.05802318358917568,
+        0.7973748430451981
+      ],
+      "cone_violation": 0.0,
+      "nfev": 6,
+      "njev": 6
+    },
+    {
+      "case": 41,
+      "angle_change": 0.05,
+      "success": true,
+      "status": 0,
+      "message": "Optimization terminated successfully",
+      "gap_error": 1.771699947547453e-14,
+      "physical": [
+        1.0011165448466879,
+        0.07146324439051212,
+        0.9868991330229042
+      ],
+      "cone_violation": 0.0,
+      "nfev": 5,
+      "njev": 5
+    },
+    {
+      "case": 42,
+      "angle_change": 0.05,
+      "success": true,
+      "status": 0,
+      "message": "Optimization terminated successfully",
+      "gap_error": 2.9544509200229996e-18,
+      "physical": [
+        1.0111660355762204,
+        0.07092398992430528,
+        0.7917844275957036
+      ],
+      "cone_violation": 0.0,
+      "nfev": 6,
+      "njev": 6
+    },
+    {
+      "case": 43,
+      "angle_change": 0.05,
+      "success": true,
+      "status": 0,
+      "message": "Optimization terminated successfully",
+      "gap_error": 2.9865229755378364e-15,
+      "physical": [
+        1.0111660137549343,
+        0.0843640565260315,
+        0.9813085764307611
+      ],
+      "cone_violation": 0.0,
+      "nfev": 5,
+      "njev": 5
+    },
+    {
+      "case": 44,
+      "angle_change": 0.05,
+      "success": true,
+      "status": 0,
+      "message": "Optimization terminated successfully",
+      "gap_error": 3.04178186976949e-14,
+      "physical": [
+        1.0011165239660351,
+        -0.7218246075208573,
+        0.3412828406793577
+      ],
+      "cone_violation": 0.0,
+      "nfev": 5,
+      "njev": 5
+    },
+    {
+      "case": 45,
+      "angle_change": 0.05,
+      "success": true,
+      "status": 0,
+      "message": "Optimization terminated successfully",
+      "gap_error": 1.3648665395582169e-15,
+      "physical": [
+        1.0011165896549683,
+        -0.8935980654685097,
+        0.4224849469063875
+      ],
+      "cone_violation": 0.0,
+      "nfev": 5,
+      "njev": 5
+    },
+    {
+      "case": 46,
+      "angle_change": 0.05,
+      "success": true,
+      "status": 0,
+      "message": "Optimization terminated successfully",
+      "gap_error": 6.066314442963738e-15,
+      "physical": [
+        1.0111660030600658,
+        -0.7089236277434421,
+        0.3356923806864567
+      ],
+      "cone_violation": 0.0,
+      "nfev": 5,
+      "njev": 5
+    },
+    {
+      "case": 47,
+      "angle_change": 0.05,
+      "success": true,
+      "status": 0,
+      "message": "Optimization terminated successfully",
+      "gap_error": 2.4137728491316346e-16,
+      "physical": [
+        1.011166030288832,
+        -0.8806972205622795,
+        0.41689452557902257
+      ],
+      "cone_violation": 0.0,
+      "nfev": 5,
+      "njev": 5
+    },
+    {
+      "case": 48,
+      "angle_change": 0.05,
+      "success": true,
+      "status": 0,
+      "message": "Optimization terminated successfully",
+      "gap_error": 2.7881783524769804e-17,
+      "physical": [
+        1.0012725008004895,
+        0.7953832731453733,
+        0.08152703778991335
+      ],
+      "cone_violation": 0.0,
+      "nfev": 6,
+      "njev": 6
+    },
+    {
+      "case": 49,
+      "angle_change": 0.05,
+      "success": true,
+      "status": 0,
+      "message": "Optimization terminated successfully",
+      "gap_error": 1.8134567766108704e-14,
+      "physical": [
+        1.0012724415001488,
+        0.9844343098408682,
+        0.10049538737645823
+      ],
+      "cone_violation": 0.0,
+      "nfev": 5,
+      "njev": 5
+    },
+    {
+      "case": 50,
+      "angle_change": 0.05,
+      "success": true,
+      "status": 0,
+      "message": "Optimization terminated successfully",
+      "gap_error": 1.870248747537495e-18,
+      "physical": [
+        1.0127250099854583,
+        0.7898026388484113,
+        0.09646978083042844
+      ],
+      "cone_violation": 0.0,
+      "nfev": 6,
+      "njev": 5
+    },
+    {
+      "case": 51,
+      "angle_change": 0.05,
+      "success": true,
+      "status": 0,
+      "message": "Optimization terminated successfully",
+      "gap_error": 2.2769126536460738e-15,
+      "physical": [
+        1.0127249912058434,
+        0.9788535189570886,
+        0.11543813161795058
+      ],
+      "cone_violation": 0.0,
+      "nfev": 5,
+      "njev": 5
+    },
+    {
+      "case": 52,
+      "angle_change": 0.05,
+      "success": true,
+      "status": 0,
+      "message": "Optimization terminated successfully",
+      "gap_error": 2.3887387903755337e-17,
+      "physical": [
+        1.0012725008190952,
+        0.055969691089623144,
+        0.7996563037994849
+      ],
+      "cone_violation": 0.0,
+      "nfev": 6,
+      "njev": 6
+    },
+    {
+      "case": 53,
+      "angle_change": 0.05,
+      "success": true,
+      "status": 0,
+      "message": "Optimization terminated successfully",
+      "gap_error": 1.65517075566957e-14,
+      "physical": [
+        1.0012724444808636,
+        0.06940975161181286,
+        0.9891805859219398
+      ],
+      "cone_violation": 0.0,
+      "nfev": 5,
+      "njev": 5
+    },
+    {
+      "case": 54,
+      "angle_change": 0.05,
+      "success": true,
+      "status": 0,
+      "message": "Optimization terminated successfully",
+      "gap_error": 1.2536087619363645e-18,
+      "physical": [
+        1.0127250100015988,
+        0.05038906489630474,
+        0.8145990387807064
+      ],
+      "cone_violation": 0.0,
+      "nfev": 6,
+      "njev": 5
+    },
+    {
+      "case": 55,
+      "angle_change": 0.05,
+      "success": true,
+      "status": 0,
+      "message": "Optimization terminated successfully",
+      "gap_error": 1.4356056491152125e-15,
+      "physical": [
+        1.012724995499267,
+        0.06382913043414429,
+        1.004123157147919
+      ],
+      "cone_violation": 0.0,
+      "nfev": 5,
+      "njev": 5
+    },
+    {
+      "case": 56,
+      "angle_change": 0.05,
+      "success": true,
+      "status": 0,
+      "message": "Optimization terminated successfully",
+      "gap_error": 2.8262861636036264e-14,
+      "physical": [
+        1.0012724246170437,
+        -0.7238780885852075,
+        0.34356429920840215
+      ],
+      "cone_violation": 0.0,
+      "nfev": 5,
+      "njev": 5
+    },
+    {
+      "case": 57,
+      "angle_change": 0.05,
+      "success": true,
+      "status": 0,
+      "message": "Optimization terminated successfully",
+      "gap_error": 1.2736239387217468e-15,
+      "physical": [
+        1.0012724876222505,
+        -0.8956515556559468,
+        0.42476640752621336
+      ],
+      "cone_violation": 0.0,
+      "nfev": 5,
+      "njev": 5
+    },
+    {
+      "case": 58,
+      "angle_change": 0.05,
+      "success": true,
+      "status": 0,
+      "message": "Optimization terminated successfully",
+      "gap_error": 2.738071271449205e-15,
+      "physical": [
+        1.012724989152024,
+        -0.7294585057703773,
+        0.3585069815891298
+      ],
+      "cone_violation": 0.0,
+      "nfev": 5,
+      "njev": 5
+    },
+    {
+      "case": 59,
+      "angle_change": 0.05,
+      "success": true,
+      "status": 0,
+      "message": "Optimization terminated successfully",
+      "gap_error": 1.147153661125444e-16,
+      "physical": [
+        1.012725006502647,
+        -0.9012321366268234,
+        0.43970913565324643
+      ],
+      "cone_violation": 0.0,
+      "nfev": 5,
+      "njev": 5
+    },
+    {
+      "case": 0,
+      "angle_change": 0.2,
+      "success": true,
+      "status": 0,
+      "message": "Optimization terminated successfully",
+      "gap_error": 8.553033637164015e-17,
+      "physical": [
+        0.9993921903631463,
+        0.7360919500889895,
+        0.3111397515414458
+      ],
+      "cone_violation": 0.0,
+      "nfev": 6,
+      "njev": 6
+    },
+    {
+      "case": 1,
+      "angle_change": 0.2,
+      "success": true,
+      "status": 0,
+      "message": "Optimization terminated successfully",
+      "gap_error": 3.864641153159687e-14,
+      "physical": [
+        0.9993920998846444,
+        0.9110938719430978,
+        0.38512935398358733
+      ],
+      "cone_violation": 0.0,
+      "nfev": 5,
+      "njev": 5
+    },
+    {
+      "case": 2,
+      "angle_change": 0.2,
+      "success": true,
+      "status": 0,
+      "message": "Optimization terminated successfully",
+      "gap_error": 3.154748801060224e-16,
+      "physical": [
+        0.993921906802038,
+        0.7292802023133109,
+        0.3075854036694766
+      ],
+      "cone_violation": 0.0,
+      "nfev": 6,
+      "njev": 6
+    },
+    {
+      "case": 3,
+      "angle_change": 0.2,
+      "success": true,
+      "status": 0,
+      "message": "Optimization terminated successfully",
+      "gap_error": 2.259036870327219e-18,
+      "physical": [
+        0.9939219076891345,
+        0.9042817602906494,
+        0.3815748785777909
+      ],
+      "cone_violation": 0.0,
+      "nfev": 6,
+      "njev": 6
+    },
+    {
+      "case": 4,
+      "angle_change": 0.2,
+      "success": true,
+      "status": 0,
+      "message": "Optimization terminated successfully",
+      "gap_error": 1.4103627967376135e-17,
+      "physical": [
+        0.9993921906424044,
+        -0.18251854129951706,
+        0.778683183500999
+      ],
+      "cone_violation": 0.0,
+      "nfev": 6,
+      "njev": 6
+    },
+    {
+      "case": 5,
+      "angle_change": 0.2,
+      "success": true,
+      "status": 0,
+      "message": "Optimization terminated successfully",
+      "gap_error": 1.303056319288606e-14,
+      "physical": [
+        0.9993921414838165,
+        -0.22568701311209577,
+        0.9637144298593793
+      ],
+      "cone_violation": 0.0,
+      "nfev": 5,
+      "njev": 5
+    },
+    {
+      "case": 6,
+      "angle_change": 0.2,
+      "success": true,
+      "status": 0,
+      "message": "Optimization terminated successfully",
+      "gap_error": 4.5227324218643367e-17,
+      "physical": [
+        0.993921907460144,
+        -0.1893303076592572,
+        0.7751288357595153
+      ],
+      "cone_violation": 0.0,
+      "nfev": 6,
+      "njev": 6
+    },
+    {
+      "case": 7,
+      "angle_change": 0.2,
+      "success": true,
+      "status": 0,
+      "message": "Optimization terminated successfully",
+      "gap_error": 3.311771175899163e-14,
+      "physical": [
+        0.9939218249656655,
+        -0.23249882461323604,
+        0.9601601947194585
+      ],
+      "cone_violation": 0.0,
+      "nfev": 5,
+      "njev": 5
+    },
+    {
+      "case": 8,
+      "angle_change": 0.2,
+      "success": true,
+      "status": 0,
+      "message": "Optimization terminated successfully",
+      "gap_error": 2.1754011117392928e-14,
+      "physical": [
+        0.9993921250094354,
+        -0.7927511398536132,
+        0.1125010822373873
+      ],
+      "cone_violation": 0.0,
+      "nfev": 5,
+      "njev": 5
+    },
+    {
+      "case": 9,
+      "angle_change": 0.2,
+      "success": true,
+      "status": 0,
+      "message": "Optimization terminated successfully",
+      "gap_error": 1.0673016483437395e-15,
+      "physical": [
+        0.9993921786833319,
+        -0.980849497315989,
+        0.13931388214144336
+      ],
+      "cone_violation": 0.0,
+      "nfev": 5,
+      "njev": 5
+    },
+    {
+      "case": 10,
+      "angle_change": 0.2,
+      "success": true,
+      "status": 0,
+      "message": "Optimization terminated successfully",
+      "gap_error": 4.8211577569399035e-14,
+      "physical": [
+        0.9939218054712705,
+        -0.7995630385163747,
+        0.10894672927078336
+      ],
+      "cone_violation": 0.0,
+      "nfev": 5,
+      "njev": 5
+    },
+    {
+      "case": 11,
+      "angle_change": 0.2,
+      "success": true,
+      "status": 0,
+      "message": "Optimization terminated successfully",
+      "gap_error": 8.588888674170188e-16,
+      "physical": [
+        0.9949306337930915,
+        -0.985662638073102,
+        0.1354847960721473
+      ],
+      "cone_violation": 7.66053886991358e-15,
+      "nfev": 8,
+      "njev": 7
+    },
+    {
+      "case": 12,
+      "angle_change": 0.2,
+      "success": true,
+      "status": 0,
+      "message": "Optimization terminated successfully",
+      "gap_error": 8.562489304182231e-17,
+      "physical": [
+        0.9993023493826091,
+        0.7363638128205375,
+        0.3123251326248772
+      ],
+      "cone_violation": 0.0,
+      "nfev": 6,
+      "njev": 6
+    },
+    {
+      "case": 13,
+      "angle_change": 0.2,
+      "success": true,
+      "status": 0,
+      "message": "Optimization terminated successfully",
+      "gap_error": 3.879550742240798e-14,
+      "physical": [
+        0.9993022587171465,
+        0.9113657351987557,
+        0.3863147356925747
+      ],
+      "cone_violation": 0.0,
+      "nfev": 5,
+      "njev": 5
+    },
+    {
+      "case": 14,
+      "angle_change": 0.2,
+      "success": true,
+      "status": 0,
+      "message": "Optimization terminated successfully",
+      "gap_error": 3.144440410092139e-16,
+      "physical": [
+        0.9930234970023613,
+        0.7319988294021812,
+        0.31943921470748693
+      ],
+      "cone_violation": 0.0,
+      "nfev": 6,
+      "njev": 6
+    },
+    {
+      "case": 15,
+      "angle_change": 0.2,
+      "success": true,
+      "status": 0,
+      "message": "Optimization terminated successfully",
+      "gap_error": 2.4275964268308248e-18,
+      "physical": [
+        0.9930234978841608,
+        0.9070003876591044,
+        0.3934286891671723
+      ],
+      "cone_violation": 0.0,
+      "nfev": 6,
+      "njev": 6
+    },
+    {
+      "case": 16,
+      "angle_change": 0.2,
+      "success": true,
+      "status": 0,
+      "message": "Optimization terminated successfully",
+      "gap_error": 1.396846003784007e-17,
+      "physical": [
+        0.9993023496626142,
+        -0.18224667854908724,
+        0.7798685645324166
+      ],
+      "cone_violation": 0.0,
+      "nfev": 6,
+      "njev": 6
+    },
+    {
+      "case": 17,
+      "angle_change": 0.2,
+      "success": true,
+      "status": 0,
+      "message": "Optimization terminated successfully",
+      "gap_error": 1.3012595228559743e-14,
+      "physical": [
+        0.9993023005471524,
+        -0.22541515017940664,
+        0.9648998108326915
+      ],
+      "cone_violation": 0.0,
+      "nfev": 5,
+      "njev": 5
+    },
+    {
+      "case": 18,
+      "angle_change": 0.2,
+      "success": true,
+      "status": 0,
+      "message": "Optimization terminated successfully",
+      "gap_error": 4.190695506540651e-17,
+      "physical": [
+        0.9930234976696057,
+        -0.18661168000759876,
+        0.7869826458708988
+      ],
+      "cone_violation": 0.0,
+      "nfev": 6,
+      "njev": 6
+    },
+    {
+      "case": 19,
+      "angle_change": 0.2,
+      "success": true,
+      "status": 0,
+      "message": "Optimization terminated successfully",
+      "gap_error": -3.584643432780199e-18,
+      "physical": [
+        0.9949503409950051,
+        -0.2288935146410109,
+        0.9682633629345724
+      ],
+      "cone_violation": 2.55351295663786e-15,
+      "nfev": 9,
+      "njev": 8
+    },
+    {
+      "case": 20,
+      "angle_change": 0.2,
+      "success": true,
+      "status": 0,
+      "message": "Optimization terminated successfully",
+      "gap_error": 2.2189220324991552e-14,
+      "physical": [
+        0.9993022832991233,
+        -0.7924792798656133,
+        0.11368646370628524
+      ],
+      "cone_violation": 0.0,
+      "nfev": 5,
+      "njev": 5
+    },
+    {
+      "case": 21,
+      "angle_change": 0.2,
+      "success": true,
+      "status": 0,
+      "message": "Optimization terminated successfully",
+      "gap_error": 1.0883548110664227e-15,
+      "physical": [
+        0.9993023375710055,
+        -0.9805776351937411,
+        0.14049926328788276
+      ],
+      "cone_violation": 0.0,
+      "nfev": 5,
+      "njev": 5
+    },
+    {
+      "case": 22,
+      "angle_change": 0.2,
+      "success": true,
+      "status": 0,
+      "message": "Optimization terminated successfully",
+      "gap_error": 1.0232158002831948e-18,
+      "physical": [
+        0.99302349790233,
+        -0.7968439984836948,
+        0.12080053573003206
+      ],
+      "cone_violation": 0.0,
+      "nfev": 6,
+      "njev": 5
+    },
+    {
+      "case": 23,
+      "angle_change": 0.2,
+      "success": true,
+      "status": 0,
+      "message": "Optimization terminated successfully",
+      "gap_error": 5.766456309306243e-16,
+      "physical": [
+        0.9939965423893817,
+        -0.9830180573795292,
+        0.14732489656481287
+      ],
+      "cone_violation": 5.10702591327572e-15,
+      "nfev": 8,
+      "njev": 7
+    },
+    {
+      "case": 24,
+      "angle_change": 0.2,
+      "success": true,
+      "status": 0,
+      "message": "Optimization terminated successfully",
+      "gap_error": 8.165863479652445e-17,
+      "physical": [
+        0.9993416989750912,
+        0.7379944327668546,
+        0.31173151226767104
+      ],
+      "cone_violation": 0.0,
+      "nfev": 6,
+      "njev": 6
+    },
+    {
+      "case": 25,
+      "angle_change": 0.2,
+      "success": true,
+      "status": 0,
+      "message": "Optimization terminated successfully",
+      "gap_error": 3.763939147772121e-14,
+      "physical": [
+        0.999341609832071,
+        0.912996350503668,
+        0.38572111322291375
+      ],
+      "cone_violation": 0.0,
+      "nfev": 5,
+      "njev": 5
+    },
+    {
+      "case": 26,
+      "angle_change": 0.2,
+      "success": true,
+      "status": 0,
+      "message": "Optimization terminated successfully",
+      "gap_error": 2.0174969550881827e-16,
+      "physical": [
+        0.993416993034739,
+        0.7483050263009631,
+        0.313503010015007
+      ],
+      "cone_violation": 0.0,
+      "nfev": 6,
+      "njev": 6
+    },
+    {
+      "case": 27,
+      "angle_change": 0.2,
+      "success": true,
+      "status": 0,
+      "message": "Optimization terminated successfully",
+      "gap_error": 4.9459947856073105e-17,
+      "physical": [
+        0.9960519598899116,
+        0.9184472720658862,
+        0.3854531297515534
+      ],
+      "cone_violation": 8.881784197001252e-16,
+      "nfev": 8,
+      "njev": 8
+    },
+    {
+      "case": 28,
+      "angle_change": 0.2,
+      "success": true,
+      "status": 0,
+      "message": "Optimization terminated successfully",
+      "gap_error": 1.4362925928354357e-17,
+      "physical": [
+        0.9993416992411956,
+        -0.1806160582280458,
+        0.7792749444237551
+      ],
+      "cone_violation": 0.0,
+      "nfev": 6,
+      "njev": 6
+    },
+    {
+      "case": 29,
+      "angle_change": 0.2,
+      "success": true,
+      "status": 0,
+      "message": "Optimization terminated successfully",
+      "gap_error": 1.3170652198557216e-14,
+      "physical": [
+        0.9993416497896531,
+        -0.22378453000193257,
+        0.9643061919622976
+      ],
+      "cone_violation": 0.0,
+      "nfev": 5,
+      "njev": 5
+    },
+    {
+      "case": 30,
+      "angle_change": 0.2,
+      "success": true,
+      "status": 0,
+      "message": "Optimization terminated successfully",
+      "gap_error": 5.248216141187645e-17,
+      "physical": [
+        0.9934169934348337,
+        -0.17030547694874978,
+        0.7810464454570631
+      ],
+      "cone_violation": 0.0,
+      "nfev": 6,
+      "njev": 6
+    },
+    {
+      "case": 31,
+      "angle_change": 0.2,
+      "success": true,
+      "status": 0,
+      "message": "Optimization terminated successfully",
+      "gap_error": 3.660835740451618e-14,
+      "physical": [
+        0.9934169062147999,
+        -0.21347399283348875,
+        0.9660778223432144
+      ],
+      "cone_violation": 0.0,
+      "nfev": 5,
+      "njev": 5
+    },
+    {
+      "case": 32,
+      "angle_change": 0.2,
+      "success": true,
+      "status": 0,
+      "message": "Optimization terminated successfully",
+      "gap_error": 2.2668384037604337e-14,
+      "physical": [
+        0.9993416320719184,
+        -0.7908486625174158,
+        0.11309284337541062
+      ],
+      "cone_violation": 0.0,
+      "nfev": 5,
+      "njev": 5
+    },
+    {
+      "case": 33,
+      "angle_change": 0.2,
+      "success": true,
+      "status": 0,
+      "message": "Optimization terminated successfully",
+      "gap_error": 1.107592246170103e-15,
+      "physical": [
+        0.9993416870302347,
+        -0.9789470154071273,
+        0.13990564308256964
+      ],
+      "cone_violation": 0.0,
+      "nfev": 5,
+      "njev": 5
+    },
+    {
+      "case": 34,
+      "angle_change": 0.2,
+      "success": true,
+      "status": 0,
+      "message": "Optimization terminated successfully",
+      "gap_error": 1.2671612890924333e-18,
+      "physical": [
+        0.9934169937026098,
+        -0.7805377953782727,
+        0.11486433377859379
+      ],
+      "cone_violation": 0.0,
+      "nfev": 6,
+      "njev": 5
+    },
+    {
+      "case": 35,
+      "angle_change": 0.2,
+      "success": true,
+      "status": 0,
+      "message": "Optimization terminated successfully",
+      "gap_error": 3.603020659603828e-15,
+      "physical": [
+        0.993416969969548,
+        -0.9686364826456607,
+        0.14167713976331336
+      ],
+      "cone_violation": 0.0,
+      "nfev": 5,
+      "njev": 5
+    },
+    {
+      "case": 36,
+      "angle_change": 0.2,
+      "success": true,
+      "status": 0,
+      "message": "Optimization terminated successfully",
+      "gap_error": 5.601185358220353e-17,
+      "physical": [
+        1.0011166032478447,
+        0.7382822322891852,
+        0.3109135220309516
+      ],
+      "cone_violation": 0.0,
+      "nfev": 6,
+      "njev": 6
+    },
+    {
+      "case": 37,
+      "angle_change": 0.2,
+      "success": true,
+      "status": 0,
+      "message": "Optimization terminated successfully",
+      "gap_error": 2.7728023433799744e-14,
+      "physical": [
+        1.0011165280093255,
+        0.9132841046276987,
+        0.38490310665775984
+      ],
+      "cone_violation": 0.0,
+      "nfev": 5,
+      "njev": 5
+    },
+    {
+      "case": 38,
+      "angle_change": 0.2,
+      "success": true,
+      "status": 0,
+      "message": "Optimization terminated successfully",
+      "gap_error": 3.665958595716612e-18,
+      "physical": [
+        1.011166035566218,
+        0.7511830277259749,
+        0.30532310991524264
+      ],
+      "cone_violation": 0.0,
+      "nfev": 6,
+      "njev": 6
+    },
+    {
+      "case": 39,
+      "angle_change": 0.2,
+      "success": true,
+      "status": 0,
+      "message": "Optimization terminated successfully",
+      "gap_error": 3.532662714873097e-15,
+      "physical": [
+        1.0111660115936327,
+        0.9261847207027594,
+        0.37931263023927747
+      ],
+      "cone_violation": 0.0,
+      "nfev": 5,
+      "njev": 5
+    },
+    {
+      "case": 40,
+      "angle_change": 0.2,
+      "success": true,
+      "status": 0,
+      "message": "Optimization terminated successfully",
+      "gap_error": 9.900650483100296e-18,
+      "physical": [
+        1.0011166034577323,
+        -0.18032825528347507,
+        0.7784569540044409
+      ],
+      "cone_violation": 0.0,
+      "nfev": 6,
+      "njev": 6
+    },
+    {
+      "case": 41,
+      "angle_change": 0.2,
+      "success": true,
+      "status": 0,
+      "message": "Optimization terminated successfully",
+      "gap_error": 9.78913711328661e-15,
+      "physical": [
+        1.0011165615065685,
+        -0.2234967170843342,
+        0.963488174791099
+      ],
+      "cone_violation": 0.0,
+      "nfev": 5,
+      "njev": 5
+    },
+    {
+      "case": 42,
+      "angle_change": 0.2,
+      "success": true,
+      "status": 0,
+      "message": "Optimization terminated successfully",
+      "gap_error": 8.74138001566438e-19,
+      "physical": [
+        1.0111660355985679,
+        -0.16742744781826846,
+        0.7728665415852076
+      ],
+      "cone_violation": 0.0,
+      "nfev": 6,
+      "njev": 5
+    },
+    {
+      "case": 43,
+      "angle_change": 0.2,
+      "success": true,
+      "status": 0,
+      "message": "Optimization terminated successfully",
+      "gap_error": 1.7278862260265704e-15,
+      "physical": [
+        1.0111660195416097,
+        -0.21059587223247775,
+        0.9578976646302338
+      ],
+      "cone_violation": 0.0,
+      "nfev": 5,
+      "njev": 5
+    },
+    {
+      "case": 44,
+      "angle_change": 0.2,
+      "success": true,
+      "status": 0,
+      "message": "Optimization terminated successfully",
+      "gap_error": 1.6738141202452266e-14,
+      "physical": [
+        1.0011165466947016,
+        -0.7905608203197726,
+        0.1122748533247434
+      ],
+      "cone_violation": 0.0,
+      "nfev": 5,
+      "njev": 5
+    },
+    {
+      "case": 45,
+      "angle_change": 0.2,
+      "success": true,
+      "status": 0,
+      "message": "Optimization terminated successfully",
+      "gap_error": 8.061585253515968e-16,
+      "physical": [
+        1.0011165932110577,
+        -0.9786592035945382,
+        0.13908765345364907
+      ],
+      "cone_violation": 0.0,
+      "nfev": 5,
+      "njev": 5
+    },
+    {
+      "case": 46,
+      "angle_change": 0.2,
+      "success": true,
+      "status": 0,
+      "message": "Optimization terminated successfully",
+      "gap_error": 3.195441957912215e-15,
+      "physical": [
+        1.0111660129095588,
+        -0.7776598769382401,
+        0.10668444214705887
+      ],
+      "cone_violation": 0.0,
+      "nfev": 5,
+      "njev": 5
+    },
+    {
+      "case": 47,
+      "angle_change": 0.2,
+      "success": true,
+      "status": 0,
+      "message": "Optimization terminated successfully",
+      "gap_error": 1.383713022634625e-16,
+      "physical": [
+        1.0111660317208637,
+        -0.9657583657567201,
+        0.1334972435712971
+      ],
+      "cone_violation": 0.0,
+      "nfev": 5,
+      "njev": 5
+    },
+    {
+      "case": 48,
+      "angle_change": 0.2,
+      "success": true,
+      "status": 0,
+      "message": "Optimization terminated successfully",
+      "gap_error": 5.613552039250265e-17,
+      "physical": [
+        1.0012725006873884,
+        0.7362287397776394,
+        0.3131949833598416
+      ],
+      "cone_violation": 0.0,
+      "nfev": 6,
+      "njev": 6
+    },
+    {
+      "case": 49,
+      "angle_change": 0.2,
+      "success": true,
+      "status": 0,
+      "message": "Optimization terminated successfully",
+      "gap_error": 2.7553045273380082e-14,
+      "physical": [
+        1.0012724257032217,
+        0.9112306108462809,
+        0.3871845685720145
+      ],
+      "cone_violation": 0.0,
+      "nfev": 5,
+      "njev": 5
+    },
+    {
+      "case": 50,
+      "angle_change": 0.2,
+      "success": true,
+      "status": 0,
+      "message": "Optimization terminated successfully",
+      "gap_error": 3.5575383784680614e-18,
+      "physical": [
+        1.0127250099672127,
+        0.7306481025804943,
+        0.3281377227058616
+      ],
+      "cone_violation": 0.0,
+      "nfev": 6,
+      "njev": 6
+    },
+    {
+      "case": 51,
+      "angle_change": 0.2,
+      "success": true,
+      "status": 0,
+      "message": "Optimization terminated successfully",
+      "gap_error": 3.190535943081718e-15,
+      "physical": [
+        1.0127249872806996,
+        0.9056497891546103,
+        0.40212724443691844
+      ],
+      "cone_violation": 0.0,
+      "nfev": 5,
+      "njev": 5
+    },
+    {
+      "case": 52,
+      "angle_change": 0.2,
+      "success": true,
+      "status": 0,
+      "message": "Optimization terminated successfully",
+      "gap_error": 8.831271387191742e-18,
+      "physical": [
+        1.0012725009050187,
+        -0.18238174766125836,
+        0.7807384149437407
+      ],
+      "cone_violation": 0.0,
+      "nfev": 6,
+      "njev": 6
+    },
+    {
+      "case": 53,
+      "angle_change": 0.2,
+      "success": true,
+      "status": 0,
+      "message": "Optimization terminated successfully",
+      "gap_error": 9.074735337770467e-15,
+      "physical": [
+        1.0012724606930345,
+        -0.22555020736108086,
+        0.9657696294836947
+      ],
+      "cone_violation": 0.0,
+      "nfev": 5,
+      "njev": 5
+    },
+    {
+      "case": 54,
+      "angle_change": 0.2,
+      "success": true,
+      "status": 0,
+      "message": "Optimization terminated successfully",
+      "gap_error": 2.5188544013152875e-14,
+      "physical": [
+        1.0127249373138734,
+        -0.18796248690851328,
+        0.795681429700822
+      ],
+      "cone_violation": 0.0,
+      "nfev": 5,
+      "njev": 5
+    },
+    {
+      "case": 55,
+      "angle_change": 0.2,
+      "success": true,
+      "status": 0,
+      "message": "Optimization terminated successfully",
+      "gap_error": 7.672085623050551e-16,
+      "physical": [
+        1.0127249998051375,
+        -0.23113078886765084,
+        0.9807122521541091
+      ],
+      "cone_violation": 0.0,
+      "nfev": 5,
+      "njev": 5
+    },
+    {
+      "case": 56,
+      "angle_change": 0.2,
+      "success": true,
+      "status": 0,
+      "message": "Optimization terminated successfully",
+      "gap_error": 1.5708918350386262e-14,
+      "physical": [
+        1.001272446118505,
+        -0.7926143052300975,
+        0.11455631508708759
+      ],
+      "cone_violation": 0.0,
+      "nfev": 5,
+      "njev": 5
+    },
+    {
+      "case": 57,
+      "angle_change": 0.2,
+      "success": true,
+      "status": 0,
+      "message": "Optimization terminated successfully",
+      "gap_error": 7.588449589838661e-16,
+      "physical": [
+        1.0012724909949484,
+        -0.9807126944709657,
+        0.14136911476877664
+      ],
+      "cone_violation": 0.0,
+      "nfev": 5,
+      "njev": 5
+    },
+    {
+      "case": 58,
+      "angle_change": 0.2,
+      "success": true,
+      "status": 0,
+      "message": "Optimization terminated successfully",
+      "gap_error": 1.6010684531636565e-15,
+      "physical": [
+        1.012724994581971,
+        -0.7981947705281967,
+        0.1294990565029705
+      ],
+      "cone_violation": 0.0,
+      "nfev": 5,
+      "njev": 5
+    },
+    {
+      "case": 59,
+      "angle_change": 0.2,
+      "success": true,
+      "status": 0,
+      "message": "Optimization terminated successfully",
+      "gap_error": 7.149635701184098e-17,
+      "physical": [
+        1.012725007316338,
+        -0.986293284418037,
+        0.15631185636164194
+      ],
+      "cone_violation": 0.0,
+      "nfev": 5,
+      "njev": 5
+    }
+  ]
+}

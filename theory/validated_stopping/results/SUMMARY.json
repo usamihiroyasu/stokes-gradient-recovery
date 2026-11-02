@@ -1,0 +1,86 @@
+{
+  "reference_status_counts": {
+    "accurate": 8989,
+    "inaccurate": 295
+  },
+  "historical_false_successes": 295,
+  "reference_seconds": 7.69010129198432,
+  "precisions": [
+    {
+      "bits": 32,
+      "endpoints": 9284,
+      "certified": 8858,
+      "status_counts": {
+        "certified": 8858,
+        "bound_above_target": 423,
+        "inconclusive": 3
+      },
+      "accepted_inaccurate": 0,
+      "accurate_rejected": 131,
+      "legacy_acceptance_disagreements": 3,
+      "scalar_curvature_evaluations": 52,
+      "full_head_hessians": 0,
+      "elapsed_seconds": 6.2125642920145765
+    },
+    {
+      "bits": 64,
+      "endpoints": 9284,
+      "certified": 8861,
+      "status_counts": {
+        "certified": 8861,
+        "bound_above_target": 423
+      },
+      "accepted_inaccurate": 0,
+      "accurate_rejected": 128,
+      "legacy_acceptance_disagreements": 0,
+      "scalar_curvature_evaluations": 52,
+      "full_head_hessians": 0,
+      "elapsed_seconds": 6.380274666007608
+    },
+    {
+      "bits": 128,
+      "endpoints": 9284,
+      "certified": 8861,
+      "status_counts": {
+        "certified": 8861,
+        "bound_above_target": 423
+      },
+      "accepted_inaccurate": 0,
+      "accurate_rejected": 128,
+      "legacy_acceptance_disagreements": 0,
+      "scalar_curvature_evaluations": 52,
+      "full_head_hessians": 0,
+      "elapsed_seconds": 7.316501958062872
+    },
+    {
+      "bits": 256,
+      "endpoints": 9284,
+      "certified": 8861,
+      "status_counts": {
+        "certified": 8861,
+        "bound_above_target": 423
+      },
+      "accepted_inaccurate": 0,
+      "accurate_rejected": 128,
+      "legacy_acceptance_disagreements": 0,
+      "scalar_curvature_evaluations": 52,
+      "full_head_hessians": 0,
+      "elapsed_seconds": 8.734602957963943
+    }
+  ],
+  "stress_inputs": 43,
+  "stress_checks": 172,
+  "implementation_sha256": {
+    "arithmetic.py": "74713f07556f4a8e02c5aeb99f0055e88bd7941edd84d42fc2ee995f4866a178",
+    "monitor.py": "af48a4d030005f6bdfec28bb08b2b3d27ac76e2eb16b9f741126b7001c26697d",
+    "run.py": "6218ba0590c5882d97bd1175ec462321595b690a0013f3c29970c8936525c0cb",
+    "cli.py": "790bc769b5a6638049734f02793e79e9982e737060a5fef6fe4e5ed9c7b71c02"
+  },
+  "environment": {
+    "python": "3.12.3",
+    "platform": "macOS-27.0.1-arm64-arm-64bit"
+  },
+  "new_optimizer_calls": 0,
+  "changed_observations": false,
+  "scope": "Validated arithmetic on previously inspected nominal quadratic endpoints. Timings are descriptive one-pass CPU measurements."
+}

@@ -1,0 +1,9 @@
+{
+  "deterministic_records_byte_identical": {
+    "ENDPOINTS.json": true,
+    "REFERENCE_INTERVALS.json": true,
+    "STRESS.json": true
+  },
+  "scientific_summary_identical": true,
+  "timings_and_environment_excluded": true
+}
