@@ -18,15 +18,15 @@ A small gradient in **head coordinates** need not control the objective gap in *
 
 The second derivative is taken along the head's radial direction, at fixed intensity coordinate and polarization direction. It is a derivative of the **composite objective**, rather than the curvature of the map drawn above. Recovery at the exact fold and finite-tolerance stopping throughout the inner sheet are distinct statements.
 
-<details>
-<summary><strong>Exact uniform bound and assumptions</strong></summary>
-
 The gap $\Delta(s)$ is measured against the best physically feasible objective value:
 
 ```math
 \Delta(s) \leq \frac{52(\bar I L)^{2/3}}{\mu}\,\varepsilon^{4/3}
 + \frac{3}{\mu}\,\nu^2.
 ```
+
+<details>
+<summary><strong>Assumptions and interpretation of the bound</strong></summary>
 
 - The physical objective is $C^2$ and $\mu$-strongly convex.
 - The evaluated coordinates satisfy $0<I\leq\bar I$ and $0\leq r\leq1$, where $r=\|w\|$.
