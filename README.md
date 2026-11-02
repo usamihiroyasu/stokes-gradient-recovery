@@ -5,7 +5,9 @@ Chubu University, Japan · Private author-review repository · Working manuscrip
 
 A small gradient in **head coordinates** need not control the objective gap in **physical Stokes coordinates**. This study connects the information lost by a folded map from $(a,w)$ to $(I,Q,U)$ to a conditional stopping certificate. It supplies the recovery identities, their assumptions, and fixed numerical records against which the implementation can be checked.
 
-[**Read the paper**](paper/main.pdf) · [Supplement](paper/supplement.pdf) · [Evidence and code](docs/RESULTS_MAP.md) · [Reproduce](#start-with-an-integrity-check) · [2-minute overview](#watch-the-research-overview)
+[**Read the arXiv-generated paper**](paper/arxiv.pdf) · [Exact source ZIP](manuscript/arxiv/stokes-arxiv-source.zip) · [Evidence and code](docs/RESULTS_MAP.md) · [Reproduce](#start-with-an-integrity-check) · [2-minute overview](#watch-the-research-overview)
+
+The primary PDF is the **49-page arXiv-generated draft**, including the complete Supplementary Information. It has not yet been submitted or announced. [Source and build instructions](manuscript/arxiv/) · [Separate journal-format copies](paper/README.md).
 
 ![The degree of linear polarization increases to a fold at head radius one, where radial first-order sensitivity vanishes; the outer sheet folds back. A signed radial second derivative of the composite objective completes the first-order information. A stopping certificate additionally requires the theorem's assumptions.](media/research-workflow.svg)
 
@@ -33,7 +35,7 @@ The gap $\Delta(s)$ is measured against the best physically feasible objective v
 - $\varepsilon\geq0$ bounds the normalized first derivatives, with $\varepsilon\leq\bar I L/8$.
 - Choose $L\geq\mu$. For $r\geq1/2$, $L$ also bounds the physical radial curvature at the evaluated point, and $\nu\geq0$ bounds the negative part of the normalized radial curvature. No radial-curvature observation is required for $r<1/2$.
 
-The coefficient 52 is conservative; the two tolerance orders are sharp. See **Theorem 7** in the [main paper](paper/main.pdf) for the complete statement and the [stopping-bound implementation](theory/stopping_guarantee/) for the pointwise formula and derivative-error budgets.
+The coefficient 52 is conservative; the two tolerance orders are sharp. See **Theorem 7** in the [main paper](paper/arxiv.pdf) for the complete statement and the [stopping-bound implementation](theory/stopping_guarantee/) for the pointwise formula and derivative-error budgets.
 
 </details>
 
@@ -68,8 +70,8 @@ Other retained findings matter to the interpretation: the fixed local fold gate 
 
 | Your question | Recommended path |
 | --- | --- |
-| **What is the main guarantee?** | [Main paper](paper/main.pdf): Theorem 7 and Figure 1; then the exact conditions above. |
-| **Why are first derivatives insufficient?** | [Main paper](paper/main.pdf): Proposition 1 and Figure 2; [Supplement](paper/supplement.pdf) for proofs. |
+| **What is the main guarantee?** | [Main paper](paper/arxiv.pdf): Theorem 7 and Figure 1; then the exact conditions above. |
+| **Why are first derivatives insufficient?** | [Main paper](paper/arxiv.pdf): Proposition 1 and Figure 2; [Supplement](paper/supplement.pdf) for proofs. |
 | **Where did a reported number come from?** | [Result-to-file map](docs/RESULTS_MAP.md), then the linked summaries and endpoint records. |
 | **How can I check or reproduce it?** | Integrity check below, then the study-specific [reproduction guide](docs/REPRODUCING.md). |
 
@@ -116,8 +118,8 @@ For a complete replay, use the [reproduction guide](docs/REPRODUCING.md). It sep
 
 | Directory | Contents |
 | --- | --- |
-| [`paper/`](paper/) | Main, supplementary, and combined reader PDFs |
-| [`manuscript/`](manuscript/) | Matching TeX sources, figures, class, and build instructions |
+| [`paper/`](paper/) | Primary arXiv-generated draft and separate journal-format reader copies |
+| [`manuscript/`](manuscript/) | Exact arXiv source bundle and separate journal-format TeX sources |
 | [`theory/`](theory/) | Stopping bounds, exact interval arithmetic, and frozen results |
 | [`application/`](application/) | Fresnel sequences, selected observations, and coordinate-repair studies |
 | [`repro/`](repro/) | Recovery checks, figure generators, and saved network/warm-start records |
@@ -130,7 +132,7 @@ For a complete replay, use the [reproduction guide](docs/REPRODUCING.md). It sep
 
 ## Integrity, citation, and reuse
 
-[`MANIFEST.sha256`](MANIFEST.sha256) covers this repository snapshot; [`FROZEN_FILES.sha256`](FROZEN_FILES.sha256) identifies the unchanged scientific files. Figure generators write to `latex/images/`; manuscript inputs are separate in `manuscript/source/images/`.
+[`MANIFEST.sha256`](MANIFEST.sha256) covers this repository snapshot; [`FROZEN_FILES.sha256`](FROZEN_FILES.sha256) identifies the unchanged scientific files. Figure generators write to `latex/images/`. The exact arXiv inputs are in `manuscript/arxiv/images/`; journal-format inputs are in `manuscript/source/images/`.
 
 Use [`CITATION.cff`](CITATION.cff) for author and title metadata. When reporting a reproduction, identify the repository commit, command, environment, and relevant file hashes.
 

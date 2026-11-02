@@ -2,7 +2,7 @@
 
 Follow a result from the paper to its implementation and supplied numerical records. Start with the stopping certificate, then trace its recovery identities or inspect the experimental comparisons. The saved outcomes linked below are the paper's reference records.
 
-[Research overview](../README.md) · [Main paper](../paper/main.pdf) · [Supplementary Information](../paper/supplement.pdf) · [Combined reader copy](../paper/complete.pdf)
+[Research overview](../README.md) · [Main paper](../paper/arxiv.pdf) · [Supplementary Information](../paper/supplement.pdf) · [Combined reader copy](../paper/complete.pdf)
 
 Before running a study, consult the [reproduction guide](REPRODUCING.md) for its commands, recorded environment and output behavior. Separate studies use separate environments; preserve the supplied records by working in a fresh copy or using the documented output option.
 

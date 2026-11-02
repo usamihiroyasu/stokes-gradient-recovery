@@ -84,6 +84,8 @@ The recorded experiment uses PyTorch 2.14.1 on an Apple M4 Max CPU, one thread, 
 
 ## Integrity and manuscript build
 
+The primary reader copy is [the arXiv-generated draft](../paper/arxiv.pdf). Its exact source bundle and local build commands are in [manuscript/arxiv](../manuscript/arxiv/README.md). The command below builds the separately preserved journal-format main and supplementary PDFs.
+
 From the package root:
 
 ```sh
