@@ -3,7 +3,7 @@
 **Hiroyasu Usami · Ayato Tsuboi · Keisuke Hara**<br>
 Chubu University, Japan · Research code and reproducibility materials
 
-A small gradient in **head coordinates** need not control the objective gap in **physical Stokes coordinates**. This study connects the information lost by a folded map from $(a,w)$ to $(I,Q,U)$ to a conditional stopping certificate. It supplies the recovery identities, their assumptions, and fixed numerical records against which the implementation can be checked.
+A small gradient in **head coordinates** need not control the objective gap in **physical Stokes coordinates**. Here $a$ controls intensity, $w\in\mathbb{R}^2$ contains the polarization head coordinates, $I$ is total intensity, and $Q,U$ are the linear Stokes components. The folded map between these coordinates leads to a conditional stopping certificate. It supplies the recovery identities, their assumptions, and fixed numerical records against which the implementation can be checked.
 
 [**Read the arXiv-generated paper**](paper/arxiv.pdf) · [Exact source ZIP](manuscript/arxiv/stokes-arxiv-source.zip) · [Evidence and code](docs/RESULTS_MAP.md) · [Reproduce](#start-with-an-integrity-check) · [2-minute overview](#research-overview)
 
