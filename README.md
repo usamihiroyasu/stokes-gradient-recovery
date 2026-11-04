@@ -7,7 +7,7 @@ A small gradient in **head coordinates** need not control the objective gap in *
 
 [**Read the arXiv-generated paper**](paper/arxiv.pdf) · [Exact source ZIP](manuscript/arxiv/stokes-arxiv-source.zip) · [Evidence and code](docs/RESULTS_MAP.md) · [Reproduce](#start-with-an-integrity-check) · [2-minute overview](#research-overview)
 
-The primary PDF is the **49-page arXiv-generated reader copy**, including the complete Supplementary Information. The manuscript has been submitted to arXiv; its public identifier will be added when available. [Source and build instructions](manuscript/arxiv/) · [Separate journal-format copies](paper/README.md).
+The primary PDF is the **49-page arXiv-generated reader copy**, including the complete Supplementary Information. The preprint is publicly available as [arXiv:2611.02421](https://arxiv.org/abs/2611.02421). It has not been peer reviewed. [Source and build instructions](manuscript/arxiv/) · [Separate journal-format copies](paper/README.md).
 
 ![The degree of linear polarization increases to a fold at head radius one, where radial first-order sensitivity vanishes; the outer sheet folds back. A signed radial second derivative of the composite objective completes the first-order information. A stopping certificate additionally requires the theorem's assumptions.](media/research-workflow.gif)
 
